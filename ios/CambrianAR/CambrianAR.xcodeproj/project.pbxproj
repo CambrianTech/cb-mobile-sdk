@@ -1,0 +1,775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E721B6701E7E26F800DE1097 /* ShaderUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E721B66F1E7E26F800DE1097 /* ShaderUtilities.cpp */; };
+		E721B6721E7E270200DE1097 /* ShaderUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = E721B6711E7E270200DE1097 /* ShaderUtilities.h */; };
+		E72BEBD3200EBAF40037F832 /* libCambrianBGFX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E78655301FDC4ABD00E24854 /* libCambrianBGFX.a */; };
+		E72CD6F81EA5150500CFD081 /* CBColorFinderView.h in Headers */ = {isa = PBXBuildFile; fileRef = E72CD6F61EA5150500CFD081 /* CBColorFinderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E72CD6F91EA5150500CFD081 /* CBColorFinderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E72CD6F71EA5150500CFD081 /* CBColorFinderView.mm */; };
+		E753BFCD1E6D056E004614C2 /* CBAugmentedTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E753BFCC1E6D0512004614C2 /* CBAugmentedTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7552E481F91BF6A0093E8F6 /* CBAugmentedModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7552E461F91BF690093E8F6 /* CBAugmentedModel.mm */; };
+		E7552E491F91BF6A0093E8F6 /* CBAugmentedModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E7552E471F91BF6A0093E8F6 /* CBAugmentedModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E77711EF1F68C8C900957F58 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77711EE1F68C8C900957F58 /* ARKit.framework */; };
+		E77924121D4FC6D200196A06 /* CambrianAR.h in Headers */ = {isa = PBXBuildFile; fileRef = E77924111D4FC6D200196A06 /* CambrianAR.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E77924601D4FD07900196A06 /* CBVideoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = E779243C1D4FD07900196A06 /* CBVideoCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E77924611D4FD07900196A06 /* CBVideoCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = E779243D1D4FD07900196A06 /* CBVideoCamera.mm */; };
+		E779246A1D4FD07900196A06 /* CBLicensing.h in Headers */ = {isa = PBXBuildFile; fileRef = E77924481D4FD07900196A06 /* CBLicensing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E779246B1D4FD07900196A06 /* CBLicensing.mm in Sources */ = {isa = PBXBuildFile; fileRef = E77924491D4FD07900196A06 /* CBLicensing.mm */; };
+		E779246C1D4FD07900196A06 /* CBDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E779244B1D4FD07900196A06 /* CBDefines.h */; };
+		E779246D1D4FD07900196A06 /* ImageTranslation.h in Headers */ = {isa = PBXBuildFile; fileRef = E779244C1D4FD07900196A06 /* ImageTranslation.h */; };
+		E779246E1D4FD07900196A06 /* ImageTranslation.mm in Sources */ = {isa = PBXBuildFile; fileRef = E779244D1D4FD07900196A06 /* ImageTranslation.mm */; };
+		E779249E1D4FD53900196A06 /* CameraUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = E77924771D4FD53900196A06 /* CameraUtility.h */; };
+		E779249F1D4FD53900196A06 /* CameraUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = E77924781D4FD53900196A06 /* CameraUtility.mm */; };
+		E77924BB1D4FD53900196A06 /* VideoTranslation.h in Headers */ = {isa = PBXBuildFile; fileRef = E77924941D4FD53900196A06 /* VideoTranslation.h */; };
+		E77924BC1D4FD53900196A06 /* VideoTranslation.mm in Sources */ = {isa = PBXBuildFile; fileRef = E77924951D4FD53900196A06 /* VideoTranslation.mm */; };
+		E7871D691FE0AE9B00D650D2 /* CBMaskedAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = E7871D661FE0AE9B00D650D2 /* CBMaskedAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7871D6A1FE0AE9B00D650D2 /* CBMaskedAsset.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7871D681FE0AE9B00D650D2 /* CBMaskedAsset.mm */; };
+		E79FC9F81E6A46AF00306117 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79FC9F71E6A46AF00306117 /* GLKit.framework */; };
+		E79FC9F91E6A46B500306117 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79FC9F51E6A469E00306117 /* CoreImage.framework */; };
+		E79FC9FA1E6A46BB00306117 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77924C11D4FD6F700196A06 /* Accelerate.framework */; };
+		E79FC9FB1E6A46C100306117 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77924BF1D4FD6B500196A06 /* AVFoundation.framework */; };
+		E79FC9FC1E6A46C700306117 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77924C31D4FD70500196A06 /* CoreMotion.framework */; };
+		E79FC9FE1E6A47AE00306117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79FC9FD1E6A47AE00306117 /* UIKit.framework */; };
+		E7A844911FD4D77000A79D9B /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A844901FD4D76600A79D9B /* MediaToolbox.framework */; };
+		E7A844921FD4D78C00A79D9B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A8448F1FD4D71900A79D9B /* CoreText.framework */; };
+		E7A844941FD4D7AD00A79D9B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A844931FD4D7A500A79D9B /* MediaPlayer.framework */; };
+		E7A844961FD4D7C500A79D9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A844951FD4D7BF00A79D9B /* CoreLocation.framework */; };
+		E7A845111FD5BC7900A79D9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A845101FD5BC7500A79D9B /* Foundation.framework */; };
+		E7B8A4C31E52454F00151577 /* CambrianAR.pch in Headers */ = {isa = PBXBuildFile; fileRef = E7B8A4C21E52454F00151577 /* CambrianAR.pch */; };
+		E7BFDF941F831CE30017DDA7 /* CBRemodelingFurniture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7BFDF931F831CE30017DDA7 /* CBRemodelingFurniture.mm */; };
+		E7BFDF951F831D4A0017DDA7 /* CBRemodelingFurniture.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BFDF921F831CE20017DDA7 /* CBRemodelingFurniture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7C0C0EC1E6F2EC5006631BD /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C0C0EB1E6F2EC5006631BD /* Metal.framework */; };
+		E7C0C0EE1E6F2FA9006631BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C0C0ED1E6F2FA9006631BD /* QuartzCore.framework */; };
+		E7CBB7D81F2312CE00736D4D /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CBB7D71F2312C600736D4D /* SceneKit.framework */; };
+		E7E2FD091E6A4FB900007248 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E2FD071E6A4F9B00007248 /* OpenGLES.framework */; };
+		E7E2FD0B1E6A4FC700007248 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E2FD0A1E6A4FC700007248 /* CoreVideo.framework */; };
+		E7E2FD0D1E6A4FD600007248 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E2FD0C1E6A4FD600007248 /* CoreGraphics.framework */; };
+		E7E2FD0E1E6A4FE500007248 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77924C71D4FD73900196A06 /* CoreMedia.framework */; };
+		E7E2FD111E6A501B00007248 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77924C51D4FD71C00196A06 /* AudioToolbox.framework */; };
+		E7E2FD2A1E6A526F00007248 /* CBColoring.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD281E6A526F00007248 /* CBColoring.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD2B1E6A526F00007248 /* CBColoring.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD291E6A526F00007248 /* CBColoring.mm */; };
+		E7E2FD3F1E6A66D800007248 /* CBRemodelingView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD3D1E6A66D800007248 /* CBRemodelingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD401E6A66D800007248 /* CBRemodelingView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD3E1E6A66D800007248 /* CBRemodelingView.mm */; };
+		E7E2FD431E6A68B900007248 /* CBRemodelingScene.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD411E6A68B900007248 /* CBRemodelingScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD441E6A68B900007248 /* CBRemodelingScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD421E6A68B900007248 /* CBRemodelingScene.mm */; };
+		E7E2FD481E6A6AD100007248 /* CBAugmentedView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD461E6A6AD100007248 /* CBAugmentedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD491E6A6AD100007248 /* CBAugmentedView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD471E6A6AD100007248 /* CBAugmentedView.mm */; };
+		E7E2FD4C1E6A6B0800007248 /* CBAugmentedScene.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD4A1E6A6B0800007248 /* CBAugmentedScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD4D1E6A6B0800007248 /* CBAugmentedScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD4B1E6A6B0800007248 /* CBAugmentedScene.mm */; };
+		E7E2FD501E6A6B4500007248 /* CBAugmentedAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD4E1E6A6B4500007248 /* CBAugmentedAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD511E6A6B4500007248 /* CBAugmentedAsset.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD4F1E6A6B4500007248 /* CBAugmentedAsset.mm */; };
+		E7E2FD541E6A6B5B00007248 /* CBRemodelingPaint.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD521E6A6B5B00007248 /* CBRemodelingPaint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD551E6A6B5B00007248 /* CBRemodelingPaint.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD531E6A6B5B00007248 /* CBRemodelingPaint.mm */; };
+		E7E2FD581E6A6C5800007248 /* CBRemodelingFloor.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD561E6A6C5800007248 /* CBRemodelingFloor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD591E6A6C5800007248 /* CBRemodelingFloor.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E2FD571E6A6C5800007248 /* CBRemodelingFloor.mm */; };
+		E7E2FD5D1E6A74FC00007248 /* CBRemodelingTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD5A1E6A720F00007248 /* CBRemodelingTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E2FD5F1E6B1C4900007248 /* CBARInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E2FD5E1E6B1C4900007248 /* CBARInternal.h */; };
+		E7E4589F1E6A3B6100A67564 /* CBTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E4589D1E6A3B6100A67564 /* CBTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E458A01E6A3B6100A67564 /* CBTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E4589E1E6A3B6100A67564 /* CBTexture.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E786552D1FDC4ABD00E24854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E78655281FDC4ABD00E24854 /* Cambrian.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E7EA1E331FD7622C00B3DE54;
+			remoteInfo = Cambrian;
+		};
+		E786552F1FDC4ABD00E24854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E78655281FDC4ABD00E24854 /* Cambrian.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E78655241FDC48B700E24854;
+			remoteInfo = CambrianBGFX;
+		};
+		E78655321FDC4AD600E24854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E78655281FDC4ABD00E24854 /* Cambrian.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E72BEBD7200EBC890037F832;
+			remoteInfo = CambrianBGFX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E721B66F1E7E26F800DE1097 /* ShaderUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderUtilities.cpp; sourceTree = "<group>"; };
+		E721B6711E7E270200DE1097 /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		E72CD6F61EA5150500CFD081 /* CBColorFinderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBColorFinderView.h; sourceTree = "<group>"; };
+		E72CD6F71EA5150500CFD081 /* CBColorFinderView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBColorFinderView.mm; sourceTree = "<group>"; };
+		E7469E6E1F606A2700DD0AD1 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		E753BFCC1E6D0512004614C2 /* CBAugmentedTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAugmentedTypes.h; sourceTree = "<group>"; };
+		E7552E461F91BF690093E8F6 /* CBAugmentedModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBAugmentedModel.mm; sourceTree = "<group>"; };
+		E7552E471F91BF6A0093E8F6 /* CBAugmentedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAugmentedModel.h; sourceTree = "<group>"; };
+		E77711EE1F68C8C900957F58 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		E77711F61F68E2BC00957F58 /* libprotoc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotoc.a; path = ../../prebuilts/tensorflow/lib/ios/libprotoc.a; sourceTree = "<group>"; };
+		E779240E1D4FC6D200196A06 /* CambrianAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CambrianAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E77924111D4FC6D200196A06 /* CambrianAR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CambrianAR.h; sourceTree = "<group>"; };
+		E77924131D4FC6D200196A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E779243C1D4FD07900196A06 /* CBVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVideoCamera.h; sourceTree = "<group>"; };
+		E779243D1D4FD07900196A06 /* CBVideoCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBVideoCamera.mm; sourceTree = "<group>"; };
+		E77924481D4FD07900196A06 /* CBLicensing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLicensing.h; sourceTree = "<group>"; };
+		E77924491D4FD07900196A06 /* CBLicensing.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBLicensing.mm; sourceTree = "<group>"; };
+		E779244B1D4FD07900196A06 /* CBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDefines.h; sourceTree = "<group>"; };
+		E779244C1D4FD07900196A06 /* ImageTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTranslation.h; sourceTree = "<group>"; };
+		E779244D1D4FD07900196A06 /* ImageTranslation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageTranslation.mm; sourceTree = "<group>"; };
+		E77924771D4FD53900196A06 /* CameraUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraUtility.h; sourceTree = "<group>"; };
+		E77924781D4FD53900196A06 /* CameraUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraUtility.mm; sourceTree = "<group>"; };
+		E77924941D4FD53900196A06 /* VideoTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTranslation.h; sourceTree = "<group>"; };
+		E77924951D4FD53900196A06 /* VideoTranslation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoTranslation.mm; sourceTree = "<group>"; };
+		E77924BF1D4FD6B500196A06 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E77924C11D4FD6F700196A06 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E77924C31D4FD70500196A06 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E77924C51D4FD71C00196A06 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E77924C71D4FD73900196A06 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E78655281FDC4ABD00E24854 /* Cambrian.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cambrian.xcodeproj; path = ../Cambrian/Cambrian.xcodeproj; sourceTree = "<group>"; };
+		E7871D661FE0AE9B00D650D2 /* CBMaskedAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMaskedAsset.h; sourceTree = "<group>"; };
+		E7871D681FE0AE9B00D650D2 /* CBMaskedAsset.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBMaskedAsset.mm; sourceTree = "<group>"; };
+		E79FC9F51E6A469E00306117 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E79FC9F71E6A46AF00306117 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		E79FC9FD1E6A47AE00306117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E7A8448C1FD4D56400A79D9B /* UnityAsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnityAsFramework.framework; path = ../../prebuilts/unity/ios/UnityAsFramework.framework; sourceTree = "<group>"; };
+		E7A8448F1FD4D71900A79D9B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		E7A844901FD4D76600A79D9B /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
+		E7A844931FD4D7A500A79D9B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E7A844951FD4D7BF00A79D9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E7A845101FD5BC7500A79D9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E7AAEC6C200ED17000F8386A /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shaders; path = "../../../../sdk-assets/shaders"; sourceTree = "<group>"; };
+		E7B8A4C21E52454F00151577 /* CambrianAR.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CambrianAR.pch; sourceTree = "<group>"; };
+		E7BFDF921F831CE20017DDA7 /* CBRemodelingFurniture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBRemodelingFurniture.h; sourceTree = "<group>"; };
+		E7BFDF931F831CE30017DDA7 /* CBRemodelingFurniture.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CBRemodelingFurniture.mm; sourceTree = "<group>"; };
+		E7C0C0EB1E6F2EC5006631BD /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		E7C0C0ED1E6F2FA9006631BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E7CBB7B91F22AA4100736D4D /* libopencv2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv2.a; path = "../../prebuilts/opencv/opencv-ios/lib/libopencv2.a"; sourceTree = "<group>"; };
+		E7CBB7BB1F22AA8200736D4D /* libbgfxRelease.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbgfxRelease.a; path = ../../prebuilts/bgfx/lib/ios/libbgfxRelease.a; sourceTree = "<group>"; };
+		E7CBB7BD1F22AB7A00736D4D /* libbxRelease.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbxRelease.a; path = ../../prebuilts/bgfx/lib/ios/libbxRelease.a; sourceTree = "<group>"; };
+		E7CBB7BF1F22ABB700736D4D /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf.a; path = ../../prebuilts/tensorflow/lib/ios/libprotobuf.a; sourceTree = "<group>"; };
+		E7CBB7C11F22ABDA00736D4D /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libprotobuf-lite.a"; path = "../../prebuilts/tensorflow/lib/ios/libprotobuf-lite.a"; sourceTree = "<group>"; };
+		E7CBB7C31F22AC0F00736D4D /* libtensorflow-core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libtensorflow-core.a"; path = "../../prebuilts/tensorflow/lib/ios/libtensorflow-core.a"; sourceTree = "<group>"; };
+		E7CBB7D71F2312C600736D4D /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		E7E2FD071E6A4F9B00007248 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		E7E2FD0A1E6A4FC700007248 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		E7E2FD0C1E6A4FD600007248 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E7E2FD0F1E6A4FFB00007248 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		E7E2FD281E6A526F00007248 /* CBColoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBColoring.h; sourceTree = "<group>"; };
+		E7E2FD291E6A526F00007248 /* CBColoring.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBColoring.mm; sourceTree = "<group>"; };
+		E7E2FD3D1E6A66D800007248 /* CBRemodelingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRemodelingView.h; sourceTree = "<group>"; };
+		E7E2FD3E1E6A66D800007248 /* CBRemodelingView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBRemodelingView.mm; sourceTree = "<group>"; };
+		E7E2FD411E6A68B900007248 /* CBRemodelingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRemodelingScene.h; sourceTree = "<group>"; };
+		E7E2FD421E6A68B900007248 /* CBRemodelingScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBRemodelingScene.mm; sourceTree = "<group>"; };
+		E7E2FD461E6A6AD100007248 /* CBAugmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAugmentedView.h; sourceTree = "<group>"; };
+		E7E2FD471E6A6AD100007248 /* CBAugmentedView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBAugmentedView.mm; sourceTree = "<group>"; };
+		E7E2FD4A1E6A6B0800007248 /* CBAugmentedScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAugmentedScene.h; sourceTree = "<group>"; };
+		E7E2FD4B1E6A6B0800007248 /* CBAugmentedScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBAugmentedScene.mm; sourceTree = "<group>"; };
+		E7E2FD4E1E6A6B4500007248 /* CBAugmentedAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAugmentedAsset.h; sourceTree = "<group>"; };
+		E7E2FD4F1E6A6B4500007248 /* CBAugmentedAsset.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBAugmentedAsset.mm; sourceTree = "<group>"; };
+		E7E2FD521E6A6B5B00007248 /* CBRemodelingPaint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRemodelingPaint.h; sourceTree = "<group>"; };
+		E7E2FD531E6A6B5B00007248 /* CBRemodelingPaint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBRemodelingPaint.mm; sourceTree = "<group>"; };
+		E7E2FD561E6A6C5800007248 /* CBRemodelingFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRemodelingFloor.h; sourceTree = "<group>"; };
+		E7E2FD571E6A6C5800007248 /* CBRemodelingFloor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBRemodelingFloor.mm; sourceTree = "<group>"; };
+		E7E2FD5A1E6A720F00007248 /* CBRemodelingTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBRemodelingTypes.h; sourceTree = "<group>"; };
+		E7E2FD5E1E6B1C4900007248 /* CBARInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBARInternal.h; sourceTree = "<group>"; };
+		E7E4589D1E6A3B6100A67564 /* CBTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTexture.h; sourceTree = "<group>"; };
+		E7E4589E1E6A3B6100A67564 /* CBTexture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBTexture.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E779240A1D4FC6D200196A06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72BEBD3200EBAF40037F832 /* libCambrianBGFX.a in Frameworks */,
+				E7A845111FD5BC7900A79D9B /* Foundation.framework in Frameworks */,
+				E7E2FD111E6A501B00007248 /* AudioToolbox.framework in Frameworks */,
+				E7A844911FD4D77000A79D9B /* MediaToolbox.framework in Frameworks */,
+				E7A844941FD4D7AD00A79D9B /* MediaPlayer.framework in Frameworks */,
+				E7A844961FD4D7C500A79D9B /* CoreLocation.framework in Frameworks */,
+				E7A844921FD4D78C00A79D9B /* CoreText.framework in Frameworks */,
+				E77711EF1F68C8C900957F58 /* ARKit.framework in Frameworks */,
+				E7CBB7D81F2312CE00736D4D /* SceneKit.framework in Frameworks */,
+				E7E2FD091E6A4FB900007248 /* OpenGLES.framework in Frameworks */,
+				E7C0C0EE1E6F2FA9006631BD /* QuartzCore.framework in Frameworks */,
+				E7C0C0EC1E6F2EC5006631BD /* Metal.framework in Frameworks */,
+				E7E2FD0E1E6A4FE500007248 /* CoreMedia.framework in Frameworks */,
+				E7E2FD0D1E6A4FD600007248 /* CoreGraphics.framework in Frameworks */,
+				E7E2FD0B1E6A4FC700007248 /* CoreVideo.framework in Frameworks */,
+				E79FC9FE1E6A47AE00306117 /* UIKit.framework in Frameworks */,
+				E79FC9FC1E6A46C700306117 /* CoreMotion.framework in Frameworks */,
+				E79FC9FB1E6A46C100306117 /* AVFoundation.framework in Frameworks */,
+				E79FC9FA1E6A46BB00306117 /* Accelerate.framework in Frameworks */,
+				E79FC9F91E6A46B500306117 /* CoreImage.framework in Frameworks */,
+				E79FC9F81E6A46AF00306117 /* GLKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E77924041D4FC6D200196A06 = {
+			isa = PBXGroup;
+			children = (
+				E7AAEC6C200ED17000F8386A /* shaders */,
+				E78655281FDC4ABD00E24854 /* Cambrian.xcodeproj */,
+				E77924101D4FC6D200196A06 /* CambrianAR */,
+				E779240F1D4FC6D200196A06 /* Products */,
+				E79FC9F41E6A469D00306117 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E779240F1D4FC6D200196A06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E779240E1D4FC6D200196A06 /* CambrianAR.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E77924101D4FC6D200196A06 /* CambrianAR */ = {
+			isa = PBXGroup;
+			children = (
+				E779244A1D4FD07900196A06 /* Internal */,
+				E77924761D4FD53900196A06 /* VideoProcessing */,
+				E77924451D4FD07900196A06 /* Common */,
+				E779243B1D4FD07900196A06 /* CBVideo */,
+				E7E2FD451E6A6AD100007248 /* CBBase */,
+				E7E2FD3A1E6A667300007248 /* Remodeling */,
+				E77924111D4FC6D200196A06 /* CambrianAR.h */,
+				E7B8A4C21E52454F00151577 /* CambrianAR.pch */,
+				E77924131D4FC6D200196A06 /* Info.plist */,
+			);
+			path = CambrianAR;
+			sourceTree = "<group>";
+		};
+		E779243B1D4FD07900196A06 /* CBVideo */ = {
+			isa = PBXGroup;
+			children = (
+				E779243C1D4FD07900196A06 /* CBVideoCamera.h */,
+				E779243D1D4FD07900196A06 /* CBVideoCamera.mm */,
+			);
+			path = CBVideo;
+			sourceTree = "<group>";
+		};
+		E77924451D4FD07900196A06 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2FD281E6A526F00007248 /* CBColoring.h */,
+				E7E2FD291E6A526F00007248 /* CBColoring.mm */,
+				E7E4589D1E6A3B6100A67564 /* CBTexture.h */,
+				E7E4589E1E6A3B6100A67564 /* CBTexture.mm */,
+				E77924481D4FD07900196A06 /* CBLicensing.h */,
+				E77924491D4FD07900196A06 /* CBLicensing.mm */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E779244A1D4FD07900196A06 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				E721B6711E7E270200DE1097 /* ShaderUtilities.h */,
+				E721B66F1E7E26F800DE1097 /* ShaderUtilities.cpp */,
+				E779244B1D4FD07900196A06 /* CBDefines.h */,
+				E7E2FD5E1E6B1C4900007248 /* CBARInternal.h */,
+				E779244C1D4FD07900196A06 /* ImageTranslation.h */,
+				E779244D1D4FD07900196A06 /* ImageTranslation.mm */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		E77924761D4FD53900196A06 /* VideoProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				E77924771D4FD53900196A06 /* CameraUtility.h */,
+				E77924781D4FD53900196A06 /* CameraUtility.mm */,
+				E77924941D4FD53900196A06 /* VideoTranslation.h */,
+				E77924951D4FD53900196A06 /* VideoTranslation.mm */,
+			);
+			path = VideoProcessing;
+			sourceTree = "<group>";
+		};
+		E78655291FDC4ABD00E24854 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E786552E1FDC4ABD00E24854 /* libCambrian.a */,
+				E78655301FDC4ABD00E24854 /* libCambrianBGFX.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E79FC9F41E6A469D00306117 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7A845101FD5BC7500A79D9B /* Foundation.framework */,
+				E7A844951FD4D7BF00A79D9B /* CoreLocation.framework */,
+				E7A844931FD4D7A500A79D9B /* MediaPlayer.framework */,
+				E7A844901FD4D76600A79D9B /* MediaToolbox.framework */,
+				E7A8448F1FD4D71900A79D9B /* CoreText.framework */,
+				E7A8448C1FD4D56400A79D9B /* UnityAsFramework.framework */,
+				E77711F61F68E2BC00957F58 /* libprotoc.a */,
+				E77711EE1F68C8C900957F58 /* ARKit.framework */,
+				E7469E6E1F606A2700DD0AD1 /* CoreML.framework */,
+				E7CBB7D71F2312C600736D4D /* SceneKit.framework */,
+				E7CBB7C31F22AC0F00736D4D /* libtensorflow-core.a */,
+				E7CBB7C11F22ABDA00736D4D /* libprotobuf-lite.a */,
+				E7CBB7BF1F22ABB700736D4D /* libprotobuf.a */,
+				E7CBB7BD1F22AB7A00736D4D /* libbxRelease.a */,
+				E7CBB7BB1F22AA8200736D4D /* libbgfxRelease.a */,
+				E7CBB7B91F22AA4100736D4D /* libopencv2.a */,
+				E7C0C0ED1E6F2FA9006631BD /* QuartzCore.framework */,
+				E7C0C0EB1E6F2EC5006631BD /* Metal.framework */,
+				E7E2FD0F1E6A4FFB00007248 /* CoreAudio.framework */,
+				E7E2FD0C1E6A4FD600007248 /* CoreGraphics.framework */,
+				E7E2FD0A1E6A4FC700007248 /* CoreVideo.framework */,
+				E7E2FD071E6A4F9B00007248 /* OpenGLES.framework */,
+				E77924C71D4FD73900196A06 /* CoreMedia.framework */,
+				E77924C51D4FD71C00196A06 /* AudioToolbox.framework */,
+				E77924C31D4FD70500196A06 /* CoreMotion.framework */,
+				E77924C11D4FD6F700196A06 /* Accelerate.framework */,
+				E77924BF1D4FD6B500196A06 /* AVFoundation.framework */,
+				E79FC9FD1E6A47AE00306117 /* UIKit.framework */,
+				E79FC9F71E6A46AF00306117 /* GLKit.framework */,
+				E79FC9F51E6A469E00306117 /* CoreImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7E2FD3A1E6A667300007248 /* Remodeling */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2FD5A1E6A720F00007248 /* CBRemodelingTypes.h */,
+				E7E2FD3D1E6A66D800007248 /* CBRemodelingView.h */,
+				E7E2FD3E1E6A66D800007248 /* CBRemodelingView.mm */,
+				E7E2FD411E6A68B900007248 /* CBRemodelingScene.h */,
+				E7E2FD421E6A68B900007248 /* CBRemodelingScene.mm */,
+				E7E2FD521E6A6B5B00007248 /* CBRemodelingPaint.h */,
+				E7E2FD531E6A6B5B00007248 /* CBRemodelingPaint.mm */,
+				E7E2FD561E6A6C5800007248 /* CBRemodelingFloor.h */,
+				E7E2FD571E6A6C5800007248 /* CBRemodelingFloor.mm */,
+				E7BFDF921F831CE20017DDA7 /* CBRemodelingFurniture.h */,
+				E7BFDF931F831CE30017DDA7 /* CBRemodelingFurniture.mm */,
+			);
+			path = Remodeling;
+			sourceTree = "<group>";
+		};
+		E7E2FD451E6A6AD100007248 /* CBBase */ = {
+			isa = PBXGroup;
+			children = (
+				E7871D661FE0AE9B00D650D2 /* CBMaskedAsset.h */,
+				E7871D681FE0AE9B00D650D2 /* CBMaskedAsset.mm */,
+				E753BFCC1E6D0512004614C2 /* CBAugmentedTypes.h */,
+				E7E2FD461E6A6AD100007248 /* CBAugmentedView.h */,
+				E7E2FD471E6A6AD100007248 /* CBAugmentedView.mm */,
+				E7E2FD4A1E6A6B0800007248 /* CBAugmentedScene.h */,
+				E7E2FD4B1E6A6B0800007248 /* CBAugmentedScene.mm */,
+				E7E2FD4E1E6A6B4500007248 /* CBAugmentedAsset.h */,
+				E7E2FD4F1E6A6B4500007248 /* CBAugmentedAsset.mm */,
+				E7552E471F91BF6A0093E8F6 /* CBAugmentedModel.h */,
+				E7552E461F91BF690093E8F6 /* CBAugmentedModel.mm */,
+				E72CD6F61EA5150500CFD081 /* CBColorFinderView.h */,
+				E72CD6F71EA5150500CFD081 /* CBColorFinderView.mm */,
+			);
+			name = CBBase;
+			path = CambrianAR/CBBase;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E779240B1D4FC6D200196A06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7871D691FE0AE9B00D650D2 /* CBMaskedAsset.h in Headers */,
+				E77924121D4FC6D200196A06 /* CambrianAR.h in Headers */,
+				E753BFCD1E6D056E004614C2 /* CBAugmentedTypes.h in Headers */,
+				E7E2FD2A1E6A526F00007248 /* CBColoring.h in Headers */,
+				E779246A1D4FD07900196A06 /* CBLicensing.h in Headers */,
+				E779246D1D4FD07900196A06 /* ImageTranslation.h in Headers */,
+				E7E4589F1E6A3B6100A67564 /* CBTexture.h in Headers */,
+				E7E2FD4C1E6A6B0800007248 /* CBAugmentedScene.h in Headers */,
+				E721B6721E7E270200DE1097 /* ShaderUtilities.h in Headers */,
+				E77924601D4FD07900196A06 /* CBVideoCamera.h in Headers */,
+				E7E2FD5F1E6B1C4900007248 /* CBARInternal.h in Headers */,
+				E72CD6F81EA5150500CFD081 /* CBColorFinderView.h in Headers */,
+				E7552E491F91BF6A0093E8F6 /* CBAugmentedModel.h in Headers */,
+				E7E2FD481E6A6AD100007248 /* CBAugmentedView.h in Headers */,
+				E7E2FD501E6A6B4500007248 /* CBAugmentedAsset.h in Headers */,
+				E7E2FD541E6A6B5B00007248 /* CBRemodelingPaint.h in Headers */,
+				E7BFDF951F831D4A0017DDA7 /* CBRemodelingFurniture.h in Headers */,
+				E7E2FD581E6A6C5800007248 /* CBRemodelingFloor.h in Headers */,
+				E779246C1D4FD07900196A06 /* CBDefines.h in Headers */,
+				E7E2FD5D1E6A74FC00007248 /* CBRemodelingTypes.h in Headers */,
+				E7E2FD431E6A68B900007248 /* CBRemodelingScene.h in Headers */,
+				E7E2FD3F1E6A66D800007248 /* CBRemodelingView.h in Headers */,
+				E7B8A4C31E52454F00151577 /* CambrianAR.pch in Headers */,
+				E779249E1D4FD53900196A06 /* CameraUtility.h in Headers */,
+				E77924BB1D4FD53900196A06 /* VideoTranslation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E779240D1D4FC6D200196A06 /* CambrianAR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E77924161D4FC6D200196A06 /* Build configuration list for PBXNativeTarget "CambrianAR" */;
+			buildPhases = (
+				E7CCFB641E8A076A0068DBBF /* Compile CBAssets */,
+				E77924091D4FC6D200196A06 /* Sources */,
+				E779240A1D4FC6D200196A06 /* Frameworks */,
+				E779240B1D4FC6D200196A06 /* Headers */,
+				E779240C1D4FC6D200196A06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E78655331FDC4AD600E24854 /* PBXTargetDependency */,
+			);
+			name = CambrianAR;
+			productName = CambrianAR;
+			productReference = E779240E1D4FC6D200196A06 /* CambrianAR.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E77924051D4FC6D200196A06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Joel Teply";
+				TargetAttributes = {
+					E779240D1D4FC6D200196A06 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = E77924081D4FC6D200196A06 /* Build configuration list for PBXProject "CambrianAR" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E77924041D4FC6D200196A06;
+			productRefGroup = E779240F1D4FC6D200196A06 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E78655291FDC4ABD00E24854 /* Products */;
+					ProjectRef = E78655281FDC4ABD00E24854 /* Cambrian.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E779240D1D4FC6D200196A06 /* CambrianAR */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E786552E1FDC4ABD00E24854 /* libCambrian.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCambrian.a;
+			remoteRef = E786552D1FDC4ABD00E24854 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E78655301FDC4ABD00E24854 /* libCambrianBGFX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCambrianBGFX.a;
+			remoteRef = E786552F1FDC4ABD00E24854 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E779240C1D4FC6D200196A06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E7CCFB641E8A076A0068DBBF /* Compile CBAssets */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile CBAssets";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"${cbroot}/sdk-assets/generate-all.sh\" \"${cbroot}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E77924091D4FC6D200196A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E2FD491E6A6AD100007248 /* CBAugmentedView.mm in Sources */,
+				E77924BC1D4FD53900196A06 /* VideoTranslation.mm in Sources */,
+				E7E2FD441E6A68B900007248 /* CBRemodelingScene.mm in Sources */,
+				E7552E481F91BF6A0093E8F6 /* CBAugmentedModel.mm in Sources */,
+				E7E2FD401E6A66D800007248 /* CBRemodelingView.mm in Sources */,
+				E779246E1D4FD07900196A06 /* ImageTranslation.mm in Sources */,
+				E72CD6F91EA5150500CFD081 /* CBColorFinderView.mm in Sources */,
+				E7E2FD591E6A6C5800007248 /* CBRemodelingFloor.mm in Sources */,
+				E7BFDF941F831CE30017DDA7 /* CBRemodelingFurniture.mm in Sources */,
+				E7E2FD4D1E6A6B0800007248 /* CBAugmentedScene.mm in Sources */,
+				E7E458A01E6A3B6100A67564 /* CBTexture.mm in Sources */,
+				E7E2FD551E6A6B5B00007248 /* CBRemodelingPaint.mm in Sources */,
+				E77924611D4FD07900196A06 /* CBVideoCamera.mm in Sources */,
+				E7E2FD511E6A6B4500007248 /* CBAugmentedAsset.mm in Sources */,
+				E779246B1D4FD07900196A06 /* CBLicensing.mm in Sources */,
+				E7871D6A1FE0AE9B00D650D2 /* CBMaskedAsset.mm in Sources */,
+				E721B6701E7E26F800DE1097 /* ShaderUtilities.cpp in Sources */,
+				E779249F1D4FD53900196A06 /* CameraUtility.mm in Sources */,
+				E7E2FD2B1E6A526F00007248 /* CBColoring.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E78655331FDC4AD600E24854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CambrianBGFX;
+			targetProxy = E78655321FDC4AD600E24854 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E77924141D4FC6D200196A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(cbroot)/cb-cpp/src/cb-cpp",
+					"$(prebuilts)/opencv/opencv-ios/include",
+					"$(prebuilts)/eigen",
+					"$(prebuilts)/jsoncpp/ios/include",
+					"$(prebuilts)/liblzma/include",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(prebuilts)/opencv/opencv-ios/lib",
+					"$(prebuilts)/jsoncpp/ios/lib",
+					"$(prebuilts)/opencv/opencv-ios/lib",
+					"$(prebuilts)/liblzma/lib/ios",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-fembed-bitcode",
+					"-fvisibility=hidden",
+				);
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lbz2",
+					"-force_load",
+					"$(cbroot)/prebuilts/tensorflow/lib/ios/libtensorflow-core.a",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				cbroot = "$(PROJECT_DIR)/../../../..";
+				prebuilts = "$(cbroot)/prebuilts";
+			};
+			name = Debug;
+		};
+		E77924151D4FC6D200196A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(cbroot)/cb-cpp/src/cb-cpp",
+					"$(prebuilts)/opencv/opencv-ios/include",
+					"$(prebuilts)/eigen",
+					"$(prebuilts)/jsoncpp/ios/include",
+					"$(prebuilts)/liblzma/include",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(prebuilts)/opencv/opencv-ios/lib",
+					"$(prebuilts)/jsoncpp/ios/lib",
+					"$(prebuilts)/opencv/opencv-ios/lib",
+					"$(prebuilts)/liblzma/lib/ios",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-fembed-bitcode",
+					"-fvisibility=hidden",
+				);
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lbz2",
+					"-force_load",
+					"$(cbroot)/prebuilts/tensorflow/lib/ios/libtensorflow-core.a",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				cbroot = "$(PROJECT_DIR)/../../../..";
+				prebuilts = "$(cbroot)/prebuilts";
+			};
+			name = Release;
+		};
+		E77924171D4FC6D200196A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = CambrianAR/CambrianAR.pch;
+				INFOPLIST_FILE = CambrianAR/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.CambrianAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E77924181D4FC6D200196A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = CambrianAR/CambrianAR.pch;
+				INFOPLIST_FILE = CambrianAR/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.CambrianAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E77924081D4FC6D200196A06 /* Build configuration list for PBXProject "CambrianAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E77924141D4FC6D200196A06 /* Debug */,
+				E77924151D4FC6D200196A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E77924161D4FC6D200196A06 /* Build configuration list for PBXNativeTarget "CambrianAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E77924171D4FC6D200196A06 /* Debug */,
+				E77924181D4FC6D200196A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E77924051D4FC6D200196A06 /* Project object */;
+}

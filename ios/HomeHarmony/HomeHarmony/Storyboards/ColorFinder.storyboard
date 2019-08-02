@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZBs-vu-JDF">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Color Finder View Controller-->
+        <scene sceneID="zqn-Zj-anE">
+            <objects>
+                <viewController storyboardIdentifier="ColorFinder" automaticallyAdjustsScrollViewInsets="NO" id="ZBs-vu-JDF" customClass="ColorFinderViewController" customModule="HomeHarmony" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="04U-ad-zoK"/>
+                        <viewControllerLayoutGuide type="bottom" id="YqL-Ck-agP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xaC-Ze-tVr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idc-Tg-7ka" customClass="CBColorFinderView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFM-8H-uMF">
+                                        <rect key="frame" x="0.0" y="601" width="414" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="K2X-1M-PSl"/>
+                                            <constraint firstAttribute="width" constant="414" id="nKA-L8-3eI"/>
+                                        </constraints>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NO7-fM-BJ0" userLabel="Controls Container">
+                                        <rect key="frame" x="0.0" y="656" width="414" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go4-s7-HoR" customClass="RoundButton" customModule="HomeHarmony" customModuleProvider="target">
+                                                <rect key="frame" x="178" y="4" width="72" height="72"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="AS0-tP-w7L"/>
+                                                    <constraint firstAttribute="width" constant="72" id="cY4-35-hpy"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" image="ic_camera"/>
+                                                <connections>
+                                                    <action selector="playPausePressed:" destination="ZBs-vu-JDF" eventType="touchUpInside" id="K6M-oc-uuL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Go4-s7-HoR" firstAttribute="centerX" secondItem="NO7-fM-BJ0" secondAttribute="centerX" constant="7" id="FXd-8n-bs0"/>
+                                            <constraint firstAttribute="height" constant="80" id="Ijq-yf-fZS"/>
+                                            <constraint firstItem="Go4-s7-HoR" firstAttribute="centerY" secondItem="NO7-fM-BJ0" secondAttribute="centerY" id="kGn-Wd-6IP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YFM-8H-uMF" firstAttribute="width" secondItem="Idc-Tg-7ka" secondAttribute="width" id="3xb-8Y-FoJ"/>
+                                    <constraint firstItem="NO7-fM-BJ0" firstAttribute="width" secondItem="Idc-Tg-7ka" secondAttribute="width" id="5wx-T3-Rha"/>
+                                    <constraint firstItem="YFM-8H-uMF" firstAttribute="centerX" secondItem="Idc-Tg-7ka" secondAttribute="centerX" id="6UD-rn-elZ"/>
+                                    <constraint firstItem="NO7-fM-BJ0" firstAttribute="top" secondItem="YFM-8H-uMF" secondAttribute="bottom" id="No3-vp-v3z"/>
+                                    <constraint firstItem="NO7-fM-BJ0" firstAttribute="centerX" secondItem="Idc-Tg-7ka" secondAttribute="centerX" id="cMu-uG-Ru3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Idc-Tg-7ka" firstAttribute="centerX" secondItem="xaC-Ze-tVr" secondAttribute="centerX" id="61M-hP-hp7"/>
+                            <constraint firstItem="Idc-Tg-7ka" firstAttribute="width" secondItem="xaC-Ze-tVr" secondAttribute="width" id="LX6-h9-QfX"/>
+                            <constraint firstItem="YqL-Ck-agP" firstAttribute="top" secondItem="NO7-fM-BJ0" secondAttribute="bottom" id="Sav-zh-XMx"/>
+                            <constraint firstItem="Idc-Tg-7ka" firstAttribute="centerY" secondItem="xaC-Ze-tVr" secondAttribute="centerY" id="Vgo-hF-Mqr"/>
+                            <constraint firstItem="Idc-Tg-7ka" firstAttribute="height" secondItem="xaC-Ze-tVr" secondAttribute="height" id="c7X-eo-Etl"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="colorFinderView" destination="Idc-Tg-7ka" id="wdn-Wq-y4l"/>
+                        <outlet property="colorList" destination="YFM-8H-uMF" id="mta-GS-ueR"/>
+                        <outlet property="playPauseButton" destination="Go4-s7-HoR" id="Xs3-kb-EGZ"/>
+                        <segue destination="g9D-2d-3LY" kind="show" identifier="showPainter" id="Xyn-6m-qeC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3E-y5-oyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15.942028985507248" y="-119.83695652173914"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="KmQ-dp-c7C">
+            <objects>
+                <viewController restorationIdentifier="DetailsView" storyboardIdentifier="DetailsView" id="GO9-TK-5kt" customClass="DetailsViewController" customModule="HomeHarmony" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hq6-Ke-exm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ue4-My-NZO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ccS-RK-Qwf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T77-M8-6BZ" userLabel="Visualize Button">
+                                <rect key="frame" x="324" y="2" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="7l7-y3-wgL"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="ic_video">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="visualizeButtonPressed:" destination="GO9-TK-5kt" eventType="touchUpInside" id="Zgb-kH-Q09"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bijou Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-97-Wot" userLabel="Color Label">
+                                <rect key="frame" x="20" y="1" width="72" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giD-Qf-XA8" userLabel="Favorites Button" customClass="FavoritesButton" customModule="HomeHarmony" customModuleProvider="target">
+                                <rect key="frame" x="254" y="1" width="70" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="XmQ-Pw-KKe"/>
+                                    <constraint firstAttribute="height" constant="55" id="mU8-UK-UVh"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="ic_favorite">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="GO9-TK-5kt" eventType="touchUpInside" id="rDo-yh-uGE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="T77-M8-6BZ" secondAttribute="trailing" id="10p-Tu-aTS"/>
+                            <constraint firstItem="HrY-97-Wot" firstAttribute="leading" secondItem="ccS-RK-Qwf" secondAttribute="leadingMargin" id="Hfa-ZC-cVP"/>
+                            <constraint firstItem="HrY-97-Wot" firstAttribute="centerY" secondItem="ccS-RK-Qwf" secondAttribute="centerY" constant="1" id="QMl-Tn-IT8"/>
+                            <constraint firstItem="T77-M8-6BZ" firstAttribute="leading" secondItem="giD-Qf-XA8" secondAttribute="trailing" id="RTZ-yA-Spp"/>
+                            <constraint firstItem="T77-M8-6BZ" firstAttribute="centerY" secondItem="ccS-RK-Qwf" secondAttribute="centerY" id="VZf-mq-9Uf"/>
+                            <constraint firstItem="giD-Qf-XA8" firstAttribute="centerY" secondItem="HrY-97-Wot" secondAttribute="centerY" id="WRE-sn-6xj"/>
+                            <constraint firstItem="giD-Qf-XA8" firstAttribute="leading" secondItem="HrY-97-Wot" secondAttribute="trailing" id="cGr-I2-58w"/>
+                            <constraint firstItem="HrY-97-Wot" firstAttribute="height" secondItem="ccS-RK-Qwf" secondAttribute="height" id="e0h-xA-g8A"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="giD-Qf-XA8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="55"/>
+                    <connections>
+                        <outlet property="colorLabel" destination="HrY-97-Wot" id="dkw-eQ-D6Y"/>
+                        <outlet property="favoriteButton" destination="giD-Qf-XA8" id="imE-aL-N0H"/>
+                        <outlet property="visualizeButton" destination="T77-M8-6BZ" id="Dpa-v7-dKC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czP-LN-Q9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="25"/>
+        </scene>
+        <!--Visualizer-->
+        <scene sceneID="Tl9-PY-lAR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Visualizer" id="g9D-2d-3LY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7u-SJ-j9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="-232"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_camera" width="50" height="50"/>
+        <image name="ic_favorite" width="28" height="28"/>
+        <image name="ic_video" width="50" height="50"/>
+    </resources>
+</document>
