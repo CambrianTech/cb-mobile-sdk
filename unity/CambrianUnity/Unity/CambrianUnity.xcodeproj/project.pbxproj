@@ -1134,7 +1134,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh ${PROJECT_DIR}/../transfer-data.sh ${cbroot} ${CONFIGURATION}";
+			shellScript = "sh ${PROJECT_DIR}/../transfer-data.sh ${cbroot} ${CONFIGURATION}\n";
 		};
 		E7771AEB1FE5E3A500143EE5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1402,7 +1402,7 @@
 					"-Wno-extern-initializer",
 					"-Wno-shorten-64-to-32",
 				);
-				cbroot = "${PROJECT_DIR}/../../../../..";
+				cbroot = "${PROJECT_DIR}/../../..";
 			};
 			name = ReleaseForRunning;
 		};
@@ -1436,7 +1436,7 @@
 					"-Wno-extern-initializer",
 					"-Wno-shorten-64-to-32",
 				);
-				cbroot = "${PROJECT_DIR}/../../../../..";
+				cbroot = "${PROJECT_DIR}/../../..";
 			};
 			name = ReleaseForProfiling;
 		};
@@ -1473,7 +1473,7 @@
 					"-Wno-extern-initializer",
 					"-Wno-shorten-64-to-32",
 				);
-				cbroot = "${PROJECT_DIR}/../../../../..";
+				cbroot = "${PROJECT_DIR}/../../..";
 			};
 			name = Debug;
 		};
@@ -1507,7 +1507,7 @@
 					"-Wno-extern-initializer",
 					"-Wno-shorten-64-to-32",
 				);
-				cbroot = "${PROJECT_DIR}/../../../../..";
+				cbroot = "${PROJECT_DIR}/../../..";
 			};
 			name = Release;
 		};

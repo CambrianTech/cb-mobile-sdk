@@ -71,19 +71,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E74AED5621EC2464008E7512 /* PBXContainerItemProxy */ = {
+		E7B42B0622F4AE8100F48597 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E730B63B2006E9FB00C537AE /* Cambrian.xcodeproj */;
+			containerPortal = E7B42B0222F4AE8100F48597 /* libCambrian.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E7EA1E331FD7622C00B3DE54;
 			remoteInfo = Cambrian;
+		};
+		E7B42B0E22F4AF5B00F48597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7B42B0822F4AF5B00F48597 /* CambrianUnity.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E731288F1FCE0C06004369AC;
+			remoteInfo = CambrianUnity;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E71486662203904E00186114 /* CBNormalsModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CBNormalsModel.mlmodel; sourceTree = "<group>"; };
 		E714866E2204C5AF00186114 /* CBShadowsModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CBShadowsModel.mlmodel; sourceTree = "<group>"; };
-		E730B63B2006E9FB00C537AE /* Cambrian.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cambrian.xcodeproj; path = ../Cambrian/Cambrian.xcodeproj; sourceTree = "<group>"; };
 		E74AED6021ED1B0E008E7512 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = "../ShawVRAR/ShawARVR/ShawARVR/Carthage/Build-normal/iOS/UICircularProgressRing.framework"; sourceTree = "<group>"; };
 		E79CD8101FD6282A00A4CFF0 /* CambrianSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CambrianSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79CD8131FD6282A00A4CFF0 /* CambrianSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CambrianSDK.h; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 		E79CD8601FD7214800A4CFF0 /* CambrianSDK.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CambrianSDK.pch; sourceTree = "<group>"; };
 		E79CD8611FD722CC00A4CFF0 /* libopencv2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv2.a; path = "../../prebuilts/opencv/opencv-ios/lib/libopencv2.a"; sourceTree = "<group>"; };
 		E7A224D320AF9FB9004B7F31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7B42B0222F4AE8100F48597 /* libCambrian.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libCambrian.xcodeproj; path = ../../cpp/libCambrian.xcodeproj; sourceTree = "<group>"; };
+		E7B42B0822F4AF5B00F48597 /* CambrianUnity.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CambrianUnity.xcodeproj; path = ../../unity/CambrianUnity/Unity/CambrianUnity.xcodeproj; sourceTree = "<group>"; };
 		E7C7F5241FDE18FF00B06EAC /* CBSurfaceAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBSurfaceAsset.h; sourceTree = "<group>"; };
 		E7C7F52B1FDE1C4F00B06EAC /* CBSurfaceAsset.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CBSurfaceAsset.mm; sourceTree = "<group>"; };
 		E7EA1CCB1FD729C000B3DE54 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -189,18 +197,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E74AED5321EC2464008E7512 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E74AED5721EC2464008E7512 /* libCambrian.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		E79CD8061FD6282A00A4CFF0 = {
 			isa = PBXGroup;
 			children = (
-				E730B63B2006E9FB00C537AE /* Cambrian.xcodeproj */,
+				E7B42B0822F4AF5B00F48597 /* CambrianUnity.xcodeproj */,
+				E7B42B0222F4AE8100F48597 /* libCambrian.xcodeproj */,
 				E79CD8121FD6282A00A4CFF0 /* CambrianSDK */,
 				E79CD8111FD6282A00A4CFF0 /* Products */,
 				E79CD8271FD62B3400A4CFF0 /* Frameworks */,
@@ -328,6 +329,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E7B42B0322F4AE8100F48597 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7B42B0722F4AE8100F48597 /* libCambrian.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7B42B0922F4AF5B00F48597 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7B42B0F22F4AF5B00F48597 /* CambrianUnity.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E7FF980321E67A5500CE069B /* CBAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,8 +433,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = E74AED5321EC2464008E7512 /* Products */;
-					ProjectRef = E730B63B2006E9FB00C537AE /* Cambrian.xcodeproj */;
+					ProductGroup = E7B42B0922F4AF5B00F48597 /* Products */;
+					ProjectRef = E7B42B0822F4AF5B00F48597 /* CambrianUnity.xcodeproj */;
+				},
+				{
+					ProductGroup = E7B42B0322F4AE8100F48597 /* Products */;
+					ProjectRef = E7B42B0222F4AE8100F48597 /* libCambrian.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -428,11 +449,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E74AED5721EC2464008E7512 /* libCambrian.a */ = {
+		E7B42B0722F4AE8100F48597 /* libCambrian.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCambrian.a;
-			remoteRef = E74AED5621EC2464008E7512 /* PBXContainerItemProxy */;
+			remoteRef = E7B42B0622F4AE8100F48597 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E7B42B0F22F4AF5B00F48597 /* CambrianUnity.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CambrianUnity.framework;
+			remoteRef = E7B42B0E22F4AF5B00F48597 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -563,7 +591,8 @@
 				SDKROOT = iphoneos11.3;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				cbroot = "$(PROJECT_DIR)/../../../..";
+				cbroot = "$(PROJECT_DIR)/../..";
+				prebuilts = "$(cbroot)/prebuilts";
 			};
 			name = Debug;
 		};
@@ -633,7 +662,8 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-				cbroot = "$(PROJECT_DIR)/../../../..";
+				cbroot = "$(PROJECT_DIR)/../..";
+				prebuilts = "$(cbroot)/prebuilts";
 			};
 			name = Release;
 		};
@@ -651,7 +681,7 @@
 				GCC_PREFIX_HEADER = CambrianSDK/CambrianSDK.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(cbroot)/cb-cpp/src/cb-cpp",
+					"$(cbroot)/cpp",
 					"$(prebuilts)/opencv/opencv-ios/include",
 					"$(prebuilts)/eigen",
 					"$(prebuilts)/jsoncpp/ios/include",
@@ -683,8 +713,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				cbroot = "$(PROJECT_DIR)/../../../..";
-				prebuilts = "$(cbroot)/prebuilts";
 			};
 			name = Debug;
 		};
@@ -702,7 +730,7 @@
 				GCC_PREFIX_HEADER = CambrianSDK/CambrianSDK.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(cbroot)/cb-cpp/src/cb-cpp",
+					"$(cbroot)/cpp",
 					"$(prebuilts)/opencv/opencv-ios/include",
 					"$(prebuilts)/eigen",
 					"$(prebuilts)/jsoncpp/ios/include",
@@ -734,8 +762,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				cbroot = "$(PROJECT_DIR)/../../../..";
-				prebuilts = "$(cbroot)/prebuilts";
 			};
 			name = Release;
 		};

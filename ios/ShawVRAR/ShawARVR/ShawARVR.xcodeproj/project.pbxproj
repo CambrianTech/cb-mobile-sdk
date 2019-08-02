@@ -19,7 +19,7 @@
 		E75D4EE321ED1D78000234D1 /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E75D4EE121ED1D78000234D1 /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E77BDBC7225D52AE0076A7BD /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E77BDBC6225D52AE0076A7BD /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E77BDBC9225D53100076A7BD /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E77BDBC8225D53100076A7BD /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7A2252120AFBAB1004B7F31 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = E7A2252020AFBAB1004B7F31 /* Data */; };
+		E7B42B1122F4B40900F48597 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = E7B42B1022F4B40900F48597 /* Data */; };
 		E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497C020B3160C00E7567D /* RoundButton.swift */; };
 		E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497D720B3B77A00E7567D /* StandardButton.swift */; };
 		E7C497DD20B3C0AC00E7567D /* ProductSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497DC20B3C0AC00E7567D /* ProductSelectionViewController.swift */; };
@@ -98,7 +98,7 @@
 		E77BDBC6225D52AE0076A7BD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "ShawARVR/Carthage/Build-normal/iOS/AWSS3.framework"; sourceTree = "<group>"; };
 		E77BDBC8225D53100076A7BD /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "ShawARVR/Carthage/Build-normal/iOS/AWSCore.framework"; sourceTree = "<group>"; };
 		E798125420BE0E7400C5C230 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "ShawARVR/Carthage/Build-normal/iOS/Realm.framework"; sourceTree = "<group>"; };
-		E7A2252020AFBAB1004B7F31 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
+		E7B42B1022F4B40900F48597 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
 		E7C497C020B3160C00E7567D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E7C497D720B3B77A00E7567D /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 		E7C497DC20B3C0AC00E7567D /* ProductSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSelectionViewController.swift; sourceTree = "<group>"; };
@@ -220,8 +220,8 @@
 				E7C497DB20B3C0AC00E7567D /* SideMenu */,
 				E7C497BB20B3156700E7567D /* Controls */,
 				E7C497BC20B3156F00E7567D /* DB */,
-				E7A2252020AFBAB1004B7F31 /* Data */,
 				E7E4C92720AB9B9D00E842E4 /* Bridging-Header.h */,
+				E7B42B1022F4B40900F48597 /* Data */,
 				E716634D21E91AB400D06791 /* Cartfile */,
 				E7E4C90220AB924D00E842E4 /* AppDelegate.swift */,
 				E7E4C90620AB924D00E842E4 /* Main.storyboard */,
@@ -334,7 +334,7 @@
 			files = (
 				E71E1D0620BA063700E90518 /* html in Resources */,
 				E7E4C90D20AB925000E842E4 /* LaunchScreen.storyboard in Resources */,
-				E7A2252120AFBAB1004B7F31 /* Data in Resources */,
+				E7B42B1122F4B40900F48597 /* Data in Resources */,
 				E7E4C90A20AB925000E842E4 /* Assets.xcassets in Resources */,
 				E7FEEA4A20B7257E00B3F780 /* ProductModel.realm in Resources */,
 				E7E4C90820AB924D00E842E4 /* Main.storyboard in Resources */,
@@ -460,7 +460,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				cbroot = "$(PROJECT_DIR)/../../../../..";
+				cbroot = "$(PROJECT_DIR)/../../..";
 				prebuilts = "$(cbroot)/prebuilts";
 			};
 			name = Debug;
@@ -521,7 +521,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-				cbroot = "$(PROJECT_DIR)/../../../../..";
+				cbroot = "$(PROJECT_DIR)/../../..";
 				prebuilts = "$(cbroot)/prebuilts";
 			};
 			name = Release;

@@ -6,7 +6,7 @@ else
 	CBROOT=$1
 fi
 
-SRC_PROJECT_ROOT="${CBROOT}/cb-unity/src/cb-unity/Build/ios"
+SRC_PROJECT_ROOT="${CBROOT}/unity/Build/ios"
 INSTALL_DIR="${CBROOT}/prebuilts/unity"
 
 #transfer Data directory
