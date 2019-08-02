@@ -1,0 +1,78 @@
+#####################
+##   MacOS Files   ##
+#####################
+
+*.DS_Store
+
+
+
+######################
+##  IntelliJ Files  ##
+######################
+
+.idea/
+*.iml
+obj/*
+
+######################
+## VSCode files     ##
+######################
+
+.vscode/
+
+
+#####################
+## Generated Files ##
+#####################
+
+*.o
+*.d
+cmake-build-debug/
+*.apk
+*.exe
+Pods/
+*.lock
+
+#####################
+##   XCode Files   ##
+#####################
+
+*.xcuserstate
+*.xcbkptlist
+*.xcuser*\
+xcuserdata/
+*.pbxproj -crlf -diff -merge
+*.xccheckout
+.buildpath
+train_svm
+server/.libs
+
+
+#####################
+##   Make Files   ##
+#####################
+**/Makefile
+
+#####################
+##   CMake Files   ##
+#####################
+**/CMakeCache.txt
+**/CMakeFiles
+**/CMakeScripts
+**/Testing
+**/Makefile
+**/cmake_install.cmake
+**/install_manifest.txt
+**/compile_commands.json
+**/CTestTestfile.cmake
+
+/Makefile
+CMakeFiles
+CMakeCache.txt
+/cmake_install.cmake
+gdbserver
+gdb.setup
+CMakeFiles/*
+lock.mdb
+data.mdb
+*.mdb

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_brush"
+        android:title="Paintbrush"/>
+    <item
+        android:icon="@drawable/ic_eraser"
+        android:title="Eraser" />
+    <item
+        android:icon="@drawable/ic_brightness_high"
+        android:title="Lighting"/>
+    <item
+        android:icon="@drawable/ic_brightness_low"
+        android:title="Sheen"/>
+
+</menu>

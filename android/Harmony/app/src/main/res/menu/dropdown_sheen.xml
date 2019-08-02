@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_brightness_low"
+        android:title="Matte"/>
+    <item
+        android:icon="@drawable/ic_brightness_low"
+        android:title="Eggshell"/>
+    <item
+        android:icon="@drawable/ic_brightness_med"
+        android:title="Satin"/>
+    <item
+        android:icon="@drawable/ic_brightness_med"
+        android:title="Semi-Gloss"/>
+    <item
+        android:icon="@drawable/ic_brightness_high"
+        android:title="Gloss"/>
+    <item
+        android:icon="@drawable/ic_brightness_high"
+        android:title="High Gloss"/>
+
+</menu>

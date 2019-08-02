@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Prestige Debug</string>
+    <string name="package_name">com.cambriantech.prestige.debug</string>
+    <string name="file_path">Android/data/com.cambriantech.prestige.debug/files</string>
+</resources>

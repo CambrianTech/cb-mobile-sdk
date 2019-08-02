@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/action_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home Screen"/>
+        <item
+            android:id="@+id/action_project_list"
+            android:icon="@drawable/ic_folder_multiple"
+            android:title="Saved Projects"/>
+        <item
+            android:id="@+id/action_color"
+            android:icon="@drawable/ic_palette"
+            android:title="Explore Color" />
+        <item
+            android:visible="false"
+            android:id="@+id/action_sample"
+            android:icon="@drawable/ic_photo"
+            android:title="Sample Images"/>
+        <item
+            android:id="@+id/action_calculator"
+            android:icon="@drawable/ic_calculator"
+            android:title="Calculator"/>
+        <item
+            android:id="@+id/action_finder"
+            android:icon="@drawable/ic_search"
+            android:title="Color Finder"/>
+    </group>
+</menu>

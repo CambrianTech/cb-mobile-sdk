@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/button_add"
+    android:layout_width="42dp"
+    android:layout_height="42dp"
+    android:background="@drawable/button_circle"
+    app:srcCompat="@drawable/ic_add"
+    android:tint="#fff"
+    android:scaleType="center"/>

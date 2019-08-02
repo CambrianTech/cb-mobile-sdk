@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/home_bg"
+    android:id="@+id/home_screen_parent">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/logo_name"
+        android:id="@+id/landing_image"
+        app:layout_constraintWidth_max="256dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline" />
+
+
+    <android.support.constraint.Guideline
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"
+        tools:layout_editor_absoluteY="352dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/launch_visualizer"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:elevation="2dp"
+        app:layout_constraintWidth_max="280dp"
+        android:backgroundTint="@color/md_blue_grey_50"
+        android:drawableTint="@color/colorSecondary"
+        android:textColor="@color/colorSecondary"
+        android:textAllCaps="false"
+        android:drawableStart="@drawable/ic_camera"
+        android:drawableEnd="@drawable/ic_chevron_right"
+        android:text="Live Visualizer"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/launch_project"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:elevation="2dp"
+        app:layout_constraintWidth_max="280dp"
+        android:backgroundTint="@color/md_blue_grey_50"
+        android:drawableTint="@color/colorSecondary"
+        android:textColor="@color/colorSecondary"
+        android:textAllCaps="false"
+        android:drawableStart="@drawable/ic_photo_multiple"
+        android:drawableEnd="@drawable/ic_chevron_right"
+        android:text="Current Project"
+        app:layout_constraintTop_toBottomOf="@id/launch_visualizer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_bottom"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"
+        tools:layout_editor_absoluteY="352dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorSecondary"
+        app:layout_constraintTop_toTopOf="@id/guideline_bottom"/>
+
+
+    <RelativeLayout
+        android:id="@+id/launch_color_finder"
+        style="@style/SelectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/launch_explore"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_above="@+id/take_photo_text"
+            android:layout_centerInParent="true"
+            android:tint="@color/colorSecondary"
+            app:srcCompat="@drawable/ic_eyedropper" />
+
+        <TextView
+            android:id="@+id/take_photo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="4dp"
+            android:text="Color Finder"
+            android:textColor="@color/colorSecondary"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/launch_explore"
+        style="@style/SelectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintLeft_toRightOf="@id/launch_color_finder"
+        app:layout_constraintRight_toLeftOf="@+id/launch_photo_loader"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_above="@+id/explore_text"
+            android:layout_centerInParent="true"
+            android:tint="@color/colorSecondary"
+            app:srcCompat="@drawable/ic_palette" />
+
+        <TextView
+            android:id="@+id/explore_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="4dp"
+            android:text="Explore Products"
+            android:textColor="@color/colorSecondary"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/launch_photo_loader"
+        style="@style/SelectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintLeft_toRightOf="@+id/launch_explore"
+        app:layout_constraintRight_toLeftOf="@+id/button_sample_images"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_above="@+id/load_photo_text"
+            android:layout_centerInParent="true"
+            android:tint="@color/colorSecondary"
+            app:srcCompat="@drawable/ic_photo" />
+
+        <TextView
+            android:id="@+id/load_photo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="4dp"
+            android:text="Load Photo"
+            android:textColor="@color/colorSecondary"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/button_sample_images"
+        style="@style/SelectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintLeft_toRightOf="@+id/launch_photo_loader"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/current_project_icon"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_above="@+id/current_project_text"
+            android:layout_centerInParent="true"
+            android:tint="#fff"
+            app:srcCompat="@drawable/ic_adjust" />
+
+        <TextView
+            android:id="@+id/current_project_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="4dp"
+            android:text="@string/title_sample_images"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

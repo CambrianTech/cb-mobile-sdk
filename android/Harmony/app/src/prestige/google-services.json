@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1033720784343",
+    "firebase_url": "https://prestige-947a2.firebaseio.com",
+    "project_id": "prestige-947a2",
+    "storage_bucket": "prestige-947a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033720784343:android:f8b1d52ffb14840e",
+        "android_client_info": {
+          "package_name": "com.cambriantech.prestige"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033720784343-ptv4vi2bi8cv2jj188daf39ooiuahvu3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "REDACTED_GOOGLE_API_KEY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033720784343:android:8a8d237b694e4278",
+        "android_client_info": {
+          "package_name": "com.cambriantech.prestige.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033720784343-ptv4vi2bi8cv2jj188daf39ooiuahvu3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "REDACTED_GOOGLE_API_KEY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

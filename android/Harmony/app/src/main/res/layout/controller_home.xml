@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:id="@+id/home_screen_parent">
+
+    <Button
+        android:id="@+id/button_current_project"
+        android:text="Current Project"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/button_take_photo"
+        android:text="Take Photo"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/button_current_project"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/button_load_photo"
+        android:text="Load Photo"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/button_take_photo"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>

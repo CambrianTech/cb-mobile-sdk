@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Harmony</string>
+    <string name="package_name">com.cambriantech.paintharmonylite</string>
+    <string name="file_path">Android/data/com.cambriantech.paintharmonylite/files</string>
+</resources>
