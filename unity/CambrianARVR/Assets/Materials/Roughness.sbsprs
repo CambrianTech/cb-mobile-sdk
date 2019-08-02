@@ -1,0 +1,21 @@
+<sbspresets count="1" formatversion="1.0">
+ <sbspreset label="Fri Jan 6 13:36:40 2017" pkgurl="pkg://Bitmap2Material_3">
+  <presetinput value="-0.914,-0.6,-0.256" identifier="relief_balance" type="2" uid="2216812470"/>
+  <presetinput value="4" identifier="make_it_tile" type="4" uid="2248163775"/>
+  <presetinput value="0.458" identifier="roughness_value" type="0" uid="2248540187"/>
+  <presetinput value="0.115" identifier="roughness_variations_from_curves" type="0" uid="2256786770"/>
+  <presetinput value="0.598" identifier="tiling_random_angle_variation" type="0" uid="2259198632"/>
+  <presetinput value="0.743" identifier="tiling_transition_precision" type="0" uid="2259198639"/>
+  <presetinput value="0.608" identifier="roughness_variations_softness" type="0" uid="2259413882"/>
+  <presetinput filepath="../../../../Users/Joseph/Documents/Cambrian/assets/textures/shaw/tileable/tile and stone/CS81Q_00550_Courtside_Anthracite_18x36_Tiles1.png" identifier="main_input" type="5" uid="2260298739"/>
+  <presetinput value="0" identifier="Metallic" type="4" uid="2260337213"/>
+  <presetinput value="0" identifier="Height" type="4" uid="2260337215"/>
+  <presetinput value="0" identifier="Ambient_Occlusion" type="4" uid="2260337444"/>
+  <presetinput value="0.038" identifier="relief_pinch" type="0" uid="2262389286"/>
+  <presetinput value="0.057" identifier="relief_pinch_radius" type="0" uid="2262389299"/>
+  <presetinput value="1.906" identifier="normal_intensity" type="0" uid="2270841969"/>
+  <presetinput value="0.732" identifier="light_equalizer" type="0" uid="2270842600"/>
+  <presetinput value="0.475" identifier="tiling_transition_size" type="0" uid="2310254644"/>
+  <presetinput value="10,10" identifier="$outputsize" type="8" uid="4224312677"/>
+ </sbspreset>
+</sbspresets>
