@@ -1,0 +1,123 @@
+.jqmWindow{ z-index: 100000;display:none;  position:absolute;  top:20px;  left:50%;  margin-left:-490px;  width:965px;  background-image:url(lookbookBAR.jpg);  background-repeat:no-repeat;  background-position:top;  background-color:#000;  color:#FFF;  padding:60px 0 20px 0}
+.jqmEmailWindow{ display:none;  position:absolute;  left:50%; margin-left: -200px;  width:400px;  height:260px;  background-repeat:no-repeat;  background-position:top;  background-color:#FFF;  color:#050505;  border:2px solid #ccc;  padding:40px 0 20px 0} 
+.jqmEmailVideo{ display:none;  position:fixed;  left:50%; margin-left: -350px; top: 10%; width:700px;  text-align: center; height:440px;  background-repeat:no-repeat;  background-position:top;  background-color:#FFF;  color:#050505;  padding: 10px;}
+*html .jqmEmailVideo{position: absolute; top: 680px;}
+
+#jqmLiteatureOrder{ display:none;  position:absolute;   left:50%;margin-left:-325px; top: 10%; width:650px;  height:585px;  background-repeat:no-repeat;  background-position:top;  background-color:#FFF;  color:#050505;  border:2px solid #ccc; padding: 10px;}
+#jqmLiteatureOrder p{padding-left: 3px;}
+#jqmLiteatureOrder a{color:#232122;
+	float:left;
+	font-size:11px;
+	font-weight:bold;
+	margin-top: 4px;
+	letter-spacing:1px;
+	padding:0 10px 0 0;
+	text-decoration:none;
+	text-transform:uppercase;
+	position: relative;
+	z-index: 100000;}
+	#jqmLiteatureOrder p table
+	{
+		padding: 0px;
+		margin: -2px;}
+.jqmEmailVideo a{padding: 10px; text-decoration: none;}
+.jqmEmailVideoGN{ display:none;  position:fixed;  left:50%; margin-left: -140px; top: 10%; width:280px;  text-align: center; height:385px;  background-repeat:no-repeat;  background-position:top;  background-color:#FFF;  color:#050505;  padding: 10px;}
+*html .jqmEmailVideoGN{position: absolute; top: 680px;}
+.jqmEmailVideoGN a{padding: 10px; text-decoration: none;}
+
+.jqmClose{width:100px; height:30px; margin-top:-45px; margin-bottom:0px; background:transparent; float:right; display:block}
+#lookbookFlash{border:8px solid #FFF; width:920px; height:635px; margin:0px auto}
+.jqmOverlay{background-color:#000}
+* iframe.jqm{position:absolute; top:0; left:0; z-index:-1; width:expression(this.parentNode.offsetWidth+'px'); height:expression(this.parentNode.offsetHeight+'px')}
+* html .jqmWindow{ position:absolute;  top:10px}
+
+
+/*test*/
+
+.jqmLEEDBoardWindow {
+	display:none;
+	position:absolute;
+	left:50%;
+	top:10%;
+	margin-left: -300px;
+	width:680px;
+	background-repeat:no-repeat;
+	background-position:top;
+	background-color:#FFF;
+	color: #110D0F;
+	font-size: 11px;
+	border:5px solid #7F7F6B;
+	padding:20px 20px 20px 20px;
+	overflow-y:auto;
+}
+.jqmLEEDBoardWindow #salesRepLocator {
+	float: right;
+	margin: 0px;
+}
+#LEEDclose a {
+	float: right;
+	clear: both;
+	margin: 5px 10px 0px 0px;
+	display: block;
+	color: #666;
+	text-decoration: none;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 100000;}
+
+.jqmLEEDBoardWindow .title 
+{
+	position: ;
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 16px;
+	width: 590px;
+	margin: 0px 0px 0px 6px;
+	padding: 30px 0px 20px 0px;
+	color: #333333;
+}
+#jqmLEEDBoardDisplay a {
+color:#232122;
+font-size:11px;
+font-weight:bold;
+letter-spacing:1px;
+padding:0 10px 10px 0;
+text-decoration:none;
+text-transform:uppercase;
+	position: relative;
+	z-index: 100000;}
+
+#jqmLEEDBoardDisplay .bgLink {
+	background:transparent url(../../Content/selectBTNXsml.jpg) no-repeat scroll 0 0;
+	display:block;
+	height:46px;
+	margin:-12px 0px 0px 0px;
+clear: both;
+	padding:18px 15px 0 0px;
+	width:105px;
+	position: relative;
+	z-index: 3000000;
+}
+
+.jqmLEEDBoardWindow #page-header{
+	
+display: none;
+}
+
+.project-evaluation{background-image: url(/Content/masterlayout/scg_logo.jpg);
+background-repeat: no-repeat;
+background-position: 0px 0px;
+padding-top: 40px;
+padding-left: 5px;
+}
+
+.jqmLEEDBoardWindow #page-footer{
+	display: none;
+}
+.jqmLEEDBoardWindow #page-header-first, .jqmLEEDBoardWindow #page-footer-first{
+       display: none;
+}
+
+
+.jqmLEEDBoardWindow td.col_1 {font-size: 12px; padding-right: 30px; padding-bottom: 10px;}
+.jqmLEEDBoardWindow td.col_2 {font-size: 12px; padding-right: 0px; padding-bottom: 10px; font-weight: bold;}

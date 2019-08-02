@@ -1,0 +1,187 @@
+#####################
+##   MacOS Files   ##
+#####################
+
+*.DS_Store
+
+
+###################
+##  Realm Files  ##
+###################
+
+*.realm.lock
+*.realm.management
+
+
+#####################
+## Generated Files ##
+#####################
+
+*.o
+*.d
+cmake-build-debug/
+*.apk
+*.exe
+Pods/
+*.lock
+__pycache__
+*.pyc
+
+
+######################
+##  Carthage Files  ##
+######################
+
+Checkouts/
+HarmonyApp/App/Carthage/Checkouts
+
+
+#####################
+##   XCode Files   ##
+#####################
+
+*.xcuserstate
+*.xcbkptlist
+*.xcuser*\
+xcuserdata/
+*.pbxproj -crlf -diff -merge
+*.xccheckout
+.buildpath
+train_svm
+server/.libs
+/HarmonyApp/App/Carthage/Checkouts
+/HarmonyApp/App/Cartfile.resolved
+
+#####################
+##   Make Files   ##
+#####################
+**/Makefile
+
+#####################
+##   CMake Files   ##
+#####################
+**/CMakeCache.txt
+**/CMakeFiles
+**/CMakeScripts
+**/Testing
+**/Makefile
+**/cmake_install.cmake
+**/install_manifest.txt
+**/compile_commands.json
+**/CTestTestfile.cmake
+
+/Makefile
+CMakeFiles
+CMakeCache.txt
+/cmake_install.cmake
+gdbserver
+gdb.setup
+CMakeFiles/*
+lock.mdb
+data.mdb
+*.mdb
+
+
+##########################
+##   Machine learning   ##
+##########################
+Podfile.lock
+/sdk-assets/CBAssets
+/CBAssets
+xcuserdata/*
+xcuserdata
+xcschememanagement.plist
+/HarmonyApp/App/Carthage/Build
+HarmonyApp/App/Carthage/Checkouts
+/HarmonyApp/App/.gitmodules
+/CambrianAR/CambrianAR.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+/CambrianAR/CambrianAR.xcodeproj/project.xcworkspace/xcshareddata/CambrianAR.xcscmblueprint
+
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+Packages/
+Package.pins
+Package.resolved
+.build/
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+Pods/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+Carthage/Checkouts
+Carthage/Build
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+/HomeHarmony/HomeHarmony/.gitmodules
+/.gitmodules
+.gitmodules
+/HomeHarmony/HomeHarmony/Carthage/Checkouts/JGProgressHUD
+/HomeHarmony/HomeHarmony/Carthage/Checkouts
+/HomeHarmony/HomeHarmony/Carthage/Build
+/HomeHarmony/HomeHarmony/Carthage/Build-beta
+/HomeHarmony/HomeHarmony/Carthage/Build-normal
+/HomeHarmony/HomeHarmony/Cartfile.resolved
+/HomeHarmony/HomeHarmony/Carthage/Checkouts/Alamofire
+/HomeHarmony/HomeHarmony/Carthage/Checkouts/ios-branch-deep-linking
+/HomeHarmony/HomeHarmony/Carthage/Checkouts/aws-sdk-ios
+/HomeHarmony/HomeHarmony/Carthage/Checkouts/SwiftyJSON
+/HomeHarmony/HomeHarmony/Carthage/Checkouts/Kingfisher
+/HomeHarmony/HomeHarmony/Carthage/Checkouts/realm-cocoa
+/HomeHarmony/HomeHarmony.xcodeproj/project.xcworkspace/xcshareddata
+/ShawVRAR/ShawARVR/ShawARVR/Carthage
+/ShawVRAR/ShawARVR/ShawARVR/Cartfile.resolved
+/ShawVRAR/ShawARVR/ShawARVR/DB/categories
+/ShawVRAR/ShawARVR/ShawARVR/Carthage/Checkouts/aws-sdk-ios
+/ShawVRAR/ShawARVR/ShawARVR/Carthage/Checkouts/realm-cocoa

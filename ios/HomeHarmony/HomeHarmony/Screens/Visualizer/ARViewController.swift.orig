@@ -1,0 +1,718 @@
+//
+//  PainterViewController.swift
+//  HomeDecoratorApp
+//
+//  Created by Joel Teply on 11/17/15.
+//  Copyright © 2015 Joel Teply. All rights reserved.
+//
+
+import UIKit
+import Foundation
+import RealmSwift
+import JGProgressHUD
+
+protocol sharedFavoritesDelegate: NSObjectProtocol {
+    func updateFavorites(_ item: BrandItem)
+}
+
+protocol BottomSheetAction: SendItemDelegate {
+    func searchPressed(_ sender: Any)
+}
+
+class ARViewController: UIViewController, BottomSheetAction, ToolDelegate, CBRemodelingViewDelegate, SendItemDelegate {
+    
+    var model: ARViewModel?
+    @IBOutlet weak var augmentedView: CBRemodelingView!
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var moreButtonContainer: UIView!
+    @IBOutlet weak var moreButton: RoundButton!
+    @IBOutlet weak var assetsButton: RoundButton!
+    @IBOutlet weak var toolsButton: RoundButton!
+    @IBOutlet weak var layersContainer: AlphaTouchableView!
+    @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var openProductsButton: RoundButton!
+    @IBOutlet weak var openProductsLabel: UILabel!
+    @IBOutlet weak var favoritesButton: RoundButton!
+    @IBOutlet weak var assetContainer: AlphaTouchableView!
+    @IBOutlet weak var closeProductsButton: UIButton!
+    @IBOutlet weak var productsTutorialBubbleView: MessageLowerRightIndicator!
+    @IBOutlet weak var cameraTutorialBubbleView: MessageCenterIndicator!
+    
+    var cameraFlashView: UIView!
+    var rightButton = UIBarButtonItem()
+    var favoritesBarButton = UIBarButtonItem()
+    var cartBarButton = UIBarButtonItem()
+    var backButton = [UIBarButtonItem]()
+    var liveButton = [UIBarButtonItem]()
+    var cancelButton = [UIBarButtonItem]()
+    weak var bottomSelectorSheet: BottomAssetSheetController!
+    weak var searchBottomSheet: SearchViewController!
+    weak var assetsVC: AssetsViewController?
+    weak var tools: ToolsViewController?
+    var isLandscape = false
+    var backButtonText: String?
+    var hasCreatedFloor = false
+    var hasPainted = false
+    
+    var isLiveView = false {
+        didSet {
+            self.toggleRightButton()
+        }
+    }
+    
+    let screen = UIScreen.main.bounds
+    var callLayout = true
+    var hasVideoCamera = ImageManager.sharedInstance.hasCameraDevice()
+    
+    /************************
+     *
+     *  INITIALIZING
+     *
+     *///////////////////////
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.model = ARViewModel(self)
+        self.isLandscape = UIDevice.current.userInterfaceIdiom == .pad
+        // Add gesture recognizer to augmented view to
+        moreButton.isHidden = true
+        self.augmentedView.delegate = self
+        self.closeProductsButton.isHidden = true
+        // Camera flash needs to cover entire view
+        self.cameraFlashView = UIView(frame: self.view.frame)
+        self.cameraFlashView.alpha = 0
+        self.cameraFlashView.backgroundColor = UIColor.black
+        self.view.addSubview(self.cameraFlashView)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.undoButton.isEnabled = true
+        self.undoButton.isHidden = true
+        self.openProductsButton.isEnabled = true
+        self.openProductsButton.isHidden = false
+        self.openProductsLabel.isHidden = false
+        
+        navigationItem.leftBarButtonItems = nil
+        self.navigationItem.hidesBackButton = true
+        self.backButton = CustomBackButton.createWithText(text: self.backButtonText!,
+                                                          color: UIColor.black,
+                                                          target: self,
+                                                          action: #selector(self.backPressed))
+        self.cancelButton = CustomBackButton.createWithText(text: "Cancel",
+                                                            color: UIColor.black,
+                                                            target: self,
+                                                            action: #selector(self.cancelPressed))
+        self.liveButton = CustomBackButton.createWithText(text: "Live",
+                                                          color: UIColor.black,
+                                                          target: self,
+                                                          action: #selector(self.backPressed))
+        navigationItem.setLeftBarButtonItems(self.backButton, animated: true)
+        self.cameraTutorialBubbleView.setMessage("Like Your Design? \n Capture It!")
+        self.cameraTutorialBubbleView.isHidden = true
+        self.productsTutorialBubbleView.setMessage("Browse Products & Get Started!")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.showCloseProducts(false)
+        self.model?.createScene()
+        self.showTutorialBubble("Products")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if callLayout {
+            self.setupMoreButton()
+            self.setupSelectorBottomSheet()
+            self.setupSearchBottomSheet()
+            self.setupAssetVC()
+            self.model?.initAssets()
+            
+            if self.model!.hasSentItem() {
+                // Item coming from some other VC
+                self.itemSelected(self, item: self.model!.getSentItem())
+                self.model?.resetSentItem() // reset the sent item so it does
+                                            // not think there is already one next time
+            }
+            self.showTutorial("Detail")
+            self.setupTools()
+            
+            if (getTargetName() == "Builder") {
+                undoButton.frame = CGRect(x: self.toolsButton.frame.minX, y: self.toolsButton.frame.maxY + 8, width: self.toolsButton.frame.width, height: self.toolsButton.frame.height)
+            }
+            self.callLayout = false
+        }
+    }
+    
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
+    
+    func setupMoreButton() {
+        self.moreButton.frame = self.moreButtonContainer.bounds
+        self.moreButtonContainer.addSubview(moreButton)
+    }
+    
+    func setupSelectorBottomSheet() {
+        let sheetStoryboard = UIStoryboard(name: "SelectorBottomSheet", bundle: nil)
+        bottomSelectorSheet = sheetStoryboard.instantiateViewController(withIdentifier: "SelectorBottomSheet") as! BottomAssetSheetController
+        addChildViewController(bottomSelectorSheet)
+        self.view.addSubview(bottomSelectorSheet.view)
+        bottomSelectorSheet.delegate = self
+    }
+    
+    func setupTools() {
+        let visualizerStoryboard = UIStoryboard(name: "Visualizer", bundle: nil)
+        self.tools = visualizerStoryboard.instantiateViewController(withIdentifier: "Tools") as? ToolsViewController
+        self.view.layoutIfNeeded()
+        if let tools = tools {
+            addChildViewController(tools)
+            self.view.addSubview(tools.view)
+            tools.showTools(false)
+            if (getTargetName() == "Builder") {
+                toolsButton.frame = CGRect(x: self.moreButtonContainer.frame.minX, y: self.moreButton.frame.maxY + (self.moreButton.frame.height + 8), width: self.moreButton.frame.width, height: self.moreButton.frame.height)
+            }
+            tools.pos = CGPoint(x: toolsButton.frame.minX - tools.toolsContainer.frame.width - 10, y: toolsButton.frame.minY)
+            tools.isLiveMode = isLiveView
+        }
+        self.tools?.delegate = self
+    }
+    
+    func setupAssetVC() {
+        let visualizerStoryboard = UIStoryboard(name: "Visualizer", bundle: nil)
+        self.assetsVC = visualizerStoryboard.instantiateViewController(withIdentifier: "Layers") as? AssetsViewController
+        if let assetsVC = assetsVC {
+            addChildViewController(assetsVC)
+            assetsVC.view.frame = CGRect(x: assetContainer.frame.width, y: 0, width: assetContainer.frame.width, height: assetContainer.frame.height)
+            assetsVC.view.isHidden = true
+            //self.view.addSubview(assetsVC.view)
+            assetContainer.addSubview(assetsVC.view)
+            assetsVC.delegate = self.model
+            assetsVC.maxAssets = 4
+            assetsVC.isSample = (self.augmentedView.scene as CBRemodelingScene).isMasked
+            assetsVC.setup(image: self.model!.getImage())
+        }
+        
+        if (getTargetName() == "Builder") {
+            self.assetsButton.isHidden = true
+            self.assetsButton.isEnabled = false
+        }
+    }
+    
+    func setupSearchBottomSheet() {
+        let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
+        searchBottomSheet = searchStoryboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        searchBottomSheet.delegate = self
+        addChildViewController(searchBottomSheet)
+        self.view.addSubview(searchBottomSheet.view)
+        self.view.bringSubview(toFront: searchBottomSheet.view)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ProjectDetailsViewController {
+            vc.backButtonText = "Visualizer"
+        }
+    }
+    
+    @objc func backPressed() {
+        // Does a check to see if the imagePath is null, if it is an image coming
+        // from a path then it can't enter back into live view
+        // Or checks if the raw image is null, if not then the image
+        // came from the user's gallery
+        if self.model!.hasImagePath() {
+            self.augmentedView.stopRunning()
+            self.navigationController?.popViewController(animated: true)
+        } else if self.model!.hasRawImage() {
+            self.augmentedView.stopRunning()
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            if (!self.isLiveView) {
+                self.enableLiveView(true)
+                navigationItem.setLeftBarButtonItems(self.backButton, animated: true)
+                self.toggleRightButton()
+                self.openProductsButton.isHidden = false
+                self.openProductsLabel.isHidden = false
+            } else {
+                self.augmentedView.stopRunning()
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
+    @objc func cancelPressed() {
+        if tools?.isActive == true {
+            tools?.cancelPressed()
+            tools?.finish()
+        }
+    }
+    
+    func assetLongPressed(_ asset: CBAugmentedAsset) {
+        self.assetsVC?.removeAsset(asset.assetID)
+    }
+    
+    func assetTapped(_ asset: CBAugmentedAsset) {
+        if let model = asset as? CBAugmentedModel {
+            model.isEditingPosition = !model.isEditingPosition
+        }
+    }
+    
+    // Comes from the model to declare if live view should be even checked for
+    func shouldEnableLiveView(_ shouldCheck: Bool) {
+        if shouldCheck && self.hasVideoCamera {
+            self.enableLiveView(true)
+        } else {
+            self.enableLiveView(false)
+        }
+    }
+    
+    func enableLiveView(_ isEnabled:Bool) {
+        isLiveView = isEnabled
+        
+        if (!hasVideoCamera) { isLiveView = false }
+        self.tools?.isLiveMode = isLiveView
+        if(model!.getSharedProject()) {
+            isLiveView = false
+            model!.setIncomingSharedProject(false)  // reset the incoming shared project so it does
+                                                    // not think it has a shared project next time
+        }
+        
+        if (isLiveView) {
+            //print("starting live mode")
+            setToolMode(.fill)
+            ImageManager.sharedInstance.proceedWithCameraAccess(self, handler: {
+                //Gained camera access
+                self.augmentedView.startRunning()
+                
+            })
+            self.captureButton.isHidden = false
+        } else {
+            //print("starting still mode")
+            if model!.isFirstItem() {
+                self.moreButton.isHidden = false
+            }
+            setToolMode(.paintbrush)
+            self.tools?.setToolColors(.paintbrush)
+            self.tools?.brushButton.isHidden = true
+            self.tools?.eraserButton.isHidden = true
+            self.showTutorial("Detail")
+        }
+    }
+    
+    func showTutorialBubble(_ name: String) {
+        var message: GenericMessageBubble?
+        // Maybe show the floating products message
+        switch name {
+        case "Products":
+            message = self.productsTutorialBubbleView
+        case "Capture":
+            message = self.cameraTutorialBubbleView
+        default:
+            break;
+        }
+        if let message = message {
+            message.isHidden = model!.hasShownTutorial(name)
+            // Remove tutorial after a certain delay
+            if !message.isHidden {
+                var delay = DispatchTime.now() + 5
+                DispatchQueue.main.asyncAfter(deadline: delay, execute: {
+                    message.isHidden = true
+                    self.model!.setHasShownTutorial(name)
+                })
+            }
+        }
+    }
+    
+    func showTutorial(_ tutorial: String) {
+        
+        if (model!.hasShownTutorial(tutorial)) {
+            return
+        }
+        
+        let hud = JGProgressHUD(style: .dark)
+        hud.indicatorView = JGProgressHUDImageIndicatorView(image: UIImage(named: "ic_tap")!)
+        
+        if tutorial == "Rotation" {
+            if (model!.itemIsFloor() == false || !self.hasCreatedFloor) {
+                return
+            }
+            hud.indicatorView = JGProgressHUDImageIndicatorView(image: UIImage(named: "ic_rotate")!)
+        } else if tutorial == "Detail" {
+            if (self.isLiveView || model!.itemIsPaint() || !self.hasPainted) {
+                return
+            }
+        }
+        
+        hud.textLabel.text = model?.getTutorialMessage(tutorial)
+        
+        hud.show(in: self.view)
+        hud.tapOutsideBlock = { hud in
+            hud.dismiss()
+        }
+        hud.tapOnHUDViewBlock = { hud in
+            hud.dismiss()
+        }
+        
+        hud.dismiss(afterDelay: 1.5)
+        
+        model?.setHasShownTutorial(tutorial)
+    }
+    
+    /*****************************
+     *
+     *    INTERACTING WITH MODEL
+     *
+     *////////////////////////////
+    
+    func setRawImage(_ rawImage: UIImage) {
+        self.model?.setRawImage(rawImage)
+    }
+    
+    func setSentItem(item: BrandItem) {
+        self.model?.setSentItem(item)
+    }
+    
+    func setAugmentedViewScene(_ scene : CBRemodelingScene) {
+        self.augmentedView.scene = scene
+    }
+    
+    // Used for shared projects
+    func incomingProject(_ path : String) {
+        model?.incomingSharedProject = true
+        sendImagePath(path)
+    }
+    
+    // Used anytime an image is sent to ARVC (could be from Image Gallery)
+    func sendImagePath(_ path: String) {
+        model?.incomingImagePath = path
+    }
+    
+    func getAugmentedView() -> CBRemodelingView {
+        return self.augmentedView
+    }
+    
+    func getSelectedItem() -> BrandItem {
+        return self.model!.getSelectedItem()
+    }
+    
+    /************************
+     *
+     *        UNDO
+     *
+     *///////////////////////
+    
+    //for:change:forward:
+    func historyChanged(_ asset: CBAugmentedAsset, change: CBUndoChange, forward: Bool) {
+        switch change {
+        case .mask:
+            print("something was (drawn/undrawn)")
+            if model!.itemIsFloor() {
+                self.hasCreatedFloor = true
+                self.showTutorial("Rotation")
+            } else if model!.itemIsPaint() {
+                self.hasPainted = true
+                self.showTutorial("Detail")
+            }
+            break;
+        case .paintColor:
+            if(!forward) {
+                self.undoResult(asset)
+            }
+            print("paint color was changed")
+            break
+        case .paintSheen:
+            break
+        }
+        self.undoButton.isHidden = !(self.augmentedView.undoSize > 0)
+    }
+    
+    func undoResult(_ asset:CBAugmentedAsset) {
+        self.assetsVC?.undo(asset)
+    }
+    
+    /************************
+     *
+     *       LISTENERS
+     *
+     *///////////////////////
+    
+    @objc func rightButtonPressed() {
+        let project = VisualizerProject.currentProject
+        let callback = {
+            displayProgress("saving project...", progress: 0.0)
+            
+            let image = self.model!.getImage()
+            project.appendImage(image: image)
+            let path = image.directoryPath!.path
+            print("TAKEN IMAGE PATH \(path) ")
+            image.markModified()
+            self.augmentedView.scene.save(toDirectory: path, compressed: false) {_,_  in
+                self.performSegue(withIdentifier: "showDetails", sender: self)
+                hideProgress()
+            }
+        }
+        if (!isLiveView) {
+            project.renameAlert(self, handler: { (completed) in
+                if completed {
+                    callback()
+                }
+            })
+        } else {
+            //            self.rightButton.isEnabled = false
+        }
+    }
+    
+    @objc func applyPressed() {
+        if tools?.isActive == true {
+            tools?.applyPressed()
+            tools?.showTools(true)
+            tools?.finish()
+        }
+    }
+    
+    func cartPressed() {
+        let name = self.model!.getSelectedItem().name
+        if name != nil {
+            displayMessage("added \(name) to cart", isSuccess: true)
+        }
+    }
+    
+    func displayEditable() {
+        displayMessage("You are now able to edit the shared project")
+    }
+    
+    @IBAction func undoButtonPressed(_ sender: AnyObject) {
+        self.augmentedView.undo()
+    }
+    
+    @IBAction func moreButtonPressed(_ sender: Any) {
+        self.showMoreMenu(self.moreButtonContainer.transform == .identity)
+    }
+    
+    @IBAction func assetsButtonPressed() {
+        self.assetsVC?.view.isHidden = !self.assetsVC!.view.isHidden
+        self.assetsVC?.refresh()
+    }
+    
+    @IBAction func favoritesButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func capturePressed(_ sender: AnyObject) {
+        self.augmentedView.captureCurrentState()
+        self.captureButton.isHidden = true
+        self.cameraTutorialBubbleView.isHidden = true
+        navigationItem.setLeftBarButtonItems(self.liveButton, animated: true)
+        enableLiveView(false)
+        
+        // Animate the "flash"
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
+            self.cameraFlashView.alpha = 1
+        }, completion: { finished in
+            self.cameraFlashView.alpha = 0
+        })
+    }
+    
+    @IBAction func toolsPressed(_ sender: Any) {
+        self.tools?.toggle()
+    }
+    
+    @IBAction func openProductButtonPressed(_ sender: Any) {
+        self.productsTutorialBubbleView.isHidden = true
+        self.model!.hasShownTutorial("Products")
+        self.bottomSelectorSheet.show(true)
+        self.showCloseProducts(true)
+    }
+    
+    @IBAction func closeProductButtonPressed(_ sender: Any) {
+        self.bottomSelectorSheet.show(false)
+        self.showCloseProducts(false)
+        if self.isLiveView {
+            self.showTutorialBubble("Capture")
+        } else {
+            self.model?.hasShownTutorial("Capture")
+        }
+    }
+    
+    func toggleRightButton() {
+        if(!isLiveView) {
+            self.rightButton = UIBarButtonItem(title: "Save",
+                                               style: UIBarButtonItemStyle.done,
+                                               target: self,
+                                               action: #selector(self.rightButtonPressed))
+            self.navigationItem.setRightBarButtonItems([self.rightButton],
+                                                       animated: false)
+        }
+    }
+    
+<<<<<<< HEAD
+=======
+    func itemSelected(_ sender: AnyObject, item: BrandItem)  {
+        let callback = {
+            // Only animate the more menu if there is no item already selected (don't want it to constantly run)
+            if self.noItem {
+                self.moreButton.isHidden = false
+                self.showMoreMenu(true, delay: 0.5)
+                self.noItem = false
+            }
+            hideProgress()
+            self.maybeShowItemTutorial(item)
+            self.assetsVC?.selectedItem(item)
+        }
+        
+        if item.hasThumbnail == false {
+            callback()
+        } else {
+            item.downloadAssets(completed: { (success) in
+                if (success) {
+                    callback()
+                } else {
+                    //show unavailable
+                    displayError(message: "Asset is unavailable")
+                }
+            })
+        }
+    }
+    
+>>>>>>> b6b8044310d5d7b39835cf6dd2518edeb2d2aa7a
+    func searchPressed(_ sender: Any) {
+        self.searchBottomSheet.show(true)
+    }
+    
+    func showCloseProducts(_ show: Bool) {
+        self.view.isHidden = false
+        var finalPos:CGFloat = 0
+        
+        if(show) {
+            finalPos = self.bottomSelectorSheet.view.frame.minY - self.closeProductsButton.frame.height
+        } else {
+            finalPos = self.view.frame.height
+        }
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions(), animations: {
+            if show {
+                self.closeProductsButton.isHidden = false
+            }
+            self.closeProductsButton.frame.origin.y = finalPos
+            self.closeProductsButton.layoutSubviews()
+        }, completion: { finished in
+            if !show {
+                self.closeProductsButton.isHidden = true
+            }
+        })
+    }
+    
+    /************************
+     *
+     *     ITEM HANDLING
+     *
+     *///////////////////////
+    
+    // delegate method
+    func itemSelected(_ sender: AnyObject, item: BrandItem) {
+        if model!.isFirstItem() {   // check if this is the very first selected item
+            self.moreButton.isHidden = false
+            self.showMoreMenu(true, delay: 0.5)
+        }
+        self.model!.itemSelected(item: item)
+        
+    }
+    
+    func setSelectedItem(item: BrandItem) {
+        self.assetsVC?.selectedItem(item)
+    }
+    
+    /************************
+     *
+     *      TOOL HANDLING
+     *
+     *///////////////////////
+    
+    func lightingStart() -> CBLightingType {
+        showMoreMenu(false)
+        self.captureButton.isHidden = true
+
+        self.openProductsButton.isHidden = true
+        self.openProductsLabel.isHidden = true
+        self.assetsVC!.view.isHidden = true
+        self.moreButton.isHidden = true
+        navigationItem.setLeftBarButtonItems(self.cancelButton, animated: true)
+        
+        self.rightButton.title = "Apply"
+        self.rightButton.action = #selector(self.applyPressed)
+        self.rightButton.customView?.isHidden = false
+        
+        return self.augmentedView.scene.lightingAdjustment
+    }
+    
+    func toolsFinish() {
+        if(isLiveView) {
+            self.captureButton.isHidden = false
+        }
+        self.showMoreMenu(false)
+        self.openProductsButton.isHidden = false
+        self.openProductsLabel.isHidden = false
+        self.moreButton.isHidden = false
+        
+        navigationItem.setLeftBarButtonItems(self.cancelButton, animated: true)
+        self.toggleRightButton()
+        self.rightButton.action = #selector(self.rightButtonPressed)
+    }
+    
+    func setToolMode(_ mode: CBToolMode) {
+        print("setting tool mode")
+        self.augmentedView.toolMode = mode
+        
+        var image: UIImage?
+        switch mode {
+        case .paintbrush:
+            image = UIImage(named: "ic_paintbrush")
+        case .eraser:
+            image = UIImage(named: "ic_eraser")
+        default:
+            image = UIImage(named: "ic_paintbrush")
+        }
+        self.toolsButton.setImage(image, for: .normal)
+        self.toolsButton.imageView?.tintColor = UIColor.white
+        
+        self.showMoreMenu(false)
+    }
+    
+    func setLightingMode(_ light: CBLightingType) {
+        self.augmentedView.scene.lightingAdjustment = light
+    }
+    
+    
+    /************************
+     *
+     * VIEW STATE & ANIMATION
+     *
+     *///////////////////////
+    
+    func showMoreMenu(_ show: Bool, delay: Double = 0.0) {
+        UIView.animate(withDuration: 0.15, delay: delay, options: .curveEaseInOut, animations: {
+            if show {
+                self.moreButtonContainer.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+            } else {
+                self.moreButtonContainer.transform = .identity
+            }
+            
+            self.assetsVC?.view.isHidden = true
+            self.tools?.showTools(false)
+            
+            if (getTargetName() == "Builder") {
+                self.assetsButton.isHidden = true
+            }
+            
+            if(!(getTargetName() == "ShawDemo")) {
+                self.favoritesButton.isHidden = !show
+            }
+            
+            
+        }) {(true) in
+            self.assetsButton.isHidden = !show
+            self.toolsButton.isHidden = !show
+        }
+        self.view.layoutIfNeeded()
+    }
+}
