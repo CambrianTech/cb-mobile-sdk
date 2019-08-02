@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+String USER_DIR = System.getProperty("user.dir")
+
+String CB_ROOT = USER_DIR.substring(0, USER_DIR.indexOf('cb-base')) + "cb-base"
+String CB_CPP = CB_ROOT + "/cb-cpp/src/cb-cpp"
+String CB_PREBUILTS = CB_ROOT + "/prebuilts"
+println "CB_ROOT is $CB_ROOT"
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 3
+        versionName "2.0"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11"
+                arguments   '-DCB_ROOT=' + CB_ROOT,
+                            '-DCB_CPP=' + CB_CPP,
+                            '-DCB_PREBUILTS=' + CB_PREBUILTS,
+                            '-DANDROID_PLATFORM=android-21',
+                            '-DANDROID_TOOLCHAIN=clang',
+                            '-DANDROID_STL=gnustl_static',
+                            '-DANDROID_ABI=armeabi-v7a',
+                            '-DANDROID_ARM_NEON=ON',
+                            '-DANDROID_STL_FORCE_FEATURES=ON'
+            }
+        }
+    }
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            jniDebuggable false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            jniDebuggable true
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+    }
+}
+
+ext.supportVersion = "26.1.0"
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:support-annotations:$supportVersion"
+    compile "com.android.support:appcompat-v7:$supportVersion"
+    compile 'com.jakewharton.timber:timber:4.6.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+
+repositories {
+    google()
+    mavenCentral()
+}

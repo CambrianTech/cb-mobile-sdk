@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/project_calculator_button"
+        android:title=""
+        app:showAsAction="always"
+        android:icon="@drawable/ic_calculator"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/project_settings_menu"
+        android:title="Settings"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_dots_vertical"
+        android:visible="true" >
+        <menu>
+            <item
+                android:id="@+id/action_delete"
+                android:orderInCategory="100"
+                android:title="Delete Project"
+                app:showAsAction="never"
+                android:visible="true" />
+
+            <item
+                android:id="@+id/action_rename"
+                android:orderInCategory="100"
+                android:title="Rename Project"
+                app:showAsAction="never"
+                android:visible="true" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/paint_done"
+        android:title="DONE"
+        app:showAsAction="always"
+        android:visible="true" />
+</menu>

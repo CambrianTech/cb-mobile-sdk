@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#fff"
+        android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/list_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+
+    </ScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/sample_image_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/sample_floating_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#cc000000"
+            android:scaleType="center"
+            android:src="@mipmap/watermark"/>
+
+        <Button
+            android:id="@+id/download_sample_button"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="48dp"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_chevron_right"
+            android:paddingStart="24dp"
+            android:text="@string/try_it"
+            android:textAllCaps="false"
+            android:theme="@style/ButtonTheme"/>
+    </FrameLayout>
+
+</FrameLayout>

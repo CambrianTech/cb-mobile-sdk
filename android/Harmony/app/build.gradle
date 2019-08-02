@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+apply plugin: 'realm-android'
+
+
+android {
+
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        ndk { abiFilters "armeabi-v7a" }
+        applicationId "com.cambriantech.harmony"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 2062
+        // CORE VERSION: 1.0.1
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                if (variant.getBuildType().isMinifyEnabled()) {
+                    variant.assemble.doLast {
+                        copy {
+                            from variant.mappingFile
+                            into "${rootDir}/proguardTools"
+                            rename { String fileName ->
+                                "mapping-${variant.name}.txt"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    flavorDimensions "brand"
+    productFlavors {
+        harmony {
+            applicationId "com.cambriantech.paintharmonylite"
+            versionName "2.0.2d"
+            dimension "brand"
+            //key store password: PI314159
+            //key alias: paintharmonypro
+            //key password: PI314159
+        }
+        prestige {
+            applicationId "com.cambriantech.prestige"
+            versionName "1.4.3d"
+            dimension "brand"
+            //key store password: cambrian1234
+            //key alias: cambriankey
+            //key password: cambrian1234
+        }
+    }
+    lintOptions {
+        disable 'BinaryOperationInTimber'
+    }
+}
+
+ext.supportVersion = "27.0.2"
+ext.conductorVersion = "2.1.1"
+
+dependencies {
+    compile project(':CambrianAR')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    implementation "com.android.support:support-v13:$supportVersion"
+    implementation "com.android.support:recyclerview-v7:$supportVersion"
+    implementation "com.android.support:design:$supportVersion"
+    implementation "com.android.support:cardview-v7:$supportVersion"
+    implementation "com.android.support:support-annotations:$supportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta4'
+
+    implementation "com.bluelinelabs:conductor:$conductorVersion"
+    implementation "com.bluelinelabs:conductor-support:$conductorVersion"
+    implementation "com.bluelinelabs:conductor-rxlifecycle2:$conductorVersion"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.21'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:0.21'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'io.fotoapparat.fotoapparat:library:2.1.2'
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.3.0'
+
+    implementation 'com.amazonaws:aws-android-sdk-core:2.6.5'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.6.5'
+
+    implementation 'com.jakewharton.timber:timber:4.6.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.8.0@aar') {
+        transitive = true
+    }
+    testImplementation 'junit:junit:4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+}
+
+repositories {
+    mavenCentral()
+    google()
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url "https://jitpack.io" }
+}
+
+apply plugin: 'com.google.gms.google-services'

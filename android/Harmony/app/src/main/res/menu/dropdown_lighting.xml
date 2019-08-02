@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_code_brackets"
+        android:title="None"/>
+    <item
+        android:icon="@drawable/ic_lightbulb_on"
+        android:title="Incandescent" />
+    <item
+        android:icon="@drawable/ic_fluorescent"
+        android:title="Fluorescent"/>
+    <item
+        android:icon="@drawable/ic_led_bright"
+        android:title="LED White"/>
+    <item
+        android:icon="@drawable/ic_led_on"
+        android:title="LED Warm" />
+    <item
+        android:icon="@drawable/ic_weather_sunrise"
+        android:title="Morning Light"/>
+    <item
+        android:icon="@drawable/ic_weather_sunny"
+        android:title="Noon Light"/>
+    <item
+        android:icon="@drawable/ic_weather_sunset"
+        android:title="Evening Light" />
+    <item
+        android:icon="@drawable/ic_weather_overcast"
+        android:title="Overcast Light"/>
+</menu>

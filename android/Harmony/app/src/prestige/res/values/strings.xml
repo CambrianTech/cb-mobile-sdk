@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Prestige ColorPic</string>
+    <string name="package_name">com.cambriantech.prestige</string>
+    <string name="file_path">Android/data/com.cambriantech.prestige/files</string>
+</resources>

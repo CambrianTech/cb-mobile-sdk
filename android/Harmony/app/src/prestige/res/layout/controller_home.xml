@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/home_screen_parent">
+
+    <ImageView
+        android:background="#fff"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/landing_page"
+        android:id="@+id/landing_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="@+id/home_screen_parent"
+        app:layout_constraintTop_toTopOf="@+id/home_screen_parent"
+        app:layout_constraintRight_toRightOf="@+id/home_screen_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/home_screen_parent" />
+
+
+    <Button
+        android:id="@+id/button_current_project"
+        android:visibility="gone"
+        android:theme="@style/ButtonTheme"
+        android:text="Current Project"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:paddingStart="32dp"
+        android:drawablePadding="24dp"
+        android:gravity="left|center_vertical"
+        android:drawableLeft="@drawable/ic_folder"
+        app:layout_constraintLeft_toLeftOf="@+id/home_screen_parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintRight_toRightOf="@+id/home_screen_parent" />
+
+
+    <Button
+        android:id="@+id/button_take_photo"
+        android:theme="@style/ButtonTheme"
+        android:text="@string/take_photo"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:paddingStart="32dp"
+        android:drawablePadding="24dp"
+        android:gravity="left|center_vertical"
+        android:drawableLeft="@drawable/ic_camera"
+        app:layout_constraintLeft_toLeftOf="@+id/home_screen_parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_current_project"
+        android:layout_marginTop="16dp"
+        app:layout_constraintRight_toRightOf="@+id/home_screen_parent" />
+
+
+    <Button
+        android:id="@+id/button_load_photo"
+        android:theme="@style/ButtonTheme"
+        android:text="@string/load_photo"
+        android:layout_width="250dp"
+        android:layout_height="64dp"
+        android:paddingStart="32dp"
+        android:drawablePadding="24dp"
+        android:gravity="left|center_vertical"
+        android:drawableLeft="@drawable/ic_photo"
+        app:layout_constraintLeft_toLeftOf="@+id/button_take_photo"
+        app:layout_constraintTop_toBottomOf="@+id/button_take_photo"
+        android:layout_marginTop="16dp"
+        app:layout_constraintRight_toRightOf="@+id/button_take_photo" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="175dp"
+        app:layout_constraintGuide_percent="0.31" />
+</android.support.constraint.ConstraintLayout>

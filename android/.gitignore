@@ -1,0 +1,56 @@
+#####################
+##   MacOS Files   ##
+#####################
+
+*.DS_Store
+
+
+
+####################
+##  Gradle Files  ##
+####################
+
+.gradle/
+*.bat
+build/
+local.properties
+wrapper/
+
+
+
+###################
+##  Realm Files  ##
+###################
+
+*.realm.lock
+*.realm.management
+
+
+
+######################
+##  IntelliJ Files  ##
+######################
+
+.idea/
+*.iml
+obj/*
+
+
+
+#####################
+## Generated Files ##
+#####################
+
+*.o
+*.d
+Harmony/app/*/release/
+Harmony/proguardTools/
+proguardTools/
+CMakeFiles/
+CMakeCache.txt
+*.apk
+*.exe
+*.lock
+*.setup
+*gdbserver*
+/Harmony/CambrianAR/.externalNativeBuild

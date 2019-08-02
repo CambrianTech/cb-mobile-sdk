@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "959646225902",
+    "firebase_url": "https://cambrian-79ab8.firebaseio.com",
+    "project_id": "cambrian-79ab8",
+    "storage_bucket": "cambrian-79ab8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959646225902:android:3b4bc9f9d8a4b8ff",
+        "android_client_info": {
+          "package_name": "com.cambriantech.paintharmonylite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959646225902-4gaj59rl8e87kij7pf3el4aq1pq3hi82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDikEwpJAVGIkAGYS4Nb3fd9K_ux6tmQDQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959646225902:android:3cb1ddce2d483dd6",
+        "android_client_info": {
+          "package_name": "com.cambriantech.paintharmonylite.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959646225902-4gaj59rl8e87kij7pf3el4aq1pq3hi82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDikEwpJAVGIkAGYS4Nb3fd9K_ux6tmQDQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

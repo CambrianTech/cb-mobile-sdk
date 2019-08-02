@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/visualizer_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/paint_toolbar_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0000">
+
+        <com.cambriantech.harmony.view.ProgressView
+            android:id="@+id/progress_view"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/floating_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="68dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+
+        <com.cambriantech.harmony.screens.visualizer.ToolsView
+            android:id="@+id/tools_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/floating_guideline"/>
+
+
+        <FrameLayout
+            android:id="@+id/capture_controls"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <com.cambriantech.harmony.view.RoundImageButton
+                android:id="@+id/capture_cancel"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="#ff0000"
+                app:srcCompat="@drawable/ic_cancel"/>
+
+            <com.cambriantech.harmony.view.RoundImageButton
+                android:id="@+id/capture_confirm"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="end"
+                android:background="#18b9a0"
+                app:srcCompat="@drawable/ic_check"/>
+
+
+        </FrameLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/bottom_container"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:clickable="true"
+            android:elevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <FrameLayout
+                android:id="@+id/wheel_container"
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <com.cambriantech.harmony.wheel.Arc
+                    android:id="@+id/wheel_layer_background"
+                    android:layout_width="480dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="false"
+                    android:visibility="invisible"/>
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/capture_button"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/shutter_button"
+                android:elevation="0dp"
+                android:visibility="visible"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.cambriantech.harmony.screens.visualizer.FloatingItemButton
+                android:id="@+id/item_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="centerInside"
+                android:tint="#fff"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/capture_button"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/capture_button"
+                app:srcCompat="@drawable/ic_amazon"/>
+
+            <ImageButton
+                android:id="@+id/wheel_hide_button"
+                style="@style/SelectableItemBackground"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="4dp"
+                android:scaleType="centerCrop"
+                android:tint="#fff"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_chevron_down"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_picker"
+            android:layout_width="0dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="-1dp"
+            android:background="#111"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:paddingTop="4dp"
+            android:visibility="visible"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/paint_toolbar_parent"
+            tools:listitem="@layout/dropdown_item"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0000"
+        tools:visibility="gone"/>
+
+    <com.cambriantech.harmony.view.BottomSheetDetail
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        tools:visibility="gone"/>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

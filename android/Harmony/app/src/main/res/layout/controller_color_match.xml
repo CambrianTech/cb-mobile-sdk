@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/color_match_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+
+    <com.cambriantech.CBHarmony
+        android:id="@+id/full_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.cambriantech.harmony.ColorCircle
+        android:id="@+id/color_picker"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="false"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/color_pick_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:background="@color/bar_transparency"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="Touch anywhere to pick a color!"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="18sp"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/color_match_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom"
+        android:background="@color/bar_transparency"
+        android:visibility="gone">
+
+
+        <ImageButton
+            android:id="@+id/sheet_show_button"
+            style="@style/SelectableItemBackground"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop"
+            android:tint="#fff"
+            app:layout_constraintBottom_toBottomOf="@id/color_match_constraint"
+            app:layout_constraintRight_toRightOf="@+id/color_match_constraint"
+            app:layout_constraintTop_toTopOf="@id/color_match_constraint"
+            app:srcCompat="@drawable/ic_chevron_up"/>
+
+        <com.cambriantech.harmony.ColorCircle
+            android:id="@+id/color_indicator"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/color_match_constraint"
+            app:layout_constraintLeft_toLeftOf="@+id/color_match_constraint"
+            app:layout_constraintTop_toTopOf="@+id/color_match_constraint" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/color_match_constraint"
+            app:layout_constraintLeft_toRightOf="@+id/color_indicator"
+            app:layout_constraintTop_toTopOf="@+id/color_match_constraint">
+
+            <TextView
+                android:id="@+id/color_match_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color Name: "
+                android:textColor="#fff"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <TextView
+                android:id="@+id/color_match_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color ID: "
+                android:textColor="#fff"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="120dp" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <com.cambriantech.harmony.view.BottomSheetDetail
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"/>
+
+</android.support.design.widget.CoordinatorLayout>

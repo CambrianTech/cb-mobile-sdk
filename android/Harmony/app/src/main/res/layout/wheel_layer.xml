@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="480dp"
+    android:layout_height="match_parent"
+    android:visibility="invisible"
+    android:layout_gravity="center_horizontal"
+
+    android:clickable="false">
+
+    <com.cambriantech.harmony.wheel.WheelRecyclerView
+        android:id="@+id/wheel_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"/>
+
+</FrameLayout>
+

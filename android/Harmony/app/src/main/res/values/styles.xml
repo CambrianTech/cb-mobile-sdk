@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/transparent_white_50</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.Transparent" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:colorButtonNormal">@color/button_transparent_60</item>
+        <item name="colorControlHighlight">@color/transparent_white_50</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:drawableTint">#fff</item>
+    </style>
+
+
+    <style name="ButtonTheme" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/colorSecondaryLight</item>
+        <item name="colorControlHighlight">@color/transparent_white_50</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:drawableTint">#fff</item>
+    </style>
+
+    <style name="ButtonTheme.Transparent" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/button_transparent_60</item>
+        <item name="colorControlHighlight">@color/transparent_white_50</item>
+        <item name="android:buttonTint">@color/button_transparent_60</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:drawableTint">#fff</item>
+    </style>
+
+    <style name="RadioButtons" parent="AppTheme">
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+    <style name="SelectableItemTheme">
+        <item name="colorControlHighlight">@color/transparent_white_50</item>
+    </style>
+
+    <style name="SelectableItemBackground">
+        <item name="android:theme">@style/SelectableItemTheme</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="Prestige.Radio" parent="AppTheme">
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+    <style name="textStyle">
+        <item name="android:textColor">#deffffff</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="TabLayout_Theme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>
