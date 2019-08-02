@@ -85,6 +85,20 @@
 			remoteGlobalIDString = E731288F1FCE0C06004369AC;
 			remoteInfo = CambrianUnity;
 		};
+		E7B42B1222F4C1B900F48597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7B42B0822F4AF5B00F48597 /* CambrianUnity.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E731288E1FCE0C06004369AC;
+			remoteInfo = CambrianUnity;
+		};
+		E7B42B1422F4C1BD00F48597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7B42B0222F4AE8100F48597 /* libCambrian.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E7EA1E321FD7622C00B3DE54;
+			remoteInfo = Cambrian;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -400,6 +414,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				E7B42B1522F4C1BD00F48597 /* PBXTargetDependency */,
+				E7B42B1322F4C1B900F48597 /* PBXTargetDependency */,
 			);
 			name = CambrianSDK;
 			productName = CambrianSDK;
@@ -518,6 +534,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7B42B1322F4C1B900F48597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CambrianUnity;
+			targetProxy = E7B42B1222F4C1B900F48597 /* PBXContainerItemProxy */;
+		};
+		E7B42B1522F4C1BD00F48597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cambrian;
+			targetProxy = E7B42B1422F4C1BD00F48597 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E79CD8161FD6282A00A4CFF0 /* Debug */ = {
