@@ -1,0 +1,8 @@
+{"version":"2.07",
+   "commands":[
+   {"command":"loadImage","image":"rooms/dining/dining-5.jpg"},
+   {"command":"appendAsset","type":1},
+   {"command":"setPaintColor","color":[100,100,0,0]},
+   {"command":"fillAtPoint","point":[100,300]}
+   ]
+}

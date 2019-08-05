@@ -1,0 +1,10 @@
+{  
+   "commands":[  
+      {  
+         "command":"syncData",
+         "screenshot":"/Users/joelteply/Development/cambrian/home-harmony-aws/web/image_uploads/058608df-4146-490b-8536-8b0f2935244e.jpg"
+      }
+   ],
+   "sceneID":"FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+   "isAsync":true
+}

@@ -1,0 +1,4 @@
+
+#ignore all projects except for demo one
+projects/*
+!projects/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF

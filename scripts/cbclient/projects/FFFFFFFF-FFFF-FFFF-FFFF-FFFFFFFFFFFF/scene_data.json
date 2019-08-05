@@ -1,0 +1,99 @@
+{
+	"analyzers" : 
+	{
+		"ambience" : 
+		{
+			"ambientLevel" : 
+			[
+				0.93298042553191496,
+				1.0,
+				1.0573540588818544,
+				1.0
+			],
+			"bgIntensity" : 0.60000000894069672,
+			"colorAdjustments" : 
+			[
+				{
+					"alpha" : 1.3999999761581421,
+					"backgroundIntensity" : 0.60000000894069672,
+					"beta" : 0.3855659845945224,
+					"gamma" : 1.0
+				}
+			],
+			"overlayIntensities" : 
+			[
+				0.15316716285568863
+			]
+		}
+	},
+	"assets" : 
+	[
+		{
+			"assetID" : "7F768330-F221-48D0-80D2-44FC5829D55C",
+			"color" : 
+			[
+				100.0,
+				100.0,
+				0.0,
+				0.0
+			],
+			"renderer" : null,
+			"sheen" : 0,
+			"type" : 1,
+			"userData" : null
+		}
+	],
+	"frameIndex" : 0,
+	"history" : 
+	{
+		"redo" : null,
+		"undo" : 
+		[
+			{
+				"assetID" : "7F768330-F221-48D0-80D2-44FC5829D55C",
+				"change" : 0,
+				"data" : 
+				[
+					"mask"
+				],
+				"stateInfo" : null,
+				"target" : 2,
+				"uuid" : "44D898A9-5A27-4D6E-9D68-CC423ECC35E2"
+			},
+			{
+				"assetID" : "7F768330-F221-48D0-80D2-44FC5829D55C",
+				"change" : 0,
+				"data" : 
+				[
+					"mask"
+				],
+				"stateInfo" : null,
+				"target" : 2,
+				"uuid" : "5C110A30-22B2-4D90-9A4D-1979991F4700"
+			}
+		]
+	},
+	"lighting" : 0,
+	"selectedAsset" : "7F768330-F221-48D0-80D2-44FC5829D55C",
+	"userData" : null,
+	"version" : 3.0200999999999998,
+	"worldTransform" : 
+	[
+		1.0,
+		0.0,
+		0.0,
+		0.0,
+		0.0,
+		1.0,
+		0.0,
+		0.0,
+		0.0,
+		0.0,
+		1.0,
+		0.0,
+		0.0,
+		0.0,
+		0.0,
+		1.0
+	]
+}
