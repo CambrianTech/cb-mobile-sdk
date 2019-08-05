@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+set -eu
+# set -x
+
+export cb_home=$CB/scripts/cb
+source $cb_home/cb_env.sh
+source $cb_home/cb_logger.sh
+source $cb_home/cb_common.sh
+
+cb_logger "Starting command: cb $@"
+
+case "$1" in
+    build) 
+        cb_logger "Calling cb_builder"
+        source $cb_home/cb_builder.sh && cb_builder ${@:2}
+        ;;
+    download) 
+        case $2 in
+            android)
+                download_dependency "bgfx"
+                download_dependency "cb-android"
+                ;;
+            cpp)
+                download_dependency "cb-cpp"
+                ;;
+            ios)
+                download_dependency "bgfx"
+                download_dependency "cb-ios"
+                ;;
+            web)
+                download_dependency "cb-web"
+                ;;
+            unity)
+                download_dependency "cb-unity"
+                ;;
+            ml)
+                download_dependency "cb-ml"
+                ;;
+            demoweb)
+                download_dependency "cb-demoweb"
+                ;;
+            deepweb)
+                download_dependency "cb-deepweb"
+                ;;
+            assets)
+                download_dependency "cb-assets"
+                ;;
+            *) 
+                download_dependency ${@:2}
+                exit 1
+                ;;
+        esac
+        ;;
+    install) 
+        cb_logger "Calling cb_installer"
+        source $cb_home/cb_installer.sh && cb_installer ${@:2}
+        ;;
+    clean)
+        cb_logger "Calling cb_cleaner"
+        source $cb_home/cb_cleaner.sh && cb_cleaner ${@:2}
+        ;;
+    carthage-sync) 
+        cb_logger "Syncing carthage"
+        source $cb_home/ios/carthage-sync.sh && carthage-sync ${@:2}
+        ;;
+    *)
+        cb_logger "Not sure what to do with arguments: $@"
+        cb_logger "aborting"
+        exit 1
+        ;;       
+esac
+
+cb_logger "Completed command: cb $@"
+
+exit 0

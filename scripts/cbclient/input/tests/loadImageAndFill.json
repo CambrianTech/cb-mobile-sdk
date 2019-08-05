@@ -1,0 +1,14 @@
+{"version":"2.07",
+   "commands":[
+   {"command":"loadImage","image":"rooms/dining/dining-5.jpg"},
+   {"command":"setPaintColor","color":[100,100,0,0]},
+   {"command":"fillAtPoint","point":[100,300]},
+   {"command":"fillAtPoint","point":[116,565]},
+   {"command":"fillAtPoint","point":[1096,362]},
+   {"command":"fillAtPoint","point":[1206,590]},
+   {"command":"fillAtPoint","point":[679,360]},
+   {"command":"fillAtPoint","point":[648,343]},
+   {"command":"fillAtPoint","point":[298,377]},
+   {"command":"fillAtPoint","point":[476,323]}
+   ]
+}
