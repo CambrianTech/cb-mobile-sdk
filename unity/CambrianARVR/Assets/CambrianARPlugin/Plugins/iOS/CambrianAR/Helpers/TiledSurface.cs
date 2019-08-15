@@ -48,7 +48,7 @@ namespace Cambrian.iOS
         void Start()
         {
             Reset();
-            
+                        
             _bgQueueThread.Start();
 
             CambrianARSessionNativeInterface.ARSessionStoppedEvent += CambrianArSessionNativeInterfaceOnArSessionStoppedEvent;         
@@ -174,6 +174,21 @@ namespace Cambrian.iOS
         {
             bool hasMaskData = false;
             
+            float c = 1.0f;
+            float s = 0.0f;
+            float theta = 0.0f;
+            
+            if (surfaceData.extents.rotation2D.magnitude > 0.1f)
+            {
+                //rotate surface uvs
+                Vector2 forward = new Vector2(0.0f,1.0f);
+                c = Vector2.Dot(surfaceData.extents.rotation2D, forward);
+                theta = (float) Math.Acos(c);
+                s = (float) Math.Sin(theta);
+
+                transform.rotation = Quaternion.AngleAxis(theta * Mathf.Rad2Deg, Vector3.up);
+            }
+            
             if (_surfaceTextureInfo.maskTexture != null && surfaceData.maskBytes.Length > 0)
             {
                 _surfaceTextureInfo.maskTexture.LoadRawTextureData(surfaceData.maskBytes);
@@ -189,7 +204,11 @@ namespace Cambrian.iOS
                 hasShadowData = true;
             }
             
-            _gridBounds = BoundsFromVector4(surfaceData.extents.maskExtents3D); //should take rotation into account
+            //TODO: should use theta rotation instead
+            _gridBounds = BoundsFromVector4(surfaceData.extents.maskExtents3D);
+            var maxSize = Math.Sqrt(_gridBounds.size.x * _gridBounds.size.x + _gridBounds.size.z * _gridBounds.size.z);
+            _gridBounds.size = new Vector3((float)maxSize, 0.0f, (float)maxSize);
+            
             UpdateGridLayout();
       
             _surface.UpdateSurface(
