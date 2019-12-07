@@ -27,9 +27,9 @@
 		E79CD8471FD62C3D00A4CFF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79CD8461FD62C3800A4CFF0 /* UIKit.framework */; };
 		E79CD8491FD62C5200A4CFF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79CD8481FD62C4D00A4CFF0 /* CoreGraphics.framework */; };
 		E79CD8621FD722CD00A4CFF0 /* libopencv2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E79CD8611FD722CC00A4CFF0 /* libopencv2.a */; };
+		E7BADBBE239C411A00C1337A /* CambrianSDK.pch in Headers */ = {isa = PBXBuildFile; fileRef = E7BADBBD239C411A00C1337A /* CambrianSDK.pch */; };
 		E7C7F5261FDE18FF00B06EAC /* CBSurfaceAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C7F5241FDE18FF00B06EAC /* CBSurfaceAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7C7F52C1FDE1C4F00B06EAC /* CBSurfaceAsset.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7C7F52B1FDE1C4F00B06EAC /* CBSurfaceAsset.mm */; };
-		E7EA1CC51FD7245300B3DE54 /* CambrianSDK.pch in Headers */ = {isa = PBXBuildFile; fileRef = E79CD8601FD7214800A4CFF0 /* CambrianSDK.pch */; };
 		E7EA1CCC1FD729C900B3DE54 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7EA1CCB1FD729C000B3DE54 /* Accelerate.framework */; };
 		E7EA2CA71FD8320200B3DE54 /* libjsoncpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7EA2CA61FD8320200B3DE54 /* libjsoncpp.a */; };
 		E7EA2CA81FD8321B00B3DE54 /* liblzma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7EA2C7E1FD8313500B3DE54 /* liblzma.a */; };
@@ -127,11 +127,11 @@
 		E79CD8461FD62C3800A4CFF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E79CD8481FD62C4D00A4CFF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E79CD85F1FD71EA800A4CFF0 /* CBARInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBARInternal.h; sourceTree = "<group>"; };
-		E79CD8601FD7214800A4CFF0 /* CambrianSDK.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CambrianSDK.pch; sourceTree = "<group>"; };
 		E79CD8611FD722CC00A4CFF0 /* libopencv2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv2.a; path = "../../prebuilts/opencv/opencv-ios/lib/libopencv2.a"; sourceTree = "<group>"; };
 		E7A224D320AF9FB9004B7F31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B42B0222F4AE8100F48597 /* libCambrian.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libCambrian.xcodeproj; path = ../../cpp/libCambrian.xcodeproj; sourceTree = "<group>"; };
 		E7B42B0822F4AF5B00F48597 /* CambrianUnity.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CambrianUnity.xcodeproj; path = ../../unity/CambrianUnity/Unity/CambrianUnity.xcodeproj; sourceTree = "<group>"; };
+		E7BADBBD239C411A00C1337A /* CambrianSDK.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CambrianSDK.pch; sourceTree = "<group>"; };
 		E7C7F5241FDE18FF00B06EAC /* CBSurfaceAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBSurfaceAsset.h; sourceTree = "<group>"; };
 		E7C7F52B1FDE1C4F00B06EAC /* CBSurfaceAsset.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CBSurfaceAsset.mm; sourceTree = "<group>"; };
 		E7EA1CCB1FD729C000B3DE54 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -240,7 +240,7 @@
 				E79CD81E1FD629E200A4CFF0 /* CBCommon */,
 				E79CD81D1FD629D100A4CFF0 /* CBBase */,
 				E79CD8131FD6282A00A4CFF0 /* CambrianSDK.h */,
-				E79CD8601FD7214800A4CFF0 /* CambrianSDK.pch */,
+				E7BADBBD239C411A00C1337A /* CambrianSDK.pch */,
 			);
 			path = CambrianSDK;
 			sourceTree = "<group>";
@@ -387,13 +387,13 @@
 				E7EA2E0D1FD8604000B3DE54 /* CBRemodelingTypes.h in Headers */,
 				E7EA2E351FD8A58500B3DE54 /* CBAugmentedView.h in Headers */,
 				E7EA2E2E1FD8A58500B3DE54 /* CBAugmentedAsset.h in Headers */,
+				E7BADBBE239C411A00C1337A /* CambrianSDK.pch in Headers */,
 				E7C7F5261FDE18FF00B06EAC /* CBSurfaceAsset.h in Headers */,
 				E79CD8151FD6282A00A4CFF0 /* CambrianSDK.h in Headers */,
 				E7EA2E321FD8A58500B3DE54 /* CBAugmentedTypes.h in Headers */,
 				E7EA2E301FD8A58500B3DE54 /* CBAugmentedScene.h in Headers */,
 				E7EA2E371FD8A58500B3DE54 /* CBAugmentedModel.h in Headers */,
 				E7EA2E2A1FD8A56A00B3DE54 /* CBLicensing.h in Headers */,
-				E7EA1CC51FD7245300B3DE54 /* CambrianSDK.pch in Headers */,
 				E7EA2DF81FD85FDD00B3DE54 /* ImageTranslation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
