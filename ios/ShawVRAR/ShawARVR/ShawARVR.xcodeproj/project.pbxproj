@@ -7,19 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E713053620E562BA002F2CF3 /* Digger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E713053420E562B9002F2CF3 /* Digger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E713053720E562BA002F2CF3 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E713053520E562BA002F2CF3 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E71E1D0620BA063700E90518 /* html in Resources */ = {isa = PBXBuildFile; fileRef = E71E1D0520BA063600E90518 /* html */; };
 		E72157A120B4A4DB008FB2B8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157A020B4A4DB008FB2B8 /* DataController.swift */; };
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
-		E744007D20BE1BAF00CC09AC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E744007C20BE1BAF00CC09AC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E744007E20BE1C1300CC09AC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E798125420BE0E7400C5C230 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E74AED5F21EC2D48008E7512 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E74AED5D21EC2D48008E7512 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E75D4EE221ED1D78000234D1 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75D4EE121ED1D78000234D1 /* JGProgressHUD.framework */; };
-		E75D4EE321ED1D78000234D1 /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E75D4EE121ED1D78000234D1 /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E77BDBC7225D52AE0076A7BD /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E77BDBC6225D52AE0076A7BD /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E77BDBC9225D53100076A7BD /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E77BDBC8225D53100076A7BD /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7B42B1122F4B40900F48597 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = E7B42B1022F4B40900F48597 /* Data */; };
+		E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC1239C512200C1337A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7BADBC4239C51E500C1337A /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC3239C51E500C1337A /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7BADBC6239C524E00C1337A /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC5239C524E00C1337A /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC9239C532B00C1337A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBCB239C538800C1337A /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497C020B3160C00E7567D /* RoundButton.swift */; };
 		E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497D720B3B77A00E7567D /* StandardButton.swift */; };
 		E7C497DD20B3C0AC00E7567D /* ProductSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497DC20B3C0AC00E7567D /* ProductSelectionViewController.swift */; };
@@ -67,14 +64,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E77BDBC9225D53100076A7BD /* AWSCore.framework in Embed Frameworks */,
-				E77BDBC7225D52AE0076A7BD /* AWSS3.framework in Embed Frameworks */,
-				E713053620E562BA002F2CF3 /* Digger.framework in Embed Frameworks */,
-				E713053720E562BA002F2CF3 /* Zip.framework in Embed Frameworks */,
-				E744007E20BE1C1300CC09AC /* Realm.framework in Embed Frameworks */,
-				E744007D20BE1BAF00CC09AC /* RealmSwift.framework in Embed Frameworks */,
-				E74AED5F21EC2D48008E7512 /* SDWebImage.framework in Embed Frameworks */,
-				E75D4EE321ED1D78000234D1 /* JGProgressHUD.framework in Embed Frameworks */,
+				E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */,
+				E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */,
+				E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */,
+				E7BADBC6239C524E00C1337A /* AWSS3.framework in Embed Frameworks */,
+				E7BADBC4239C51E500C1337A /* AWSCore.framework in Embed Frameworks */,
+				E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */,
 				E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -83,22 +78,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E713053420E562B9002F2CF3 /* Digger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Digger.framework; path = "ShawARVR/Carthage/Build-normal/iOS/Digger.framework"; sourceTree = "<group>"; };
-		E713053520E562BA002F2CF3 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = "ShawARVR/Carthage/Build-normal/iOS/Zip.framework"; sourceTree = "<group>"; };
 		E716634D21E91AB400D06791 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		E71E1D0520BA063600E90518 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		E72157A020B4A4DB008FB2B8 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E72157A920B4AAF9008FB2B8 /* ProductModel.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProductModel.realm; sourceTree = "<group>"; };
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E744007C20BE1BAF00CC09AC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "ShawARVR/Carthage/Build-normal/iOS/RealmSwift.framework"; sourceTree = "<group>"; };
-		E74AED5D21EC2D48008E7512 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "ShawARVR/Carthage/Build-normal/iOS/SDWebImage.framework"; sourceTree = "<group>"; };
-		E75D4EDE21ED1C26000234D1 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = "ShawARVR/Carthage/Build-normal/iOS/UICircularProgressRing.framework"; sourceTree = "<group>"; };
-		E75D4EE121ED1D78000234D1 /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = "ShawARVR/Carthage/Build-normal/iOS/JGProgressHUD.framework"; sourceTree = "<group>"; };
-		E77BDBC4225D4D630076A7BD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "ShawARVR/Carthage/Build-normal/iOS/AWSS3.framework"; sourceTree = "<group>"; };
-		E77BDBC6225D52AE0076A7BD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "ShawARVR/Carthage/Build-normal/iOS/AWSS3.framework"; sourceTree = "<group>"; };
-		E77BDBC8225D53100076A7BD /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "ShawARVR/Carthage/Build-normal/iOS/AWSCore.framework"; sourceTree = "<group>"; };
-		E798125420BE0E7400C5C230 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "ShawARVR/Carthage/Build-normal/iOS/Realm.framework"; sourceTree = "<group>"; };
 		E7B42B1022F4B40900F48597 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
+		E7BADBC1239C512200C1337A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ShawARVR/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		E7BADBC3239C51E500C1337A /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = ShawARVR/Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
+		E7BADBC5239C524E00C1337A /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = ShawARVR/Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
+		E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = ShawARVR/Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
+		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ShawARVR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = ShawARVR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		E7C497C020B3160C00E7567D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E7C497D720B3B77A00E7567D /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 		E7C497DC20B3C0AC00E7567D /* ProductSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSelectionViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E75D4EE221ED1D78000234D1 /* JGProgressHUD.framework in Frameworks */,
 				E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,11 +182,12 @@
 		E7E4C8F620AB924D00E842E4 = {
 			isa = PBXGroup;
 			children = (
-				E77BDBC8225D53100076A7BD /* AWSCore.framework */,
-				E77BDBC6225D52AE0076A7BD /* AWSS3.framework */,
-				E75D4EE121ED1D78000234D1 /* JGProgressHUD.framework */,
-				E75D4EDE21ED1C26000234D1 /* UICircularProgressRing.framework */,
-				E74AED5D21EC2D48008E7512 /* SDWebImage.framework */,
+				E7BADBCB239C538800C1337A /* SDWebImage.framework */,
+				E7BADBC9239C532B00C1337A /* RealmSwift.framework */,
+				E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */,
+				E7BADBC5239C524E00C1337A /* AWSS3.framework */,
+				E7BADBC3239C51E500C1337A /* AWSCore.framework */,
+				E7BADBC1239C512200C1337A /* Realm.framework */,
 				E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */,
 				E7E4C90120AB924D00E842E4 /* ShawARVR */,
 				E7E4C90020AB924D00E842E4 /* Products */,
@@ -243,11 +234,6 @@
 		E7E4C92020AB9A0200E842E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E77BDBC4225D4D630076A7BD /* AWSS3.framework */,
-				E713053420E562B9002F2CF3 /* Digger.framework */,
-				E713053520E562BA002F2CF3 /* Zip.framework */,
-				E744007C20BE1BAF00CC09AC /* RealmSwift.framework */,
-				E798125420BE0E7400C5C230 /* Realm.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
