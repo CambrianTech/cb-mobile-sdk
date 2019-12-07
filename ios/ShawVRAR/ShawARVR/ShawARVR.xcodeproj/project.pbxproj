@@ -19,12 +19,7 @@
 		E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBCB239C538800C1337A /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497C020B3160C00E7567D /* RoundButton.swift */; };
 		E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497D720B3B77A00E7567D /* StandardButton.swift */; };
-		E7C497DD20B3C0AC00E7567D /* ProductSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497DC20B3C0AC00E7567D /* ProductSelectionViewController.swift */; };
 		E7C497E220B3C0B600E7567D /* ARVRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */; };
-		E7C497E320B3C0B600E7567D /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497E020B3C0B600E7567D /* LandingViewController.swift */; };
-		E7C497E620B3C16F00E7567D /* StyleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497E520B3C16F00E7567D /* StyleSelectionViewController.swift */; };
-		E7C497E820B3C59800E7567D /* SwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497E720B3C59800E7567D /* SwatchViewController.swift */; };
-		E7C497EA20B3C5B700E7567D /* SpecificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497E920B3C5B700E7567D /* SpecificationsViewController.swift */; };
 		E7C497EF20B3D04D00E7567D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497EE20B3D04D00E7567D /* Product.swift */; };
 		E7C497F120B3D07300E7567D /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497F020B3D07300E7567D /* ProductCategory.swift */; };
 		E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497F220B3D18000E7567D /* InstallationMethod.swift */; };
@@ -92,12 +87,7 @@
 		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = ShawARVR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		E7C497C020B3160C00E7567D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E7C497D720B3B77A00E7567D /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
-		E7C497DC20B3C0AC00E7567D /* ProductSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSelectionViewController.swift; sourceTree = "<group>"; };
 		E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVRViewController.swift; sourceTree = "<group>"; };
-		E7C497E020B3C0B600E7567D /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		E7C497E520B3C16F00E7567D /* StyleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSelectionViewController.swift; sourceTree = "<group>"; };
-		E7C497E720B3C59800E7567D /* SwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchViewController.swift; sourceTree = "<group>"; };
-		E7C497E920B3C5B700E7567D /* SpecificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationsViewController.swift; sourceTree = "<group>"; };
 		E7C497EE20B3D04D00E7567D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E7C497F020B3D07300E7567D /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		E7C497F220B3D18000E7567D /* InstallationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationMethod.swift; sourceTree = "<group>"; };
@@ -159,22 +149,10 @@
 			path = DB;
 			sourceTree = "<group>";
 		};
-		E7C497DB20B3C0AC00E7567D /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				E7C497DC20B3C0AC00E7567D /* ProductSelectionViewController.swift */,
-				E7C497E520B3C16F00E7567D /* StyleSelectionViewController.swift */,
-			);
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
 		E7C497DE20B3C0B600E7567D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */,
-				E7C497E020B3C0B600E7567D /* LandingViewController.swift */,
-				E7C497E720B3C59800E7567D /* SwatchViewController.swift */,
-				E7C497E920B3C5B700E7567D /* SpecificationsViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -208,7 +186,6 @@
 			children = (
 				E72157AB20B4B3DA008FB2B8 /* Utility */,
 				E7C497DE20B3C0B600E7567D /* Screens */,
-				E7C497DB20B3C0AC00E7567D /* SideMenu */,
 				E7C497BB20B3156700E7567D /* Controls */,
 				E7C497BC20B3156F00E7567D /* DB */,
 				E7E4C92720AB9B9D00E842E4 /* Bridging-Header.h */,
@@ -334,23 +311,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C497E820B3C59800E7567D /* SwatchViewController.swift in Sources */,
-				E7C497EA20B3C5B700E7567D /* SpecificationsViewController.swift in Sources */,
 				E7C497F520B3D29700E7567D /* ProductColor.swift in Sources */,
 				E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */,
-				E7C497DD20B3C0AC00E7567D /* ProductSelectionViewController.swift in Sources */,
 				E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */,
 				E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */,
 				E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */,
 				E7E4C90320AB924D00E842E4 /* AppDelegate.swift in Sources */,
-				E7C497E320B3C0B600E7567D /* LandingViewController.swift in Sources */,
 				E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */,
 				E72157A120B4A4DB008FB2B8 /* DataController.swift in Sources */,
 				E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */,
 				E7C497EF20B3D04D00E7567D /* Product.swift in Sources */,
 				E7C497F120B3D07300E7567D /* ProductCategory.swift in Sources */,
 				E7C497E220B3C0B600E7567D /* ARVRViewController.swift in Sources */,
-				E7C497E620B3C16F00E7567D /* StyleSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
