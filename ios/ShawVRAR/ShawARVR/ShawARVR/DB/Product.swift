@@ -58,5 +58,10 @@ class Product: Object {
         guard let realmResults = DataController.sharedInstance.productContext?.objects(Product.self) else { return nil }
         return realmResults.first
     }
+    
+    class func random() -> Product? {
+        guard let realmResults = DataController.sharedInstance.productContext?.objects(Product.self) else { return nil }
+        let index = Int (arc4random_uniform(UInt32(realmResults.count)));
+        return realmResults[index];
+    }
 }
-
