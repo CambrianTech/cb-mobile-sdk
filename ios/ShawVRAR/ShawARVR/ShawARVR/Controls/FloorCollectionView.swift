@@ -8,7 +8,38 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+class ProductSwatchCell: UICollectionViewCell {
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productLabel: UILabel!
+    
+    let color = UIColor(red: 51, green: 51, blue: 51)
+    var product: Product? {
+        didSet {
+            self.productLabel.text = product?.name
+            self.productLabel.textColor = color
+            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
+            self.productImage.sd_setImage(with: product?.thumbnailPath)
+        }
+    }
+    
+    var category: ProductCategory? {
+        didSet {
+            self.productLabel.text = category?.name
+            self.productLabel.textColor = color
+            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
+            self.productImage.sd_setImage(with: category?.thumbnailPath)
+        }
+    }
+    
+    func selected(_ select: Bool, animated:Bool) {
+        self.layer.borderWidth = select ? 2.0 : 0.0
+        self.layer.borderColor = UIColor.cambrianBlue.cgColor
+    }
+    
+    func getColor() -> UIColor {
+        return UIColor.cambrianBlue
+    }
+}
 
 class FloorCollectionView: UICollectionViewController {
     
@@ -29,65 +60,45 @@ class FloorCollectionView: UICollectionViewController {
     }
     
     var selectedProduct: Product?
-    weak open var delegate: ProductSelectionDelegate?
+    //weak open var delegate: ProductSelectionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let parent = baseCategory {
-            self.navigationItem.title = parent.name
-            self.navigationItem.titleView = UIView()
-            self.categoryLabel.text = parent.name.uppercased()
-            self.categoryButtonsHeight.constant = 0
-            self.categoryButtons.isHidden = true
+        if let _ = baseCategory {
+            
         }
         else {
-            self.categoryButtonsHeight.constant = 50
-            self.categoryButtons.isHidden = false
             self.categories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
         }
         
-        refreshData()
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ProductSwatchCell")
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        if let parent = self.selectedCategory {
+            return parent.products.count > 0 ? parent.products.count : parent.categories.count
+        }
         return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductSwatchCell", for: indexPath) as? ProductSwatchCell else {
+            fatalError("cannot find ProductSwatchCell")
+        }
     
-        // Configure the cell
-    
+        if let category = self.selectedCategory {
+            if category.products.count > 0 {
+                cell.product = category.products[indexPath.row]
+            } else {
+                cell.category = category.categories[indexPath.row]
+            }
+        }
+
         return cell
     }
 
