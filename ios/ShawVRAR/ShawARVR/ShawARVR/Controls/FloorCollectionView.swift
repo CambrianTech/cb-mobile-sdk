@@ -55,11 +55,18 @@ protocol ProductSelectionDelegate: class {
     func productColorChanged(product: Product, color: ProductColor)
 }
 
-class FloorCollectionView: UICollectionViewController {
+class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     open weak var delegate: ProductSelectionDelegate?
-    
-    private var selectedCell:ProductSwatchCell?
+        
+    @IBOutlet weak var swatchScroller: UICollectionView!
+    private var selectedCell:ProductSwatchCell? {
+        willSet {
+            if let cell = selectedCell {
+                cell.selected(false, animated: false)
+            }
+        }
+    }
     
     private var topLevelCategories:[ProductCategory]?
     
@@ -96,11 +103,11 @@ class FloorCollectionView: UICollectionViewController {
         self.topLevelCategories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
     }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let parent = self.selectedProduct {
             return parent.colors.count
         }
@@ -112,7 +119,7 @@ class FloorCollectionView: UICollectionViewController {
         return 0
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductSwatchCell", for: indexPath) as? ProductSwatchCell else {
             fatalError("cannot find ProductSwatchCell")
         }
@@ -132,27 +139,28 @@ class FloorCollectionView: UICollectionViewController {
 
         return cell
     }
+    
+    func reloadSwatches() {
+        self.swatchScroller.contentOffset = CGPoint.zero
+        self.swatchScroller.reloadData()
+    }
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        selectedCell?.selected(false, animated: true)
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                
         let cell = collectionView.cellForItem(at: indexPath) as? ProductSwatchCell
         selectedCell = cell
-        cell?.selected(true, animated: true)
         
         if let product = cell?.product {
             if let variant = cell?.variant {
+                cell?.selected(true, animated: true)
                 self.delegate?.productColorChanged(product:product, color: variant)
             } else {
                 self.selectedProduct = product
-                collectionView.deselectItem(at: indexPath, animated: false)
-                collectionView.reloadData()
+                reloadSwatches()
             }
         } else if let category = cell?.category {
             self.selectedCategory = category
-            collectionView.deselectItem(at: indexPath, animated: false)
-            collectionView.reloadData()
+            reloadSwatches()
         }
     }
 
