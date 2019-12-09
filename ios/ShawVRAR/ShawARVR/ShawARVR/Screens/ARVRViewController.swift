@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import JGProgressHUD
 
-class ARVRViewController: UIViewController, CBRemodelingViewDelegate {
+class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSelectionDelegate {
     
     @IBOutlet weak var vrView: CBRemodelingView!
     
@@ -49,7 +49,14 @@ class ARVRViewController: UIViewController, CBRemodelingViewDelegate {
         }
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "floor-collection" {
+            if let destVC = segue.destination as? FloorCollectionView {
+                destVC.delegate = self
+            }
+        }
+    }
+    
     func productColorChanged(product: Product, color: ProductColor) {
         let hud = JGProgressHUD(style: .dark)
         hud.indicatorView = JGProgressHUDRingIndicatorView()

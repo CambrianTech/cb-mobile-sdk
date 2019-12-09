@@ -12,11 +12,21 @@ class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productLabel: UILabel!
     
-    let color = UIColor(red: 51, green: 51, blue: 51)
+    let textColor = UIColor(red: 51, green: 51, blue: 51)
+    
+    var variant: ProductColor? {
+        didSet {
+            self.productLabel.text = variant?.name
+            self.productLabel.textColor = textColor
+            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
+            self.productImage.sd_setImage(with: variant?.thumbnailPath)
+        }
+    }
+    
     var product: Product? {
         didSet {
             self.productLabel.text = product?.name
-            self.productLabel.textColor = color
+            self.productLabel.textColor = textColor
             self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
             self.productImage.sd_setImage(with: product?.thumbnailPath)
         }
@@ -25,7 +35,7 @@ class ProductSwatchCell: UICollectionViewCell {
     var category: ProductCategory? {
         didSet {
             self.productLabel.text = category?.name
-            self.productLabel.textColor = color
+            self.productLabel.textColor = textColor
             self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
             self.productImage.sd_setImage(with: category?.thumbnailPath)
         }
@@ -41,38 +51,49 @@ class ProductSwatchCell: UICollectionViewCell {
     }
 }
 
+protocol ProductSelectionDelegate: class {
+    func productColorChanged(product: Product, color: ProductColor)
+}
+
 class FloorCollectionView: UICollectionViewController {
     
-    var categories:[ProductCategory]?
-    var categorySelectedIndex = 0
+    open weak var delegate: ProductSelectionDelegate?
     
-    var baseCategory:ProductCategory?
+    private var selectedCell:ProductSwatchCell?
     
-    var selectedCell:ProductSwatchCell?
+    private var topLevelCategories:[ProductCategory]?
     
-    var selectedCategory:ProductCategory? {
+    private var _selectedCategory:ProductCategory?
+    private var selectedCategory:ProductCategory? {
         get {
-            if let categories = self.categories, categorySelectedIndex < categories.count {
-                return categories[categorySelectedIndex]
+            if let category = _selectedCategory {
+                return category
             }
-            return baseCategory
+            return nil
+        }
+        set {
+            _selectedProduct = nil
+            _selectedCategory = newValue
         }
     }
     
-    var selectedProduct: Product?
-    //weak open var delegate: ProductSelectionDelegate?
-    
+    private var _selectedProduct:Product?
+    private var selectedProduct:Product? {
+        get {
+            if let product = _selectedProduct {
+                return product
+            }
+            return nil
+        }
+        set {
+            _selectedProduct = newValue
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let _ = baseCategory {
-            
-        }
-        else {
-            self.categories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
-        }
-        
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ProductSwatchCell")
+        self.topLevelCategories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -80,8 +101,13 @@ class FloorCollectionView: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let parent = self.selectedCategory {
+        if let parent = self.selectedProduct {
+            return parent.colors.count
+        }
+        else if let parent = self.selectedCategory {
             return parent.products.count > 0 ? parent.products.count : parent.categories.count
+        } else if let categories = self.topLevelCategories {
+            return categories.count
         }
         return 0
     }
@@ -91,46 +117,43 @@ class FloorCollectionView: UICollectionViewController {
             fatalError("cannot find ProductSwatchCell")
         }
     
-        if let category = self.selectedCategory {
+        if let product = self.selectedProduct {
+            cell.variant = product.colors[indexPath.row]
+        }
+        else if let category = self.selectedCategory {
             if category.products.count > 0 {
                 cell.product = category.products[indexPath.row]
             } else {
                 cell.category = category.categories[indexPath.row]
             }
+        } else if let categories = self.topLevelCategories {
+            cell.category = categories[indexPath.row]
         }
 
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        selectedCell?.selected(false, animated: true)
+        
+        let cell = collectionView.cellForItem(at: indexPath) as? ProductSwatchCell
+        selectedCell = cell
+        cell?.selected(true, animated: true)
+        
+        if let product = cell?.product {
+            if let variant = cell?.variant {
+                self.delegate?.productColorChanged(product:product, color: variant)
+            } else {
+                self.selectedProduct = product
+                collectionView.deselectItem(at: indexPath, animated: false)
+                collectionView.reloadData()
+            }
+        } else if let category = cell?.category {
+            self.selectedCategory = category
+            collectionView.deselectItem(at: indexPath, animated: false)
+            collectionView.reloadData()
+        }
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
