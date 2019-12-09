@@ -17,6 +17,7 @@
 		E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC9239C532B00C1337A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBCB239C538800C1337A /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7BADBD3239DE38F00C1337A /* FloorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */; };
 		E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497C020B3160C00E7567D /* RoundButton.swift */; };
 		E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497D720B3B77A00E7567D /* StandardButton.swift */; };
 		E7C497E220B3C0B600E7567D /* ARVRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */; };
@@ -85,6 +86,7 @@
 		E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = ShawARVR/Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ShawARVR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = ShawARVR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorCollectionView.swift; sourceTree = "<group>"; };
 		E7C497C020B3160C00E7567D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E7C497D720B3B77A00E7567D /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 		E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVRViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				E7C497C020B3160C00E7567D /* RoundButton.swift */,
 				E7C497D720B3B77A00E7567D /* StandardButton.swift */,
+				E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */,
 				E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */,
 				E7E4C90320AB924D00E842E4 /* AppDelegate.swift in Sources */,
+				E7BADBD3239DE38F00C1337A /* FloorCollectionView.swift in Sources */,
 				E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */,
 				E72157A120B4A4DB008FB2B8 /* DataController.swift in Sources */,
 				E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */,
