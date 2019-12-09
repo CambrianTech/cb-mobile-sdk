@@ -8,6 +8,10 @@
 
 import UIKit
 
+class HistorySwatchCell: UICollectionViewCell {
+    @IBOutlet weak var label: UILabel!
+}
+
 class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productLabel: UILabel!
@@ -55,10 +59,11 @@ protocol ProductSelectionDelegate: class {
     func productColorChanged(product: Product, color: ProductColor)
 }
 
-class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     open weak var delegate: ProductSelectionDelegate?
         
+    @IBOutlet weak var historyCollection: UICollectionView!
     @IBOutlet weak var swatchScroller: UICollectionView!
     private var selectedCell:ProductSwatchCell? {
         willSet {
@@ -103,11 +108,19 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
         self.topLevelCategories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
     }
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (collectionView == self.historyCollection) {
+            return historyView(collectionView, numberOfItemsInSection: section)
+        } else {
+            return swatchView(collectionView, numberOfItemsInSection: section)
+        }
+    }
+    
+    func historyView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func swatchView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let parent = self.selectedProduct {
             return parent.colors.count
         }
@@ -120,6 +133,39 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
     }
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (collectionView == self.historyCollection) {
+            return historyView(collectionView, cellForItemAt: indexPath)
+        } else {
+            return swatchView(collectionView, cellForItemAt: indexPath)
+        }
+    }
+    
+    func historyView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistorySwatchCell", for: indexPath) as? HistorySwatchCell else {
+            fatalError("cannot find HistorySwatchCell")
+        }
+        
+        cell.label.text = "Some Item"
+
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+            if (collectionView == self.historyCollection) {
+                let label = UILabel(frame: CGRect.zero)
+                label.text = "Some Item"
+                label.sizeToFit()
+                return CGSize(width: label.frame.width, height: flowLayout.itemSize.height)
+            }
+            return flowLayout.itemSize
+        }
+        
+        return CGSize.zero
+    }
+    
+    func swatchView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductSwatchCell", for: indexPath) as? ProductSwatchCell else {
             fatalError("cannot find ProductSwatchCell")
         }
@@ -146,6 +192,18 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (collectionView == self.historyCollection) {
+            historyView(collectionView, didSelectItemAt: indexPath)
+        } else {
+            swatchView(collectionView, didSelectItemAt: indexPath)
+        }
+    }
+    
+    func historyView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
+    }
+    
+    func swatchView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 
         let cell = collectionView.cellForItem(at: indexPath) as? ProductSwatchCell
         selectedCell = cell
