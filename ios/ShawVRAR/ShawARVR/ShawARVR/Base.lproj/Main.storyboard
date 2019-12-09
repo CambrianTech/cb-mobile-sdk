@@ -59,51 +59,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-tz-Kyp" userLabel="Navigation">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p07-3h-XNw">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p07-3h-XNw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v99-gu-mSH">
-                                            <size key="itemSize" width="150" height="30"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RP8-cL-By6">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hlC-Fp-cZO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr0-8g-t0w">
-                                                            <rect key="frame" x="8" y="4" width="134" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="fr0-8g-t0w" firstAttribute="leading" secondItem="hlC-Fp-cZO" secondAttribute="leading" id="Dec-lZ-muT"/>
-                                                        <constraint firstItem="fr0-8g-t0w" firstAttribute="top" secondItem="hlC-Fp-cZO" secondAttribute="top" id="fBc-w2-e17"/>
-                                                    </constraints>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="p07-3h-XNw" secondAttribute="trailing" id="Sr7-1Z-RNt"/>
-                                    <constraint firstItem="p07-3h-XNw" firstAttribute="top" secondItem="cWH-tz-Kyp" secondAttribute="top" id="kNw-pG-PVF"/>
-                                    <constraint firstAttribute="height" constant="30" id="n7P-XL-qiq"/>
-                                    <constraint firstAttribute="bottom" secondItem="p07-3h-XNw" secondAttribute="bottom" id="tvV-Sm-Cky"/>
-                                    <constraint firstItem="p07-3h-XNw" firstAttribute="leading" secondItem="cWH-tz-Kyp" secondAttribute="leading" id="uBP-lM-qbA"/>
+                                    <constraint firstAttribute="height" constant="30" id="510-mJ-RcZ"/>
                                 </constraints>
-                            </view>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HlC-U8-jGc">
+                                    <size key="itemSize" width="50" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="ShawARVR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWn-uM-RSz">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z1-s9-sk1">
+                                                    <rect key="frame" x="0.0" y="5" width="42" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Z1-s9-sk1" firstAttribute="centerY" secondItem="HWn-uM-RSz" secondAttribute="centerY" id="UTD-91-6U2"/>
+                                                <constraint firstItem="9Z1-s9-sk1" firstAttribute="leading" secondItem="HWn-uM-RSz" secondAttribute="leading" id="dsC-e6-FVr"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="9Z1-s9-sk1" id="KHH-kg-EfG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="NKx-YE-zss" id="d5L-9D-MsJ"/>
+                                    <outlet property="delegate" destination="NKx-YE-zss" id="hf3-HG-XvQ"/>
+                                </connections>
+                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYu-PX-k89">
                                 <rect key="frame" x="0.0" y="30" width="414" height="190"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,16 +154,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="y5V-gS-4ra" firstAttribute="trailing" secondItem="cYu-PX-k89" secondAttribute="trailing" id="6LR-LP-wiy"/>
-                            <constraint firstItem="cWH-tz-Kyp" firstAttribute="leading" secondItem="y5V-gS-4ra" secondAttribute="leading" id="DBP-Ub-S1v"/>
-                            <constraint firstItem="cYu-PX-k89" firstAttribute="top" secondItem="cWH-tz-Kyp" secondAttribute="bottom" id="InB-RU-Z5D"/>
-                            <constraint firstItem="y5V-gS-4ra" firstAttribute="trailing" secondItem="cWH-tz-Kyp" secondAttribute="trailing" id="PIN-10-2Ee"/>
+                            <constraint firstItem="p07-3h-XNw" firstAttribute="top" secondItem="y5V-gS-4ra" secondAttribute="top" id="Mqy-3o-O7Z"/>
                             <constraint firstItem="y5V-gS-4ra" firstAttribute="bottom" secondItem="cYu-PX-k89" secondAttribute="bottom" id="Qag-zT-lIB"/>
-                            <constraint firstItem="cWH-tz-Kyp" firstAttribute="top" secondItem="y5V-gS-4ra" secondAttribute="top" id="urT-fa-FHS"/>
+                            <constraint firstItem="y5V-gS-4ra" firstAttribute="trailing" secondItem="p07-3h-XNw" secondAttribute="trailing" id="cFw-GK-5gP"/>
+                            <constraint firstItem="p07-3h-XNw" firstAttribute="leading" secondItem="y5V-gS-4ra" secondAttribute="leading" id="mwg-zQ-Cqm"/>
                             <constraint firstItem="cYu-PX-k89" firstAttribute="leading" secondItem="y5V-gS-4ra" secondAttribute="leading" id="wun-fQ-sAV"/>
+                            <constraint firstItem="cYu-PX-k89" firstAttribute="top" secondItem="p07-3h-XNw" secondAttribute="bottom" id="yoP-aQ-JUv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y5V-gS-4ra"/>
                     </view>
                     <connections>
+                        <outlet property="historyCollection" destination="p07-3h-XNw" id="EnZ-SJ-khy"/>
                         <outlet property="swatchScroller" destination="cYu-PX-k89" id="giy-c8-Jka"/>
                     </connections>
                 </viewController>
