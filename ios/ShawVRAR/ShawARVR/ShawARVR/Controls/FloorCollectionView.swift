@@ -11,6 +11,44 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class FloorCollectionView: UICollectionViewController {
+    
+    var categories:[ProductCategory]?
+    var categorySelectedIndex = 0
+    
+    var baseCategory:ProductCategory?
+    
+    var selectedCell:ProductSwatchCell?
+    
+    var selectedCategory:ProductCategory? {
+        get {
+            if let categories = self.categories, categorySelectedIndex < categories.count {
+                return categories[categorySelectedIndex]
+            }
+            return baseCategory
+        }
+    }
+    
+    var selectedProduct: Product?
+    weak open var delegate: ProductSelectionDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let parent = baseCategory {
+            self.navigationItem.title = parent.name
+            self.navigationItem.titleView = UIView()
+            self.categoryLabel.text = parent.name.uppercased()
+            self.categoryButtonsHeight.constant = 0
+            self.categoryButtons.isHidden = true
+        }
+        else {
+            self.categoryButtonsHeight.constant = 50
+            self.categoryButtons.isHidden = false
+            self.categories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
+        }
+        
+        refreshData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
