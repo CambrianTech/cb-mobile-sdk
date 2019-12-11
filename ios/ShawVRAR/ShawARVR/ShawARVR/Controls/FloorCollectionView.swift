@@ -12,36 +12,79 @@ class HistorySwatchCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
 }
 
+class HistoryItem {
+    var category:ProductCategory?
+    var product:Product?
+    var name:String?
+    
+    init(category:ProductCategory) {
+        self.category = category
+        self.name = category.name
+    }
+    
+    init(product:Product) {
+        self.product = product
+        self.name = product.name
+    }
+}
+
 class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productLabel: UILabel!
     
     let textColor = UIColor(red: 51, green: 51, blue: 51)
     
+    func resetProperties() {
+        _variant = nil
+        _product = nil
+        _category = nil
+    }
+    
+    private var _variant: ProductColor?
     var variant: ProductColor? {
-        didSet {
-            self.productLabel.text = variant?.name
+        get {
+            return _variant
+        }
+        set {
+            resetProperties()
+            _variant = newValue
+            self.productLabel.text = newValue?.name
             self.productLabel.textColor = textColor
             self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
-            self.productImage.sd_setImage(with: variant?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
         }
     }
     
+    private var _product: Product?
     var product: Product? {
-        didSet {
-            self.productLabel.text = product?.name
+        get {
+            if let variant = _variant {
+                return variant.parents[0]
+            }
+            return _product
+        }
+        set {
+            resetProperties()
+            _product = newValue
+            self.productLabel.text = newValue?.name
             self.productLabel.textColor = textColor
             self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
-            self.productImage.sd_setImage(with: product?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
         }
     }
     
+    private var _category: ProductCategory?
     var category: ProductCategory? {
-        didSet {
-            self.productLabel.text = category?.name
+        get {
+            return _category
+        }
+        set {
+            resetProperties()
+            _category = newValue
+            self.productLabel.text = newValue?.name
             self.productLabel.textColor = textColor
             self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
-            self.productImage.sd_setImage(with: category?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
         }
     }
     
@@ -71,8 +114,12 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
                 cell.selected(false, animated: false)
             }
         }
+        didSet {
+            selectedCell?.selected(true, animated: false)
+        }
     }
     
+    private var history:[HistoryItem] = []
     private var topLevelCategories:[ProductCategory]?
     
     private var _selectedCategory:ProductCategory?
@@ -117,16 +164,18 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func historyView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return history.count
     }
     
     func swatchView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let parent = self.selectedProduct {
+            print("Listing product \(parent.name) colors")
             return parent.colors.count
-        }
-        else if let parent = self.selectedCategory {
+        } else if let parent = self.selectedCategory {
+            print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
             return parent.products.count > 0 ? parent.products.count : parent.categories.count
         } else if let categories = self.topLevelCategories {
+            print("Listing top level categories")
             return categories.count
         }
         return 0
@@ -144,9 +193,8 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistorySwatchCell", for: indexPath) as? HistorySwatchCell else {
             fatalError("cannot find HistorySwatchCell")
         }
-        
-        cell.label.text = "Some Item"
-
+        let historyItem = self.history[indexPath.row]
+        cell.label.text = historyItem.name
         return cell
     }
     
@@ -154,10 +202,11 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
         
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             if (collectionView == self.historyCollection) {
-                let label = UILabel(frame: CGRect.zero)
-                label.text = "Some Item"
+                let label = UILabel()
+                label.text = self.history[indexPath.row].name
+                //print(label.text ?? "X")
                 label.sizeToFit()
-                return CGSize(width: label.frame.width, height: flowLayout.itemSize.height)
+                return CGSize(width: label.frame.size.width, height: flowLayout.itemSize.height)
             }
             return flowLayout.itemSize
         }
@@ -172,8 +221,7 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
     
         if let product = self.selectedProduct {
             cell.variant = product.colors[indexPath.row]
-        }
-        else if let category = self.selectedCategory {
+        } else if let category = self.selectedCategory {
             if category.products.count > 0 {
                 cell.product = category.products[indexPath.row]
             } else {
@@ -190,6 +238,12 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
         self.swatchScroller.contentOffset = CGPoint.zero
         self.swatchScroller.reloadData()
     }
+    
+    func reloadHistory() {
+        print(self.history.count)
+        self.historyCollection.contentOffset = CGPoint.zero
+        self.historyCollection.reloadData()
+    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView == self.historyCollection) {
@@ -201,25 +255,37 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
     
     func historyView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
+        
+        self.history = Array(self.history.prefix(indexPath.row))
+        self.selectedCategory = self.history.last?.category
+        self.selectedProduct = self.history.last?.product
+        
+        self.selectedCell = nil
+        
+        reloadSwatches()
+        reloadHistory()
     }
     
     func swatchView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                
-        let cell = collectionView.cellForItem(at: indexPath) as? ProductSwatchCell
-        selectedCell = cell
-        
-        if let product = cell?.product {
-            if let variant = cell?.variant {
-                cell?.selected(true, animated: true)
-                self.delegate?.productColorChanged(product:product, color: variant)
-            } else {
-                self.selectedProduct = product
-                reloadSwatches()
-            }
-        } else if let category = cell?.category {
-            self.selectedCategory = category
-            reloadSwatches()
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ProductSwatchCell else {
+            fatalError("cannot find ProductSwatchCell")
         }
+        
+        if let variant = cell.variant, let product = self.selectedProduct {
+            selectedCell = cell
+            self.delegate?.productColorChanged(product:product, color: variant)
+            return
+        } else if let product = cell.product {
+            self.selectedProduct = product
+            self.history.append(HistoryItem(product:product))
+        } else if let category = cell.category {
+            self.selectedCategory = category
+            self.history.append(HistoryItem(category:category))
+        }
+        
+        selectedCell = nil
+        reloadSwatches()
+        reloadHistory()
     }
 
 }
