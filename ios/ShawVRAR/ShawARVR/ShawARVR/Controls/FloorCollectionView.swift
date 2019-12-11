@@ -19,12 +19,12 @@ class HistoryItem {
     
     init(category:ProductCategory) {
         self.category = category
-        self.name = category.name
+        self.name = category.name + " >"
     }
     
     init(product:Product) {
         self.product = product
-        self.name = product.name
+        self.name = product.name + " >"
     }
 }
 
@@ -204,7 +204,6 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
             if (collectionView == self.historyCollection) {
                 let label = UILabel()
                 label.text = self.history[indexPath.row].name
-                //print(label.text ?? "X")
                 label.sizeToFit()
                 return CGSize(width: label.frame.size.width, height: flowLayout.itemSize.height)
             }
