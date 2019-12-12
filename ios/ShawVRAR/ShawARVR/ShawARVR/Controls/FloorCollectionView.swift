@@ -285,7 +285,7 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
                 let label = UILabel()
                 label.text = self.history[indexPath.row].name
                 label.sizeToFit()
-                return CGSize(width: label.frame.size.width, height: flowLayout.itemSize.height)
+                return CGSize(width: min(label.frame.size.width, self.view.frame.size.width / CGFloat(history.count)), height: flowLayout.itemSize.height)
             }
             return flowLayout.itemSize
         }
