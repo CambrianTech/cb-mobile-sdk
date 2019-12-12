@@ -77,7 +77,7 @@ class DataSource {
         category.name = parsed["displayName"] as! String
         category.thumbnailPath = Bundle.main.url(forResource: parsed["thumbnailPath"] as? String, withExtension: nil)
         
-        let request = requestCategoryData(category.code)
+        let request = buildCategoryDataRequest(category.code)
         
         print(request)
         return category
@@ -92,7 +92,7 @@ class DataSource {
         return string.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!
     }
     
-    private func requestCategoryData(_ categoryCode:String, page:Int=0) -> String {
+    private func buildCategoryDataRequest(_ categoryCode:String, page:Int=0) -> String {
         
         let categoryData = jsonCategories[categoryCode]!
         
