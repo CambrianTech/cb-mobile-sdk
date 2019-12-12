@@ -27,7 +27,7 @@ class DataController: NSObject {
     override init() {
         super.init()
     
-        refreshSyncedDatabases()
+        //refreshSyncedDatabases()
         
         _ = SceneLocation() // trigger creation of DB field
         
@@ -173,9 +173,9 @@ class DataController: NSObject {
     
     func refreshSyncedDatabases() {
         
-        self.productContext = intitializeVersionedDataStore(datastoreName:"ProductModel", bundleVersion:self.productCurrentDataVersion) { realm in
-            self.productContext = realm
-        }
+//        self.productContext = intitializeVersionedDataStore(datastoreName:"ProductModel", bundleVersion:self.productCurrentDataVersion) { realm in
+//            self.productContext = realm
+//        }
     }
     
     func uploadDiagnosticImage(_ path:String) {

@@ -229,8 +229,7 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let test = DataSource.current.topLevelCategories
-        self.topLevelCategories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
+        self.topLevelCategories = DataSource.current.topLevelCategories
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

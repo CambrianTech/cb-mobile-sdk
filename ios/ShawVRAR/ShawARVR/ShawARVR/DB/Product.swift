@@ -22,37 +22,17 @@ class Product: Object {
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
     
-    @objc dynamic var specifications = "specs.htm"
-    @objc dynamic var width:Float = 18
-    @objc dynamic var height:Float = 72
+    @objc dynamic var ppi:Float = 20
+    @objc dynamic var width:Float = 1024
+    @objc dynamic var height:Float = 1024
     
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "products")
     let installationMethods = List<InstallationMethod>()
     let colors = List<ProductColor>()
     
-    var directoryPath:String {
-        guard let category = parents.first else {
-            fatalError("Product must have category!")
-        }
-        
-        let basePath = category.directoryPath
-        let directoryPath = "\(basePath)/products/\(name.lowercased().trim())"
-        
-        return directoryPath
-    }
-    
-    var thumbnailPath:URL? {
-        let pathString = "\(directoryPath)/Thumbnail.jpg".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        return URL(string: pathString)
-    }
-    
-    var specsPath:URL? {
-        return URL(string: "\(directoryPath)/\(specifications)")
-    }
-    
-    var jsonString:String {
-        return "{\"name\":\"\(name)\", \"width\":\(width), \"height\":\(height)}"
-    }
+    var thumbnailPath:URL?
+    var specsPath:URL?
+    var jsonString:String?
     
     class func first() -> Product? {
         guard let realmResults = DataController.sharedInstance.productContext?.objects(Product.self) else { return nil }

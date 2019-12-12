@@ -22,17 +22,7 @@ class ProductCategory: Object {
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
     
-    var directoryPath:String {
-        let basePath = parents.first?.directoryPath ?? DataController.sharedInstance.assetPath
-        let directoryPath = "\(basePath)/categories/\(name.lowercased().trim())"
-        
-        return directoryPath
-    }
-    
-    var thumbnailPath:URL? {
-        let pathString = "\(directoryPath)/Thumbnail.jpg".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        return URL(string: pathString)
-    }
+    var thumbnailPath:URL?
     
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "categories")
     
