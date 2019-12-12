@@ -8,8 +8,85 @@
 
 import UIKit
 
+class HistorySwatchCellBG: UIView {
+    
+    var colors = [
+        UIColor(red:0.37, green:0.73, blue:0.97, alpha:1.0),
+        UIColor(red:0.43, green:0.79, blue:0.98, alpha:1.0),
+        UIColor(red:0.49, green:0.86, blue:0.98, alpha:1.0),
+        UIColor(red:0.55, green:0.92, blue:0.98, alpha:1.0),
+    ]
+    
+    func initialize() {
+        self.isOpaque = false
+        self.backgroundColor = .clear
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialize()
+    }
+    
+    var level: Int = 0 {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    var isLast = false {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    override func draw(_ rect: CGRect) {
+        
+        let fillColor:UIColor = colors[level % colors.count]
+        let nextFillColor:UIColor = isLast ? .clear : colors[(level+1) % colors.count]
+        
+        let offset:CGFloat = 11
+        let nextPath = UIBezierPath(rect: CGRect(x: frame.maxX - offset, y: frame.minY, width: offset, height: rect.height))
+        nextFillColor.setFill()
+        nextPath.fill()
+        
+        let path = UIBezierPath()
+        fillColor.setFill()
+        let midY = frame.minY + 0.5 * rect.height
+        
+        path.move(to: CGPoint(x: frame.minX, y: frame.minY))
+        path.addLine(to: CGPoint(x: frame.maxX - offset , y: frame.minY))
+        path.addLine(to: CGPoint(x: frame.maxX, y: midY))
+        path.addLine(to: CGPoint(x: frame.maxX - offset, y: frame.maxY))
+        path.addLine(to: CGPoint(x: frame.minX, y: frame.maxY))
+        path.addLine(to: CGPoint(x: frame.minX, y: frame.minY))
+        path.lineCapStyle = .round;
+        path.fill()
+    }
+}
+
 class HistorySwatchCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var background: HistorySwatchCellBG!
+    
+    func initialize() {
+        self.isOpaque = false
+        self.backgroundColor = .clear
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialize()
+    }
 }
 
 class HistoryItem {
@@ -19,12 +96,12 @@ class HistoryItem {
     
     init(category:ProductCategory) {
         self.category = category
-        self.name = category.name + " >"
+        self.name = category.name
     }
     
     init(product:Product) {
         self.product = product
-        self.name = product.name + " >"
+        self.name = product.name
     }
 }
 
@@ -195,6 +272,9 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
         }
         let historyItem = self.history[indexPath.row]
         cell.label.text = historyItem.name
+        cell.background.level = indexPath.row
+        cell.background.isLast = (indexPath.row == self.history.count - 1)
+        
         return cell
     }
     
