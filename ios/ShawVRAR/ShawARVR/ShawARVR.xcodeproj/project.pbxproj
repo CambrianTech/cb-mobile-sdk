@@ -11,6 +11,7 @@
 		E72157A120B4A4DB008FB2B8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157A020B4A4DB008FB2B8 /* DataController.swift */; };
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
+		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
 		E7B42B1122F4B40900F48597 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = E7B42B1022F4B40900F48597 /* Data */; };
 		E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC1239C512200C1337A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBC4239C51E500C1337A /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC3239C51E500C1337A /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -81,6 +82,7 @@
 		E72157A920B4AAF9008FB2B8 /* ProductModel.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProductModel.realm; sourceTree = "<group>"; };
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
 		E7B42B1022F4B40900F48597 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
 		E7BADBC1239C512200C1337A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ShawARVR/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		E7BADBC3239C51E500C1337A /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = ShawARVR/Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		E7C497BC20B3156F00E7567D /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				E7291DC123A29E6A00F492C2 /* datasource.json */,
 				E71E1D0520BA063600E90518 /* html */,
 				E72157A920B4AAF9008FB2B8 /* ProductModel.realm */,
 				E72157A020B4A4DB008FB2B8 /* DataController.swift */,
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71E1D0620BA063700E90518 /* html in Resources */,
+				E7291DC223A29E6B00F492C2 /* datasource.json in Resources */,
 				E7E4C90D20AB925000E842E4 /* LaunchScreen.storyboard in Resources */,
 				E7B42B1122F4B40900F48597 /* Data in Resources */,
 				E7E4C90A20AB925000E842E4 /* Assets.xcassets in Resources */,
