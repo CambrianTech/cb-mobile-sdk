@@ -99,7 +99,7 @@ class DataSource {
         var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
         select += "," + categoryData["select"]!
         
-        let filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq 'shawfloors') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true) and (StaticRoomFlag eq true or HasRenderImage eq true) and (IsDuplicate eq false) and (IsDefaultStyleColor eq true) and (ProductCode ne '22')"
+        let filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true) and (StaticRoomFlag eq true or HasRenderImage eq true) and (IsDuplicate eq false) and (IsDefaultStyleColor eq true) and (ProductCode ne '22')"
         
         var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(pageSize)&$skip=\(page * pageSize)"
         
