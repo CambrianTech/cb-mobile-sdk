@@ -20,7 +20,7 @@ class DataSource {
     
     private static var _client: DataSource?
     
-    var shared: DataSource {
+    static var shared: DataSource {
         get {
             if let datasource = DataSource._client {
                 return datasource
@@ -31,5 +31,11 @@ class DataSource {
         }
     }
     
-    
+    var topLevelCategories: [ProductCategory] {
+        get {
+            var categories: [ProductCategory] = []
+            
+            return categories
+        }
+    }
 }
