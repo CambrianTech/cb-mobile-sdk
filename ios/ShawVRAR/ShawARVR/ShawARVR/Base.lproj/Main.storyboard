@@ -72,14 +72,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="ShawARVR" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="ShawARVR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWn-uM-RSz">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWn-uM-RSz">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUJ-I9-gIE" userLabel="Background" customClass="HistorySwatchCellBG" customModule="ShawARVR" customModuleProvider="target">
+                                                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUJ-I9-gIE" userLabel="Background" customClass="HistorySwatchCellBG" customModule="ShawARVR" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,21 +120,21 @@
                                     <size key="itemSize" width="150" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ProductSwatchCell" id="Eac-cf-F01" customClass="ProductSwatchCell" customModule="ShawARVR" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="-2.6666666666666665" width="150" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dhn-HI-VHO">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZMd-mZ-qnn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="149"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="144"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some color name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-aQ-gHM">
-                                                    <rect key="frame" x="0.0" y="154" width="150" height="21"/>
+                                                    <rect key="frame" x="0.0" y="149" width="150" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
                                                 <constraint firstItem="3Wv-aQ-gHM" firstAttribute="leading" secondItem="dhn-HI-VHO" secondAttribute="leading" id="uYK-7p-QcU"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="150" height="180"/>
+                                        <size key="customSize" width="150" height="175"/>
                                         <connections>
                                             <outlet property="productImage" destination="ZMd-mZ-qnn" id="lVb-yS-sY4"/>
                                             <outlet property="productLabel" destination="3Wv-aQ-gHM" id="Rrn-JZ-RhE"/>
