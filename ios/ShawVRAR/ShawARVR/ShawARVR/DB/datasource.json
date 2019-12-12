@@ -4,6 +4,7 @@
         {
             "name":"carpets",
             "displayName":"Carpets",
+            "thumbnailPath":"swatches/carpet.jpg",
             "source":"/odata/Carpets",
             "categories": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDuplicate eq false) and (IsDefaultStyleColor eq true) and (ProductCode ne '22')",
             "subcategories": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDuplicate eq false) and (ProductCode ne '22')"
@@ -11,6 +12,7 @@
         {
             "name":"hardwood",
             "displayName":"Hardwood",
+            "thumbnailPath":"swatches/hardwood.jpg",
             "source":"/odata/Hardwoods",
             "categories": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
             "subcategories": "(StaticRoomFlag eq true or HasRenderImage eq true)"
@@ -18,6 +20,7 @@
         {
             "name":"laminate",
             "displayName":"Laminate",
+            "thumbnailPath":"swatches/laminate.jpg",
             "source":"/odata/Laminates",
             "categories": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
             "subcategories": "(StaticRoomFlag eq true or HasRenderImage eq true)"
@@ -25,6 +28,7 @@
         {
             "name":"tileandstone",
             "displayName":"Tile & Stone",
+            "thumbnailPath":"swatches/tile.jpg",
             "source":"/odata/Ceramics",
             "categories": "(SellingColorNbr eq DefaultSsColorNumber) and (StaticRoomFlag eq 1 or HasRenderImage eq true) and (InstallOnFloors eq true)",
             "subcategories": "(StaticRoomFlag eq 1 or HasRenderImage eq true) and (InstallOnFloors eq true)"
@@ -32,6 +36,7 @@
         {
             "name":"resilient",
             "displayName":"Vinyl",
+            "thumbnailPath":"swatches/vinyl.jpg",
             "source":"/odata/Resilient",
             "categories": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
             "subcategories": "(StaticRoomFlag eq true or HasRenderImage eq true)"

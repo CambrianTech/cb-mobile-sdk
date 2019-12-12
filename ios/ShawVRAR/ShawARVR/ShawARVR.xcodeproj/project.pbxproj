@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E71E1D0620BA063700E90518 /* html in Resources */ = {isa = PBXBuildFile; fileRef = E71E1D0520BA063600E90518 /* html */; };
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
@@ -76,7 +75,6 @@
 
 /* Begin PBXFileReference section */
 		E716634D21E91AB400D06791 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		E71E1D0520BA063600E90518 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			children = (
 				E7291DC623A2C63500F492C2 /* DataController.swift */,
 				E7291DC123A29E6A00F492C2 /* datasource.json */,
-				E71E1D0520BA063600E90518 /* html */,
 				E7C497F020B3D07300E7567D /* ProductCategory.swift */,
 				E7C497EE20B3D04D00E7567D /* Product.swift */,
 				E7C497F420B3D29700E7567D /* ProductColor.swift */,
@@ -301,7 +298,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E1D0620BA063700E90518 /* html in Resources */,
 				E7291DC223A29E6B00F492C2 /* datasource.json in Resources */,
 				E7E4C90D20AB925000E842E4 /* LaunchScreen.storyboard in Resources */,
 				E7B42B1122F4B40900F48597 /* Data in Resources */,

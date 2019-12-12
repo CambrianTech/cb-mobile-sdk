@@ -73,6 +73,7 @@ class DataSource {
         let category = ProductCategory()
         category.code = parsed["name"] as! String
         category.name = parsed["displayName"] as! String
+        category.thumbnailPath = Bundle.main.url(forResource: parsed["thumbnailPath"] as? String, withExtension: nil)
         
         return category
     }
