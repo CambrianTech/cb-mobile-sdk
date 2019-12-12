@@ -1,6 +1,6 @@
 {
 	"source":"https://shawfloors.com/api",
-	"topLevelCategories": [
+	"categories": [
         {
             "name":"carpets",
             "displayName":"Carpets",
