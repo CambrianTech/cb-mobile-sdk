@@ -108,9 +108,7 @@ class HistoryItem {
 class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productLabel: UILabel!
-    
-    let textColor = UIColor(red: 51, green: 51, blue: 51)
-    
+        
     func resetProperties() {
         _variant = nil
         _product = nil
@@ -126,8 +124,6 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _variant = newValue
             self.productLabel.text = newValue?.name
-            self.productLabel.textColor = textColor
-            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
             self.productImage.sd_setImage(with: newValue?.thumbnailPath)
         }
     }
@@ -144,8 +140,6 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _product = newValue
             self.productLabel.text = newValue?.name
-            self.productLabel.textColor = textColor
-            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
             self.productImage.sd_setImage(with: newValue?.thumbnailPath)
         }
     }
@@ -159,8 +153,6 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _category = newValue
             self.productLabel.text = newValue?.name
-            self.productLabel.textColor = textColor
-            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
             self.productImage.sd_setImage(with: newValue?.thumbnailPath)
         }
     }

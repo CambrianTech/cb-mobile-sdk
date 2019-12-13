@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Alamofire
+import RealmSwift
 
 class DataSource {
     
     let jsonPath = "datasource.json"
     let webSource:String
     let productGroup = "shawfloors"
+    let baseImagePath = "https://shawfloors.scene7.com/is/image";
+    let imageSize = 320
+    
+    //let realm = try! Realm()
     
     var topLevelCategories: [ProductCategory] = []
     var jsonCategories:Dictionary<String, Dictionary<String, String>> = Dictionary<String, Dictionary<String, String>>()
@@ -36,7 +42,7 @@ class DataSource {
                     let category = categoryJson as! Dictionary<String, String>
                     jsonCategories[category["name"]!] = category
                 }
-                self.topLevelCategories = parseCategories(categoriesJSON: categories)
+                self.topLevelCategories = parseProductCategories(categories)
                 return
             }
             catch {
@@ -59,15 +65,20 @@ class DataSource {
         }
     }
     
-    private func parseCategories(categoriesJSON:Array<AnyObject>) -> [ProductCategory] {
+    private func parseProductCategories(_ categoriesJSON:Array<AnyObject>) -> [ProductCategory] {
         var categories: [ProductCategory] = []
         for categoryJson in categoriesJSON {
-            categories.append(parseCategory(categoryJSON: categoryJson))
+            let category = parseProductCategory(categoryJson)
+            categories.append(category)
+            
+//            try! realm.write {
+//                realm.add(category)
+//            }
         }
         return categories
     }
     
-    private func parseCategory(categoryJSON:AnyObject) -> ProductCategory {
+    private func parseProductCategory(_ categoryJSON:AnyObject) -> ProductCategory {
         guard let parsed = categoryJSON as? Dictionary<String, AnyObject> else {
             fatalError("cannot parse json category")
         }
@@ -77,14 +88,43 @@ class DataSource {
         category.name = parsed["displayName"] as! String
         category.thumbnailPath = Bundle.main.url(forResource: parsed["thumbnailPath"] as? String, withExtension: nil)
         
-        let request = buildCategoryDataRequest(category.code)
+        loadProducts(category.code, { products in
+            for product in products {
+                category.products.append(product)
+                
+//                try! self.realm.write {
+//                    category.products.append(product)
+//                    self.realm.add(product)
+//                }
+            }
+        })
         
-        print(request)
         return category
     }
     
-     let test = "https://shawfloors.com/api/odata/Laminates?$top=1000&$skip=0&$orderby=StyleSequence,UniqueId&$count=true&$select=UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount,CollectionDesc,ColorFamilyDesc,CollectionDesc&$filter=(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq %27shawfloors%27) and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true) and (StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)"
+    private func parseProducts(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [Product] {
+        var products: [Product] = []
+        for productJson in _productsJSON {
+            let product = parseProduct(productJson)
+            products.append(product)
+            
+//            try! self.realm.write {
+//                products.append(product)
+//                self.realm.add(product)
+//            }
+        }
+        return products
+    }
     
+    private func parseProduct(_ categoryJSON:Dictionary<String, AnyObject>) -> Product {
+        
+        let product = Product()
+        
+        product.code = categoryJSON["UniqueId"] as! String
+        product.name = categoryJSON["SellingStyleName"] as! String
+        product.thumbnailPath = URL(string: "\(baseImagePath)/ShawIndustries/\(product.code)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg")
+        return product
+    }
     
     let pageSize = 1000
     
@@ -92,7 +132,23 @@ class DataSource {
         return string.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!
     }
     
-    private func buildCategoryDataRequest(_ categoryCode:String, page:Int=0) -> String {
+    func loadProducts(_ categoryCode:String, _ completion: @escaping ([Product]) -> Void) {
+        
+        //create the url with NSURL
+        let url = buildProductDataRequest(categoryCode)
+
+        AF.request(url).responseJSON { response in
+            if let json = response.value as? Dictionary<String, AnyObject>,
+                //let count = json["@odata.count"] as? Int,
+                let productsJSON = json["value"] as? Array<Dictionary<String, AnyObject>> {
+                
+                let products = self.parseProducts(productsJSON)
+                completion(products)
+            }
+        }
+    }
+    
+    private func buildProductDataRequest(_ categoryCode:String, page:Int=0) -> URL {
         
         let categoryData = jsonCategories[categoryCode]!
         
@@ -101,7 +157,7 @@ class DataSource {
         select += "," + categoryData["select"]!
         
         var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
-        filter += " and " + categoryData["categories"]!
+        filter += " and " + categoryData["productsQuery"]!
         
         var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(pageSize)&$skip=\(page * pageSize)"
         
@@ -109,6 +165,65 @@ class DataSource {
         urlString += "&$select=\(encodeUrl(select))"
         urlString += "&$filter=\(encodeUrl(filter))"
         
-        return urlString
+        return URL(string: urlString)!
+    }
+    
+    func loadProductColors(_ product:Product, _ completion: @escaping ([ProductColor]) -> Void) {
+        
+        //create the url with NSURL
+        let url = buildProductColorsDataRequest(product)
+
+        AF.request(url).responseJSON { response in
+            if let json = response.value as? Dictionary<String, AnyObject>,
+                //let count = json["@odata.count"] as? Int,
+                let categoriesJSON = json["value"] as? Array<Dictionary<String, AnyObject>> {
+
+                let productColors = self.parseProductColors(categoriesJSON)
+                completion(productColors)
+            }
+        }
+    }
+    
+    private func buildProductColorsDataRequest( _ product:Product, page:Int=0) -> URL {
+        
+        let cat = product.category
+        
+        guard let categoryData = jsonCategories[product.category.code] else {
+            fatalError("cannot get json category")
+        }
+        
+        let orderBy = "StyleSequence,UniqueId&$count=true"
+        var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
+        select += "," + categoryData["select"]!
+        
+        var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
+        filter += " and " + categoryData["colorsQuery"]!
+        
+        var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(pageSize)&$skip=\(page * pageSize)"
+        
+        urlString += "&$orderby=\(encodeUrl(orderBy))"
+        urlString += "&$select=\(encodeUrl(select))"
+        urlString += "&$filter=\(encodeUrl(filter))"
+        
+        return URL(string: urlString)!
+    }
+    
+    private func parseProductColors(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [ProductColor] {
+        var colors: [ProductColor] = []
+        for productJson in _productsJSON {
+            colors.append(parseProductColor(productJson))
+        }
+        return colors
+    }
+    
+    private func parseProductColor(_ categoryJSON:Dictionary<String, AnyObject>) -> ProductColor {
+        
+        let color = ProductColor()
+        
+        color.code = categoryJSON["UniqueId"] as! String
+        color.name = categoryJSON["SellingStyleName"] as! String
+        //color.thumbnailPath = "\(baseImagePath)/ShawIndustries/\(color.code)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg"
+        
+        return color
     }
 }

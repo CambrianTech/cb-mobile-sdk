@@ -27,6 +27,10 @@
 		E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497F220B3D18000E7567D /* InstallationMethod.swift */; };
 		E7C497F520B3D29700E7567D /* ProductColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497F420B3D29700E7567D /* ProductColor.swift */; };
 		E7CD9F7023A2CEF50074F27C /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7CD9F6F23A2CEF50074F27C /* bundle */; };
+		E7CD9F7423A3E7740074F27C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7CD9F7323A3E7740074F27C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7CD9F7623A42F610074F27C /* Product+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD9F7523A42F610074F27C /* Product+Extended.swift */; };
+		E7CD9F7823A4301E0074F27C /* ProductColor+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD9F7723A4301E0074F27C /* ProductColor+Extended.swift */; };
+		E7CD9F7A23A440520074F27C /* ProductCategory+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */; };
 		E7E4C90320AB924D00E842E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E4C90220AB924D00E842E4 /* AppDelegate.swift */; };
 		E7E4C90820AB924D00E842E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4C90620AB924D00E842E4 /* Main.storyboard */; };
 		E7E4C90A20AB925000E842E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E4C90920AB925000E842E4 /* Assets.xcassets */; };
@@ -61,6 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E7CD9F7423A3E7740074F27C /* Alamofire.framework in Embed Frameworks */,
 				E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */,
 				E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */,
 				E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */,
@@ -96,6 +101,10 @@
 		E7C497F220B3D18000E7567D /* InstallationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationMethod.swift; sourceTree = "<group>"; };
 		E7C497F420B3D29700E7567D /* ProductColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColor.swift; sourceTree = "<group>"; };
 		E7CD9F6F23A2CEF50074F27C /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
+		E7CD9F7323A3E7740074F27C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ShawARVR/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		E7CD9F7523A42F610074F27C /* Product+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Extended.swift"; sourceTree = "<group>"; };
+		E7CD9F7723A4301E0074F27C /* ProductColor+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductColor+Extended.swift"; sourceTree = "<group>"; };
+		E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductCategory+Extended.swift"; sourceTree = "<group>"; };
 		E7E4C8FF20AB924D00E842E4 /* ShawARVR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShawARVR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E4C90220AB924D00E842E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E4C90720AB924D00E842E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,8 +154,11 @@
 				E7291DC623A2C63500F492C2 /* DataController.swift */,
 				E7291DC123A29E6A00F492C2 /* datasource.json */,
 				E7C497F020B3D07300E7567D /* ProductCategory.swift */,
+				E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */,
 				E7C497EE20B3D04D00E7567D /* Product.swift */,
+				E7CD9F7523A42F610074F27C /* Product+Extended.swift */,
 				E7C497F420B3D29700E7567D /* ProductColor.swift */,
+				E7CD9F7723A4301E0074F27C /* ProductColor+Extended.swift */,
 				E7FEEA4820B70AB900B3F780 /* ProductVariation.swift */,
 				E7FEEA4B20B7387A00B3F780 /* SceneLocation.swift */,
 				E7C497F220B3D18000E7567D /* InstallationMethod.swift */,
@@ -166,6 +178,7 @@
 		E7E4C8F620AB924D00E842E4 = {
 			isa = PBXGroup;
 			children = (
+				E7CD9F7323A3E7740074F27C /* Alamofire.framework */,
 				E7BADBCB239C538800C1337A /* SDWebImage.framework */,
 				E7BADBC9239C532B00C1337A /* RealmSwift.framework */,
 				E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */,
@@ -319,6 +332,7 @@
 			files = (
 				E7291DC023A2979400F492C2 /* DataSource.swift in Sources */,
 				E7C497F520B3D29700E7567D /* ProductColor.swift in Sources */,
+				E7CD9F7823A4301E0074F27C /* ProductColor+Extended.swift in Sources */,
 				E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */,
 				E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */,
 				E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */,
@@ -327,10 +341,12 @@
 				E7291DC723A2C63500F492C2 /* DataController.swift in Sources */,
 				E7BADBD3239DE38F00C1337A /* FloorCollectionView.swift in Sources */,
 				E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */,
+				E7CD9F7623A42F610074F27C /* Product+Extended.swift in Sources */,
 				E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */,
 				E7C497EF20B3D04D00E7567D /* Product.swift in Sources */,
 				E7C497F120B3D07300E7567D /* ProductCategory.swift in Sources */,
 				E7C497E220B3C0B600E7567D /* ARVRViewController.swift in Sources */,
+				E7CD9F7A23A440520074F27C /* ProductCategory+Extended.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
