@@ -21,8 +21,7 @@ class ProductCategory: Object {
     @objc dynamic var name = ""
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
-    
-    var thumbnailUrl:URL?
+    @objc dynamic var thumbnailPath:String = ""
     
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "categories")
     

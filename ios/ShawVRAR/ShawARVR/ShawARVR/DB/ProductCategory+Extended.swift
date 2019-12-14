@@ -7,6 +7,9 @@
 //
 
 extension ProductCategory {
+    var thumbnailUrl : URL? {
+        return URL(string: thumbnailPath)
+    }
     
 }
 
