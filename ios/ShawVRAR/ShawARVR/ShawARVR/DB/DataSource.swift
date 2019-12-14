@@ -18,7 +18,7 @@ class DataSource {
     let baseImagePath = "https://shawfloors.scene7.com/is/image";
     let imageSize = 320
     
-    //let realm = try! Realm()
+    let realm = try! Realm()
     
     var topLevelCategories: [ProductCategory] = []
     var jsonCategories:Dictionary<String, Dictionary<String, String>> = Dictionary<String, Dictionary<String, String>>()
@@ -70,10 +70,23 @@ class DataSource {
         for categoryJson in categoriesJSON {
             let category = parseProductCategory(categoryJson)
             categories.append(category)
+            let categoryCode = category.code
             
-//            try! realm.write {
-//                realm.add(category)
-//            }
+            try! realm.write {
+                realm.add(category)
+            }
+            
+            DispatchQueue.global(qos: .background).async {
+                self.loadProducts(categoryCode, { products in
+                    DispatchQueue.main.async {
+                        for product in products {
+                            try! self.realm.write {
+                                category.products.append(product)
+                            }
+                        }
+                    }
+                })
+            }
         }
         return categories
     }
@@ -86,18 +99,7 @@ class DataSource {
         let category = ProductCategory()
         category.code = parsed["name"] as! String
         category.name = parsed["displayName"] as! String
-        category.thumbnailPath = Bundle.main.url(forResource: parsed["thumbnailPath"] as? String, withExtension: nil)
-        
-        loadProducts(category.code, { products in
-            for product in products {
-                category.products.append(product)
-                
-//                try! self.realm.write {
-//                    category.products.append(product)
-//                    self.realm.add(product)
-//                }
-            }
-        })
+        category.thumbnailUrl = Bundle.main.url(forResource: parsed["thumbnailPath"] as? String, withExtension: nil)
         
         return category
     }
@@ -107,11 +109,6 @@ class DataSource {
         for productJson in _productsJSON {
             let product = parseProduct(productJson)
             products.append(product)
-            
-//            try! self.realm.write {
-//                products.append(product)
-//                self.realm.add(product)
-//            }
         }
         return products
     }
@@ -122,7 +119,7 @@ class DataSource {
         
         product.code = categoryJSON["UniqueId"] as! String
         product.name = categoryJSON["SellingStyleName"] as! String
-        product.thumbnailPath = URL(string: "\(baseImagePath)/ShawIndustries/\(product.code)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg")
+        product.thumbnailPath = "\(baseImagePath)/ShawIndustries/\(product.code)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg"
         return product
     }
     

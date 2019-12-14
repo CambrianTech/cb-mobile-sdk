@@ -8,6 +8,10 @@
 
 extension ProductColor {
     
+    var thumbnailUrl : URL? {
+        return URL(string: thumbnailPath)
+    }
+    
     var product:Product{
         get {
             return parents[0]

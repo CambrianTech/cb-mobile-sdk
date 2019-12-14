@@ -7,7 +7,11 @@
 //
 
 
-extension Product {    
+extension Product {
+    var thumbnailUrl : URL? {
+        return URL(string: thumbnailPath)
+    }
+    
     var category:ProductCategory {
         get {
             return parents[0]

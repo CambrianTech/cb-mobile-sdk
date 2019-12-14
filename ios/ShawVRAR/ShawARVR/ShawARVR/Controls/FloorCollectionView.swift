@@ -124,7 +124,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _variant = newValue
             self.productLabel.text = newValue?.name
-            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
         }
     }
     
@@ -140,7 +140,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _product = newValue
             self.productLabel.text = newValue?.name
-            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
         }
     }
     
@@ -153,7 +153,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _category = newValue
             self.productLabel.text = newValue?.name
-            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
         }
     }
     

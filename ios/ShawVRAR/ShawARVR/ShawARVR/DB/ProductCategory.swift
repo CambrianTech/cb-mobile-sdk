@@ -22,7 +22,7 @@ class ProductCategory: Object {
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
     
-    var thumbnailPath:URL?
+    var thumbnailUrl:URL?
     
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "categories")
     

@@ -21,11 +21,11 @@ class ProductColor: Object {
     @objc dynamic var name = ""
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
+    @objc dynamic var thumbnailPath:String = ""
     
     let parents = LinkingObjects(fromType: Product.self, property: "colors")
     let variations = List<ProductVariation>()
     
     var directoryPath:String?
-    var thumbnailPath:URL?
     var jsonString:String?
 }

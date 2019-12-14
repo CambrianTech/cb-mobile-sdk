@@ -25,14 +25,11 @@ class Product: Object {
     @objc dynamic var ppi:Float = 20
     @objc dynamic var width:Float = 1024
     @objc dynamic var height:Float = 1024
+    @objc dynamic var thumbnailPath:String = ""
     
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "products")
     let installationMethods = List<InstallationMethod>()
     let colors = List<ProductColor>()
-    
-    var thumbnailPath:URL?
-    var specsPath:URL?
-    var jsonString:String?
     
     class func first() -> Product? {
         guard let realmResults = DataController.sharedInstance.productContext?.objects(Product.self) else { return nil }
