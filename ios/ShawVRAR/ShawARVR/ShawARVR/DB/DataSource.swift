@@ -182,9 +182,6 @@ class DataSource {
     }
     
     private func buildProductColorsDataRequest( _ product:Product, page:Int=0) -> URL {
-        
-        let cat = product.category
-        
         guard let categoryData = jsonCategories[product.category.code] else {
             fatalError("cannot get json category")
         }
