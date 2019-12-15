@@ -61,40 +61,40 @@ class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSel
         let hud = JGProgressHUD(style: .dark)
         hud.indicatorView = JGProgressHUDRingIndicatorView()
         hud.textLabel.text = "Downloading"
-//        var hudShown = false
-//        var lastProgress:Float = 0.0
+        var hudShown = false
+        var lastProgress:Float = 0.0
                 
-//        color.loadData(progress: { (receivedSize, expectedSize) in
-//            let amount = 0.9 * Float(receivedSize) / max(Float(expectedSize), 1.0)
-//            //print("Progress Bar: \(receivedSize) Total: \(expectedSize), Pecent: \(amount * 100.0)")
-//
-//            if amount > lastProgress {
-//                lastProgress = amount
-//                DispatchQueue.main.async {
-//                    hud.progress = amount
-//                    if (!hudShown) {
-//                        hudShown = true
-//                        hud.show(in: self.view)
-//                    }
-//                }
-//            }
-//
-//        })
-//        { (completed) in
-//            if (hudShown) {
-//                DispatchQueue.main.async {
-//                    hud.progress = 1.0
-//                    hud.dismiss(afterDelay: 0.5)
-//                }
-//            }
-//            if (completed) {
-//                self.vrView.sendUnityCommand("updateMaterial", json: "{\"product\":\(product.jsonString), \"color\":\(color.jsonString)}")
-//                print("Selected product \(product.name), color \(color.name)")
-//
-//            } else {
-//                //Fail
-//            }
-//        }
+        color.defaultVariation.loadData(progress: { (receivedSize, expectedSize) in
+            let amount = 0.9 * Float(receivedSize) / max(Float(expectedSize), 1.0)
+            //print("Progress Bar: \(receivedSize) Total: \(expectedSize), Pecent: \(amount * 100.0)")
+
+            if amount > lastProgress {
+                lastProgress = amount
+                DispatchQueue.main.async {
+                    hud.progress = amount
+                    if (!hudShown) {
+                        hudShown = true
+                        hud.show(in: self.view)
+                    }
+                }
+            }
+
+        })
+        { (completed) in
+            if (hudShown) {
+                DispatchQueue.main.async {
+                    hud.progress = 1.0
+                    hud.dismiss(afterDelay: 0.5)
+                }
+            }
+            if (completed) {
+                self.vrView.sendUnityCommand("updateMaterial", json: "{\"product\":\(product.jsonString), \"color\":\(color.jsonString)}")
+                print("Selected product \(product.name), color \(color.name)")
+
+            } else {
+                //Fail
+            }
+        }
         
     }
     

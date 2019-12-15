@@ -77,5 +77,14 @@ extension ProductColor {
         }
         return colors
     }
+    
+    public var defaultVariation: ProductVariation {
+        get {
+            let variation = ProductVariation()
+            variation.code = self.code
+            variation.name = self.name
+            return variation
+        }
+    }
 }
 
