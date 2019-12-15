@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import RealmSwift
+import SDWebImage
 
 class DataSource {
     
@@ -85,5 +86,15 @@ class DataSource {
     
     public class func getThumbnailPath(_ UniqueId:String, imageSize:Int=320) -> String {
         return "\(baseImagePath)/ShawIndustries/\(UniqueId)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg"
+    }
+    
+    public class func getDiffusePath(_ UniqueId:String, ppi:Int=20) -> String {
+        return "\(baseImagePath)/ShawIndustriesRender/\(UniqueId)_MAIN?res=\(ppi)&resMode=sharp&scl=1&fmt=jpg"
+    }
+    
+    public class func getLocalImagePath(_ remotePath:URL) -> String? {
+        let key = SDWebImageManager.shared.cacheKey(for: remotePath)
+        let path = SDImageCache.shared.cachePath(forKey: key)
+        return path
     }
 }

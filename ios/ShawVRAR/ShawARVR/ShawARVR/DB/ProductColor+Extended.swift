@@ -72,7 +72,8 @@ extension ProductColor {
     private class func parseProductColors(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [ProductColor] {
         var colors: [ProductColor] = []
         for productJson in _productsJSON {
-            colors.append(ProductColor(productJson))
+            let color = ProductColor(productJson)
+            colors.append(color)
         }
         return colors
     }

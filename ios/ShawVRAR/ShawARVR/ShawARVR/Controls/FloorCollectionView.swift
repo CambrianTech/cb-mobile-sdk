@@ -110,19 +110,19 @@ class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productLabel: UILabel!
         
     func resetProperties() {
-        _variant = nil
+        _color = nil
         _product = nil
         _category = nil
     }
     
-    private var _variant: ProductColor?
-    var variant: ProductColor? {
+    private var _color: ProductColor?
+    var color: ProductColor? {
         get {
-            return _variant
+            return _color
         }
         set {
             resetProperties()
-            _variant = newValue
+            _color = newValue
             self.productLabel.text = newValue?.name
             self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
         }
@@ -131,8 +131,8 @@ class ProductSwatchCell: UICollectionViewCell {
     private var _product: Product?
     var product: Product? {
         get {
-            if let variant = _variant {
-                return variant.parents[0]
+            if let color = _color {
+                return color.product
             }
             return _product
         }
@@ -291,7 +291,7 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
         }
     
         if let product = self.selectedProduct {
-            cell.variant = product.colors[indexPath.row]
+            cell.color = product.colors[indexPath.row]
         } else if let category = self.selectedCategory {
             if category.products.count > 0 {
                 cell.product = category.products[indexPath.row]
@@ -342,9 +342,9 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
             fatalError("cannot find ProductSwatchCell")
         }
         
-        if let variant = cell.variant, let product = self.selectedProduct {
+        if let color = cell.color, let product = self.selectedProduct {
             selectedCell = cell
-            self.delegate?.productColorChanged(product:product, color: variant)
+            self.delegate?.productColorChanged(product:product, color: color)
             return
         } else if let product = cell.product {
             self.selectedProduct = product
