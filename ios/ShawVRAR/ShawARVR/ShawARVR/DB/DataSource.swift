@@ -143,10 +143,10 @@ class DataSource {
         return URL(string: urlString)!
     }
     
-    func loadProductColors(_ product:Product, _ completion: @escaping ([ProductColor]) -> Void) {
+    func loadProductColors(_ categoryID:String, _ styleNumber:String, _ completion: @escaping ([ProductColor]) -> Void) {
         
         //create the url with NSURL
-        let url = buildProductColorsDataRequest(product)
+        let url = buildProductColorsDataRequest(categoryID, styleNumber)
 
         AF.request(url).responseJSON { response in
             if let json = response.value as? Dictionary<String, AnyObject>,
@@ -159,8 +159,8 @@ class DataSource {
         }
     }
     
-    private func buildProductColorsDataRequest( _ product:Product, page:Int=0) -> URL {
-        guard let categoryData = jsonCategories[product.category.code] else {
+    private func buildProductColorsDataRequest( _ categoryID:String, _ styleNumber:String, page:Int=0) -> URL {
+        guard let categoryData = jsonCategories[categoryID] else {
             fatalError("cannot get json category")
         }
         
@@ -170,7 +170,7 @@ class DataSource {
         
         var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
         filter += " and " + categoryData["colorsQuery"]!
-        filter += " and (SellingStyleNbr eq '\(product.styleNumber)')"
+        filter += " and (SellingStyleNbr eq '\(styleNumber)')"
         
         var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(pageSize)&$skip=\(page * pageSize)"
         
