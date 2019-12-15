@@ -55,7 +55,7 @@ extension ProductVariation {
                                                       completion: completion)
     }
     
-    var jsonString:String {
+    var jsonCommand:String {
         var data = ["name": self.name]
         if let path = diffusePath {
             data["diffusePath"] = path
