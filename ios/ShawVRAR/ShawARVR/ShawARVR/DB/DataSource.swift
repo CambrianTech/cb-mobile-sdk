@@ -18,6 +18,7 @@ class DataSource {
     
     static let baseImagePath = "https://shawfloors.scene7.com/is/image";
     static let imageSize = 320
+    static let pageSize = 1000
     
     let realm = try! Realm()
     
@@ -92,12 +93,6 @@ class DataSource {
         return categories
     }
     
-    let pageSize = 1000
-    
-    private func encodeUrl(_ string:String) -> String {
-        return string.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!
-    }
-    
     func loadProducts(_ categoryCode:String, _ completion: @escaping ([Product]) -> Void) {
         
         //create the url with NSURL
@@ -134,61 +129,17 @@ class DataSource {
         var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
         filter += " and " + categoryData["productsQuery"]!
         
-        var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(pageSize)&$skip=\(page * pageSize)"
+        var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(DataSource.pageSize)&$skip=\(page * DataSource.pageSize)"
         
-        urlString += "&$orderby=\(encodeUrl(orderBy))"
-        urlString += "&$select=\(encodeUrl(select))"
-        urlString += "&$filter=\(encodeUrl(filter))"
-        
-        return URL(string: urlString)!
-    }
-    
-    func loadProductColors(_ categoryID:String, _ styleNumber:String, _ completion: @escaping ([ProductColor]) -> Void) {
-        
-        //create the url with NSURL
-        let url = buildProductColorsDataRequest(categoryID, styleNumber)
-
-        AF.request(url).responseJSON { response in
-            if let json = response.value as? Dictionary<String, AnyObject>,
-                //let count = json["@odata.count"] as? Int,
-                let categoriesJSON = json["value"] as? Array<Dictionary<String, AnyObject>> {
-
-                let productColors = self.parseProductColors(categoriesJSON)
-                completion(productColors)
-            }
-        }
-    }
-    
-    private func buildProductColorsDataRequest( _ categoryID:String, _ styleNumber:String, page:Int=0) -> URL {
-        guard let categoryData = jsonCategories[categoryID] else {
-            fatalError("cannot get json category")
-        }
-        
-        let orderBy = "StyleSequence,UniqueId&$count=true"
-        var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
-        select += "," + categoryData["select"]!
-        
-        var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
-        filter += " and " + categoryData["colorsQuery"]!
-        filter += " and (SellingStyleNbr eq '\(styleNumber)')"
-        
-        var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(pageSize)&$skip=\(page * pageSize)"
-        
-        urlString += "&$orderby=\(encodeUrl(orderBy))"
-        urlString += "&$select=\(encodeUrl(select))"
-        urlString += "&$filter=\(encodeUrl(filter))"
-        
-        //print(urlString)
+        urlString += "&$orderby=\(DataSource.encodeUrl(orderBy))"
+        urlString += "&$select=\(DataSource.encodeUrl(select))"
+        urlString += "&$filter=\(DataSource.encodeUrl(filter))"
         
         return URL(string: urlString)!
     }
     
-    private func parseProductColors(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [ProductColor] {
-        var colors: [ProductColor] = []
-        for productJson in _productsJSON {
-            colors.append(ProductColor(productJson))
-        }
-        return colors
+    public class func encodeUrl(_ string:String) -> String {
+        return string.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!
     }
     
     public class func getThumbnailPath(_ UniqueId:String, imageSize:Int=320) -> String {
