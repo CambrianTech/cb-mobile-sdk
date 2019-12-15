@@ -15,8 +15,9 @@ class DataSource {
     let jsonPath = "datasource.json"
     let webSource:String
     let productGroup = "shawfloors"
-    let baseImagePath = "https://shawfloors.scene7.com/is/image";
-    let imageSize = 320
+    
+    static let baseImagePath = "https://shawfloors.scene7.com/is/image";
+    static let imageSize = 320
     
     let realm = try! Realm()
     
@@ -68,7 +69,7 @@ class DataSource {
     private func parseProductCategories(_ categoriesJSON:Array<AnyObject>) -> [ProductCategory] {
         var categories: [ProductCategory] = []
         for categoryJson in categoriesJSON {
-            let category = parseProductCategory(categoryJson)
+            let category = ProductCategory(categoryJson as! Dictionary<String, AnyObject>)
             categories.append(category)
             let categoryCode = category.code
             
@@ -91,38 +92,6 @@ class DataSource {
         return categories
     }
     
-    private func parseProductCategory(_ categoryJSON:AnyObject) -> ProductCategory {
-        guard let parsed = categoryJSON as? Dictionary<String, AnyObject> else {
-            fatalError("cannot parse json category")
-        }
-        
-        let category = ProductCategory()
-        category.code = parsed["name"] as! String
-        category.name = parsed["displayName"] as! String
-        category.thumbnailPath = Bundle.main.url(forResource: parsed["thumbnailPath"] as? String, withExtension: nil)!.absoluteString
-        
-        return category
-    }
-    
-    private func parseProducts(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [Product] {
-        var products: [Product] = []
-        for productJson in _productsJSON {
-            let product = parseProduct(productJson)
-            products.append(product)
-        }
-        return products
-    }
-    
-    private func parseProduct(_ categoryJSON:Dictionary<String, AnyObject>) -> Product {
-        
-        let product = Product()
-        
-        product.code = categoryJSON["UniqueId"] as! String
-        product.name = categoryJSON["SellingStyleName"] as! String
-        product.thumbnailPath = "\(baseImagePath)/ShawIndustries/\(product.code)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg"
-        return product
-    }
-    
     let pageSize = 1000
     
     private func encodeUrl(_ string:String) -> String {
@@ -143,6 +112,15 @@ class DataSource {
                 completion(products)
             }
         }
+    }
+    
+    private func parseProducts(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [Product] {
+        var products: [Product] = []
+        for productJson in _productsJSON {
+            let product = Product(productJson)
+            products.append(product)
+        }
+        return products
     }
     
     private func buildProductDataRequest(_ categoryCode:String, page:Int=0) -> URL {
@@ -192,6 +170,7 @@ class DataSource {
         
         var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
         filter += " and " + categoryData["colorsQuery"]!
+        filter += " and (SellingStyleNbr eq '\(product.styleNumber)')"
         
         var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(pageSize)&$skip=\(page * pageSize)"
         
@@ -199,25 +178,20 @@ class DataSource {
         urlString += "&$select=\(encodeUrl(select))"
         urlString += "&$filter=\(encodeUrl(filter))"
         
+        //print(urlString)
+        
         return URL(string: urlString)!
     }
     
     private func parseProductColors(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [ProductColor] {
         var colors: [ProductColor] = []
         for productJson in _productsJSON {
-            colors.append(parseProductColor(productJson))
+            colors.append(ProductColor(productJson))
         }
         return colors
     }
     
-    private func parseProductColor(_ categoryJSON:Dictionary<String, AnyObject>) -> ProductColor {
-        
-        let color = ProductColor()
-        
-        color.code = categoryJSON["UniqueId"] as! String
-        color.name = categoryJSON["SellingStyleName"] as! String
-        //color.thumbnailPath = "\(baseImagePath)/ShawIndustries/\(color.code)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg"
-        
-        return color
+    public class func getThumbnailPath(_ UniqueId:String, imageSize:Int=320) -> String {
+        return "\(baseImagePath)/ShawIndustries/\(UniqueId)_MAIN?fit=crop&wid=\(imageSize)&hei=\(imageSize)&fmt=jpg"
     }
 }

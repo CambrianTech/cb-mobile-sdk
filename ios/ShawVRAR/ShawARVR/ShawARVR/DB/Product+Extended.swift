@@ -8,6 +8,16 @@
 
 
 extension Product {
+    
+    convenience init (_ json:Dictionary<String, AnyObject>) {
+        self.init()
+        
+        self.jsonString = json.jsonString
+        self.code = json["UniqueId"] as! String
+        self.name = json["SellingStyleName"] as! String
+        self.thumbnailPath = DataSource.getThumbnailPath(self.code)
+    }
+    
     var thumbnailUrl : URL? {
         return URL(string: thumbnailPath)
     }
@@ -17,14 +27,33 @@ extension Product {
             return parents[0]
         }
     }
+    
+    var jsonData:[String: AnyObject] {
+        get {
+            return self.jsonString.jsonData
+        }
+    }
+    
+    var styleNumber:String {
+        get {
+            return self.jsonData["SellingStyleNbr"] as! String
+        }
+    }
 
     func sync(_ completion: @escaping () -> Void) {
         if (self.colors.count > 0) {
             return
         }
-        DataSource.current.loadProductColors(self) { (colors) in
-            self.colors.append(objectsIn: colors)
-            completion()
+        
+        DispatchQueue.global(qos: .background).async {
+            DataSource.current.loadProductColors(self) { (colors) in
+//                DispatchQueue.main.async {
+//                    try! DataSource.current.realm.write {
+//                        self.colors.append(objectsIn: colors)
+//                    }
+//                    completion()
+//                }
+            }
         }
     }
 }

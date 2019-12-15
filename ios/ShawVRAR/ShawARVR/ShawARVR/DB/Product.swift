@@ -26,6 +26,7 @@ class Product: Object {
     @objc dynamic var width:Float = 1024
     @objc dynamic var height:Float = 1024
     @objc dynamic var thumbnailPath:String = ""
+    @objc dynamic var jsonString:String = ""
     
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "products")
     let installationMethods = List<InstallationMethod>()

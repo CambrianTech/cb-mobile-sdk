@@ -22,10 +22,10 @@ class ProductColor: Object {
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
     @objc dynamic var thumbnailPath:String = ""
+    @objc dynamic var jsonString:String = ""
     
     let parents = LinkingObjects(fromType: Product.self, property: "colors")
     let variations = List<ProductVariation>()
     
     var directoryPath:String?
-    var jsonString:String?
 }
