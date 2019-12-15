@@ -49,7 +49,16 @@ extension ProductVariation {
     }
     
     func loadData(progress: @escaping (Int, Int) -> Void, completion: @escaping (Bool) -> Void) {
-        let paths:Array<URL> = []
+        var paths:Array<URL> = []
+        if let url = remoteDiffusePath {
+            paths.append(url)
+        }
+        if let url = remoteNormalPath {
+            paths.append(url)
+        }
+        if let url = remoteRoughnessPath {
+            paths.append(url)
+        }
         DataController.sharedInstance.getCachedImages(remotePaths: paths,
                                                       progress: progress,
                                                       completion: completion)
@@ -57,15 +66,9 @@ extension ProductVariation {
     
     var jsonCommand:String {
         var data = ["name": self.name]
-        if let path = diffusePath {
-            data["diffusePath"] = path
-        }
-        if let path = normalsPath {
-            data["normalsPath"] = path
-        }
-        if let path = roughnessPath {
-            data["roughnessPath"] = path
-        }
+        data["diffusePath"] = diffusePath ?? ""
+        data["normalsPath"] = normalsPath ?? ""
+        data["roughnessPath"] = roughnessPath ?? ""
         return data.jsonString
     }
 }

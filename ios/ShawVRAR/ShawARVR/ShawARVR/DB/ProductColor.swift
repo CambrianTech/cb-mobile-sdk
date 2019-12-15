@@ -26,11 +26,4 @@ class ProductColor: Object {
     
     let parents = LinkingObjects(fromType: Product.self, property: "colors")
     let variations = List<ProductVariation>()
-    
-    var directoryPath:String?
-    
-    var jsonCommand:String {
-        let variationsJson:String = "[\(self.variations.compactMap({$0.jsonCommand}).joined(separator:","))]"
-        return "{\"name\":\"\(name)\", \"variations\":\(variationsJson)}"
-    }
 }

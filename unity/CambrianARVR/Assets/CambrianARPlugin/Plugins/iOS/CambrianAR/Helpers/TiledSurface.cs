@@ -225,7 +225,7 @@ namespace Cambrian.iOS
       
         void HandleARExecuteCommand(CambrianCommand command)
         {
-            Debug.Log($"Unity received command: {command.commandString} with data: {command.jsonString}");
+            Debug.Log($"UNITY received command: {command.commandString} with data: {command.jsonString}");
 
             //MeshRenderer test;
             //test.sh
@@ -242,6 +242,7 @@ namespace Cambrian.iOS
                     
                     Debug.Log($"Got {variations.Count} variations");
                     //break it down into manageable chunks
+                    
                     for (var i=0; i<_surface.NumVariations; i++)
                     {          
                         var index = i;
@@ -252,8 +253,11 @@ namespace Cambrian.iOS
                             
                             //must be on main thread
                             _textures[index].diffuse.LoadImage(variation.GetDiffuse());
-                            _textures[index].normals.LoadImage(variation.GetNormal());
-                            _textures[index].roughness.LoadImage(variation.GetRoughness());
+                            if (variation.IsPBR())
+                            {
+                                _textures[index].normals.LoadImage(variation.GetNormal());
+                                _textures[index].roughness.LoadImage(variation.GetRoughness());
+                            }
                             variation.Destroy();
                             
                             _surface.UpdateMaterials(_textures[index], index);

@@ -77,7 +77,7 @@ class DataController: NSObject {
                     },
                                                          completed: { (image, data, error, cacheType, completed, url) in
                                                             toLoad -= 1
-                                                            if !completed {
+                                                            if error != nil || !completed {
                                                                 completion(false)
                                                             }
                                                             else if (toLoad == 0) {
