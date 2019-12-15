@@ -105,4 +105,8 @@ extension Product {
         
         return URL(string: urlString)!
     }
+    
+    var jsonCommand:String {
+        return "{\"name\":\"\(name)\", \"width\":\(width), \"height\":\(height)}"
+    }
 }
