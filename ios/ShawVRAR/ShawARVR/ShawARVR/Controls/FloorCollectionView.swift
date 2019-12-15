@@ -354,6 +354,9 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
             self.history.append(HistoryItem(product:product))
         } else if let category = cell.category {
             self.selectedCategory = category
+            category.sync {
+                self.reloadSwatches()
+            }
             self.history.append(HistoryItem(category:category))
         }
         

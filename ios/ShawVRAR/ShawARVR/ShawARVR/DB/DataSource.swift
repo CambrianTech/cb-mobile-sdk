@@ -72,70 +72,11 @@ class DataSource {
         for categoryJson in categoriesJSON {
             let category = ProductCategory(categoryJson as! Dictionary<String, AnyObject>)
             categories.append(category)
-            let categoryCode = category.code
-            
             try! realm.write {
                 realm.add(category)
             }
-            
-            DispatchQueue.global(qos: .background).async {
-                self.loadProducts(categoryCode, { products in
-                    DispatchQueue.main.async {
-                        for product in products {
-                            try! self.realm.write {
-                                category.products.append(product)
-                            }
-                        }
-                    }
-                })
-            }
         }
         return categories
-    }
-    
-    func loadProducts(_ categoryCode:String, _ completion: @escaping ([Product]) -> Void) {
-        
-        //create the url with NSURL
-        let url = buildProductDataRequest(categoryCode)
-
-        AF.request(url).responseJSON { response in
-            if let json = response.value as? Dictionary<String, AnyObject>,
-                //let count = json["@odata.count"] as? Int,
-                let productsJSON = json["value"] as? Array<Dictionary<String, AnyObject>> {
-                
-                let products = self.parseProducts(productsJSON)
-                completion(products)
-            }
-        }
-    }
-    
-    private func parseProducts(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [Product] {
-        var products: [Product] = []
-        for productJson in _productsJSON {
-            let product = Product(productJson)
-            products.append(product)
-        }
-        return products
-    }
-    
-    private func buildProductDataRequest(_ categoryCode:String, page:Int=0) -> URL {
-        
-        let categoryData = jsonCategories[categoryCode]!
-        
-        let orderBy = "StyleSequence,UniqueId&$count=true"
-        var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
-        select += "," + categoryData["select"]!
-        
-        var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(self.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
-        filter += " and " + categoryData["productsQuery"]!
-        
-        var urlString = "\(self.webSource)/\(categoryData["source"]!)?$top=\(DataSource.pageSize)&$skip=\(page * DataSource.pageSize)"
-        
-        urlString += "&$orderby=\(DataSource.encodeUrl(orderBy))"
-        urlString += "&$select=\(DataSource.encodeUrl(select))"
-        urlString += "&$filter=\(DataSource.encodeUrl(filter))"
-        
-        return URL(string: urlString)!
     }
     
     public class func encodeUrl(_ string:String) -> String {
