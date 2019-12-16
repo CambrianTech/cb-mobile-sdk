@@ -39,8 +39,6 @@ namespace Cambrian.iOS
         private ConcurrentQueue<Action> _mainQueue;
 
         private TiledGrid _surface;
-
-
         private QueueThread _bgQueueThread;
        
 

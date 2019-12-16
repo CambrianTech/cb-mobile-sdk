@@ -53,10 +53,12 @@ namespace Shaw.Data
     [Serializable]
     public class ProductVariation
     {
-        public string name;
         public string diffusePath;
         public string normalsPath;
         public string roughnessPath;
+        public int width;
+        public int height;
+        public float dpcm;
 
         public bool LoadAll()
         {

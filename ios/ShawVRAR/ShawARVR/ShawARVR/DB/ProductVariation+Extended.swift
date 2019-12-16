@@ -69,6 +69,9 @@ extension ProductVariation {
         data["diffusePath"] = diffusePath ?? ""
         data["normalsPath"] = normalsPath ?? ""
         data["roughnessPath"] = roughnessPath ?? ""
+        data["width"] = "0"
+        data["height"] = "0"
+        data["dpcm"] = "0"
         return data.jsonString
     }
 }
