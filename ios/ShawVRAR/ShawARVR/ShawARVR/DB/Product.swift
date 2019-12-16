@@ -22,9 +22,9 @@ class Product: Object {
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
     
-    @objc dynamic var ppi:Float = 20
-    @objc dynamic var width:Float = 1024
-    @objc dynamic var height:Float = 1024
+    @objc dynamic var ppi:Int = 20
+    @objc dynamic var width:Int = 1024
+    @objc dynamic var height:Int = 1024
     @objc dynamic var thumbnailPath:String = ""
     @objc dynamic var jsonString:String = ""
     

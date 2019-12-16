@@ -80,9 +80,10 @@ extension ProductColor {
     
     public var defaultVariation: ProductVariation {
         get {
-            let variation = ProductVariation()
+            let variation = ProductVariation(self)
             variation.code = self.code
             variation.name = self.name
+            
             return variation
         }
     }

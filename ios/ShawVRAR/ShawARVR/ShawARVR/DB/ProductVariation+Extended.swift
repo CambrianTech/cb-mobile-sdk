@@ -9,14 +9,18 @@
 import Foundation
 import SDWebImage
 
-extension ProductVariation {
-
-    convenience init (_ color:ProductColor) {
-        self.init()
+extension ProductVariation {    
+    var color:ProductColor {
+        get {
+            if let color = _color {
+                return color
+            }
+            return parents[0]
+        }
     }
     
     private var remoteDiffusePath:URL? {
-        return URL(string:DataSource.getDiffusePath(self.code))
+        return URL(string:DataSource.getDiffusePath(self.code, ppi: self.color.product.ppi))
     }
     
     private var remoteNormalPath:URL? {

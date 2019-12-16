@@ -106,15 +106,9 @@ extension Product {
         return URL(string: urlString)!
     }
     
-    var pcm:Int {
-        get {
-            return 20
-        }
-    }
-    
     var dpcm:Float {
         get {
-            return Float(pcm) / 2.54
+            return Float(self.ppi) / 2.54
         }
     }
     

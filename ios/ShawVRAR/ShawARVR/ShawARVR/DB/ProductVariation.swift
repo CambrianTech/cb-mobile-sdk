@@ -13,7 +13,7 @@ import SDWebImage
 
 class ProductVariation: Object {
     override static func ignoredProperties() -> [String] {
-        return ["directoryPath", "thumbnailImage", "jsonString"]
+        return ["_color", "thumbnailImage", "jsonString"]
     }
     
     @objc dynamic var id = UUID().uuidString
@@ -25,4 +25,10 @@ class ProductVariation: Object {
     @objc dynamic var orderIndex = 0
     
     let parents = LinkingObjects(fromType: ProductColor.self, property: "variations")
+    
+    var _color:ProductColor?
+    convenience init (_ color:ProductColor) {
+        self.init()
+        _color = color
+    }
 }
