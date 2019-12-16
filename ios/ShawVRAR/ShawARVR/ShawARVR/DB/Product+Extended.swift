@@ -114,7 +114,7 @@ extension Product {
     
     var dpcm:Float {
         get {
-            return Float(pcm) * 2.54
+            return Float(pcm) / 2.54
         }
     }
     

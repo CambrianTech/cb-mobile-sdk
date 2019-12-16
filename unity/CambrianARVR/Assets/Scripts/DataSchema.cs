@@ -25,7 +25,7 @@ namespace Shaw.Data
 
         public Vector2 sizeMeters(float pixelWidth, float pixelHeight)
         {
-            return new Vector2(0.0254f * pixelWidth, 0.0254f * pixelHeight);
+            return new Vector2(0.01f * pixelWidth / dpcm, 0.01f * pixelHeight / dpcm);
         }
     }
 
