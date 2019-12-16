@@ -236,6 +236,7 @@ namespace Cambrian.iOS
                 if (materialCommand != null && materialCommand.color != null)
                 {
                     _tileSize = materialCommand.product.sizeMeters();
+                    _tileSize = new Vector2(0.4572F, 1.8288F);
                     var variations = materialCommand.color.GetLoadedVariations();
                     
                     _surface.NumVariations = Math.Min(variations.Count, MaxVariations);
