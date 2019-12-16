@@ -89,8 +89,7 @@ extension ProductColor {
     
     var jsonCommand:String {
         let variations = self.variations.count > 0 ? Array(self.variations) : [self.defaultVariation]
-        let variationsJson:String = "[\(variations.compactMap({$0.jsonCommand}).joined(separator:","))]"
-        return "{\"name\":\"\(name)\", \"variations\":\(variationsJson)}"
+        return "{\"name\":\"\(name)\", \"variations\":[\(variations.compactMap({$0.jsonCommand}).joined(separator:","))]}"
     }
-}
+} 
 

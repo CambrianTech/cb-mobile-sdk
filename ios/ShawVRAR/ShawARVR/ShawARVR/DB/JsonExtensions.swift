@@ -36,7 +36,7 @@ extension Dictionary {
             }
             catch
             {
-                 print("Error converting JSON")
+                print("Error converting JSON")
                 return "{}"
             }
         }

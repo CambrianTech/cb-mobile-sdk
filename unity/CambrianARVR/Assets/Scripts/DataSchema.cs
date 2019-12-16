@@ -21,12 +21,11 @@ namespace Shaw.Data
     public class Product
     {
         public string name;
-        public float width;
-        public float height;
+        public float dpcm;
 
-        public Vector2 sizeMeters()
+        public Vector2 sizeMeters(float pixelWidth, float pixelHeight)
         {
-            return new Vector2(0.0254f * width, 0.0254f * height);
+            return new Vector2(0.0254f * pixelWidth, 0.0254f * pixelHeight);
         }
     }
 
@@ -56,9 +55,6 @@ namespace Shaw.Data
         public string diffusePath;
         public string normalsPath;
         public string roughnessPath;
-        public int width;
-        public int height;
-        public float dpcm;
 
         public bool LoadAll()
         {

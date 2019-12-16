@@ -106,7 +106,22 @@ extension Product {
         return URL(string: urlString)!
     }
     
+    var pcm:Int {
+        get {
+            return 20
+        }
+    }
+    
+    var dpcm:Float {
+        get {
+            return Float(pcm) * 2.54
+        }
+    }
+    
     var jsonCommand:String {
-        return "{\"name\":\"\(name)\", \"width\":\(width), \"height\":\(height)}"
+        var data = Dictionary<String, AnyObject>()
+        data["name"] = self.name as NSString
+        data["dpcm"] = NSNumber(value:self.dpcm)
+        return data.jsonString
     }
 }

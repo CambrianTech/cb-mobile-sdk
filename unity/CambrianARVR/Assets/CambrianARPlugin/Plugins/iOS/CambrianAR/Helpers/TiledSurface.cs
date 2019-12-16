@@ -233,7 +233,7 @@ namespace Cambrian.iOS
 
                 if (materialCommand != null && materialCommand.color != null)
                 {
-                    _tileSize = materialCommand.product.sizeMeters();
+                    
                     _tileSize = new Vector2(0.4572F, 1.8288F);
                     var variations = materialCommand.color.GetLoadedVariations();
                     
@@ -252,6 +252,7 @@ namespace Cambrian.iOS
                             
                             //must be on main thread
                             _textures[index].diffuse.LoadImage(variation.GetDiffuse());
+                            //_tileSize = materialCommand.product.sizeMeters();
                             if (variation.IsPBR())
                             {
                                 _textures[index].normals.LoadImage(variation.GetNormal());
