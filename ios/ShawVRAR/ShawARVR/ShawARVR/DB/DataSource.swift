@@ -13,7 +13,8 @@ import SDWebImage
 
 class DataSource {
     
-    let jsonPath = "datasource.json"
+    let categoryJsonPath = "datasource.json"
+    let ppiJsonPath = "ppi-data.json"
     let webSource:String
     let productGroup = "shawfloors"
     
@@ -24,10 +25,12 @@ class DataSource {
     let realm = try! Realm()
     
     var topLevelCategories: [ProductCategory] = []
-    var jsonCategories:Dictionary<String, Dictionary<String, String>> = Dictionary<String, Dictionary<String, String>>()
+    var jsonCategories: Dictionary<String, Dictionary<String, String>> = Dictionary<String, Dictionary<String, String>>()
+    
+    var ppiData: Dictionary<String, Int> = Dictionary<String, Int>()
     
     private init() {
-        if let path = Bundle.main.path(forResource: jsonPath, ofType: nil) {
+        if let path = Bundle.main.path(forResource: categoryJsonPath, ofType: nil) {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
@@ -55,6 +58,28 @@ class DataSource {
         fatalError("cannot find required datasource")
     }
     
+    private func readPPIJSON() {
+        if let path = Bundle.main.path(forResource: ppiJsonPath, ofType: nil) {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                
+                guard let parsed = jsonResult as? Dictionary<String, AnyObject> else {
+                    fatalError("cannot parse json data")
+                }
+                
+                guard let imageJSON = parsed["images"] as? Array<AnyObject> else {
+                    fatalError("no images attribute in json data")
+                }
+                
+                parsePPIData(imageJSON)
+            }
+            catch {
+                //not required
+            }
+        }
+    }
+    
     private static var _client: DataSource?
     
     static var current: DataSource {
@@ -80,6 +105,16 @@ class DataSource {
         return categories
     }
     
+    private func parsePPIData(_ imagesJSON:Array<AnyObject>) {
+        
+        for json in imagesJSON {
+            let imageData = json as! Dictionary<String, AnyObject>
+            if let imageName = imageData["name"] as? String, let ppi = imageData["ppi"] as? Int {
+                self.ppiData[imageName] = ppi
+            }
+        }
+    }
+    
     public class func encodeUrl(_ string:String) -> String {
         return string.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!
     }
@@ -96,5 +131,16 @@ class DataSource {
         let key = SDWebImageManager.shared.cacheKey(for: remotePath)
         let path = SDImageCache.shared.cachePath(forKey: key)
         return path
+    }
+    
+    public func getImagePPI(_ UniqueId:String) -> Int {
+        if (self.ppiData.count == 0) {
+            readPPIJSON()
+        }
+        let imageName = "\(UniqueId)_MAIN"
+        if let ppi = self.ppiData[imageName] {
+            return ppi
+        }
+        return 20
     }
 }

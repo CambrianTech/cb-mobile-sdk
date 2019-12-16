@@ -106,6 +106,12 @@ extension Product {
         return URL(string: urlString)!
     }
     
+    var ppi:Int {
+        get {
+            return DataSource.current.getImagePPI(self.code)
+        }
+    }
+    
     var dpcm:Float {
         get {
             return Float(self.ppi) / 2.54
