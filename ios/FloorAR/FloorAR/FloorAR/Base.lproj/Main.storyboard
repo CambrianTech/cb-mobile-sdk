@@ -20,11 +20,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitchen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Wzw-kX-mvn" userLabel="background">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u">
+                                <rect key="frame" x="151.66666666666666" y="587.33333333333337" width="110.99999999999997" height="30"/>
+                                <state key="normal" title="Start Visualizing"/>
+                                <connections>
+                                    <segue destination="br9-Yd-2Kv" kind="show" id="FlA-16-PG2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="tLR-Na-V6u" firstAttribute="centerX" secondItem="zyO-DM-JFH" secondAttribute="centerX" id="5NN-cs-Nzv"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="top" secondItem="Wzw-kX-mvn" secondAttribute="top" id="IIJ-gn-zjI"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="trailing" secondItem="Wzw-kX-mvn" secondAttribute="trailing" id="faY-tQ-o4J"/>
+                            <constraint firstItem="tLR-Na-V6u" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.33" id="n42-qx-lMX"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="bottom" secondItem="zyO-DM-JFH" secondAttribute="bottom" id="rlQ-Eb-4cs"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="leading" secondItem="zyO-DM-JFH" secondAttribute="leading" id="vcp-9e-G33"/>
                         </constraints>
@@ -40,15 +49,15 @@
             <objects>
                 <viewController id="br9-Yd-2Kv" userLabel="Virtual Reality" customClass="ARVRViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53Z-99-PMk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-Yh-Dmw" userLabel="AR View" customClass="CBRemodelingView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-qm-wvf">
-                                <rect key="frame" x="0.0" y="642" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="588" width="414" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="DPy-2Y-FUu"/>
                                 </constraints>
@@ -69,6 +78,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5hT-5B-dOu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="C9L-15-G5M"/>
                     <connections>
                         <outlet property="vrView" destination="9qt-Yh-Dmw" id="P7a-y2-jdV"/>
                     </connections>
