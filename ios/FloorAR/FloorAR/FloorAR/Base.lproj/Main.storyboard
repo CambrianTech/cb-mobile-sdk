@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="br9-Yd-2Kv">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuI-1c-Fff">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -9,20 +9,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="La5-2R-e1W">
+            <objects>
+                <viewController id="OuI-1c-Fff" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="my5-wx-Iy4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitchen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Wzw-kX-mvn" userLabel="background">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u">
+                                <rect key="frame" x="151.66666666666666" y="587.33333333333337" width="110.99999999999997" height="30"/>
+                                <state key="normal" title="Start Visualizing"/>
+                                <connections>
+                                    <segue destination="br9-Yd-2Kv" kind="show" id="FlA-16-PG2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tLR-Na-V6u" firstAttribute="centerX" secondItem="zyO-DM-JFH" secondAttribute="centerX" id="5NN-cs-Nzv"/>
+                            <constraint firstItem="zyO-DM-JFH" firstAttribute="top" secondItem="Wzw-kX-mvn" secondAttribute="top" id="IIJ-gn-zjI"/>
+                            <constraint firstItem="zyO-DM-JFH" firstAttribute="trailing" secondItem="Wzw-kX-mvn" secondAttribute="trailing" id="faY-tQ-o4J"/>
+                            <constraint firstItem="tLR-Na-V6u" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.33" id="n42-qx-lMX"/>
+                            <constraint firstItem="Wzw-kX-mvn" firstAttribute="bottom" secondItem="zyO-DM-JFH" secondAttribute="bottom" id="rlQ-Eb-4cs"/>
+                            <constraint firstItem="Wzw-kX-mvn" firstAttribute="leading" secondItem="zyO-DM-JFH" secondAttribute="leading" id="vcp-9e-G33"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zyO-DM-JFH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvz-7K-jvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343" y="-200"/>
+        </scene>
         <!--Virtual Reality-->
         <scene sceneID="tUs-Dj-Q7L">
             <objects>
-                <viewController id="br9-Yd-2Kv" userLabel="Virtual Reality" customClass="ARVRViewController" customModule="ShawARVR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="br9-Yd-2Kv" userLabel="Virtual Reality" customClass="ARVRViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53Z-99-PMk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-Yh-Dmw" userLabel="AR View" customClass="CBRemodelingView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-qm-wvf">
-                                <rect key="frame" x="0.0" y="516" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="588" width="414" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="DPy-2Y-FUu"/>
                                 </constraints>
@@ -43,6 +78,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5hT-5B-dOu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="C9L-15-G5M"/>
                     <connections>
                         <outlet property="vrView" destination="9qt-Yh-Dmw" id="P7a-y2-jdV"/>
                     </connections>
@@ -54,13 +90,13 @@
         <!--Floor Collection View-->
         <scene sceneID="F5d-Ot-XDa">
             <objects>
-                <viewController id="NKx-YE-zss" customClass="FloorCollectionView" customModule="ShawARVR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NKx-YE-zss" customClass="FloorCollectionView" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="12Z-pV-9fS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p07-3h-XNw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="510-mJ-RcZ"/>
@@ -72,14 +108,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="ShawARVR" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="Floor_AR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWn-uM-RSz">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUJ-I9-gIE" userLabel="Background" customClass="HistorySwatchCellBG" customModule="ShawARVR" customModuleProvider="target">
+                                                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUJ-I9-gIE" userLabel="Background" customClass="HistorySwatchCellBG" customModule="Floor_AR" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,7 +150,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYu-PX-k89">
-                                <rect key="frame" x="0.0" y="45" width="414" height="175"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="131"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yiY-7O-SIk">
                                     <size key="itemSize" width="150" height="180"/>
@@ -123,8 +159,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ProductSwatchCell" id="Eac-cf-F01" customClass="ProductSwatchCell" customModule="ShawARVR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ProductSwatchCell" id="Eac-cf-F01" customClass="ProductSwatchCell" customModule="Floor_AR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-22" width="150" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dhn-HI-VHO">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
@@ -185,4 +221,7 @@
             <point key="canvasLocation" x="553.62318840579712" y="394.56521739130437"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kitchen-bg" width="1129" height="750"/>
+    </resources>
 </document>

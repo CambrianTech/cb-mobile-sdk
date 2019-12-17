@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-               BuildableName = "FloorAR.app"
+               BuildableName = "Floor AR.app"
                BlueprintName = "FloorAR"
                ReferencedContainer = "container:FloorAR.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-            BuildableName = "FloorAR.app"
+            BuildableName = "Floor AR.app"
             BlueprintName = "FloorAR"
             ReferencedContainer = "container:FloorAR.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-            BuildableName = "FloorAR.app"
+            BuildableName = "Floor AR.app"
             BlueprintName = "FloorAR"
             ReferencedContainer = "container:FloorAR.xcodeproj">
          </BuildableReference>
@@ -71,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-            BuildableName = "FloorAR.app"
+            BuildableName = "Floor AR.app"
             BlueprintName = "FloorAR"
             ReferencedContainer = "container:FloorAR.xcodeproj">
          </BuildableReference>
