@@ -21,12 +21,11 @@ namespace Shaw.Data
     public class Product
     {
         public string name;
-        public float width;
-        public float height;
+        public float dpcm;
 
-        public Vector2 sizeMeters()
+        public Vector2 sizeMeters(float pixelWidth, float pixelHeight)
         {
-            return new Vector2(0.0254f * width, 0.0254f * height);
+            return new Vector2(0.01f * pixelWidth / dpcm, 0.01f * pixelHeight / dpcm);
         }
     }
 
@@ -38,7 +37,7 @@ namespace Shaw.Data
 
         public List<ProductVariation> GetLoadedVariations()
         {
-            List<ProductVariation> variationList = new List<ProductVariation>();
+            var variationList = new List<ProductVariation>();
             foreach (var variation in variations)
             {
                 if (!variation.IsEmpty())
@@ -53,25 +52,33 @@ namespace Shaw.Data
     [Serializable]
     public class ProductVariation
     {
-        public string name;
         public string diffusePath;
-        public string normalPath;
+        public string normalsPath;
         public string roughnessPath;
 
         public bool LoadAll()
         {
             GetDiffuse();
-            GetNormal();
-            GetRoughness();
-
-            return _diffuse != null && _diffuse.Length > 0 &&
+            if (IsPBR())
+            {
+                GetNormal();
+                GetRoughness();
+                return _diffuse != null && _diffuse.Length > 0 &&
                    _normal != null && _normal.Length > 0 &&
                    _roughness != null && _roughness.Length > 0;
+            }
+
+            return _diffuse != null && _diffuse.Length > 0;
+        }
+
+        public bool IsPBR()
+        {
+            return normalsPath.Length > 0;
         }
 
         private byte[] _diffuse = {};
         public byte[] GetDiffuse() {
-            if (_diffuse.Length == 0) {
+            if (_diffuse.Length == 0 && diffusePath.Length > 0) {
                 _diffuse = Utility.LoadImage(diffusePath);
             }
             return _diffuse;
@@ -80,9 +87,9 @@ namespace Shaw.Data
         private byte[] _normal = {};
         public byte[] GetNormal()
         {
-            if (_normal.Length == 0)
+            if (_normal.Length == 0 && normalsPath.Length > 0)
             {
-                _normal = Utility.LoadImage(normalPath);
+                _normal = Utility.LoadImage(normalsPath);
             }
             return _normal;
         }
@@ -90,7 +97,7 @@ namespace Shaw.Data
         private byte[] _roughness = {};
         public byte[] GetRoughness()
         {
-            if (_roughness.Length == 0)
+            if (_roughness.Length == 0 && roughnessPath.Length > 0)
             {
                 _roughness = Utility.LoadImage(roughnessPath);
             }
@@ -99,7 +106,12 @@ namespace Shaw.Data
 
         public bool IsEmpty()
         {
-            return !(File.Exists(diffusePath) && File.Exists(normalPath) && File.Exists(roughnessPath));
+            if (IsPBR())
+            {
+                return !(File.Exists(diffusePath) && File.Exists(normalsPath) && File.Exists(roughnessPath));
+            }
+
+            return !File.Exists(diffusePath);
         }
 
         public void Destroy()

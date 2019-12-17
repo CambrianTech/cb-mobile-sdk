@@ -17,6 +17,8 @@ Properties {
     _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
     [NoScaleOffset] _BumpMap ("Normalmap", 2D) = "bump" {}
     
+    [MaterialToggle] _isPBR("isPBR", Float) = 0
+    
     _Roughness("Roughness", Range(0.0, 1.0)) = 0.5
     _RoughnessMap("Roughness Map", 2D) = "white" {}
     
@@ -67,6 +69,8 @@ float4 _ShadowBounds;
 
 sampler2D _MaskY;
 
+float _isPBR;
+
 struct Input {
     float2 uv_MainTex;
     float2 maskCoords;
@@ -85,16 +89,16 @@ void surf (Input IN, inout SurfaceOutputStandardSpecular o) {
 
     fixed4 tex = tex2D(_MainTex, IN.uv_MainTex);
     float maskValue = tex2D(_MaskY, IN.maskCoords).r;
-    //float roughness = _Roughness * tex2D(_RoughnessMap, IN.uv_MainTex).r;
+    
+    o.Alpha = maskValue;
     
     float shadowsHighlights = tex2D(_ShadowsY, IN.shadowCoords).r;
-
     shadowsHighlights = shadowsHighlights * 2.0 - 0.2;
-
     o.Albedo = lerp(tex.rgb, tex.rgb * shadowsHighlights, _Shadows);
-    o.Alpha = maskValue;
-    o.Normal = UnpackNormal (tex2D(_BumpMap, IN.uv_MainTex));
-
+        
+    if (_isPBR == 1.0) {
+        o.Normal = UnpackNormal (tex2D(_BumpMap, IN.uv_MainTex));
+    }
 }
 ENDCG
 }

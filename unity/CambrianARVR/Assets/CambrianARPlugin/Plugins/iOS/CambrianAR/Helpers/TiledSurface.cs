@@ -39,8 +39,6 @@ namespace Cambrian.iOS
         private ConcurrentQueue<Action> _mainQueue;
 
         private TiledGrid _surface;
-
-
         private QueueThread _bgQueueThread;
        
 
@@ -225,7 +223,7 @@ namespace Cambrian.iOS
       
         void HandleARExecuteCommand(CambrianCommand command)
         {
-            Debug.Log($"Unity received command: {command.commandString} with data: {command.jsonString}");
+            Debug.Log($"UNITY received command: {command.commandString} with data: {command.jsonString}");
 
             //MeshRenderer test;
             //test.sh
@@ -235,13 +233,14 @@ namespace Cambrian.iOS
 
                 if (materialCommand != null && materialCommand.color != null)
                 {
-                    _tileSize = materialCommand.product.sizeMeters();
+                    
                     var variations = materialCommand.color.GetLoadedVariations();
                     
                     _surface.NumVariations = Math.Min(variations.Count, MaxVariations);
                     
                     Debug.Log($"Got {variations.Count} variations");
                     //break it down into manageable chunks
+                    
                     for (var i=0; i<_surface.NumVariations; i++)
                     {          
                         var index = i;
@@ -252,8 +251,17 @@ namespace Cambrian.iOS
                             
                             //must be on main thread
                             _textures[index].diffuse.LoadImage(variation.GetDiffuse());
-                            _textures[index].normals.LoadImage(variation.GetNormal());
-                            _textures[index].roughness.LoadImage(variation.GetRoughness());
+                            if (index == 0)
+                            {
+                                _tileSize = materialCommand.product.sizeMeters(_textures[index].diffuse.width, _textures[index].diffuse.height);
+                                
+                            }
+                           
+                            if (variation.IsPBR())
+                            {
+                                _textures[index].normals.LoadImage(variation.GetNormal());
+                                _textures[index].roughness.LoadImage(variation.GetRoughness());
+                            }
                             variation.Destroy();
                             
                             _surface.UpdateMaterials(_textures[index], index);

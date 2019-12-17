@@ -13,7 +13,7 @@ import SDWebImage
 
 class ProductVariation: Object {
     override static func ignoredProperties() -> [String] {
-        return ["directoryPath", "thumbnailImage", "jsonString"]
+        return ["_color", "thumbnailImage", "jsonString"]
     }
     
     @objc dynamic var id = UUID().uuidString
@@ -26,49 +26,9 @@ class ProductVariation: Object {
     
     let parents = LinkingObjects(fromType: ProductColor.self, property: "variations")
     
-    var directoryPath:String {
-        
-        guard let productColor = parents.first else {
-            fatalError("Product Style must have product!")
-        }
-        
-        let basePath = productColor.directoryPath
-        let directoryPath = "\(basePath)/variations/\(name.lowercased().trim())"
-        
-        return directoryPath
-    }
-    
-    private var remoteDiffusePath:URL {
-        return DataController.sharedInstance.getRemoteImagePath(path: directoryPath, named: "Base_Color.jpg")!
-    }
-    
-    private var remoteNormalPath:URL {
-        return DataController.sharedInstance.getRemoteImagePath(path: directoryPath, named: "Normal.jpg")!
-    }
-    
-    private var remoteRoughnessPath:URL {
-        return DataController.sharedInstance.getRemoteImagePath(path: directoryPath, named: "Roughness.jpg")!
-    }
-    
-    var diffusePath:String {
-        return DataController.sharedInstance.getLocalImagePath(remoteDiffusePath)!
-    }
-
-    var normalPath:String {
-        return DataController.sharedInstance.getLocalImagePath(remoteNormalPath)!
-    }
-
-    var roughnessPath:String {
-        return DataController.sharedInstance.getLocalImagePath(remoteRoughnessPath)!
-    }
-    
-    func loadData(progress: @escaping (Int, Int) -> Void, completion: @escaping (Bool) -> Void) {
-        DataController.sharedInstance.getCachedImages(remotePaths: [remoteDiffusePath, remoteNormalPath, remoteRoughnessPath],
-                                                      progress: progress,
-                                                      completion: completion)
-    }
-    
-    var jsonString:String {
-        return "{\"name\":\"\(name)\", \"diffusePath\":\"\(diffusePath)\", \"normalPath\":\"\(normalPath)\", \"roughnessPath\":\"\(roughnessPath)\"}"
+    var _color:ProductColor?
+    convenience init (_ color:ProductColor) {
+        self.init()
+        _color = color
     }
 }
