@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,18 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-7w-hd4">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="kitchen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-7w-hd4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="top" secondItem="DS4-7w-hd4" secondAttribute="top" id="3fv-pM-hwH"/>
-                            <constraint firstItem="DS4-7w-hd4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="T1C-7O-XC0"/>
-                            <constraint firstItem="DS4-7w-hd4" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="lkN-U1-m0R"/>
-                            <constraint firstAttribute="bottom" secondItem="DS4-7w-hd4" secondAttribute="bottom" id="wDM-0Z-22e"/>
+                            <constraint firstAttribute="top" secondItem="DS4-7w-hd4" secondAttribute="top" id="1s6-gU-Ory"/>
+                            <constraint firstItem="DS4-7w-hd4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Siu-dA-SwF"/>
+                            <constraint firstAttribute="trailing" secondItem="DS4-7w-hd4" secondAttribute="trailing" id="fug-eI-dS0"/>
+                            <constraint firstItem="DS4-7w-hd4" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="kW6-h5-02t"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="397.5" height="298"/>
+        <image name="kitchen-bg" width="1129" height="750"/>
     </resources>
 </document>
