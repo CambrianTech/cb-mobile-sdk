@@ -92,15 +92,12 @@ void surf (Input IN, inout SurfaceOutputStandardSpecular o) {
     
     o.Alpha = maskValue;
     
+    float shadowsHighlights = tex2D(_ShadowsY, IN.shadowCoords).r;
+    shadowsHighlights = shadowsHighlights * 2.0 - 0.2;
+    o.Albedo = lerp(tex.rgb, tex.rgb * shadowsHighlights, _Shadows);
+        
     if (_isPBR == 1.0) {
-        //float roughness = _Roughness * tex2D(_RoughnessMap, IN.uv_MainTex).r;
-        float shadowsHighlights = tex2D(_ShadowsY, IN.shadowCoords).r;
-        shadowsHighlights = shadowsHighlights * 2.0 - 0.2;
-        o.Albedo = lerp(tex.rgb, tex.rgb * shadowsHighlights, _Shadows);
         o.Normal = UnpackNormal (tex2D(_BumpMap, IN.uv_MainTex));
-    } else {
-        o.Albedo = tex.rgb;
-        //o.Normal = float3(0.5,0.5,1.0);
     }
 }
 ENDCG
