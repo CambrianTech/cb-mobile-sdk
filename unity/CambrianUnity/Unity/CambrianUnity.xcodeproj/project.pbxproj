@@ -286,23 +286,6 @@
 		E7FF97DF21E3F85000CE069B /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B345D38D6CB778678BF112 /* Metal.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E72685961FE464E700E827AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E726858F1FE4643600E827AD;
-			remoteInfo = Sync_Data;
-		};
-		E7771AF01FE5E45300143EE5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7771AE51FE5E35B00143EE5;
-			remoteInfo = Transfer_Code;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		03F528621B447098000F4FB8 /* Il2CppOptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Il2CppOptions.cpp; sourceTree = "<group>"; };
 		1859EA9A19214E7B0022C3D3 /* MetalHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalHelper.mm; sourceTree = "<group>"; };
@@ -1055,8 +1038,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E7771AF11FE5E45300143EE5 /* PBXTargetDependency */,
-				E72685971FE464E700E827AD /* PBXTargetDependency */,
 			);
 			name = CambrianUnity;
 			productName = UnityAsFramework;
@@ -1131,7 +1112,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#sh ${PROJECT_DIR}/../transfer-data.sh ${cbroot} ${CONFIGURATION}\n";
+			shellScript = "sh ${PROJECT_DIR}/../transfer-data.sh ${cbroot} ${CONFIGURATION}\n";
 		};
 		E7771AEB1FE5E3A500143EE5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1144,7 +1125,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#sh ${PROJECT_DIR}/../transfer-code.sh ${cbroot} ${CONFIGURATION}\n";
+			shellScript = "sh ${PROJECT_DIR}/../transfer-code.sh ${cbroot} ${CONFIGURATION}\n";
 		};
 		E798125320BDF2CC00C5C230 /* Make Universal Framework */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1353,19 +1334,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E72685971FE464E700E827AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E726858F1FE4643600E827AD /* Sync_Data */;
-			targetProxy = E72685961FE464E700E827AD /* PBXContainerItemProxy */;
-		};
-		E7771AF11FE5E45300143EE5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E7771AE51FE5E35B00143EE5 /* Transfer_Code */;
-			targetProxy = E7771AF01FE5E45300143EE5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		56E860801D6757FF00A1AB2B /* ReleaseForRunning */ = {
