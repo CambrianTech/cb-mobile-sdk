@@ -79,14 +79,6 @@ namespace cbpipe {
             bool success = inferenceSemantic(rgb, segmentedImage);
             
             if (!success) return false;
-            
-            cv::Mat normalsResult;
-            success = inferenceNormals(rgb, normalsResult, tracker, frame);
-            if (!success) return false;
-            
-            deep_result normalsData;
-            normalsData.frame = frame;
-            normalsData.outputs.push_back(normalsResult);
 
             deep_result semanticData;
             semanticData.frame = frame;
@@ -104,14 +96,14 @@ namespace cbpipe {
             cv::dilate(mask, mask, cv::getStructuringElement(CV_SHAPE_ELLIPSE, cv::Size(10, 10)));
             segmentedImage.setTo(0, mask == 0);
             
-            cv::Mat groundMask, wallMask;
-            refineResults(rgb, normalsResult, segmentedImage, groundMask, wallMask);
+            //cv::Mat groundMask, wallMask;
+            //refineResults(rgb, segmentedImage, groundMask, wallMask);
 
             semanticData.outputs[result_index_semantic_ground] = segmentedImage;
-            semanticData.outputs[result_index_semantic_ground].setTo(0, groundMask > 0);
+            //semanticData.outputs[result_index_semantic_ground].setTo(0, groundMask > 0);
             
             semanticData.outputs[result_index_semantic_walls] = 255 - segmentedImage;
-            semanticData.outputs[result_index_semantic_walls].setTo(0, wallMask > 0);
+            //semanticData.outputs[result_index_semantic_walls].setTo(0, wallMask > 0);
             
             //semanticData.outputs[result_index_semantic_other] = 255 - segmentedImage;
             //semanticData.outputs[result_index_semantic_other].setTo(0, wallMask == 0 & groundMask == 0);
@@ -123,9 +115,8 @@ namespace cbpipe {
             }
             
             for (auto surfaceAnalyzer : renderer->getAnalyzersOfType<CBP_SurfaceAnalyzer>()) {
-                std::thread([surfaceAnalyzer, semanticData, normalsData](){
+                std::thread([surfaceAnalyzer, semanticData](){
                     surfaceAnalyzer->semanticDataUpdated(semanticData);
-                    surfaceAnalyzer->normalsDataUpdated(normalsData);
                 }).detach();
             }
             
@@ -133,7 +124,7 @@ namespace cbpipe {
                 CBP_WallFinder::semantic_data semantic;
                 semantic.frameIndex = frame->frameIndex;
                 semantic.rgb = rgb;
-                semantic.normals = normalsResult;
+                //semantic.normals = normalsResult;
                 semantic.semantic = semanticData.outputs[result_index_semantic_walls];
                 std::thread([wallFinder, semantic](){
                     wallFinder->semanticDataUpdated(semantic);
@@ -154,101 +145,92 @@ namespace cbpipe {
             return !result.empty();
         }
         
-        bool inferenceNormals(const cv::Mat &rgb, cv::Mat &result, std::shared_ptr<CBP_FeatureTracker> tracker, cbar::CBAR_VideoFramePtr frame) {
-            std::map<std::string, cv::Mat> pix2PixInput;
-            pix2PixInput["Placeholder__0"] = rgb;
-            m_normals.inference(rgb, pix2PixInput, result);
-            
-            if (result.empty()) return false;
-            
-            //convert normals to world space
-            Eigen::Matrix4f worldPosition = tracker->getWorldTransform(frame->frameIndex);
-            Eigen::Matrix3f worldRotation = worldPosition.block<3,3>(0,0);
-            //Eigen::Matrix3f cameraRotation = worldRotation.inverse();
-            
-            //convert to Y up: (x,y,z) --> (x,z,y)
-            std::vector<cv::Mat>planes;
-            cv::split(result, planes);
-            planes = {planes[0], planes[2], planes[1]};
-            cv::merge(planes, result);
-            result.convertTo(result, CV_32FC3, 2.0f / 255.0, -1.0f);//image is now -1 to 1, Y up
-            
-            //per element multiply of 3x3 rotation
-            cv::Mat rotation;
-            eigen2cv(worldRotation, rotation);//convert eigen matrix to CV
-            cv::Mat normalsFlattened = result.reshape(1, result.rows * result.cols);
-            cv::Mat product = normalsFlattened * rotation;
-            result = product.reshape(3, result.rows);
-            //back to 0-255 byte 3 channel image
-            result.convertTo(result, CV_8UC3, 255.0 / 2.0f, 255.0 / 2.0f);
-            //End world space conversion
-            
-            return true;
-        }
+//        bool inferenceNormals(const cv::Mat &rgb, cv::Mat &result, std::shared_ptr<CBP_FeatureTracker> tracker, cbar::CBAR_VideoFramePtr frame) {
+//            std::map<std::string, cv::Mat> pix2PixInput;
+//            pix2PixInput["Placeholder__0"] = rgb;
+//            m_normals.inference(rgb, pix2PixInput, result);
+//
+//            if (result.empty()) return false;
+//
+//            //convert normals to world space
+//            Eigen::Matrix4f worldPosition = tracker->getWorldTransform(frame->frameIndex);
+//            Eigen::Matrix3f worldRotation = worldPosition.block<3,3>(0,0);
+//            //Eigen::Matrix3f cameraRotation = worldRotation.inverse();
+//
+//            //convert to Y up: (x,y,z) --> (x,z,y)
+//            std::vector<cv::Mat>planes;
+//            cv::split(result, planes);
+//            planes = {planes[0], planes[2], planes[1]};
+//            cv::merge(planes, result);
+//            result.convertTo(result, CV_32FC3, 2.0f / 255.0, -1.0f);//image is now -1 to 1, Y up
+//
+//            //per element multiply of 3x3 rotation
+//            cv::Mat rotation;
+//            eigen2cv(worldRotation, rotation);//convert eigen matrix to CV
+//            cv::Mat normalsFlattened = result.reshape(1, result.rows * result.cols);
+//            cv::Mat product = normalsFlattened * rotation;
+//            result = product.reshape(3, result.rows);
+//            //back to 0-255 byte 3 channel image
+//            result.convertTo(result, CV_8UC3, 255.0 / 2.0f, 255.0 / 2.0f);
+//            //End world space conversion
+//
+//            return true;
+//        }
         
-        void refineResults(const cv::Mat &rgb, const cv::Mat &normals, const cv::Mat &semantic, cv::Mat &nonFloorMask, cv::Mat &nonWallMask) {
-            nonFloorMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
-            nonWallMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
-            
-            nonFloorMask.setTo(255, semantic < 5);
-            nonWallMask.setTo(255, semantic > 128);
-            
-            Accelerated::roughErode(nonFloorMask, nonFloorMask, cv::Size(30,30));
-            Accelerated::roughErode(nonWallMask, nonWallMask, cv::Size(30,30));
-            
-            cv::Size sampleSize = cv::Size(10,10);
-            Eigen::Vector3f up(0,1,0);
-            
-#if DEBUG_NORMALS
-            cv::Mat normalsDebug = normals.clone();
-#endif
-            float nonFloorAngleThreshold = M_PI_2 * 0.7;
-            float nonWallAngleThreshold = M_PI_2 * 0.95;
-            
-            cv::Rect roi = cv::Rect(0,0, sampleSize.width, sampleSize.height);
-            for (roi.y=0; roi.y<rgb.rows; roi.y+=sampleSize.height) {
-                for (roi.x=0; roi.x<rgb.cols; roi.x+=sampleSize.width) {
-                    cv::Scalar mean, stddev;
-                    
-                    cv::Rect adjustedROI = roi;
-                    adjustedROI.width = fmin(roi.width, normals.cols - roi.x);
-                    adjustedROI.height = fmin(roi.height, normals.rows - roi.y);
-                    
-                    cv::meanStdDev(normals(adjustedROI), mean, stddev);
-                    
-                    auto direction = CBP_AnalysisUtil::colorToDirection(mean);
-                    auto angle = CBP_MatrixUtil::angleBetweenVectors(direction, up);
-                    
-                    int objectClass = 0;
-
-                    if (angle > nonFloorAngleThreshold) {
-                        objectClass |= 1;
-                        cv::rectangle(nonFloorMask, adjustedROI, cv::Scalar::all(255), CV_FILLED);
-                    }
-                    
-                    if (angle < nonWallAngleThreshold) {
-                        objectClass |= 2;
-                        cv::rectangle(nonWallMask, adjustedROI, cv::Scalar::all(255), CV_FILLED);
-                    }
-                    
-//                    if (stddev[1] < 1.0) {
-//                        if (angle < 0.1) {
-//                            //normals says floor
-//                            nonFloorMask(adjustedROI) = 0;
-//                        } else if (angle > nonWallAngleThreshold) {
-//                            //normals says wall
-//                            nonWallMask(adjustedROI) = 0;
-//                        }
+//        void refineResults(const cv::Mat &rgb, const cv::Mat &semantic, cv::Mat &nonFloorMask, cv::Mat &nonWallMask) {
+//            nonFloorMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
+//            nonWallMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
+//
+//            nonFloorMask.setTo(255, semantic < 5);
+//            nonWallMask.setTo(255, semantic > 128);
+//
+//            Accelerated::roughErode(nonFloorMask, nonFloorMask, cv::Size(30,30));
+//            Accelerated::roughErode(nonWallMask, nonWallMask, cv::Size(30,30));
+//
+//            cv::Size sampleSize = cv::Size(10,10);
+//            Eigen::Vector3f up(0,1,0);
+//
+//#if DEBUG_NORMALS
+//            cv::Mat normalsDebug = normals.clone();
+//#endif
+//            float nonFloorAngleThreshold = M_PI_2 * 0.7;
+//            float nonWallAngleThreshold = M_PI_2 * 0.95;
+//
+//            cv::Rect roi = cv::Rect(0,0, sampleSize.width, sampleSize.height);
+//            for (roi.y=0; roi.y<rgb.rows; roi.y+=sampleSize.height) {
+//                for (roi.x=0; roi.x<rgb.cols; roi.x+=sampleSize.width) {
+//                    cv::Scalar mean, stddev;
+//
+//                    cv::Rect adjustedROI = roi;
+//                    adjustedROI.width = fmin(roi.width, normals.cols - roi.x);
+//                    adjustedROI.height = fmin(roi.height, normals.rows - roi.y);
+//
+//                    cv::meanStdDev(normals(adjustedROI), mean, stddev);
+//
+//                    auto direction = CBP_AnalysisUtil::colorToDirection(mean);
+//                    auto angle = CBP_MatrixUtil::angleBetweenVectors(direction, up);
+//
+//                    int objectClass = 0;
+//
+//                    if (angle > nonFloorAngleThreshold) {
+//                        objectClass |= 1;
+//                        cv::rectangle(nonFloorMask, adjustedROI, cv::Scalar::all(255), CV_FILLED);
 //                    }
-                    
-#if DEBUG_NORMALS
-                    if (objectClass > 0) {
-                        cv::rectangle(normalsDebug, adjustedROI, cv::Scalar(255 * (objectClass & 1), 255 * (objectClass & 2), 0));
-                    }
-#endif
-                    
-                }
-            }
+//
+//                    if (angle < nonWallAngleThreshold) {
+//                        objectClass |= 2;
+//                        cv::rectangle(nonWallMask, adjustedROI, cv::Scalar::all(255), CV_FILLED);
+//                    }
+//
+//#if DEBUG_NORMALS
+//                    if (objectClass > 0) {
+//                        cv::rectangle(normalsDebug, adjustedROI, cv::Scalar(255 * (objectClass & 1), 255 * (objectClass & 2), 0));
+//                    }
+//#endif
+//
+//                }
+//
+//            }
             
 #if DEBUG_NORMALS
             cv::hconcat(rgb, normalsDebug, normalsDebug);
@@ -316,9 +298,9 @@ namespace cbpipe {
 //            Diagnostics::SaveDiagnosticImage(0, markers, "markers-after");
 
             //watershed
-            ImageProcessing::refineMask(nonFloorMask, rgb, 20, 20, nonFloorMask);
-            nonWallMask.setTo(0, nonFloorMask > 0);
-        }
+            //ImageProcessing::refineMask(nonFloorMask, rgb, 20, 20, nonFloorMask);
+            //nonWallMask.setTo(0, nonFloorMask > 0);
+        //}
     };
     
     CBP_SemanticAnalyzer::CBP_SemanticAnalyzer() : CBP_AreaAnalyzer("CBP_SemanticAnalyzer") {
