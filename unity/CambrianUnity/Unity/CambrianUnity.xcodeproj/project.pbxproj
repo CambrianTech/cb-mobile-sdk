@@ -1131,7 +1131,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh ${PROJECT_DIR}/../transfer-data.sh ${cbroot} ${CONFIGURATION}\n";
+			shellScript = "#sh ${PROJECT_DIR}/../transfer-data.sh ${cbroot} ${CONFIGURATION}\n";
 		};
 		E7771AEB1FE5E3A500143EE5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1144,7 +1144,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh ${PROJECT_DIR}/../transfer-code.sh ${cbroot} ${CONFIGURATION}\n";
+			shellScript = "#sh ${PROJECT_DIR}/../transfer-code.sh ${cbroot} ${CONFIGURATION}\n";
 		};
 		E798125320BDF2CC00C5C230 /* Make Universal Framework */ = {
 			isa = PBXShellScriptBuildPhase;
