@@ -88,13 +88,11 @@ class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSel
                 }
             }
             if (completed) {
-
                 DispatchQueue.main.asyncAfter(
-                    deadline: DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+                    deadline: DispatchTime.now() + Double(Int64(hudShown ? 0.5 * Double(NSEC_PER_SEC) : 0)) / Double(NSEC_PER_SEC), execute: {
                         self.vrView.sendUnityCommand("updateMaterial", json: "{\"product\":\(product.jsonCommand), \"color\":\(color.jsonCommand)}")
                         print("Selected product \(product.name), color \(color.name)")
                 })
-
             } else {
                 //Fail
             }
