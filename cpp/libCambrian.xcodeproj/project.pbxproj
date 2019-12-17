@@ -7,67 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E7B4298622F4AB0800F48597 /* Diagnostics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428D622F4AB0800F48597 /* Diagnostics.cpp */; };
-		E7B4298722F4AB0800F48597 /* Directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428D722F4AB0800F48597 /* Directory.cpp */; };
-		E7B4298822F4AB0800F48597 /* ShaderUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428D822F4AB0800F48597 /* ShaderUtilities.cpp */; };
-		E7B4298922F4AB0800F48597 /* CommonUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428DA22F4AB0800F48597 /* CommonUtility.cpp */; };
-		E7B4298A22F4AB0800F48597 /* JSONHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428DC22F4AB0800F48597 /* JSONHelper.cpp */; };
-		E7B4298B22F4AB0800F48597 /* Threads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428DD22F4AB0800F48597 /* Threads.cpp */; };
-		E7B4298C22F4AB0800F48597 /* LineProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428E122F4AB0800F48597 /* LineProcessing.cpp */; };
-		E7B4298D22F4AB0800F48597 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428E222F4AB0800F48597 /* Geometry.cpp */; };
-		E7B4298F22F4AB0800F48597 /* Accelerated.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428E722F4AB0800F48597 /* Accelerated.cpp */; };
-		E7B4299022F4AB0800F48597 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428E922F4AB0800F48597 /* BezierCurve.cpp */; };
-		E7B4299122F4AB0800F48597 /* ImageProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428EB22F4AB0800F48597 /* ImageProcessing.cpp */; };
-		E7B4299222F4AB0800F48597 /* LineSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428ED22F4AB0800F48597 /* LineSegment.cpp */; };
-		E7B4299322F4AB0800F48597 /* Drawing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428EF22F4AB0800F48597 /* Drawing.cpp */; };
-		E7B4299422F4AB0800F48597 /* RansacPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428F222F4AB0800F48597 /* RansacPlane.cpp */; };
-		E7B4299522F4AB0800F48597 /* Imaging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428F422F4AB0800F48597 /* Imaging.cpp */; };
-		E7B4299622F4AB0800F48597 /* Coloring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428F722F4AB0800F48597 /* Coloring.cpp */; };
-		E7B4299722F4AB0800F48597 /* FloodFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428F922F4AB0800F48597 /* FloodFill.cpp */; };
-		E7B4299822F4AB0800F48597 /* CBAR_VideoThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B428FC22F4AB0800F48597 /* CBAR_VideoThread.cpp */; };
-		E7B4299922F4AB0800F48597 /* CBP_SurfaceAccumulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290022F4AB0800F48597 /* CBP_SurfaceAccumulator.cpp */; };
-		E7B4299A22F4AB0800F48597 /* CBP_AreaAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290322F4AB0800F48597 /* CBP_AreaAnalyzer.cpp */; };
-		E7B4299B22F4AB0800F48597 /* CBP_DualRangeAccumulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290522F4AB0800F48597 /* CBP_DualRangeAccumulator.cpp */; };
-		E7B4299C22F4AB0800F48597 /* CBP_PlaneAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290822F4AB0800F48597 /* CBP_PlaneAnalyzer.cpp */; };
-		E7B4299D22F4AB0800F48597 /* CBP_WallFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290922F4AB0800F48597 /* CBP_WallFinder.cpp */; };
-		E7B4299E22F4AB0800F48597 /* CBP_SemanticAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290D22F4AB0800F48597 /* CBP_SemanticAnalyzer.cpp */; };
-		E7B4299F22F4AB0800F48597 /* CBP_SurfaceAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290E22F4AB0800F48597 /* CBP_SurfaceAnalyzer.cpp */; };
-		E7B429A022F4AB0800F48597 /* CBP_GroundSurfaceAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4290F22F4AB0800F48597 /* CBP_GroundSurfaceAnalyzer.cpp */; };
-		E7B429A122F4AB0800F48597 /* CBP_ColorFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4291022F4AB0800F48597 /* CBP_ColorFinder.cpp */; };
-		E7B429A222F4AB0800F48597 /* CBP_FloorSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4291122F4AB0800F48597 /* CBP_FloorSegmenter.cpp */; };
-		E7B429A322F4AB0800F48597 /* CBP_LargeImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4291222F4AB0800F48597 /* CBP_LargeImage.cpp */; };
-		E7B429A422F4AB0800F48597 /* CBP_PlaneRansac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4291B22F4AB0800F48597 /* CBP_PlaneRansac.cpp */; };
-		E7B429A522F4AB0800F48597 /* CBP_LineFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4291C22F4AB0800F48597 /* CBP_LineFinder.cpp */; };
-		E7B429A622F4AB0800F48597 /* CBP_ShadowsAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4291D22F4AB0800F48597 /* CBP_ShadowsAnalyzer.cpp */; };
-		E7B429A722F4AB0800F48597 /* CBP_WallSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4291F22F4AB0800F48597 /* CBP_WallSegmenter.cpp */; };
-		E7B429A822F4AB0800F48597 /* CBP_Analyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4292122F4AB0800F48597 /* CBP_Analyzer.cpp */; };
-		E7B429A922F4AB0800F48597 /* CBP_ElevationAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4292422F4AB0800F48597 /* CBP_ElevationAnalyzer.cpp */; };
-		E7B429AA22F4AB0800F48597 /* CBP_AmbienceSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4292522F4AB0800F48597 /* CBP_AmbienceSampler.cpp */; };
-		E7B429AB22F4AB0800F48597 /* CBP_AnalysisUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4292722F4AB0800F48597 /* CBP_AnalysisUtil.cpp */; };
-		E7B429AC22F4AB0800F48597 /* CBP_NormalsAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4292922F4AB0800F48597 /* CBP_NormalsAnalyzer.cpp */; };
-		E7B429AD22F4AB0800F48597 /* CBP_MatrixUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4293222F4AB0800F48597 /* CBP_MatrixUtil.cpp */; };
-		E7B429AE22F4AB0800F48597 /* CBP_MeshUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4293322F4AB0800F48597 /* CBP_MeshUtil.cpp */; };
-		E7B429AF22F4AB0800F48597 /* CBP_Triangulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4293422F4AB0800F48597 /* CBP_Triangulator.cpp */; };
 		E7B429B022F4AB0800F48597 /* CBP_FeatureTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4293922F4AB0800F48597 /* CBP_FeatureTracker.cpp */; };
-		E7B429B122F4AB0800F48597 /* CBP_RenderingEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4293D22F4AB0800F48597 /* CBP_RenderingEngine.cpp */; };
-		E7B429B222F4AB0800F48597 /* CBP_RenderUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4293F22F4AB0800F48597 /* CBP_RenderUtility.cpp */; };
-		E7B429B322F4AB0800F48597 /* CBP_SurfaceRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4294022F4AB0800F48597 /* CBP_SurfaceRenderer.cpp */; };
-		E7B429B422F4AB0800F48597 /* CBP_Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4294422F4AB0800F48597 /* CBP_Renderer.cpp */; };
-		E7B429B522F4AB0800F48597 /* CBP_MLUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4294822F4AB0800F48597 /* CBP_MLUtility.cpp */; };
-		E7B429B622F4AB0800F48597 /* CBP_SurfaceNormalsEstimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4294A22F4AB0800F48597 /* CBP_SurfaceNormalsEstimator.cpp */; };
-		E7B429B722F4AB0800F48597 /* CBP_ShadowsEstimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4295122F4AB0800F48597 /* CBP_ShadowsEstimator.cpp */; };
-		E7B429B822F4AB0800F48597 /* CBP_WallFloodFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4295222F4AB0800F48597 /* CBP_WallFloodFill.cpp */; };
-		E7B429B922F4AB0800F48597 /* CBP_ElevationEstimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4295622F4AB0800F48597 /* CBP_ElevationEstimator.cpp */; };
-		E7B429BA22F4AB0800F48597 /* CBP_ImageDBExporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4295A22F4AB0800F48597 /* CBP_ImageDBExporter.cpp */; };
-		E7B429BB22F4AB0800F48597 /* CBP_FloodFillAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4295C22F4AB0800F48597 /* CBP_FloodFillAlgorithm.cpp */; };
-		E7B429BC22F4AB0800F48597 /* CBP_DeepModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4295E22F4AB0800F48597 /* CBP_DeepModel.cpp */; };
-		E7B429BD22F4AB0800F48597 /* CBP_SemanticSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4295F22F4AB0800F48597 /* CBP_SemanticSegmenter.cpp */; };
-		E7B429BE22F4AB0800F48597 /* CBP_FloorFloodFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4296022F4AB0800F48597 /* CBP_FloorFloodFill.cpp */; };
-		E7B429BF22F4AB0800F48597 /* CBAR_View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4296122F4AB0800F48597 /* CBAR_View.cpp */; };
-		E7B429C022F4AB0800F48597 /* CBAR_CallbackI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4296622F4AB0800F48597 /* CBAR_CallbackI.cpp */; };
-		E7B429C122F4AB0800F48597 /* CBAR_VideoFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4296922F4AB0800F48597 /* CBAR_VideoFrame.cpp */; };
-		E7B429C222F4AB0800F48597 /* CBAR_GLOffscreenRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4296A22F4AB0800F48597 /* CBAR_GLOffscreenRenderer.cpp */; };
-		E7B429C322F4AB0800F48597 /* CBAR_Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4296C22F4AB0800F48597 /* CBAR_Common.cpp */; };
 		E7B429C422F4AB0800F48597 /* CBAR_Floor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4296F22F4AB0800F48597 /* CBAR_Floor.cpp */; };
 		E7B429C522F4AB0800F48597 /* CBAR_Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4297422F4AB0800F48597 /* CBAR_Scene.cpp */; };
 		E7B429C622F4AB0800F48597 /* CBAR_Asset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4297522F4AB0800F48597 /* CBAR_Asset.cpp */; };
@@ -75,7 +15,6 @@
 		E7B429C822F4AB0800F48597 /* CBAR_SurfaceAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4297A22F4AB0800F48597 /* CBAR_SurfaceAsset.cpp */; };
 		E7B429C922F4AB0800F48597 /* CBAR_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4297C22F4AB0800F48597 /* CBAR_Model.cpp */; };
 		E7B429CA22F4AB0800F48597 /* CBAR_Paint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4297D22F4AB0800F48597 /* CBAR_Paint.cpp */; };
-		E7B429CB22F4AB0800F48597 /* CB_Licensing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4298122F4AB0800F48597 /* CB_Licensing.cpp */; };
 		E7B42AE622F4AB3600F48597 /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B42A7622F4AB3500F48597 /* triangle.cpp */; };
 		E7B42AF322F4AB3600F48597 /* shapes.cc in Sources */ = {isa = PBXBuildFile; fileRef = E7B42A9822F4AB3600F48597 /* shapes.cc */; };
 		E7B42AF422F4AB3600F48597 /* sweep.cc in Sources */ = {isa = PBXBuildFile; fileRef = E7B42A9B22F4AB3600F48597 /* sweep.cc */; };
@@ -85,6 +24,67 @@
 		E7B42AFB22F4ADE400F48597 /* libopencv2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B42AFA22F4ADE400F48597 /* libopencv2.a */; };
 		E7B42AFD22F4ADFC00F48597 /* liblzma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B42AFC22F4ADFC00F48597 /* liblzma.a */; };
 		E7B42AFF22F4AE2B00F48597 /* libjsoncpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B42AFE22F4AE2B00F48597 /* libjsoncpp.a */; };
+		E7D2572D23A94D0100C2737D /* CBP_PlaneAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2570723A94CFF00C2737D /* CBP_PlaneAnalyzer.cpp */; };
+		E7D2572E23A94D0100C2737D /* CBP_SurfaceAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2570823A94CFF00C2737D /* CBP_SurfaceAnalyzer.cpp */; };
+		E7D2572F23A94D0100C2737D /* CBP_AnalysisUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2570A23A94CFF00C2737D /* CBP_AnalysisUtil.cpp */; };
+		E7D2573023A94D0100C2737D /* CBP_PlaneRansac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2570B23A94CFF00C2737D /* CBP_PlaneRansac.cpp */; };
+		E7D2573123A94D0100C2737D /* CBP_WallFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2570D23A94CFF00C2737D /* CBP_WallFinder.cpp */; };
+		E7D2573223A94D0100C2737D /* CBP_DualRangeAccumulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571023A94CFF00C2737D /* CBP_DualRangeAccumulator.cpp */; };
+		E7D2573323A94D0100C2737D /* CBP_AmbienceSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571123A94CFF00C2737D /* CBP_AmbienceSampler.cpp */; };
+		E7D2573423A94D0100C2737D /* CBP_ShadowsAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571423A94CFF00C2737D /* CBP_ShadowsAnalyzer.cpp */; };
+		E7D2573523A94D0100C2737D /* CBP_Analyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571523A94CFF00C2737D /* CBP_Analyzer.cpp */; };
+		E7D2573623A94D0100C2737D /* CBP_SemanticAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571823A94D0000C2737D /* CBP_SemanticAnalyzer.cpp */; };
+		E7D2573723A94D0100C2737D /* CBP_WallSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571923A94D0000C2737D /* CBP_WallSegmenter.cpp */; };
+		E7D2573823A94D0100C2737D /* CBP_AreaAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571A23A94D0000C2737D /* CBP_AreaAnalyzer.cpp */; };
+		E7D2573923A94D0100C2737D /* CBP_ColorFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2571B23A94D0000C2737D /* CBP_ColorFinder.cpp */; };
+		E7D2573A23A94D0100C2737D /* CBP_SurfaceAccumulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2572023A94D0000C2737D /* CBP_SurfaceAccumulator.cpp */; };
+		E7D2573B23A94D0100C2737D /* CBP_FloorSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2572323A94D0000C2737D /* CBP_FloorSegmenter.cpp */; };
+		E7D2573C23A94D0100C2737D /* CBP_LargeImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2572523A94D0000C2737D /* CBP_LargeImage.cpp */; };
+		E7D2573D23A94D0100C2737D /* CBP_ElevationAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2572623A94D0000C2737D /* CBP_ElevationAnalyzer.cpp */; };
+		E7D2573E23A94D0100C2737D /* CBP_NormalsAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2572923A94D0100C2737D /* CBP_NormalsAnalyzer.cpp */; };
+		E7D2573F23A94D0100C2737D /* CBP_GroundSurfaceAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2572A23A94D0100C2737D /* CBP_GroundSurfaceAnalyzer.cpp */; };
+		E7D2574023A94D0100C2737D /* CBP_LineFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2572B23A94D0100C2737D /* CBP_LineFinder.cpp */; };
+		E7D2574923A94D1F00C2737D /* CBP_MeshUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2574423A94D1F00C2737D /* CBP_MeshUtil.cpp */; };
+		E7D2574A23A94D1F00C2737D /* CBP_Triangulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2574523A94D1F00C2737D /* CBP_Triangulator.cpp */; };
+		E7D2574B23A94D1F00C2737D /* CBP_MatrixUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2574623A94D1F00C2737D /* CBP_MatrixUtil.cpp */; };
+		E7D2575623A94D3500C2737D /* CBP_RenderingEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2574D23A94D3400C2737D /* CBP_RenderingEngine.cpp */; };
+		E7D2575723A94D3500C2737D /* CBP_RenderUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2574E23A94D3400C2737D /* CBP_RenderUtility.cpp */; };
+		E7D2575823A94D3500C2737D /* CBP_Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2575423A94D3500C2737D /* CBP_Renderer.cpp */; };
+		E7D2575923A94D3500C2737D /* CBP_SurfaceRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2575523A94D3500C2737D /* CBP_SurfaceRenderer.cpp */; };
+		E7D2577323A94D4B00C2737D /* CBP_DeepModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2575A23A94D4A00C2737D /* CBP_DeepModel.cpp */; };
+		E7D2577423A94D4B00C2737D /* CBP_MLUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2575B23A94D4A00C2737D /* CBP_MLUtility.cpp */; };
+		E7D2577523A94D4B00C2737D /* CBP_FloorFloodFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2575D23A94D4A00C2737D /* CBP_FloorFloodFill.cpp */; };
+		E7D2577623A94D4B00C2737D /* CBP_FloodFillAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2575E23A94D4B00C2737D /* CBP_FloodFillAlgorithm.cpp */; };
+		E7D2577723A94D4B00C2737D /* CBP_SemanticSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2575F23A94D4B00C2737D /* CBP_SemanticSegmenter.cpp */; };
+		E7D2577823A94D4B00C2737D /* CBP_ShadowsEstimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2576023A94D4B00C2737D /* CBP_ShadowsEstimator.cpp */; };
+		E7D2577923A94D4B00C2737D /* CBP_ImageDBExporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2576123A94D4B00C2737D /* CBP_ImageDBExporter.cpp */; };
+		E7D2577A23A94D4B00C2737D /* CBP_WallFloodFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2576723A94D4B00C2737D /* CBP_WallFloodFill.cpp */; };
+		E7D2577B23A94D4B00C2737D /* CBP_SurfaceNormalsEstimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2577123A94D4B00C2737D /* CBP_SurfaceNormalsEstimator.cpp */; };
+		E7D2577C23A94D4B00C2737D /* CBP_ElevationEstimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2577223A94D4B00C2737D /* CBP_ElevationEstimator.cpp */; };
+		E7D2578C23A94D9F00C2737D /* CBAR_Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2577D23A94D9E00C2737D /* CBAR_Common.cpp */; };
+		E7D2578D23A94D9F00C2737D /* CBAR_View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2578023A94D9E00C2737D /* CBAR_View.cpp */; };
+		E7D2578E23A94D9F00C2737D /* CBAR_VideoThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2578323A94D9E00C2737D /* CBAR_VideoThread.cpp */; };
+		E7D2578F23A94D9F00C2737D /* CBAR_VideoFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2578623A94D9E00C2737D /* CBAR_VideoFrame.cpp */; };
+		E7D2579023A94D9F00C2737D /* CBAR_GLOffscreenRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2578A23A94D9F00C2737D /* CBAR_GLOffscreenRenderer.cpp */; };
+		E7D2579123A94D9F00C2737D /* CBAR_CallbackI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2578B23A94D9F00C2737D /* CBAR_CallbackI.cpp */; };
+		E7D2579723A94DB900C2737D /* CB_Licensing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2579523A94DB900C2737D /* CB_Licensing.cpp */; };
+		E7D257B023A94DFB00C2737D /* Coloring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2579923A94DFA00C2737D /* Coloring.cpp */; };
+		E7D257B123A94DFB00C2737D /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D2579C23A94DFA00C2737D /* Geometry.cpp */; };
+		E7D257B223A94DFB00C2737D /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257A223A94DFB00C2737D /* BezierCurve.cpp */; };
+		E7D257B323A94DFB00C2737D /* ImageProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257A323A94DFB00C2737D /* ImageProcessing.cpp */; };
+		E7D257B423A94DFB00C2737D /* LineProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257A423A94DFB00C2737D /* LineProcessing.cpp */; };
+		E7D257B523A94DFB00C2737D /* Imaging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257A923A94DFB00C2737D /* Imaging.cpp */; };
+		E7D257B623A94DFB00C2737D /* LineSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257AA23A94DFB00C2737D /* LineSegment.cpp */; };
+		E7D257B723A94DFB00C2737D /* Accelerated.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257AC23A94DFB00C2737D /* Accelerated.cpp */; };
+		E7D257B823A94DFB00C2737D /* RansacPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257AD23A94DFB00C2737D /* RansacPlane.cpp */; };
+		E7D257B923A94DFB00C2737D /* FloodFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257AE23A94DFB00C2737D /* FloodFill.cpp */; };
+		E7D257BA23A94DFB00C2737D /* Drawing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257AF23A94DFB00C2737D /* Drawing.cpp */; };
+		E7D257C923A94E1600C2737D /* JSONHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257BB23A94E1600C2737D /* JSONHelper.cpp */; };
+		E7D257CA23A94E1600C2737D /* ShaderUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257C123A94E1600C2737D /* ShaderUtilities.cpp */; };
+		E7D257CB23A94E1600C2737D /* Diagnostics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257C223A94E1600C2737D /* Diagnostics.cpp */; };
+		E7D257CC23A94E1600C2737D /* Directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257C323A94E1600C2737D /* Directory.cpp */; };
+		E7D257CD23A94E1600C2737D /* CommonUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257C423A94E1600C2737D /* CommonUtility.cpp */; };
+		E7D257CE23A94E1600C2737D /* Threads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7D257C523A94E1600C2737D /* Threads.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,156 +109,13 @@
 		E72BEC25200EBEAF0037F832 /* liblzma.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblzma.a; path = ../../../../prebuilts/liblzma/lib/ios/liblzma.a; sourceTree = "<group>"; };
 		E72BEC27200EBECE0037F832 /* libopencv2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv2.a; path = "../../../../prebuilts/opencv/opencv-ios/lib/libopencv2.a"; sourceTree = "<group>"; };
 		E758B6BD206200C200742F40 /* nsync.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = nsync.a; path = ../../../../prebuilts/tensorflow/lib/ios/nsync.a; sourceTree = "<group>"; };
-		E7B428CD22F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B428CF22F4AB0800F48597 /* lfu_cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lfu_cache_policy.hpp; sourceTree = "<group>"; };
-		E7B428D022F4AB0800F48597 /* cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cache.hpp; sourceTree = "<group>"; };
-		E7B428D122F4AB0800F48597 /* fifo_cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fifo_cache_policy.hpp; sourceTree = "<group>"; };
-		E7B428D222F4AB0800F48597 /* lru_cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lru_cache_policy.hpp; sourceTree = "<group>"; };
-		E7B428D322F4AB0800F48597 /* cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cache_policy.hpp; sourceTree = "<group>"; };
-		E7B428D422F4AB0800F48597 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHelper.h; sourceTree = "<group>"; };
-		E7B428D522F4AB0800F48597 /* Threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Threads.h; sourceTree = "<group>"; };
-		E7B428D622F4AB0800F48597 /* Diagnostics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Diagnostics.cpp; sourceTree = "<group>"; };
-		E7B428D722F4AB0800F48597 /* Directory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Directory.cpp; sourceTree = "<group>"; };
-		E7B428D822F4AB0800F48597 /* ShaderUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderUtilities.cpp; sourceTree = "<group>"; };
-		E7B428D922F4AB0800F48597 /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
-		E7B428DA22F4AB0800F48597 /* CommonUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonUtility.cpp; sourceTree = "<group>"; };
-		E7B428DB22F4AB0800F48597 /* Diagnostics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diagnostics.h; sourceTree = "<group>"; };
-		E7B428DC22F4AB0800F48597 /* JSONHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONHelper.cpp; sourceTree = "<group>"; };
-		E7B428DD22F4AB0800F48597 /* Threads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Threads.cpp; sourceTree = "<group>"; };
-		E7B428DE22F4AB0800F48597 /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
-		E7B428DF22F4AB0800F48597 /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
-		E7B428E122F4AB0800F48597 /* LineProcessing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineProcessing.cpp; sourceTree = "<group>"; };
-		E7B428E222F4AB0800F48597 /* Geometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geometry.cpp; sourceTree = "<group>"; };
-		E7B428E322F4AB0800F48597 /* Accelerated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accelerated.h; sourceTree = "<group>"; };
-		E7B428E522F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B428E622F4AB0800F48597 /* FloodFill.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FloodFill.hpp; sourceTree = "<group>"; };
-		E7B428E722F4AB0800F48597 /* Accelerated.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Accelerated.cpp; sourceTree = "<group>"; };
-		E7B428E822F4AB0800F48597 /* Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawing.h; sourceTree = "<group>"; };
-		E7B428E922F4AB0800F48597 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = "<group>"; };
-		E7B428EA22F4AB0800F48597 /* Coloring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coloring.h; sourceTree = "<group>"; };
-		E7B428EB22F4AB0800F48597 /* ImageProcessing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageProcessing.cpp; sourceTree = "<group>"; };
-		E7B428EC22F4AB0800F48597 /* BezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurve.h; sourceTree = "<group>"; };
-		E7B428ED22F4AB0800F48597 /* LineSegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineSegment.cpp; sourceTree = "<group>"; };
-		E7B428EE22F4AB0800F48597 /* Imaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Imaging.h; sourceTree = "<group>"; };
-		E7B428EF22F4AB0800F48597 /* Drawing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Drawing.cpp; sourceTree = "<group>"; };
-		E7B428F022F4AB0800F48597 /* ImageDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDefines.h; sourceTree = "<group>"; };
-		E7B428F122F4AB0800F48597 /* LineSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LineSegment.hpp; sourceTree = "<group>"; };
-		E7B428F222F4AB0800F48597 /* RansacPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RansacPlane.cpp; sourceTree = "<group>"; };
-		E7B428F322F4AB0800F48597 /* LineProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineProcessing.h; sourceTree = "<group>"; };
-		E7B428F422F4AB0800F48597 /* Imaging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Imaging.cpp; sourceTree = "<group>"; };
-		E7B428F522F4AB0800F48597 /* ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessing.h; sourceTree = "<group>"; };
-		E7B428F622F4AB0800F48597 /* RansacPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RansacPlane.h; sourceTree = "<group>"; };
-		E7B428F722F4AB0800F48597 /* Coloring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coloring.cpp; sourceTree = "<group>"; };
-		E7B428F922F4AB0800F48597 /* FloodFill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FloodFill.cpp; sourceTree = "<group>"; };
-		E7B428FA22F4AB0800F48597 /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
-		E7B428FC22F4AB0800F48597 /* CBAR_VideoThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_VideoThread.cpp; sourceTree = "<group>"; };
 		E7B428FE22F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B4290022F4AB0800F48597 /* CBP_SurfaceAccumulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceAccumulator.cpp; sourceTree = "<group>"; };
-		E7B4290122F4AB0800F48597 /* CBP_AnalysisTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AnalysisTypes.hpp; sourceTree = "<group>"; };
-		E7B4290222F4AB0800F48597 /* CBP_WallSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_WallSegmenter.hpp; sourceTree = "<group>"; };
-		E7B4290322F4AB0800F48597 /* CBP_AreaAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_AreaAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4290422F4AB0800F48597 /* CBP_Analyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Analyzer.hpp; sourceTree = "<group>"; };
-		E7B4290522F4AB0800F48597 /* CBP_DualRangeAccumulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_DualRangeAccumulator.cpp; sourceTree = "<group>"; };
-		E7B4290622F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B4290722F4AB0800F48597 /* CBP_ElevationAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ElevationAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4290822F4AB0800F48597 /* CBP_PlaneAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_PlaneAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4290922F4AB0800F48597 /* CBP_WallFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_WallFinder.cpp; sourceTree = "<group>"; };
-		E7B4290A22F4AB0800F48597 /* CBP_AnalysisUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AnalysisUtil.hpp; sourceTree = "<group>"; };
-		E7B4290B22F4AB0800F48597 /* CBP_AmbienceSampler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AmbienceSampler.hpp; sourceTree = "<group>"; };
-		E7B4290C22F4AB0800F48597 /* CBP_NormalsAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_NormalsAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4290D22F4AB0800F48597 /* CBP_SemanticAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SemanticAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4290E22F4AB0800F48597 /* CBP_SurfaceAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4290F22F4AB0800F48597 /* CBP_GroundSurfaceAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_GroundSurfaceAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4291022F4AB0800F48597 /* CBP_ColorFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ColorFinder.cpp; sourceTree = "<group>"; };
-		E7B4291122F4AB0800F48597 /* CBP_FloorSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_FloorSegmenter.cpp; sourceTree = "<group>"; };
-		E7B4291222F4AB0800F48597 /* CBP_LargeImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_LargeImage.cpp; sourceTree = "<group>"; };
-		E7B4291322F4AB0800F48597 /* CBP_PlaneRansac.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_PlaneRansac.hpp; sourceTree = "<group>"; };
-		E7B4291422F4AB0800F48597 /* CBP_Segmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Segmenter.hpp; sourceTree = "<group>"; };
-		E7B4291522F4AB0800F48597 /* CBP_LineFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_LineFinder.hpp; sourceTree = "<group>"; };
-		E7B4291622F4AB0800F48597 /* CBP_ShadowsAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ShadowsAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4291722F4AB0800F48597 /* CBP_GroundSurfaceAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_GroundSurfaceAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4291822F4AB0800F48597 /* CBP_ColorFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ColorFinder.hpp; sourceTree = "<group>"; };
-		E7B4291922F4AB0800F48597 /* CBP_FloorSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloorSegmenter.hpp; sourceTree = "<group>"; };
-		E7B4291A22F4AB0800F48597 /* CBP_LargeImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_LargeImage.hpp; sourceTree = "<group>"; };
-		E7B4291B22F4AB0800F48597 /* CBP_PlaneRansac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_PlaneRansac.cpp; sourceTree = "<group>"; };
-		E7B4291C22F4AB0800F48597 /* CBP_LineFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_LineFinder.cpp; sourceTree = "<group>"; };
-		E7B4291D22F4AB0800F48597 /* CBP_ShadowsAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ShadowsAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4291E22F4AB0800F48597 /* CBP_SurfaceAccumulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceAccumulator.hpp; sourceTree = "<group>"; };
-		E7B4291F22F4AB0800F48597 /* CBP_WallSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_WallSegmenter.cpp; sourceTree = "<group>"; };
-		E7B4292022F4AB0800F48597 /* CBP_AreaAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AreaAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4292122F4AB0800F48597 /* CBP_Analyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_Analyzer.cpp; sourceTree = "<group>"; };
-		E7B4292222F4AB0800F48597 /* CBP_DualRangeAccumulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_DualRangeAccumulator.hpp; sourceTree = "<group>"; };
-		E7B4292322F4AB0800F48597 /* CBP_PlaneAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_PlaneAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4292422F4AB0800F48597 /* CBP_ElevationAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ElevationAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4292522F4AB0800F48597 /* CBP_AmbienceSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_AmbienceSampler.cpp; sourceTree = "<group>"; };
-		E7B4292622F4AB0800F48597 /* CBP_WallFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_WallFinder.hpp; sourceTree = "<group>"; };
-		E7B4292722F4AB0800F48597 /* CBP_AnalysisUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_AnalysisUtil.cpp; sourceTree = "<group>"; };
-		E7B4292822F4AB0800F48597 /* CBP_SemanticAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SemanticAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4292922F4AB0800F48597 /* CBP_NormalsAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_NormalsAnalyzer.cpp; sourceTree = "<group>"; };
-		E7B4292A22F4AB0800F48597 /* analysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analysis.h; sourceTree = "<group>"; };
-		E7B4292B22F4AB0800F48597 /* CBP_SurfaceAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceAnalyzer.hpp; sourceTree = "<group>"; };
-		E7B4292D22F4AB0800F48597 /* CBP_MatrixUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MatrixUtil.hpp; sourceTree = "<group>"; };
-		E7B4292E22F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B4292F22F4AB0800F48597 /* CBP_MeshUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MeshUtil.hpp; sourceTree = "<group>"; };
-		E7B4293022F4AB0800F48597 /* CBP_Triangulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Triangulator.hpp; sourceTree = "<group>"; };
-		E7B4293122F4AB0800F48597 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
-		E7B4293222F4AB0800F48597 /* CBP_MatrixUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_MatrixUtil.cpp; sourceTree = "<group>"; };
-		E7B4293322F4AB0800F48597 /* CBP_MeshUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_MeshUtil.cpp; sourceTree = "<group>"; };
-		E7B4293422F4AB0800F48597 /* CBP_Triangulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_Triangulator.cpp; sourceTree = "<group>"; };
 		E7B4293622F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		E7B4293722F4AB0800F48597 /* CBP_FeatureTracker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FeatureTracker.hpp; sourceTree = "<group>"; };
 		E7B4293822F4AB0800F48597 /* motion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = motion.h; sourceTree = "<group>"; };
 		E7B4293922F4AB0800F48597 /* CBP_FeatureTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_FeatureTracker.cpp; sourceTree = "<group>"; };
 		E7B4293A22F4AB0800F48597 /* CBP_Types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Types.hpp; sourceTree = "<group>"; };
 		E7B4293B22F4AB0800F48597 /* pipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pipeline.h; sourceTree = "<group>"; };
-		E7B4293D22F4AB0800F48597 /* CBP_RenderingEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_RenderingEngine.cpp; sourceTree = "<group>"; };
-		E7B4293E22F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B4293F22F4AB0800F48597 /* CBP_RenderUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_RenderUtility.cpp; sourceTree = "<group>"; };
-		E7B4294022F4AB0800F48597 /* CBP_SurfaceRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceRenderer.cpp; sourceTree = "<group>"; };
-		E7B4294122F4AB0800F48597 /* rendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rendering.h; sourceTree = "<group>"; };
-		E7B4294222F4AB0800F48597 /* CBP_Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Renderer.hpp; sourceTree = "<group>"; };
-		E7B4294322F4AB0800F48597 /* CBP_SurfaceRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceRenderer.hpp; sourceTree = "<group>"; };
-		E7B4294422F4AB0800F48597 /* CBP_Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_Renderer.cpp; sourceTree = "<group>"; };
-		E7B4294522F4AB0800F48597 /* CBP_RenderingEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_RenderingEngine.hpp; sourceTree = "<group>"; };
-		E7B4294622F4AB0800F48597 /* CBP_RenderUtility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_RenderUtility.hpp; sourceTree = "<group>"; };
-		E7B4294822F4AB0800F48597 /* CBP_MLUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_MLUtility.cpp; sourceTree = "<group>"; };
-		E7B4294922F4AB0800F48597 /* CBP_FloodFillAlgorithm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloodFillAlgorithm.hpp; sourceTree = "<group>"; };
-		E7B4294A22F4AB0800F48597 /* CBP_SurfaceNormalsEstimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceNormalsEstimator.cpp; sourceTree = "<group>"; };
-		E7B4294B22F4AB0800F48597 /* machine-learning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "machine-learning.h"; sourceTree = "<group>"; };
-		E7B4294C22F4AB0800F48597 /* CBP_DeepModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_DeepModel.hpp; sourceTree = "<group>"; };
-		E7B4294D22F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B4294E22F4AB0800F48597 /* CBP_SemanticSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SemanticSegmenter.hpp; sourceTree = "<group>"; };
-		E7B4294F22F4AB0800F48597 /* CBP_FloorFloodFill.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloorFloodFill.hpp; sourceTree = "<group>"; };
-		E7B4295022F4AB0800F48597 /* CBP_ElevationEstimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ElevationEstimator.hpp; sourceTree = "<group>"; };
-		E7B4295122F4AB0800F48597 /* CBP_ShadowsEstimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ShadowsEstimator.cpp; sourceTree = "<group>"; };
-		E7B4295222F4AB0800F48597 /* CBP_WallFloodFill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_WallFloodFill.cpp; sourceTree = "<group>"; };
-		E7B4295322F4AB0800F48597 /* CBP_ImageDBExporter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ImageDBExporter.hpp; sourceTree = "<group>"; };
-		E7B4295422F4AB0800F48597 /* CBP_LBDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBP_LBDB.h; sourceTree = "<group>"; };
-		E7B4295522F4AB0800F48597 /* CBP_FloodFillIterator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloodFillIterator.hpp; sourceTree = "<group>"; };
-		E7B4295622F4AB0800F48597 /* CBP_ElevationEstimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ElevationEstimator.cpp; sourceTree = "<group>"; };
-		E7B4295722F4AB0800F48597 /* CBP_MLTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MLTypes.hpp; sourceTree = "<group>"; };
-		E7B4295822F4AB0800F48597 /* CBP_ShadowsEstimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ShadowsEstimator.hpp; sourceTree = "<group>"; };
-		E7B4295922F4AB0800F48597 /* CBP_WallFloodFill.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_WallFloodFill.hpp; sourceTree = "<group>"; };
-		E7B4295A22F4AB0800F48597 /* CBP_ImageDBExporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ImageDBExporter.cpp; sourceTree = "<group>"; };
-		E7B4295B22F4AB0800F48597 /* CBP_MLUtility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MLUtility.hpp; sourceTree = "<group>"; };
-		E7B4295C22F4AB0800F48597 /* CBP_FloodFillAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_FloodFillAlgorithm.cpp; sourceTree = "<group>"; };
-		E7B4295D22F4AB0800F48597 /* CBP_SurfaceNormalsEstimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceNormalsEstimator.hpp; sourceTree = "<group>"; };
-		E7B4295E22F4AB0800F48597 /* CBP_DeepModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_DeepModel.cpp; sourceTree = "<group>"; };
-		E7B4295F22F4AB0800F48597 /* CBP_SemanticSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SemanticSegmenter.cpp; sourceTree = "<group>"; };
-		E7B4296022F4AB0800F48597 /* CBP_FloorFloodFill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_FloorFloodFill.cpp; sourceTree = "<group>"; };
-		E7B4296122F4AB0800F48597 /* CBAR_View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_View.cpp; sourceTree = "<group>"; };
-		E7B4296222F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B4296322F4AB0800F48597 /* CBAR_Client.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_Client.hpp; sourceTree = "<group>"; };
-		E7B4296422F4AB0800F48597 /* CBAR_VideoFrame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_VideoFrame.hpp; sourceTree = "<group>"; };
-		E7B4296522F4AB0800F48597 /* CBAR_GLOffscreenRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_GLOffscreenRenderer.hpp; sourceTree = "<group>"; };
-		E7B4296622F4AB0800F48597 /* CBAR_CallbackI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_CallbackI.cpp; sourceTree = "<group>"; };
-		E7B4296722F4AB0800F48597 /* CBAR_Common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_Common.hpp; sourceTree = "<group>"; };
-		E7B4296822F4AB0800F48597 /* CBAR_FIFOMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_FIFOMap.hpp; sourceTree = "<group>"; };
-		E7B4296922F4AB0800F48597 /* CBAR_VideoFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_VideoFrame.cpp; sourceTree = "<group>"; };
-		E7B4296A22F4AB0800F48597 /* CBAR_GLOffscreenRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_GLOffscreenRenderer.cpp; sourceTree = "<group>"; };
-		E7B4296B22F4AB0800F48597 /* CBAR_CallbackI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_CallbackI.hpp; sourceTree = "<group>"; };
-		E7B4296C22F4AB0800F48597 /* CBAR_Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_Common.cpp; sourceTree = "<group>"; };
-		E7B4296D22F4AB0800F48597 /* CBAR_VideoThread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_VideoThread.hpp; sourceTree = "<group>"; };
 		E7B4296F22F4AB0800F48597 /* CBAR_Floor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_Floor.cpp; sourceTree = "<group>"; };
 		E7B4297022F4AB0800F48597 /* CBAR_Model.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_Model.hpp; sourceTree = "<group>"; };
 		E7B4297122F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -275,12 +132,6 @@
 		E7B4297C22F4AB0800F48597 /* CBAR_Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_Model.cpp; sourceTree = "<group>"; };
 		E7B4297D22F4AB0800F48597 /* CBAR_Paint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_Paint.cpp; sourceTree = "<group>"; };
 		E7B4297E22F4AB0800F48597 /* scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene.h; sourceTree = "<group>"; };
-		E7B4297F22F4AB0800F48597 /* CBAR_View.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_View.hpp; sourceTree = "<group>"; };
-		E7B4298122F4AB0800F48597 /* CB_Licensing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CB_Licensing.cpp; sourceTree = "<group>"; };
-		E7B4298222F4AB0800F48597 /* CB_Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CB_Config.h; sourceTree = "<group>"; };
-		E7B4298322F4AB0800F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		E7B4298422F4AB0800F48597 /* CB_Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CB_Types.h; sourceTree = "<group>"; };
-		E7B4298522F4AB0800F48597 /* CB_Licensing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CB_Licensing.h; sourceTree = "<group>"; };
 		E7B429CC22F4AB1C00F48597 /* cambrian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cambrian.h; sourceTree = "<group>"; };
 		E7B429CE22F4AB3500F48597 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		E7B42A7622F4AB3500F48597 /* triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
@@ -301,6 +152,155 @@
 		E7B42AFA22F4ADE400F48597 /* libopencv2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv2.a; path = "../prebuilts/opencv/opencv-ios/lib/libopencv2.a"; sourceTree = "<group>"; };
 		E7B42AFC22F4ADFC00F48597 /* liblzma.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblzma.a; path = ../prebuilts/liblzma/lib/ios/liblzma.a; sourceTree = "<group>"; };
 		E7B42AFE22F4AE2B00F48597 /* libjsoncpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjsoncpp.a; path = ../prebuilts/jsoncpp/ios/lib/libjsoncpp.a; sourceTree = "<group>"; };
+		E7D2570123A94CFF00C2737D /* CBP_LargeImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_LargeImage.hpp; sourceTree = "<group>"; };
+		E7D2570223A94CFF00C2737D /* CBP_ElevationAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ElevationAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2570323A94CFF00C2737D /* CBP_AnalysisUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AnalysisUtil.hpp; sourceTree = "<group>"; };
+		E7D2570423A94CFF00C2737D /* CBP_DualRangeAccumulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_DualRangeAccumulator.hpp; sourceTree = "<group>"; };
+		E7D2570523A94CFF00C2737D /* CBP_FloorSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloorSegmenter.hpp; sourceTree = "<group>"; };
+		E7D2570623A94CFF00C2737D /* CBP_NormalsAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_NormalsAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2570723A94CFF00C2737D /* CBP_PlaneAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_PlaneAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2570823A94CFF00C2737D /* CBP_SurfaceAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2570923A94CFF00C2737D /* CBP_PlaneAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_PlaneAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2570A23A94CFF00C2737D /* CBP_AnalysisUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_AnalysisUtil.cpp; sourceTree = "<group>"; };
+		E7D2570B23A94CFF00C2737D /* CBP_PlaneRansac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_PlaneRansac.cpp; sourceTree = "<group>"; };
+		E7D2570C23A94CFF00C2737D /* CBP_AmbienceSampler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AmbienceSampler.hpp; sourceTree = "<group>"; };
+		E7D2570D23A94CFF00C2737D /* CBP_WallFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_WallFinder.cpp; sourceTree = "<group>"; };
+		E7D2570E23A94CFF00C2737D /* CBP_WallFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_WallFinder.hpp; sourceTree = "<group>"; };
+		E7D2570F23A94CFF00C2737D /* CBP_WallSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_WallSegmenter.hpp; sourceTree = "<group>"; };
+		E7D2571023A94CFF00C2737D /* CBP_DualRangeAccumulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_DualRangeAccumulator.cpp; sourceTree = "<group>"; };
+		E7D2571123A94CFF00C2737D /* CBP_AmbienceSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_AmbienceSampler.cpp; sourceTree = "<group>"; };
+		E7D2571223A94CFF00C2737D /* CBP_SurfaceAccumulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceAccumulator.hpp; sourceTree = "<group>"; };
+		E7D2571323A94CFF00C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D2571423A94CFF00C2737D /* CBP_ShadowsAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ShadowsAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2571523A94CFF00C2737D /* CBP_Analyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_Analyzer.cpp; sourceTree = "<group>"; };
+		E7D2571623A94CFF00C2737D /* CBP_GroundSurfaceAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_GroundSurfaceAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2571723A94D0000C2737D /* CBP_ColorFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ColorFinder.hpp; sourceTree = "<group>"; };
+		E7D2571823A94D0000C2737D /* CBP_SemanticAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SemanticAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2571923A94D0000C2737D /* CBP_WallSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_WallSegmenter.cpp; sourceTree = "<group>"; };
+		E7D2571A23A94D0000C2737D /* CBP_AreaAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_AreaAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2571B23A94D0000C2737D /* CBP_ColorFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ColorFinder.cpp; sourceTree = "<group>"; };
+		E7D2571C23A94D0000C2737D /* CBP_AnalysisTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AnalysisTypes.hpp; sourceTree = "<group>"; };
+		E7D2571D23A94D0000C2737D /* CBP_Segmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Segmenter.hpp; sourceTree = "<group>"; };
+		E7D2571E23A94D0000C2737D /* CBP_ShadowsAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ShadowsAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2571F23A94D0000C2737D /* CBP_PlaneRansac.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_PlaneRansac.hpp; sourceTree = "<group>"; };
+		E7D2572023A94D0000C2737D /* CBP_SurfaceAccumulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceAccumulator.cpp; sourceTree = "<group>"; };
+		E7D2572123A94D0000C2737D /* CBP_AreaAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_AreaAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2572223A94D0000C2737D /* CBP_SurfaceAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2572323A94D0000C2737D /* CBP_FloorSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_FloorSegmenter.cpp; sourceTree = "<group>"; };
+		E7D2572423A94D0000C2737D /* analysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analysis.h; sourceTree = "<group>"; };
+		E7D2572523A94D0000C2737D /* CBP_LargeImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_LargeImage.cpp; sourceTree = "<group>"; };
+		E7D2572623A94D0000C2737D /* CBP_ElevationAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ElevationAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2572723A94D0000C2737D /* CBP_LineFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_LineFinder.hpp; sourceTree = "<group>"; };
+		E7D2572823A94D0100C2737D /* CBP_Analyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Analyzer.hpp; sourceTree = "<group>"; };
+		E7D2572923A94D0100C2737D /* CBP_NormalsAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_NormalsAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2572A23A94D0100C2737D /* CBP_GroundSurfaceAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_GroundSurfaceAnalyzer.cpp; sourceTree = "<group>"; };
+		E7D2572B23A94D0100C2737D /* CBP_LineFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_LineFinder.cpp; sourceTree = "<group>"; };
+		E7D2572C23A94D0100C2737D /* CBP_SemanticAnalyzer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SemanticAnalyzer.hpp; sourceTree = "<group>"; };
+		E7D2574123A94D1F00C2737D /* CBP_MatrixUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MatrixUtil.hpp; sourceTree = "<group>"; };
+		E7D2574223A94D1F00C2737D /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		E7D2574323A94D1F00C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D2574423A94D1F00C2737D /* CBP_MeshUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_MeshUtil.cpp; sourceTree = "<group>"; };
+		E7D2574523A94D1F00C2737D /* CBP_Triangulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_Triangulator.cpp; sourceTree = "<group>"; };
+		E7D2574623A94D1F00C2737D /* CBP_MatrixUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_MatrixUtil.cpp; sourceTree = "<group>"; };
+		E7D2574723A94D1F00C2737D /* CBP_MeshUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MeshUtil.hpp; sourceTree = "<group>"; };
+		E7D2574823A94D1F00C2737D /* CBP_Triangulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Triangulator.hpp; sourceTree = "<group>"; };
+		E7D2574C23A94D3400C2737D /* CBP_RenderingEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_RenderingEngine.hpp; sourceTree = "<group>"; };
+		E7D2574D23A94D3400C2737D /* CBP_RenderingEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_RenderingEngine.cpp; sourceTree = "<group>"; };
+		E7D2574E23A94D3400C2737D /* CBP_RenderUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_RenderUtility.cpp; sourceTree = "<group>"; };
+		E7D2574F23A94D3400C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D2575023A94D3500C2737D /* CBP_Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_Renderer.hpp; sourceTree = "<group>"; };
+		E7D2575123A94D3500C2737D /* CBP_SurfaceRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceRenderer.hpp; sourceTree = "<group>"; };
+		E7D2575223A94D3500C2737D /* CBP_RenderUtility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_RenderUtility.hpp; sourceTree = "<group>"; };
+		E7D2575323A94D3500C2737D /* rendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rendering.h; sourceTree = "<group>"; };
+		E7D2575423A94D3500C2737D /* CBP_Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_Renderer.cpp; sourceTree = "<group>"; };
+		E7D2575523A94D3500C2737D /* CBP_SurfaceRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceRenderer.cpp; sourceTree = "<group>"; };
+		E7D2575A23A94D4A00C2737D /* CBP_DeepModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_DeepModel.cpp; sourceTree = "<group>"; };
+		E7D2575B23A94D4A00C2737D /* CBP_MLUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_MLUtility.cpp; sourceTree = "<group>"; };
+		E7D2575C23A94D4A00C2737D /* CBP_MLTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MLTypes.hpp; sourceTree = "<group>"; };
+		E7D2575D23A94D4A00C2737D /* CBP_FloorFloodFill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_FloorFloodFill.cpp; sourceTree = "<group>"; };
+		E7D2575E23A94D4B00C2737D /* CBP_FloodFillAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_FloodFillAlgorithm.cpp; sourceTree = "<group>"; };
+		E7D2575F23A94D4B00C2737D /* CBP_SemanticSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SemanticSegmenter.cpp; sourceTree = "<group>"; };
+		E7D2576023A94D4B00C2737D /* CBP_ShadowsEstimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ShadowsEstimator.cpp; sourceTree = "<group>"; };
+		E7D2576123A94D4B00C2737D /* CBP_ImageDBExporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ImageDBExporter.cpp; sourceTree = "<group>"; };
+		E7D2576223A94D4B00C2737D /* CBP_FloorFloodFill.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloorFloodFill.hpp; sourceTree = "<group>"; };
+		E7D2576323A94D4B00C2737D /* CBP_SurfaceNormalsEstimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SurfaceNormalsEstimator.hpp; sourceTree = "<group>"; };
+		E7D2576423A94D4B00C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D2576523A94D4B00C2737D /* CBP_SemanticSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_SemanticSegmenter.hpp; sourceTree = "<group>"; };
+		E7D2576623A94D4B00C2737D /* CBP_LBDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBP_LBDB.h; sourceTree = "<group>"; };
+		E7D2576723A94D4B00C2737D /* CBP_WallFloodFill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_WallFloodFill.cpp; sourceTree = "<group>"; };
+		E7D2576823A94D4B00C2737D /* CBP_ImageDBExporter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ImageDBExporter.hpp; sourceTree = "<group>"; };
+		E7D2576923A94D4B00C2737D /* machine-learning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "machine-learning.h"; sourceTree = "<group>"; };
+		E7D2576A23A94D4B00C2737D /* CBP_FloodFillAlgorithm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloodFillAlgorithm.hpp; sourceTree = "<group>"; };
+		E7D2576B23A94D4B00C2737D /* CBP_DeepModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_DeepModel.hpp; sourceTree = "<group>"; };
+		E7D2576C23A94D4B00C2737D /* CBP_FloodFillIterator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_FloodFillIterator.hpp; sourceTree = "<group>"; };
+		E7D2576D23A94D4B00C2737D /* CBP_ShadowsEstimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ShadowsEstimator.hpp; sourceTree = "<group>"; };
+		E7D2576E23A94D4B00C2737D /* CBP_WallFloodFill.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_WallFloodFill.hpp; sourceTree = "<group>"; };
+		E7D2576F23A94D4B00C2737D /* CBP_MLUtility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_MLUtility.hpp; sourceTree = "<group>"; };
+		E7D2577023A94D4B00C2737D /* CBP_ElevationEstimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBP_ElevationEstimator.hpp; sourceTree = "<group>"; };
+		E7D2577123A94D4B00C2737D /* CBP_SurfaceNormalsEstimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_SurfaceNormalsEstimator.cpp; sourceTree = "<group>"; };
+		E7D2577223A94D4B00C2737D /* CBP_ElevationEstimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBP_ElevationEstimator.cpp; sourceTree = "<group>"; };
+		E7D2577D23A94D9E00C2737D /* CBAR_Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_Common.cpp; sourceTree = "<group>"; };
+		E7D2577E23A94D9E00C2737D /* CBAR_CallbackI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_CallbackI.hpp; sourceTree = "<group>"; };
+		E7D2577F23A94D9E00C2737D /* CBAR_View.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_View.hpp; sourceTree = "<group>"; };
+		E7D2578023A94D9E00C2737D /* CBAR_View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_View.cpp; sourceTree = "<group>"; };
+		E7D2578123A94D9E00C2737D /* CBAR_FIFOMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_FIFOMap.hpp; sourceTree = "<group>"; };
+		E7D2578223A94D9E00C2737D /* CBAR_GLOffscreenRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_GLOffscreenRenderer.hpp; sourceTree = "<group>"; };
+		E7D2578323A94D9E00C2737D /* CBAR_VideoThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_VideoThread.cpp; sourceTree = "<group>"; };
+		E7D2578423A94D9E00C2737D /* CBAR_VideoFrame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_VideoFrame.hpp; sourceTree = "<group>"; };
+		E7D2578523A94D9E00C2737D /* CBAR_Client.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_Client.hpp; sourceTree = "<group>"; };
+		E7D2578623A94D9E00C2737D /* CBAR_VideoFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_VideoFrame.cpp; sourceTree = "<group>"; };
+		E7D2578723A94D9E00C2737D /* CBAR_Common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_Common.hpp; sourceTree = "<group>"; };
+		E7D2578823A94D9F00C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D2578923A94D9F00C2737D /* CBAR_VideoThread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CBAR_VideoThread.hpp; sourceTree = "<group>"; };
+		E7D2578A23A94D9F00C2737D /* CBAR_GLOffscreenRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_GLOffscreenRenderer.cpp; sourceTree = "<group>"; };
+		E7D2578B23A94D9F00C2737D /* CBAR_CallbackI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBAR_CallbackI.cpp; sourceTree = "<group>"; };
+		E7D2579223A94DB900C2737D /* CB_Licensing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CB_Licensing.h; sourceTree = "<group>"; };
+		E7D2579323A94DB900C2737D /* CB_Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CB_Types.h; sourceTree = "<group>"; };
+		E7D2579423A94DB900C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D2579523A94DB900C2737D /* CB_Licensing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CB_Licensing.cpp; sourceTree = "<group>"; };
+		E7D2579623A94DB900C2737D /* CB_Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CB_Config.h; sourceTree = "<group>"; };
+		E7D2579823A94DFA00C2737D /* Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawing.h; sourceTree = "<group>"; };
+		E7D2579923A94DFA00C2737D /* Coloring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coloring.cpp; sourceTree = "<group>"; };
+		E7D2579A23A94DFA00C2737D /* ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessing.h; sourceTree = "<group>"; };
+		E7D2579B23A94DFA00C2737D /* BezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurve.h; sourceTree = "<group>"; };
+		E7D2579C23A94DFA00C2737D /* Geometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geometry.cpp; sourceTree = "<group>"; };
+		E7D2579D23A94DFA00C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D2579E23A94DFA00C2737D /* Imaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Imaging.h; sourceTree = "<group>"; };
+		E7D2579F23A94DFA00C2737D /* LineSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LineSegment.hpp; sourceTree = "<group>"; };
+		E7D257A023A94DFA00C2737D /* Accelerated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accelerated.h; sourceTree = "<group>"; };
+		E7D257A123A94DFB00C2737D /* RansacPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RansacPlane.h; sourceTree = "<group>"; };
+		E7D257A223A94DFB00C2737D /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = "<group>"; };
+		E7D257A323A94DFB00C2737D /* ImageProcessing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageProcessing.cpp; sourceTree = "<group>"; };
+		E7D257A423A94DFB00C2737D /* LineProcessing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineProcessing.cpp; sourceTree = "<group>"; };
+		E7D257A523A94DFB00C2737D /* Coloring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coloring.h; sourceTree = "<group>"; };
+		E7D257A623A94DFB00C2737D /* LineProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineProcessing.h; sourceTree = "<group>"; };
+		E7D257A723A94DFB00C2737D /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		E7D257A823A94DFB00C2737D /* FloodFill.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FloodFill.hpp; sourceTree = "<group>"; };
+		E7D257A923A94DFB00C2737D /* Imaging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Imaging.cpp; sourceTree = "<group>"; };
+		E7D257AA23A94DFB00C2737D /* LineSegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineSegment.cpp; sourceTree = "<group>"; };
+		E7D257AB23A94DFB00C2737D /* ImageDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDefines.h; sourceTree = "<group>"; };
+		E7D257AC23A94DFB00C2737D /* Accelerated.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Accelerated.cpp; sourceTree = "<group>"; };
+		E7D257AD23A94DFB00C2737D /* RansacPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RansacPlane.cpp; sourceTree = "<group>"; };
+		E7D257AE23A94DFB00C2737D /* FloodFill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FloodFill.cpp; sourceTree = "<group>"; };
+		E7D257AF23A94DFB00C2737D /* Drawing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Drawing.cpp; sourceTree = "<group>"; };
+		E7D257BB23A94E1600C2737D /* JSONHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONHelper.cpp; sourceTree = "<group>"; };
+		E7D257BC23A94E1600C2737D /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHelper.h; sourceTree = "<group>"; };
+		E7D257BD23A94E1600C2737D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E7D257BE23A94E1600C2737D /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
+		E7D257BF23A94E1600C2737D /* Diagnostics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diagnostics.h; sourceTree = "<group>"; };
+		E7D257C023A94E1600C2737D /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		E7D257C123A94E1600C2737D /* ShaderUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderUtilities.cpp; sourceTree = "<group>"; };
+		E7D257C223A94E1600C2737D /* Diagnostics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Diagnostics.cpp; sourceTree = "<group>"; };
+		E7D257C323A94E1600C2737D /* Directory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Directory.cpp; sourceTree = "<group>"; };
+		E7D257C423A94E1600C2737D /* CommonUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonUtility.cpp; sourceTree = "<group>"; };
+		E7D257C523A94E1600C2737D /* Threads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Threads.cpp; sourceTree = "<group>"; };
+		E7D257C623A94E1600C2737D /* Threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Threads.h; sourceTree = "<group>"; };
+		E7D257C723A94E1600C2737D /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		E7D257D023A94E3200C2737D /* lfu_cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lfu_cache_policy.hpp; sourceTree = "<group>"; };
+		E7D257D123A94E3200C2737D /* cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cache.hpp; sourceTree = "<group>"; };
+		E7D257D223A94E3200C2737D /* fifo_cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fifo_cache_policy.hpp; sourceTree = "<group>"; };
+		E7D257D323A94E3200C2737D /* lru_cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lru_cache_policy.hpp; sourceTree = "<group>"; };
+		E7D257D423A94E3200C2737D /* cache_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cache_policy.hpp; sourceTree = "<group>"; };
 		E7EA1E331FD7622C00B3DE54 /* libCambrian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCambrian.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EA1E5C1FD7632200B3DE54 /* libopencv2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv2.a; path = "../../prebuilts/opencv/opencv-ios/lib/libopencv2.a"; sourceTree = "<group>"; };
 		E7EA1E671FD7655500B3DE54 /* liblzma.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblzma.a; path = ../../prebuilts/liblzma/lib/ios/liblzma.a; sourceTree = "<group>"; };
@@ -327,63 +327,51 @@
 		E7B428CC22F4AB0800F48597 /* utility */ = {
 			isa = PBXGroup;
 			children = (
-				E7B428CD22F4AB0800F48597 /* CMakeLists.txt */,
-				E7B428CE22F4AB0800F48597 /* cache */,
-				E7B428D422F4AB0800F48597 /* JSONHelper.h */,
-				E7B428D522F4AB0800F48597 /* Threads.h */,
-				E7B428D622F4AB0800F48597 /* Diagnostics.cpp */,
-				E7B428D722F4AB0800F48597 /* Directory.cpp */,
-				E7B428D822F4AB0800F48597 /* ShaderUtilities.cpp */,
-				E7B428D922F4AB0800F48597 /* Directory.h */,
-				E7B428DA22F4AB0800F48597 /* CommonUtility.cpp */,
-				E7B428DB22F4AB0800F48597 /* Diagnostics.h */,
-				E7B428DC22F4AB0800F48597 /* JSONHelper.cpp */,
-				E7B428DD22F4AB0800F48597 /* Threads.cpp */,
-				E7B428DE22F4AB0800F48597 /* CommonUtility.h */,
-				E7B428DF22F4AB0800F48597 /* ShaderUtilities.h */,
+				E7D257CF23A94E3200C2737D /* cache */,
+				E7D257BD23A94E1600C2737D /* CMakeLists.txt */,
+				E7D257C423A94E1600C2737D /* CommonUtility.cpp */,
+				E7D257C023A94E1600C2737D /* CommonUtility.h */,
+				E7D257C223A94E1600C2737D /* Diagnostics.cpp */,
+				E7D257BF23A94E1600C2737D /* Diagnostics.h */,
+				E7D257C323A94E1600C2737D /* Directory.cpp */,
+				E7D257BE23A94E1600C2737D /* Directory.h */,
+				E7D257BB23A94E1600C2737D /* JSONHelper.cpp */,
+				E7D257BC23A94E1600C2737D /* JSONHelper.h */,
+				E7D257C123A94E1600C2737D /* ShaderUtilities.cpp */,
+				E7D257C723A94E1600C2737D /* ShaderUtilities.h */,
+				E7D257C523A94E1600C2737D /* Threads.cpp */,
+				E7D257C623A94E1600C2737D /* Threads.h */,
 			);
 			path = utility;
-			sourceTree = "<group>";
-		};
-		E7B428CE22F4AB0800F48597 /* cache */ = {
-			isa = PBXGroup;
-			children = (
-				E7B428CF22F4AB0800F48597 /* lfu_cache_policy.hpp */,
-				E7B428D022F4AB0800F48597 /* cache.hpp */,
-				E7B428D122F4AB0800F48597 /* fifo_cache_policy.hpp */,
-				E7B428D222F4AB0800F48597 /* lru_cache_policy.hpp */,
-				E7B428D322F4AB0800F48597 /* cache_policy.hpp */,
-			);
-			path = cache;
 			sourceTree = "<group>";
 		};
 		E7B428E022F4AB0800F48597 /* imaging */ = {
 			isa = PBXGroup;
 			children = (
-				E7B428E122F4AB0800F48597 /* LineProcessing.cpp */,
-				E7B428E222F4AB0800F48597 /* Geometry.cpp */,
-				E7B428E322F4AB0800F48597 /* Accelerated.h */,
-				E7B428E522F4AB0800F48597 /* CMakeLists.txt */,
-				E7B428E622F4AB0800F48597 /* FloodFill.hpp */,
-				E7B428E722F4AB0800F48597 /* Accelerated.cpp */,
-				E7B428E822F4AB0800F48597 /* Drawing.h */,
-				E7B428E922F4AB0800F48597 /* BezierCurve.cpp */,
-				E7B428EA22F4AB0800F48597 /* Coloring.h */,
-				E7B428EB22F4AB0800F48597 /* ImageProcessing.cpp */,
-				E7B428EC22F4AB0800F48597 /* BezierCurve.h */,
-				E7B428ED22F4AB0800F48597 /* LineSegment.cpp */,
-				E7B428EE22F4AB0800F48597 /* Imaging.h */,
-				E7B428EF22F4AB0800F48597 /* Drawing.cpp */,
-				E7B428F022F4AB0800F48597 /* ImageDefines.h */,
-				E7B428F122F4AB0800F48597 /* LineSegment.hpp */,
-				E7B428F222F4AB0800F48597 /* RansacPlane.cpp */,
-				E7B428F322F4AB0800F48597 /* LineProcessing.h */,
-				E7B428F422F4AB0800F48597 /* Imaging.cpp */,
-				E7B428F522F4AB0800F48597 /* ImageProcessing.h */,
-				E7B428F622F4AB0800F48597 /* RansacPlane.h */,
-				E7B428F722F4AB0800F48597 /* Coloring.cpp */,
-				E7B428F922F4AB0800F48597 /* FloodFill.cpp */,
-				E7B428FA22F4AB0800F48597 /* Geometry.h */,
+				E7D2579D23A94DFA00C2737D /* CMakeLists.txt */,
+				E7D257AC23A94DFB00C2737D /* Accelerated.cpp */,
+				E7D257A023A94DFA00C2737D /* Accelerated.h */,
+				E7D257A223A94DFB00C2737D /* BezierCurve.cpp */,
+				E7D2579B23A94DFA00C2737D /* BezierCurve.h */,
+				E7D2579923A94DFA00C2737D /* Coloring.cpp */,
+				E7D257A523A94DFB00C2737D /* Coloring.h */,
+				E7D257AF23A94DFB00C2737D /* Drawing.cpp */,
+				E7D2579823A94DFA00C2737D /* Drawing.h */,
+				E7D257AE23A94DFB00C2737D /* FloodFill.cpp */,
+				E7D257A823A94DFB00C2737D /* FloodFill.hpp */,
+				E7D2579C23A94DFA00C2737D /* Geometry.cpp */,
+				E7D257A723A94DFB00C2737D /* Geometry.h */,
+				E7D257AB23A94DFB00C2737D /* ImageDefines.h */,
+				E7D257A323A94DFB00C2737D /* ImageProcessing.cpp */,
+				E7D2579A23A94DFA00C2737D /* ImageProcessing.h */,
+				E7D257A923A94DFB00C2737D /* Imaging.cpp */,
+				E7D2579E23A94DFA00C2737D /* Imaging.h */,
+				E7D257A423A94DFB00C2737D /* LineProcessing.cpp */,
+				E7D257A623A94DFB00C2737D /* LineProcessing.h */,
+				E7D257AA23A94DFB00C2737D /* LineSegment.cpp */,
+				E7D2579F23A94DFA00C2737D /* LineSegment.hpp */,
+				E7D257AD23A94DFB00C2737D /* RansacPlane.cpp */,
+				E7D257A123A94DFB00C2737D /* RansacPlane.h */,
 			);
 			path = imaging;
 			sourceTree = "<group>";
@@ -391,23 +379,23 @@
 		E7B428FB22F4AB0800F48597 /* cbar */ = {
 			isa = PBXGroup;
 			children = (
-				E7B428FC22F4AB0800F48597 /* CBAR_VideoThread.cpp */,
 				E7B428FD22F4AB0800F48597 /* pipeline */,
-				E7B4296122F4AB0800F48597 /* CBAR_View.cpp */,
-				E7B4296222F4AB0800F48597 /* CMakeLists.txt */,
-				E7B4296322F4AB0800F48597 /* CBAR_Client.hpp */,
-				E7B4296422F4AB0800F48597 /* CBAR_VideoFrame.hpp */,
-				E7B4296522F4AB0800F48597 /* CBAR_GLOffscreenRenderer.hpp */,
-				E7B4296622F4AB0800F48597 /* CBAR_CallbackI.cpp */,
-				E7B4296722F4AB0800F48597 /* CBAR_Common.hpp */,
-				E7B4296822F4AB0800F48597 /* CBAR_FIFOMap.hpp */,
-				E7B4296922F4AB0800F48597 /* CBAR_VideoFrame.cpp */,
-				E7B4296A22F4AB0800F48597 /* CBAR_GLOffscreenRenderer.cpp */,
-				E7B4296B22F4AB0800F48597 /* CBAR_CallbackI.hpp */,
-				E7B4296C22F4AB0800F48597 /* CBAR_Common.cpp */,
-				E7B4296D22F4AB0800F48597 /* CBAR_VideoThread.hpp */,
 				E7B4296E22F4AB0800F48597 /* scene */,
-				E7B4297F22F4AB0800F48597 /* CBAR_View.hpp */,
+				E7D2578823A94D9F00C2737D /* CMakeLists.txt */,
+				E7D2578B23A94D9F00C2737D /* CBAR_CallbackI.cpp */,
+				E7D2577E23A94D9E00C2737D /* CBAR_CallbackI.hpp */,
+				E7D2578523A94D9E00C2737D /* CBAR_Client.hpp */,
+				E7D2577D23A94D9E00C2737D /* CBAR_Common.cpp */,
+				E7D2578723A94D9E00C2737D /* CBAR_Common.hpp */,
+				E7D2578123A94D9E00C2737D /* CBAR_FIFOMap.hpp */,
+				E7D2578A23A94D9F00C2737D /* CBAR_GLOffscreenRenderer.cpp */,
+				E7D2578223A94D9E00C2737D /* CBAR_GLOffscreenRenderer.hpp */,
+				E7D2578623A94D9E00C2737D /* CBAR_VideoFrame.cpp */,
+				E7D2578423A94D9E00C2737D /* CBAR_VideoFrame.hpp */,
+				E7D2578323A94D9E00C2737D /* CBAR_VideoThread.cpp */,
+				E7D2578923A94D9F00C2737D /* CBAR_VideoThread.hpp */,
+				E7D2578023A94D9E00C2737D /* CBAR_View.cpp */,
+				E7D2577F23A94D9E00C2737D /* CBAR_View.hpp */,
 			);
 			path = cbar;
 			sourceTree = "<group>";
@@ -416,11 +404,11 @@
 			isa = PBXGroup;
 			children = (
 				E7B428FE22F4AB0800F48597 /* CMakeLists.txt */,
+				E7B4293B22F4AB0800F48597 /* pipeline.h */,
+				E7B4293A22F4AB0800F48597 /* CBP_Types.hpp */,
 				E7B428FF22F4AB0800F48597 /* analysis */,
 				E7B4292C22F4AB0800F48597 /* util */,
 				E7B4293522F4AB0800F48597 /* motion */,
-				E7B4293A22F4AB0800F48597 /* CBP_Types.hpp */,
-				E7B4293B22F4AB0800F48597 /* pipeline.h */,
 				E7B4293C22F4AB0800F48597 /* rendering */,
 				E7B4294722F4AB0800F48597 /* machine-learning */,
 			);
@@ -430,50 +418,50 @@
 		E7B428FF22F4AB0800F48597 /* analysis */ = {
 			isa = PBXGroup;
 			children = (
-				E7B4290022F4AB0800F48597 /* CBP_SurfaceAccumulator.cpp */,
-				E7B4290122F4AB0800F48597 /* CBP_AnalysisTypes.hpp */,
-				E7B4290222F4AB0800F48597 /* CBP_WallSegmenter.hpp */,
-				E7B4290322F4AB0800F48597 /* CBP_AreaAnalyzer.cpp */,
-				E7B4290422F4AB0800F48597 /* CBP_Analyzer.hpp */,
-				E7B4290522F4AB0800F48597 /* CBP_DualRangeAccumulator.cpp */,
-				E7B4290622F4AB0800F48597 /* CMakeLists.txt */,
-				E7B4290722F4AB0800F48597 /* CBP_ElevationAnalyzer.hpp */,
-				E7B4290822F4AB0800F48597 /* CBP_PlaneAnalyzer.cpp */,
-				E7B4290922F4AB0800F48597 /* CBP_WallFinder.cpp */,
-				E7B4290A22F4AB0800F48597 /* CBP_AnalysisUtil.hpp */,
-				E7B4290B22F4AB0800F48597 /* CBP_AmbienceSampler.hpp */,
-				E7B4290C22F4AB0800F48597 /* CBP_NormalsAnalyzer.hpp */,
-				E7B4290D22F4AB0800F48597 /* CBP_SemanticAnalyzer.cpp */,
-				E7B4290E22F4AB0800F48597 /* CBP_SurfaceAnalyzer.cpp */,
-				E7B4290F22F4AB0800F48597 /* CBP_GroundSurfaceAnalyzer.cpp */,
-				E7B4291022F4AB0800F48597 /* CBP_ColorFinder.cpp */,
-				E7B4291122F4AB0800F48597 /* CBP_FloorSegmenter.cpp */,
-				E7B4291222F4AB0800F48597 /* CBP_LargeImage.cpp */,
-				E7B4291322F4AB0800F48597 /* CBP_PlaneRansac.hpp */,
-				E7B4291422F4AB0800F48597 /* CBP_Segmenter.hpp */,
-				E7B4291522F4AB0800F48597 /* CBP_LineFinder.hpp */,
-				E7B4291622F4AB0800F48597 /* CBP_ShadowsAnalyzer.hpp */,
-				E7B4291722F4AB0800F48597 /* CBP_GroundSurfaceAnalyzer.hpp */,
-				E7B4291822F4AB0800F48597 /* CBP_ColorFinder.hpp */,
-				E7B4291922F4AB0800F48597 /* CBP_FloorSegmenter.hpp */,
-				E7B4291A22F4AB0800F48597 /* CBP_LargeImage.hpp */,
-				E7B4291B22F4AB0800F48597 /* CBP_PlaneRansac.cpp */,
-				E7B4291C22F4AB0800F48597 /* CBP_LineFinder.cpp */,
-				E7B4291D22F4AB0800F48597 /* CBP_ShadowsAnalyzer.cpp */,
-				E7B4291E22F4AB0800F48597 /* CBP_SurfaceAccumulator.hpp */,
-				E7B4291F22F4AB0800F48597 /* CBP_WallSegmenter.cpp */,
-				E7B4292022F4AB0800F48597 /* CBP_AreaAnalyzer.hpp */,
-				E7B4292122F4AB0800F48597 /* CBP_Analyzer.cpp */,
-				E7B4292222F4AB0800F48597 /* CBP_DualRangeAccumulator.hpp */,
-				E7B4292322F4AB0800F48597 /* CBP_PlaneAnalyzer.hpp */,
-				E7B4292422F4AB0800F48597 /* CBP_ElevationAnalyzer.cpp */,
-				E7B4292522F4AB0800F48597 /* CBP_AmbienceSampler.cpp */,
-				E7B4292622F4AB0800F48597 /* CBP_WallFinder.hpp */,
-				E7B4292722F4AB0800F48597 /* CBP_AnalysisUtil.cpp */,
-				E7B4292822F4AB0800F48597 /* CBP_SemanticAnalyzer.hpp */,
-				E7B4292922F4AB0800F48597 /* CBP_NormalsAnalyzer.cpp */,
-				E7B4292A22F4AB0800F48597 /* analysis.h */,
-				E7B4292B22F4AB0800F48597 /* CBP_SurfaceAnalyzer.hpp */,
+				E7D2572423A94D0000C2737D /* analysis.h */,
+				E7D2571123A94CFF00C2737D /* CBP_AmbienceSampler.cpp */,
+				E7D2570C23A94CFF00C2737D /* CBP_AmbienceSampler.hpp */,
+				E7D2571C23A94D0000C2737D /* CBP_AnalysisTypes.hpp */,
+				E7D2570A23A94CFF00C2737D /* CBP_AnalysisUtil.cpp */,
+				E7D2570323A94CFF00C2737D /* CBP_AnalysisUtil.hpp */,
+				E7D2571523A94CFF00C2737D /* CBP_Analyzer.cpp */,
+				E7D2572823A94D0100C2737D /* CBP_Analyzer.hpp */,
+				E7D2571A23A94D0000C2737D /* CBP_AreaAnalyzer.cpp */,
+				E7D2572123A94D0000C2737D /* CBP_AreaAnalyzer.hpp */,
+				E7D2571B23A94D0000C2737D /* CBP_ColorFinder.cpp */,
+				E7D2571723A94D0000C2737D /* CBP_ColorFinder.hpp */,
+				E7D2571023A94CFF00C2737D /* CBP_DualRangeAccumulator.cpp */,
+				E7D2570423A94CFF00C2737D /* CBP_DualRangeAccumulator.hpp */,
+				E7D2572623A94D0000C2737D /* CBP_ElevationAnalyzer.cpp */,
+				E7D2570223A94CFF00C2737D /* CBP_ElevationAnalyzer.hpp */,
+				E7D2572323A94D0000C2737D /* CBP_FloorSegmenter.cpp */,
+				E7D2570523A94CFF00C2737D /* CBP_FloorSegmenter.hpp */,
+				E7D2572A23A94D0100C2737D /* CBP_GroundSurfaceAnalyzer.cpp */,
+				E7D2571623A94CFF00C2737D /* CBP_GroundSurfaceAnalyzer.hpp */,
+				E7D2572523A94D0000C2737D /* CBP_LargeImage.cpp */,
+				E7D2570123A94CFF00C2737D /* CBP_LargeImage.hpp */,
+				E7D2572B23A94D0100C2737D /* CBP_LineFinder.cpp */,
+				E7D2572723A94D0000C2737D /* CBP_LineFinder.hpp */,
+				E7D2572923A94D0100C2737D /* CBP_NormalsAnalyzer.cpp */,
+				E7D2570623A94CFF00C2737D /* CBP_NormalsAnalyzer.hpp */,
+				E7D2570723A94CFF00C2737D /* CBP_PlaneAnalyzer.cpp */,
+				E7D2570923A94CFF00C2737D /* CBP_PlaneAnalyzer.hpp */,
+				E7D2570B23A94CFF00C2737D /* CBP_PlaneRansac.cpp */,
+				E7D2571F23A94D0000C2737D /* CBP_PlaneRansac.hpp */,
+				E7D2571D23A94D0000C2737D /* CBP_Segmenter.hpp */,
+				E7D2571823A94D0000C2737D /* CBP_SemanticAnalyzer.cpp */,
+				E7D2572C23A94D0100C2737D /* CBP_SemanticAnalyzer.hpp */,
+				E7D2571423A94CFF00C2737D /* CBP_ShadowsAnalyzer.cpp */,
+				E7D2571E23A94D0000C2737D /* CBP_ShadowsAnalyzer.hpp */,
+				E7D2572023A94D0000C2737D /* CBP_SurfaceAccumulator.cpp */,
+				E7D2571223A94CFF00C2737D /* CBP_SurfaceAccumulator.hpp */,
+				E7D2570823A94CFF00C2737D /* CBP_SurfaceAnalyzer.cpp */,
+				E7D2572223A94D0000C2737D /* CBP_SurfaceAnalyzer.hpp */,
+				E7D2570D23A94CFF00C2737D /* CBP_WallFinder.cpp */,
+				E7D2570E23A94CFF00C2737D /* CBP_WallFinder.hpp */,
+				E7D2571923A94D0000C2737D /* CBP_WallSegmenter.cpp */,
+				E7D2570F23A94CFF00C2737D /* CBP_WallSegmenter.hpp */,
+				E7D2571323A94CFF00C2737D /* CMakeLists.txt */,
 			);
 			path = analysis;
 			sourceTree = "<group>";
@@ -481,14 +469,14 @@
 		E7B4292C22F4AB0800F48597 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				E7B4292D22F4AB0800F48597 /* CBP_MatrixUtil.hpp */,
-				E7B4292E22F4AB0800F48597 /* CMakeLists.txt */,
-				E7B4292F22F4AB0800F48597 /* CBP_MeshUtil.hpp */,
-				E7B4293022F4AB0800F48597 /* CBP_Triangulator.hpp */,
-				E7B4293122F4AB0800F48597 /* util.h */,
-				E7B4293222F4AB0800F48597 /* CBP_MatrixUtil.cpp */,
-				E7B4293322F4AB0800F48597 /* CBP_MeshUtil.cpp */,
-				E7B4293422F4AB0800F48597 /* CBP_Triangulator.cpp */,
+				E7D2574623A94D1F00C2737D /* CBP_MatrixUtil.cpp */,
+				E7D2574123A94D1F00C2737D /* CBP_MatrixUtil.hpp */,
+				E7D2574423A94D1F00C2737D /* CBP_MeshUtil.cpp */,
+				E7D2574723A94D1F00C2737D /* CBP_MeshUtil.hpp */,
+				E7D2574523A94D1F00C2737D /* CBP_Triangulator.cpp */,
+				E7D2574823A94D1F00C2737D /* CBP_Triangulator.hpp */,
+				E7D2574323A94D1F00C2737D /* CMakeLists.txt */,
+				E7D2574223A94D1F00C2737D /* util.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -497,8 +485,8 @@
 			isa = PBXGroup;
 			children = (
 				E7B4293622F4AB0800F48597 /* CMakeLists.txt */,
-				E7B4293722F4AB0800F48597 /* CBP_FeatureTracker.hpp */,
 				E7B4293822F4AB0800F48597 /* motion.h */,
+				E7B4293722F4AB0800F48597 /* CBP_FeatureTracker.hpp */,
 				E7B4293922F4AB0800F48597 /* CBP_FeatureTracker.cpp */,
 			);
 			path = motion;
@@ -507,16 +495,16 @@
 		E7B4293C22F4AB0800F48597 /* rendering */ = {
 			isa = PBXGroup;
 			children = (
-				E7B4293D22F4AB0800F48597 /* CBP_RenderingEngine.cpp */,
-				E7B4293E22F4AB0800F48597 /* CMakeLists.txt */,
-				E7B4293F22F4AB0800F48597 /* CBP_RenderUtility.cpp */,
-				E7B4294022F4AB0800F48597 /* CBP_SurfaceRenderer.cpp */,
-				E7B4294122F4AB0800F48597 /* rendering.h */,
-				E7B4294222F4AB0800F48597 /* CBP_Renderer.hpp */,
-				E7B4294322F4AB0800F48597 /* CBP_SurfaceRenderer.hpp */,
-				E7B4294422F4AB0800F48597 /* CBP_Renderer.cpp */,
-				E7B4294522F4AB0800F48597 /* CBP_RenderingEngine.hpp */,
-				E7B4294622F4AB0800F48597 /* CBP_RenderUtility.hpp */,
+				E7D2574F23A94D3400C2737D /* CMakeLists.txt */,
+				E7D2575323A94D3500C2737D /* rendering.h */,
+				E7D2575423A94D3500C2737D /* CBP_Renderer.cpp */,
+				E7D2575023A94D3500C2737D /* CBP_Renderer.hpp */,
+				E7D2574D23A94D3400C2737D /* CBP_RenderingEngine.cpp */,
+				E7D2574C23A94D3400C2737D /* CBP_RenderingEngine.hpp */,
+				E7D2574E23A94D3400C2737D /* CBP_RenderUtility.cpp */,
+				E7D2575223A94D3500C2737D /* CBP_RenderUtility.hpp */,
+				E7D2575523A94D3500C2737D /* CBP_SurfaceRenderer.cpp */,
+				E7D2575123A94D3500C2737D /* CBP_SurfaceRenderer.hpp */,
 			);
 			path = rendering;
 			sourceTree = "<group>";
@@ -524,31 +512,31 @@
 		E7B4294722F4AB0800F48597 /* machine-learning */ = {
 			isa = PBXGroup;
 			children = (
-				E7B4294822F4AB0800F48597 /* CBP_MLUtility.cpp */,
-				E7B4294922F4AB0800F48597 /* CBP_FloodFillAlgorithm.hpp */,
-				E7B4294A22F4AB0800F48597 /* CBP_SurfaceNormalsEstimator.cpp */,
-				E7B4294B22F4AB0800F48597 /* machine-learning.h */,
-				E7B4294C22F4AB0800F48597 /* CBP_DeepModel.hpp */,
-				E7B4294D22F4AB0800F48597 /* CMakeLists.txt */,
-				E7B4294E22F4AB0800F48597 /* CBP_SemanticSegmenter.hpp */,
-				E7B4294F22F4AB0800F48597 /* CBP_FloorFloodFill.hpp */,
-				E7B4295022F4AB0800F48597 /* CBP_ElevationEstimator.hpp */,
-				E7B4295122F4AB0800F48597 /* CBP_ShadowsEstimator.cpp */,
-				E7B4295222F4AB0800F48597 /* CBP_WallFloodFill.cpp */,
-				E7B4295322F4AB0800F48597 /* CBP_ImageDBExporter.hpp */,
-				E7B4295422F4AB0800F48597 /* CBP_LBDB.h */,
-				E7B4295522F4AB0800F48597 /* CBP_FloodFillIterator.hpp */,
-				E7B4295622F4AB0800F48597 /* CBP_ElevationEstimator.cpp */,
-				E7B4295722F4AB0800F48597 /* CBP_MLTypes.hpp */,
-				E7B4295822F4AB0800F48597 /* CBP_ShadowsEstimator.hpp */,
-				E7B4295922F4AB0800F48597 /* CBP_WallFloodFill.hpp */,
-				E7B4295A22F4AB0800F48597 /* CBP_ImageDBExporter.cpp */,
-				E7B4295B22F4AB0800F48597 /* CBP_MLUtility.hpp */,
-				E7B4295C22F4AB0800F48597 /* CBP_FloodFillAlgorithm.cpp */,
-				E7B4295D22F4AB0800F48597 /* CBP_SurfaceNormalsEstimator.hpp */,
-				E7B4295E22F4AB0800F48597 /* CBP_DeepModel.cpp */,
-				E7B4295F22F4AB0800F48597 /* CBP_SemanticSegmenter.cpp */,
-				E7B4296022F4AB0800F48597 /* CBP_FloorFloodFill.cpp */,
+				E7D2576423A94D4B00C2737D /* CMakeLists.txt */,
+				E7D2576923A94D4B00C2737D /* machine-learning.h */,
+				E7D2575A23A94D4A00C2737D /* CBP_DeepModel.cpp */,
+				E7D2576B23A94D4B00C2737D /* CBP_DeepModel.hpp */,
+				E7D2577223A94D4B00C2737D /* CBP_ElevationEstimator.cpp */,
+				E7D2577023A94D4B00C2737D /* CBP_ElevationEstimator.hpp */,
+				E7D2575E23A94D4B00C2737D /* CBP_FloodFillAlgorithm.cpp */,
+				E7D2576A23A94D4B00C2737D /* CBP_FloodFillAlgorithm.hpp */,
+				E7D2576C23A94D4B00C2737D /* CBP_FloodFillIterator.hpp */,
+				E7D2575D23A94D4A00C2737D /* CBP_FloorFloodFill.cpp */,
+				E7D2576223A94D4B00C2737D /* CBP_FloorFloodFill.hpp */,
+				E7D2576123A94D4B00C2737D /* CBP_ImageDBExporter.cpp */,
+				E7D2576823A94D4B00C2737D /* CBP_ImageDBExporter.hpp */,
+				E7D2576623A94D4B00C2737D /* CBP_LBDB.h */,
+				E7D2575C23A94D4A00C2737D /* CBP_MLTypes.hpp */,
+				E7D2575B23A94D4A00C2737D /* CBP_MLUtility.cpp */,
+				E7D2576F23A94D4B00C2737D /* CBP_MLUtility.hpp */,
+				E7D2575F23A94D4B00C2737D /* CBP_SemanticSegmenter.cpp */,
+				E7D2576523A94D4B00C2737D /* CBP_SemanticSegmenter.hpp */,
+				E7D2576023A94D4B00C2737D /* CBP_ShadowsEstimator.cpp */,
+				E7D2576D23A94D4B00C2737D /* CBP_ShadowsEstimator.hpp */,
+				E7D2577123A94D4B00C2737D /* CBP_SurfaceNormalsEstimator.cpp */,
+				E7D2576323A94D4B00C2737D /* CBP_SurfaceNormalsEstimator.hpp */,
+				E7D2576723A94D4B00C2737D /* CBP_WallFloodFill.cpp */,
+				E7D2576E23A94D4B00C2737D /* CBP_WallFloodFill.hpp */,
 			);
 			path = "machine-learning";
 			sourceTree = "<group>";
@@ -579,11 +567,11 @@
 		E7B4298022F4AB0800F48597 /* cbcommon */ = {
 			isa = PBXGroup;
 			children = (
-				E7B4298122F4AB0800F48597 /* CB_Licensing.cpp */,
-				E7B4298222F4AB0800F48597 /* CB_Config.h */,
-				E7B4298322F4AB0800F48597 /* CMakeLists.txt */,
-				E7B4298422F4AB0800F48597 /* CB_Types.h */,
-				E7B4298522F4AB0800F48597 /* CB_Licensing.h */,
+				E7D2579623A94DB900C2737D /* CB_Config.h */,
+				E7D2579523A94DB900C2737D /* CB_Licensing.cpp */,
+				E7D2579223A94DB900C2737D /* CB_Licensing.h */,
+				E7D2579323A94DB900C2737D /* CB_Types.h */,
+				E7D2579423A94DB900C2737D /* CMakeLists.txt */,
 			);
 			path = cbcommon;
 			sourceTree = "<group>";
@@ -642,15 +630,27 @@
 			path = sweep;
 			sourceTree = "<group>";
 		};
+		E7D257CF23A94E3200C2737D /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				E7D257D023A94E3200C2737D /* lfu_cache_policy.hpp */,
+				E7D257D123A94E3200C2737D /* cache.hpp */,
+				E7D257D223A94E3200C2737D /* fifo_cache_policy.hpp */,
+				E7D257D323A94E3200C2737D /* lru_cache_policy.hpp */,
+				E7D257D423A94E3200C2737D /* cache_policy.hpp */,
+			);
+			path = cache;
+			sourceTree = "<group>";
+		};
 		E7EA1E2A1FD7622C00B3DE54 = {
 			isa = PBXGroup;
 			children = (
-				E7B429CD22F4AB3500F48597 /* third_party */,
 				E7B429CC22F4AB1C00F48597 /* cambrian.h */,
 				E7B428FB22F4AB0800F48597 /* cbar */,
 				E7B4298022F4AB0800F48597 /* cbcommon */,
 				E7B428E022F4AB0800F48597 /* imaging */,
 				E7B428CC22F4AB0800F48597 /* utility */,
+				E7B429CD22F4AB3500F48597 /* third_party */,
 				E7EA1E341FD7622C00B3DE54 /* Products */,
 				E7EA1E5B1FD7632200B3DE54 /* Frameworks */,
 			);
@@ -747,81 +747,81 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B429B222F4AB0800F48597 /* CBP_RenderUtility.cpp in Sources */,
-				E7B4299F22F4AB0800F48597 /* CBP_SurfaceAnalyzer.cpp in Sources */,
 				E7B429C622F4AB0800F48597 /* CBAR_Asset.cpp in Sources */,
-				E7B4298A22F4AB0800F48597 /* JSONHelper.cpp in Sources */,
-				E7B4299622F4AB0800F48597 /* Coloring.cpp in Sources */,
-				E7B4298722F4AB0800F48597 /* Directory.cpp in Sources */,
+				E7D2573E23A94D0100C2737D /* CBP_NormalsAnalyzer.cpp in Sources */,
+				E7D2573F23A94D0100C2737D /* CBP_GroundSurfaceAnalyzer.cpp in Sources */,
+				E7D2579723A94DB900C2737D /* CB_Licensing.cpp in Sources */,
+				E7D2573323A94D0100C2737D /* CBP_AmbienceSampler.cpp in Sources */,
 				E7B429C722F4AB0800F48597 /* CBAR_RemodelingScene.cpp in Sources */,
-				E7B4298F22F4AB0800F48597 /* Accelerated.cpp in Sources */,
-				E7B429AA22F4AB0800F48597 /* CBP_AmbienceSampler.cpp in Sources */,
 				E7B429B022F4AB0800F48597 /* CBP_FeatureTracker.cpp in Sources */,
-				E7B429B522F4AB0800F48597 /* CBP_MLUtility.cpp in Sources */,
-				E7B4298822F4AB0800F48597 /* ShaderUtilities.cpp in Sources */,
-				E7B4298622F4AB0800F48597 /* Diagnostics.cpp in Sources */,
-				E7B429CB22F4AB0800F48597 /* CB_Licensing.cpp in Sources */,
-				E7B429AC22F4AB0800F48597 /* CBP_NormalsAnalyzer.cpp in Sources */,
+				E7D2574B23A94D1F00C2737D /* CBP_MatrixUtil.cpp in Sources */,
 				E7B42AF722F4AB3600F48597 /* advancing_front.cc in Sources */,
-				E7B4299D22F4AB0800F48597 /* CBP_WallFinder.cpp in Sources */,
-				E7B429B922F4AB0800F48597 /* CBP_ElevationEstimator.cpp in Sources */,
-				E7B429BD22F4AB0800F48597 /* CBP_SemanticSegmenter.cpp in Sources */,
-				E7B429A122F4AB0800F48597 /* CBP_ColorFinder.cpp in Sources */,
-				E7B429C122F4AB0800F48597 /* CBAR_VideoFrame.cpp in Sources */,
-				E7B429B122F4AB0800F48597 /* CBP_RenderingEngine.cpp in Sources */,
-				E7B429BC22F4AB0800F48597 /* CBP_DeepModel.cpp in Sources */,
+				E7D2573423A94D0100C2737D /* CBP_ShadowsAnalyzer.cpp in Sources */,
+				E7D2573223A94D0100C2737D /* CBP_DualRangeAccumulator.cpp in Sources */,
+				E7D2577723A94D4B00C2737D /* CBP_SemanticSegmenter.cpp in Sources */,
+				E7D2573A23A94D0100C2737D /* CBP_SurfaceAccumulator.cpp in Sources */,
 				E7B429C422F4AB0800F48597 /* CBAR_Floor.cpp in Sources */,
 				E7B42AF322F4AB3600F48597 /* shapes.cc in Sources */,
-				E7B4299822F4AB0800F48597 /* CBAR_VideoThread.cpp in Sources */,
-				E7B429A822F4AB0800F48597 /* CBP_Analyzer.cpp in Sources */,
-				E7B429A322F4AB0800F48597 /* CBP_LargeImage.cpp in Sources */,
-				E7B429A222F4AB0800F48597 /* CBP_FloorSegmenter.cpp in Sources */,
 				E7B42AE622F4AB3600F48597 /* triangle.cpp in Sources */,
-				E7B429A022F4AB0800F48597 /* CBP_GroundSurfaceAnalyzer.cpp in Sources */,
-				E7B4299E22F4AB0800F48597 /* CBP_SemanticAnalyzer.cpp in Sources */,
-				E7B429AB22F4AB0800F48597 /* CBP_AnalysisUtil.cpp in Sources */,
+				E7D2573023A94D0100C2737D /* CBP_PlaneRansac.cpp in Sources */,
 				E7B42AF522F4AB3600F48597 /* sweep_context.cc in Sources */,
+				E7D257CC23A94E1600C2737D /* Directory.cpp in Sources */,
+				E7D257B023A94DFB00C2737D /* Coloring.cpp in Sources */,
+				E7D2577323A94D4B00C2737D /* CBP_DeepModel.cpp in Sources */,
 				E7B42AF622F4AB3600F48597 /* cdt.cc in Sources */,
+				E7D2579123A94D9F00C2737D /* CBAR_CallbackI.cpp in Sources */,
+				E7D2573B23A94D0100C2737D /* CBP_FloorSegmenter.cpp in Sources */,
 				E7B42AF422F4AB3600F48597 /* sweep.cc in Sources */,
-				E7B4298B22F4AB0800F48597 /* Threads.cpp in Sources */,
-				E7B429BE22F4AB0800F48597 /* CBP_FloorFloodFill.cpp in Sources */,
-				E7B429B422F4AB0800F48597 /* CBP_Renderer.cpp in Sources */,
-				E7B4299B22F4AB0800F48597 /* CBP_DualRangeAccumulator.cpp in Sources */,
+				E7D2577A23A94D4B00C2737D /* CBP_WallFloodFill.cpp in Sources */,
+				E7D2577423A94D4B00C2737D /* CBP_MLUtility.cpp in Sources */,
+				E7D2577623A94D4B00C2737D /* CBP_FloodFillAlgorithm.cpp in Sources */,
+				E7D2572F23A94D0100C2737D /* CBP_AnalysisUtil.cpp in Sources */,
+				E7D2577823A94D4B00C2737D /* CBP_ShadowsEstimator.cpp in Sources */,
+				E7D2577B23A94D4B00C2737D /* CBP_SurfaceNormalsEstimator.cpp in Sources */,
 				E7B429CA22F4AB0800F48597 /* CBAR_Paint.cpp in Sources */,
-				E7B4299322F4AB0800F48597 /* Drawing.cpp in Sources */,
-				E7B4299422F4AB0800F48597 /* RansacPlane.cpp in Sources */,
-				E7B429B322F4AB0800F48597 /* CBP_SurfaceRenderer.cpp in Sources */,
-				E7B429B822F4AB0800F48597 /* CBP_WallFloodFill.cpp in Sources */,
-				E7B429A522F4AB0800F48597 /* CBP_LineFinder.cpp in Sources */,
-				E7B429B722F4AB0800F48597 /* CBP_ShadowsEstimator.cpp in Sources */,
-				E7B4298D22F4AB0800F48597 /* Geometry.cpp in Sources */,
-				E7B429B622F4AB0800F48597 /* CBP_SurfaceNormalsEstimator.cpp in Sources */,
-				E7B4299922F4AB0800F48597 /* CBP_SurfaceAccumulator.cpp in Sources */,
-				E7B429A422F4AB0800F48597 /* CBP_PlaneRansac.cpp in Sources */,
-				E7B4298922F4AB0800F48597 /* CommonUtility.cpp in Sources */,
+				E7D2575723A94D3500C2737D /* CBP_RenderUtility.cpp in Sources */,
+				E7D257CA23A94E1600C2737D /* ShaderUtilities.cpp in Sources */,
+				E7D257B723A94DFB00C2737D /* Accelerated.cpp in Sources */,
+				E7D257C923A94E1600C2737D /* JSONHelper.cpp in Sources */,
+				E7D2572D23A94D0100C2737D /* CBP_PlaneAnalyzer.cpp in Sources */,
+				E7D257B223A94DFB00C2737D /* BezierCurve.cpp in Sources */,
+				E7D257B423A94DFB00C2737D /* LineProcessing.cpp in Sources */,
+				E7D2573123A94D0100C2737D /* CBP_WallFinder.cpp in Sources */,
+				E7D2575623A94D3500C2737D /* CBP_RenderingEngine.cpp in Sources */,
+				E7D2578C23A94D9F00C2737D /* CBAR_Common.cpp in Sources */,
+				E7D2575823A94D3500C2737D /* CBP_Renderer.cpp in Sources */,
+				E7D2577C23A94D4B00C2737D /* CBP_ElevationEstimator.cpp in Sources */,
+				E7D2573723A94D0100C2737D /* CBP_WallSegmenter.cpp in Sources */,
+				E7D2573C23A94D0100C2737D /* CBP_LargeImage.cpp in Sources */,
 				E7B429C522F4AB0800F48597 /* CBAR_Scene.cpp in Sources */,
-				E7B429A922F4AB0800F48597 /* CBP_ElevationAnalyzer.cpp in Sources */,
-				E7B4299522F4AB0800F48597 /* Imaging.cpp in Sources */,
-				E7B4299222F4AB0800F48597 /* LineSegment.cpp in Sources */,
+				E7D2574923A94D1F00C2737D /* CBP_MeshUtil.cpp in Sources */,
+				E7D257B923A94DFB00C2737D /* FloodFill.cpp in Sources */,
+				E7D257CB23A94E1600C2737D /* Diagnostics.cpp in Sources */,
+				E7D2574023A94D0100C2737D /* CBP_LineFinder.cpp in Sources */,
+				E7D257B123A94DFB00C2737D /* Geometry.cpp in Sources */,
+				E7D2572E23A94D0100C2737D /* CBP_SurfaceAnalyzer.cpp in Sources */,
+				E7D2573923A94D0100C2737D /* CBP_ColorFinder.cpp in Sources */,
+				E7D257B523A94DFB00C2737D /* Imaging.cpp in Sources */,
+				E7D257CD23A94E1600C2737D /* CommonUtility.cpp in Sources */,
+				E7D257B623A94DFB00C2737D /* LineSegment.cpp in Sources */,
+				E7D257BA23A94DFB00C2737D /* Drawing.cpp in Sources */,
+				E7D2573D23A94D0100C2737D /* CBP_ElevationAnalyzer.cpp in Sources */,
+				E7D2577923A94D4B00C2737D /* CBP_ImageDBExporter.cpp in Sources */,
+				E7D2573823A94D0100C2737D /* CBP_AreaAnalyzer.cpp in Sources */,
+				E7D2577523A94D4B00C2737D /* CBP_FloorFloodFill.cpp in Sources */,
+				E7D2578D23A94D9F00C2737D /* CBAR_View.cpp in Sources */,
+				E7D2578F23A94D9F00C2737D /* CBAR_VideoFrame.cpp in Sources */,
 				E7B429C922F4AB0800F48597 /* CBAR_Model.cpp in Sources */,
-				E7B429A722F4AB0800F48597 /* CBP_WallSegmenter.cpp in Sources */,
-				E7B4299C22F4AB0800F48597 /* CBP_PlaneAnalyzer.cpp in Sources */,
-				E7B429BA22F4AB0800F48597 /* CBP_ImageDBExporter.cpp in Sources */,
-				E7B429C222F4AB0800F48597 /* CBAR_GLOffscreenRenderer.cpp in Sources */,
-				E7B429BB22F4AB0800F48597 /* CBP_FloodFillAlgorithm.cpp in Sources */,
-				E7B4299A22F4AB0800F48597 /* CBP_AreaAnalyzer.cpp in Sources */,
-				E7B4298C22F4AB0800F48597 /* LineProcessing.cpp in Sources */,
-				E7B429C022F4AB0800F48597 /* CBAR_CallbackI.cpp in Sources */,
-				E7B429BF22F4AB0800F48597 /* CBAR_View.cpp in Sources */,
-				E7B4299022F4AB0800F48597 /* BezierCurve.cpp in Sources */,
-				E7B429AE22F4AB0800F48597 /* CBP_MeshUtil.cpp in Sources */,
-				E7B4299122F4AB0800F48597 /* ImageProcessing.cpp in Sources */,
-				E7B429AF22F4AB0800F48597 /* CBP_Triangulator.cpp in Sources */,
-				E7B429AD22F4AB0800F48597 /* CBP_MatrixUtil.cpp in Sources */,
-				E7B4299722F4AB0800F48597 /* FloodFill.cpp in Sources */,
+				E7D2573523A94D0100C2737D /* CBP_Analyzer.cpp in Sources */,
+				E7D2574A23A94D1F00C2737D /* CBP_Triangulator.cpp in Sources */,
+				E7D2578E23A94D9F00C2737D /* CBAR_VideoThread.cpp in Sources */,
+				E7D257CE23A94E1600C2737D /* Threads.cpp in Sources */,
+				E7D2579023A94D9F00C2737D /* CBAR_GLOffscreenRenderer.cpp in Sources */,
+				E7D257B323A94DFB00C2737D /* ImageProcessing.cpp in Sources */,
+				E7D257B823A94DFB00C2737D /* RansacPlane.cpp in Sources */,
+				E7D2573623A94D0100C2737D /* CBP_SemanticAnalyzer.cpp in Sources */,
 				E7B429C822F4AB0800F48597 /* CBAR_SurfaceAsset.cpp in Sources */,
-				E7B429C322F4AB0800F48597 /* CBAR_Common.cpp in Sources */,
-				E7B429A622F4AB0800F48597 /* CBP_ShadowsAnalyzer.cpp in Sources */,
+				E7D2575923A94D3500C2737D /* CBP_SurfaceRenderer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
