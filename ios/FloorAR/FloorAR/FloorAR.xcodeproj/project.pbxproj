@@ -89,12 +89,12 @@
 		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
 		E7291DC623A2C63500F492C2 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E7B42B1022F4B40900F48597 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
-		E7BADBC1239C512200C1337A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ShawARVR/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		E7BADBC3239C51E500C1337A /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = ShawARVR/Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
-		E7BADBC5239C524E00C1337A /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = ShawARVR/Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
-		E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = ShawARVR/Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
-		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ShawARVR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = ShawARVR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		E7BADBC1239C512200C1337A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = FloorAR/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		E7BADBC3239C51E500C1337A /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = FloorAR/Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
+		E7BADBC5239C524E00C1337A /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = FloorAR/Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
+		E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = FloorAR/Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
+		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = FloorAR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = FloorAR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorCollectionView.swift; sourceTree = "<group>"; };
 		E7C497C020B3160C00E7567D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E7C497D720B3B77A00E7567D /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
@@ -104,14 +104,14 @@
 		E7C497F220B3D18000E7567D /* InstallationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationMethod.swift; sourceTree = "<group>"; };
 		E7C497F420B3D29700E7567D /* ProductColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColor.swift; sourceTree = "<group>"; };
 		E7CD9F6F23A2CEF50074F27C /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
-		E7CD9F7323A3E7740074F27C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ShawARVR/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		E7CD9F7323A3E7740074F27C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = FloorAR/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E7CD9F7523A42F610074F27C /* Product+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Extended.swift"; sourceTree = "<group>"; };
 		E7CD9F7723A4301E0074F27C /* ProductColor+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductColor+Extended.swift"; sourceTree = "<group>"; };
 		E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductCategory+Extended.swift"; sourceTree = "<group>"; };
 		E7D255DA23A696D400C2737D /* JsonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonExtensions.swift; sourceTree = "<group>"; };
 		E7D255DC23A6DA3100C2737D /* ProductVariation+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductVariation+Extended.swift"; sourceTree = "<group>"; };
 		E7D255ED23A83A7D00C2737D /* ppi-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ppi-data.json"; sourceTree = "<group>"; };
-		E7E4C8FF20AB924D00E842E4 /* FloorAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloorAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7E4C8FF20AB924D00E842E4 /* Floor AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floor AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E4C90220AB924D00E842E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E4C90720AB924D00E842E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7E4C90920AB925000E842E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				E7BADBC3239C51E500C1337A /* AWSCore.framework */,
 				E7BADBC1239C512200C1337A /* Realm.framework */,
 				E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */,
-				E7E4C90120AB924D00E842E4 /* ShawARVR */,
+				E7E4C90120AB924D00E842E4 /* FloorAR */,
 				E7E4C90020AB924D00E842E4 /* Products */,
 				E7E4C92020AB9A0200E842E4 /* Frameworks */,
 			);
@@ -204,12 +204,12 @@
 		E7E4C90020AB924D00E842E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7E4C8FF20AB924D00E842E4 /* FloorAR.app */,
+				E7E4C8FF20AB924D00E842E4 /* Floor AR.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E7E4C90120AB924D00E842E4 /* ShawARVR */ = {
+		E7E4C90120AB924D00E842E4 /* FloorAR */ = {
 			isa = PBXGroup;
 			children = (
 				E72157AB20B4B3DA008FB2B8 /* Utility */,
@@ -225,7 +225,7 @@
 				E7E4C90B20AB925000E842E4 /* LaunchScreen.storyboard */,
 				E7E4C90E20AB925000E842E4 /* Info.plist */,
 			);
-			path = ShawARVR;
+			path = FloorAR;
 			sourceTree = "<group>";
 		};
 		E7E4C91720AB99AE00E842E4 /* Products */ = {
@@ -261,8 +261,8 @@
 				E7E4C92520AB9A1B00E842E4 /* PBXTargetDependency */,
 			);
 			name = FloorAR;
-			productName = ShawARVR;
-			productReference = E7E4C8FF20AB924D00E842E4 /* FloorAR.app */;
+			productName = FloorAR;
+			productReference = E7E4C8FF20AB924D00E842E4 /* Floor AR.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -430,7 +430,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/ShawARVR/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FloorAR/Carthage/Build/iOS",
 					"$(prebuilts)/firebase",
 					"$(prebuilts)/crashlytics",
 				);
@@ -497,7 +497,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/ShawARVR/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FloorAR/Carthage/Build/iOS",
 					"$(prebuilts)/firebase",
 					"$(prebuilts)/crashlytics",
 				);
@@ -525,20 +525,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0001;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/ShawARVR/Carthage/Build-normal/iOS",
+					"$(PROJECT_DIR)/FloorAR/Carthage/Build-normal/iOS",
 				);
-				INFOPLIST_FILE = ShawARVR/Info.plist;
+				INFOPLIST_FILE = FloorAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.shawvrar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ShawARVR/Bridging-Header.h";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.floorar;
+				PRODUCT_NAME = "Floor AR";
+				SWIFT_OBJC_BRIDGING_HEADER = "FloorAR/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -549,20 +551,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0001;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/ShawARVR/Carthage/Build-normal/iOS",
+					"$(PROJECT_DIR)/FloorAR/Carthage/Build-normal/iOS",
 				);
-				INFOPLIST_FILE = ShawARVR/Info.plist;
+				INFOPLIST_FILE = FloorAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.shawvrar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ShawARVR/Bridging-Header.h";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.floorar;
+				PRODUCT_NAME = "Floor AR";
+				SWIFT_OBJC_BRIDGING_HEADER = "FloorAR/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
