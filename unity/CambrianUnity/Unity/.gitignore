@@ -1,7 +1,7 @@
 Build
 Index
 
-Libraries/libil*
-Libraries/libiPhone*
-Libraries/Il2*
+# Libraries/libil*
+# Libraries/libiPhone*
+# Libraries/Il2*
 *.log
