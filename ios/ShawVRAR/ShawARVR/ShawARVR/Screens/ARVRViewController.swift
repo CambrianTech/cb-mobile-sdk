@@ -64,10 +64,10 @@ class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSel
         var hudShown = false
         var lastProgress:Float = 0.0
                 
-        color.loadData(progress: { (receivedSize, expectedSize) in
+        color.defaultVariation.loadData(progress: { (receivedSize, expectedSize) in
             let amount = 0.9 * Float(receivedSize) / max(Float(expectedSize), 1.0)
             //print("Progress Bar: \(receivedSize) Total: \(expectedSize), Pecent: \(amount * 100.0)")
-            
+
             if amount > lastProgress {
                 lastProgress = amount
                 DispatchQueue.main.async {
@@ -78,7 +78,7 @@ class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSel
                     }
                 }
             }
-            
+
         })
         { (completed) in
             if (hudShown) {
@@ -88,9 +88,9 @@ class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSel
                 }
             }
             if (completed) {
-                self.vrView.sendUnityCommand("updateMaterial", json: "{\"product\":\(product.jsonString), \"color\":\(color.jsonString)}")
+                self.vrView.sendUnityCommand("updateMaterial", json: "{\"product\":\(product.jsonCommand), \"color\":\(color.jsonCommand)}")
                 print("Selected product \(product.name), color \(color.name)")
-                
+
             } else {
                 //Fail
             }
@@ -99,6 +99,6 @@ class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSel
     }
     
     func uploadDiagnosticImage(atPath path:String) {
-        DataController.sharedInstance.uploadDiagnosticImage(path);
+        //DataController.sharedInstance.uploadDiagnosticImage(path);
     }
 }

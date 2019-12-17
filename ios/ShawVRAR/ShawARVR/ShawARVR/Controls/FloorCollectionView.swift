@@ -108,35 +108,31 @@ class HistoryItem {
 class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productLabel: UILabel!
-    
-    let textColor = UIColor(red: 51, green: 51, blue: 51)
-    
+        
     func resetProperties() {
-        _variant = nil
+        _color = nil
         _product = nil
         _category = nil
     }
     
-    private var _variant: ProductColor?
-    var variant: ProductColor? {
+    private var _color: ProductColor?
+    var color: ProductColor? {
         get {
-            return _variant
+            return _color
         }
         set {
             resetProperties()
-            _variant = newValue
+            _color = newValue
             self.productLabel.text = newValue?.name
-            self.productLabel.textColor = textColor
-            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
-            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
         }
     }
     
     private var _product: Product?
     var product: Product? {
         get {
-            if let variant = _variant {
-                return variant.parents[0]
+            if let color = _color {
+                return color.product
             }
             return _product
         }
@@ -144,9 +140,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _product = newValue
             self.productLabel.text = newValue?.name
-            self.productLabel.textColor = textColor
-            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
-            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
         }
     }
     
@@ -159,9 +153,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _category = newValue
             self.productLabel.text = newValue?.name
-            self.productLabel.textColor = textColor
-            self.productLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .medium)
-            self.productImage.sd_setImage(with: newValue?.thumbnailPath)
+            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
         }
     }
     
@@ -229,7 +221,7 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.topLevelCategories = DataController.sharedInstance.productContext?.objects(ProductCategory.self).sorted(byKeyPath: "orderIndex", ascending: true).filter({$0.parents.count == 0})
+        self.topLevelCategories = DataSource.current.topLevelCategories
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -299,7 +291,7 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
         }
     
         if let product = self.selectedProduct {
-            cell.variant = product.colors[indexPath.row]
+            cell.color = product.colors[indexPath.row]
         } else if let category = self.selectedCategory {
             if category.products.count > 0 {
                 cell.product = category.products[indexPath.row]
@@ -350,15 +342,21 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
             fatalError("cannot find ProductSwatchCell")
         }
         
-        if let variant = cell.variant, let product = self.selectedProduct {
+        if let color = cell.color, let product = self.selectedProduct {
             selectedCell = cell
-            self.delegate?.productColorChanged(product:product, color: variant)
+            self.delegate?.productColorChanged(product:product, color: color)
             return
         } else if let product = cell.product {
             self.selectedProduct = product
+            product.sync {
+                self.reloadSwatches()
+            }
             self.history.append(HistoryItem(product:product))
         } else if let category = cell.category {
             self.selectedCategory = category
+            category.sync {
+                self.reloadSwatches()
+            }
             self.history.append(HistoryItem(category:category))
         }
         
