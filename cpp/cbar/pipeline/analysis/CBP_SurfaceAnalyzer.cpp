@@ -501,7 +501,9 @@ namespace cbpipe {
             
             if (m_isHorizontalPlane) {
                 auto groundAnalyzer = renderer->getAnalyzerOfType<CBP_GroundSurfaceAnalyzer>();
-                surface.rotation2D = groundAnalyzer->getPrimaryDirection();
+                if (groundAnalyzer) {
+                    surface.rotation2D = groundAnalyzer->getPrimaryDirection();
+                }
             }
             
             surface.indices = {0,1,3,3,2,1};

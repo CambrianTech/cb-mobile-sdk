@@ -28,10 +28,11 @@ namespace cbpipe {
                 appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_ShadowsAnalyzer));
                 
                 //structural analysis
-                appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_WallFinder));
                 appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_GroundSurfaceAnalyzer));
                 appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_PlaneAnalyzer));
-                appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_LineFinder));
+                
+                //appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_WallFinder));
+                //appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_LineFinder));
             }
         }
         ~Impl() {

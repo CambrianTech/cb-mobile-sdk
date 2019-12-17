@@ -96,14 +96,14 @@ namespace cbpipe {
             cv::dilate(mask, mask, cv::getStructuringElement(CV_SHAPE_ELLIPSE, cv::Size(10, 10)));
             segmentedImage.setTo(0, mask == 0);
             
-            cv::Mat groundMask, wallMask;
-            refineResults(rgb, segmentedImage, groundMask, wallMask);
+            //cv::Mat groundMask, wallMask;
+            //refineResults(rgb, segmentedImage, groundMask, wallMask);
 
             semanticData.outputs[result_index_semantic_ground] = segmentedImage;
-            semanticData.outputs[result_index_semantic_ground].setTo(0, groundMask > 0);
+            //semanticData.outputs[result_index_semantic_ground].setTo(0, groundMask > 0);
             
             semanticData.outputs[result_index_semantic_walls] = 255 - segmentedImage;
-            semanticData.outputs[result_index_semantic_walls].setTo(0, wallMask > 0);
+            //semanticData.outputs[result_index_semantic_walls].setTo(0, wallMask > 0);
             
             //semanticData.outputs[result_index_semantic_other] = 255 - segmentedImage;
             //semanticData.outputs[result_index_semantic_other].setTo(0, wallMask == 0 & groundMask == 0);
@@ -145,51 +145,51 @@ namespace cbpipe {
             return !result.empty();
         }
         
-        bool inferenceNormals(const cv::Mat &rgb, cv::Mat &result, std::shared_ptr<CBP_FeatureTracker> tracker, cbar::CBAR_VideoFramePtr frame) {
-            std::map<std::string, cv::Mat> pix2PixInput;
-            pix2PixInput["Placeholder__0"] = rgb;
-            m_normals.inference(rgb, pix2PixInput, result);
-            
-            if (result.empty()) return false;
-            
-            //convert normals to world space
-            Eigen::Matrix4f worldPosition = tracker->getWorldTransform(frame->frameIndex);
-            Eigen::Matrix3f worldRotation = worldPosition.block<3,3>(0,0);
-            //Eigen::Matrix3f cameraRotation = worldRotation.inverse();
-            
-            //convert to Y up: (x,y,z) --> (x,z,y)
-            std::vector<cv::Mat>planes;
-            cv::split(result, planes);
-            planes = {planes[0], planes[2], planes[1]};
-            cv::merge(planes, result);
-            result.convertTo(result, CV_32FC3, 2.0f / 255.0, -1.0f);//image is now -1 to 1, Y up
-            
-            //per element multiply of 3x3 rotation
-            cv::Mat rotation;
-            eigen2cv(worldRotation, rotation);//convert eigen matrix to CV
-            cv::Mat normalsFlattened = result.reshape(1, result.rows * result.cols);
-            cv::Mat product = normalsFlattened * rotation;
-            result = product.reshape(3, result.rows);
-            //back to 0-255 byte 3 channel image
-            result.convertTo(result, CV_8UC3, 255.0 / 2.0f, 255.0 / 2.0f);
-            //End world space conversion
-            
-            return true;
-        }
+//        bool inferenceNormals(const cv::Mat &rgb, cv::Mat &result, std::shared_ptr<CBP_FeatureTracker> tracker, cbar::CBAR_VideoFramePtr frame) {
+//            std::map<std::string, cv::Mat> pix2PixInput;
+//            pix2PixInput["Placeholder__0"] = rgb;
+//            m_normals.inference(rgb, pix2PixInput, result);
+//
+//            if (result.empty()) return false;
+//
+//            //convert normals to world space
+//            Eigen::Matrix4f worldPosition = tracker->getWorldTransform(frame->frameIndex);
+//            Eigen::Matrix3f worldRotation = worldPosition.block<3,3>(0,0);
+//            //Eigen::Matrix3f cameraRotation = worldRotation.inverse();
+//
+//            //convert to Y up: (x,y,z) --> (x,z,y)
+//            std::vector<cv::Mat>planes;
+//            cv::split(result, planes);
+//            planes = {planes[0], planes[2], planes[1]};
+//            cv::merge(planes, result);
+//            result.convertTo(result, CV_32FC3, 2.0f / 255.0, -1.0f);//image is now -1 to 1, Y up
+//
+//            //per element multiply of 3x3 rotation
+//            cv::Mat rotation;
+//            eigen2cv(worldRotation, rotation);//convert eigen matrix to CV
+//            cv::Mat normalsFlattened = result.reshape(1, result.rows * result.cols);
+//            cv::Mat product = normalsFlattened * rotation;
+//            result = product.reshape(3, result.rows);
+//            //back to 0-255 byte 3 channel image
+//            result.convertTo(result, CV_8UC3, 255.0 / 2.0f, 255.0 / 2.0f);
+//            //End world space conversion
+//
+//            return true;
+//        }
         
-        void refineResults(const cv::Mat &rgb, const cv::Mat &semantic, cv::Mat &nonFloorMask, cv::Mat &nonWallMask) {
-            nonFloorMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
-            nonWallMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
-            
-            nonFloorMask.setTo(255, semantic < 5);
-            nonWallMask.setTo(255, semantic > 128);
-            
-            Accelerated::roughErode(nonFloorMask, nonFloorMask, cv::Size(30,30));
-            Accelerated::roughErode(nonWallMask, nonWallMask, cv::Size(30,30));
-            
-            //cv::Size sampleSize = cv::Size(10,10);
-            //Eigen::Vector3f up(0,1,0);
-            
+//        void refineResults(const cv::Mat &rgb, const cv::Mat &semantic, cv::Mat &nonFloorMask, cv::Mat &nonWallMask) {
+//            nonFloorMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
+//            nonWallMask = cv::Mat::zeros(rgb.rows, rgb.cols, CV_8UC1);
+//
+//            nonFloorMask.setTo(255, semantic < 5);
+//            nonWallMask.setTo(255, semantic > 128);
+//
+//            Accelerated::roughErode(nonFloorMask, nonFloorMask, cv::Size(30,30));
+//            Accelerated::roughErode(nonWallMask, nonWallMask, cv::Size(30,30));
+//
+//            cv::Size sampleSize = cv::Size(10,10);
+//            Eigen::Vector3f up(0,1,0);
+//
 //#if DEBUG_NORMALS
 //            cv::Mat normalsDebug = normals.clone();
 //#endif
@@ -229,8 +229,8 @@ namespace cbpipe {
 //#endif
 //
 //                }
-            
-            }
+//
+//            }
             
 #if DEBUG_NORMALS
             cv::hconcat(rgb, normalsDebug, normalsDebug);
