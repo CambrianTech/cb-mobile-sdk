@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="132" y="518.66666666666663" width="150" height="50"/>
+                                <rect key="frame" x="132" y="499" width="150" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Fqj-DF-XYK"/>
                                     <constraint firstAttribute="height" constant="50" id="H5y-eb-XGP"/>
-                                    <constraint firstAttribute="width" constant="150" id="jl5-rU-93l"/>
                                 </constraints>
                                 <state key="normal" title="Start Visualizing"/>
                                 <connections>
@@ -32,10 +32,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="132" y="618.66666666666663" width="150" height="50"/>
+                                <rect key="frame" x="132" y="579" width="150" height="50"/>
                                 <state key="normal" title="Browse Catalog"/>
                                 <connections>
                                     <segue destination="gPx-Ju-ERS" kind="show" identifier="show-catalog" id="G12-v2-Lwv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
+                                <rect key="frame" x="132" y="659" width="150" height="50"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <segue destination="foE-jP-XM7" kind="show" id="o36-FO-IwR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,12 +51,16 @@
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="centerX" secondItem="zyO-DM-JFH" secondAttribute="centerX" id="5NN-cs-Nzv"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="6kn-Qg-93Z"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="top" secondItem="Wzw-kX-mvn" secondAttribute="top" id="IIJ-gn-zjI"/>
+                            <constraint firstItem="AWl-mP-csH" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="J2o-LU-Jdy"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="Old-Q0-ggX"/>
+                            <constraint firstItem="AWl-mP-csH" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="PBh-Fz-3LA"/>
+                            <constraint firstItem="AWl-mP-csH" firstAttribute="top" secondItem="Xhd-0o-Iw5" secondAttribute="bottom" constant="30" id="ar0-B8-bzB"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="trailing" secondItem="Wzw-kX-mvn" secondAttribute="trailing" id="faY-tQ-o4J"/>
-                            <constraint firstItem="tLR-Na-V6u" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.2" id="n42-qx-lMX"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.333" id="hSI-JQ-4se"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="bottom" secondItem="zyO-DM-JFH" secondAttribute="bottom" id="rlQ-Eb-4cs"/>
+                            <constraint firstItem="AWl-mP-csH" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="sSt-Lr-5yL"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="leading" secondItem="zyO-DM-JFH" secondAttribute="leading" id="vcp-9e-G33"/>
-                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="50" id="wOE-XX-nI9"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="30" id="wOE-XX-nI9"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="ypS-gE-H5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zyO-DM-JFH"/>
@@ -128,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0it-Yi-1QZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-96" y="1046"/>
+            <point key="canvasLocation" x="-129" y="1023"/>
         </scene>
         <!--AR-->
         <scene sceneID="tUs-Dj-Q7L">
@@ -171,12 +182,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFI-UV-dgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="-194"/>
+            <point key="canvasLocation" x="688" y="-605"/>
         </scene>
         <!--Product Control-->
         <scene sceneID="F5d-Ot-XDa">
             <objects>
-                <viewController id="NKx-YE-zss" userLabel="Product Control" customClass="FloorCollectionView" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NKx-YE-zss" userLabel="Product Control" customClass="ProductSelectionView" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="12Z-pV-9fS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +315,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNN-lk-2Bh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="392"/>
+            <point key="canvasLocation" x="629" y="304"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fm1-fD-E18">
+            <objects>
+                <viewController id="foE-jP-XM7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OHL-De-d5q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVu-qw-QLz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="yb2-Dv-coE"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="NKx-YE-zss" kind="embed" id="TFb-TA-TBg"/>
+                                </connections>
+                            </containerView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-uo-fj7">
+                                <rect key="frame" x="0.0" y="220" width="414" height="588"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QtT-uo-fj7" firstAttribute="leading" secondItem="j24-qO-7XK" secondAttribute="leading" id="EOR-uI-BYU"/>
+                            <constraint firstItem="QtT-uo-fj7" firstAttribute="top" secondItem="GVu-qw-QLz" secondAttribute="bottom" id="GRV-kP-MSi"/>
+                            <constraint firstItem="j24-qO-7XK" firstAttribute="leading" secondItem="GVu-qw-QLz" secondAttribute="leading" id="OPF-Yn-haD"/>
+                            <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="GVu-qw-QLz" secondAttribute="trailing" id="UGt-3n-kUF"/>
+                            <constraint firstItem="GVu-qw-QLz" firstAttribute="top" secondItem="j24-qO-7XK" secondAttribute="top" id="Xgh-ew-geS"/>
+                            <constraint firstItem="j24-qO-7XK" firstAttribute="bottom" secondItem="QtT-uo-fj7" secondAttribute="bottom" id="d8A-M8-6Ar"/>
+                            <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="QtT-uo-fj7" secondAttribute="trailing" id="eh4-ag-dog"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j24-qO-7XK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zSI-Qd-Vgf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WjQ-LA-8K4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2030" y="1275"/>
         </scene>
     </scenes>
     <resources>

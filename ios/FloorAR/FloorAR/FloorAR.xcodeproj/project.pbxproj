@@ -18,7 +18,7 @@
 		E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC9239C532B00C1337A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBCB239C538800C1337A /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7BADBD3239DE38F00C1337A /* FloorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */; };
+		E7BADBD3239DE38F00C1337A /* ProductSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BADBD2239DE38F00C1337A /* ProductSelectionView.swift */; };
 		E7BF67FB23ABF409008780C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BF67FA23ABF409008780C8 /* HomeViewController.swift */; };
 		E7BF67FD23ABF424008780C8 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */; };
 		E7C497C120B3160C00E7567D /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497C020B3160C00E7567D /* HomeButton.swift */; };
@@ -97,7 +97,7 @@
 		E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = FloorAR/Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = FloorAR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = FloorAR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
-		E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorCollectionView.swift; sourceTree = "<group>"; };
+		E7BADBD2239DE38F00C1337A /* ProductSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSelectionView.swift; sourceTree = "<group>"; };
 		E7BF67FA23ABF409008780C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		E7C497C020B3160C00E7567D /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			children = (
 				E7C497C020B3160C00E7567D /* HomeButton.swift */,
 				E7C497D720B3B77A00E7567D /* StandardButton.swift */,
-				E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */,
+				E7BADBD2239DE38F00C1337A /* ProductSelectionView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 				E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */,
 				E7E4C90320AB924D00E842E4 /* AppDelegate.swift in Sources */,
 				E7291DC723A2C63500F492C2 /* DataController.swift in Sources */,
-				E7BADBD3239DE38F00C1337A /* FloorCollectionView.swift in Sources */,
+				E7BADBD3239DE38F00C1337A /* ProductSelectionView.swift in Sources */,
 				E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */,
 				E7CD9F7623A42F610074F27C /* Product+Extended.swift in Sources */,
 				E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */,

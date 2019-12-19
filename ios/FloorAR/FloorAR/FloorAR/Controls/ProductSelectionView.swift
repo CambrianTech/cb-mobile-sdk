@@ -1,5 +1,5 @@
 //
-//  FloorCollectionView.swift
+//  ProductSelectionView.swift
 //  ShawARVR
 //
 //  Created by Joel Teply on 12/8/19.
@@ -168,10 +168,18 @@ class ProductSwatchCell: UICollectionViewCell {
 }
 
 protocol ProductSelectionDelegate: class {
+    func categoryChanged(category: ProductCategory)
+    func productChanged(product: Product)
     func productColorChanged(product: Product, color: ProductColor)
 }
 
-class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ProductSelectionDelegate {
+    func categoryChanged(category: ProductCategory) {}
+    func productChanged(product: Product) {}
+    func productColorChanged(product: Product, color: ProductColor) {}
+}
+
+class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     open weak var delegate: ProductSelectionDelegate?
         
@@ -348,12 +356,14 @@ class FloorCollectionView: UIViewController, UICollectionViewDelegate, UICollect
             return
         } else if let product = cell.product {
             self.selectedProduct = product
+            self.delegate?.productChanged(product:product)
             product.sync {
                 self.reloadSwatches()
             }
             self.history.append(HistoryItem(product:product))
         } else if let category = cell.category {
             self.selectedCategory = category
+            self.delegate?.categoryChanged(category:category)
             category.sync {
                 self.reloadSwatches()
             }
