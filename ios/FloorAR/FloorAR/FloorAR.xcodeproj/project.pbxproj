@@ -19,9 +19,11 @@
 		E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC9239C532B00C1337A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBCB239C538800C1337A /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBD3239DE38F00C1337A /* FloorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */; };
-		E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497C020B3160C00E7567D /* RoundButton.swift */; };
+		E7BF67FB23ABF409008780C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BF67FA23ABF409008780C8 /* HomeViewController.swift */; };
+		E7BF67FD23ABF424008780C8 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */; };
+		E7C497C120B3160C00E7567D /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497C020B3160C00E7567D /* HomeButton.swift */; };
 		E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497D720B3B77A00E7567D /* StandardButton.swift */; };
-		E7C497E220B3C0B600E7567D /* ARVRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */; };
+		E7C497E220B3C0B600E7567D /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497DF20B3C0B600E7567D /* ARViewController.swift */; };
 		E7C497EF20B3D04D00E7567D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497EE20B3D04D00E7567D /* Product.swift */; };
 		E7C497F120B3D07300E7567D /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497F020B3D07300E7567D /* ProductCategory.swift */; };
 		E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497F220B3D18000E7567D /* InstallationMethod.swift */; };
@@ -96,9 +98,11 @@
 		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = FloorAR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = FloorAR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorCollectionView.swift; sourceTree = "<group>"; };
-		E7C497C020B3160C00E7567D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		E7BF67FA23ABF409008780C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		E7C497C020B3160C00E7567D /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
 		E7C497D720B3B77A00E7567D /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
-		E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVRViewController.swift; sourceTree = "<group>"; };
+		E7C497DF20B3C0B600E7567D /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		E7C497EE20B3D04D00E7567D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E7C497F020B3D07300E7567D /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		E7C497F220B3D18000E7567D /* InstallationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationMethod.swift; sourceTree = "<group>"; };
@@ -146,7 +150,7 @@
 		E7C497BB20B3156700E7567D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				E7C497C020B3160C00E7567D /* RoundButton.swift */,
+				E7C497C020B3160C00E7567D /* HomeButton.swift */,
 				E7C497D720B3B77A00E7567D /* StandardButton.swift */,
 				E7BADBD2239DE38F00C1337A /* FloorCollectionView.swift */,
 			);
@@ -179,7 +183,9 @@
 		E7C497DE20B3C0B600E7567D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E7C497DF20B3C0B600E7567D /* ARVRViewController.swift */,
+				E7C497DF20B3C0B600E7567D /* ARViewController.swift */,
+				E7BF67FA23ABF409008780C8 /* HomeViewController.swift */,
+				E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -340,11 +346,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BF67FD23ABF424008780C8 /* CatalogViewController.swift in Sources */,
 				E7291DC023A2979400F492C2 /* DataSource.swift in Sources */,
 				E7D255DB23A696D400C2737D /* JsonExtensions.swift in Sources */,
 				E7C497F520B3D29700E7567D /* ProductColor.swift in Sources */,
 				E7CD9F7823A4301E0074F27C /* ProductColor+Extended.swift in Sources */,
-				E7C497C120B3160C00E7567D /* RoundButton.swift in Sources */,
+				E7C497C120B3160C00E7567D /* HomeButton.swift in Sources */,
 				E7D255DD23A6DA3100C2737D /* ProductVariation+Extended.swift in Sources */,
 				E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */,
 				E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */,
@@ -355,9 +362,10 @@
 				E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */,
 				E7CD9F7623A42F610074F27C /* Product+Extended.swift in Sources */,
 				E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */,
+				E7BF67FB23ABF409008780C8 /* HomeViewController.swift in Sources */,
 				E7C497EF20B3D04D00E7567D /* Product.swift in Sources */,
 				E7C497F120B3D07300E7567D /* ProductCategory.swift in Sources */,
-				E7C497E220B3C0B600E7567D /* ARVRViewController.swift in Sources */,
+				E7C497E220B3C0B600E7567D /* ARViewController.swift in Sources */,
 				E7CD9F7A23A440520074F27C /* ProductCategory+Extended.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

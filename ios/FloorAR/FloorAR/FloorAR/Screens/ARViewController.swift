@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import JGProgressHUD
 
-class ARVRViewController: UIViewController, CBRemodelingViewDelegate, ProductSelectionDelegate {
+class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelectionDelegate {
     
     @IBOutlet weak var vrView: CBRemodelingView!
     
