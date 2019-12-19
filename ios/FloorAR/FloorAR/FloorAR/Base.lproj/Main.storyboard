@@ -21,9 +21,9 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="132" y="499" width="150" height="50"/>
+                                <rect key="frame" x="107" y="499" width="200" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Fqj-DF-XYK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Fqj-DF-XYK"/>
                                     <constraint firstAttribute="height" constant="50" id="H5y-eb-XGP"/>
                                 </constraints>
                                 <state key="normal" title="Start Visualizing"/>
@@ -32,14 +32,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="132" y="579" width="150" height="50"/>
+                                <rect key="frame" x="107" y="579" width="200" height="50"/>
                                 <state key="normal" title="Browse Catalog"/>
                                 <connections>
                                     <segue destination="gPx-Ju-ERS" kind="show" identifier="show-catalog" id="G12-v2-Lwv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="132" y="659" width="150" height="50"/>
+                                <rect key="frame" x="107" y="659" width="200" height="50"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <segue destination="foE-jP-XM7" kind="show" id="o36-FO-IwR"/>
@@ -98,7 +98,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wC1-3v-hm3">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wC1-3v-hm3" customClass="CatalogRow" customModule="Floor_AR" customModuleProvider="target">
                                         <rect key="frame" x="7" y="0.0" width="400" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jaG-aO-9Mv">
@@ -119,6 +119,9 @@
                                                 <constraint firstItem="otW-1J-gYe" firstAttribute="leading" secondItem="jaG-aO-9Mv" secondAttribute="leading" id="kku-qy-Nve"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="productLabel" destination="otW-1J-gYe" id="zqv-V2-AHg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -317,10 +320,10 @@
             </objects>
             <point key="canvasLocation" x="629" y="304"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="fm1-fD-E18">
             <objects>
-                <viewController id="foE-jP-XM7" sceneMemberID="viewController">
+                <viewController id="foE-jP-XM7" customClass="WebViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHL-De-d5q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
