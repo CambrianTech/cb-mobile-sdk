@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class RoundButton: UIButton {
+class HomeButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
