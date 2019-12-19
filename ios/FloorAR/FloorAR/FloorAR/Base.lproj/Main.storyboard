@@ -21,14 +21,18 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="151.66666666666666" y="528.66666666666663" width="110.99999999999997" height="30"/>
+                                <rect key="frame" x="132" y="518.66666666666663" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H5y-eb-XGP"/>
+                                    <constraint firstAttribute="width" constant="150" id="jl5-rU-93l"/>
+                                </constraints>
                                 <state key="normal" title="Start Visualizing"/>
                                 <connections>
                                     <segue destination="br9-Yd-2Kv" kind="show" identifier="show-ar" id="FlA-16-PG2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="153" y="588.66666666666663" width="108" height="30"/>
+                                <rect key="frame" x="132" y="618.66666666666663" width="150" height="50"/>
                                 <state key="normal" title="Browse Catalog"/>
                                 <connections>
                                     <segue destination="gPx-Ju-ERS" kind="show" identifier="show-catalog" id="G12-v2-Lwv"/>
@@ -40,11 +44,13 @@
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="centerX" secondItem="zyO-DM-JFH" secondAttribute="centerX" id="5NN-cs-Nzv"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="6kn-Qg-93Z"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="top" secondItem="Wzw-kX-mvn" secondAttribute="top" id="IIJ-gn-zjI"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="Old-Q0-ggX"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="trailing" secondItem="Wzw-kX-mvn" secondAttribute="trailing" id="faY-tQ-o4J"/>
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.2" id="n42-qx-lMX"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="bottom" secondItem="zyO-DM-JFH" secondAttribute="bottom" id="rlQ-Eb-4cs"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="leading" secondItem="zyO-DM-JFH" secondAttribute="leading" id="vcp-9e-G33"/>
-                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="30" id="wOE-XX-nI9"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="50" id="wOE-XX-nI9"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="ypS-gE-H5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zyO-DM-JFH"/>
                     </view>
