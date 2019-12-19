@@ -13,13 +13,13 @@ class StandardButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.backgroundColor = isSelected ? UIColor.gray : UIColor.clear
+        self.backgroundColor = isSelected ? UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5) : UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         
         self.setTitleColor(UIColor.white, for: .selected)
         self.setTitleColor(UIColor.black, for: .normal)
         
         self.layer.borderWidth = 1
-        self.layer.borderColor = isSelected ? UIColor.gray.cgColor : UIColor.lightGray.cgColor
+        self.layer.borderColor = isSelected ? UIColor.white.cgColor : UIColor.black.cgColor
     }
 
     override var isSelected: Bool {
