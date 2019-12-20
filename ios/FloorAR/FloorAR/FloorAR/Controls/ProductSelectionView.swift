@@ -168,13 +168,13 @@ class ProductSwatchCell: UICollectionViewCell {
 }
 
 protocol ProductSelectionDelegate: class {
-    func categoryChanged(category: ProductCategory)
+    func categoryChanged(category: ProductCategory?)
     func productChanged(product: Product)
     func productColorChanged(product: Product, color: ProductColor)
 }
 
 extension ProductSelectionDelegate {
-    func categoryChanged(category: ProductCategory) {}
+    func categoryChanged(category: ProductCategory?) {}
     func productChanged(product: Product) {}
     func productColorChanged(product: Product, color: ProductColor) {}
 }
@@ -214,6 +214,9 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
+    public var shouldShowProducts = true
+    public var shouldShowColors = true
+    
     private var history:[HistoryItem] = []
     private var topLevelCategories:[ProductCategory]?
     
@@ -228,9 +231,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         set {
             _selectedProduct = nil
             _selectedCategory = newValue
-            if let category = newValue {
-                self.delegate?.categoryChanged(category:category)
-            }
+            self.delegate?.categoryChanged(category:newValue)
         }
     }
     
@@ -264,13 +265,17 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func swatchView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let parent = self.selectedProduct {
-            print("Listing product \(parent.name) colors")
-            return parent.colors.count
+            //print("Listing product \(parent.name) colors")
+            return shouldShowColors ? parent.colors.count : 0
         } else if let parent = self.selectedCategory {
-            print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
-            return parent.products.count > 0 ? parent.products.count : parent.categories.count
+            //print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
+            if (parent.products.count > 0) {
+                return shouldShowProducts ? parent.products.count : 0
+            } else {
+                return parent.categories.count
+            }
         } else if let categories = self.topLevelCategories {
-            print("Listing top level categories")
+            //print("Listing top level categories")
             return categories.count
         }
         return 0
@@ -305,7 +310,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
                 let label = UILabel()
                 label.text = self.history[indexPath.row].name
                 label.sizeToFit()
-                return CGSize(width: min(label.frame.size.width, self.view.frame.size.width / CGFloat(history.count)), height: height)
+                return CGSize(width: min(label.frame.size.width + 10, self.view.frame.size.width / CGFloat(history.count)), height: height)
             }
             return CGSize(width: height, height: height)
         }
@@ -344,6 +349,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.historyCollection.contentOffset = CGPoint.zero
         self.historyCollection.reloadData()
+        //historyCollectionHeight?.constant = self.history.count > 0 ? historyHeight : 0
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -377,22 +383,22 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             self.delegate?.productColorChanged(product:product, color: color)
             return
         } else if let product = cell.product {
-            self.selectedProduct = product
             product.sync {
+                self.selectedProduct = product
+                self.history.append(HistoryItem(product:product))
+                self.reloadHistory()
                 self.reloadSwatches()
             }
-            self.history.append(HistoryItem(product:product))
         } else if let category = cell.category {
             category.sync {
-                self.reloadSwatches()
                 self.selectedCategory = category
+                self.history.append(HistoryItem(category:category))
+                self.reloadSwatches()
+                self.reloadHistory()
             }
-            self.history.append(HistoryItem(category:category))
         }
         
         selectedCell = nil
-        reloadSwatches()
-        reloadHistory()
     }
 
 }

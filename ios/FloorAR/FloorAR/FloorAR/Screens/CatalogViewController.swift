@@ -8,40 +8,10 @@
 
 import UIKit
 
-class CatalogProductCell: UICollectionViewCell {
+class CatalogCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
-    
-    func initialize() {
-        self.isOpaque = false
-        self.backgroundColor = .clear
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initialize()
-    }
-    
-    private var _selectedColor:ProductColor?
-    var selectedProduct:ProductColor? {
-        get {
-            if let color = _selectedColor {
-                return color
-            }
-            return nil
-        }
-        set {
-            _selectedColor = newValue
-        }
-    }
-}
-
-class CatalogRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
-    @IBOutlet weak var productLabel: UILabel!
     
     func initialize() {
         self.isOpaque = false
@@ -60,51 +30,42 @@ class CatalogRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
     
     var selectedProduct:Product? {
         didSet {
-            productLabel.text = selectedProduct?.name
+            label.text = selectedProduct?.name
+            imageView.sd_setImage(with: selectedProduct?.thumbnailUrl)
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogProductCell", for: indexPath) as? CatalogProductCell else {
-            fatalError("cannot find CatalogRow")
-        }
-        
-        productLabel.text = selectedProduct?.name
-        
-        return cell
     }
 }
 
 class CatalogViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductSelectionDelegate {
 
+    @IBOutlet weak var navigationHeight: NSLayoutConstraint!
     @IBOutlet weak var categoryListing: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.categoryListing.contentInsetAdjustmentBehavior = .never
+        _navHeight = navigationHeight.constant
     }
     
-    func categoryChanged(category: ProductCategory) {
+    func categoryChanged(category: ProductCategory?) {
         self.selectedCategory = category
     }
     
+    private var _navHeight:CGFloat = 0
     private var selectedCategory:ProductCategory? {
         didSet {
             categoryListing.reloadData()
+            navigationHeight.constant = selectedCategory == nil ? _navHeight : 45
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Has \(selectedCategory?.products.count ?? 0) products")
         return selectedCategory?.products.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogRow", for: indexPath) as? CatalogRow, let products = selectedCategory?.products else {
-            fatalError("cannot find CatalogRow")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogCell", for: indexPath) as? CatalogCell, let products = selectedCategory?.products else {
+            fatalError("cannot find CatalogCell")
         }
         
         cell.selectedProduct = products[indexPath.row]
@@ -112,11 +73,12 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    private var categorySelector:ProductSelectionView?
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "product-navigation" {
             if let categorySelector = segue.destination as? ProductSelectionView {
                 categorySelector.delegate = self
-                categorySelector.shouldShowHistory = false
+                self.categorySelector = categorySelector
             }
         }
     }
