@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="La5-2R-e1W">
             <objects>
-                <viewController id="OuI-1c-Fff" customClass="HomeViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="OuI-1c-Fff" customClass="HomeViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="my5-wx-Iy4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="107" y="499" width="200" height="50"/>
+                                <rect key="frame" x="107" y="438.66666666666669" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Fqj-DF-XYK"/>
                                     <constraint firstAttribute="height" constant="50" id="H5y-eb-XGP"/>
@@ -32,14 +32,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="107" y="579" width="200" height="50"/>
+                                <rect key="frame" x="107" y="518.66666666666663" width="200" height="50"/>
                                 <state key="normal" title="Browse Catalog"/>
                                 <connections>
                                     <segue destination="gPx-Ju-ERS" kind="show" identifier="show-catalog" id="G12-v2-Lwv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="107" y="659" width="200" height="50"/>
+                                <rect key="frame" x="107" y="598.66666666666663" width="200" height="50"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <segue destination="foE-jP-XM7" kind="show" id="o36-FO-IwR"/>
@@ -56,7 +56,7 @@
                             <constraint firstItem="AWl-mP-csH" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="PBh-Fz-3LA"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="top" secondItem="Xhd-0o-Iw5" secondAttribute="bottom" constant="30" id="ar0-B8-bzB"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="trailing" secondItem="Wzw-kX-mvn" secondAttribute="trailing" id="faY-tQ-o4J"/>
-                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.333" id="hSI-JQ-4se"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.2" id="hSI-JQ-4se"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="bottom" secondItem="zyO-DM-JFH" secondAttribute="bottom" id="rlQ-Eb-4cs"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="sSt-Lr-5yL"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="leading" secondItem="zyO-DM-JFH" secondAttribute="leading" id="vcp-9e-G33"/>
@@ -73,7 +73,7 @@
         <!--Catalog View Controller-->
         <scene sceneID="94v-5r-xQ9">
             <objects>
-                <viewController id="gPx-Ju-ERS" customClass="CatalogViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gPx-Ju-ERS" customClass="CatalogViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haA-ZI-3AM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="220" id="899-kU-dn8"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="NKx-YE-zss" kind="embed" id="Gms-k9-PAB"/>
+                                    <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="Gms-k9-PAB"/>
                                 </connections>
                             </containerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dFU-6i-L6K">
@@ -98,7 +98,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wC1-3v-hm3" customClass="CatalogRow" customModule="Floor_AR" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogRow" id="wC1-3v-hm3" customClass="CatalogRow" customModule="Floor_AR" customModuleProvider="target">
                                         <rect key="frame" x="7" y="0.0" width="400" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jaG-aO-9Mv">
@@ -124,6 +124,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gPx-Ju-ERS" id="sKQ-61-JgL"/>
+                                    <outlet property="delegate" destination="gPx-Ju-ERS" id="iI5-9R-jfG"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -138,7 +142,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Yh-bM-Nu6"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="qRc-8H-yJR"/>
+                    <connections>
+                        <outlet property="categoryListing" destination="dFU-6i-L6K" id="Yqf-9r-oJA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0it-Yi-1QZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +155,7 @@
         <!--AR-->
         <scene sceneID="tUs-Dj-Q7L">
             <objects>
-                <viewController id="br9-Yd-2Kv" userLabel="AR" customClass="ARViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="br9-Yd-2Kv" userLabel="AR" customClass="ARViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53Z-99-PMk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +170,7 @@
                                     <constraint firstAttribute="height" constant="220" id="DPy-2Y-FUu"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="NKx-YE-zss" kind="embed" identifier="floor-scroller" id="aAk-Yy-oIH"/>
+                                    <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="aAk-Yy-oIH"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -190,7 +198,7 @@
         <!--Product Control-->
         <scene sceneID="F5d-Ot-XDa">
             <objects>
-                <viewController id="NKx-YE-zss" userLabel="Product Control" customClass="ProductSelectionView" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="NKx-YE-zss" userLabel="Product Control" customClass="ProductSelectionView" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="12Z-pV-9fS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,21 +275,31 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZMd-mZ-qnn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="144"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
                                                 </imageView>
+                                                <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRs-Sm-FCb" userLabel="Product Label BG">
+                                                    <rect key="frame" x="0.0" y="145" width="150" height="30"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="vtl-fN-omn"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some color name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-aQ-gHM">
                                                     <rect key="frame" x="0.0" y="149" width="150" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="VRs-Sm-FCb" firstAttribute="leading" secondItem="dhn-HI-VHO" secondAttribute="leading" id="83I-h1-gS7"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZMd-mZ-qnn" secondAttribute="trailing" id="L2M-us-WyM"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZMd-mZ-qnn" secondAttribute="bottom" id="LAs-xq-1ej"/>
+                                                <constraint firstAttribute="bottom" secondItem="VRs-Sm-FCb" secondAttribute="bottom" id="TrL-oW-1OJ"/>
                                                 <constraint firstItem="ZMd-mZ-qnn" firstAttribute="leading" secondItem="dhn-HI-VHO" secondAttribute="leading" id="WM2-d6-CAx"/>
                                                 <constraint firstAttribute="bottom" secondItem="3Wv-aQ-gHM" secondAttribute="bottom" constant="5" id="XCi-l1-SiU"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Wv-aQ-gHM" secondAttribute="trailing" id="gHf-SC-EqI"/>
-                                                <constraint firstItem="3Wv-aQ-gHM" firstAttribute="top" secondItem="ZMd-mZ-qnn" secondAttribute="bottom" constant="5" id="lqG-F4-S7x"/>
+                                                <constraint firstAttribute="trailing" secondItem="VRs-Sm-FCb" secondAttribute="trailing" id="olK-V5-cbm"/>
                                                 <constraint firstItem="ZMd-mZ-qnn" firstAttribute="top" secondItem="dhn-HI-VHO" secondAttribute="top" id="p6f-uB-YAV"/>
                                                 <constraint firstItem="3Wv-aQ-gHM" firstAttribute="leading" secondItem="dhn-HI-VHO" secondAttribute="leading" id="uYK-7p-QcU"/>
                                             </constraints>
@@ -311,8 +329,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y5V-gS-4ra"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="historyCollection" destination="p07-3h-XNw" id="EnZ-SJ-khy"/>
+                        <outlet property="historyCollectionHeight" destination="510-mJ-RcZ" id="L88-Tp-OXI"/>
                         <outlet property="swatchScroller" destination="cYu-PX-k89" id="giy-c8-Jka"/>
                     </connections>
                 </viewController>
@@ -323,7 +343,7 @@
         <!--Web View Controller-->
         <scene sceneID="fm1-fD-E18">
             <objects>
-                <viewController id="foE-jP-XM7" customClass="WebViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="foE-jP-XM7" customClass="WebViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHL-De-d5q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

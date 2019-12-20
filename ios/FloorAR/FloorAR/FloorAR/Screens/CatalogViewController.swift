@@ -58,16 +58,9 @@ class CatalogRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
         initialize()
     }
     
-    private var _selectedProduct:Product?
     var selectedProduct:Product? {
-        get {
-            if let product = _selectedProduct {
-                return product
-            }
-            return nil
-        }
-        set {
-            _selectedProduct = newValue
+        didSet {
+            productLabel.text = selectedProduct?.name
         }
     }
     
@@ -88,24 +81,24 @@ class CatalogRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
 
 class CatalogViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductSelectionDelegate {
 
+    @IBOutlet weak var categoryListing: UICollectionView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.categoryListing.contentInsetAdjustmentBehavior = .never
+    }
+    
     func categoryChanged(category: ProductCategory) {
         self.selectedCategory = category
     }
     
-    private var _selectedCategory:ProductCategory?
     private var selectedCategory:ProductCategory? {
-        get {
-            if let category = _selectedCategory {
-                return category
-            }
-            return nil
-        }
-        set {
-            _selectedCategory = newValue
+        didSet {
+            categoryListing.reloadData()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("Has \(selectedCategory?.products.count ?? 0) products")
         return selectedCategory?.products.count ?? 0
     }
     
@@ -118,10 +111,13 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return cell
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "product-navigation" {
+            if let categorySelector = segue.destination as? ProductSelectionView {
+                categorySelector.delegate = self
+                categorySelector.shouldShowHistory = false
+            }
+        }
     }
 }

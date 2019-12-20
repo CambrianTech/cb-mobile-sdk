@@ -184,7 +184,18 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     open weak var delegate: ProductSelectionDelegate?
         
     @IBOutlet weak var historyCollection: UICollectionView!
+    @IBOutlet weak var historyCollectionHeight: NSLayoutConstraint?
     @IBOutlet weak var swatchScroller: UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.topLevelCategories = DataSource.current.topLevelCategories
+        self.historyCollection.contentInsetAdjustmentBehavior = .never
+        self.swatchScroller.contentInsetAdjustmentBehavior = .never
+        self.historyHeight = self.historyCollectionHeight?.constant ?? 0
+        self.historyCollectionHeight?.constant = shouldShowHistory ? historyHeight : 0
+    }
+    
     private var selectedCell:ProductSwatchCell? {
         willSet {
             if let cell = selectedCell {
@@ -193,6 +204,13 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         }
         didSet {
             selectedCell?.selected(true, animated: false)
+        }
+    }
+    
+    private var historyHeight:CGFloat = 0
+    public var shouldShowHistory = true {
+        didSet {
+            self.historyCollectionHeight?.constant = shouldShowHistory ? historyHeight : 0
         }
     }
     
@@ -210,6 +228,9 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         set {
             _selectedProduct = nil
             _selectedCategory = newValue
+            if let category = newValue {
+                self.delegate?.categoryChanged(category:category)
+            }
         }
     }
     
@@ -223,13 +244,10 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         }
         set {
             _selectedProduct = newValue
+            if let product = newValue {
+                self.delegate?.productChanged(product: product)
+            }
         }
-    }
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.topLevelCategories = DataSource.current.topLevelCategories
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -241,7 +259,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func historyView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return history.count
+        return self.shouldShowHistory ? history.count : 0
     }
     
     func swatchView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -280,14 +298,16 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+        if let _ = collectionViewLayout as? UICollectionViewFlowLayout {
+            let height = collectionView.frame.size.height
+            
             if (collectionView == self.historyCollection) {
                 let label = UILabel()
                 label.text = self.history[indexPath.row].name
                 label.sizeToFit()
-                return CGSize(width: min(label.frame.size.width, self.view.frame.size.width / CGFloat(history.count)), height: flowLayout.itemSize.height)
+                return CGSize(width: min(label.frame.size.width, self.view.frame.size.width / CGFloat(history.count)), height: height)
             }
-            return flowLayout.itemSize
+            return CGSize(width: height, height: height)
         }
         
         return CGSize.zero
@@ -319,7 +339,9 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func reloadHistory() {
-        print(self.history.count)
+        if (!self.shouldShowHistory) {
+            return
+        }
         self.historyCollection.contentOffset = CGPoint.zero
         self.historyCollection.reloadData()
     }
@@ -356,16 +378,14 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             return
         } else if let product = cell.product {
             self.selectedProduct = product
-            self.delegate?.productChanged(product:product)
             product.sync {
                 self.reloadSwatches()
             }
             self.history.append(HistoryItem(product:product))
         } else if let category = cell.category {
-            self.selectedCategory = category
-            self.delegate?.categoryChanged(category:category)
             category.sync {
                 self.reloadSwatches()
+                self.selectedCategory = category
             }
             self.history.append(HistoryItem(category:category))
         }

@@ -50,7 +50,7 @@ class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelec
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "floor-scroller" {
+        if segue.identifier == "product-navigation" {
             if let destVC = segue.destination as? ProductSelectionView {
                 destVC.delegate = self
             }
