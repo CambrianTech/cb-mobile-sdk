@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuI-1c-Fff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuI-1c-Fff">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -184,9 +184,9 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-qm-wvf">
-                                <rect key="frame" x="0.0" y="588" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="648" width="414" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="DPy-2Y-FUu"/>
+                                    <constraint firstAttribute="height" constant="160" id="DPy-2Y-FUu"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="aAk-Yy-oIH"/>
@@ -414,6 +414,6 @@
         <image name="kitchen-bg" width="1129" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gms-k9-PAB"/>
+        <segue reference="aAk-Yy-oIH"/>
     </inferredMetricsTieBreakers>
 </document>

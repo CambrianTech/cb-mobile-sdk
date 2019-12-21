@@ -172,12 +172,14 @@ class ProductSwatchCell: UICollectionViewCell {
 }
 
 protocol ProductSelectionDelegate: class {
+    func productSelectionViewDidLoad(psv:ProductSelectionView)
     func categoryChanged(category: ProductCategory?)
     func productChanged(product: Product)
     func productColorChanged(product: Product, color: ProductColor)
 }
 
 extension ProductSelectionDelegate {
+    func productSelectionViewDidLoad(psv:ProductSelectionView) {}
     func categoryChanged(category: ProductCategory?) {}
     func productChanged(product: Product) {}
     func productColorChanged(product: Product, color: ProductColor) {}
@@ -202,6 +204,8 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         self.historyCollectionHeight?.constant = shouldShowHistory ? historyHeight : 0
         
         self.history.append(firstHistoryItem)
+        
+        self.delegate?.productSelectionViewDidLoad(psv:self)
     }
     
     private var selectedCell:ProductSwatchCell? {
