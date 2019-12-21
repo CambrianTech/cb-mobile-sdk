@@ -94,6 +94,10 @@ class HistoryItem {
     var product:Product?
     var name:String?
     
+    init() {
+        self.name = "Material"
+    }
+    
     init(category:ProductCategory) {
         self.category = category
         self.name = category.name
@@ -187,6 +191,8 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var historyCollectionHeight: NSLayoutConstraint?
     @IBOutlet weak var swatchScroller: UICollectionView!
     
+    private var firstHistoryItem = HistoryItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.topLevelCategories = DataSource.current.topLevelCategories
@@ -194,6 +200,8 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         self.swatchScroller.contentInsetAdjustmentBehavior = .never
         self.historyHeight = self.historyCollectionHeight?.constant ?? 0
         self.historyCollectionHeight?.constant = shouldShowHistory ? historyHeight : 0
+        
+        self.history.append(firstHistoryItem)
     }
     
     private var selectedCell:ProductSwatchCell? {
@@ -363,7 +371,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     func historyView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
         
-        self.history = Array(self.history.prefix(indexPath.row))
+        self.history = Array(self.history.prefix(indexPath.row + 1))
         self.selectedCategory = self.history.last?.category
         self.selectedProduct = self.history.last?.product
         
