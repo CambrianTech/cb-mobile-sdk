@@ -23,17 +23,17 @@ extension ProductCategory {
     
     func sync(_ completion: @escaping () -> Void) {
         if (self.products.count > 0) {
-            return
-        }
-        
-        let categoryID = self.code
-        DispatchQueue.global(qos: .background).async {
-            Product.loadProducts(categoryID) { (products) in
-                DispatchQueue.main.async {
-                    try! DataSource.current.realm.write {
-                        self.products.append(objectsIn: products)
+            completion()
+        } else {
+            let categoryID = self.code
+            DispatchQueue.global(qos: .background).async {
+                Product.loadProducts(categoryID) { (products) in
+                    DispatchQueue.main.async {
+                        try! DataSource.current.realm.write {
+                            self.products.append(objectsIn: products)
+                        }
+                        completion()
                     }
-                    completion()
                 }
             }
         }
