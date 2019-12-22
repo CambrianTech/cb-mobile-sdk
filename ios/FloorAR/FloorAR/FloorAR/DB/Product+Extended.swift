@@ -44,18 +44,18 @@ extension Product {
 
     func sync(_ completion: @escaping () -> Void) {
         if (self.colors.count > 0) {
-            return
-        }
-        
-        let categoryID = self.category.code
-        let styleNumber = self.styleNumber
-        DispatchQueue.global(qos: .background).async {
-            ProductColor.loadProductColors(categoryID, styleNumber) { (colors) in
-                DispatchQueue.main.async {
-                    try! DataSource.current.realm.write {
-                        self.colors.append(objectsIn: colors)
+            completion()
+        } else {
+            let categoryID = self.category.code
+            let styleNumber = self.styleNumber
+            DispatchQueue.global(qos: .background).async {
+                ProductColor.loadProductColors(categoryID, styleNumber) { (colors) in
+                    DispatchQueue.main.async {
+                        try! DataSource.current.realm.write {
+                            self.colors.append(objectsIn: colors)
+                        }
+                        completion()
                     }
-                    completion()
                 }
             }
         }
