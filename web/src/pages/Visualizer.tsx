@@ -34,10 +34,12 @@ const shareImageSize = [1000,600]
 
 export default function Visualizer(props: any) {
     const siteContext = useContext(SiteContext)!;
+    const dispatch = siteContext.dispatch
+    const state = siteContext.state;
 
-    const position = siteContext.position || [0, 1, 0];
-    const rotation = siteContext.rotation || [0, 0, 0];
-    const fov = siteContext.fov || 60;
+    const position = state.position || [0, 1, 0];
+    const rotation = state.rotation || [0, 0, 0];
+    const fov = state.fov || 60;
 
     let _isMounted = useRef(false);
 
@@ -65,9 +67,9 @@ export default function Visualizer(props: any) {
     return useMemo(() => (
         <div id={"visualizer"}>
             <CBVisualizer
-                material={shawState.materialProperties}
-                defaultMaterial = {new CBMaterialProperties(20,"assets/scenes/blue-tile.jpeg")}
-                scene={shawState.sceneData}
+                material={state.materialProperties}
+                defaultMaterial = {new CBMaterialProperties(20,"blue-tile.jpeg")}
+                scene={state.sceneData}
                 fov={fov}
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
