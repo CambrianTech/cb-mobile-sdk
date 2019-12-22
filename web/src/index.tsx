@@ -1,12 +1,57 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import 'react-app-polyfill/ie9'
+import 'react-app-polyfill/stable'
+import cssVars from 'css-vars-ponyfill'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import React, { useReducer, useEffect, useState } from "react"
+import * as ReactDOM from "react-dom"
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { SiteContext, createEmptyState, siteStateReducer } from "./data/SiteContext"
+import Visualizer from "./pages/Visualizer"
+import { BrowserProperties, WebClientMonitor } from "react-client-info"
+
+const objectFitImages = require('object-fit-images')
+
+function App() {
+    const initialSiteState = createEmptyState()
+    const [siteState, dispatchSiteState] = useReducer(siteStateReducer, initialSiteState)
+
+    // Url load states
+    const [browserProperties, setBrowserProperties] = useState<BrowserProperties>({})
+
+    //component mounted:
+    useEffect(() => {
+        cssVars()
+        objectFitImages()
+
+        return () => {
+            //unmount
+        }
+    }, [])
+
+    return (
+        <Router>
+            <Route
+                render={({ location }) => {
+
+                    return (
+                        <SiteContext.Provider value={{ state: siteState, dispatch: dispatchSiteState }}>
+
+                            <WebClientMonitor onClientStateChanged={setBrowserProperties} />
+
+                            <Switch location={location}>
+                                <Route exact path="/" component={Visualizer} />
+                            </Switch>
+
+                        </SiteContext.Provider>
+                    )
+                }}
+            />
+        </Router>
+    )
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById("root")
+)
