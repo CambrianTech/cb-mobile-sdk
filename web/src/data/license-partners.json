@@ -1,0 +1,29 @@
+{
+  "profiles": [
+    {
+      "name": "shaw",
+      "image": "shaw.jpg",
+      "title": "Shaw Floors"
+    },
+    {
+      "name": "home-depot",
+      "image": "home-depot.jpg",
+      "title": "Home Depot"
+    },
+    {
+      "name": "comex-group",
+      "image": "comex.png",
+      "title": "Comex Group"
+    },
+    {
+      "name": "glidden-mexico",
+      "image": "glidden.png",
+      "title": "Glidden Mexico"
+    },
+    {
+      "name": "crown-paints",
+      "image": "crown.svg",
+      "title": "Crown Paints"
+    }
+  ]
+}
