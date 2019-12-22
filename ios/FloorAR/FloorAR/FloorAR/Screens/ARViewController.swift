@@ -50,11 +50,15 @@ class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelec
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "floor-scroller" {
-            if let destVC = segue.destination as? FloorCollectionView {
-                destVC.delegate = self
+        if segue.identifier == "product-navigation" {
+            if let productSelector = segue.destination as? ProductSelectionView {
+                productSelector.delegate = self
             }
         }
+    }
+    
+    func productSelectionViewDidLoad(psv:ProductSelectionView) {
+        psv.swatchScroller.backgroundColor = UIColor.darkGray
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
