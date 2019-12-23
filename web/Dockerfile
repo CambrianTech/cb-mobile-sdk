@@ -17,16 +17,3 @@ COPY --from=build-stage /client/nginx.conf /etc/nginx/nginx.conf
 COPY --from=build-stage /client/build/ /usr/share/nginx/html
 
 EXPOSE 80
-
-# 3. Run the backend server
-WORKDIR /server
-
-#copy dynamic server content
-COPY server/ /server
-
-RUN apk add --update nodejs npm
-RUN npm install
-RUN npm install -g forever
-
-# run forever
-CMD sh start.sh
