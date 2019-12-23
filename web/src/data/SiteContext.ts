@@ -1,10 +1,11 @@
 import { createContext, Dispatch } from "react"
 import {CBMaterialProperties, CBSceneProperties} from "react-home-harmony";
 import { polyfill } from "smoothscroll-polyfill"
+import {BrowserProperties} from "react-client-info";
 polyfill()
 
 export type DerivedSiteState = {
-    isPortrait: boolean,
+    browserProperties: BrowserProperties,
     error: Error | null
 }
 
@@ -40,7 +41,7 @@ export type SiteStateContext = {
 export function createEmptyState(): SiteState {
     return {
         // shared
-        isPortrait: false,
+        browserProperties: {},
         error: null,
 
         // Visualizer shared
@@ -64,9 +65,9 @@ function createUndefinedStateContext(): SiteStateContext | undefined {
 }
 
 
-export type SiteActionSetIsPortrait = {
-    type: "setIsPortrait"
-    isPortrait: boolean
+export type SiteActionSetBrowserProperties = {
+    type: "setBrowserProperties"
+    browserProperties: BrowserProperties
 }
 
 export type SiteActionSetError = {
@@ -94,7 +95,7 @@ export type ShawActionSetRotation = {
     rotation: [number, number, number] | null
 }
 
-export type SiteAction = SiteActionSetIsPortrait | SiteActionSetError | SiteActionSetSceneData | SiteActionSetFov | ShawActionSetPosition | ShawActionSetRotation
+export type SiteAction = SiteActionSetBrowserProperties | SiteActionSetError | SiteActionSetSceneData | SiteActionSetFov | ShawActionSetPosition | ShawActionSetRotation
 
 export function siteStateReducer(state: SiteState, action: SiteAction): SiteState {
     // Set the thing we are supposed to set. Also make sure anything depending
@@ -103,8 +104,8 @@ export function siteStateReducer(state: SiteState, action: SiteAction): SiteStat
 
     switch (action.type) {
         // Site underived, null everything below in the hierarchy
-        case "setIsPortrait":
-            newState.isPortrait = action.isPortrait
+        case "setBrowserProperties":
+            newState.browserProperties = action.browserProperties
             break
         case "setError":
             newState.error = action.error

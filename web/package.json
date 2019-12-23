@@ -23,7 +23,7 @@
     "react": "^16.11",
     "react-app-polyfill": "^1.0.1",
     "react-circular-progressbar": "^2.0.1",
-    "react-client-info": "^0.0.4",
+    "react-client-info": "0.0.21",
     "react-dat-gui": "^3.0.0",
     "react-dom": "^16.9",
     "react-dropzone": "^10.1.5",
