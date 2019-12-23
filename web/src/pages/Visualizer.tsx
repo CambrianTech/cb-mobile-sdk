@@ -49,6 +49,8 @@ export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
 // Might mess with other stuff but haven't noticed anything yet.
 THREE.Math.floorPowerOfTwo = THREE.Math.ceilPowerOfTwo;
 
+
+
 export default function Visualizer(props: any) {
     const siteContext = useContext(SiteContext)!;
     const dispatch = siteContext.dispatch

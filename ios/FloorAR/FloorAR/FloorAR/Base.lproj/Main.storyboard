@@ -379,7 +379,7 @@
                                     <constraint firstAttribute="height" constant="220" id="yb2-Dv-coE"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="NKx-YE-zss" kind="embed" id="TFb-TA-TBg"/>
+                                    <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="TFb-TA-TBg"/>
                                 </connections>
                             </containerView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-uo-fj7">
@@ -404,6 +404,9 @@
                         <viewLayoutGuide key="safeArea" id="j24-qO-7XK"/>
                     </view>
                     <navigationItem key="navigationItem" id="zSI-Qd-Vgf"/>
+                    <connections>
+                        <outlet property="webview" destination="QtT-uo-fj7" id="5Rn-ZQ-7Z3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WjQ-LA-8K4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -414,6 +417,6 @@
         <image name="kitchen-bg" width="1129" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aAk-Yy-oIH"/>
+        <segue reference="TFb-TA-TBg"/>
     </inferredMetricsTieBreakers>
 </document>

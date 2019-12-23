@@ -7,19 +7,40 @@
 //
 
 import UIKit
+import WebKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
 
+    @IBOutlet weak var webview: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        let link = URL(string:"https://mobile.cambrianar.com")!
+        let request = URLRequest(url: link)
+        webview.uiDelegate = self
+        webview.load(request)
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func productColorChanged(product: Product, color: ProductColor) {
+        self.webview.evaluateJavaScript("alert('select color')", completionHandler: { (result, error) in
+            
+        })
     }
+    
+    private var categorySelector:ProductSelectionView?
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "product-navigation" {
+            if let categorySelector = segue.destination as? ProductSelectionView {
+                categorySelector.delegate = self
+                self.categorySelector = categorySelector
+            }
+        }
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
 
+            completionHandler()
+    }
 }
