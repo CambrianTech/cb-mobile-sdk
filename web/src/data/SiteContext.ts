@@ -28,11 +28,8 @@ export type SiteState = DerivedSiteState & SharableVisualizerState & DerivedVisu
 
 export enum MediaPaths {
     Shared = "assets/img/shared",
-    Home = "assets/img/home",
+    Scenes = "assets/scenes",
     Visualizer = "assets/img/visualizer",
-    Video = "assets/video",
-    Employees = "assets/img/employee-profiles",
-    LicenseLogos = "assets/img/logos",
 }
 
 export type SiteStateContext = {
@@ -77,7 +74,27 @@ export type SiteActionSetError = {
     error: Error | null
 }
 
-export type SiteAction = SiteActionSetIsPortrait | SiteActionSetError
+export type SiteActionSetSceneData = {
+    type: "setSceneData"
+    sceneData: CBSceneProperties | null
+}
+
+export type SiteActionSetFov = {
+    type: "setFov"
+    fov: number | null
+}
+
+export type ShawActionSetPosition = {
+    type: "setPosition"
+    position: [number, number, number] | null
+}
+
+export type ShawActionSetRotation = {
+    type: "setRotation"
+    rotation: [number, number, number] | null
+}
+
+export type SiteAction = SiteActionSetIsPortrait | SiteActionSetError | SiteActionSetSceneData | SiteActionSetFov | ShawActionSetPosition | ShawActionSetRotation
 
 export function siteStateReducer(state: SiteState, action: SiteAction): SiteState {
     // Set the thing we are supposed to set. Also make sure anything depending
@@ -92,11 +109,23 @@ export function siteStateReducer(state: SiteState, action: SiteAction): SiteStat
         case "setError":
             newState.error = action.error
             break
+        case "setFov":
+            newState.fov = action.fov
+            break
+        case "setPosition":
+            newState.position = action.position
+            break
+        case "setRotation":
+            newState.rotation = action.rotation
+            break
+        // Visualizer derived
+        case "setSceneData":
+            newState.sceneData = action.sceneData
+            break
 
         default:
             throw new Error("Invalid action: " + JSON.stringify(action))
     }
-
 
     return newState
 }

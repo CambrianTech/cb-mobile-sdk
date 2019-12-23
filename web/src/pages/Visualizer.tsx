@@ -1,36 +1,53 @@
 import * as THREE from 'three'
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, Dispatch} from 'react'
 import 'react-dat-gui/build/react-dat-gui.css'
 import './Visualizer.css'
 
 import {
-    CBCommand,
     CBMaterialProperties,
-    CBSceneData,
-    CBTextureLoadError,
-    CBTextureLoadErrorReason,
-    CBToolMode,
-    CBVisualizer,
-    captureScreenshot, useImageUploader,
+    CBVisualizer
 } from "react-home-harmony";
-import {BrowserType} from "react-client-info";
-import { SiteContext } from '../data/SiteContext';
+import { SiteContext, SiteAction, MediaPaths } from '../data/SiteContext';
+
+export function dispatchDataProperties(basePath:string, data:any, dispatch: Dispatch<SiteAction>) {
+    dispatch({
+        type: "setSceneData",
+        sceneData: {
+            backgroundUrl: basePath + "/" + data.images["main"],
+            lightingUrl: basePath + "/" + data.images["lighting"],
+            masks:{
+                "floor": basePath + "/" + data.images["masks"]["floor"]
+            }
+        }
+    })
+
+    dispatch({
+        type: "setFov",
+        fov: data.fov
+    })
+
+    dispatch({
+        type: "setPosition",
+        position: data.cameraPosition
+    })
+
+    dispatch({
+        type: "setRotation",
+        rotation: [data.cameraRotation[0], data.floorRotation, data.cameraRotation[2]]
+    })
+}
+
+export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
+    fetch(MediaPaths.Scenes + path + "/data.json").then(res => res.json())
+        .then(data => {
+            dispatchDataProperties(MediaPaths.Scenes + path, data, dispatch)
+        })
+}
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
 // Might mess with other stuff but haven't noticed anything yet.
 THREE.Math.floorPowerOfTwo = THREE.Math.ceilPowerOfTwo;
-
-enum ActivePanel {
-    None = "none",
-    Swatches = "swatches",
-    Filters = "filters",
-    Materials = "materials",
-    ProductInfo = "info",
-    Share = "share",
-}
-
-const shareImageSize = [1000,600]
 
 export default function Visualizer(props: any) {
     const siteContext = useContext(SiteContext)!;
@@ -52,8 +69,8 @@ export default function Visualizer(props: any) {
     }, []);
 
     const initialize = useCallback(() => {
-        
-    }, [])
+        selectScene("/kitchen/kitchen-1", dispatch)
+    }, [dispatch])
 
     const initializeRef = useRef(initialize);
     useEffect(() => { initializeRef.current = initialize; }, [initialize]);
@@ -65,7 +82,7 @@ export default function Visualizer(props: any) {
     }, []);
 
     return useMemo(() => (
-        <div id={"visualizer"}>
+        <div className={"visualizer"}>
             <CBVisualizer
                 material={state.materialProperties}
                 defaultMaterial = {new CBMaterialProperties(20,"blue-tile.jpeg")}
@@ -74,9 +91,10 @@ export default function Visualizer(props: any) {
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
                 floorRotation={0}
+                canLoad={true}
             />
         </div>
     ), [
-        props.history
+        fov, position, rotation, state.materialProperties, state.sceneData
     ])
 }
