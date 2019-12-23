@@ -69,7 +69,7 @@ export default function Visualizer(props: any) {
     }, []);
 
     const initialize = useCallback(() => {
-        selectScene("/kitchen/kitchen-1", dispatch)
+        selectScene("/dining-room/BlueRidgePine-0868V-00623-EarthPine-9in", dispatch)
     }, [dispatch])
 
     const initializeRef = useRef(initialize);
@@ -90,7 +90,7 @@ export default function Visualizer(props: any) {
                 fov={fov}
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
-                floorRotation={0}
+                floorRotation={rotation[1]}
                 canLoad={true}
             />
         </div>
