@@ -91,7 +91,6 @@ export default function Visualizer(props: any) {
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
                 floorRotation={rotation[1]}
-                canLoad={true}
             />
         </div>
     ), [
