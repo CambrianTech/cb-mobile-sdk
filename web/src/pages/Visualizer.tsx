@@ -44,10 +44,6 @@ export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
         })
 }
 
-window.addEventListener("message", message => {
-    alert("received: " + message.data)
-});
-
 (window as any).test = function(script:string) {
     alert("received: " + script)
 }
