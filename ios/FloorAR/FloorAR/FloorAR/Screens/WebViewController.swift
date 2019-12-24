@@ -9,22 +9,27 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
+class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+    }
 
     @IBOutlet weak var webview: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+                
         let link = URL(string:"https://mobile.cambrianar.com")!
         let request = URLRequest(url: link)
         webview.uiDelegate = self
+        webview.configuration.preferences.javaScriptEnabled = true
         webview.load(request)
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
-        self.webview.evaluateJavaScript("window.postMessage(\"swift message\")", completionHandler: { (result, error) in
+        //self.webView.evaluateJavaScript("window.webkit.messageHandlers.iosListener.postMessage('test');", completionHandler: { (result, err) in
+
+        self.webview.evaluateJavaScript("window.test('\(product.name)')", completionHandler: { (result, error) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
