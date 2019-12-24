@@ -45,7 +45,7 @@ export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
 }
 
 window.addEventListener("message", message => {
-    alert(message.data)
+    alert("received: " + message.data)
 });
 
 // Replace 3js's flooring function with ceil, so it upscales to
