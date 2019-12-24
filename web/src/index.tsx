@@ -54,11 +54,10 @@ function App() {
 
     }, [browserProperties.browser])
 
-    const _setBrowserProperties = useCallback((props:BrowserProperties)=>{
-        setBrowserProperties(props)
-        dispatchSiteState({ type: "setBrowserProperties", browserProperties: props })
+    useEffect(() => {
+        dispatchSiteState({ type: "setBrowserProperties", browserProperties: browserProperties })
         setCssVars()
-    }, [setCssVars, dispatchSiteState])
+    }, [browserProperties, setCssVars])
 
     return (
         <Router>
@@ -68,7 +67,7 @@ function App() {
                     return (
                         <SiteContext.Provider value={{ state: siteState, dispatch: dispatchSiteState }}>
 
-                            <WebClientInfo onClientStateChanged={_setBrowserProperties} />
+                            <WebClientInfo onClientStateChanged={setBrowserProperties} />
 
                             <Switch location={location}>
                                 <Route exact path="/" component={Visualizer} />

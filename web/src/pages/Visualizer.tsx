@@ -9,10 +9,6 @@ import {
 } from "react-home-harmony";
 import { SiteContext, SiteAction, MediaPaths } from '../data/SiteContext';
 
-export function joel() {
-    console.log('hi');
-}
-
 export function dispatchDataProperties(basePath:string, data:any, dispatch: Dispatch<SiteAction>) {
     dispatch({
         type: "setSceneData",
@@ -48,6 +44,10 @@ export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
         })
 }
 
+window.addEventListener("message", message => {
+    alert(message.data)
+});
+
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
 // Might mess with other stuff but haven't noticed anything yet.
@@ -73,7 +73,7 @@ export default function Visualizer(props: any) {
     }, []);
 
     const test = useCallback((url:string) => {
-        alert("GOT " + url)
+        alert("GOT ")
     }, [])
 
     const initialize = useCallback(() => {

@@ -24,8 +24,10 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
-        self.webview.evaluateJavaScript("alert('select color')", completionHandler: { (result, error) in
-            
+        self.webview.evaluateJavaScript("window.postMessage(\"swift message\")", completionHandler: { (result, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
         })
     }
     
