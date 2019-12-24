@@ -72,6 +72,7 @@ export default function Visualizer(props: any) {
 
     const initialize = useCallback(() => {
         selectScene("/dining-room/BlueRidgePine-0868V-00623-EarthPine-9in", dispatch)
+        
     }, [dispatch])
 
     const initializeRef = useRef(initialize);

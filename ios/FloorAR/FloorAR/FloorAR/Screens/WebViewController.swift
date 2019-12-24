@@ -40,7 +40,10 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
     }
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
-
-            completionHandler()
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+        
+        completionHandler()
     }
 }
