@@ -48,6 +48,10 @@ window.addEventListener("message", message => {
     alert("received: " + message.data)
 });
 
+(window as any).test = function(script:string) {
+    alert("received: " + script)
+}
+
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
 // Might mess with other stuff but haven't noticed anything yet.
