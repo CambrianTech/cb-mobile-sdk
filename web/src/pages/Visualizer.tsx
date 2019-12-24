@@ -9,6 +9,12 @@ import {
 } from "react-home-harmony";
 import { SiteContext, SiteAction, MediaPaths } from '../data/SiteContext';
 
+declare global {
+    interface Window {
+        selectMaterial: (url:string) => void;
+    }
+}
+
 export function dispatchDataProperties(basePath:string, data:any, dispatch: Dispatch<SiteAction>) {
     dispatch({
         type: "setSceneData",
@@ -49,8 +55,6 @@ export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
 // Might mess with other stuff but haven't noticed anything yet.
 THREE.Math.floorPowerOfTwo = THREE.Math.ceilPowerOfTwo;
 
-
-
 export default function Visualizer(props: any) {
     const siteContext = useContext(SiteContext)!;
     const dispatch = siteContext.dispatch
@@ -70,9 +74,14 @@ export default function Visualizer(props: any) {
         }
     }, []);
 
+    const test = useCallback((url:string) => {
+        alert("GOT " + url)
+    }, [])
+
     const initialize = useCallback(() => {
         selectScene("/dining-room/BlueRidgePine-0868V-00623-EarthPine-9in", dispatch)
-        
+
+        Window.prototype.selectMaterial = test
     }, [dispatch])
 
     const initializeRef = useRef(initialize);
