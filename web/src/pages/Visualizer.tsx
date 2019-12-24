@@ -9,10 +9,8 @@ import {
 } from "react-home-harmony";
 import { SiteContext, SiteAction, MediaPaths } from '../data/SiteContext';
 
-declare global {
-    interface Window {
-        selectMaterial: (url:string) => void;
-    }
+export function joel() {
+    console.log('hi');
 }
 
 export function dispatchDataProperties(basePath:string, data:any, dispatch: Dispatch<SiteAction>) {
@@ -81,7 +79,7 @@ export default function Visualizer(props: any) {
     const initialize = useCallback(() => {
         selectScene("/dining-room/BlueRidgePine-0868V-00623-EarthPine-9in", dispatch)
 
-        Window.prototype.selectMaterial = test
+        //Window.prototype.selectMaterial = test
     }, [dispatch])
 
     const initializeRef = useRef(initialize);
