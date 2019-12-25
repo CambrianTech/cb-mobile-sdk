@@ -28,10 +28,16 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
     
     func productColorChanged(product: Product, color: ProductColor) {
         //self.webView.evaluateJavaScript("window.webkit.messageHandlers.iosListener.postMessage('test');", completionHandler: { (result, err) in
-
-        self.webview.evaluateJavaScript("window.cb.setTest('\(product.name)')", completionHandler: { (result, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
+        var material = Dictionary<String,Any>()
+        material["ppi"] = product.ppi;
+        material["diffuseUrl"] = color.defaultVariation.remoteDiffusePath?.absoluteString;
+        material["normalsUrl"] = color.defaultVariation.remoteNormalPath?.absoluteString ?? nil
+        material["specularUrl"] = color.defaultVariation.remoteRoughnessPath?.absoluteString ?? nil;
+        
+        let command = "window.cb.setMaterial(\(material.jsonString))"
+        self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
+            if (error != nil) {
+                print("Command error")
             }
         })
     }
