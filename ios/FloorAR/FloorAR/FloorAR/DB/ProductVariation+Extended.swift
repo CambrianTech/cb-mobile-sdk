@@ -19,15 +19,15 @@ extension ProductVariation {
         }
     }
     
-    private var remoteDiffusePath:URL? {
+    public var remoteDiffusePath:URL? {
         return URL(string:DataSource.getDiffusePath(self.code, ppi: self.color.product.ppi))
     }
     
-    private var remoteNormalPath:URL? {
+    public var remoteNormalPath:URL? {
         return nil
     }
     
-    private var remoteRoughnessPath:URL? {
+    public var remoteRoughnessPath:URL? {
         return nil
     }
     
