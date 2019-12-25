@@ -44,10 +44,6 @@ export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
         })
 }
 
-(window as any).test = function(script:string) {
-    alert("received: " + script)
-}
-
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
 // Might mess with other stuff but haven't noticed anything yet.
@@ -71,10 +67,6 @@ export default function Visualizer(props: any) {
             _isMounted.current = false
         }
     }, []);
-
-    const test = useCallback((url:string) => {
-        alert("GOT ")
-    }, [])
 
     const initialize = useCallback(() => {
         selectScene("/dining-room/BlueRidgePine-0868V-00623-EarthPine-9in", dispatch)
