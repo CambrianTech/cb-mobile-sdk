@@ -11,7 +11,7 @@ import { SiteContext } from '../data/SiteContext';
 import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
 import {VisualizerTools} from "../components/VisualizerTools";
 import {dispatchImageProperties, selectScene} from "../utilities/Methods";
-import {MediaPaths} from "../utilities/Constants";
+import {DEFAULT_SCENE, MediaPaths} from "../utilities/Constants";
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
@@ -38,7 +38,7 @@ export default function Visualizer(props: any) {
     }, []);
 
     const initialize = useCallback(() => {
-        selectScene("/dining-room/BlueRidgePine-0868V-00623-EarthPine-9in", dispatch)
+        selectScene(DEFAULT_SCENE, dispatch)
 
         //Window.prototype.selectMaterial = test
     }, [dispatch])
