@@ -31,6 +31,7 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("Finished navigating to url ");
+        
         self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
             if (error != nil) {
                 print("Command error")
@@ -84,7 +85,7 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
 
     func setUIDocumentMenuViewControllerSoureViewsIfNeeded(_ viewControllerToPresent: UIViewController) {
         viewControllerToPresent.popoverPresentationController?.sourceView = webview
-        viewControllerToPresent.popoverPresentationController?.sourceRect = CGRect(x: webview.center.x, y: webview.center.y, width: 1, height: 1)
+        viewControllerToPresent.popoverPresentationController?.sourceRect = CGRect(x: webview.center.x, y: webview.frame.maxY - 20, width: 1, height: 1)
     }
 }
 
