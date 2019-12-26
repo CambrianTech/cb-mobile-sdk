@@ -4,7 +4,7 @@ import {CBSceneParams, getRotatedFile, CBContentManager} from "react-home-harmon
 import {SiteContext} from "../data/SiteContext";
 import {Progress} from "./Progress";
 import {safelyTimeout} from "../utilities/Methods";
-import {MediaPaths} from "../utilities/Constants";
+import {MAX_IMAGE_SIZE, MediaPaths} from "../utilities/Constants";
 const fileAccept = "image/*";
 
 export type ImageProperties = CBSceneParams & {
@@ -56,8 +56,7 @@ export function ImageUpload(props: ImageUploadProperties) {
         const startTime = new Date();
         setProgressVisible(true);
 
-        const maxWidth = 2048;
-        const uploadFile = await getRotatedFile(firstFile, maxWidth);
+        const uploadFile = await getRotatedFile(firstFile, MAX_IMAGE_SIZE);
 
         const firstFilePreviewPath = URL.createObjectURL(uploadFile);
 
