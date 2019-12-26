@@ -87,7 +87,7 @@ export default function Visualizer(props: any) {
         <div className={"visualizer"}>
             <CBVisualizer
                 material={state.materialProperties}
-                defaultMaterial = {new CBMaterialProperties(20,"blue-tile.jpeg")}
+                defaultMaterial = {new CBMaterialProperties(20,MediaPaths.DefaultMaterial)}
                 scene={state.sceneData}
                 fov={fov}
                 cameraPosition={position}
