@@ -1,7 +1,11 @@
 
 .visualizer-tools {
     position: fixed;
-    top:0;
-    right:0;
+    top:20px;
+    right:20px;
     z-index: 1;
+}
+
+.tool-button {
+    height: 50px;
 }
