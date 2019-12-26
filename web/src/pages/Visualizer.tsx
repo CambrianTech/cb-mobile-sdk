@@ -62,7 +62,6 @@ export default function Visualizer(props: any) {
     }, [dispatch])
 
     const defaultMaterial = useMemo<CBMaterialProperties>(() => {
-        //var data = require('../../file.json');
         return {
             ppi:20,
             diffuseUrl:"assets/textures/floor/narrow-floorboards1-albedo.png",
