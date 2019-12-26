@@ -20,7 +20,7 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
         super.viewDidLoad()
                 
         let link = URL(string:"https://mobile.cambrianar.com")!
-        let request = URLRequest(url: link)
+        let request = URLRequest(url: link, cachePolicy:.reloadIgnoringLocalAndRemoteCacheData)
         webview.uiDelegate = self
         webview.configuration.preferences.javaScriptEnabled = true
         webview.load(request)
@@ -58,5 +58,20 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
         self.present(alert, animated: true)
         
         completionHandler()
+    }
+    
+//    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+//        let documentPicker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeJPEG), String(kUTTypePNG)], in: .import)
+//        super.present(documentPicker, animated: flag, completion: completion)
+//    }
+    
+    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        setUIDocumentMenuViewControllerSoureViewsIfNeeded(viewControllerToPresent)
+        super.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
+
+    func setUIDocumentMenuViewControllerSoureViewsIfNeeded(_ viewControllerToPresent: UIViewController) {
+        viewControllerToPresent.popoverPresentationController?.sourceView = webview
+        viewControllerToPresent.popoverPresentationController?.sourceRect = CGRect(x: webview.center.x, y: webview.center.y, width: 1, height: 1)
     }
 }
