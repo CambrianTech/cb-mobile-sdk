@@ -8,7 +8,7 @@ import {
     CBVisualizer
 } from "react-home-harmony";
 import { SiteContext } from '../data/SiteContext';
-import {ImageProperties, ImageUpload} from "../components/ImageUpload";
+import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
 import {VisualizerTools} from "../components/VisualizerTools";
 import {dispatchImageProperties, selectScene} from "../utilities/Methods";
 import {MediaPaths} from "../utilities/Constants";
@@ -52,6 +52,10 @@ export default function Visualizer(props: any) {
         }
     }, []);
 
+    const onChangeImage = useCallback(() => {
+        openImageDialog()
+    }, [])
+
     const onImageChosen = useCallback((imageProperties: ImageProperties) => {
         dispatchImageProperties(imageProperties, dispatch)
         //setNeedsUpload(true)
@@ -68,7 +72,7 @@ export default function Visualizer(props: any) {
                 cameraRotation={[rotation[0], 0, rotation[2]]}
                 floorRotation={rotation[1]}
             />
-            <VisualizerTools />
+            <VisualizerTools onChangeImage={onChangeImage} />
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
     ), [

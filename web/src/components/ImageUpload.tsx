@@ -18,7 +18,7 @@ interface ImageUploadProperties {
     ref?: any,
 }
 
-export function openFileDialog() {
+export function openImageDialog() {
     const inputs = Array.from(document.getElementsByTagName("input"));
     const input = inputs.find(element => element.type === "file") as HTMLInputElement;
 
