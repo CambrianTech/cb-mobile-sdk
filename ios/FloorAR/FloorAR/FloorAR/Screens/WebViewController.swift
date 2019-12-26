@@ -22,8 +22,20 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
         let link = URL(string:"https://mobile.cambrianar.com")!
         let request = URLRequest(url: link, cachePolicy:.reloadIgnoringLocalAndRemoteCacheData)
         webview.uiDelegate = self
+        webview.navigationDelegate = self
         webview.configuration.preferences.javaScriptEnabled = true
         webview.load(request)
+        
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("Finished navigating to url ");
+        self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
+            if (error != nil) {
+                print("Command error")
+            }
+        })
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
@@ -75,3 +87,4 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
         viewControllerToPresent.popoverPresentationController?.sourceRect = CGRect(x: webview.center.x, y: webview.center.y, width: 1, height: 1)
     }
 }
+
