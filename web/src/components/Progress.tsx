@@ -14,7 +14,7 @@ type ProgressProperties = {
 
 export function Progress(props: ProgressProperties) {
     return (
-        <div className="upload-progress" style={{display:props.visible ? "block" : "none"}}>
+        <div className="progress" style={{display:props.visible ? "block" : "none"}}>
             <div className="content">
                 <div className={"progress-circle"}>
                     <CircularProgressbar value={10 + props.percentage * 100} />
@@ -22,7 +22,7 @@ export function Progress(props: ProgressProperties) {
                 <div className={"progress-text"}>{props.statusText}</div>
                 {props.onButtonClick && props.percentage === 1.0 &&
                 <div>
-                    <button className={"upload-progress-button"} onClick={props.onButtonClick}>{props.buttonText}</button>
+                    <button className={"progress-button"} onClick={props.onButtonClick}>{props.buttonText}</button>
                 </div>}
             </div>
         </div>

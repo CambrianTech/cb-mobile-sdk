@@ -9,7 +9,7 @@ type VisualizerToolsProperties = {
 export function VisualizerTools(props: VisualizerToolsProperties) {
     return (
         <div className="visualizer-tools">
-
+            TOOLS
         </div>
     )
 }
