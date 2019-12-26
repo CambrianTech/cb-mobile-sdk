@@ -9,8 +9,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { SiteContext, createEmptyState, siteStateReducer } from "./data/SiteContext"
 import Visualizer from "./pages/Visualizer"
 import {BrowserProperties, WebClientInfo} from "react-client-info"
+import {cbInitialize} from "react-home-harmony";
 
 const objectFitImages = require('object-fit-images')
+
+if (process.env.REACT_APP_CB_GET_UPLOAD_URLS_URL && process.env.REACT_APP_CB_UPLOADS_URL && process.env.REACT_APP_CB_SEGMENT_URL) {
+    cbInitialize({
+        uploadUrl: process.env.REACT_APP_CB_GET_UPLOAD_URLS_URL,
+        projectHostingUrl: process.env.REACT_APP_CB_UPLOADS_URL,
+        processingUrl: process.env.REACT_APP_CB_SEGMENT_URL
+    })
+} else {
+    throw new Error('REACT_APP_CB_GET_UPLOAD_URLS_URL, REACT_APP_CB_UPLOADS_URL, and REACT_APP_CB_SEGMENT_URL must be defined')
+}
 
 function App() {
     const initialSiteState = createEmptyState()

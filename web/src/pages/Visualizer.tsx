@@ -76,6 +76,6 @@ export default function Visualizer(props: any) {
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
     ), [
-        fov, position, rotation, state.materialProperties, state.sceneData, onImageChosen
+        fov, position, rotation, state.materialProperties, state.sceneData, onImageChosen, onChangeImage
     ])
 }
