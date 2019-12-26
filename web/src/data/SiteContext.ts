@@ -27,13 +27,6 @@ export type DerivedVisualizerState = {
 
 export type SiteState = DerivedSiteState & SharableVisualizerState & DerivedVisualizerState
 
-export enum MediaPaths {
-    Shared = "assets/img/shared",
-    Scenes = "assets/scenes",
-    Visualizer = "assets/img/visualizer",
-    DefaultMaterial = "default-material.jpg",
-}
-
 export type SiteStateContext = {
     state: SiteState
     dispatch: Dispatch<SiteAction>

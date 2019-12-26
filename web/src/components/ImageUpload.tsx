@@ -1,9 +1,10 @@
 import React, {ReactNode, useState, useRef, useEffect, useContext} from "react"
 import { useDropzone } from "react-dropzone"
 import {CBSceneParams, getRotatedFile, CBContentManager} from "react-home-harmony";
-import {MediaPaths, SiteContext} from "../data/SiteContext";
-import {safelyTimeout} from "react-home-harmony/dist/core/CBSceneUtils";
+import {SiteContext} from "../data/SiteContext";
 import {Progress} from "./Progress";
+import {safelyTimeout} from "../utilities/Methods";
+import {MediaPaths} from "../utilities/Constants";
 const fileAccept = "image/*";
 
 export type ImageProperties = CBSceneParams & {
