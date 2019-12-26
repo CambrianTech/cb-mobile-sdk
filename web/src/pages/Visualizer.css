@@ -25,6 +25,10 @@
     width: calc(var(--app-width) - var(--sidebar-width));
 }
 
+.visualizer #CBVisualizer {
+    border: 3px solid red;
+}
+
 .visualizer.materials .visualizer-container,
 .visualizer.swatches .visualizer-container,
 .visualizer.filters .visualizer-container
