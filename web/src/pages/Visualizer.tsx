@@ -61,11 +61,22 @@ export default function Visualizer(props: any) {
         //setNeedsUpload(true)
     }, [dispatch])
 
+    const defaultMaterial = useMemo<CBMaterialProperties>(() => {
+        //var data = require('../../file.json');
+        return {
+            ppi:20,
+            diffuseUrl:"assets/textures/floor/narrow-floorboards1-albedo.png",
+            normalsUrl:"assets/textures/floor/narrow-floorboards1-normal-dx.png",
+            specularUrl:"assets/textures/floor/narrow-floorboards1-roughness.png"
+        }
+    }, [])
+
+
     return useMemo(() => (
         <div className={"visualizer"}>
             <CBVisualizer
                 material={state.materialProperties}
-                defaultMaterial = {new CBMaterialProperties(20, MediaPaths.DefaultMaterial)}
+                defaultMaterial={defaultMaterial}
                 scene={state.sceneData}
                 fov={fov}
                 cameraPosition={position}
