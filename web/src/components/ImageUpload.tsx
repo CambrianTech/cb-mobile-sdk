@@ -27,6 +27,8 @@ export function openImageDialog() {
     }
 }
 
+(window as any).openImageDialog = openImageDialog;
+
 export function ImageUpload(props: ImageUploadProperties) {
     const siteContext = useContext(SiteContext)!
     const [statusText, setStatusText] = useState("")
