@@ -12,6 +12,10 @@ import WebKit
 class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var webview: WKWebView!
     
+    @IBAction func closeClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     var product: Product? {
         didSet {
             self.color = self.product?.colors.first ?? nil
