@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material/react-button": "^0.15.0",
+    "@material/react-icon-button": "^0.15.0",
+    "@material/react-material-icon": "^0.15.0",
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@types/jsonp": "^0.2.0",
     "@types/randomstring": "^1.1.6",
