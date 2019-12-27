@@ -58,7 +58,6 @@ export default function Visualizer(props: any) {
 
     const onImageChosen = useCallback((imageProperties: ImageProperties) => {
         dispatchImageProperties(imageProperties, dispatch)
-        //setNeedsUpload(true)
     }, [dispatch])
 
     const defaultMaterial = useMemo<CBMaterialProperties>(() => {

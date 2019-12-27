@@ -2,8 +2,10 @@ import React, {useCallback} from 'react'
 import 'react-circular-progressbar/dist/styles.css'
 import './VisualizerTools.css'
 import '@material/react-button/dist/button.css';
-import Button from "@material/react-button";
 import MaterialIcon from "@material/react-material-icon";
+import {Fab} from "@material/react-fab";
+
+import '@material/react-fab/dist/fab.css';
 
 
 type VisualizerToolsProperties = {
@@ -11,6 +13,10 @@ type VisualizerToolsProperties = {
 }
 
 export function VisualizerTools(props: VisualizerToolsProperties) {
+
+    const onChangeImage = useCallback((e:any) => {
+        props.onChangeImage()
+    }, [props])
 
     const onRotate = useCallback(() => {
 
@@ -22,15 +28,9 @@ export function VisualizerTools(props: VisualizerToolsProperties) {
 
     return (
         <div className="visualizer-tools">
-            <Button className="tool-button" raised onClick={props.onChangeImage}>
-                <MaterialIcon icon='add_a_photo' />
-            </Button>
-            <Button className="tool-button" raised onClick={onRotate}>
-                <MaterialIcon icon='rotate_right' />
-            </Button>
-            <Button className="tool-button" raised onClick={onEdit}>
-                <MaterialIcon icon='edit' />
-            </Button>
+            <Fab className="tool-button" onClick={onChangeImage} icon={<MaterialIcon icon='add_a_photo' />} />
+            <Fab className="tool-button" onClick={onRotate} icon={<MaterialIcon icon='rotate_right' />} />
+            <Fab className="tool-button" onClick={onEdit} icon={<MaterialIcon icon='edit' />} />
         </div>
     )
 }
