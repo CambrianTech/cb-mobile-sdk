@@ -8,4 +8,5 @@
 
 .tool-button {
     height: 50px;
+    cursor: pointer;
 }

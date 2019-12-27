@@ -11,7 +11,7 @@ import { SiteContext } from '../data/SiteContext';
 import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
 import {VisualizerTools} from "../components/VisualizerTools";
 import {dispatchImageProperties, selectScene} from "../utilities/Methods";
-import {DEFAULT_SCENE, MediaPaths} from "../utilities/Constants";
+import {DEFAULT_SCENE} from "../utilities/Constants";
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
@@ -70,7 +70,6 @@ export default function Visualizer(props: any) {
         }
     }, [])
 
-
     return useMemo(() => (
         <div className={"visualizer"}>
             <CBVisualizer
@@ -86,6 +85,7 @@ export default function Visualizer(props: any) {
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
     ), [
-        fov, position, rotation, state.materialProperties, state.sceneData, onImageChosen, onChangeImage
+        fov, position, rotation, state.materialProperties, state.sceneData,
+        onImageChosen, onChangeImage, defaultMaterial
     ])
 }
