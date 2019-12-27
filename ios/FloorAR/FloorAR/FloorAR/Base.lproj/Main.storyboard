@@ -165,7 +165,7 @@
                     <connections>
                         <outlet property="categoryListing" destination="dFU-6i-L6K" id="Yqf-9r-oJA"/>
                         <outlet property="navigationHeight" destination="899-kU-dn8" id="OTW-Zz-KxT"/>
-                        <segue destination="LCb-KI-xHZ" kind="showDetail" identifier="show-details" id="Qq0-Za-V7M"/>
+                        <segue destination="LCb-KI-xHZ" kind="show" identifier="show-details" id="Qq0-Za-V7M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0it-Yi-1QZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -392,6 +392,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CeE-5t-wkH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Kkj-gY-K8j"/>
+                    <connections>
+                        <outlet property="webview" destination="hS1-dA-A5E" id="Q54-PS-anP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6Y-tP-fTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -449,6 +453,6 @@
         <image name="kitchen-bg" width="1129" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gms-k9-PAB"/>
+        <segue reference="TFb-TA-TBg"/>
     </inferredMetricsTieBreakers>
 </document>

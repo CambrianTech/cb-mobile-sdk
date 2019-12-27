@@ -41,6 +41,8 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var navigationHeight: NSLayoutConstraint!
     @IBOutlet weak var categoryListing: UICollectionView!
     
+    var selectedProduct: Product?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.categoryListing.contentInsetAdjustmentBehavior = .never
@@ -73,13 +75,30 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let products = selectedCategory?.products else {
+            fatalError("cannot find CatalogCell")
+        }
+        self.selectedProduct = products[indexPath.row]
+        
+        self.selectedProduct?.sync {
+            self.performSegue(withIdentifier: "show-details", sender: nil)
+        }
+    }
+    
     private var categorySelector:ProductSelectionView?
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "product-navigation" {
             if let categorySelector = segue.destination as? ProductSelectionView {
                 categorySelector.delegate = self
                 self.categorySelector = categorySelector
             }
+        } else if segue.identifier == "show-details" {
+            if let details = segue.destination as? ProductDetailsViewController {
+                details.product = self.selectedProduct
+            }
         }
     }
+
 }

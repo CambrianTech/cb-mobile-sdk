@@ -12,7 +12,11 @@ import WebKit
 class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var webview: WKWebView!
     
-    var product: Product?
+    var product: Product? {
+        didSet {
+            self.color = self.product?.colors.first ?? nil
+        }
+    }
     var color: ProductColor?
     
     #if DEBUG
@@ -39,7 +43,6 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
-        //self.webView.evaluateJavaScript("window.webkit.messageHandlers.iosListener.postMessage('test');", completionHandler: { (result, err) in
         var material = Dictionary<String,Any>()
         material["ppi"] = product.ppi;
         material["diffuseUrl"] = color.defaultVariation.remoteDiffusePath?.absoluteString;

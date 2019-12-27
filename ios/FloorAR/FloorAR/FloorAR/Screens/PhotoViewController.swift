@@ -38,7 +38,6 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
-        //self.webView.evaluateJavaScript("window.webkit.messageHandlers.iosListener.postMessage('test');", completionHandler: { (result, err) in
         var material = Dictionary<String,Any>()
         material["ppi"] = product.ppi;
         material["diffuseUrl"] = color.defaultVariation.remoteDiffusePath?.absoluteString;
