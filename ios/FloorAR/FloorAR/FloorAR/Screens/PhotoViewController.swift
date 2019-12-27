@@ -9,29 +9,27 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-    }
-
+class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var webview: WKWebView!
+    
+    #if DEBUG
+        let flushCache = true
+    #else
+        let flushCache = false
+    #endif
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         let link = URL(string:"https://mobile.cambrianar.com")!
-        let request = URLRequest(url: link, cachePolicy:.reloadIgnoringLocalAndRemoteCacheData)
+        let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         webview.uiDelegate = self
         webview.navigationDelegate = self
         webview.configuration.preferences.javaScriptEnabled = true
         webview.load(request)
-        
-        
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Finished navigating to url ");
-        
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {        
         self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
             if (error != nil) {
                 print("Command error")

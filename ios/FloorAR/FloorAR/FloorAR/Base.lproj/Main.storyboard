@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvz-7K-jvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1207" y="320"/>
+            <point key="canvasLocation" x="-2030" y="117"/>
         </scene>
         <!--Catalog View Controller-->
         <scene sceneID="94v-5r-xQ9">
@@ -165,11 +165,12 @@
                     <connections>
                         <outlet property="categoryListing" destination="dFU-6i-L6K" id="Yqf-9r-oJA"/>
                         <outlet property="navigationHeight" destination="899-kU-dn8" id="OTW-Zz-KxT"/>
+                        <segue destination="LCb-KI-xHZ" kind="showDetail" identifier="show-details" id="Qq0-Za-V7M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0it-Yi-1QZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130.43478260869566" y="1022.5446428571428"/>
+            <point key="canvasLocation" x="-428" y="253"/>
         </scene>
         <!--AR-->
         <scene sceneID="tUs-Dj-Q7L">
@@ -363,12 +364,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNN-lk-2Bh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="304"/>
+            <point key="canvasLocation" x="688" y="467"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Product Details View Controller-->
+        <scene sceneID="cTO-Jf-PyM">
+            <objects>
+                <viewController id="LCb-KI-xHZ" customClass="ProductDetailsViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XG6-hG-ITu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-dA-A5E">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hS1-dA-A5E" firstAttribute="top" secondItem="CeE-5t-wkH" secondAttribute="top" id="RKj-JE-jGo"/>
+                            <constraint firstItem="hS1-dA-A5E" firstAttribute="leading" secondItem="CeE-5t-wkH" secondAttribute="leading" id="TdT-M0-LXq"/>
+                            <constraint firstItem="CeE-5t-wkH" firstAttribute="bottom" secondItem="hS1-dA-A5E" secondAttribute="bottom" id="kQk-YL-n0o"/>
+                            <constraint firstItem="CeE-5t-wkH" firstAttribute="trailing" secondItem="hS1-dA-A5E" secondAttribute="trailing" id="v4X-DP-Rfs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CeE-5t-wkH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6Y-tP-fTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="1349"/>
+        </scene>
+        <!--Photo View Controller-->
         <scene sceneID="fm1-fD-E18">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="foE-jP-XM7" customClass="WebViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="foE-jP-XM7" customClass="PhotoViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHL-De-d5q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -417,6 +449,6 @@
         <image name="kitchen-bg" width="1129" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aAk-Yy-oIH"/>
+        <segue reference="Gms-k9-PAB"/>
     </inferredMetricsTieBreakers>
 </document>
