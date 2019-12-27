@@ -39,7 +39,6 @@ export default function Visualizer(props: any) {
 
     const initialize = useCallback(() => {
         selectScene(DEFAULT_SCENE, dispatch)
-
         //Window.prototype.selectMaterial = test
     }, [dispatch])
 
@@ -79,7 +78,6 @@ export default function Visualizer(props: any) {
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
                 floorRotation={rotation[1]}
-
             />
             <VisualizerTools onChangeImage={onChangeImage} />
             <ImageUpload onImageChosen={onImageChosen}/>

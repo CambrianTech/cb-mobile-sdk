@@ -1,12 +1,7 @@
 import React, {useCallback} from 'react'
-import 'react-circular-progressbar/dist/styles.css'
 import './VisualizerTools.css'
-import '@material/react-button/dist/button.css';
 import MaterialIcon from "@material/react-material-icon";
 import {Fab} from "@material/react-fab";
-
-import '@material/react-fab/dist/fab.css';
-
 
 type VisualizerToolsProperties = {
     onChangeImage:()=>void
