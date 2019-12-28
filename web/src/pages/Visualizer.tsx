@@ -4,14 +4,13 @@ import 'react-dat-gui/build/react-dat-gui.css'
 import './Visualizer.css'
 
 import {
-    CBMaterialProperties,
     CBVisualizer
 } from "react-home-harmony";
 import { SiteContext } from '../data/SiteContext';
-import {ImageProperties, ImageUpload} from "../components/ImageUpload";
+import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
 import {VisualizerTools} from "../components/VisualizerTools";
 import {dispatchImageProperties, selectScene} from "../utilities/Methods";
-import {MediaPaths} from "../utilities/Constants";
+import {DEFAULT_MATERIAL, DEFAULT_SCENE} from "../utilities/Constants";
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
@@ -38,8 +37,7 @@ export default function Visualizer(props: any) {
     }, []);
 
     const initialize = useCallback(() => {
-        selectScene("/dining-room/BlueRidgePine-0868V-00623-EarthPine-9in", dispatch)
-
+        selectScene(DEFAULT_SCENE, dispatch)
         //Window.prototype.selectMaterial = test
     }, [dispatch])
 
@@ -52,26 +50,30 @@ export default function Visualizer(props: any) {
         }
     }, []);
 
+    const onChangeImage = useCallback(() => {
+        openImageDialog()
+    }, [])
+
     const onImageChosen = useCallback((imageProperties: ImageProperties) => {
         dispatchImageProperties(imageProperties, dispatch)
-        //setNeedsUpload(true)
     }, [dispatch])
 
     return useMemo(() => (
         <div className={"visualizer"}>
             <CBVisualizer
                 material={state.materialProperties}
-                defaultMaterial = {new CBMaterialProperties(20, MediaPaths.DefaultMaterial)}
+                defaultMaterial={DEFAULT_MATERIAL}
                 scene={state.sceneData}
                 fov={fov}
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
                 floorRotation={rotation[1]}
             />
-            <VisualizerTools />
+            <VisualizerTools onChangeImage={onChangeImage} />
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
     ), [
-        fov, position, rotation, state.materialProperties, state.sceneData, onImageChosen
+        fov, position, rotation, state.materialProperties, state.sceneData,
+        onImageChosen, onChangeImage
     ])
 }

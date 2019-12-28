@@ -1,0 +1,5 @@
+.product-details {
+    width: var(--app-width);
+    height: var(--app-height);
+    overflow: hidden;
+}

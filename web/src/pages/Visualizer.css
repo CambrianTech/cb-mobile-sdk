@@ -1,76 +1,7 @@
-:root {
-    --visualizer-button-height: 50px;
-    --visualizer-button-radius: 25px;
-
-    --sidebar-width: 510px;
-    --inverse-sidebar-width: -510px;
-    --sidebar-animation-duration: 300ms;
-
-    --sidebar-heading-height: 60px;
-    --sidebar-subheading-height: 50px;
-}
-
 .visualizer {
     width: var(--app-width);
     height: var(--app-height);
     overflow: hidden;
-}
-
-.visualizer-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: calc(var(--app-width) - var(--sidebar-width));
-}
-
-.visualizer.materials .visualizer-container,
-.visualizer.swatches .visualizer-container,
-.visualizer.filters .visualizer-container
-{
-    left: var(--sidebar-width);
-}
-
-.visualizer.info .visualizer-container,
-.visualizer.share .visualizer-container {
-    left: 0;
-}
-
-.visualizer.dynamic .visualizer-container
-{
-    -webkit-transition: left var(--sidebar-animation-duration);
-    transition: left var(--sidebar-animation-duration);
-}
-
-.visualizer-product-info-button {
-    position: absolute;
-    top: 30px;
-    right: 130px;
-    font-weight: bold;
-    width: 160px;
-    height: var(--visualizer-button-height);
-    border-radius: 30px;
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.15);
-    background-color: #ffffff;
-    cursor: pointer;
-    z-index: 1;
-
-    font-size: 1.0em;
-    line-height: var(--visualizer-button-height);
-}
-
-.visualizer.info .visualizer-product-info-button,
-.visualizer.share .visualizer-product-info-button {
-    display: none;
-}
-
-.visualizer-tools {
-    position: absolute;
-    z-index: 1;
-    top: 30px;
-    right: 30px;
-    text-align: right;
 }
 
 .visualizer-dat-gui {
@@ -79,214 +10,27 @@
     z-index: 1000;
 }
 
-.visualizer-filters-heading {
-    width:inherit;
-    height: 60px;
-    line-height: var(--sidebar-heading-height);
-    background-color: var(--theme-primary-color);
-    color: var(--theme-secondary-color);
-    font-size: 16px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    text-align: center;
-}
-
-.visualizer-filters-heading .arrow {
-    border-color: var(--theme-secondary-color);
-}
-
-.visualizer-filters-heading span {
-    padding-right: 15px;
-}
-
-.visualizer-filters-heading i.arrow {
-    border: solid var(--theme-secondary-color);
-    border-width: 0 1.5px 1.5px 0;
-    display: inline-block;
-    padding: 5px;
-    position: relative;
-    top: -3px;
-}
-
 #drawing-mark-overlay {
     opacity: 0.6;
-    background-color: #ffda00;
-}
-
-@-webkit-keyframes open-panel {
-    from { top: -100vh; }
-    to   { top: 0; }
-}
-
-@-moz-keyframes open-panel {
-    from { top: -100vh; }
-    to   { top: 0; }
-}
-
-@keyframes open-panel {
-    from { top: -100vh; }
-    to   { top: 0; }
-}
-
-@-webkit-keyframes close-panel {
-    from { top: 0; }
-    to   { top: -100vh; }
-}
-
-@-moz-keyframes close-panel {
-    from { top: 0; }
-    to   { top: -100vh; }
-}
-
-@keyframes close-panel {
-    from { top: 0; }
-    to   { top: -100vh; }
+    background-color: #00afff;
 }
 
 /* Mobile Phone or iPad in portrait */
 @media (orientation: portrait) {
-    .navigation-page {
-        overflow: hidden;
-    }
 
-    .visualizer-container {
-        height: var(--app-height);
-        width: var(--app-width);
-    }
-
-    .visualizer-container  #debug-div {
-        left: 0;
-        width: 100%;
-    }
-
-    .visualizer.materials .visualizer-container,
-    .visualizer.swatches .visualizer-container,
-    .visualizer.filters .visualizer-container,
-    .visualizer.info .visualizer-container,
-    .visualizer.swatches .visualizer-container
-    {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: none;
-        transition: none;
-    }
-
-    .visualizer #CBVisualizer {
-        position: absolute;
-        top: 0;
-        -webkit-transition: top var(--sidebar-animation-duration);
-        transition: top var(--sidebar-animation-duration);
-    }
-    
-    .visualizer.swatches #CBVisualizer
-    {
-        position: absolute;
-        top:calc(var(--sidebar-heading-height) - var(--mobile-height));
-    }
-
-    .visualizer-filters-heading {
-        width: 100%;
-        position: fixed;
-        top:0;
-        z-index: 30;
-
-        display: flex;
-        justify-content: space-around;
-        flex-wrap:nowrap;
-    }
-
-    .visualizer-filters-heading i.arrow {
-        border-width: 0 1px 1px 0;
-        display: inline-block;
-        padding: 3px;
-    }
-
-    .visualizer-share-project {
-        position:absolute;
-        top: 0;
-        width: 100vw;
-        height: var(--app-height);
-    }
-
-    .visualizer-dat-gui {
-        display: none;
-    }
-
-    .visualizer.info .swatch-listing, .visualizer.share .swatch-listing {
-        display: none;
-    }
-
-    #legally-required-logo {
-        bottom: 70px !important;
-        font-size: 1.4vmax !important;
-    }
 }
 
 /* Mobile Only */
 @media only screen and (max-device-width: 480px) {
-    :root {
-        --visualizer-button-height: 40px;
-        --sidebar-subheading-height: 40px;
-    }
 
-    .visualizer-filters-heading {
-        height: 50px;
-        line-height: 50px;
-        font-size: 12px;
-    }
-
-    .visualizer-product-info-button {
-        left: 20px;
-        right: auto;
-    }
-
-    .visualizer-tools {
-        right: 20px;
-    }
 }
 
 /* iPad Portrait Only */
 @media only screen and (min-device-width: 768px) and (orientation: portrait)  {
-    .visualizer-product-info-button {
-        left: 20px;
-        right: auto;
-        font-size: 16px;
-    }
-
-    .visualizer-tools {
-        right: 20px;
-    }
-
-    .visualizer-dat-gui {
-        display: none;
-    }
-
-    .visualizer.swatches .visualizer-product-info-button, .visualizer.swatches .visualizer-tools {
-        top: 30px;
-    }
-
-    .visualizer .visualizer-product-info-button {
-        left: 30px;
-    }
-
-    .visualizer  .visualizer-tools {
-        right: 30px;
-    }
 
 }
 
 /* Small screen or iPad Landscape */
 @media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: landscape)  {
-    :root {
-        --sidebar-width: 370px;
-        --inverse-sidebar-width: -370px;
-    }
 
-    .visualizer-dat-gui {
-        display: none;
-    }
 }
