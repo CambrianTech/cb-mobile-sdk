@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNN-lk-2Bh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="467"/>
+            <point key="canvasLocation" x="846" y="466"/>
         </scene>
         <!--Product Details View Controller-->
         <scene sceneID="cTO-Jf-PyM">
@@ -374,30 +374,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fai-P6-1iu" userLabel="Title and Close">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiR-rM-ebA">
+                                        <rect key="frame" x="20" y="12" width="159" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fc-nd-min">
+                                        <rect key="frame" x="365" y="7.6666666666666679" width="39" height="30.000000000000004"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="closeClicked:" destination="LCb-KI-xHZ" eventType="touchUpInside" id="v9u-37-pjP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7Fc-nd-min" secondAttribute="trailing" constant="10" id="2Jc-Xr-mld"/>
+                                    <constraint firstAttribute="height" constant="45" id="7VU-zE-nE5"/>
+                                    <constraint firstItem="7Fc-nd-min" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PiR-rM-ebA" secondAttribute="trailing" constant="20" id="Fjc-I9-Ni1"/>
+                                    <constraint firstItem="PiR-rM-ebA" firstAttribute="centerY" secondItem="Fai-P6-1iu" secondAttribute="centerY" id="gPn-ik-B4P"/>
+                                    <constraint firstItem="7Fc-nd-min" firstAttribute="centerY" secondItem="Fai-P6-1iu" secondAttribute="centerY" id="lcx-d8-sI9"/>
+                                    <constraint firstItem="PiR-rM-ebA" firstAttribute="leading" secondItem="Fai-P6-1iu" secondAttribute="leading" constant="20" id="zfA-bD-VDu"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFY-H0-HYB">
+                                <rect key="frame" x="0.0" y="45" width="414" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="nJf-9O-I6c"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="NKx-YE-zss" kind="embed" id="08Q-Hf-vTK"/>
+                                </connections>
+                            </containerView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-dA-A5E">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="173" width="414" height="635"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fc-nd-min">
-                                <rect key="frame" x="355" y="20" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
-                                <connections>
-                                    <action selector="closeClicked:" destination="LCb-KI-xHZ" eventType="touchUpInside" id="v9u-37-pjP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hS1-dA-A5E" firstAttribute="top" secondItem="CeE-5t-wkH" secondAttribute="top" id="RKj-JE-jGo"/>
+                            <constraint firstItem="CeE-5t-wkH" firstAttribute="leading" secondItem="Fai-P6-1iu" secondAttribute="leading" id="4sC-Fl-rLS"/>
+                            <constraint firstItem="hS1-dA-A5E" firstAttribute="top" secondItem="rFY-H0-HYB" secondAttribute="bottom" id="QEd-Lu-bM7"/>
                             <constraint firstItem="hS1-dA-A5E" firstAttribute="leading" secondItem="CeE-5t-wkH" secondAttribute="leading" id="TdT-M0-LXq"/>
+                            <constraint firstItem="rFY-H0-HYB" firstAttribute="top" secondItem="Fai-P6-1iu" secondAttribute="bottom" id="X1Y-Qi-7Wo"/>
+                            <constraint firstItem="rFY-H0-HYB" firstAttribute="leading" secondItem="CeE-5t-wkH" secondAttribute="leading" id="Ybi-bC-jPk"/>
+                            <constraint firstItem="CeE-5t-wkH" firstAttribute="trailing" secondItem="Fai-P6-1iu" secondAttribute="trailing" id="buV-UJ-sd5"/>
+                            <constraint firstItem="CeE-5t-wkH" firstAttribute="trailing" secondItem="rFY-H0-HYB" secondAttribute="trailing" id="jdI-a5-zME"/>
                             <constraint firstItem="CeE-5t-wkH" firstAttribute="bottom" secondItem="hS1-dA-A5E" secondAttribute="bottom" id="kQk-YL-n0o"/>
-                            <constraint firstItem="CeE-5t-wkH" firstAttribute="trailing" secondItem="7Fc-nd-min" secondAttribute="trailing" constant="20" id="rJu-Bt-Wue"/>
-                            <constraint firstItem="7Fc-nd-min" firstAttribute="top" secondItem="CeE-5t-wkH" secondAttribute="top" constant="20" id="uDN-61-edn"/>
                             <constraint firstItem="CeE-5t-wkH" firstAttribute="trailing" secondItem="hS1-dA-A5E" secondAttribute="trailing" id="v4X-DP-Rfs"/>
+                            <constraint firstItem="CeE-5t-wkH" firstAttribute="top" secondItem="Fai-P6-1iu" secondAttribute="top" id="yld-bW-Blq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CeE-5t-wkH"/>
                     </view>
@@ -408,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6Y-tP-fTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496" y="1349"/>
+            <point key="canvasLocation" x="501" y="1220"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="fm1-fD-E18">
@@ -462,6 +495,6 @@
         <image name="kitchen-bg" width="1129" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TFb-TA-TBg"/>
+        <segue reference="08Q-Hf-vTK"/>
     </inferredMetricsTieBreakers>
 </document>
