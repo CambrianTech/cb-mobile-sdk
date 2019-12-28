@@ -9,8 +9,24 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { SiteContext, createEmptyState, siteStateReducer } from "./data/SiteContext"
 import Visualizer from "./pages/Visualizer"
 import {BrowserProperties, WebClientInfo} from "react-client-info"
+import {cbInitialize} from "react-home-harmony";
+
+import 'react-circular-progressbar/dist/styles.css'
+import '@material/react-button/dist/button.css';
+import '@material/react-fab/dist/fab.css';
+import {ProductDetails} from "./pages/ProductDetails";
 
 const objectFitImages = require('object-fit-images')
+
+if (process.env.REACT_APP_CB_GET_UPLOAD_URLS_URL && process.env.REACT_APP_CB_UPLOADS_URL && process.env.REACT_APP_CB_SEGMENT_URL) {
+    cbInitialize({
+        uploadUrl: process.env.REACT_APP_CB_GET_UPLOAD_URLS_URL,
+        projectHostingUrl: process.env.REACT_APP_CB_UPLOADS_URL,
+        processingUrl: process.env.REACT_APP_CB_SEGMENT_URL
+    })
+} else {
+    throw new Error('REACT_APP_CB_GET_UPLOAD_URLS_URL, REACT_APP_CB_UPLOADS_URL, and REACT_APP_CB_SEGMENT_URL must be defined')
+}
 
 function App() {
     const initialSiteState = createEmptyState()
@@ -71,6 +87,7 @@ function App() {
 
                             <Switch location={location}>
                                 <Route exact path="/" component={Visualizer} />
+                                <Route exact path="/details" component={ProductDetails} />
                             </Switch>
 
                         </SiteContext.Provider>

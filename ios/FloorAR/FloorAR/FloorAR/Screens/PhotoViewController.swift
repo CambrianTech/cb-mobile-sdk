@@ -9,25 +9,35 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-    }
-
+class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var webview: WKWebView!
+    
+    #if DEBUG
+        let flushCache = true
+    #else
+        let flushCache = false
+    #endif
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         let link = URL(string:"https://mobile.cambrianar.com")!
-        let request = URLRequest(url: link)
+        let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         webview.uiDelegate = self
+        webview.navigationDelegate = self
         webview.configuration.preferences.javaScriptEnabled = true
         webview.load(request)
     }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {        
+        self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
+            if (error != nil) {
+                print("Command error")
+            }
+        })
+    }
+    
     func productColorChanged(product: Product, color: ProductColor) {
-        //self.webView.evaluateJavaScript("window.webkit.messageHandlers.iosListener.postMessage('test');", completionHandler: { (result, err) in
         var material = Dictionary<String,Any>()
         material["ppi"] = product.ppi;
         material["diffuseUrl"] = color.defaultVariation.remoteDiffusePath?.absoluteString;
@@ -59,4 +69,20 @@ class WebViewController: UIViewController, ProductSelectionDelegate, WKUIDelegat
         
         completionHandler()
     }
+    
+//    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+//        let documentPicker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeJPEG), String(kUTTypePNG)], in: .import)
+//        super.present(documentPicker, animated: flag, completion: completion)
+//    }
+    
+    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        setUIDocumentMenuViewControllerSoureViewsIfNeeded(viewControllerToPresent)
+        super.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
+
+    func setUIDocumentMenuViewControllerSoureViewsIfNeeded(_ viewControllerToPresent: UIViewController) {
+        viewControllerToPresent.popoverPresentationController?.sourceView = webview
+        viewControllerToPresent.popoverPresentationController?.sourceRect = CGRect(x: webview.center.x, y: webview.frame.maxY - 20, width: 1, height: 1)
+    }
 }
+
