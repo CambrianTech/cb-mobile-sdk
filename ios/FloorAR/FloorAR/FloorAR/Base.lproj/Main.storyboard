@@ -177,6 +177,7 @@
                     <connections>
                         <outlet property="categoryListing" destination="dFU-6i-L6K" id="Yqf-9r-oJA"/>
                         <outlet property="navigationHeight" destination="899-kU-dn8" id="OTW-Zz-KxT"/>
+                        <outlet property="webview" destination="RnX-YI-ExX" id="Sw7-ZW-ABg"/>
                         <segue destination="LCb-KI-xHZ" kind="show" identifier="show-details" id="Qq0-Za-V7M"/>
                     </connections>
                 </viewController>

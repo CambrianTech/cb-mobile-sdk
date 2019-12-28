@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class CatalogCell: UICollectionViewCell {
     
@@ -40,6 +41,7 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     @IBOutlet weak var navigationHeight: NSLayoutConstraint!
     @IBOutlet weak var categoryListing: UICollectionView!
+    @IBOutlet weak var webview: WKWebView!
     
     var selectedProduct: Product?
     
@@ -47,6 +49,11 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         self.categoryListing.contentInsetAdjustmentBehavior = .never
         _navHeight = navigationHeight.constant
+        
+        let link = URL(string:"https://mobile.cambrianar.com/brand-info")!
+        let request = URLRequest(url: link)
+        webview.load(request)
+        categoryListing.isHidden = true
     }
     
     func categoryChanged(category: ProductCategory?) {
@@ -56,6 +63,9 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
     private var _navHeight:CGFloat = 0
     private var selectedCategory:ProductCategory? {
         didSet {
+            if (self.selectedCategory != nil) {
+                categoryListing.isHidden = false
+            }
             categoryListing.reloadData()
             navigationHeight.constant = selectedCategory == nil ? _navHeight : 45
         }
