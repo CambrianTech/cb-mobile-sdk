@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="107" y="438.66666666666669" width="200" height="50"/>
+                                <rect key="frame" x="107" y="448.66666666666669" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Fqj-DF-XYK"/>
                                     <constraint firstAttribute="height" constant="50" id="H5y-eb-XGP"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="107" y="598.66666666666663" width="200" height="50"/>
+                                <rect key="frame" x="107" y="588.66666666666663" width="200" height="50"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <segue destination="foE-jP-XM7" kind="show" id="o36-FO-IwR"/>
@@ -54,13 +54,13 @@
                             <constraint firstItem="AWl-mP-csH" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="J2o-LU-Jdy"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="Old-Q0-ggX"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="PBh-Fz-3LA"/>
-                            <constraint firstItem="AWl-mP-csH" firstAttribute="top" secondItem="Xhd-0o-Iw5" secondAttribute="bottom" constant="30" id="ar0-B8-bzB"/>
+                            <constraint firstItem="AWl-mP-csH" firstAttribute="top" secondItem="Xhd-0o-Iw5" secondAttribute="bottom" constant="20" id="ar0-B8-bzB"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="trailing" secondItem="Wzw-kX-mvn" secondAttribute="trailing" id="faY-tQ-o4J"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" multiplier="1.2" id="hSI-JQ-4se"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="bottom" secondItem="zyO-DM-JFH" secondAttribute="bottom" id="rlQ-Eb-4cs"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="sSt-Lr-5yL"/>
                             <constraint firstItem="Wzw-kX-mvn" firstAttribute="leading" secondItem="zyO-DM-JFH" secondAttribute="leading" id="vcp-9e-G33"/>
-                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="30" id="wOE-XX-nI9"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="20" id="wOE-XX-nI9"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="ypS-gE-H5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zyO-DM-JFH"/>
