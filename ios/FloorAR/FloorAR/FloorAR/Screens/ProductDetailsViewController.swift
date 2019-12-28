@@ -16,6 +16,8 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         self.dismiss(animated: true, completion: nil)
     }
     
+    private var colorSelector:ProductSelectionView?
+    
     var product: Product? {
         didSet {
             self.color = self.product?.colors.first ?? nil
@@ -53,12 +55,10 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         webview.load(request)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        if let selector = self.colorSelector {
+            selector.selectedProduct = product
+        }
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
@@ -91,6 +91,15 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
                 if command == "loaded", let product = self.product, let color = self.color {
                     productColorChanged(product: product, color: color)
                 }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "product-navigation" {
+            if let selector = segue.destination as? ProductSelectionView {
+                selector.delegate = self
+                self.colorSelector = selector
             }
         }
     }

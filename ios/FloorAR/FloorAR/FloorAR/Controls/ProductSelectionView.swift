@@ -233,7 +233,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     private var topLevelCategories:[ProductCategory]?
     
     private var _selectedCategory:ProductCategory?
-    private var selectedCategory:ProductCategory? {
+    var selectedCategory:ProductCategory? {
         get {
             if let category = _selectedCategory {
                 return category
@@ -248,7 +248,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     private var _selectedProduct:Product?
-    private var selectedProduct:Product? {
+    var selectedProduct:Product? {
         get {
             if let product = _selectedProduct {
                 return product
@@ -258,7 +258,9 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         set {
             _selectedProduct = newValue
             if let product = newValue {
+                selectedCategory = product.category
                 self.delegate?.productChanged(product: product)
+                reloadSwatches()
             }
         }
     }

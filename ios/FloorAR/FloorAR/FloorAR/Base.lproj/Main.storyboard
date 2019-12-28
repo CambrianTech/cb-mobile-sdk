@@ -407,7 +407,7 @@
                                     <constraint firstAttribute="height" constant="128" id="nJf-9O-I6c"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="NKx-YE-zss" kind="embed" id="08Q-Hf-vTK"/>
+                                    <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="08Q-Hf-vTK"/>
                                 </connections>
                             </containerView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-dA-A5E">
