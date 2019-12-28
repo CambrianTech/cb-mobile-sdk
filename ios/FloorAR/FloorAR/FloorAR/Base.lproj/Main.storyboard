@@ -87,6 +87,14 @@
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="Gms-k9-PAB"/>
                                 </connections>
                             </containerView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-YI-ExX">
+                                <rect key="frame" x="0.0" y="150" width="414" height="658"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dFU-6i-L6K">
                                 <rect key="frame" x="0.0" y="150" width="414" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -151,11 +159,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8Yh-bM-Nu6" firstAttribute="trailing" secondItem="Z1p-eb-fxz" secondAttribute="trailing" id="7hj-a8-gHY"/>
+                            <constraint firstItem="RnX-YI-ExX" firstAttribute="leading" secondItem="8Yh-bM-Nu6" secondAttribute="leading" id="8sp-Oy-N5B"/>
                             <constraint firstItem="Z1p-eb-fxz" firstAttribute="leading" secondItem="8Yh-bM-Nu6" secondAttribute="leading" id="UIR-xd-qfh"/>
                             <constraint firstItem="8Yh-bM-Nu6" firstAttribute="trailing" secondItem="dFU-6i-L6K" secondAttribute="trailing" id="YGT-Qo-Uea"/>
+                            <constraint firstItem="8Yh-bM-Nu6" firstAttribute="trailing" secondItem="RnX-YI-ExX" secondAttribute="trailing" id="rMZ-4R-ZnZ"/>
                             <constraint firstItem="8Yh-bM-Nu6" firstAttribute="bottom" secondItem="dFU-6i-L6K" secondAttribute="bottom" id="txL-aW-VbL"/>
                             <constraint firstItem="dFU-6i-L6K" firstAttribute="top" secondItem="Z1p-eb-fxz" secondAttribute="bottom" id="vfI-ZE-bpC"/>
                             <constraint firstItem="Z1p-eb-fxz" firstAttribute="top" secondItem="8Yh-bM-Nu6" secondAttribute="top" id="whe-uE-41q"/>
+                            <constraint firstItem="8Yh-bM-Nu6" firstAttribute="bottom" secondItem="RnX-YI-ExX" secondAttribute="bottom" id="xlb-Fy-ZPw"/>
+                            <constraint firstItem="RnX-YI-ExX" firstAttribute="top" secondItem="Z1p-eb-fxz" secondAttribute="bottom" id="ywj-XS-e3Y"/>
                             <constraint firstItem="dFU-6i-L6K" firstAttribute="leading" secondItem="8Yh-bM-Nu6" secondAttribute="leading" id="zCr-dG-RBq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Yh-bM-Nu6"/>
@@ -496,6 +508,6 @@
         <image name="kitchen-bg" width="1129" height="750"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="08Q-Hf-vTK"/>
+        <segue reference="Gms-k9-PAB"/>
     </inferredMetricsTieBreakers>
 </document>

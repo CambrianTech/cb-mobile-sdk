@@ -3,7 +3,7 @@ import {CBMaterialProperties} from "react-home-harmony";
 export enum MediaPaths {
     Shared = "assets/img/shared",
     Scenes = "assets/scenes",
-    Visualizer = "assets/img/visualizer",
+    Brands = "brands",
 }
 
 export const MAX_IMAGE_SIZE = 2048;

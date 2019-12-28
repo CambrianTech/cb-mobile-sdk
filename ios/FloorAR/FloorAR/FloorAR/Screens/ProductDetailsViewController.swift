@@ -50,7 +50,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
                     else {document.addEventListener('load', webviewLoaded, false);}
                     """
         let userScript = WKUserScript(source: script, injectionTime: .atDocumentStart, forMainFrameOnly: true)
-        let link = URL(string:"https://mobile.cambrianar.com/details")!
+        let link = URL(string:"https://mobile.cambrianar.com/product-details")!
         let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         webview.uiDelegate = self
         webview.navigationDelegate = self

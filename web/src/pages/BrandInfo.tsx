@@ -1,0 +1,33 @@
+import React, {useCallback, useEffect, useRef} from 'react'
+import './BrandInfo.css'
+import {MediaPaths} from "../utilities/Constants";
+
+type BrandInfoProperties = {
+
+}
+
+export function BrandInfo(props: BrandInfoProperties) {
+
+    const initialize = useCallback(() => {
+
+    }, [])
+
+    const initializeRef = useRef(initialize);
+    useEffect(() => { initializeRef.current = initialize; }, [initialize]);
+
+    useEffect(() => {
+        if (initializeRef.current) {
+            initializeRef.current()
+        }
+    }, []);
+
+    const brandPath = MediaPaths.Brands + "/shawfloors"
+
+    return (
+        <div className="brand-info">
+            <img className={"splash"} src={brandPath + "/splash.png"} />
+            <img className={"logo"} src={brandPath + "/logo.png"}
+                 srcSet={`${brandPath}/logo.png, ${brandPath}/logo@2x.png 2x, ${brandPath}/logo@3x.png 3x`} />
+        </div>
+    )
+}
