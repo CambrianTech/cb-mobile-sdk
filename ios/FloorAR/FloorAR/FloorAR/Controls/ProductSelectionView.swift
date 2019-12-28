@@ -260,7 +260,23 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             if let product = newValue {
                 selectedCategory = product.category
                 self.delegate?.productChanged(product: product)
-                reloadSwatches()
+            }
+        }
+    }
+    
+    private var _selectedColor:ProductColor?
+    var selectedColor:ProductColor? {
+        get {
+            if let color = _selectedColor {
+                return color
+            }
+            return nil
+        }
+        set {
+            _selectedColor = newValue
+            if let color = newValue {
+                selectedProduct = color.product
+                self.delegate?.productColorChanged(product: color.product, color: color)
             }
         }
     }

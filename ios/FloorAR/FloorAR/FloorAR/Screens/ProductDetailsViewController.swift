@@ -11,6 +11,7 @@ import WebKit
 
 class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     @IBOutlet weak var webview: WKWebView!
+    @IBOutlet weak var productLabel: UILabel?
     
     @IBAction func closeClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -23,7 +24,11 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
             self.color = self.product?.colors.first ?? nil
         }
     }
-    var color: ProductColor?
+    var color: ProductColor? {
+        didSet {
+            setProductLabel()
+        }
+    }
     
     #if DEBUG
         let flushCache = true
@@ -57,7 +62,15 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     
     override func viewWillAppear(_ animated: Bool) {
         if let selector = self.colorSelector {
-            selector.selectedProduct = product
+            selector.selectedColor = color
+            selector.reloadSwatches()
+        }
+        setProductLabel()
+    }
+    
+    func setProductLabel() {
+        if let product = self.product, let color = self.color, let label = self.productLabel {
+            label.text = "\(product.name) - \(color.name)"
         }
     }
     

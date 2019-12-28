@@ -436,6 +436,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Kkj-gY-K8j"/>
                     <connections>
+                        <outlet property="productLabel" destination="PiR-rM-ebA" id="9Tf-fh-ijA"/>
                         <outlet property="webview" destination="hS1-dA-A5E" id="Q54-PS-anP"/>
                     </connections>
                 </viewController>
