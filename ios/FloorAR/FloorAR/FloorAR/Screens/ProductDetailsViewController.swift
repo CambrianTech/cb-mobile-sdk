@@ -95,7 +95,3 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         }
     }
 }
-
-
-
-

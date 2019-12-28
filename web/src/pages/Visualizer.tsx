@@ -4,14 +4,13 @@ import 'react-dat-gui/build/react-dat-gui.css'
 import './Visualizer.css'
 
 import {
-    CBMaterialProperties,
     CBVisualizer
 } from "react-home-harmony";
 import { SiteContext } from '../data/SiteContext';
 import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
 import {VisualizerTools} from "../components/VisualizerTools";
 import {dispatchImageProperties, selectScene} from "../utilities/Methods";
-import {DEFAULT_SCENE} from "../utilities/Constants";
+import {DEFAULT_MATERIAL, DEFAULT_SCENE} from "../utilities/Constants";
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
@@ -59,20 +58,11 @@ export default function Visualizer(props: any) {
         dispatchImageProperties(imageProperties, dispatch)
     }, [dispatch])
 
-    const defaultMaterial = useMemo<CBMaterialProperties>(() => {
-        return {
-            ppi:20,
-            diffuseUrl:"assets/textures/floor/narrow-floorboards1-albedo.png",
-            normalsUrl:"assets/textures/floor/narrow-floorboards1-normal-dx.png",
-            specularUrl:"assets/textures/floor/narrow-floorboards1-roughness.png"
-        }
-    }, [])
-
     return useMemo(() => (
         <div className={"visualizer"}>
             <CBVisualizer
                 material={state.materialProperties}
-                defaultMaterial={defaultMaterial}
+                defaultMaterial={DEFAULT_MATERIAL}
                 scene={state.sceneData}
                 fov={fov}
                 cameraPosition={position}
@@ -84,6 +74,6 @@ export default function Visualizer(props: any) {
         </div>
     ), [
         fov, position, rotation, state.materialProperties, state.sceneData,
-        onImageChosen, onChangeImage, defaultMaterial
+        onImageChosen, onChangeImage
     ])
 }

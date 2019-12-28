@@ -4,7 +4,7 @@ import {CBSceneParams, getRotatedFile, CBContentManager} from "react-home-harmon
 import {SiteContext} from "../data/SiteContext";
 import {Progress} from "./Progress";
 import {safelyTimeout} from "../utilities/Methods";
-import {MAX_IMAGE_SIZE, MediaPaths} from "../utilities/Constants";
+import {MAX_IMAGE_SIZE} from "../utilities/Constants";
 const fileAccept = "image/*";
 
 export type ImageProperties = CBSceneParams & {
@@ -76,7 +76,6 @@ export function ImageUpload(props: ImageUploadProperties) {
             setProgressPercentage(1);
 
             const imageProps = {
-                materialUrl: MediaPaths.DefaultMaterial,
                 backgroundUrl: firstFilePreviewPath,
                 lightingUrl: results.lightingUrl,
                 dataUrl: results.dataUrl,
