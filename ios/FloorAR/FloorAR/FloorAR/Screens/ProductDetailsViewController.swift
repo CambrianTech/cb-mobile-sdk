@@ -26,7 +26,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     }
     var color: ProductColor? {
         didSet {
-            setProductLabel()
+            setProductInfo()
         }
     }
     
@@ -65,16 +65,21 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
             selector.selectedColor = color
             selector.reloadSwatches()
         }
-        setProductLabel()
+        setProductInfo()
     }
     
-    func setProductLabel() {
-        if let product = self.product, let color = self.color, let label = self.productLabel {
-            label.text = "\(product.name) - \(color.name)"
+    func setProductInfo() {
+        if let product = self.product, let color = self.color {
+            if let label = self.productLabel  {
+                label.text = "\(product.name) - \(color.name)"
+            }
         }
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
+        self.product = product
+        self.color = color
+        
         var material = Dictionary<String,Any>()
         material["ppi"] = product.ppi;
         material["diffuseUrl"] = color.defaultVariation.remoteDiffusePath?.absoluteString;
