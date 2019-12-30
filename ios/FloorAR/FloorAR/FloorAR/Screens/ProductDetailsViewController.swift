@@ -38,26 +38,23 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let script = """
-                    function webviewLoaded() {
-                        window.setTimeout(function() {
-                            webkit.messageHandlers.callbackHandler.postMessage({'command':'loaded'})
-                        }, 500)
-                    }
-                    if (window.attachEvent) {window.attachEvent('onload', webviewLoaded);}
-                    else if (window.addEventListener) {window.addEventListener('load', webviewLoaded, false);}
-                    else {document.addEventListener('load', webviewLoaded, false);}
-                    """
-        let userScript = WKUserScript(source: script, injectionTime: .atDocumentStart, forMainFrameOnly: true)
-        let link = URL(string:"https://mobile.cambrianar.com/product-details")!
-        let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
-        webview.uiDelegate = self
-        webview.navigationDelegate = self
-        webview.configuration.preferences.javaScriptEnabled = true
-        webview.configuration.userContentController.add(self, name: "callbackHandler")
-        webview.configuration.userContentController.addUserScript(userScript)
-        webview.load(request)
+
+        //reading
+        if let scriptUrl = Bundle.main.url(forResource: "product-details.js", withExtension: nil) {
+            do {
+                let script = try String(contentsOf: scriptUrl, encoding: .utf8)
+                let userScript = WKUserScript(source: script, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+                let link = URL(string:"https://mobile.cambrianar.com/product-details")!
+                let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
+                webview.uiDelegate = self
+                webview.navigationDelegate = self
+                webview.configuration.preferences.javaScriptEnabled = true
+                webview.configuration.userContentController.add(self, name: "callbackHandler")
+                webview.configuration.userContentController.addUserScript(userScript)
+                webview.load(request)
+            }
+            catch {}
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +114,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         if segue.identifier == "product-navigation" {
             if let selector = segue.destination as? ProductSelectionView {
                 selector.delegate = self
+                selector.shouldShowHistory = false
                 self.colorSelector = selector
             }
         }
