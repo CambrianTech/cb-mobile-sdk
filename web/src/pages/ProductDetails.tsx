@@ -32,6 +32,10 @@ export function ProductDetails(props: ProductDetailsProperties) {
         }
     }, []);
 
+    (window as any).cb.setProductDetails = useCallback((details:any) => {
+        alert(`details data: ${JSON.stringify(details)}`)
+    }, [])
+
     return (
         <div className="product-details">
             <CBVisualizer
@@ -46,3 +50,4 @@ export function ProductDetails(props: ProductDetailsProperties) {
         </div>
     )
 }
+

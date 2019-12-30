@@ -43,7 +43,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         if let scriptUrl = Bundle.main.url(forResource: "product-details.js", withExtension: nil) {
             do {
                 let script = try String(contentsOf: scriptUrl, encoding: .utf8)
-                let userScript = WKUserScript(source: script, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+                let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
                 let link = URL(string:"https://mobile.cambrianar.com/product-details")!
                 let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
                 webview.uiDelegate = self
@@ -83,10 +83,12 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         material["normalsUrl"] = color.defaultVariation.remoteNormalPath?.absoluteString ?? nil
         material["specularUrl"] = color.defaultVariation.remoteRoughnessPath?.absoluteString ?? nil;
         
-        let command = "window.cb.setMaterial(\(material.jsonString))"
+        let command = "if (setProductDetails) setProductDetails(\(material.jsonString), \(product.jsonString))"
         self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
             if (error != nil) {
                 print("Command error")
+            } else {
+                print("Command worked!")
             }
         })
     }
