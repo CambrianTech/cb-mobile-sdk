@@ -15,6 +15,7 @@ import 'react-circular-progressbar/dist/styles.css'
 import '@material/react-button/dist/button.css';
 import '@material/react-fab/dist/fab.css';
 import {ProductDetails} from "./pages/ProductDetails";
+import {BrandInfo} from "./pages/BrandInfo";
 
 const objectFitImages = require('object-fit-images')
 
@@ -87,7 +88,8 @@ function App() {
 
                             <Switch location={location}>
                                 <Route exact path="/" component={Visualizer} />
-                                <Route exact path="/details" component={ProductDetails} />
+                                <Route exact path="/product-details" component={ProductDetails} />
+                                <Route exact path="/brand-info" component={BrandInfo} />
                             </Switch>
 
                         </SiteContext.Provider>
