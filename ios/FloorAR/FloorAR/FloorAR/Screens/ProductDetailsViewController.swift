@@ -32,12 +32,6 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         }
     }
     
-    #if DEBUG
-        let flushCache = true
-    #else
-        let flushCache = false
-    #endif
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,7 +41,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
                 let script = try String(contentsOf: scriptUrl, encoding: .utf8)
                 let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
                 let link = URL(string:"https://mobile.cambrianar.com/product-details")!
-                let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
+                let request = URLRequest(url: link)
                 webview.uiDelegate = self
                 webview.navigationDelegate = self
                 webview.configuration.preferences.javaScriptEnabled = true
