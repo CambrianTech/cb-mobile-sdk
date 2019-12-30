@@ -2,20 +2,27 @@
     width: var(--app-width);
     height: var(--app-height);
     overflow: hidden;
-}
-
-.product-info-details {
-    margin-left: 50px;
-    margin-top: 30px;
-}
-
-.product-info-details .product-info-content {
-    text-align: left;
+    display:flex;
+    flex-direction: column;
 }
 
 .product-visualizer {
     width: var(--app-width);
-    height: 70%;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.product-info-details {
+    flex-grow: 0;
+    flex-basis: auto;
+
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.product-info-details .product-info-content {
+    text-align: left;
 }
 
 .product-info-properties {

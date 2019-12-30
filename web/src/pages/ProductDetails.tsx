@@ -7,14 +7,16 @@ import {DEFAULT_MATERIAL, DEFAULT_SCENE} from "../utilities/Constants";
 
 type DetailsProps = {
     name?: string
-    category?: string
+    category?: any
     product?: any
     color?: any
 }
 
 const testDetails:DetailsProps = {
     name: "adf",
-    category: "Hardwood",
+    category: {
+        "displayName":"Hardwood"
+    },
     product: {
 
     },
@@ -54,7 +56,7 @@ const ProductInfo = React.memo<DetailsProps>(
                         <ul className="product-info-properties">
                             <li key={"flooring-type"}>
                                 <h4>Flooring Type</h4>
-                                <p>{cProps.category}</p>
+                                <p>{cProps.category["displayName"]}</p>
                             </li>
                             {spec_fields.map((field) => {
                                 const value = cProps.color[field.name]
@@ -105,7 +107,6 @@ export function ProductDetails(props: ProductDetailsProperties) {
     }, []);
 
     (window as any).cb.setProductDetails = useCallback((props:DetailsProps) => {
-        alert(props)
         setDetails(props)
     }, [])
 
