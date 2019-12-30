@@ -390,14 +390,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fai-P6-1iu" userLabel="Title and Close">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiR-rM-ebA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="PiR-rM-ebA">
                                         <rect key="frame" x="20" y="12" width="159" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fc-nd-min">
-                                        <rect key="frame" x="365" y="7.6666666666666679" width="39" height="30.000000000000004"/>
+                                        <rect key="frame" x="364" y="7.6666666666666679" width="40" height="30.000000000000004"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Zod-yI-UgC"/>
+                                        </constraints>
                                         <state key="normal" title="Close"/>
                                         <connections>
                                             <action selector="closeClicked:" destination="LCb-KI-xHZ" eventType="touchUpInside" id="v9u-37-pjP"/>
