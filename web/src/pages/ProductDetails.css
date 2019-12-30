@@ -1,24 +1,24 @@
 .product-details {
     width: var(--app-width);
     height: var(--app-height);
-    overflow: hidden;
     display:flex;
     flex-direction: column;
 }
 
 .product-visualizer {
     width: var(--app-width);
-    flex-grow: 1;
-    flex-shrink: 0;
+    height: calc(var(--app-height) - 240px);
+    flex-shrink: 1;
 }
 
 .product-info-details {
-    flex-grow: 0;
-    flex-basis: auto;
+    border-top: 1px solid #555;
+    height: 240px;
+    flex-grow: 1;
 
-    margin-left: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .product-info-details .product-info-content {

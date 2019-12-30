@@ -19,6 +19,8 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     
     private var colorSelector:ProductSelectionView?
     
+    var category: ProductCategory?
+    
     var product: Product? {
         didSet {
             self.color = self.product?.colors.first ?? nil
@@ -74,6 +76,9 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
+        guard let category = self.category else {
+            return
+        }
         self.product = product
         self.color = color
         
@@ -83,7 +88,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         material["normalsUrl"] = color.defaultVariation.remoteNormalPath?.absoluteString ?? nil
         material["specularUrl"] = color.defaultVariation.remoteRoughnessPath?.absoluteString ?? nil;
         
-        let detailsJson = "{name:'\(color.code)', category:'Test', product:\(product.jsonString), color:\(color.jsonString)}"
+        let detailsJson = "{name:'\(color.code)', category:\(category.jsonString), product:\(product.jsonString), color:\(color.jsonString)}"
         let command = "if (setProductDetails) setProductDetails(\(material.jsonString), \(detailsJson))"
         self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
             if (error != nil) {
