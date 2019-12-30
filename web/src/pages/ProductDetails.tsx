@@ -12,6 +12,20 @@ type DetailsProps = {
     color?: any
 }
 
+const testDetails:DetailsProps = {
+    name: "adf",
+    category: "Hardwood",
+    product: {
+
+    },
+    color: {
+        "SellingColorName":"Test",
+        "SellingStyleNbr":"ASDF 1235",
+        "ColorFamilyDesc":"Beige/Tan",
+        "CollectionDesc":"Test things"
+    }
+}
+
 type SpecField = {
     name:string
     displayName:string
@@ -51,8 +65,6 @@ const ProductInfo = React.memo<DetailsProps>(
                             })}
                         </ul>
                     </div>
-
-                    <div className="product-info-cta" />
                 </div>
             );
         }
@@ -77,7 +89,7 @@ export function ProductDetails(props: ProductDetailsProperties) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
-    const [details, setDetails] = useState<DetailsProps>({})
+    const [details, setDetails] = useState<DetailsProps>(testDetails)
 
     const initialize = useCallback(() => {
         selectScene(DEFAULT_SCENE, dispatch)
@@ -99,18 +111,19 @@ export function ProductDetails(props: ProductDetailsProperties) {
 
     return (
         <div className="product-details">
+            <div className={"product-visualizer"}>
+                <CBVisualizer
+                    material={state.materialProperties}
+                    defaultMaterial={DEFAULT_MATERIAL}
+                    scene={state.sceneData}
+                    fov={fov}
+                    cameraPosition={position}
+                    cameraRotation={[rotation[0], 0, rotation[2]]}
+                    floorRotation={rotation[1]}
+                />
+            </div>
 
             <ProductInfo {...details} />
-
-            <CBVisualizer
-                material={state.materialProperties}
-                defaultMaterial={DEFAULT_MATERIAL}
-                scene={state.sceneData}
-                fov={fov}
-                cameraPosition={position}
-                cameraRotation={[rotation[0], 0, rotation[2]]}
-                floorRotation={rotation[1]}
-            />
         </div>
     )
 }
