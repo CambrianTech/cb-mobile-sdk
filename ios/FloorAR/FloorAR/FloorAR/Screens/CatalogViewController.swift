@@ -45,13 +45,20 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var selectedProduct: Product?
     
+    #if DEBUG
+        let flushCache = true
+    #else
+        let flushCache = false
+    #endif
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.categoryListing.contentInsetAdjustmentBehavior = .never
         _navHeight = navigationHeight.constant
         
         let link = URL(string:"https://mobile.cambrianar.com/brand-info")!
-        let request = URLRequest(url: link)
+        
+        let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData: .returnCacheDataElseLoad)
         webview.load(request)
         categoryListing.isHidden = true
     }
