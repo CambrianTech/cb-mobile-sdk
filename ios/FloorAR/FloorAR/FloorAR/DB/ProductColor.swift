@@ -11,7 +11,7 @@ import RealmSwift
 
 class ProductColor: Object {
     override static func ignoredProperties() -> [String] {
-        return ["directoryPath", "thumbnailImage", "jsonString"]
+        return ["directoryPath", "thumbnailImage"]
     }
     
     @objc dynamic var id = UUID().uuidString

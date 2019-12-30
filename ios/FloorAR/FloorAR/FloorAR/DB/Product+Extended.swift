@@ -53,6 +53,9 @@ extension Product {
                     DispatchQueue.main.async {
                         try! DataSource.current.realm.write {
                             self.colors.append(objectsIn: colors)
+                            if let json = colors.first?.jsonString {
+                                print(json)
+                            }
                         }
                         completion()
                     }

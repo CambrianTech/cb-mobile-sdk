@@ -25,7 +25,7 @@ extension UINavigationController {
 }
 
 public extension URL {
-    public static func fromString(_ string: String) -> URL? {
+    static func fromString(_ string: String) -> URL? {
         return URL(string: string.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)
     }
 }
