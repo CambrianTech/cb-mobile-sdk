@@ -25,8 +25,8 @@ export function BrandInfo(props: BrandInfoProperties) {
 
     return (
         <div className="brand-info">
-            <img className={"splash"} src={brandPath + "/splash.png"} />
-            <img className={"logo"} src={brandPath + "/logo.png"}
+            <img className={"splash"} src={brandPath + "/splash.png"} alt={"Splash"} />
+            <img className={"logo"} src={brandPath + "/logo.png"} alt={"Logo"}
                  srcSet={`${brandPath}/logo.png, ${brandPath}/logo@2x.png 2x, ${brandPath}/logo@3x.png 3x`} />
         </div>
     )
