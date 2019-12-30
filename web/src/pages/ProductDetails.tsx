@@ -1,9 +1,67 @@
-import React, {useCallback, useContext, useEffect, useRef} from 'react'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import './ProductDetails.css'
 import {CBVisualizer} from "react-home-harmony";
 import {SiteContext} from "../data/SiteContext";
 import {selectScene} from "../utilities/Methods";
 import {DEFAULT_MATERIAL, DEFAULT_SCENE} from "../utilities/Constants";
+
+type DetailsProps = {
+    name?: string
+    category?: string
+    product?: any
+    color?: any
+}
+
+type SpecField = {
+    name:string
+    displayName:string
+}
+
+const spec_fields:Array<SpecField> = [
+    {
+        name:"CollectionDesc",
+        displayName:"Collection"
+    },
+    {
+        name:"ColorFamilyDesc",
+        displayName:"Color Family"
+    }
+]
+
+const ProductInfo = React.memo<DetailsProps>(
+    (cProps) => {
+        if (cProps.name) {
+            return (<div className={"product-info-details"}>
+
+                    <div className="product-info-content">
+                        <h2>{cProps.color["SellingColorName"]}</h2>
+                        <h3>#{cProps.color["SellingStyleNbr"]}</h3>
+
+                        <ul className="product-info-properties">
+                            <li key={"flooring-type"}>
+                                <h4>Flooring Type</h4>
+                                <p>{cProps.category}</p>
+                            </li>
+                            {spec_fields.map((field) => {
+                                const value = cProps.color[field.name]
+                                return <li key={field.name}>
+                                    <h4>{field.displayName}</h4>
+                                    <p>{value}</p>
+                                </li>
+                            })}
+                        </ul>
+                    </div>
+
+                    <div className="product-info-cta" />
+                </div>
+            );
+        }
+        return (<aside />);
+    },
+    (prevProps, nextProps) => {
+        return  prevProps.name === nextProps.name;
+    }
+);
 
 type ProductDetailsProperties = {
 
@@ -19,6 +77,8 @@ export function ProductDetails(props: ProductDetailsProperties) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
+    const [details, setDetails] = useState<DetailsProps>({})
+
     const initialize = useCallback(() => {
         selectScene(DEFAULT_SCENE, dispatch)
     }, [dispatch])
@@ -32,12 +92,16 @@ export function ProductDetails(props: ProductDetailsProperties) {
         }
     }, []);
 
-    (window as any).cb.setProductDetails = useCallback((details:any) => {
-        alert(`details data: ${JSON.stringify(details)}`)
+    (window as any).cb.setProductDetails = useCallback((props:DetailsProps) => {
+        alert(props)
+        setDetails(props)
     }, [])
 
     return (
         <div className="product-details">
+
+            <ProductInfo {...details} />
+
             <CBVisualizer
                 material={state.materialProperties}
                 defaultMaterial={DEFAULT_MATERIAL}

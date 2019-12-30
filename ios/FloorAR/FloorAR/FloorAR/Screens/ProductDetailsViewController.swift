@@ -83,7 +83,8 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         material["normalsUrl"] = color.defaultVariation.remoteNormalPath?.absoluteString ?? nil
         material["specularUrl"] = color.defaultVariation.remoteRoughnessPath?.absoluteString ?? nil;
         
-        let command = "if (setProductDetails) setProductDetails(\(material.jsonString), \(product.jsonString))"
+        let detailsJson = "{name:'\(color.code)', category:'Test', product:\(product.jsonString), color:\(color.jsonString)}"
+        let command = "if (setProductDetails) setProductDetails(\(material.jsonString), \(detailsJson))"
         self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
             if (error != nil) {
                 print("Command error")
