@@ -70,7 +70,7 @@ extension StringProtocol where Index == String.Index {
 }
 
 public extension UIColor {
-    public var isLight: Bool {
+    var isLight: Bool {
         get {
             return hsba.b > 0.77 && hsba.s < 0.3
         }
@@ -105,7 +105,7 @@ public extension UIColor {
 
 public extension Int {
     /// Returns a random Int point number between 0 and current value
-    public var random:Int {
+    var random:Int {
         get {
             return random(self)
         }
@@ -118,7 +118,7 @@ public extension Int {
      
      - returns: Int
      */
-    public func random(_ n: Int) -> Int {
+    func random(_ n: Int) -> Int {
         return Int(arc4random_uniform(UInt32(n)))
     }
     /**
@@ -129,13 +129,13 @@ public extension Int {
      
      - returns: Int
      */
-    public func random(min: Int, max: Int) -> Int {
+    func random(min: Int, max: Int) -> Int {
         return random((max - min) + 1) + min
     }
 }
 public extension Double {
     /// Returns a random floating point number between 0.0 and 1.0, inclusive.
-    public static var random:Double {
+    static var random:Double {
         get {
             return Double(arc4random()) / 0xFFFFFFFF
         }
@@ -148,13 +148,13 @@ public extension Double {
      
      - returns: Double
      */
-    public static func random(min: Double, max: Double) -> Double {
+    static func random(min: Double, max: Double) -> Double {
         return Double.random * (max - min) + min
     }
 }
 public extension Float {
     /// Returns a random floating point number between 0.0 and 1.0, inclusive.
-    public static var random:Float {
+    static var random:Float {
         get {
             return Float(arc4random()) / 0xFFFFFFFF
         }
@@ -167,19 +167,19 @@ public extension Float {
      
      - returns: Float
      */
-    public static func random(min: Float, max: Float) -> Float {
+    static func random(min: Float, max: Float) -> Float {
         return Float.random * (max - min) + min
     }
 }
 public extension CGFloat {
     /// Randomly returns either 1.0 or -1.0.
-    public static var randomSign:CGFloat {
+    static var randomSign:CGFloat {
         get {
             return (arc4random_uniform(2) == 0) ? 1.0 : -1.0
         }
     }
     /// Returns a random floating point number between 0.0 and 1.0, inclusive.
-    public static var random:CGFloat {
+    static var random:CGFloat {
         get {
             return CGFloat(Float.random)
         }
@@ -192,7 +192,7 @@ public extension CGFloat {
      
      - returns: CGFloat random number
      */
-    public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
+    static func random(min: CGFloat, max: CGFloat) -> CGFloat {
         return CGFloat.random * (max - min) + min
     }
 }
