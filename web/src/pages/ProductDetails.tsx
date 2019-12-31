@@ -9,40 +9,39 @@ type DetailsProps = {
     name?: string
     category?: any
     product?: any
-    color?: any
+    color?: any,
+    fields?: any
 }
 
 const testDetails:DetailsProps = {
     name: "adf",
     category: {
-        "displayName":"Hardwood"
+        "name":"hardwood",
+        "displayName":"Hardwood",
+        "thumbnailPath":"bundle/swatches/hardwood.jpg",
+        "source":"odata/Hardwoods",
+        "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
+        "productsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
+        "colorsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true)",
+        "fields": {
+            "SellingStyleName":"Style Name",
+            "SellingStyleNbr":"Style Number",
+            "SellingColorName":"Color Name",
+            "SellingColorNbr":"Color Number",
+            "CollectionDesc":"Collection"
+        }
     },
     product: {
 
     },
     color: {
-        "SellingColorName":"Test",
+        "SellingStyleName":"Big Product",
+        "SellingColorName":"Special",
         "SellingStyleNbr":"ASDF 1235",
         "ColorFamilyDesc":"Beige/Tan",
         "CollectionDesc":"Test things"
     }
 }
-
-type SpecField = {
-    name:string
-    displayName:string
-}
-
-const spec_fields:Array<SpecField> = [
-    {
-        name:"CollectionDesc",
-        displayName:"Collection"
-    },
-    {
-        name:"ColorFamilyDesc",
-        displayName:"Color Family"
-    }
-]
 
 const ProductInfo = React.memo<DetailsProps>(
     (cProps) => {
@@ -58,19 +57,23 @@ const ProductInfo = React.memo<DetailsProps>(
                                 <h4>Flooring Type</h4>
                                 <p>{cProps.category["displayName"]}</p>
                             </li>
-                            {spec_fields.map((field) => {
-                                const value = cProps.color[field.name]
-                                return <li key={field.name}>
-                                    <h4>{field.displayName}</h4>
-                                    <p>{value}</p>
-                                </li>
+                            {cProps.category.fields && Object.keys(cProps.category.fields).map((key) => {
+                                const displayName = cProps.category.fields[key]
+                                const value = cProps.color[key]
+                                if (value) {
+                                    return <li key={key}>
+                                        <h4>{displayName}</h4>
+                                        <p>{value}</p>
+                                    </li>
+                                }
+                                return null
                             })}
                         </ul>
                     </div>
                 </div>
             );
         }
-        return (<aside />);
+        return null;
     },
     (prevProps, nextProps) => {
         return  prevProps.name === nextProps.name;
