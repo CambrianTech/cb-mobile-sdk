@@ -85,3 +85,15 @@ ul.product-info-properties li {
     display: inline-block;
     width:100%;
 }
+
+/* Mobile Only */
+@media only screen and (max-device-width: 480px) {
+    .product-info-details h2 {
+        font-size: 22px;
+        line-height: 1.13;
+    }
+    .product-info-details h3 {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+}
