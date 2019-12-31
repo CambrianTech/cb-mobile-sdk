@@ -52,10 +52,10 @@ extension ProductColor {
         
         let orderBy = "StyleSequence,UniqueId&$count=true"
         var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
-        select += "," + categoryData["select"]!
+        select += "," + (categoryData["select"] as! String)
         
         var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(DataSource.current.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
-        filter += " and " + categoryData["colorsQuery"]!
+        filter += " and " + (categoryData["colorsQuery"] as! String)
         filter += " and (SellingStyleNbr eq '\(styleNumber)')"
         
         var urlString = "\(DataSource.current.webSource)/\(categoryData["source"]!)?$top=\(DataSource.pageSize)&$skip=\(page * DataSource.pageSize)"

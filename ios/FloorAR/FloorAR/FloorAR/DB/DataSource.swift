@@ -25,7 +25,7 @@ class DataSource {
     let realm = try! Realm()
     
     var topLevelCategories: [ProductCategory] = []
-    var jsonCategories: Dictionary<String, Dictionary<String, String>> = Dictionary<String, Dictionary<String, String>>()
+    var jsonCategories: Dictionary<String, Dictionary<String, Any>> = Dictionary<String, Dictionary<String, Any>>()
     
     var ppiData: Dictionary<String, Int> = Dictionary<String, Int>()
     
@@ -45,8 +45,8 @@ class DataSource {
                 
                 self.webSource = source
                 for categoryJson in categories {
-                    let category = categoryJson as! Dictionary<String, String>
-                    jsonCategories[category["name"]!] = category
+                    let category = categoryJson as! Dictionary<String, Any>
+                    jsonCategories[category["name"] as! String] = category
                 }
                 self.topLevelCategories = parseProductCategories(categories)
                 return
