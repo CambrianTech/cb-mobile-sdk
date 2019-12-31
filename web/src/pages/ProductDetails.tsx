@@ -13,7 +13,7 @@ type DetailsProps = {
     fields?: any
 }
 
-const testDetails:DetailsProps = {
+const demoDetails:DetailsProps = {
     name: "adf",
     category: {
         "name":"hardwood",
@@ -94,7 +94,7 @@ export function ProductDetails(props: ProductDetailsProperties) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
-    const [details, setDetails] = useState<DetailsProps>(testDetails)
+    const [details, setDetails] = useState<DetailsProps>(process.env.NODE_ENV === 'development' ? demoDetails : {})
 
     const initialize = useCallback(() => {
         selectScene(DEFAULT_SCENE, dispatch)
