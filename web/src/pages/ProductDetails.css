@@ -1,3 +1,4 @@
+
 .product-details {
     width: var(--app-width);
     height: var(--app-height);
@@ -12,7 +13,7 @@
 }
 
 .product-info-details {
-    margin-top: -80px;
+    margin-top: -75px;
     height: 180px;
     flex-grow: 1;
 
