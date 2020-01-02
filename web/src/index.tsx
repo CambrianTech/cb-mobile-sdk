@@ -18,6 +18,7 @@ import {ProductDetails} from "./pages/ProductDetails";
 import {BrandInfo} from "./pages/BrandInfo";
 import * as qs from "querystring";
 import {objectToLowerCase} from "./utilities/Methods";
+import {ChooseSample} from "./pages/ChooseSample";
 
 const objectFitImages = require('object-fit-images')
 
@@ -162,6 +163,7 @@ function App() {
                                 <Route exact path="/" component={Visualizer} />
                                 <Route exact path="/product-details" component={ProductDetails} />
                                 <Route exact path="/brand-info" component={BrandInfo} />
+                                <Route exact path="/samples" component={ChooseSample} />
                             </Switch>
 
                         </SiteContext.Provider>

@@ -1,0 +1,22 @@
+{
+    "version":"1.0",
+    "scenes":[
+        {
+            "name":"bathroom-1",
+            "displayName":"Basic Bathroom",
+            "path":"bathroom/bathroom-1",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"bathroom-2",
+            "displayName":"Nice Bathroom",
+            "path":"bathroom/bathroom-2",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        }
+
+    ]
+}

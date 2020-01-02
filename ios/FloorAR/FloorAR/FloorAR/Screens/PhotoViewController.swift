@@ -12,12 +12,6 @@ import WebKit
 class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var webview: WKWebView!
     
-    #if DEBUG
-        let flushCache = true
-    #else
-        let flushCache = false
-    #endif
-    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
