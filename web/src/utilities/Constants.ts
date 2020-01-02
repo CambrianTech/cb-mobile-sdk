@@ -7,7 +7,7 @@ export enum MediaPaths {
 }
 
 export const MAX_IMAGE_SIZE = 2048;
-export const DEFAULT_SCENE = "/dining-room/YukonMaple5-SW547-03000-Bison-DiningRoom-H"
+export const DEFAULT_SCENE = "/kitchen/kitchen-2"
 
 export const DEFAULT_MATERIAL:CBMaterialProperties = {
     ppi:50,
