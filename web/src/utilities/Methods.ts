@@ -90,3 +90,17 @@ export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
             dispatchDataProperties(MediaPaths.Scenes + path, data, dispatch)
         })
 }
+
+export function objectToLowerCase(object: any) {
+    const newObject: any = {}
+
+    for (const key of Object.keys(object)) {
+        newObject[key.toLocaleLowerCase()] = object[key]
+    }
+
+    return newObject
+}
+
+export function cleanInput(input: string) {
+    return input.replace(/\W/g, '')
+}
