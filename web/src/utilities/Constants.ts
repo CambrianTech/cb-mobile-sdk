@@ -8,7 +8,7 @@ export enum MediaPaths {
 }
 
 export const MAX_IMAGE_SIZE = 2048;
-export const DEFAULT_SCENE = "/kitchen/kitchen-2"
+export const DEFAULT_SCENE = "/bedroom/bedroom-3"
 
 export const GRID_MATERIAL:CBMaterialProperties = {
     ppi:13,
