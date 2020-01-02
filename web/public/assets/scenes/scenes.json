@@ -68,7 +68,7 @@
         {
             "name":"living-1",
             "displayName":"Basic living",
-            "path":"living/living-1",
+            "path":"living-room/living-1",
             "data":"data.json",
             "thumbnail":"thumbnail.jpg",
             "preview":"preview.jpg"
@@ -76,7 +76,7 @@
         {
             "name":"living-2",
             "displayName":"living",
-            "path":"living/living-2",
+            "path":"living-room/living-2",
             "data":"data.json",
             "thumbnail":"thumbnail.jpg",
             "preview":"preview.jpg"
@@ -84,7 +84,7 @@
         {
             "name":"living-3",
             "displayName":"Basic living",
-            "path":"living/living-3",
+            "path":"living-room/living-3",
             "data":"data.json",
             "thumbnail":"thumbnail.jpg",
             "preview":"preview.jpg"
