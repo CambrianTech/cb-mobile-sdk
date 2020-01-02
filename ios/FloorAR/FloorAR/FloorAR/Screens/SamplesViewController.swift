@@ -73,7 +73,9 @@ class SamplesViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "visualize" {
-            
+            if let vc = segue.destination as? PhotoViewController {
+                vc.sceneToLoad = samples[selectedIndex]
+            }
         }
     }
 }

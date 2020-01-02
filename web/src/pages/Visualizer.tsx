@@ -37,9 +37,10 @@ export default function Visualizer(props: any) {
     }, []);
 
     const initialize = useCallback(() => {
-        selectScene(DEFAULT_SCENE, dispatch)
-        //Window.prototype.selectMaterial = test
-    }, [dispatch])
+        if (!state.sceneData) {
+            selectScene(DEFAULT_SCENE, dispatch)
+        }
+    }, [dispatch, state.sceneData])
 
     const initializeRef = useRef(initialize);
     useEffect(() => { initializeRef.current = initialize; }, [initialize]);

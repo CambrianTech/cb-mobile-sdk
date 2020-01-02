@@ -17,7 +17,7 @@ import '@material/react-fab/dist/fab.css';
 import {ProductDetails} from "./pages/ProductDetails";
 import {BrandInfo} from "./pages/BrandInfo";
 import * as qs from "querystring";
-import {objectToLowerCase} from "./utilities/Methods";
+import {objectToLowerCase, selectScene} from "./utilities/Methods";
 
 const objectFitImages = require('object-fit-images')
 
@@ -134,6 +134,11 @@ function App() {
                 type: "setFloorRotationOffset",
                 floorRotationOffset: parseFloat(floorRotationOffset)
             })
+        }
+
+        const scene = searchObject.scene as string
+        if (scene) {
+            selectScene(scene, dispatchSiteState)
         }
 
         if (searchObject.controls) {
