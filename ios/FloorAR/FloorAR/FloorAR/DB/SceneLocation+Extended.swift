@@ -16,65 +16,26 @@ extension SceneLocation {
         self.jsonString = json.jsonString
         self.code = json["name"] as! String
         self.name = json["displayName"] as! String
+        self.basePath = json["path"] as! String
         self.thumbnailPath = json["thumbnail"] as! String
         self.previewPath = json["preview"] as! String
     }
     
+    var baseUrl : URL? {
+        return URL(string: DataSource.sceneBaseUrl.absoluteString + "/" + self.basePath)
+    }
+    
     var thumbnailUrl : URL? {
-        return URL(string: thumbnailPath)
+        if let path = baseUrl {
+            return URL(string: path.absoluteString + "/" + thumbnailPath)
+        }
+        return nil
     }
     
-    class var all : [SceneLocation] {
-        get {
-            guard let realmResults = DataController.sharedInstance.productContext?.objects(SceneLocation.self) else { return [] }
-            return Array(realmResults);
+    var previewUrl : URL? {
+        if let path = baseUrl {
+            return URL(string: path.absoluteString + "/" + previewPath)
         }
-    }
-    
-    class func sync(_ completion: @escaping () -> Void) {
-        if (self.all.count > 0) {
-            completion()
-        } else {
-            
-            DispatchQueue.global(qos: .background).async {
-                
-                do {
-                    let data = try Data(contentsOf: DataSource.sceneDataUrl, options: .mappedIfSafe)
-                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                    
-                    guard let parsed = jsonResult as? Dictionary<String, AnyObject> else {
-                        fatalError("cannot parse json data")
-                    }
-                    
-                    guard let scenes = parsed["scenes"] as? Array<Dictionary<String,AnyObject>> else {
-                        fatalError("no source attribute in json data")
-                    }
-
-                    DispatchQueue.main.async {
-                        try! DataSource.current.realm.write {
-                            for sceneData in scenes {
-                                let scene = SceneLocation(sceneData)
-                                DataSource.current.realm.add(scene)
-                            }
-                        }
-                        completion()
-                    }
-                    
-                    return
-                }
-                catch {
-                    fatalError("required datasource caused error")
-                }
-                
-//                Product.loadProducts(categoryID) { (products) in
-//                    DispatchQueue.main.async {
-//                        try! DataSource.current.realm.write {
-//                            self.products.append(objectsIn: products)
-//                        }
-//                        completion()
-//                    }
-//                }
-            }
-        }
+        return nil
     }
 }

@@ -22,6 +22,7 @@ class DataSource {
     
     static let brandInfoUrl =  URL(string: "brand-info" , relativeTo: cambrianWebURL)!
     static let visualizerUrl = cambrianWebURL
+    static let sceneBaseUrl = URL(string: "assets/scenes" , relativeTo: cambrianWebURL)!
     static let sceneDataUrl = URL(string: "assets/scenes/scenes.json" , relativeTo: cambrianWebURL)!
     static let productDetailsUrl = URL(string: "product-details" , relativeTo: cambrianWebURL)!
     
