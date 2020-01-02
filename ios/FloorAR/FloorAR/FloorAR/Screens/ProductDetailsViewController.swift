@@ -40,8 +40,8 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
             do {
                 let script = try String(contentsOf: scriptUrl, encoding: .utf8)
                 let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
-                let link = URL(string:"https://mobile.cambrianar.com/product-details")!
-                let request = URLRequest(url: link)
+
+                let request = URLRequest(url: DataSource.productDetailsUrl)
                 webview.uiDelegate = self
                 webview.navigationDelegate = self
                 webview.configuration.preferences.javaScriptEnabled = true

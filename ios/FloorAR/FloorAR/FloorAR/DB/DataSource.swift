@@ -18,6 +18,13 @@ class DataSource {
     let webSource:String
     let productGroup = "shawfloors"
     
+    static private let cambrianWebURL =  URL(string:"https://mobile.cambrianar.com")!
+    
+    static let brandInfoUrl =  URL(string: "brand-info" , relativeTo: cambrianWebURL)!
+    static let visualizerUrl = cambrianWebURL
+    static let sceneDataUrl = URL(string: "assets/scenes/scenes.json" , relativeTo: cambrianWebURL)!
+    static let productDetailsUrl = URL(string: "product-details" , relativeTo: cambrianWebURL)!
+    
     static let baseImagePath = "https://shawfloors.scene7.com/is/image";
     static let imageSize = 320
     static let pageSize = 1000

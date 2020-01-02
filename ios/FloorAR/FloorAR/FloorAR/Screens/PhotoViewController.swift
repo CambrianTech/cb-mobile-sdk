@@ -14,9 +14,8 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        let link = URL(string:"https://mobile.cambrianar.com")!
-        let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
+        
+        let request = URLRequest(url: DataSource.visualizerUrl, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         webview.uiDelegate = self
         webview.navigationDelegate = self
         webview.configuration.preferences.javaScriptEnabled = true

@@ -17,7 +17,6 @@ class ProductCategory: Object {
     @objc dynamic var id = UUID().uuidString
     override class func primaryKey() -> String? { return "id"}
     
-    //drawable
     @objc dynamic var name = ""
     @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0

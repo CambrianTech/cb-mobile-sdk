@@ -13,27 +13,16 @@ import RealmSwift
 
 class SceneLocation: Object {
     override static func ignoredProperties() -> [String] {
-        return ["directoryPath", "thumbnailImage", "jsonString"]
+        return ["directoryPath", "thumbnailImage"]
     }
     
     @objc dynamic var id = UUID().uuidString
     override class func primaryKey() -> String? { return "id"}
     
-    //drawable
     @objc dynamic var name = ""
+    @objc dynamic var code = ""
     @objc dynamic var orderIndex = 0
-    @objc dynamic var thumbnail = ""
-    let worldLocation = List<Float>()
-    
-    var thumbnailImage:UIImage? {
-        let name = NSURL(fileURLWithPath: thumbnail).deletingPathExtension?.lastPathComponent ?? ""
-        return UIImage(named: name)
-    }
-    
-    var jsonString:String {
-        let locationsJson:String = "[\(self.worldLocation.compactMap({"\($0)"}).joined(separator:","))]"
-        return "{\"name\":\"\(name)\", \"worldPosition\":\(locationsJson)}"
-    }
+    @objc dynamic var thumbnailPath:String = ""
+    @objc dynamic var previewPath:String = ""
+    @objc dynamic var jsonString:String = ""
 }
-
-
