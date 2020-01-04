@@ -32,37 +32,10 @@ class DataSource {
     
     let realm = try! Realm()
     
-    var topLevelCategories: [ProductCategory] = []
-    var jsonCategories: Dictionary<String, Dictionary<String, Any>> = Dictionary<String, Dictionary<String, Any>>()
-    
     var ppiData: Dictionary<String, Int> = Dictionary<String, Int>()
     
     private init() {
-        if let path = Bundle.main.path(forResource: DataSource.categoryJsonPath, ofType: nil) {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                
-                guard let parsed = jsonResult as? Dictionary<String, AnyObject> else {
-                    fatalError("cannot parse json data")
-                }
-                
-                guard let categories = parsed["categories"] as? Array<AnyObject> else {
-                    fatalError("no source attribute in json data")
-                }
-                
-                for categoryJson in categories {
-                    let category = categoryJson as! Dictionary<String, Any>
-                    jsonCategories[category["name"] as! String] = category
-                }
-                self.topLevelCategories = parseProductCategories(categories)
-                return
-            }
-            catch {
-                fatalError("required datasource caused error")
-            }
-        }
-        fatalError("cannot find required datasource")
+    
     }
     
     private func readPPIJSON() {

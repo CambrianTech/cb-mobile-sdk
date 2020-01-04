@@ -2,7 +2,7 @@
 	"source":"https://shawfloors.com/api",
 	"categories": [
         {
-            "name":"carpets",
+            "code":"carpets",
             "displayName":"Carpets",
             "thumbnailPath":"bundle/swatches/carpet.jpg",
             "source":"odata/Carpets",
@@ -18,7 +18,7 @@
             }
 		},
         {
-            "name":"hardwood",
+            "code":"hardwood",
             "displayName":"Hardwood",
             "thumbnailPath":"bundle/swatches/hardwood.jpg",
             "source":"odata/Hardwoods",
@@ -34,7 +34,7 @@
             }
         },
         {
-            "name":"laminate",
+            "code":"laminate",
             "displayName":"Laminate",
             "thumbnailPath":"bundle/swatches/laminate.jpg",
             "source":"odata/Laminates",
@@ -50,7 +50,7 @@
             }
         },
         {
-            "name":"tileandstone",
+            "code":"tileandstone",
             "displayName":"Tile & Stone",
             "thumbnailPath":"bundle/swatches/tile.jpg",
             "source":"odata/Ceramics",
@@ -66,7 +66,7 @@
             }
         },
         {
-            "name":"resilient",
+            "code":"resilient",
             "displayName":"Vinyl",
             "thumbnailPath":"bundle/swatches/vinyl.jpg",
             "source":"odata/Resilient",

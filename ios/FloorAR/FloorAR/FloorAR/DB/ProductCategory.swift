@@ -28,7 +28,7 @@ class ProductCategory: CBDataObject {
     
     let categories = List<ProductCategory>()
     let products = List<Product>()
-    
+        
     private static var _shared = ProductCategory()
     static var shared:CBDataObject {
         get {
@@ -42,15 +42,59 @@ class ProductCategory: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        let objects = ProductCategory.all()
-        return objects.count == 0
+        if (self == ProductCategory._shared) {
+            //top level
+            let objects = ProductCategory.all()
+            return objects.count == 0
+        }
+        return self.products.count == 0
     }
     
     func getDataUrl() -> URL {
-        return Bundle.main.url(forResource: DataSource.ppiJsonPath, withExtension: nil)!
+        return Bundle.main.url(forResource: DataSource.categoryJsonPath, withExtension: nil)!
+    }
+    
+    var isTopLevel:Bool {
+        get {
+            return ProductCategory._shared == self
+        }
     }
     
     func parseObjects(data: Dictionary<String, AnyObject>) {
         
+        if (isTopLevel) {
+            guard let categoriesJson = data["categories"] as? Array<AnyObject> else {
+                fatalError("no source attribute in json data")
+            }
+            for categoryJson in categoriesJson {
+                let dict = categoryJson as! Dictionary<String, AnyObject>
+                let category = ProductCategory(dict)
+                categories.append(category)
+                try! DataSource.current.realm.write {
+                    DataSource.current.realm.add(category)
+                }
+            }
+            print("Created \(ProductCategory.all().count) categories")
+        } else {
+            
+        }
+    }
+    
+    func sync(_ completion: @escaping () -> Void) {
+        if (self.products.count > 0) {
+            completion()
+        } else {
+            let categoryData = self.jsonString.jsonData
+            DispatchQueue.global(qos: .background).async {
+                Product.loadProducts(categoryData) { (products) in
+                    DispatchQueue.main.async {
+                        try! DataSource.current.realm.write {
+                            self.products.append(objectsIn: products)
+                        }
+                        completion()
+                    }
+                }
+            }
+        }
     }
 }

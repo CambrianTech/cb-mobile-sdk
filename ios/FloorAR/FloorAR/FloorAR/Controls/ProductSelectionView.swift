@@ -198,7 +198,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.topLevelCategories = DataSource.current.topLevelCategories
+        self.topLevelCategories = ProductCategory.all()
         self.historyCollection.contentInsetAdjustmentBehavior = .never
         self.swatchScroller.contentInsetAdjustmentBehavior = .never
         self.historyHeight = self.historyCollectionHeight?.constant ?? 0

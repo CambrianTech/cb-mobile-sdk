@@ -29,10 +29,10 @@ extension ProductColor {
         }
     }
     
-    class func loadProductColors(_ categoryID:String, _ styleNumber:String, _ completion: @escaping ([ProductColor]) -> Void) {
+    class func loadProductColors(_ categoryData:Dictionary<String,AnyObject>, _ styleNumber:String, _ completion: @escaping ([ProductColor]) -> Void) {
         
         //create the url with NSURL
-        let url = buildProductColorsDataRequest(categoryID, styleNumber)
+        let url = buildProductColorsDataRequest(categoryData, styleNumber)
 
         AF.request(url).responseJSON { response in
             if let json = response.value as? Dictionary<String, AnyObject>,
@@ -45,10 +45,7 @@ extension ProductColor {
         }
     }
     
-    private class func buildProductColorsDataRequest( _ categoryID:String, _ styleNumber:String, page:Int=0) -> URL {
-        guard let categoryData = DataSource.current.jsonCategories[categoryID] else {
-            fatalError("cannot get json category")
-        }
+    private class func buildProductColorsDataRequest( _ categoryData:Dictionary<String,AnyObject>, _ styleNumber:String, page:Int=0) -> URL {
         
         let orderBy = "StyleSequence,UniqueId&$count=true"
         var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"

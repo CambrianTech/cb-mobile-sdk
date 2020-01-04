@@ -57,10 +57,10 @@ extension Product {
         if (self.colors.count > 0) {
             completion()
         } else {
-            let categoryID = self.category.code
+            let categoryData = self.category.jsonString.jsonData
             let styleNumber = self.styleNumber
             DispatchQueue.global(qos: .background).async {
-                ProductColor.loadProductColors(categoryID, styleNumber) { (colors) in
+                ProductColor.loadProductColors(categoryData, styleNumber) { (colors) in
                     DispatchQueue.main.async {
                         try! DataSource.current.realm.write {
                             self.colors.append(objectsIn: colors)
@@ -75,10 +75,10 @@ extension Product {
         }
     }
     
-    class func loadProducts(_ categoryCode:String, _ completion: @escaping ([Product]) -> Void) {
+    class func loadProducts(_ categoryData:Dictionary<String,AnyObject>, _ completion: @escaping ([Product]) -> Void) {
         
         //create the url with NSURL
-        let url = buildProductDataRequest(categoryCode)
+        let url = buildProductDataRequest(categoryData)
 
         AF.request(url).responseJSON { response in
             if let json = response.value as? Dictionary<String, AnyObject>,
@@ -100,10 +100,8 @@ extension Product {
         return products
     }
     
-    private class func buildProductDataRequest(_ categoryCode:String, page:Int=0) -> URL {
-        
-        let categoryData = DataSource.current.jsonCategories[categoryCode]!
-        
+    private class func buildProductDataRequest(_ categoryData:Dictionary<String,AnyObject>, page:Int=0) -> URL {
+                
         let orderBy = "StyleSequence,UniqueId&$count=true"
         var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
         select += "," + (categoryData["select"] as! String)
