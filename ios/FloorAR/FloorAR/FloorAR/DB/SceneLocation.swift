@@ -11,7 +11,7 @@ import UIKit
 import Foundation
 import RealmSwift
 
-class SceneLocation: Object {
+class SceneLocation: CBDataObject {
     
     @objc dynamic var id = UUID().uuidString
     override class func primaryKey() -> String? { return "id"}
@@ -24,54 +24,36 @@ class SceneLocation: Object {
     @objc dynamic var previewPath:String = ""
     @objc dynamic var jsonString:String = ""
     
-    class var all : [SceneLocation] {
-        get {
-            let realmResults = DataSource.current.realm.objects(SceneLocation.self)
-            return Array(realmResults);
-        }
+    static func getDataUrl() -> URL {
+        return DataSource.sceneDataUrl
     }
     
-    static let s = DispatchSemaphore(value: 1)
-    
-    class func sync(_ completion: @escaping () -> Void) {
-        _ = s.wait(timeout: DispatchTime.distantFuture)
-        defer { s.signal() }
+    static func parseObjects<Element>(data: Dictionary<String, AnyObject>) -> [Element] where Element : CBDataObject {
+        guard let dict = data["scenes"] as? Array<Dictionary<String,AnyObject>> else {
+            fatalError("no source attribute in json data")
+        }
         
-        if (self.all.count > 0) {
-            completion()
-        } else {
-            
-            DispatchQueue.global(qos: .background).async {
-                
-                do {
-                    print(DataSource.sceneDataUrl)
-                    let data = try Data(contentsOf: DataSource.sceneDataUrl, options: .mappedIfSafe)
-                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                    
-                    guard let parsed = jsonResult as? Dictionary<String, AnyObject> else {
-                        fatalError("cannot parse json data")
-                    }
-                    
-                    guard let scenes = parsed["scenes"] as? Array<Dictionary<String,AnyObject>> else {
-                        fatalError("no source attribute in json data")
-                    }
-
-                    DispatchQueue.main.async {
-                        try! DataSource.current.realm.write {
-                            for sceneData in scenes {
-                                let scene = SceneLocation(sceneData)
-                                DataSource.current.realm.add(scene)
-                            }
-                        }
-                        completion()
-                    }
-                    
-                    return
-                }
-                catch {
-                    fatalError("required datasource caused error")
-                }
+        var scenes:[CBDataObject] = []
+        try! DataSource.current.realm.write {
+            for sceneData in dict {
+                let scene = SceneLocation(sceneData)
+                DataSource.current.realm.add(scene)
+                scenes.append(scene)
             }
         }
+        
+        return scenes as! [Element]
     }
+    
+    static func sync() {
+        super.sync { (objects:[SceneLocation]) in}
+    }
+    
+//    class var all : [SceneLocation] {
+//        get {
+//            let realmResults = DataSource.current.realm.objects(SceneLocation.self)
+//            return Array(realmResults);
+//        }
+//    }
+    
 }

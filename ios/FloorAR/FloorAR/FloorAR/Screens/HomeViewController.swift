@@ -12,10 +12,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        SceneLocation.sync {
-            //enable button
-        }
+        SceneLocation.sync()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
