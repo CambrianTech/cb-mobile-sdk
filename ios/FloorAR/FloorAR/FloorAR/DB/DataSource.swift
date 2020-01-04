@@ -13,10 +13,10 @@ import SDWebImage
 
 class DataSource {
     
-    let categoryJsonPath = "datasource.json"
-    let ppiJsonPath = "ppi-data.json"
-    let webSource:String
-    let productGroup = "shawfloors"
+    static let webSource = "https://shawfloors.com/api"
+    static let categoryJsonPath = "datasource.json"
+    static let ppiJsonPath = "ppi-data.json"
+    static let productGroup = "shawfloors"
     
     static private let cambrianWebURL =  URL(string:"https://mobile.cambrianar.com")!
     
@@ -38,7 +38,7 @@ class DataSource {
     var ppiData: Dictionary<String, Int> = Dictionary<String, Int>()
     
     private init() {
-        if let path = Bundle.main.path(forResource: categoryJsonPath, ofType: nil) {
+        if let path = Bundle.main.path(forResource: DataSource.categoryJsonPath, ofType: nil) {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
@@ -47,11 +47,10 @@ class DataSource {
                     fatalError("cannot parse json data")
                 }
                 
-                guard let source = parsed["source"] as? String, let categories = parsed["categories"] as? Array<AnyObject> else {
+                guard let categories = parsed["categories"] as? Array<AnyObject> else {
                     fatalError("no source attribute in json data")
                 }
                 
-                self.webSource = source
                 for categoryJson in categories {
                     let category = categoryJson as! Dictionary<String, Any>
                     jsonCategories[category["name"] as! String] = category
@@ -67,7 +66,7 @@ class DataSource {
     }
     
     private func readPPIJSON() {
-        if let path = Bundle.main.path(forResource: ppiJsonPath, ofType: nil) {
+        if let path = Bundle.main.path(forResource: DataSource.ppiJsonPath, ofType: nil) {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)

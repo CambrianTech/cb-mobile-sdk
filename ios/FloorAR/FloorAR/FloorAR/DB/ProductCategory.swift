@@ -9,7 +9,8 @@
 import Foundation
 import RealmSwift
 
-class ProductCategory: Object {
+class ProductCategory: CBDataObject {
+    
     override static func ignoredProperties() -> [String] {
         return []
     }
@@ -27,4 +28,29 @@ class ProductCategory: Object {
     
     let categories = List<ProductCategory>()
     let products = List<Product>()
+    
+    private static var _shared = ProductCategory()
+    static var shared:CBDataObject {
+        get {
+            return _shared
+        }
+    }
+    
+    static func all() -> [ProductCategory] {
+        let realmResults = DataSource.current.realm.objects(ProductCategory.self)
+        return Array(realmResults);
+    }
+    
+    func needsUpdate() -> Bool {
+        let objects = ProductCategory.all()
+        return objects.count == 0
+    }
+    
+    func getDataUrl() -> URL {
+        return Bundle.main.url(forResource: DataSource.ppiJsonPath, withExtension: nil)!
+    }
+    
+    func parseObjects(data: Dictionary<String, AnyObject>) {
+        
+    }
 }

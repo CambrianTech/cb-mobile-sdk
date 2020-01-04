@@ -24,6 +24,13 @@ class SceneLocation: CBDataObject {
     @objc dynamic var previewPath:String = ""
     @objc dynamic var jsonString:String = ""
     
+    private static var _shared = SceneLocation()
+    static var shared:CBDataObject {
+        get {
+            return _shared
+        }
+    }
+    
     static func all() -> [SceneLocation] {
         let realmResults = DataSource.current.realm.objects(SceneLocation.self)
         return Array(realmResults);
@@ -50,13 +57,6 @@ class SceneLocation: CBDataObject {
                 DataSource.current.realm.add(scene)
                 scenes.append(scene)
             }
-        }
-    }
-    
-    static var _shared = SceneLocation()
-    static var shared:CBDataObject {
-        get {
-            return _shared
         }
     }
 }
