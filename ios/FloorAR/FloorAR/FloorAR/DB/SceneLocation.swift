@@ -24,11 +24,7 @@ class SceneLocation: CBDataObject {
     @objc dynamic var previewPath:String = ""
     @objc dynamic var jsonString:String = ""
     
-    static func needsUpdate(_ parent:CBDataObject?) -> Bool {
-        return all().count == 0
-    }
-    
-    static func getDataUrl(_ parent:CBDataObject?) -> URL? {
+    static func getDataUrl() -> URL {
         return DataSource.sceneDataUrl
     }
     
