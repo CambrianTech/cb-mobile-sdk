@@ -11,7 +11,8 @@ import RealmSwift
 import Alamofire
 
 protocol CBDataObjectProtocol {
-    static func getDataUrl() -> URL
+    static func needsUpdate(_ parent:CBDataObject?) -> Bool
+    static func getDataUrl(_ parent:CBDataObject?) -> URL?
     static func parseObjects<Element>(data:Dictionary<String, AnyObject>) -> [Element] where Element : CBDataObject
 }
 
@@ -34,21 +35,20 @@ class _CBDataObject: Object {
             return this
         }
     }
-    
+        
     private static let s = DispatchSemaphore(value: 1)
     static func sync<Element>(_ completion: ((_ objects:[Element]) -> Void)?) where Element : CBDataObject {
         
         _ = s.wait(timeout: DispatchTime.distantFuture)
         defer { s.signal() }
         
-        let objects:[Element] = this.all()
-        if (objects.count > 0) {
+        if (this.needsUpdate(nil)) {
             if let completion = completion {
-                completion(objects)
+                completion(this.all())
             }
-        } else {
+        } else if let url = this.getDataUrl(nil) {
             DispatchQueue.global(qos: .background).async {
-                AF.request(this.getDataUrl()).responseJSON { response in
+                AF.request(url).responseJSON { response in
                     if let json = response.value as? Dictionary<String, AnyObject> {
                         DispatchQueue.main.async {
                             let objects:[Element] = this.parseObjects(data:json)
