@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Alamofire
 
 protocol CBDataObjectProtocol {
     static func getDataUrl() -> URL
@@ -47,24 +48,15 @@ class _CBDataObject: Object {
             }
         } else {
             DispatchQueue.global(qos: .background).async {
-                do {
-                    //print(this.dataUrl)
-                    let data = try Data(contentsOf: this.getDataUrl(), options: .mappedIfSafe)
-                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                    
-                    guard let parsed = jsonResult as? Dictionary<String, AnyObject> else {
-                        fatalError("cannot parse json data")
-                    }
-
-                    DispatchQueue.main.async {
-                        let objects:[Element] = this.parseObjects(data:parsed)
-                        if let completion = completion {
-                            completion(objects)
+                AF.request(this.getDataUrl()).responseJSON { response in
+                    if let json = response.value as? Dictionary<String, AnyObject> {
+                        DispatchQueue.main.async {
+                            let objects:[Element] = this.parseObjects(data:json)
+                            if let completion = completion {
+                                completion(objects)
+                            }
                         }
                     }
-                }
-                catch {
-                    fatalError("required datasource caused error")
                 }
             }
         }

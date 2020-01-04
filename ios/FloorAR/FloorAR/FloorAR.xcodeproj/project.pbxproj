@@ -179,9 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				E7D255ED23A83A7D00C2737D /* ppi-data.json */,
+				E7291DC123A29E6A00F492C2 /* datasource.json */,
 				E7CD9F6F23A2CEF50074F27C /* bundle */,
 				E7291DC623A2C63500F492C2 /* DataController.swift */,
-				E7291DC123A29E6A00F492C2 /* datasource.json */,
 				E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */,
 				E7C497F020B3D07300E7567D /* ProductCategory.swift */,
 				E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */,

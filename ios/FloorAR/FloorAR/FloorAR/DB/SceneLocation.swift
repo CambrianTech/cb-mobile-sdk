@@ -47,13 +47,5 @@ class SceneLocation: CBDataObject {
     
     static func sync() {
         super.sync { (objects:[SceneLocation]) in}
-    }
-    
-//    class var all : [SceneLocation] {
-//        get {
-//            let realmResults = DataSource.current.realm.objects(SceneLocation.self)
-//            return Array(realmResults);
-//        }
-//    }
-    
+    }    
 }
