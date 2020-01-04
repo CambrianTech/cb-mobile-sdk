@@ -12,7 +12,7 @@ import Foundation
 import RealmSwift
 
 class SceneLocation: CBDataObject {
-    
+
     @objc dynamic var id = UUID().uuidString
     override class func primaryKey() -> String? { return "id"}
     
@@ -24,11 +24,21 @@ class SceneLocation: CBDataObject {
     @objc dynamic var previewPath:String = ""
     @objc dynamic var jsonString:String = ""
     
-    static func getDataUrl() -> URL {
+    static func all() -> [SceneLocation] {
+        let realmResults = DataSource.current.realm.objects(SceneLocation.self)
+        return Array(realmResults);
+    }
+    
+    func needsUpdate() -> Bool {
+        let objects = SceneLocation.all()
+        return objects.count == 0
+    }
+    
+    func getDataUrl() -> URL {
         return DataSource.sceneDataUrl
     }
     
-    static func parseObjects<Element>(data: Dictionary<String, AnyObject>) -> [Element] where Element : CBDataObject {
+    func parseObjects(data: Dictionary<String, AnyObject>) {
         guard let dict = data["scenes"] as? Array<Dictionary<String,AnyObject>> else {
             fatalError("no source attribute in json data")
         }
@@ -41,11 +51,12 @@ class SceneLocation: CBDataObject {
                 scenes.append(scene)
             }
         }
-        
-        return scenes as! [Element]
     }
     
-    static func sync() {
-        super.sync { (objects:[SceneLocation]) in}
-    }    
+    static var _shared = SceneLocation()
+    static var shared:CBDataObject {
+        get {
+            return _shared
+        }
+    }
 }

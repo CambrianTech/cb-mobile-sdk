@@ -47,8 +47,8 @@ class SamplesViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SceneLocation.sync { (samples:[SceneLocation]) in
-            self.samples = samples
+        SceneLocation.sync { 
+            self.samples = SceneLocation.all()
         }
     }
     
