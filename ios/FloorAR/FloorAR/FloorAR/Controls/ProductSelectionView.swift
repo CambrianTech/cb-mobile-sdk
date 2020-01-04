@@ -256,7 +256,10 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             }
             _selectedCategory = newValue
             if let category = newValue {
+                print("Selected category is now \(category.name)")
                 self.delegate?.categoryChanged(category: category)
+            } else {
+                print("Selected category is NULL")
             }
         }
     }
@@ -410,13 +413,13 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func historyView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
-        
-        self.selectedCategory = self.history.last?.category
-        self.selectedProduct = self.history.last?.product
+        let item = self.history[indexPath.row]
+        self.selectedCategory = item.category
+        self.selectedProduct = item.product
         self.selectedCell = nil
         
-        reloadSwatches()
         reloadHistory()
+        reloadSwatches()
     }
     
     func swatchView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
