@@ -255,12 +255,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
                 return
             }
             _selectedCategory = newValue
-            if let category = newValue {
-                print("Selected category is now \(category.name)")
-                self.delegate?.categoryChanged(category: category)
-            } else {
-                print("Selected category is NULL")
-            }
+            self.delegate?.categoryChanged(category: newValue)
         }
     }
     
@@ -361,7 +356,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
                 let label = UILabel()
                 label.text = self.history[indexPath.row].name
                 label.sizeToFit()
-                return CGSize(width: min(label.frame.size.width + 10, self.view.frame.size.width / CGFloat(history.count)), height: height)
+                return CGSize(width: max(min(label.frame.size.width + 10, self.view.frame.size.width / CGFloat(history.count)), 50), height: height)
             }
             return CGSize(width: height, height: height)
         }

@@ -62,9 +62,7 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
     private var _navHeight:CGFloat = 0
     private var selectedCategory:ProductCategory? {
         didSet {
-            if (self.selectedCategory != nil) {
-                categoryListing.isHidden = false
-            }
+            categoryListing.isHidden = self.selectedCategory == nil
             categoryListing.reloadData()
             navigationHeight.constant = selectedCategory == nil ? _navHeight : 45
         }
