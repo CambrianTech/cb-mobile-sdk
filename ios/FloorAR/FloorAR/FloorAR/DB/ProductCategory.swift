@@ -42,7 +42,7 @@ class ProductCategory: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        if (self == ProductCategory._shared) {
+        if (isTopLevel) {
             //top level
             let objects = ProductCategory.all()
             return objects.count == 0
@@ -51,7 +51,10 @@ class ProductCategory: CBDataObject {
     }
     
     func getDataUrl() -> URL {
-        return Bundle.main.url(forResource: DataSource.categoryJsonPath, withExtension: nil)!
+        if (isTopLevel) {
+            return Bundle.main.url(forResource: DataSource.categoryJsonPath, withExtension: nil)!
+        }
+        return ProductCategory.buildProductDataRequest(self.jsonString.jsonData)
     }
     
     var isTopLevel:Bool {
@@ -76,25 +79,34 @@ class ProductCategory: CBDataObject {
             }
             print("Created \(ProductCategory.all().count) categories")
         } else {
+            guard let productsJSON = data["value"] as? Array<Dictionary<String, AnyObject>> else {
+                fatalError("no value attribute in json data")
+            }
             
-        }
-    }
-    
-    func sync(_ completion: @escaping () -> Void) {
-        if (self.products.count > 0) {
-            completion()
-        } else {
-            let categoryData = self.jsonString.jsonData
-            DispatchQueue.global(qos: .background).async {
-                Product.loadProducts(categoryData) { (products) in
-                    DispatchQueue.main.async {
-                        try! DataSource.current.realm.write {
-                            self.products.append(objectsIn: products)
-                        }
-                        completion()
-                    }
+            for productJson in productsJSON {
+                let product = Product(productJson)
+                try! DataSource.current.realm.write {
+                    self.products.append(product)
                 }
             }
         }
+    }
+    
+    private class func buildProductDataRequest(_ categoryData:Dictionary<String,AnyObject>, page:Int=0) -> URL {
+                
+        let orderBy = "StyleSequence,UniqueId&$count=true"
+        var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
+        select += "," + (categoryData["select"] as! String)
+        
+        var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(DataSource.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
+        filter += " and " + (categoryData["productsQuery"] as! String)
+        
+        var urlString = "\(DataSource.webSource)/\(categoryData["source"]!)?$top=\(DataSource.pageSize)&$skip=\(page * DataSource.pageSize)"
+        
+        urlString += "&$orderby=\(DataSource.encodeUrl(orderBy))"
+        urlString += "&$select=\(DataSource.encodeUrl(select))"
+        urlString += "&$filter=\(DataSource.encodeUrl(filter))"
+        
+        return URL(string: urlString)!
     }
 }

@@ -45,8 +45,9 @@ class _CBDataObject: Object {
                 completion()
             }
         } else {
+            let url = ele.getDataUrl()
             DispatchQueue.global(qos: .background).async {
-                AF.request(ele.getDataUrl()).responseJSON { response in
+                AF.request(url).responseJSON { response in
                     if let json = response.value as? Dictionary<String, AnyObject> {
                         DispatchQueue.main.async {
                             ele.parseObjects(data:json)
