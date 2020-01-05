@@ -15,15 +15,14 @@ protocol CBDataObjectProtocol {
     
     func needsUpdate() -> Bool
     func getDataUrl() -> URL?
-    func parseObjects(data:Dictionary<String, AnyObject>)
+    func parseObjects(data:Dictionary<String, AnyObject>, realm:Realm)
 }
 
 typealias CBDataObject = _CBDataObject & CBDataObjectProtocol
 
 class _CBDataObject: Object {
     
-    @objc dynamic var id = UUID().uuidString
-    override class func primaryKey() -> String? { return "id"}
+    override class func primaryKey() -> String? { return "code"}
     
     override static func ignoredProperties() -> [String] {
         return ["directoryPath", "thumbnailImage"]
@@ -46,6 +45,12 @@ class _CBDataObject: Object {
         }
     }
     
+    var isTopLevel:Bool {
+        get {
+            return type(of: self).this.shared == self
+        }
+    }
+    
     private let s = DispatchSemaphore(value: 1)
     func sync(_ completion: (() -> Void)? = nil) {
         
@@ -59,11 +64,17 @@ class _CBDataObject: Object {
                 completion()
             }
         } else if let url = ele.getDataUrl() {
+            try! DataSource.current.realm.write {
+                self.updated = Date()
+            }
             DispatchQueue.global(qos: .background).async {
                 AF.request(url).responseJSON { response in
                     if let json = response.value as? Dictionary<String, AnyObject> {
                         DispatchQueue.main.async {
-                            ele.parseObjects(data:json)
+                            let realm = DataSource.current.realm
+                            try! realm.write {
+                                ele.parseObjects(data:json, realm:realm)
+                            }
                             if let completion = completion {
                                 completion()
                             }
