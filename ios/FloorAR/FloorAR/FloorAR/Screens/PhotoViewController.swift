@@ -12,29 +12,28 @@ import WebKit
 class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var webview: WKWebView!
     
-    #if DEBUG
-        let flushCache = true
-    #else
-        let flushCache = false
-    #endif
+    var sceneToLoad:SceneLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        let link = URL(string:"https://mobile.cambrianar.com")!
-        let request = URLRequest(url: link, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
+        
+        let url = self.sceneToLoad == nil ? DataSource.visualizerUrl : DataSource.visualizerUrl.appending("scene", value: self.sceneToLoad!.basePath)
+        
+        print(url.absoluteString)
+        
+        let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         webview.uiDelegate = self
         webview.navigationDelegate = self
         webview.configuration.preferences.javaScriptEnabled = true
         webview.load(request)
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {        
-        self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
-            if (error != nil) {
-                print("Command error")
-            }
-        })
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if let _ = sceneToLoad { } else {
+            self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
+                if (error != nil) {print("Command error: Could not open image dialog")}
+            })
+        }
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
@@ -47,7 +46,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
         let command = "window.cb.setMaterial(\(material.jsonString))"
         self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
             if (error != nil) {
-                print("Command error")
+                print("Command error: could not load material")
             }
         })
     }

@@ -49,10 +49,8 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         self.categoryListing.contentInsetAdjustmentBehavior = .never
         _navHeight = navigationHeight.constant
-        
-        let link = URL(string:"https://mobile.cambrianar.com/brand-info")!
-        
-        let request = URLRequest(url: link, cachePolicy: .returnCacheDataElseLoad)
+    
+        let request = URLRequest(url: DataSource.brandInfoUrl, cachePolicy: .returnCacheDataElseLoad)
         webview.load(request)
         categoryListing.isHidden = true
     }
@@ -64,9 +62,7 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
     private var _navHeight:CGFloat = 0
     private var selectedCategory:ProductCategory? {
         didSet {
-            if (self.selectedCategory != nil) {
-                categoryListing.isHidden = false
-            }
+            categoryListing.isHidden = self.selectedCategory == nil
             categoryListing.reloadData()
             navigationHeight.constant = selectedCategory == nil ? _navHeight : 45
         }

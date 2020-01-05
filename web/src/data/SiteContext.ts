@@ -79,17 +79,29 @@ export type SiteActionSetFov = {
     fov: number | null
 }
 
-export type ShawActionSetPosition = {
+export type SiteActionSetPosition = {
     type: "setPosition"
     position: [number, number, number] | null
 }
 
-export type ShawActionSetRotation = {
+export type SiteActionSetRotation = {
     type: "setRotation"
     rotation: [number, number, number] | null
 }
 
-export type SiteAction = SiteActionSetBrowserProperties | SiteActionSetError | SiteActionSetSceneData | SiteActionSetFov | ShawActionSetPosition | ShawActionSetRotation
+export type SiteActionSetShowControls = {
+    type: "setShowControls"
+    showControls: boolean | undefined
+}
+
+export type SiteActionSetFloorRotationOffset = {
+    type: "setFloorRotationOffset"
+    floorRotationOffset: number | null
+}
+
+
+export type SiteAction = SiteActionSetBrowserProperties | SiteActionSetError | SiteActionSetSceneData | SiteActionSetFov |
+    SiteActionSetPosition | SiteActionSetRotation | SiteActionSetShowControls | SiteActionSetFloorRotationOffset
 
 export function siteStateReducer(state: SiteState, action: SiteAction): SiteState {
     // Set the thing we are supposed to set. Also make sure anything depending
@@ -113,9 +125,15 @@ export function siteStateReducer(state: SiteState, action: SiteAction): SiteStat
         case "setRotation":
             newState.rotation = action.rotation
             break
+        case "setFloorRotationOffset":
+            newState.floorRotationOffset = action.floorRotationOffset
+            break
         // Visualizer derived
         case "setSceneData":
             newState.sceneData = action.sceneData
+            break
+        case "setShowControls":
+            newState.showControls = action.showControls
             break
 
         default:

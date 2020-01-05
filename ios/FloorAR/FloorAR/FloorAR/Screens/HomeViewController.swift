@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProductCategory.sync()
+        SceneLocation.sync()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
