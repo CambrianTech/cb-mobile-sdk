@@ -29,52 +29,6 @@ extension ProductColor {
         }
     }
     
-    class func loadProductColors(_ categoryData:Dictionary<String,AnyObject>, _ styleNumber:String, _ completion: @escaping ([ProductColor]) -> Void) {
-        
-        //create the url with NSURL
-        let url = buildProductColorsDataRequest(categoryData, styleNumber)
-
-        AF.request(url).responseJSON { response in
-            if let json = response.value as? Dictionary<String, AnyObject>,
-                //let count = json["@odata.count"] as? Int,
-                let categoriesJSON = json["value"] as? Array<Dictionary<String, AnyObject>> {
-
-                let productColors = parseProductColors(categoriesJSON)
-                completion(productColors)
-            }
-        }
-    }
-    
-    private class func buildProductColorsDataRequest( _ categoryData:Dictionary<String,AnyObject>, _ styleNumber:String, page:Int=0) -> URL {
-        
-        let orderBy = "StyleSequence,UniqueId&$count=true"
-        var select = "UniqueId,SellingStyleNbr,SellingColorNbr,SellingStyleName,SellingColorName,StaticRoomFlag,Vignette,ColorCount,MSRPRange,HasSwatchImage,SampleCount"
-        select += "," + (categoryData["select"] as! String)
-        
-        var filter = "(IsDropped eq false) and (ColorCount gt 0) and (ProductGroupPermanentName eq '\(DataSource.productGroup)') and (ProductGroupShowOnVizTool eq true) and (HasMainImage eq true)"
-        filter += " and " + (categoryData["colorsQuery"] as! String)
-        filter += " and (SellingStyleNbr eq '\(styleNumber)')"
-        
-        var urlString = "\(DataSource.webSource)/\(categoryData["source"]!)?$top=\(DataSource.pageSize)&$skip=\(page * DataSource.pageSize)"
-        
-        urlString += "&$orderby=\(DataSource.encodeUrl(orderBy))"
-        urlString += "&$select=\(DataSource.encodeUrl(select))"
-        urlString += "&$filter=\(DataSource.encodeUrl(filter))"
-        
-        //print(urlString)
-        
-        return URL(string: urlString)!
-    }
-    
-    private class func parseProductColors(_ _productsJSON:Array<Dictionary<String, AnyObject>>) -> [ProductColor] {
-        var colors: [ProductColor] = []
-        for productJson in _productsJSON {
-            let color = ProductColor(productJson)
-            colors.append(color)
-        }
-        return colors
-    }
-    
     public var defaultVariation: ProductVariation {
         get {
             let variation = ProductVariation(self)

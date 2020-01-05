@@ -65,4 +65,15 @@ class _CBDataObject: Object {
         let this = self as! CBDataObject.Type
         this.shared.sync(completion)
     }
+    
+    class func first<Element>() -> Element? where Element : RealmSwift.Object {
+        guard let realmResults = DataController.sharedInstance.productContext?.objects(Element.self) else { return nil }
+        return realmResults.first
+    }
+    
+    class func random<Element>() -> Element? where Element : RealmSwift.Object {
+        guard let realmResults = DataController.sharedInstance.productContext?.objects(Element.self) else { return nil }
+        let index = Int (arc4random_uniform(UInt32(realmResults.count)));
+        return realmResults[index];
+    }
 }

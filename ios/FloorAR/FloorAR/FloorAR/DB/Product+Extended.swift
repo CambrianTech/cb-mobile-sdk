@@ -42,39 +42,6 @@ extension Product {
         }
     }
     
-    class func first() -> Product? {
-        guard let realmResults = DataController.sharedInstance.productContext?.objects(Product.self) else { return nil }
-        return realmResults.first
-    }
-    
-    class func random() -> Product? {
-        guard let realmResults = DataController.sharedInstance.productContext?.objects(Product.self) else { return nil }
-        let index = Int (arc4random_uniform(UInt32(realmResults.count)));
-        return realmResults[index];
-    }
-
-    func sync(_ completion: @escaping () -> Void) {
-        if (self.colors.count > 0) {
-            completion()
-        } else {
-            let categoryData = self.category.jsonString.jsonData
-            let styleNumber = self.styleNumber
-            DispatchQueue.global(qos: .background).async {
-                ProductColor.loadProductColors(categoryData, styleNumber) { (colors) in
-                    DispatchQueue.main.async {
-                        try! DataSource.current.realm.write {
-                            self.colors.append(objectsIn: colors)
-                            if let json = colors.first?.jsonString {
-                                print(json)
-                            }
-                        }
-                        completion()
-                    }
-                }
-            }
-        }
-    }
-    
     var ppi:Int {
         get {
             return DataSource.current.getImagePPI(self.code)
