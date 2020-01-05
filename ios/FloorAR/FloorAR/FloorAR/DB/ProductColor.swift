@@ -9,21 +9,27 @@
 import Foundation
 import RealmSwift
 
-class ProductColor: Object {
-    override static func ignoredProperties() -> [String] {
-        return ["directoryPath", "thumbnailImage"]
-    }
-    
-    @objc dynamic var id = UUID().uuidString
-    override class func primaryKey() -> String? { return "id"}
-    
-    //drawable
-    @objc dynamic var name = ""
-    @objc dynamic var code = ""
-    @objc dynamic var orderIndex = 0
-    @objc dynamic var thumbnailPath:String = ""
-    @objc dynamic var jsonString:String = ""
+class ProductColor: CBDataObject {
     
     let parents = LinkingObjects(fromType: Product.self, property: "colors")
     let variations = List<ProductVariation>()
+    
+    private static var _shared = Product()
+    static var shared:CBDataObject {
+        get {
+            return _shared
+        }
+    }
+    
+    func needsUpdate() -> Bool {
+        return false
+    }
+    
+    func getDataUrl() -> URL? {
+        return nil
+    }
+    
+    func parseObjects(data: Dictionary<String, AnyObject>) {
+        
+    }
 }

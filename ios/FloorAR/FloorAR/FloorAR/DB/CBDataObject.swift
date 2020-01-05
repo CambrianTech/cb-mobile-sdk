@@ -14,13 +14,27 @@ protocol CBDataObjectProtocol {
     static var shared:CBDataObject {get}
     
     func needsUpdate() -> Bool
-    func getDataUrl() -> URL
+    func getDataUrl() -> URL?
     func parseObjects(data:Dictionary<String, AnyObject>)
 }
 
 typealias CBDataObject = _CBDataObject & CBDataObjectProtocol
 
 class _CBDataObject: Object {
+    
+    @objc dynamic var id = UUID().uuidString
+    override class func primaryKey() -> String? { return "id"}
+    
+    override static func ignoredProperties() -> [String] {
+        return ["directoryPath", "thumbnailImage"]
+    }
+    
+    @objc dynamic var name = ""
+    @objc dynamic var code = ""
+    @objc dynamic var updated = Date()
+    @objc dynamic var orderIndex = 0
+    @objc dynamic var thumbnailPath:String = ""
+    @objc dynamic var jsonString:String = ""
     
     //public func objects<Element>(_ type: Element.Type) -> RealmSwift.Results<Element> where Element : RealmSwift.Object
     private static var this:CBDataObject.Type {
@@ -44,8 +58,7 @@ class _CBDataObject: Object {
             if let completion = completion {
                 completion()
             }
-        } else {
-            let url = ele.getDataUrl()
+        } else if let url = ele.getDataUrl() {
             DispatchQueue.global(qos: .background).async {
                 AF.request(url).responseJSON { response in
                     if let json = response.value as? Dictionary<String, AnyObject> {
