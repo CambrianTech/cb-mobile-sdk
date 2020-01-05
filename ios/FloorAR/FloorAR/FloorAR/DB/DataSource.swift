@@ -123,4 +123,52 @@ class DataSource {
         }
         return 20
     }
+    
+    func getLocalImagePath(_ remotePath:URL) -> String? {
+        let key = SDWebImageManager.shared.cacheKey(for: remotePath)
+        let path = SDImageCache.shared.cachePath(forKey: key)
+        return path
+    }
+    
+    func getCachedImages(remotePaths:[URL], progress: @escaping (Int, Int) -> Void, completion: @escaping (Bool) -> Void) {
+        
+        var toLoad = 0
+        var totalBytes: [Int] = []
+        var receivedBytes: [Int] = []
+        
+        for remotePath in remotePaths {
+            
+            if let localPath = getLocalImagePath(remotePath) {
+                if !FileManager.default.fileExists(atPath: localPath) {
+                    toLoad += 1
+                    let index = receivedBytes.count
+                    totalBytes.append(0)
+                    receivedBytes.append(0)
+                    SDWebImageManager.shared.loadImage(with: remotePath, options: [],
+                                                         progress: { (receivedSize, expectedSize, targetURL) in
+                                                            if (expectedSize > 0) {
+                                                                totalBytes[index] = max(expectedSize, receivedSize)
+                                                                receivedBytes[index] = receivedSize
+                                                                let totalBytesReceived = receivedBytes.reduce(0, +)
+                                                                let totalBytesAvailable = totalBytes.reduce(0, +)
+                                                                progress(totalBytesReceived, totalBytesAvailable)
+                                                            }
+                    },
+                                                         completed: { (image, data, error, cacheType, completed, url) in
+                                                            toLoad -= 1
+                                                            if error != nil || !completed {
+                                                                completion(false)
+                                                            }
+                                                            else if (toLoad == 0) {
+                                                                completion(true)
+                                                            }
+                    })
+                }
+            }
+        }
+        
+        if (toLoad == 0) {
+            completion(true)
+        }
+    }
 }

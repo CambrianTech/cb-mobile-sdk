@@ -10,7 +10,6 @@
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
-		E7291DC723A2C63500F492C2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DC623A2C63500F492C2 /* DataController.swift */; };
 		E7A7AD8B23B6B1900096DCA6 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7AD8A23B6B1900096DCA6 /* ProductDetailsViewController.swift */; };
 		E7A7AD9923BA6B980096DCA6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7AD9823BA6B980096DCA6 /* Networking.swift */; };
 		E7A7AD9B23BA722F0096DCA6 /* product-details.js in Resources */ = {isa = PBXBuildFile; fileRef = E7A7AD9A23BA722F0096DCA6 /* product-details.js */; };
@@ -97,7 +96,6 @@
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
-		E7291DC623A2C63500F492C2 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E7A7AD8A23B6B1900096DCA6 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		E7A7AD9823BA6B980096DCA6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E7A7AD9A23BA722F0096DCA6 /* product-details.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "product-details.js"; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				E7D255ED23A83A7D00C2737D /* ppi-data.json */,
 				E7291DC123A29E6A00F492C2 /* datasource.json */,
 				E7CD9F6F23A2CEF50074F27C /* bundle */,
-				E7291DC623A2C63500F492C2 /* DataController.swift */,
 				E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */,
 				E7C497F020B3D07300E7567D /* ProductCategory.swift */,
 				E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */,
@@ -386,7 +383,6 @@
 				E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */,
 				E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */,
 				E7E4C90320AB924D00E842E4 /* AppDelegate.swift in Sources */,
-				E7291DC723A2C63500F492C2 /* DataController.swift in Sources */,
 				E7BADBD3239DE38F00C1337A /* ProductSelectionView.swift in Sources */,
 				E7A7ADB623C0F8810096DCA6 /* CBDataObject.swift in Sources */,
 				E7C497F320B3D18000E7567D /* InstallationMethod.swift in Sources */,
