@@ -198,7 +198,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.topLevelCategories = DataSource.current.topLevelCategories
+        self.topLevelCategories = ProductCategory.all()
         self.historyCollection.contentInsetAdjustmentBehavior = .never
         self.swatchScroller.contentInsetAdjustmentBehavior = .never
         self.historyHeight = self.historyCollectionHeight?.constant ?? 0
@@ -255,9 +255,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
                 return
             }
             _selectedCategory = newValue
-            if let category = newValue {
-                self.delegate?.categoryChanged(category: category)
-            }
+            self.delegate?.categoryChanged(category: newValue)
         }
     }
     
@@ -313,17 +311,17 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func swatchView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let parent = self.selectedProduct {
-            print("Listing product \(parent.name) colors")
+            //print("Listing product \(parent.name) colors")
             return shouldShowColors ? parent.colors.count : 0
         } else if let parent = self.selectedCategory {
-            print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
+            //print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
             if (parent.products.count > 0) {
                 return shouldShowProducts ? parent.products.count : 0
             } else {
                 return parent.categories.count
             }
         } else if let categories = self.topLevelCategories {
-            print("Listing top level categories")
+            //print("Listing top level categories")
             return categories.count
         }
         return 0
@@ -358,7 +356,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
                 let label = UILabel()
                 label.text = self.history[indexPath.row].name
                 label.sizeToFit()
-                return CGSize(width: min(label.frame.size.width + 10, self.view.frame.size.width / CGFloat(history.count)), height: height)
+                return CGSize(width: max(min(label.frame.size.width + 10, self.view.frame.size.width / CGFloat(history.count)), 50), height: height)
             }
             return CGSize(width: height, height: height)
         }
@@ -389,6 +387,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     func reloadSwatches() {
         self.swatchScroller.contentOffset = CGPoint.zero
         self.swatchScroller.reloadData()
+        self.swatchScroller.invalidateIntrinsicContentSize()
     }
     
     func reloadHistory() {
@@ -397,6 +396,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.historyCollection.contentOffset = CGPoint.zero
         self.historyCollection.reloadData()
+        self.historyCollection.invalidateIntrinsicContentSize()
         //historyCollectionHeight?.constant = self.history.count > 0 ? historyHeight : 0
     }
 
@@ -410,13 +410,13 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func historyView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
-        
-        self.selectedCategory = self.history.last?.category
-        self.selectedProduct = self.history.last?.product
+        let item = self.history[indexPath.row]
+        self.selectedCategory = item.category
+        self.selectedProduct = item.product
         self.selectedCell = nil
         
-        reloadSwatches()
         reloadHistory()
+        reloadSwatches()
     }
     
     func swatchView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

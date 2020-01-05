@@ -1,0 +1,11 @@
+living-room/living-3.psd filter=lfs diff=lfs merge=lfs -text
+bathroom/bathroom-1.psd filter=lfs diff=lfs merge=lfs -text
+bedroom/bedroom-3.psd filter=lfs diff=lfs merge=lfs -text
+kitchen/kitchen-1.psd filter=lfs diff=lfs merge=lfs -text
+kitchen/kitchen-2.psd filter=lfs diff=lfs merge=lfs -text
+living-room/living-1.psd filter=lfs diff=lfs merge=lfs -text
+bathroom/bathroom-2.psd filter=lfs diff=lfs merge=lfs -text
+bedroom/bedroom-1.psd filter=lfs diff=lfs merge=lfs -text
+bedroom/bedroom-2.psd filter=lfs diff=lfs merge=lfs -text
+kitchen/kitchen-3.psd filter=lfs diff=lfs merge=lfs -text
+living-room/living-2.psd filter=lfs diff=lfs merge=lfs -text

@@ -10,7 +10,7 @@ import { SiteContext } from '../data/SiteContext';
 import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
 import {VisualizerTools} from "../components/VisualizerTools";
 import {dispatchImageProperties, selectScene} from "../utilities/Methods";
-import {DEFAULT_MATERIAL, DEFAULT_SCENE} from "../utilities/Constants";
+import {DEFAULT_MATERIAL, DEFAULT_SCENE, GRID_MATERIAL} from "../utilities/Constants";
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
@@ -37,9 +37,10 @@ export default function Visualizer(props: any) {
     }, []);
 
     const initialize = useCallback(() => {
-        selectScene(DEFAULT_SCENE, dispatch)
-        //Window.prototype.selectMaterial = test
-    }, [dispatch])
+        if (!state.sceneData) {
+            selectScene(DEFAULT_SCENE, dispatch)
+        }
+    }, [dispatch, state.sceneData])
 
     const initializeRef = useRef(initialize);
     useEffect(() => { initializeRef.current = initialize; }, [initialize]);
@@ -62,18 +63,16 @@ export default function Visualizer(props: any) {
         <div className={"visualizer"}>
             <CBVisualizer
                 material={state.materialProperties}
-                defaultMaterial={DEFAULT_MATERIAL}
+                defaultMaterial={state.showControls ? GRID_MATERIAL : DEFAULT_MATERIAL}
+                showControls={state.showControls}
                 scene={state.sceneData}
                 fov={fov}
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
                 floorRotation={rotation[1]}
             />
-            <VisualizerTools onChangeImage={onChangeImage} />
+            {!state.showControls && <VisualizerTools onChangeImage={onChangeImage} />}
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
-    ), [
-        fov, position, rotation, state.materialProperties, state.sceneData,
-        onImageChosen, onChangeImage
-    ])
+    ), [state.materialProperties, state.showControls, state.sceneData, fov, position, rotation, onChangeImage, onImageChosen])
 }

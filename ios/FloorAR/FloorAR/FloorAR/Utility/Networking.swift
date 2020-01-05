@@ -9,6 +9,13 @@
 import Foundation
 import Alamofire
 
+#if DEBUG
+    let flushCache = true
+#else
+    let flushCache = false
+#endif
+
+
 public struct Networking {
     static var isInternetAvailable:Bool
     {

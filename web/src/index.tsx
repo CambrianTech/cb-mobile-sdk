@@ -16,6 +16,8 @@ import '@material/react-button/dist/button.css';
 import '@material/react-fab/dist/fab.css';
 import {ProductDetails} from "./pages/ProductDetails";
 import {BrandInfo} from "./pages/BrandInfo";
+import * as qs from "querystring";
+import {objectToLowerCase, selectScene} from "./utilities/Methods";
 
 const objectFitImages = require('object-fit-images')
 
@@ -32,6 +34,7 @@ if (process.env.REACT_APP_CB_GET_UPLOAD_URLS_URL && process.env.REACT_APP_CB_UPL
 function App() {
     const initialSiteState = createEmptyState()
     const [siteState, dispatchSiteState] = useReducer(siteStateReducer, initialSiteState)
+    const [firstRender, setFirstRender] = useState(true)
     const [browserProperties, setBrowserProperties] = useState<BrowserProperties>({})
     // Url load states
 
@@ -76,10 +79,84 @@ function App() {
         setCssVars()
     }, [browserProperties, setCssVars])
 
+    function updateFromLocation(location: any) {
+
+        // Parse URL search string without the first character (typically question mark).
+        // Also turn the keys into lowercase so their case doesn't matter.
+        const searchObject = objectToLowerCase(qs.parse(location.search.substr(1)))
+
+        const searchFov = searchObject.f as string
+        if (searchFov) {
+            const fov = parseFloat(searchFov)
+            if (!siteState.fov || (fov - siteState.fov) > 0.0001) {
+                dispatchSiteState({
+                    type: "setFov",
+                    fov: fov
+                })
+            }
+        }
+
+        const searchPosX = searchObject.px as string
+        const searchPosY = searchObject.py as string
+        const searchPosZ = searchObject.pz as string
+        if (searchPosX && searchPosY && searchPosZ) {
+            const px = parseFloat(searchPosX)
+            const py = parseFloat(searchPosY)
+            const pz = parseFloat(searchPosZ)
+
+            if (!siteState.position || siteState.position[0] - px > 0.0001 || siteState.position[1] - py > 0.0001 || siteState.position[2] - pz > 0.0001) {
+                dispatchSiteState({
+                    type: "setPosition",
+                    position: [px, py, pz]
+                })
+            }
+        }
+
+        const searchRotX = searchObject.rx as string
+        const searchRotY = searchObject.ry as string
+        const searchRotZ = searchObject.rz as string
+        if (searchRotX && searchRotY && searchRotZ) {
+            const rx = parseFloat(searchRotX)
+            const ry = parseFloat(searchRotY)
+            const rz = parseFloat(searchRotZ)
+
+            if (!siteState.rotation || siteState.rotation[0] - rx > 0.0001 || siteState.rotation[1] - ry > 0.0001 || siteState.rotation[2] - rz > 0.0001) {
+                dispatchSiteState({
+                    type: "setRotation",
+                    rotation: [rx, ry, rz]
+                })
+            }
+        }
+
+        const floorRotationOffset = searchObject.fro as string
+        if (floorRotationOffset) {
+            dispatchSiteState({
+                type: "setFloorRotationOffset",
+                floorRotationOffset: parseFloat(floorRotationOffset)
+            })
+        }
+
+        const scene = searchObject.scene as string
+        if (scene) {
+            selectScene(scene, dispatchSiteState)
+        }
+
+        if (searchObject.controls) {
+            dispatchSiteState({
+                type: "setShowControls",
+                showControls: searchObject.controls
+            })
+        }
+    }
+
     return (
         <Router>
             <Route
                 render={({ location }) => {
+                    if (firstRender) {
+                        setFirstRender(false)
+                        updateFromLocation(location)
+                    }
 
                     return (
                         <SiteContext.Provider value={{ state: siteState, dispatch: dispatchSiteState }}>

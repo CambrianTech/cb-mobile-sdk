@@ -1,0 +1,93 @@
+{
+    "version":"1.0",
+    "scenes":[
+        {
+            "name":"kitchen-1",
+            "displayName":"Basic Kitchen",
+            "path":"kitchen/kitchen-1",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"kitchen-2",
+            "displayName":"Kitchen",
+            "path":"kitchen/kitchen-2",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"kitchen-3",
+            "displayName":"Basic Kitchen",
+            "path":"kitchen/kitchen-3",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"bedroom-1",
+            "displayName":"Basic bedroom",
+            "path":"bedroom/bedroom-1",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"bedroom-2",
+            "displayName":"Bedroom",
+            "path":"bedroom/bedroom-2",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"bedroom-3",
+            "displayName":"Basic Bedroom",
+            "path":"bedroom/bedroom-3",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"bathroom-1",
+            "displayName":"Basic Bathroom",
+            "path":"bathroom/bathroom-1",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"bathroom-2",
+            "displayName":"Nice Bathroom",
+            "path":"bathroom/bathroom-2",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"living-1",
+            "displayName":"Basic living",
+            "path":"living-room/living-1",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"living-2",
+            "displayName":"living",
+            "path":"living-room/living-2",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        },
+        {
+            "name":"living-3",
+            "displayName":"Basic living",
+            "path":"living-room/living-3",
+            "data":"data.json",
+            "thumbnail":"thumbnail.jpg",
+            "preview":"preview.jpg"
+        }
+    ]
+}

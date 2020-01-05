@@ -85,8 +85,23 @@ export function dispatchImageProperties(imageProperties: ImageProperties, dispat
 
 
 export function selectScene(path: string, dispatch: Dispatch<SiteAction>) {
-    fetch(MediaPaths.Scenes + path + "/data.json").then(res => res.json())
+    const jsonPath = MediaPaths.Scenes + "/" + path + "/data.json"
+    fetch(jsonPath).then(res => res.json())
         .then(data => {
-            dispatchDataProperties(MediaPaths.Scenes + path, data, dispatch)
+            dispatchDataProperties(MediaPaths.Scenes + "/" + path, data, dispatch)
         })
+}
+
+export function objectToLowerCase(object: any) {
+    const newObject: any = {}
+
+    for (const key of Object.keys(object)) {
+        newObject[key.toLocaleLowerCase()] = object[key]
+    }
+
+    return newObject
+}
+
+export function cleanInput(input: string) {
+    return input.replace(/\W/g, '')
 }

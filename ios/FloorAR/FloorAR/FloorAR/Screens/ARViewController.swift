@@ -44,7 +44,7 @@ class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelec
             self.vrView.scene.appendAsset(CBRemodelingFloor());
         }
         
-        if let prod = Product.random() {
+        if let prod = Product.random() as? Product {
             self.productColorChanged(product: prod, color: prod.colors.first!);
         }
     }

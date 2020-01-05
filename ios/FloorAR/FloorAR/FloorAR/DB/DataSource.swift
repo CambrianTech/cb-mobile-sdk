@@ -13,10 +13,18 @@ import SDWebImage
 
 class DataSource {
     
-    let categoryJsonPath = "datasource.json"
-    let ppiJsonPath = "ppi-data.json"
-    let webSource:String
-    let productGroup = "shawfloors"
+    static let webSource = "https://shawfloors.com/api"
+    static let categoryJsonPath = "datasource.json"
+    static let ppiJsonPath = "ppi-data.json"
+    static let productGroup = "shawfloors"
+    
+    static private let cambrianWebURL =  URL(string:"https://mobile.cambrianar.com")!
+    
+    static let brandInfoUrl =  URL(string: "brand-info" , relativeTo: cambrianWebURL)!
+    static let visualizerUrl = cambrianWebURL
+    static let sceneBaseUrl = URL(string: "assets/scenes" , relativeTo: cambrianWebURL)!
+    static let sceneDataUrl = URL(string: "assets/scenes/scenes.json" , relativeTo: cambrianWebURL)!
+    static let productDetailsUrl = URL(string: "product-details" , relativeTo: cambrianWebURL)!
     
     static let baseImagePath = "https://shawfloors.scene7.com/is/image";
     static let imageSize = 320
@@ -24,42 +32,14 @@ class DataSource {
     
     let realm = try! Realm()
     
-    var topLevelCategories: [ProductCategory] = []
-    var jsonCategories: Dictionary<String, Dictionary<String, Any>> = Dictionary<String, Dictionary<String, Any>>()
-    
     var ppiData: Dictionary<String, Int> = Dictionary<String, Int>()
     
     private init() {
-        if let path = Bundle.main.path(forResource: categoryJsonPath, ofType: nil) {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                
-                guard let parsed = jsonResult as? Dictionary<String, AnyObject> else {
-                    fatalError("cannot parse json data")
-                }
-                
-                guard let source = parsed["source"] as? String, let categories = parsed["categories"] as? Array<AnyObject> else {
-                    fatalError("no source attribute in json data")
-                }
-                
-                self.webSource = source
-                for categoryJson in categories {
-                    let category = categoryJson as! Dictionary<String, Any>
-                    jsonCategories[category["name"] as! String] = category
-                }
-                self.topLevelCategories = parseProductCategories(categories)
-                return
-            }
-            catch {
-                fatalError("required datasource caused error")
-            }
-        }
-        fatalError("cannot find required datasource")
+    
     }
     
     private func readPPIJSON() {
-        if let path = Bundle.main.path(forResource: ppiJsonPath, ofType: nil) {
+        if let path = Bundle.main.path(forResource: DataSource.ppiJsonPath, ofType: nil) {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
