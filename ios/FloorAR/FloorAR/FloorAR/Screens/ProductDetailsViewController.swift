@@ -87,8 +87,6 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
             if (error != nil) {
                 print("Command error")
-            } else {
-                print("Command worked!")
             }
         })
     }

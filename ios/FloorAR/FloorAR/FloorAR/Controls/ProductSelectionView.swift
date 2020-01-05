@@ -311,17 +311,17 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func swatchView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let parent = self.selectedProduct {
-            print("Listing product \(parent.name) colors")
+            //print("Listing product \(parent.name) colors")
             return shouldShowColors ? parent.colors.count : 0
         } else if let parent = self.selectedCategory {
-            print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
+            //print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
             if (parent.products.count > 0) {
                 return shouldShowProducts ? parent.products.count : 0
             } else {
                 return parent.categories.count
             }
         } else if let categories = self.topLevelCategories {
-            print("Listing top level categories")
+            //print("Listing top level categories")
             return categories.count
         }
         return 0
