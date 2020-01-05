@@ -33,21 +33,21 @@ extension ProductVariation {
     
     var diffusePath:String? {
         if let path = remoteDiffusePath {
-            return DataController.sharedInstance.getLocalImagePath(path)
+            return DataSource.current.getLocalImagePath(path)
         }
         return nil
     }
 
     var normalsPath:String? {
         if let path = remoteNormalPath {
-            return DataController.sharedInstance.getLocalImagePath(path)
+            return  DataSource.current.getLocalImagePath(path)
         }
         return nil
     }
 
     var roughnessPath:String? {
         if let path = remoteRoughnessPath {
-            return DataController.sharedInstance.getLocalImagePath(path)
+            return  DataSource.current.getLocalImagePath(path)
         }
         return nil
     }
@@ -63,7 +63,7 @@ extension ProductVariation {
         if let url = remoteRoughnessPath {
             paths.append(url)
         }
-        DataController.sharedInstance.getCachedImages(remotePaths: paths,
+        DataSource.current.getCachedImages(remotePaths: paths,
                                                       progress: progress,
                                                       completion: completion)
     }

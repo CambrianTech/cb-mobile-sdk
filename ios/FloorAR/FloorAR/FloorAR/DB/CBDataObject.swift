@@ -80,12 +80,12 @@ class _CBDataObject: Object {
     }
     
     class func first<Element>() -> Element? where Element : RealmSwift.Object {
-        guard let realmResults = DataController.sharedInstance.productContext?.objects(Element.self) else { return nil }
+        let realmResults = DataSource.current.realm.objects(Element.self)
         return realmResults.first
     }
     
     class func random<Element>() -> Element? where Element : RealmSwift.Object {
-        guard let realmResults = DataController.sharedInstance.productContext?.objects(Element.self) else { return nil }
+        let realmResults = DataSource.current.realm.objects(Element.self)
         let index = Int (arc4random_uniform(UInt32(realmResults.count)));
         return realmResults[index];
     }

@@ -103,8 +103,4 @@ class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelec
         }
         
     }
-    
-    func uploadDiagnosticImage(atPath path:String) {
-        //DataController.sharedInstance.uploadDiagnosticImage(path);
-    }
 }
