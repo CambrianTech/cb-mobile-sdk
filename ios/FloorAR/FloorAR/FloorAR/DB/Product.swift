@@ -26,6 +26,9 @@ class Product : CBDataObject {
     }
     
     func needsUpdate() -> Bool {
+        if (Date().seconds(from: self.updated) > 3) {
+            return true
+        }
         return self.colors.count == 0
     }
     
@@ -33,16 +36,16 @@ class Product : CBDataObject {
         return Product.buildProductColorsDataRequest(self.category.jsonString.jsonData, self.styleNumber)
     }
     
-    func parseObjects(data: Dictionary<String, AnyObject>) {
+    func parseObjects(data: Dictionary<String, AnyObject>, realm:Realm) {
         guard let colorsJSON = data["value"] as? Array<Dictionary<String, AnyObject>> else {
             fatalError("no value attribute in json data")
         }
         
+        self.colors.removeAll()
         for colorJson in colorsJSON {
             let color = ProductColor(colorJson)
-            try! DataSource.current.realm.write {
-                self.colors.append(color)
-            }
+            realm.add(color, update: .modified)
+            self.colors.append(color)
         }
     }
     

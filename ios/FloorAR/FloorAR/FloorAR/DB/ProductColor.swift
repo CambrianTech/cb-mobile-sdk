@@ -22,6 +22,9 @@ class ProductColor: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
+        if (Date().days(from: self.updated) > 3) {
+            return true
+        }
         return false
     }
     
@@ -29,7 +32,7 @@ class ProductColor: CBDataObject {
         return nil
     }
     
-    func parseObjects(data: Dictionary<String, AnyObject>) {
+    func parseObjects(data: Dictionary<String, AnyObject>, realm:Realm) {
         
     }
 }

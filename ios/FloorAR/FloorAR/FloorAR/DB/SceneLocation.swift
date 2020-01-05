@@ -15,6 +15,7 @@ class SceneLocation: CBDataObject {
     
     @objc dynamic var basePath = ""
     @objc dynamic var previewPath:String = ""
+    let scenes = List<SceneLocation>()
     
     private static var _shared = SceneLocation()
     static var shared:CBDataObject {
@@ -29,26 +30,24 @@ class SceneLocation: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        let objects = SceneLocation.all()
-        return objects.count == 0
+        return true
     }
     
     func getDataUrl() -> URL? {
         return DataSource.sceneDataUrl
     }
     
-    func parseObjects(data: Dictionary<String, AnyObject>) {
+    func parseObjects(data: Dictionary<String, AnyObject>, realm:Realm) {
         guard let dict = data["scenes"] as? Array<Dictionary<String,AnyObject>> else {
             fatalError("no source attribute in json data")
         }
         
-        var scenes:[CBDataObject] = []
-        try! DataSource.current.realm.write {
-            for sceneData in dict {
-                let scene = SceneLocation(sceneData)
-                DataSource.current.realm.add(scene)
-                scenes.append(scene)
-            }
+        self.scenes.removeAll()
+        for sceneData in dict {
+            let scene = SceneLocation(sceneData)
+            realm.add(scene, update: .modified)
+            self.scenes.append(scene)
         }
+        
     }
 }

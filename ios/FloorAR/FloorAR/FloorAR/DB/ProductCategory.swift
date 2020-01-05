@@ -28,6 +28,10 @@ class ProductCategory: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
+        if (Date().days(from: self.updated) > 3) {
+            return true
+        }
+        
         if (isTopLevel) {
             //top level
             let objects = ProductCategory.all()
@@ -43,37 +47,30 @@ class ProductCategory: CBDataObject {
         return ProductCategory.buildProductDataRequest(self.jsonString.jsonData)
     }
     
-    var isTopLevel:Bool {
-        get {
-            return ProductCategory._shared == self
-        }
-    }
-    
-    func parseObjects(data: Dictionary<String, AnyObject>) {
-        
+    func parseObjects(data: Dictionary<String, AnyObject>, realm:Realm) {
         if (isTopLevel) {
             guard let categoriesJson = data["categories"] as? Array<AnyObject> else {
                 fatalError("no source attribute in json data")
             }
+            
+            self.categories.removeAll()
             for categoryJson in categoriesJson {
                 let dict = categoryJson as! Dictionary<String, AnyObject>
                 let category = ProductCategory(dict)
-                categories.append(category)
-                try! DataSource.current.realm.write {
-                    DataSource.current.realm.add(category)
-                }
+                self.categories.append(category)
+                realm.add(category, update: .modified)
             }
+            
             print("Created \(ProductCategory.all().count) categories")
         } else {
             guard let productsJSON = data["value"] as? Array<Dictionary<String, AnyObject>> else {
                 fatalError("no value attribute in json data")
             }
-            
+            self.products.removeAll()
             for productJson in productsJSON {
                 let product = Product(productJson)
-                try! DataSource.current.realm.write {
-                    self.products.append(product)
-                }
+                realm.add(product, update: .modified)
+                self.products.append(product)
             }
         }
     }
