@@ -387,6 +387,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     func reloadSwatches() {
         self.swatchScroller.contentOffset = CGPoint.zero
         self.swatchScroller.reloadData()
+        self.swatchScroller.invalidateIntrinsicContentSize()
     }
     
     func reloadHistory() {
@@ -395,6 +396,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.historyCollection.contentOffset = CGPoint.zero
         self.historyCollection.reloadData()
+        self.historyCollection.invalidateIntrinsicContentSize()
         //historyCollectionHeight?.constant = self.history.count > 0 ? historyHeight : 0
     }
 
