@@ -11,21 +11,7 @@ import RealmSwift
 
 class ProductCategory: CBDataObject {
     
-    override static func ignoredProperties() -> [String] {
-        return []
-    }
-    
-    @objc dynamic var id = UUID().uuidString
-    override class func primaryKey() -> String? { return "id"}
-    
-    @objc dynamic var name = ""
-    @objc dynamic var code = ""
-    @objc dynamic var orderIndex = 0
-    @objc dynamic var thumbnailPath:String = ""
-    @objc dynamic var jsonString:String = ""
-    
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "categories")
-    
     let categories = List<ProductCategory>()
     let products = List<Product>()
         
@@ -50,7 +36,7 @@ class ProductCategory: CBDataObject {
         return self.products.count == 0
     }
     
-    func getDataUrl() -> URL {
+    func getDataUrl() -> URL? {
         if (isTopLevel) {
             return Bundle.main.url(forResource: DataSource.categoryJsonPath, withExtension: nil)!
         }

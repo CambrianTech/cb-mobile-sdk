@@ -12,17 +12,9 @@ import Foundation
 import RealmSwift
 
 class SceneLocation: CBDataObject {
-
-    @objc dynamic var id = UUID().uuidString
-    override class func primaryKey() -> String? { return "id"}
     
-    @objc dynamic var name = ""
-    @objc dynamic var code = ""
-    @objc dynamic var orderIndex = 0
     @objc dynamic var basePath = ""
-    @objc dynamic var thumbnailPath:String = ""
     @objc dynamic var previewPath:String = ""
-    @objc dynamic var jsonString:String = ""
     
     private static var _shared = SceneLocation()
     static var shared:CBDataObject {
@@ -41,7 +33,7 @@ class SceneLocation: CBDataObject {
         return objects.count == 0
     }
     
-    func getDataUrl() -> URL {
+    func getDataUrl() -> URL? {
         return DataSource.sceneDataUrl
     }
     
