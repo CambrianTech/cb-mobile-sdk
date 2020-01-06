@@ -5,6 +5,8 @@ else {document.addEventListener('load', webviewLoaded, false);}
 function webviewLoaded() {
     window.cb.showHideProgress = showHideProgress;
     window.cb.setProgress = setProgress;
+    
+    webkit.messageHandlers.callbackHandler.postMessage({'command':'loaded'})
 }
 
 function showHideProgress(show) {

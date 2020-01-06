@@ -10,13 +10,14 @@
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
+		E739B15923C389DD00958259 /* CBWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739B15823C389DD00958259 /* CBWebView.swift */; };
+		E739B15B23C38CB400958259 /* CBWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = E739B15A23C38CB400958259 /* CBWebView.js */; };
 		E7A7AD8B23B6B1900096DCA6 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7AD8A23B6B1900096DCA6 /* ProductDetailsViewController.swift */; };
 		E7A7AD9923BA6B980096DCA6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7AD9823BA6B980096DCA6 /* Networking.swift */; };
 		E7A7AD9B23BA722F0096DCA6 /* product-details.js in Resources */ = {isa = PBXBuildFile; fileRef = E7A7AD9A23BA722F0096DCA6 /* product-details.js */; };
 		E7A7ADAB23BD98A90096DCA6 /* SamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7ADAA23BD98A90096DCA6 /* SamplesViewController.swift */; };
 		E7A7ADB123BE6C930096DCA6 /* SceneLocation+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7ADB023BE6C930096DCA6 /* SceneLocation+Extended.swift */; };
 		E7A7ADB623C0F8810096DCA6 /* CBDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */; };
-		E7A7ADC423C2E0350096DCA6 /* visualizer.js in Resources */ = {isa = PBXBuildFile; fileRef = E7A7ADC323C2E0350096DCA6 /* visualizer.js */; };
 		E7B42B1122F4B40900F48597 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = E7B42B1022F4B40900F48597 /* Data */; };
 		E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC1239C512200C1337A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBC4239C51E500C1337A /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC3239C51E500C1337A /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,13 +98,14 @@
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
+		E739B15823C389DD00958259 /* CBWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWebView.swift; sourceTree = "<group>"; };
+		E739B15A23C38CB400958259 /* CBWebView.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CBWebView.js; sourceTree = "<group>"; };
 		E7A7AD8A23B6B1900096DCA6 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		E7A7AD9823BA6B980096DCA6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E7A7AD9A23BA722F0096DCA6 /* product-details.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "product-details.js"; sourceTree = "<group>"; };
 		E7A7ADAA23BD98A90096DCA6 /* SamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesViewController.swift; sourceTree = "<group>"; };
 		E7A7ADB023BE6C930096DCA6 /* SceneLocation+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneLocation+Extended.swift"; sourceTree = "<group>"; };
 		E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDataObject.swift; sourceTree = "<group>"; };
-		E7A7ADC323C2E0350096DCA6 /* visualizer.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = visualizer.js; sourceTree = "<group>"; };
 		E7B42B1022F4B40900F48597 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
 		E7BADBC1239C512200C1337A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = FloorAR/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		E7BADBC3239C51E500C1337A /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = FloorAR/Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
@@ -171,6 +173,8 @@
 				E7C497C020B3160C00E7567D /* HomeButton.swift */,
 				E7C497D720B3B77A00E7567D /* StandardButton.swift */,
 				E7BADBD2239DE38F00C1337A /* ProductSelectionView.swift */,
+				E739B15A23C38CB400958259 /* CBWebView.js */,
+				E739B15823C389DD00958259 /* CBWebView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -205,7 +209,6 @@
 				E7C497DF20B3C0B600E7567D /* ARViewController.swift */,
 				E7BF67FA23ABF409008780C8 /* HomeViewController.swift */,
 				E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */,
-				E7A7ADC323C2E0350096DCA6 /* visualizer.js */,
 				E7C98DC623AC308000D72DAC /* PhotoViewController.swift */,
 				E7A7AD9A23BA722F0096DCA6 /* product-details.js */,
 				E7A7AD8A23B6B1900096DCA6 /* ProductDetailsViewController.swift */,
@@ -355,12 +358,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D255EE23A83A7D00C2737D /* ppi-data.json in Resources */,
-				E7A7ADC423C2E0350096DCA6 /* visualizer.js in Resources */,
 				E7A7AD9B23BA722F0096DCA6 /* product-details.js in Resources */,
 				E7291DC223A29E6B00F492C2 /* datasource.json in Resources */,
 				E7E4C90D20AB925000E842E4 /* LaunchScreen.storyboard in Resources */,
 				E7B42B1122F4B40900F48597 /* Data in Resources */,
 				E7E4C90A20AB925000E842E4 /* Assets.xcassets in Resources */,
+				E739B15B23C38CB400958259 /* CBWebView.js in Resources */,
 				E7CD9F7023A2CEF50074F27C /* bundle in Resources */,
 				E7E4C90820AB924D00E842E4 /* Main.storyboard in Resources */,
 			);
@@ -375,6 +378,7 @@
 			files = (
 				E7BF67FD23ABF424008780C8 /* CatalogViewController.swift in Sources */,
 				E7C98DC723AC308000D72DAC /* PhotoViewController.swift in Sources */,
+				E739B15923C389DD00958259 /* CBWebView.swift in Sources */,
 				E7291DC023A2979400F492C2 /* DataSource.swift in Sources */,
 				E7A7AD9923BA6B980096DCA6 /* Networking.swift in Sources */,
 				E7D255DB23A696D400C2737D /* JsonExtensions.swift in Sources */,

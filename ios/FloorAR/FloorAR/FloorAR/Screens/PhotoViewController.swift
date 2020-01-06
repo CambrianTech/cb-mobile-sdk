@@ -10,18 +10,14 @@ import UIKit
 import WebKit
 import JGProgressHUD
 
-class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
-    @IBOutlet weak var webview: WKWebView!
+class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebViewDelegate {
+    
+    @IBOutlet weak var webview: CBWebView!
     
     var sceneToLoad:SceneLocation?
-    let hud = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let scriptUrl = Bundle.main.url(forResource: "visualizer.js", withExtension: nil)!
-        let script = try! String(contentsOf: scriptUrl, encoding: .utf8)
-        let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
         
         var url = DataSource.visualizerUrl
         if let scene = self.sceneToLoad {
@@ -30,34 +26,42 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
             url = url.appending("wait", value: "1")
         }
 
-        let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
-        webview.uiDelegate = self
-        webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        webview.navigationDelegate = self
-        webview.configuration.preferences.javaScriptEnabled = true
-        webview.configuration.userContentController.addUserScript(userScript)
-        webview.configuration.userContentController.add(self, name: "callbackHandler")
-        webview.load(request)
-        
-        hud.indicatorView = JGProgressHUDRingIndicatorView()
-        hud.textLabel.text = "Contacting Service"
-        hud.show(in: self.view)
+        let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy, timeoutInterval: 1.0)
+        self.webview.delegate = self
+        self.webview.load(request)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        hud.setProgress(0.0, animated: true)
+        webview.hud.setProgress(0.0, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isBeingDismissed {
             let request = URLRequest(url: URL(string: "about:blank")!)
-            webview.load(request)
+            self.webview.load(request)
         }
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.hud.dismiss()
+    func CBWebViewHandleStatusCode(_ status: Int) {
+        
+    }
+    
+    func CBWebViewHandleAlert(message: String, completionHandler: () -> Void) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+        completionHandler()
+    }
+    
+    func CBWebViewHandleScriptMessage(_ message: WKScriptMessage) {
+        
+    }
+    
+    func CBWebViewDidFinishedLoading(_ success: Bool) {
+        if (!success) {
+            return
+        }
         
         if let _ = sceneToLoad { } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -65,13 +69,6 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
                     if (error != nil) {print("Command error: Could not open image dialog")}
                 })
             }
-        }
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
-    {
-        if (keyPath == "estimatedProgress") { // listen to changes and updated view
-            hud.setProgress(Float(webview.estimatedProgress), animated: true)
         }
     }
     
@@ -99,42 +96,6 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
             }
         }
     }
-    
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true)
-        
-        completionHandler()
-    }
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        let body = message.body
-        if let dict = body as? Dictionary<String, AnyObject> {
-            if let command = dict["command"] as? String {
-                if command == "showProgress" {
-                    let show = dict["show"] as! Bool
-                    if (show) {
-                        self.hud.textLabel.text = "Uploading"
-                        self.hud.setProgress(0.1, animated: true)
-                        self.hud.show(in: self.view)
-                    } else {
-                        self.hud.dismiss()
-                    }
-                }
-                else if command == "setProgress" {
-                    let progress = dict["progress"] as! NSNumber
-                    self.hud.textLabel.text = (dict["message"] as! String)
-                    self.hud.setProgress(Float(truncating: progress), animated: true)
-                }
-            }
-        }
-    }
-    
-//    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-//        let documentPicker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeJPEG), String(kUTTypePNG)], in: .import)
-//        super.present(documentPicker, animated: flag, completion: completion)
-//    }
     
     override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
         setUIDocumentMenuViewControllerSoureViewsIfNeeded(viewControllerToPresent)

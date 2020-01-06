@@ -488,7 +488,7 @@
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="TFb-TA-TBg"/>
                                 </connections>
                             </containerView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-uo-fj7">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-uo-fj7" customClass="CBWebView" customModule="Floor_AR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="150" width="414" height="658"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -589,6 +589,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yfz-El-5gV"/>
-        <segue reference="08Q-Hf-vTK"/>
+        <segue reference="TFb-TA-TBg"/>
     </inferredMetricsTieBreakers>
 </document>
