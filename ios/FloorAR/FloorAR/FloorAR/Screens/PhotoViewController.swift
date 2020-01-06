@@ -15,6 +15,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
     @IBOutlet weak var webview: CBWebView!
     
     var sceneToLoad:SceneLocation?
+    var photoToLoad:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()

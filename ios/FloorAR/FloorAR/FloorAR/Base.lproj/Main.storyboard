@@ -66,8 +66,8 @@
                         <viewLayoutGuide key="safeArea" id="zyO-DM-JFH"/>
                     </view>
                     <connections>
-                        <segue destination="foE-jP-XM7" kind="show" identifier="visualize" id="JSM-Ez-zNQ"/>
                         <segue destination="KkI-tU-bXC" kind="show" identifier="samples" id="caO-n2-Ir4"/>
+                        <segue destination="foE-jP-XM7" kind="show" identifier="visualize" id="J4Q-vS-17d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvz-7K-jvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -581,7 +581,7 @@
         <image name="kitchen-bg" width="2258" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JSM-Ez-zNQ"/>
+        <segue reference="J4Q-vS-17d"/>
         <segue reference="aAk-Yy-oIH"/>
     </inferredMetricsTieBreakers>
 </document>
