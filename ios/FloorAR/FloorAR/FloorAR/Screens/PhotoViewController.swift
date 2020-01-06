@@ -47,6 +47,14 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
         hud.setProgress(0.0, animated: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed {
+            let request = URLRequest(url: URL(string: "about:blank")!)
+            webview.load(request)
+        }
+    }
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.hud.dismiss()
         

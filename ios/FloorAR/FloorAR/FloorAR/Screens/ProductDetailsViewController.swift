@@ -56,6 +56,14 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         hud.show(in: self.view)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed {
+            let request = URLRequest(url: URL(string: "about:blank")!)
+            webview.load(request)
+        }
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
     {
         if (keyPath == "estimatedProgress") { // listen to changes and updated view
