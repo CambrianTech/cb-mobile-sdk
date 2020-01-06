@@ -44,7 +44,7 @@ export default function Visualizer(props: any) {
         if (!state.sceneData && !searchObject.scene && !searchObject.wait) {
             selectScene(DEFAULT_SCENE, dispatch)
         }
-    }, [dispatch, searchObject.scene, state.sceneData])
+    }, [dispatch, searchObject.scene, searchObject.wait, state.sceneData])
 
     useEffect(() => {
         setCanLoad(true)

@@ -127,7 +127,7 @@ export function ImageUpload(props: ImageUploadProperties) {
             setProgress(progressPercentage, "Upload failed")
         }
 
-        const elapsed = new Date().getMilliseconds() - startTime.getMilliseconds()
+        const elapsed = new Date().getTime() - startTime.getTime()
         safelyTimeout(() => {
             if (_isMounted.current) {
                 showHideProgress(false)
