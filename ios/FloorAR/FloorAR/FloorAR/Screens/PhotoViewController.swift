@@ -24,9 +24,10 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
         let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
         
         var url = DataSource.visualizerUrl
-        url = url.appending("wait", value: "1")
         if let scene = self.sceneToLoad {
             url = url.appending("scene", value: scene.basePath)
+        } else {
+            url = url.appending("wait", value: "1")
         }
 
         let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
