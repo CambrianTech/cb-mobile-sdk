@@ -10,11 +10,13 @@ import UIKit
 import WebKit
 import JGProgressHUD
 
-protocol CBWebViewDelegate : NSObjectProtocol {
+@objc protocol CBWebViewDelegate: AnyObject {
     func CBWebViewHandleStatusCode(_ status:Int)
     func CBWebViewHandleAlert(message:String, completionHandler: () -> Void)
     func CBWebViewHandleScriptMessage(_ message:WKScriptMessage)
     func CBWebViewDidFinishedLoading(_ success:Bool)
+    @objc optional func CBWebViewShowProgress(show:Bool, isPage:Bool)
+    @objc optional func CBWebViewDisplayProgress(progress:Float, message:String, isPage:Bool)
 }
 
 class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
@@ -51,7 +53,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     
     @discardableResult override open func load(_ request: URLRequest) -> WKNavigation? {
         if (showLoadingIndicator) {
-            hud.show(in: self)
+            displayProgress(show: true, isPage:true)
         }
         return super.load(request)
     }
@@ -66,9 +68,10 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
         if (keyPath == "estimatedProgress") { // listen to changes and updated view
             let progress = Float(self.estimatedProgress)
             
-            hud.setProgress(progress, animated: true)
+            updateProgress(progress: progress, message: "Loading", isPage: true)
+            
             if (progress == 1.0) {
-                self.hud.dismiss()
+                displayProgress(show: false, isPage:true)
                 if let title = self.title, title.count == 0 {
                     self.handleStatusCode(404)
                     self.delegate?.CBWebViewDidFinishedLoading(false)
@@ -78,7 +81,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.hud.dismiss()
+        displayProgress(show: false, isPage:true)
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
@@ -99,12 +102,29 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     }
     
     func handleStatusCode(_ status:Int) {
-        self.hud.dismiss()
+        displayProgress(show: false, isPage:true)
         self.delegate?.CBWebViewHandleStatusCode(status)
     }
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
         self.delegate?.CBWebViewHandleAlert(message: message, completionHandler: completionHandler)
+    }
+    
+    func displayProgress(show:Bool, isPage:Bool) {
+        if let callback = self.delegate?.CBWebViewShowProgress {
+            callback(show, isPage);
+        } else {
+            self.hud.dismiss()
+        }
+    }
+    
+    func updateProgress(progress:Float, message:String, isPage:Bool) {
+        if let callback = self.delegate?.CBWebViewDisplayProgress {
+            callback(progress, message, isPage)
+        } else {
+            self.hud.textLabel.text = message
+            self.hud.progress = progress
+        }
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -116,18 +136,22 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
                 }
                 else if command == "showProgress" {
                     let show = dict["show"] as! Bool
-                    if (show) {
-                        self.hud.textLabel.text = "Uploading"
-                        self.hud.setProgress(0.1, animated: true)
-                        self.hud.show(in: self)
+                    
+                    if let callback = self.delegate?.CBWebViewShowProgress {
+                        callback(show, false)
                     } else {
-                        self.hud.dismiss()
+                        if (show) {
+                            self.hud.textLabel.text = "Uploading"
+                            self.hud.setProgress(0.1, animated: true)
+                        }
+                        
+                        displayProgress(show: show, isPage:false)
                     }
                 }
                 else if command == "setProgress" {
-                    let progress = dict["progress"] as! NSNumber
-                    self.hud.textLabel.text = (dict["message"] as! String)
-                    self.hud.setProgress(Float(truncating: progress), animated: true)
+                    let progress = Float(truncating: dict["progress"] as! NSNumber)
+                    let message = dict["message"] as! String
+                    updateProgress(progress: progress, message: message, isPage: false)
                 }
             }
         }

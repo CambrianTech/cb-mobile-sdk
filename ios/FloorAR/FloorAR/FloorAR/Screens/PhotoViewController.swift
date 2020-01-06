@@ -34,15 +34,6 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
     
     override func viewWillAppear(_ animated: Bool) {
         webview.hud.setProgress(0.0, animated: true)
-        
-        
-//        if let _ = sceneToLoad { } else {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
-//                    if (error != nil) {print("Command error: Could not open image dialog")}
-//                })
-//            }
-//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -67,8 +58,10 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         
     }
     
+    var didUpload = false
     func CBWebViewDidFinishedLoading(_ success: Bool) {
         if (!success) {
+            self.webview.hud.dismiss()
             return
         }
         
@@ -80,17 +73,31 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
             self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
                 if (error != nil) {
                     print("Command error: could not upload photo")
+                    self.webview.hud.dismiss()
+                } else {
+                    self.didUpload = true
                 }
             })
         }
-        
-//        if let _ = sceneToLoad { } else {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
-//                    if (error != nil) {print("Command error: Could not open image dialog")}
-//                })
-//            }
-//        }
+    }
+    
+    func CBWebViewShowProgress(show:Bool, isPage:Bool) {
+        if (show) {
+            self.webview.hud.textLabel.text = "Contacting Server"
+            if (isPage) {
+                self.webview.hud.setProgress(0.1, animated: true)
+            }
+            self.webview.hud.show(in: self.view)
+        } else if (!isPage)  {
+            self.webview.hud.dismiss()
+        }
+    }
+    
+    func CBWebViewDisplayProgress(progress:Float, message:String, isPage:Bool) {
+        if (!isPage) {
+            self.webview.hud.textLabel.text = message
+        }
+        self.webview.hud.progress = isPage ? progress * 0.5 : 0.5 + progress * 0.5
     }
     
     func productColorChanged(product: Product, color: ProductColor) {

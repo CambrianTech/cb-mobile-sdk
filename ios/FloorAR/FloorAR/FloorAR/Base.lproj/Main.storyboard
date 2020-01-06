@@ -29,7 +29,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
                                 <rect key="frame" x="107" y="366.66666666666669" width="200" height="45"/>
-                                <state key="normal" title="Use Room Photo"/>
+                                <state key="normal" title="Choose Photo"/>
                                 <connections>
                                     <action selector="roomPhotoClicked:" destination="OuI-1c-Fff" eventType="touchUpInside" id="0Re-H7-5mP"/>
                                 </connections>
