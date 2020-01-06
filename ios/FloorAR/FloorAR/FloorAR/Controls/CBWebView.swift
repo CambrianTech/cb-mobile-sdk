@@ -56,6 +56,11 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
         return super.load(request)
     }
     
+    func unload() {
+        let request = URLRequest(url: URL(string: "about:blank")!)
+        self.load(request)
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
     {
         if (keyPath == "estimatedProgress") { // listen to changes and updated view

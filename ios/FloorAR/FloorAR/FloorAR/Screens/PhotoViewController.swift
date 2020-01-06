@@ -38,8 +38,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isBeingDismissed {
-            let request = URLRequest(url: URL(string: "about:blank")!)
-            self.webview.load(request)
+            self.webview.unload()
         }
     }
     

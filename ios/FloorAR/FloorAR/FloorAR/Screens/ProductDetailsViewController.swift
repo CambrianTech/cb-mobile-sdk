@@ -47,8 +47,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isBeingDismissed {
-            let request = URLRequest(url: URL(string: "about:blank")!)
-            webview.load(request)
+            webview.unload()
         }
     }
     
