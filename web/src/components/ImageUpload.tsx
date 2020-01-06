@@ -18,6 +18,8 @@ interface ImageUploadProperties {
     ref?: any,
 }
 
+
+
 export function openImageDialog() {
     const inputs = Array.from(document.getElementsByTagName("input"));
     const input = inputs.find(element => element.type === "file") as HTMLInputElement;
@@ -27,14 +29,13 @@ export function openImageDialog() {
     }
 }
 
-(window as any).openImageDialog = openImageDialog;
-
 export function ImageUpload(props: ImageUploadProperties) {
     const siteContext = useContext(SiteContext)!
     const [statusText, setStatusText] = useState("")
     const [progressPercentage, setProgressPercentage] = useState(0)
     const [progressVisible, setProgressVisible] = useState(false)
     const api:any = (window as any).cb
+    api.openImageDialog = openImageDialog
 
     let _isMounted = useRef(false);
 
@@ -52,7 +53,7 @@ export function ImageUpload(props: ImageUploadProperties) {
         } else {
             setProgressVisible(visible)
         }
-    }, [api])
+    }, [])
 
     const setProgress = useCallback((progress:number, message:string) => {
         if (api.setProgress) {
@@ -61,7 +62,33 @@ export function ImageUpload(props: ImageUploadProperties) {
             setProgressPercentage(progress);
             setStatusText(message);
         }
-    }, [api])
+    }, [])
+
+    const dataURItoBlob = function(dataURI: string) {
+        // convert base64/URLEncoded data component to raw binary data held in a string
+        let byteString
+        if (dataURI.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(dataURI.split(',')[1])
+        else
+            byteString = unescape(dataURI.split(',')[1])
+
+        // separate out the mime component
+        const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+        // write the bytes of the string to a typed array
+        const ia = new Uint8Array(byteString.length)
+        for (let i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i)
+        }
+
+        return new Blob([ia], { type: mimeString })
+    }
+    
+    api.uploadPhotoData = function(data:string) {
+        let blob = dataURItoBlob(data)
+        let file = new File([blob], "")
+        upload([file])
+    }
 
     async function upload(acceptedFiles: File[]) {
         const firstFile = acceptedFiles[0];

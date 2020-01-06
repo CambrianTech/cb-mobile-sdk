@@ -74,7 +74,14 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         
         if let photo = self.photoToLoad, let photoData = photo.jpegData(compressionQuality: 90) {
             print("Got photo with \(photoData.count) bytes")
-            
+            let base64 = photoData.base64EncodedString(options: [])
+            let url = "data:application/jpeg;base64," + base64
+            let command = "window.cb.uploadPhotoData('\(url)')"
+            self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
+                if (error != nil) {
+                    print("Command error: could not upload photo")
+                }
+            })
         }
         
 //        if let _ = sceneToLoad { } else {
