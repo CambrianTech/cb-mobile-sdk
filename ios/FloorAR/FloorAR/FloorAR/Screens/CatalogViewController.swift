@@ -103,7 +103,6 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         } else if segue.identifier == "show-details" {
             if let details = segue.destination as? ProductDetailsViewController {
-                details.category = self.selectedCategory
                 details.product = self.selectedProduct
             }
         }
