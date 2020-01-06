@@ -26,13 +26,21 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
             url = url.appending("wait", value: "1")
         }
 
-        let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy, timeoutInterval: 1.0)
+        let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         self.webview.delegate = self
         self.webview.load(request)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         webview.hud.setProgress(0.0, animated: true)
+        
+        if let _ = sceneToLoad { } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
+                    if (error != nil) {print("Command error: Could not open image dialog")}
+                })
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
