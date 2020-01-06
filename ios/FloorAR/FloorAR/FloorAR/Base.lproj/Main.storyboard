@@ -42,7 +42,7 @@
                                 </constraints>
                                 <state key="normal" title="Live Visualizer"/>
                                 <connections>
-                                    <segue destination="br9-Yd-2Kv" kind="show" identifier="show-ar" id="FlA-16-PG2"/>
+                                    <action selector="showLiveVisualizer:" destination="OuI-1c-Fff" eventType="touchUpInside" id="ax3-Sx-Uut"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,6 +68,7 @@
                     <connections>
                         <segue destination="KkI-tU-bXC" kind="show" identifier="samples" id="caO-n2-Ir4"/>
                         <segue destination="foE-jP-XM7" kind="show" identifier="visualize" id="J4Q-vS-17d"/>
+                        <segue destination="br9-Yd-2Kv" kind="show" identifier="live-visualizer" id="Kfk-R8-w5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvz-7K-jvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

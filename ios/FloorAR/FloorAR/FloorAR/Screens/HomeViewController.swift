@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let imagePicker =  UIImagePickerController()
     let alertController = UIAlertController()
     var photoToLoad:UIImage?
+    var hasCameraAccess = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,20 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         SceneLocation.sync()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        checkCameraAccess()
+    }
+    
+    @IBAction func showLiveVisualizer(_ sender: Any) {
+        if (self.hasCameraAccess) {
+            self.performSegue(withIdentifier: "live-visualizer", sender: self)
+        } else {
+            self.presentCameraSettings()
+        }
+    }
+    
     @IBAction func roomPhotoClicked(_ sender: Any) {
-        let optionMenu = UIAlertController(title: nil, message: "Create Scene", preferredStyle: .actionSheet)
+        let optionMenu = UIAlertController(title: nil, message: "What kind of photo do you need?", preferredStyle: .actionSheet)
             
         optionMenu.addAction(UIAlertAction(title: "Take Picture", style: .default, handler:{ (UIAlertAction) in
             self.visualizeImage(true)
@@ -40,7 +54,47 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.present(optionMenu, animated: true, completion: nil)
     }
     
+    func checkCameraAccess() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .denied:
+                print("Denied, request permission from settings")
+                self.presentCameraSettings()
+            case .restricted:
+                print("Restricted, device owner must approve")
+                self.presentCameraSettings()
+            case .authorized:
+                print("Authorized, proceed")
+                self.hasCameraAccess = true
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video) { success in
+                    if success {
+                        print("Permission granted, proceed")
+                        self.hasCameraAccess = true
+                    } else {
+                        print("Permission denied")
+                    }
+                }
+            @unknown default: print("unknown status")
+        }
+    }
+
+    func presentCameraSettings() {
+        let alertController = UIAlertController(title: "Camera is required",
+                                      message: "In order to proceed, you must modify the settings of this app to allow camera access.",
+                                      preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default))
+        alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+        })
+
+        present(alertController, animated: true)
+    }
+    
     func visualizeImage(_ isCamera:Bool) {
+        if (!self.hasCameraAccess) {
+            presentCameraSettings()
+            return
+        }
         imagePicker.delegate = self
         imagePicker.mediaTypes = ["public.image"]
         //imagePicker.allowsEditing = true
