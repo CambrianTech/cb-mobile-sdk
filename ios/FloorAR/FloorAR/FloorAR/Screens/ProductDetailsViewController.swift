@@ -10,10 +10,9 @@ import UIKit
 import WebKit
 import JGProgressHUD
 
-class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
-    @IBOutlet weak var webview: WKWebView!
+class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, CBWebViewDelegate {
+    @IBOutlet weak var webview: CBWebView!
     @IBOutlet weak var productLabel: UILabel?
-    let hud = JGProgressHUD(style: .dark)
     
     @IBAction func closeClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -32,10 +31,6 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         }
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.hud.dismiss()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,16 +39,9 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
 
         let request = URLRequest(url: DataSource.productDetailsUrl)
-        webview.uiDelegate = self
-        webview.navigationDelegate = self
-        webview.configuration.preferences.javaScriptEnabled = true
-        webview.configuration.userContentController.add(self, name: "callbackHandler")
+        webview.delegate = self
         webview.configuration.userContentController.addUserScript(userScript)
         webview.load(request)
-        
-        hud.indicatorView = JGProgressHUDRingIndicatorView()
-        hud.textLabel.text = "Loading Details"
-        hud.show(in: self.view)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,10 +52,21 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         }
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
-    {
-        if (keyPath == "estimatedProgress") { // listen to changes and updated view
-            hud.setProgress(Float(webview.estimatedProgress), animated: true)
+    func CBWebViewHandleStatusCode(_ status: Int) {
+        
+    }
+    
+    func CBWebViewHandleAlert(message: String, completionHandler: () -> Void) {
+        
+    }
+    
+    func CBWebViewHandleScriptMessage(_ message: WKScriptMessage) {
+        
+    }
+    
+    func CBWebViewDidFinishedLoading(_ success: Bool) {
+        if success, let product = self.product, let color = self.color {
+            productColorChanged(product: product, color: color)
         }
     }
     
@@ -77,7 +76,6 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
             selector.reloadSwatches()
         }
         setProductInfo()
-        hud.setProgress(hud.progress + 0.2, animated: true)
     }
     
     func setProductInfo() {
@@ -105,25 +103,6 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
                 print("Command error")
             }
         })
-    }
-    
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true)
-        
-        completionHandler()
-    }
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        let body = message.body
-        if let dict = body as? Dictionary<String, AnyObject> {
-            if let command = dict["command"] as? String {
-                if command == "loaded", let product = self.product, let color = self.color {
-                    productColorChanged(product: product, color: color)
-                }
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

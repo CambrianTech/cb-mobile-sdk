@@ -21,6 +21,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     
     let hud = JGProgressHUD(style: .dark)
     weak open var delegate: CBWebViewDelegate?
+    var showLoadingIndicator = true
     
     func initialize() {
         let scriptUrl = Bundle.main.url(forResource: "CBWebView.js", withExtension: nil)!
@@ -49,7 +50,9 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     }
     
     @discardableResult override open func load(_ request: URLRequest) -> WKNavigation? {
-        hud.show(in: self)
+        if (showLoadingIndicator) {
+            hud.show(in: self)
+        }
         return super.load(request)
     }
     
