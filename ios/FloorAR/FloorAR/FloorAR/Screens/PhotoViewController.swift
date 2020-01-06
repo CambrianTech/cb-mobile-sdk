@@ -35,13 +35,14 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
     override func viewWillAppear(_ animated: Bool) {
         webview.hud.setProgress(0.0, animated: true)
         
-        if let _ = sceneToLoad { } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
-                    if (error != nil) {print("Command error: Could not open image dialog")}
-                })
-            }
-        }
+        
+//        if let _ = sceneToLoad { } else {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
+//                    if (error != nil) {print("Command error: Could not open image dialog")}
+//                })
+//            }
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,13 +72,18 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
             return
         }
         
-        if let _ = sceneToLoad { } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
-                    if (error != nil) {print("Command error: Could not open image dialog")}
-                })
-            }
+        if let photo = self.photoToLoad, let photoData = photo.jpegData(compressionQuality: 90) {
+            print("Got photo with \(photoData.count) bytes")
+            
         }
+        
+//        if let _ = sceneToLoad { } else {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
+//                    if (error != nil) {print("Command error: Could not open image dialog")}
+//                })
+//            }
+//        }
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
