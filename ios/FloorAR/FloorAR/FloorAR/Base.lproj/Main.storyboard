@@ -113,11 +113,11 @@
                                     <size key="itemSize" width="95" height="95"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogCell" id="wC1-3v-hm3" customClass="CatalogCell" customModule="Floor_AR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                        <rect key="frame" x="0.0" y="5" width="95" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jaG-aO-9Mv">
                                             <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
@@ -438,8 +438,8 @@
                                 </connections>
                             </containerView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-dA-A5E">
-                                <rect key="frame" x="0.0" y="145" width="414" height="663"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="150" width="414" height="658"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -449,7 +449,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="CeE-5t-wkH" firstAttribute="leading" secondItem="Fai-P6-1iu" secondAttribute="leading" id="4sC-Fl-rLS"/>
-                            <constraint firstItem="hS1-dA-A5E" firstAttribute="top" secondItem="rFY-H0-HYB" secondAttribute="bottom" id="QEd-Lu-bM7"/>
+                            <constraint firstItem="hS1-dA-A5E" firstAttribute="top" secondItem="rFY-H0-HYB" secondAttribute="bottom" constant="5" id="QEd-Lu-bM7"/>
                             <constraint firstItem="hS1-dA-A5E" firstAttribute="leading" secondItem="CeE-5t-wkH" secondAttribute="leading" id="TdT-M0-LXq"/>
                             <constraint firstItem="rFY-H0-HYB" firstAttribute="top" secondItem="Fai-P6-1iu" secondAttribute="bottom" id="X1Y-Qi-7Wo"/>
                             <constraint firstItem="rFY-H0-HYB" firstAttribute="leading" secondItem="CeE-5t-wkH" secondAttribute="leading" id="Ybi-bC-jPk"/>
@@ -589,6 +589,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yfz-El-5gV"/>
-        <segue reference="Gms-k9-PAB"/>
+        <segue reference="08Q-Hf-vTK"/>
     </inferredMetricsTieBreakers>
 </document>

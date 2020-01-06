@@ -50,22 +50,6 @@
             }
         },
         {
-            "code":"resilient",
-            "displayName":"Vinyl",
-            "thumbnailPath":"bundle/swatches/vinyl.jpg",
-            "source":"odata/Resilient",
-            "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
-            "productsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
-            "colorsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true)",
-            "fields": {
-                 "SellingStyleName":"Style Name",
-                 "SellingStyleNbr":"Style Number",
-                 "SellingColorName":"Color Name",
-                 "SellingColorNbr":"Color Number",
-                 "CollectionDesc":"Collection"
-            }
-        },
-        {
             "code":"tileandstone",
             "displayName":"Tile & Stone",
             "thumbnailPath":"bundle/swatches/tile.jpg",
@@ -79,6 +63,22 @@
                  "SellingColorName":"Color Name",
                  "SellingColorNbr":"Color Number",
                  "CeramicCollection":"Collection"
+            }
+        },
+        {
+            "code":"resilient",
+            "displayName":"Vinyl",
+            "thumbnailPath":"bundle/swatches/vinyl.jpg",
+            "source":"odata/Resilient",
+            "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
+            "productsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
+            "colorsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true)",
+            "fields": {
+                 "SellingStyleName":"Style Name",
+                 "SellingStyleNbr":"Style Number",
+                 "SellingColorName":"Color Name",
+                 "SellingColorNbr":"Color Number",
+                 "CollectionDesc":"Collection"
             }
         }
 	]
