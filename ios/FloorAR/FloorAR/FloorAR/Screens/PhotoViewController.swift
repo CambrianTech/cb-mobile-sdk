@@ -23,8 +23,12 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
         let script = try! String(contentsOf: scriptUrl, encoding: .utf8)
         let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
         
-        let url = self.sceneToLoad == nil ? DataSource.visualizerUrl : DataSource.visualizerUrl.appending("scene", value: self.sceneToLoad!.basePath)
-                
+        var url = DataSource.visualizerUrl
+        url = url.appending("wait", value: "1")
+        if let scene = self.sceneToLoad {
+            url = url.appending("scene", value: scene.basePath)
+        }
+
         let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         webview.uiDelegate = self
         webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
@@ -40,7 +44,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        hud.setProgress(hud.progress + 0.2, animated: true)
+        hud.setProgress(0.0, animated: true)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

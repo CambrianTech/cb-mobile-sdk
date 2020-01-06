@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React, {useCallback, useContext, useEffect, useMemo, useRef} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import 'react-dat-gui/build/react-dat-gui.css'
 import './Visualizer.css'
 
@@ -9,8 +9,9 @@ import {
 import { SiteContext } from '../data/SiteContext';
 import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
 import {VisualizerTools} from "../components/VisualizerTools";
-import {dispatchImageProperties, selectScene} from "../utilities/Methods";
+import {dispatchImageProperties, objectToLowerCase, selectScene} from "../utilities/Methods";
 import {DEFAULT_MATERIAL, DEFAULT_SCENE, GRID_MATERIAL} from "../utilities/Constants";
+import * as qs from "querystring";
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.
@@ -21,6 +22,9 @@ export default function Visualizer(props: any) {
     const siteContext = useContext(SiteContext)!;
     const dispatch = siteContext.dispatch
     const state = siteContext.state;
+
+    const [canLoad, setCanLoad] = useState(false)
+    const searchObject = objectToLowerCase(qs.parse(window.location.search.substr(1)))
 
     const position = state.position || [0, 1, 0];
     const rotation = state.rotation || [0, 0, 0];
@@ -37,10 +41,14 @@ export default function Visualizer(props: any) {
     }, []);
 
     const initialize = useCallback(() => {
-        if (!state.sceneData) {
+        if (!state.sceneData && !searchObject.scene && !searchObject.wait) {
             selectScene(DEFAULT_SCENE, dispatch)
         }
-    }, [dispatch, state.sceneData])
+    }, [dispatch, searchObject.scene, state.sceneData])
+
+    useEffect(() => {
+        setCanLoad(true)
+    }, [state.sceneData]);
 
     const initializeRef = useRef(initialize);
     useEffect(() => { initializeRef.current = initialize; }, [initialize]);
@@ -57,6 +65,7 @@ export default function Visualizer(props: any) {
 
     const onImageChosen = useCallback((imageProperties: ImageProperties) => {
         dispatchImageProperties(imageProperties, dispatch)
+        setCanLoad(true)
     }, [dispatch])
 
     return useMemo(() => (
@@ -70,9 +79,10 @@ export default function Visualizer(props: any) {
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
                 floorRotation={rotation[1]}
+                canLoad={canLoad}
             />
             {!state.showControls && <VisualizerTools onChangeImage={onChangeImage} />}
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
-    ), [state.materialProperties, state.showControls, state.sceneData, fov, position, rotation, onChangeImage, onImageChosen])
+    ), [state.materialProperties, state.showControls, state.sceneData, fov, position, rotation, canLoad, onChangeImage, onImageChosen])
 }
