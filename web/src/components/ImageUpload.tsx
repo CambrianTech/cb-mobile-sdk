@@ -1,4 +1,4 @@
-import React, {ReactNode, useState, useRef, useEffect, useContext} from "react"
+import React, {ReactNode, useState, useRef, useEffect, useContext, useCallback} from "react"
 import { useDropzone } from "react-dropzone"
 import {CBSceneParams, getRotatedFile, CBContentManager} from "react-home-harmony";
 import {SiteContext} from "../data/SiteContext";
@@ -45,10 +45,16 @@ export function ImageUpload(props: ImageUploadProperties) {
         }
     }, []);
 
-    async function upload(acceptedFiles: File[]) {
-        setProgressPercentage(0);
-        setStatusText("Your photo is being uploaded");
+    const showHideProgress = (window as any).cb.showHideProgress = useCallback((visible:boolean) => {
+        setProgressVisible(visible);
+    }, [])
 
+    const setProgress = (window as any).cb.setProgress = useCallback((progress:number, message:string) => {
+        setProgressPercentage(progress);
+        setStatusText(message);
+    }, [])
+
+    async function upload(acceptedFiles: File[]) {
         const firstFile = acceptedFiles[0];
 
         if (!firstFile)
@@ -56,7 +62,8 @@ export function ImageUpload(props: ImageUploadProperties) {
 
         const messageMinDurationMS = 4000
         const startTime = new Date();
-        setProgressVisible(true);
+        setProgress(0, "Your photo is being uploaded")
+        showHideProgress(true)
 
         const uploadFile = await getRotatedFile(firstFile, MAX_IMAGE_SIZE);
 
@@ -65,15 +72,13 @@ export function ImageUpload(props: ImageUploadProperties) {
         CBContentManager.default.resetScene()
 
         const results = await CBContentManager.default.uploadRoom(uploadFile, ((progress, status) => {
-            setProgressPercentage(progress);
-            setStatusText(status);
+            setProgress(progress, status)
         })).catch((error)=>handleError(error));
 
         const roomId = CBContentManager.default.roomId
 
         if (results && roomId) {
-            setStatusText("Ready");
-            setProgressPercentage(1);
+            setProgress(1, "Ready")
 
             const imageProps = {
                 backgroundUrl: firstFilePreviewPath,
@@ -110,13 +115,13 @@ export function ImageUpload(props: ImageUploadProperties) {
 
             }
         } else {
-            setStatusText("Upload failed")
+            setProgress(progressPercentage, "Upload failed")
         }
 
         const elapsed = new Date().getMilliseconds() - startTime.getMilliseconds()
         safelyTimeout(() => {
             if (_isMounted.current) {
-                setProgressVisible(false)
+                showHideProgress(false)
             }
         }, Math.max(messageMinDurationMS - elapsed, 100))
     }
@@ -124,7 +129,9 @@ export function ImageUpload(props: ImageUploadProperties) {
     function handleError(e: any) {
 
         safelyTimeout(() => {
-            setProgressVisible(false)
+
+            showHideProgress(false)
+
             switch (e.constructor) {
                 case Promise: {
                     const promise = e as Promise<any>;
