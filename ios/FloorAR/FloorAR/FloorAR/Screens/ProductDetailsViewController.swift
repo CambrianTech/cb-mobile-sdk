@@ -39,26 +39,21 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //reading
-        if let scriptUrl = Bundle.main.url(forResource: "product-details.js", withExtension: nil) {
-            do {
-                let script = try String(contentsOf: scriptUrl, encoding: .utf8)
-                let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        let scriptUrl = Bundle.main.url(forResource: "product-details.js", withExtension: nil)!
+        let script = try! String(contentsOf: scriptUrl, encoding: .utf8)
+        let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
 
-                let request = URLRequest(url: DataSource.productDetailsUrl)
-                webview.uiDelegate = self
-                webview.navigationDelegate = self
-                webview.configuration.preferences.javaScriptEnabled = true
-                webview.configuration.userContentController.add(self, name: "callbackHandler")
-                webview.configuration.userContentController.addUserScript(userScript)
-                webview.load(request)
-                
-                hud.indicatorView = JGProgressHUDRingIndicatorView()
-                hud.textLabel.text = "Loading Details"
-                hud.show(in: self.view)
-            }
-            catch {}
-        }
+        let request = URLRequest(url: DataSource.productDetailsUrl)
+        webview.uiDelegate = self
+        webview.navigationDelegate = self
+        webview.configuration.preferences.javaScriptEnabled = true
+        webview.configuration.userContentController.add(self, name: "callbackHandler")
+        webview.configuration.userContentController.addUserScript(userScript)
+        webview.load(request)
+        
+        hud.indicatorView = JGProgressHUDRingIndicatorView()
+        hud.textLabel.text = "Loading Details"
+        hud.show(in: self.view)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)

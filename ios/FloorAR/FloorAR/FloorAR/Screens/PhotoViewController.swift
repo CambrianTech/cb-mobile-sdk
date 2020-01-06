@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import JGProgressHUD
 
-class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
+class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     @IBOutlet weak var webview: WKWebView!
     
     var sceneToLoad:SceneLocation?
@@ -19,13 +19,19 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let scriptUrl = Bundle.main.url(forResource: "visualizer.js", withExtension: nil)!
+        let script = try! String(contentsOf: scriptUrl, encoding: .utf8)
+        let userScript = WKUserScript(source: script, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        
         let url = self.sceneToLoad == nil ? DataSource.visualizerUrl : DataSource.visualizerUrl.appending("scene", value: self.sceneToLoad!.basePath)
                 
         let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
         webview.uiDelegate = self
+        webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         webview.navigationDelegate = self
         webview.configuration.preferences.javaScriptEnabled = true
-        webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        webview.configuration.userContentController.addUserScript(userScript)
+        webview.configuration.userContentController.add(self, name: "callbackHandler")
         webview.load(request)
         
         hud.indicatorView = JGProgressHUDRingIndicatorView()
@@ -87,6 +93,29 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
         self.present(alert, animated: true)
         
         completionHandler()
+    }
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        let body = message.body
+        if let dict = body as? Dictionary<String, AnyObject> {
+            if let command = dict["command"] as? String {
+                if command == "showProgress" {
+                    let show = dict["show"] as! Bool
+                    if (show) {
+                        self.hud.textLabel.text = "Uploading"
+                        self.hud.setProgress(0.1, animated: true)
+                        self.hud.show(in: self.view)
+                    } else {
+                        self.hud.dismiss()
+                    }
+                }
+                else if command == "setProgress" {
+                    let progress = dict["progress"] as! NSNumber
+                    self.hud.textLabel.text = (dict["message"] as! String)
+                    self.hud.setProgress(Float(truncating: progress), animated: true)
+                }
+            }
+        }
     }
     
 //    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {

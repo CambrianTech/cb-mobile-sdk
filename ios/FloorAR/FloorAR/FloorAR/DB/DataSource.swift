@@ -18,7 +18,7 @@ class DataSource {
     static let ppiJsonPath = "ppi-data.json"
     static let productGroup = "shawfloors"
     
-    static let cambrianWebURL =  "https://mobile.cambrianar.com"
+    //static let cambrianWebURL =  "https://mobile.cambrianar.com"
     static let cambrianWebURL =  "http://10.0.1.61:3000"
     
     static let brandInfoUrl =  URL(string: "\(cambrianWebURL)/brand-info")!

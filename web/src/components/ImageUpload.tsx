@@ -34,6 +34,7 @@ export function ImageUpload(props: ImageUploadProperties) {
     const [statusText, setStatusText] = useState("")
     const [progressPercentage, setProgressPercentage] = useState(0)
     const [progressVisible, setProgressVisible] = useState(false)
+    const api:any = (window as any).cb
 
     let _isMounted = useRef(false);
 
@@ -45,14 +46,22 @@ export function ImageUpload(props: ImageUploadProperties) {
         }
     }, []);
 
-    const showHideProgress = (window as any).cb.showHideProgress = useCallback((visible:boolean) => {
-        setProgressVisible(visible);
-    }, [])
+    const showHideProgress = useCallback((visible:boolean) => {
+        if (api.showHideProgress) {
+            api.showHideProgress(visible)
+        } else {
+            setProgressVisible(visible)
+        }
+    }, [api])
 
-    const setProgress = (window as any).cb.setProgress = useCallback((progress:number, message:string) => {
-        setProgressPercentage(progress);
-        setStatusText(message);
-    }, [])
+    const setProgress = useCallback((progress:number, message:string) => {
+        if (api.setProgress) {
+            api.setProgress(progress, message)
+        } else {
+            setProgressPercentage(progress);
+            setStatusText(message);
+        }
+    }, [api])
 
     async function upload(acceptedFiles: File[]) {
         const firstFile = acceptedFiles[0];
