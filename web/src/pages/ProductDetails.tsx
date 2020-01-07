@@ -80,11 +80,7 @@ const ProductInfo = React.memo<DetailsProps>(
     }
 );
 
-type ProductDetailsProperties = {
-
-}
-
-export function ProductDetails(props: ProductDetailsProperties) {
+export default function ProductDetails(props: any) {
 
     const siteContext = useContext(SiteContext)!;
     const state = siteContext.state;
