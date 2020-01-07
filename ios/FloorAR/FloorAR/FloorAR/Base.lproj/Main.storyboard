@@ -92,6 +92,13 @@
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="Gms-k9-PAB"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atj-4h-1Aq">
+                                <rect key="frame" x="365" y="5" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="gPx-Ju-ERS" eventType="touchUpInside" id="TOL-qw-JQ4"/>
+                                </connections>
+                            </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-YI-ExX">
                                 <rect key="frame" x="0.0" y="150" width="414" height="658"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,7 +172,10 @@
                         <constraints>
                             <constraint firstItem="8Yh-bM-Nu6" firstAttribute="trailing" secondItem="Z1p-eb-fxz" secondAttribute="trailing" id="7hj-a8-gHY"/>
                             <constraint firstItem="RnX-YI-ExX" firstAttribute="leading" secondItem="8Yh-bM-Nu6" secondAttribute="leading" id="8sp-Oy-N5B"/>
+                            <constraint firstItem="8Yh-bM-Nu6" firstAttribute="trailing" secondItem="atj-4h-1Aq" secondAttribute="trailing" constant="10" id="OFy-gA-GL4"/>
+                            <constraint firstItem="atj-4h-1Aq" firstAttribute="top" secondItem="8Yh-bM-Nu6" secondAttribute="top" constant="5" id="TFc-LE-AcK"/>
                             <constraint firstItem="Z1p-eb-fxz" firstAttribute="leading" secondItem="8Yh-bM-Nu6" secondAttribute="leading" id="UIR-xd-qfh"/>
+                            <constraint firstItem="atj-4h-1Aq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Yh-bM-Nu6" secondAttribute="leading" priority="500" constant="100" id="Web-Uo-oHu"/>
                             <constraint firstItem="8Yh-bM-Nu6" firstAttribute="trailing" secondItem="dFU-6i-L6K" secondAttribute="trailing" id="YGT-Qo-Uea"/>
                             <constraint firstItem="8Yh-bM-Nu6" firstAttribute="trailing" secondItem="RnX-YI-ExX" secondAttribute="trailing" id="rMZ-4R-ZnZ"/>
                             <constraint firstItem="8Yh-bM-Nu6" firstAttribute="bottom" secondItem="dFU-6i-L6K" secondAttribute="bottom" id="txL-aW-VbL"/>
@@ -198,29 +208,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-Yh-Dmw" userLabel="AR View" customClass="CBRemodelingView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-qm-wvf">
-                                <rect key="frame" x="0.0" y="648" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="DPy-2Y-FUu"/>
+                                    <constraint firstAttribute="height" constant="160" id="Sgh-Ff-O5F"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="aAk-Yy-oIH"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rz6-ww-Dug">
+                                <rect key="frame" x="365" y="5" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="br9-Yd-2Kv" eventType="touchUpInside" id="GrA-f2-Utr"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-Yh-Dmw" userLabel="AR View" customClass="CBRemodelingView">
+                                <rect key="frame" x="0.0" y="160" width="414" height="682"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vj5-qm-wvf" firstAttribute="leading" secondItem="5hT-5B-dOu" secondAttribute="leading" id="DgC-r3-ndO"/>
-                            <constraint firstAttribute="trailing" secondItem="9qt-Yh-Dmw" secondAttribute="trailing" id="FwO-hg-Gez"/>
-                            <constraint firstItem="9qt-Yh-Dmw" firstAttribute="top" secondItem="53Z-99-PMk" secondAttribute="top" id="QcC-PL-fCo"/>
-                            <constraint firstItem="5hT-5B-dOu" firstAttribute="bottom" secondItem="vj5-qm-wvf" secondAttribute="bottom" id="ULk-ta-n0x"/>
-                            <constraint firstItem="5hT-5B-dOu" firstAttribute="trailing" secondItem="vj5-qm-wvf" secondAttribute="trailing" id="esl-YP-n9y"/>
-                            <constraint firstAttribute="bottom" secondItem="9qt-Yh-Dmw" secondAttribute="bottom" id="nmp-hP-UGw"/>
-                            <constraint firstItem="9qt-Yh-Dmw" firstAttribute="leading" secondItem="53Z-99-PMk" secondAttribute="leading" id="xum-yr-lYP"/>
+                            <constraint firstItem="Rz6-ww-Dug" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5hT-5B-dOu" secondAttribute="leading" priority="500" constant="100" id="CEd-c4-1vc"/>
+                            <constraint firstItem="9qt-Yh-Dmw" firstAttribute="bottom" secondItem="5hT-5B-dOu" secondAttribute="bottom" constant="34" id="EDg-52-hzo"/>
+                            <constraint firstItem="Rz6-ww-Dug" firstAttribute="top" secondItem="5hT-5B-dOu" secondAttribute="top" constant="5" id="FmB-pe-Q1S"/>
+                            <constraint firstItem="9qt-Yh-Dmw" firstAttribute="top" secondItem="vj5-qm-wvf" secondAttribute="bottom" id="PdO-3G-5sN"/>
+                            <constraint firstItem="vj5-qm-wvf" firstAttribute="top" secondItem="5hT-5B-dOu" secondAttribute="top" id="Wvq-37-yle"/>
+                            <constraint firstItem="9qt-Yh-Dmw" firstAttribute="leading" secondItem="5hT-5B-dOu" secondAttribute="leading" id="Yeb-Ko-epc"/>
+                            <constraint firstItem="5hT-5B-dOu" firstAttribute="trailing" secondItem="Rz6-ww-Dug" secondAttribute="trailing" constant="10" id="bYq-fC-ohZ"/>
+                            <constraint firstItem="5hT-5B-dOu" firstAttribute="trailing" secondItem="9qt-Yh-Dmw" secondAttribute="trailing" id="mFF-9P-V9Y"/>
+                            <constraint firstItem="vj5-qm-wvf" firstAttribute="leading" secondItem="5hT-5B-dOu" secondAttribute="leading" id="msJ-b7-GFK"/>
+                            <constraint firstItem="5hT-5B-dOu" firstAttribute="trailing" secondItem="vj5-qm-wvf" secondAttribute="trailing" id="zhB-Hv-rFb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5hT-5B-dOu"/>
                     </view>
@@ -490,15 +510,25 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLq-uN-LHW">
+                                <rect key="frame" x="365" y="5" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="foE-jP-XM7" eventType="touchUpInside" id="Dfv-sR-Uc2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QtT-uo-fj7" firstAttribute="leading" secondItem="j24-qO-7XK" secondAttribute="leading" id="EOR-uI-BYU"/>
                             <constraint firstItem="QtT-uo-fj7" firstAttribute="top" secondItem="GVu-qw-QLz" secondAttribute="bottom" id="GRV-kP-MSi"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="leading" secondItem="GVu-qw-QLz" secondAttribute="leading" id="OPF-Yn-haD"/>
+                            <constraint firstItem="pLq-uN-LHW" firstAttribute="top" secondItem="j24-qO-7XK" secondAttribute="top" constant="5" id="OhN-6d-XuK"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="GVu-qw-QLz" secondAttribute="trailing" id="UGt-3n-kUF"/>
                             <constraint firstItem="GVu-qw-QLz" firstAttribute="top" secondItem="j24-qO-7XK" secondAttribute="top" id="Xgh-ew-geS"/>
+                            <constraint firstItem="pLq-uN-LHW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="j24-qO-7XK" secondAttribute="leading" priority="500" constant="100" id="Z2z-Z7-2Ec"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="bottom" secondItem="QtT-uo-fj7" secondAttribute="bottom" id="d8A-M8-6Ar"/>
+                            <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="pLq-uN-LHW" secondAttribute="trailing" constant="10" id="e4M-e9-zHy"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="QtT-uo-fj7" secondAttribute="trailing" id="eh4-ag-dog"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j24-qO-7XK"/>
@@ -583,6 +613,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J4Q-vS-17d"/>
-        <segue reference="aAk-Yy-oIH"/>
+        <segue reference="TFb-TA-TBg"/>
     </inferredMetricsTieBreakers>
 </document>

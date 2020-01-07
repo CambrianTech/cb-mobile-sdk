@@ -55,6 +55,10 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         categoryListing.isHidden = true
     }
     
+    @IBAction func closeClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func categoryChanged(category: ProductCategory?) {
         self.selectedCategory = category
     }

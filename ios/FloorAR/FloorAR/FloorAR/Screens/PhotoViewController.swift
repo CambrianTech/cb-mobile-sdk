@@ -43,6 +43,10 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         }
     }
     
+    @IBAction func closeClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func CBWebViewHandleStatusCode(_ status: Int) {
         
     }
