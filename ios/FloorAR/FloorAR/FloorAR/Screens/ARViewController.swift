@@ -37,15 +37,15 @@ class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelec
         }
     }
     
+    @IBAction func closeClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func startRunning() {
         self.vrView.startRunning(true, unityScene: isVR ? "Scenes/ShawVR" : nil)
         
         if (!isVR) {
             self.vrView.scene.appendAsset(CBRemodelingFloor());
-        }
-        
-        if let prod = Product.random() as? Product {
-            self.productColorChanged(product: prod, color: prod.colors.first!);
         }
     }
     
