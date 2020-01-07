@@ -53,7 +53,7 @@ export function ImageUpload(props: ImageUploadProperties) {
         } else {
             setProgressVisible(visible)
         }
-    }, [])
+    }, [api])
 
     const setProgress = useCallback((progress:number, message:string) => {
         if (api.setProgress) {
@@ -62,7 +62,7 @@ export function ImageUpload(props: ImageUploadProperties) {
             setProgressPercentage(progress);
             setStatusText(message);
         }
-    }, [])
+    }, [api])
 
     const dataURItoBlob = function(dataURI: string) {
         // convert base64/URLEncoded data component to raw binary data held in a string
