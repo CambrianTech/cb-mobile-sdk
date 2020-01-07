@@ -10,50 +10,94 @@ import UIKit
 import WebKit
 import JGProgressHUD
 
-class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDelegate, WKNavigationDelegate {
-    @IBOutlet weak var webview: WKWebView!
+class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebViewDelegate {
+    
+    @IBOutlet weak var webview: CBWebView!
     
     var sceneToLoad:SceneLocation?
-    let hud = JGProgressHUD(style: .dark)
+    var photoToLoad:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = self.sceneToLoad == nil ? DataSource.visualizerUrl : DataSource.visualizerUrl.appending("scene", value: self.sceneToLoad!.basePath)
-                
+        var url = DataSource.visualizerUrl
+        if let scene = self.sceneToLoad {
+            url = url.appending("scene", value: scene.basePath)
+        } else {
+            url = url.appending("wait", value: "1")
+        }
+
         let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
-        webview.uiDelegate = self
-        webview.navigationDelegate = self
-        webview.configuration.preferences.javaScriptEnabled = true
-        webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        webview.load(request)
-        
-        hud.indicatorView = JGProgressHUDRingIndicatorView()
-        hud.textLabel.text = "Contacting Service"
-        hud.show(in: self.view)
+        self.webview.delegate = self
+        self.webview.load(request)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        hud.setProgress(hud.progress + 0.2, animated: true)
+        webview.hud.setProgress(0.0, animated: true)
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.hud.dismiss()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed {
+            self.webview.unload()
+        }
+    }
+    
+    func CBWebViewHandleStatusCode(_ status: Int) {
         
-        if let _ = sceneToLoad { } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.webview.evaluateJavaScript("window.openImageDialog()", completionHandler: { (result, error) in
-                    if (error != nil) {print("Command error: Could not open image dialog")}
-                })
-            }
+    }
+    
+    func CBWebViewHandleAlert(message: String, completionHandler: () -> Void) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+        completionHandler()
+    }
+    
+    func CBWebViewHandleScriptMessage(_ message: WKScriptMessage) {
+        
+    }
+    
+    var didUpload = false
+    func CBWebViewDidFinishedLoading(_ success: Bool) {
+        if (!success) {
+            self.webview.hud.dismiss()
+            return
+        }
+        
+        if let photo = self.photoToLoad, let photoData = photo.jpegData(compressionQuality: 90) {
+            print("Got photo with \(photoData.count) bytes")
+            let base64 = photoData.base64EncodedString(options: [])
+            let url = "data:application/jpeg;base64," + base64
+            let command = "window.cb.uploadPhotoData('\(url)')"
+            self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
+                if (error != nil) {
+                    print("Command error: could not upload photo")
+                    self.webview.hud.dismiss()
+                } else {
+                    self.didUpload = true
+                }
+            })
         }
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
-    {
-        if (keyPath == "estimatedProgress") { // listen to changes and updated view
-            hud.setProgress(Float(webview.estimatedProgress), animated: true)
+    func CBWebViewShowProgress(show:Bool, isPage:Bool) {
+        if (show) {
+            self.webview.hud.textLabel.text = "Contacting Server"
+            if (isPage) {
+                self.webview.hud.setProgress(0.1, animated: true)
+            }
+            self.webview.hud.show(in: self.view)
+        } else if (!isPage)  {
+            self.webview.hud.dismiss()
         }
+    }
+    
+    func CBWebViewDisplayProgress(progress:Float, message:String, isPage:Bool) {
+        if (!isPage) {
+            self.webview.hud.textLabel.text = message
+        }
+        self.webview.hud.progress = isPage ? progress * 0.5 : 0.5 + progress * 0.5
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
@@ -80,19 +124,6 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, WKUIDeleg
             }
         }
     }
-    
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true)
-        
-        completionHandler()
-    }
-    
-//    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-//        let documentPicker = UIDocumentPickerViewController(documentTypes: [String(kUTTypeJPEG), String(kUTTypePNG)], in: .import)
-//        super.present(documentPicker, animated: flag, completion: completion)
-//    }
     
     override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
         setUIDocumentMenuViewControllerSoureViewsIfNeeded(viewControllerToPresent)
