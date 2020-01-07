@@ -69,4 +69,18 @@ class Product : CBDataObject {
         
         return URL(string: urlString)!
     }
+    
+    class func first() -> Product? {
+        let realmResults = DataSource.current.realm.objects(Product.self)
+        return realmResults.first
+    }
+    
+    class func random() -> Product? {
+        let realmResults = DataSource.current.realm.objects(Product.self)
+        if (realmResults.count > 0) {
+            let index = Int (arc4random_uniform(UInt32(realmResults.count)));
+            return realmResults[index];
+        }
+        return nil
+    }
 }
