@@ -18,13 +18,14 @@ class DataSource {
     static let ppiJsonPath = "ppi-data.json"
     static let productGroup = "shawfloors"
     
-    static private let cambrianWebURL =  URL(string:"https://mobile.cambrianar.com")!
+    //static let cambrianWebURL =  "https://mobile.cambrianar.com"
+    static let cambrianWebURL =  "http://10.0.1.61:3000"
     
-    static let brandInfoUrl =  URL(string: "brand-info" , relativeTo: cambrianWebURL)!
-    static let visualizerUrl = cambrianWebURL
-    static let sceneBaseUrl = URL(string: "assets/scenes" , relativeTo: cambrianWebURL)!
-    static let sceneDataUrl = URL(string: "assets/scenes/scenes.json" , relativeTo: cambrianWebURL)!
-    static let productDetailsUrl = URL(string: "product-details" , relativeTo: cambrianWebURL)!
+    static let brandInfoUrl =  URL(string: "\(cambrianWebURL)/brand-info")!
+    static let visualizerUrl = URL(string: cambrianWebURL)!
+    static let sceneBaseUrl = URL(string: "\(cambrianWebURL)/assets/scenes")!
+    static let sceneDataUrl = URL(string: "\(cambrianWebURL)/assets/scenes/scenes.json")!
+    static let productDetailsUrl = URL(string: "\(cambrianWebURL)/product-details")!
     
     static let baseImagePath = "https://shawfloors.scene7.com/is/image";
     static let imageSize = 320
