@@ -2,11 +2,7 @@ import React, {useCallback, useEffect, useRef} from 'react'
 import './BrandInfo.css'
 import {MediaPaths} from "../utilities/Constants";
 
-type BrandInfoProperties = {
-
-}
-
-export function BrandInfo(props: BrandInfoProperties) {
+export default function BrandInfo(props: any) {
 
     const initialize = useCallback(() => {
 

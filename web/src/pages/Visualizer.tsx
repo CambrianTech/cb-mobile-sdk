@@ -3,15 +3,15 @@ import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} fr
 import 'react-dat-gui/build/react-dat-gui.css'
 import './Visualizer.css'
 
-import {
-    CBVisualizer
-} from "react-home-harmony";
+import {CBVisualizer} from "react-home-harmony";
 import { SiteContext } from '../data/SiteContext';
-import {ImageProperties, ImageUpload, openImageDialog} from "../components/ImageUpload";
-import {VisualizerTools} from "../components/VisualizerTools";
+import {ImageProperties, openImageDialog} from "../components/ImageUpload";
 import {dispatchImageProperties, objectToLowerCase, selectScene} from "../utilities/Methods";
 import {DEFAULT_MATERIAL, DEFAULT_SCENE, GRID_MATERIAL} from "../utilities/Constants";
 import * as qs from "querystring";
+
+const VisualizerTools = React.lazy(() => import('../components/VisualizerTools'));
+const ImageUpload = React.lazy(() => import('../components/ImageUpload'));
 
 // Replace 3js's flooring function with ceil, so it upscales to
 // powers of two instead of downscaling for sharper textures.

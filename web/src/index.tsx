@@ -2,22 +2,24 @@ import 'react-app-polyfill/ie9'
 import 'react-app-polyfill/stable'
 import cssVars from 'css-vars-ponyfill'
 
-import React, {useReducer, useEffect, useCallback, useState} from "react"
+import React, {useReducer, useEffect, useCallback, useState, Suspense} from "react"
 import * as ReactDOM from "react-dom"
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import {BrowserRouter as Router, Route, RouteComponentProps, Switch} from "react-router-dom"
 import { SiteContext, createEmptyState, siteStateReducer } from "./data/SiteContext"
-import Visualizer from "./pages/Visualizer"
 import {BrowserProperties, WebClientInfo} from "react-client-info"
 import {cbInitialize} from "react-home-harmony";
 
 import 'react-circular-progressbar/dist/styles.css'
 import '@material/react-button/dist/button.css';
 import '@material/react-fab/dist/fab.css';
-import {ProductDetails} from "./pages/ProductDetails";
-import {BrandInfo} from "./pages/BrandInfo";
+
 import * as qs from "querystring";
 import {objectToLowerCase, selectScene} from "./utilities/Methods";
+
+const ProductDetails = React.lazy(() => import('./pages/ProductDetails'));
+const BrandInfo = React.lazy(() => import('./pages/BrandInfo'));
+const Visualizer = React.lazy(() => import('./pages/Visualizer'));
 
 const objectFitImages = require('object-fit-images')
 
@@ -152,10 +154,10 @@ function App() {
     return (
         <Router>
             <Route
-                render={({ location }) => {
+                render={(props: RouteComponentProps<any>) => {
                     if (firstRender) {
                         setFirstRender(false)
-                        updateFromLocation(location)
+                        updateFromLocation(props.location)
                     }
 
                     return (
@@ -163,10 +165,30 @@ function App() {
 
                             <WebClientInfo onClientStateChanged={setBrowserProperties} />
 
-                            <Switch location={location}>
-                                <Route exact path="/" component={Visualizer} />
-                                <Route exact path="/product-details" component={ProductDetails} />
-                                <Route exact path="/brand-info" component={BrandInfo} />
+                            <Switch location={props.location}>
+                                <Route exact path="/"
+                                       render={(props) => (
+                                           <Suspense fallback={<div>Loading...</div>}>
+                                               <Visualizer {...props} />
+                                           </Suspense>
+                                       )}
+                                />
+
+                                <Route exact path="/product-details"
+                                       render={(props) => (
+                                           <Suspense fallback={<div>Loading...</div>}>
+                                               <ProductDetails {...props} />
+                                           </Suspense>
+                                       )}
+                                />
+
+                                <Route exact path="/brand-info"
+                                       render={(props) => (
+                                           <Suspense fallback={<div>Loading...</div>}>
+                                               <BrandInfo {...props} />
+                                           </Suspense>
+                                       )}
+                                />
                             </Switch>
 
                         </SiteContext.Provider>
