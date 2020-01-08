@@ -18,14 +18,18 @@ interface ImageUploadProperties {
     ref?: any,
 }
 
-
+const api:any = (window as any).cb
 
 export function openImageDialog() {
-    const inputs = Array.from(document.getElementsByTagName("input"));
-    const input = inputs.find(element => element.type === "file") as HTMLInputElement;
+    if (api.openImageDialog) {
+        api.openImageDialog()
+    } else {
+        const inputs = Array.from(document.getElementsByTagName("input"));
+        const input = inputs.find(element => element.type === "file") as HTMLInputElement;
 
-    if (input) {
-        input.click()
+        if (input) {
+            input.click()
+        }
     }
 }
 
@@ -34,8 +38,6 @@ export default function ImageUpload(props: ImageUploadProperties) {
     const [statusText, setStatusText] = useState("")
     const [progressPercentage, setProgressPercentage] = useState(0)
     const [progressVisible, setProgressVisible] = useState(false)
-    const api:any = (window as any).cb
-    api.openImageDialog = openImageDialog
 
     let _isMounted = useRef(false);
 
