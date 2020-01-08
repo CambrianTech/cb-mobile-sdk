@@ -59,6 +59,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
             let base64 = photoData.base64EncodedString(options: [])
             let url = "data:application/jpeg;base64," + base64
             let command = "window.cb.uploadPhotoData('\(url)')"
+            
             self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
                 if (error != nil) {
                     print("Command error: could not upload photo")
@@ -94,7 +95,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         if (!isPage) {
             self.webview.hud.textLabel.text = message
         }
-        let factor:Float = self.sceneToLoad == nil ? 1.0 : 0.5
+        let factor:Float = (self.photoToLoad == nil) ? 1.0 : 0.5
         self.webview.hud.progress = isPage ? progress * factor : factor + progress * factor
     }
     

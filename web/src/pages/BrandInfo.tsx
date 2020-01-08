@@ -1,11 +1,14 @@
 import React, {useCallback, useEffect, useRef} from 'react'
 import './BrandInfo.css'
 import {MediaPaths} from "../utilities/Constants";
+import {api} from "../index";
 
 export default function BrandInfo(props: any) {
 
     const initialize = useCallback(() => {
-
+        if (api.notifyLoaded) {
+            api.notifyLoaded("BrandInfo")
+        }
     }, [])
 
     const initializeRef = useRef(initialize);

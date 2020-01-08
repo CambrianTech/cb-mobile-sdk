@@ -5,6 +5,7 @@ import {SiteContext} from "../data/SiteContext";
 import {Progress} from "./Progress";
 import {safelyTimeout} from "../utilities/Methods";
 import {MAX_IMAGE_SIZE} from "../utilities/Constants";
+import {api} from "../index";
 const fileAccept = "image/*";
 
 export type ImageProperties = CBSceneParams & {
@@ -17,8 +18,6 @@ interface ImageUploadProperties {
     children?: ReactNode
     ref?: any,
 }
-
-const api:any = (window as any).cb
 
 export function openImageDialog() {
     if (api.openImageDialog) {
@@ -41,8 +40,27 @@ export default function ImageUpload(props: ImageUploadProperties) {
 
     let _isMounted = useRef(false);
 
+    const initialize = useCallback(() => {
+        if (api.notifyLoaded) {
+            api.notifyLoaded("ImageUpload")
+        }
+    }, [])
+
+    const initializeRef = useRef(initialize);
+    useEffect(() => { initializeRef.current = initialize; }, [initialize]);
+
+    useEffect(() => {
+        if (initializeRef.current) {
+            initializeRef.current()
+        }
+    }, []);
+
     useEffect(() => {
         _isMounted.current = true;
+
+        if (api.notifyLoaded) {
+            api.notifyLoaded()
+        }
 
         return () => {
             _isMounted.current = false
