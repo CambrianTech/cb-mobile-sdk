@@ -57,11 +57,7 @@ export default function ImageUpload(props: ImageUploadProperties) {
 
     useEffect(() => {
         _isMounted.current = true;
-
-        if (api.notifyLoaded) {
-            api.notifyLoaded()
-        }
-
+        
         return () => {
             _isMounted.current = false
         }
