@@ -4,6 +4,7 @@ import {CBVisualizer} from "react-home-harmony";
 import {SiteContext} from "../data/SiteContext";
 import {selectScene} from "../utilities/Methods";
 import {DEFAULT_MATERIAL, DEFAULT_SCENE} from "../utilities/Constants";
+import {api} from "../index";
 
 type DetailsProps = {
     name?: string
@@ -90,12 +91,13 @@ export default function ProductDetails(props: any) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
-    const api:any = (window as any).cb
-
     const [details, setDetails] = useState<DetailsProps>(process.env.NODE_ENV === 'development' ? demoDetails : {})
 
     const initialize = useCallback(() => {
         selectScene(DEFAULT_SCENE, dispatch)
+        if (api.notifyLoaded) {
+            api.notifyLoaded("ProductDetails")
+        }
     }, [dispatch])
 
     const initializeRef = useRef(initialize);
@@ -115,7 +117,7 @@ export default function ProductDetails(props: any) {
         if (api.onSceneLoad && state.sceneData) {
             api.onSceneLoad()
         }
-    }, [state.sceneData, api]);
+    }, [state.sceneData]);
 
     return (
         <div className="product-details">

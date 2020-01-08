@@ -9,6 +9,7 @@ import {ImageProperties, openImageDialog} from "../components/ImageUpload";
 import {dispatchImageProperties, objectToLowerCase, selectScene} from "../utilities/Methods";
 import {DEFAULT_MATERIAL, DEFAULT_SCENE, GRID_MATERIAL} from "../utilities/Constants";
 import * as qs from "querystring";
+import {api} from "../index";
 
 const VisualizerTools = React.lazy(() => import('../components/VisualizerTools'));
 const ImageUpload = React.lazy(() => import('../components/ImageUpload'));
@@ -30,8 +31,6 @@ export default function Visualizer(props: any) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
-    const api:any = (window as any).cb
-
     let _isMounted = useRef(false);
 
     useEffect(() => {
@@ -42,12 +41,6 @@ export default function Visualizer(props: any) {
         }
     }, []);
 
-    const initialize = useCallback(() => {
-        if (!state.sceneData && !searchObject.scene && !searchObject.wait) {
-            selectScene(DEFAULT_SCENE, dispatch)
-        }
-    }, [dispatch, searchObject.scene, searchObject.wait, state.sceneData])
-
     useEffect(() => {
         if (state.sceneData) {
             setCanLoad(true)
@@ -55,7 +48,16 @@ export default function Visualizer(props: any) {
                 api.onSceneLoad()
             }
         }
-    }, [api, state.sceneData]);
+    }, [state.sceneData]);
+
+    const initialize = useCallback(() => {
+        if (!state.sceneData && !searchObject.scene && !searchObject.wait) {
+            selectScene(DEFAULT_SCENE, dispatch)
+        }
+        if (api.notifyLoaded) {
+            api.notifyLoaded("Visualizer")
+        }
+    }, [dispatch, searchObject.scene, searchObject.wait, state.sceneData])
 
     const initializeRef = useRef(initialize);
     useEffect(() => { initializeRef.current = initialize; }, [initialize]);

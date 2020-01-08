@@ -23,6 +23,8 @@ const Visualizer = React.lazy(() => import('./pages/Visualizer'));
 
 const objectFitImages = require('object-fit-images')
 
+export const api:any = (window as any).cb
+
 if (process.env.REACT_APP_CB_GET_UPLOAD_URLS_URL && process.env.REACT_APP_CB_UPLOADS_URL && process.env.REACT_APP_CB_SEGMENT_URL) {
     cbInitialize({
         uploadUrl: process.env.REACT_APP_CB_GET_UPLOAD_URLS_URL,
