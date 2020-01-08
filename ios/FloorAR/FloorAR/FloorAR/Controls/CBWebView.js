@@ -6,8 +6,13 @@ function webviewLoaded() {
     window.cb.showHideProgress = showHideProgress;
     window.cb.setProgress = setProgress;
     window.cb.onSceneLoad = onSceneLoad;
+    window.cb.notifyLoaded = notifyLoaded;
     
     webkit.messageHandlers.callbackHandler.postMessage({'command':'loaded'})
+}
+
+function notifyLoaded(component) {
+    webkit.messageHandlers.callbackHandler.postMessage({'command':'notifyLoaded','component':component})
 }
 
 function showHideProgress(show) {
