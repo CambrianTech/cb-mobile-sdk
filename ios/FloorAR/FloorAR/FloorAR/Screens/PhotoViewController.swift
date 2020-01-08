@@ -47,13 +47,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         self.dismiss(animated: true, completion: nil)
     }
     
-    var didUpload = false
-    func CBWebViewDidFinishedLoading(_ success: Bool) {
-        if (!success) {
-            self.webview.hud.dismiss()
-            return
-        }
-        
+    func uploadPhoto() {
         if let photo = self.photoToLoad, let photoData = photo.jpegData(compressionQuality: 90) {
             print("Got photo with \(photoData.count) bytes")
             let base64 = photoData.base64EncodedString(options: [])
@@ -71,10 +65,23 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         }
     }
     
+    var didUpload = false
+    func CBWebViewDidFinishedLoading(_ success: Bool) {
+        if (!success) {
+            self.webview.hud.dismiss()
+            return
+        }
+    }
+    
     func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>) {
         if let command = message["command"] as? String {
             if command == "sceneLoaded" {
                 self.webview.hud.dismiss()
+            } else if command == "notifyLoaded", let component = message["component"] as? String {
+                //print("Loaded component " + component)
+                if (component == "ImageUpload") {
+                    self.uploadPhoto()
+                }
             }
         }
     }
