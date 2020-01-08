@@ -153,7 +153,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
             }
             
             if let command = dict["command"] as? String {
-                //print("Got command \(command)")
+                print("Got command \(command)")
                 if command == "loaded" {
                     if let callback = self.delegate?.CBWebViewDidFinishedLoading {
                         callback(true)

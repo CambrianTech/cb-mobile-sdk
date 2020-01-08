@@ -51,6 +51,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         optionMenu.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
+        if UI_USER_INTERFACE_IDIOM() == .pad {
+            addActionSheetForiPad(actionSheet: optionMenu)
+        }
+        
         self.present(optionMenu, animated: true, completion: nil)
     }
     
@@ -86,7 +90,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
         })
-
+        
+        if UI_USER_INTERFACE_IDIOM() == .pad {
+            addActionSheetForiPad(actionSheet: alertController)
+        }
+        
         present(alertController, animated: true)
     }
     
