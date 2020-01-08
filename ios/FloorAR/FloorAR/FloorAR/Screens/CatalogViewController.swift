@@ -92,9 +92,8 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         self.selectedProduct = products[indexPath.row]
         
-        self.selectedProduct?.sync {
-            self.performSegue(withIdentifier: "show-details", sender: nil)
-        }
+        self.performSegue(withIdentifier: "show-details", sender: nil)
+        self.selectedProduct?.sync {}
     }
     
     private var categorySelector:ProductSelectionView?
