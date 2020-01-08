@@ -79,7 +79,7 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
                 self.webview.hud.dismiss()
             } else if command == "notifyLoaded", let component = message["component"] as? String {
                 //print("Loaded component " + component)
-                if (component == "ImageUpload") {
+                if (component == "ImageUpload" && self.photoToLoad != nil) {
                     self.uploadPhoto()
                 }
             }
