@@ -17,8 +17,8 @@ extension SceneLocation {
         self.code = json["name"] as! String
         self.name = json["displayName"] as! String
         self.basePath = json["path"] as! String
-        self.thumbnailPath = json["thumbnail"] as! String
-        self.previewPath = json["preview"] as! String
+        self.thumbnailName = json["thumbnail"] as! String
+        self.previewName = json["preview"] as! String
     }
     
     var baseUrl : URL? {
@@ -27,14 +27,14 @@ extension SceneLocation {
     
     var thumbnailUrl : URL? {
         if let path = baseUrl {
-            return URL(string: path.absoluteString + "/" + thumbnailPath)
+            return URL(string: path.absoluteString + "/" + thumbnailName)
         }
         return nil
     }
     
     var previewUrl : URL? {
         if let path = baseUrl {
-            return URL(string: path.absoluteString + "/" + previewPath)
+            return URL(string: path.absoluteString + "/" + previewName)
         }
         return nil
     }

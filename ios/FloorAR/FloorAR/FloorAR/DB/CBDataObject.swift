@@ -22,18 +22,27 @@ typealias CBDataObject = _CBDataObject & CBDataObjectProtocol
 
 class _CBDataObject: Object {
     
-    override class func primaryKey() -> String? { return "code"}
-    
     override static func ignoredProperties() -> [String] {
-        return ["directoryPath", "thumbnailImage"]
+        return ["thumbnailPath"]
     }
+    
+    override class func primaryKey() -> String? { return "code"}
     
     @objc dynamic var name = ""
     @objc dynamic var code = ""
     @objc dynamic var updated = Date()
     @objc dynamic var orderIndex = 0
-    @objc dynamic var thumbnailPath:String = ""
     @objc dynamic var jsonString:String = ""
+    
+    var thumbnailPath: String {
+        get
+        {
+            if let path = self.jsonString.jsonData["thumbnailPath"] as? String, path.starts(with: "bundle") {
+                return Bundle.main.url(forResource: self.jsonString.jsonData["thumbnailPath"] as? String, withExtension: nil)!.absoluteString
+            }
+            return DataSource.getThumbnailPath(self.code)
+        }
+    }
     
     //public func objects<Element>(_ type: Element.Type) -> RealmSwift.Results<Element> where Element : RealmSwift.Object
     private static var this:CBDataObject.Type {
