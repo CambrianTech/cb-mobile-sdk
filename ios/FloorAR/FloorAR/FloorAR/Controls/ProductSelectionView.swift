@@ -371,6 +371,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
         if let product = self.selectedProduct {
             cell.color = product.colors[indexPath.row]
+            cell.selected(cell.color == self.selectedColor, animated: false)
         } else if let category = self.selectedCategory {
             if category.products.count > 0 {
                 cell.product = category.products[indexPath.row]
@@ -388,6 +389,15 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         self.swatchScroller.contentOffset = CGPoint.zero
         self.swatchScroller.reloadData()
         self.swatchScroller.invalidateIntrinsicContentSize()
+                
+        self.swatchScroller.performBatchUpdates(nil, completion: {
+            (result) in
+            if let color = self.selectedColor, let index = color.product.colors.index(of: color) {
+                self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
+            } else if let product = self.selectedProduct, let index = product.category.products.index(of: product) {
+                self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
+            }
+        })
     }
     
     func reloadHistory() {

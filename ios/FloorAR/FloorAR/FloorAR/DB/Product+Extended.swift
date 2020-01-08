@@ -60,4 +60,12 @@ extension Product {
         data["dpcm"] = NSNumber(value:self.dpcm)
         return data.jsonString
     }
+    
+    var defaultColor:ProductColor? {
+        get {
+            return self.colors.first { (color) -> Bool in
+                return color.code == self.code
+            }
+        }
+    }
 }
