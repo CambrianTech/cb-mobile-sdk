@@ -71,6 +71,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
             updateProgress(progress: progress, message: "Loading", isPage: true)
             
             if (progress == 1.0) {
+                //shut off
                 displayProgress(show: false, isPage:true)
                 if let title = self.title, title.count == 0 {
                     self.handleStatusCode(404)
@@ -114,7 +115,11 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
         if let callback = self.delegate?.CBWebViewShowProgress {
             callback(show, isPage);
         } else {
-            self.hud.dismiss()
+            if (show) {
+                self.hud.show(in: self)
+            } else {
+                self.hud.dismiss()
+            }
         }
     }
     
