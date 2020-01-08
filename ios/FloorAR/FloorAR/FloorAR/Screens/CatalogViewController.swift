@@ -51,6 +51,7 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         _navHeight = navigationHeight.constant
     
         let request = URLRequest(url: DataSource.brandInfoUrl)
+        webview.showLoadingIndicator = false
         webview.load(request)
         categoryListing.isHidden = true
     }
