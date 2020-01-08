@@ -47,21 +47,6 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         self.dismiss(animated: true, completion: nil)
     }
     
-    func CBWebViewHandleStatusCode(_ status: Int) {
-        
-    }
-    
-    func CBWebViewHandleAlert(message: String, completionHandler: () -> Void) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true)
-        completionHandler()
-    }
-    
-    func CBWebViewHandleScriptMessage(_ message: WKScriptMessage) {
-        
-    }
-    
     var didUpload = false
     func CBWebViewDidFinishedLoading(_ success: Bool) {
         if (!success) {

@@ -41,7 +41,7 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     @IBOutlet weak var navigationHeight: NSLayoutConstraint!
     @IBOutlet weak var categoryListing: UICollectionView!
-    @IBOutlet weak var webview: WKWebView!
+    @IBOutlet weak var webview: CBWebView!
     
     var selectedProduct: Product?
         
@@ -50,7 +50,7 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.categoryListing.contentInsetAdjustmentBehavior = .never
         _navHeight = navigationHeight.constant
     
-        let request = URLRequest(url: DataSource.brandInfoUrl, cachePolicy: .returnCacheDataElseLoad)
+        let request = URLRequest(url: DataSource.brandInfoUrl)
         webview.load(request)
         categoryListing.isHidden = true
     }
@@ -86,14 +86,19 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    var isLoadingDetails = false
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let products = selectedCategory?.products else {
             fatalError("cannot find CatalogCell")
         }
+        if (isLoadingDetails) {
+            return
+        }
+        self.isLoadingDetails = true
         self.selectedProduct = products[indexPath.row]
-        
-        self.performSegue(withIdentifier: "show-details", sender: nil)
-        self.selectedProduct?.sync {}
+        self.selectedProduct?.sync {
+            self.performSegue(withIdentifier: "show-details", sender: nil)
+        }
     }
     
     private var categorySelector:ProductSelectionView?
@@ -107,6 +112,7 @@ class CatalogViewController: UIViewController, UICollectionViewDelegate, UIColle
         } else if segue.identifier == "show-details" {
             if let details = segue.destination as? ProductDetailsViewController {
                 details.product = self.selectedProduct
+                self.isLoadingDetails = false
             }
         }
     }
