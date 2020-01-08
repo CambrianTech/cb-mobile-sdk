@@ -371,7 +371,10 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
         if let product = self.selectedProduct {
             cell.color = product.colors[indexPath.row]
-            cell.selected(cell.color == self.selectedColor, animated: false)
+            if (cell.color == self.selectedColor) {
+                cell.selected(cell.color == self.selectedColor, animated: false)
+                self.selectedCell = cell
+            }
         } else if let category = self.selectedCategory {
             if category.products.count > 0 {
                 cell.product = category.products[indexPath.row]
