@@ -22,7 +22,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         
     var product: Product? {
         didSet {
-            self.color = self.product?.colors.first ?? nil
+            self.color = self.product?.defaultColor ?? nil
         }
     }
     var color: ProductColor? {
