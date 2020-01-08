@@ -11,10 +11,10 @@ import WebKit
 import JGProgressHUD
 
 @objc protocol CBWebViewDelegate: AnyObject {
-    func CBWebViewHandleStatusCode(_ status:Int)
-    func CBWebViewHandleAlert(message:String, completionHandler: () -> Void)
-    func CBWebViewHandleScriptMessage(_ message:WKScriptMessage)
-    func CBWebViewDidFinishedLoading(_ success:Bool)
+    @objc optional func CBWebViewHandleStatusCode(_ status:Int)
+    @objc optional func CBWebViewHandleAlert(message:String, completionHandler: () -> Void)
+    @objc optional func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>)
+    @objc optional func CBWebViewDidFinishedLoading(_ success:Bool)
     @objc optional func CBWebViewShowProgress(show:Bool, isPage:Bool)
     @objc optional func CBWebViewDisplayProgress(progress:Float, message:String, isPage:Bool)
 }
@@ -75,7 +75,9 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
                 displayProgress(show: false, isPage:true)
                 if let title = self.title, title.count == 0 {
                     self.handleStatusCode(404)
-                    self.delegate?.CBWebViewDidFinishedLoading(false)
+                    if let callback = self.delegate?.CBWebViewDidFinishedLoading {
+                        callback(false)
+                    }
                 }
             }
         }
@@ -97,18 +99,29 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
                 decisionHandler(.allow)
             } else {
                 decisionHandler(.cancel)
-                self.delegate?.CBWebViewDidFinishedLoading(false)
+                if let callback = self.delegate?.CBWebViewDidFinishedLoading {
+                    callback(false)
+                }
             }
         }
     }
     
     func handleStatusCode(_ status:Int) {
         displayProgress(show: false, isPage:true)
-        self.delegate?.CBWebViewHandleStatusCode(status)
+        if let callback = self.delegate?.CBWebViewHandleStatusCode {
+            callback(status)
+        }
     }
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
-        self.delegate?.CBWebViewHandleAlert(message: message, completionHandler: completionHandler)
+        if let callback = self.delegate?.CBWebViewHandleAlert {
+            callback(message, completionHandler)
+        } else if let vc = self.parentViewController {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            vc.present(alert, animated: true)
+            completionHandler()
+        }
     }
     
     func displayProgress(show:Bool, isPage:Bool) {
@@ -135,9 +148,16 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         let body = message.body
         if let dict = body as? Dictionary<String, AnyObject> {
+            if let callback = self.delegate?.CBWebViewHandleScriptMessage {
+                callback(dict)
+            }
+            
             if let command = dict["command"] as? String {
+                print("Got command \(command)")
                 if command == "loaded" {
-                    self.delegate?.CBWebViewDidFinishedLoading(true)
+                    if let callback = self.delegate?.CBWebViewDidFinishedLoading {
+                        callback(true)
+                    }
                 }
                 else if command == "showProgress" {
                     let show = dict["show"] as! Bool
@@ -161,6 +181,6 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
             }
         }
         
-        self.delegate?.CBWebViewHandleScriptMessage(message)
+        
     }
 }

@@ -90,6 +90,8 @@ export default function ProductDetails(props: any) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
+    const api:any = (window as any).cb
+
     const [details, setDetails] = useState<DetailsProps>(process.env.NODE_ENV === 'development' ? demoDetails : {})
 
     const initialize = useCallback(() => {
@@ -108,6 +110,12 @@ export default function ProductDetails(props: any) {
     (window as any).cb.setProductDetails = useCallback((props:DetailsProps) => {
         setDetails(props)
     }, [])
+
+    useEffect(() => {
+        if (api.onSceneLoad && state.sceneData) {
+            api.onSceneLoad()
+        }
+    }, [state.sceneData, api]);
 
     return (
         <div className="product-details">

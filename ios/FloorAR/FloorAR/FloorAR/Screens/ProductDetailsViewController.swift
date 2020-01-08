@@ -51,22 +51,19 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         }
     }
     
-    func CBWebViewHandleStatusCode(_ status: Int) {
-        
+    func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>) {
+        if let command = message["command"] as? String {
+            if command == "sceneLoaded", let product = self.product, let color = self.color {
+                productColorChanged(product: product, color: color)
+            }
+        }
     }
     
     func CBWebViewHandleAlert(message: String, completionHandler: () -> Void) {
-        
-    }
-    
-    func CBWebViewHandleScriptMessage(_ message: WKScriptMessage) {
-        
-    }
-    
-    func CBWebViewDidFinishedLoading(_ success: Bool) {
-        if success, let product = self.product, let color = self.color {
-            productColorChanged(product: product, color: color)
-        }
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+        completionHandler()
     }
     
     override func viewWillAppear(_ animated: Bool) {

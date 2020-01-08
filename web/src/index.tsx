@@ -168,7 +168,7 @@ function App() {
                             <Switch location={props.location}>
                                 <Route exact path="/"
                                        render={(props) => (
-                                           <Suspense fallback={<div>Loading...</div>}>
+                                           <Suspense fallback={<div/>}>
                                                <Visualizer {...props} />
                                            </Suspense>
                                        )}
@@ -176,7 +176,7 @@ function App() {
 
                                 <Route exact path="/product-details"
                                        render={(props) => (
-                                           <Suspense fallback={<div>Loading...</div>}>
+                                           <Suspense fallback={<div/>}>
                                                <ProductDetails {...props} />
                                            </Suspense>
                                        )}
@@ -184,7 +184,7 @@ function App() {
 
                                 <Route exact path="/brand-info"
                                        render={(props) => (
-                                           <Suspense fallback={<div>Loading...</div>}>
+                                           <Suspense fallback={<div/>}>
                                                <BrandInfo {...props} />
                                            </Suspense>
                                        )}

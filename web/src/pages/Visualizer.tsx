@@ -30,6 +30,8 @@ export default function Visualizer(props: any) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
+    const api:any = (window as any).cb
+
     let _isMounted = useRef(false);
 
     useEffect(() => {
@@ -47,8 +49,13 @@ export default function Visualizer(props: any) {
     }, [dispatch, searchObject.scene, searchObject.wait, state.sceneData])
 
     useEffect(() => {
-        setCanLoad(true)
-    }, [state.sceneData]);
+        if (state.sceneData) {
+            setCanLoad(true)
+            if (api.onSceneLoad) {
+                api.onSceneLoad()
+            }
+        }
+    }, [api, state.sceneData]);
 
     const initializeRef = useRef(initialize);
     useEffect(() => { initializeRef.current = initialize; }, [initialize]);

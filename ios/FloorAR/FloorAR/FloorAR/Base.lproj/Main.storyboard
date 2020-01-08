@@ -99,7 +99,7 @@
                                     <action selector="closeClicked:" destination="gPx-Ju-ERS" eventType="touchUpInside" id="TOL-qw-JQ4"/>
                                 </connections>
                             </button>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-YI-ExX">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-YI-ExX" customClass="CBWebView" customModule="Floor_AR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="150" width="414" height="658"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -613,6 +613,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J4Q-vS-17d"/>
-        <segue reference="TFb-TA-TBg"/>
+        <segue reference="Gms-k9-PAB"/>
     </inferredMetricsTieBreakers>
 </document>
