@@ -7,7 +7,7 @@ type VisualizerToolsProperties = {
     onChangeImage:()=>void
 }
 
-export function VisualizerTools(props: VisualizerToolsProperties) {
+export default function VisualizerTools(props: VisualizerToolsProperties) {
 
     const onChangeImage = useCallback((e:any) => {
         props.onChangeImage()

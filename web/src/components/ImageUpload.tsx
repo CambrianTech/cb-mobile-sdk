@@ -29,7 +29,7 @@ export function openImageDialog() {
     }
 }
 
-export function ImageUpload(props: ImageUploadProperties) {
+export default function ImageUpload(props: ImageUploadProperties) {
     const siteContext = useContext(SiteContext)!
     const [statusText, setStatusText] = useState("")
     const [progressPercentage, setProgressPercentage] = useState(0)
