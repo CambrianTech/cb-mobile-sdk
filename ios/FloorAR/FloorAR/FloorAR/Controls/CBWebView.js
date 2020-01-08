@@ -7,6 +7,7 @@ function webviewLoaded() {
     window.cb.setProgress = setProgress;
     window.cb.onSceneLoad = onSceneLoad;
     window.cb.notifyLoaded = notifyLoaded;
+    window.cb.openImageDialog = openImageDialog;
     
     webkit.messageHandlers.callbackHandler.postMessage({'command':'loaded'})
 }
@@ -25,4 +26,8 @@ function setProgress(progress, message) {
 
 function onSceneLoad() {
     webkit.messageHandlers.callbackHandler.postMessage({'command':'sceneLoaded'})
+}
+
+function openImageDialog() {
+    webkit.messageHandlers.callbackHandler.postMessage({'command':'openImageDialog'})
 }
