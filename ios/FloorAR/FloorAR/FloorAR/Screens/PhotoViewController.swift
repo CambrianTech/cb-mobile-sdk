@@ -70,6 +70,14 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         }
     }
     
+    func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>) {
+        if let command = message["command"] as? String {
+            if command == "sceneLoaded" {
+                self.webview.hud.dismiss()
+            }
+        }
+    }
+    
     func CBWebViewShowProgress(show:Bool, isPage:Bool) {
         if (show) {
             self.webview.hud.textLabel.text = "Contacting Server"
@@ -86,7 +94,8 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         if (!isPage) {
             self.webview.hud.textLabel.text = message
         }
-        self.webview.hud.progress = isPage ? progress * 0.5 : 0.5 + progress * 0.5
+        let factor:Float = self.sceneToLoad == nil ? 1.0 : 0.5
+        self.webview.hud.progress = isPage ? progress * factor : factor + progress * factor
     }
     
     func productColorChanged(product: Product, color: ProductColor) {

@@ -13,7 +13,7 @@ import SDWebImage
 
 class ProductVariation: Object {
     override static func ignoredProperties() -> [String] {
-        return ["_color", "thumbnailImage", "jsonString"]
+        return ["_color", "thumbnailImage"]
     }
     
     @objc dynamic var id = UUID().uuidString
