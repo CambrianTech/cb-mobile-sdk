@@ -23,6 +23,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         var url = DataSource.visualizerUrl
         if let scene = self.sceneToLoad {
             url = url.appending("scene", value: scene.basePath)
+            self.sceneToLoad = nil
         } else {
             url = url.appending("wait", value: "1")
         }
