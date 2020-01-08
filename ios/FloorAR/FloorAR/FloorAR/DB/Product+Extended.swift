@@ -17,7 +17,7 @@ extension Product {
         self.jsonString = json.jsonString
         self.code = json["UniqueId"] as! String
         self.name = json["SellingStyleName"] as! String
-        self.thumbnailPath = DataSource.getThumbnailPath(self.code)
+        //self.thumbnailPath = DataSource.getThumbnailPath(self.code)
     }
     
     var thumbnailUrl : URL? {

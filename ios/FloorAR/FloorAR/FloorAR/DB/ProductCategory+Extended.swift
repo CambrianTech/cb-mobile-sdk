@@ -14,7 +14,6 @@ extension ProductCategory {
         self.jsonString = json.jsonString
         self.code = json["code"] as! String
         self.name = json["displayName"] as! String
-        self.thumbnailPath = Bundle.main.url(forResource: json["thumbnailPath"] as? String, withExtension: nil)!.absoluteString
     }
     
     var thumbnailUrl : URL? {

@@ -119,6 +119,15 @@ class ProductSwatchCell: UICollectionViewCell {
         _category = nil
     }
     
+    private func setThumbnailUrl(url:URL?) {
+        if let url = url, url.isFileURL {
+            self.productImage.image = UIImage(contentsOfFile: url.path)
+        } else {
+            self.productImage.sd_setImage(with: url)
+        }
+        self.setNeedsDisplay()
+    }
+    
     private var _color: ProductColor?
     var color: ProductColor? {
         get {
@@ -128,7 +137,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _color = newValue
             self.productLabel.text = newValue?.name
-            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
+            self.setThumbnailUrl(url:newValue?.thumbnailUrl)
         }
     }
     
@@ -144,7 +153,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _product = newValue
             self.productLabel.text = newValue?.name
-            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
+            self.setThumbnailUrl(url:newValue?.thumbnailUrl)
         }
     }
     
@@ -160,7 +169,7 @@ class ProductSwatchCell: UICollectionViewCell {
             resetProperties()
             _category = newValue
             self.productLabel.text = newValue?.name
-            self.productImage.sd_setImage(with: newValue?.thumbnailUrl)
+            self.setThumbnailUrl(url:newValue?.thumbnailUrl)
         }
     }
     

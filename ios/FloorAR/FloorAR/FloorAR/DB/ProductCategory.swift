@@ -10,7 +10,6 @@ import Foundation
 import RealmSwift
 
 class ProductCategory: CBDataObject {
-    
     let parents = LinkingObjects(fromType: ProductCategory.self, property: "categories")
     let categories = List<ProductCategory>()
     let products = List<Product>()

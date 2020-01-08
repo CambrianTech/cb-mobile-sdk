@@ -14,7 +14,9 @@ import RealmSwift
 class SceneLocation: CBDataObject {
     
     @objc dynamic var basePath = ""
-    @objc dynamic var previewPath:String = ""
+    @objc dynamic var previewName = ""
+    @objc dynamic var thumbnailName = ""
+    
     let scenes = List<SceneLocation>()
     
     private static var _shared = SceneLocation()
