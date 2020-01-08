@@ -119,10 +119,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
+        let desiredSize = CGSize(width: 1024,height: 1024)
         if let editedImage = info[.editedImage] as? UIImage {
-            photoToLoad = editedImage
+            photoToLoad = resizeImage(image: editedImage, targetSize: desiredSize)
         } else if let originalImage = info[.originalImage] as? UIImage {
-            photoToLoad = originalImage
+            photoToLoad = resizeImage(image: originalImage, targetSize: desiredSize)
         }
         picker.dismiss(animated: true, completion: {
             self.performSegue(withIdentifier: "visualize", sender: self)
