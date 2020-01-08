@@ -36,11 +36,17 @@ class SampleCell: UICollectionViewCell {
     }
 }
 
-class SamplesViewController: UICollectionViewController {
+class SamplesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var sampleListing: UICollectionView!
+    
+    @IBAction func closeClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     var samples:[SceneLocation] = [] {
         didSet {
-            self.collectionView?.reloadData()
+            self.sampleListing.reloadData()
         }
     }
     var selectedIndex = 0
@@ -55,11 +61,11 @@ class SamplesViewController: UICollectionViewController {
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return samples.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SampleCell", for: indexPath) as? SampleCell else {
             fatalError("cannot find SampleCell")
         }
@@ -69,7 +75,7 @@ class SamplesViewController: UICollectionViewController {
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedIndex = indexPath.row
         self.performSegue(withIdentifier: "visualize", sender: nil)
     }
