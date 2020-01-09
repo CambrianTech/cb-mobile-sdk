@@ -11,8 +11,9 @@ import WebKit
 import JGProgressHUD
 
 @objc protocol CBWebViewDelegate: AnyObject {
+    @objc optional func CBWebViewFailedLoad()
     @objc optional func CBWebViewHandleStatusCode(_ status:Int)
-    @objc optional func CBWebViewHandleAlert(message:String, completionHandler: () -> Void)
+    @objc optional func CBWebViewHandleAlert(message:String, completionHandler: () -> Void, okHandler:((UIAlertAction) -> Void)?)
     @objc optional func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>)
     @objc optional func CBWebViewDidFinishedLoading(_ success:Bool)
     @objc optional func CBWebViewShowProgress(show:Bool, isPage:Bool)
@@ -24,6 +25,8 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     let hud = JGProgressHUD(style: .dark)
     weak open var delegate: CBWebViewDelegate?
     var showLoadingIndicator = true
+    var didLoad = false
+    var failedLoad = false
     
     func initialize() {
         let scriptUrl = Bundle.main.url(forResource: "CBWebView.js", withExtension: nil)!
@@ -39,6 +42,16 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
         
         hud.indicatorView = JGProgressHUDRingIndicatorView()
         hud.textLabel.text = "Loading"
+        
+        
+        
+//        //hide all in case
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+//            self.displayProgress(show: false, isPage:true)
+//        })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+//            self.displayProgress(show: false, isPage:false)
+//        })
     }
     
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
@@ -51,10 +64,25 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
         initialize()
     }
     
+    internal func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        self.hud.dismiss()
+        self.delegate?.CBWebViewFailedLoad?()
+    }
+
+    private func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
+        self.hud.dismiss()
+        self.delegate?.CBWebViewFailedLoad?()
+    }
+    
     @discardableResult override open func load(_ request: URLRequest) -> WKNavigation? {
         if (showLoadingIndicator) {
             displayProgress(show: true, isPage:true)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+            if (!self.didLoad) {
+                self.handleFailedLoad()
+            }
+        })
         return super.load(request)
     }
     
@@ -75,9 +103,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
                 displayProgress(show: false, isPage:true)
                 if let title = self.title, title.count == 0 {
                     self.handleStatusCode(404)
-                    if let callback = self.delegate?.CBWebViewDidFinishedLoading {
-                        callback(false)
-                    }
+                    self.handleFailedLoad()
                 }
             }
         }
@@ -106,6 +132,13 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
         }
     }
     
+    func handleFailedLoad() {
+        self.hud.dismiss()
+        self.alert(message: "The network or service is unreachable", completionHandler: {}, okHandler: { (action) -> Void in
+            self.delegate?.CBWebViewFailedLoad?()
+        })
+    }
+    
     func handleStatusCode(_ status:Int) {
         displayProgress(show: false, isPage:true)
         if let callback = self.delegate?.CBWebViewHandleStatusCode {
@@ -114,11 +147,15 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
     }
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: () -> Void) {
+        alert(message: message, completionHandler: completionHandler)
+    }
+    
+    func alert(message:String, completionHandler: () -> Void, okHandler: ((UIAlertAction) -> Void)? = nil) {
         if let callback = self.delegate?.CBWebViewHandleAlert {
-            callback(message, completionHandler)
+            callback(message, completionHandler, okHandler)
         } else if let vc = self.parentViewController {
             let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: okHandler))
             vc.present(alert, animated: true)
             completionHandler()
         }
@@ -155,6 +192,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
             if let command = dict["command"] as? String {
                 //print("Got command \(command)")
                 if command == "loaded" {
+                    self.didLoad = true
                     if let callback = self.delegate?.CBWebViewDidFinishedLoading {
                         callback(true)
                     }

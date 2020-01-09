@@ -632,8 +632,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="heightConstraint" destination="Rq6-W0-cVg" id="pKo-oq-9zo"/>
                                             <outlet property="imageView" destination="Un6-WH-YyC" id="gAw-S6-WoY"/>
                                             <outlet property="label" destination="Vdx-Xr-Z9W" id="uZl-EJ-k0D"/>
+                                            <outlet property="widthConstraint" destination="GD1-MF-uKz" id="MWP-NE-cfI"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

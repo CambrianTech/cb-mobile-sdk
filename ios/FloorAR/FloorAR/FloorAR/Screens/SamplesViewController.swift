@@ -12,6 +12,8 @@ class SampleCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     func initialize() {
         self.isOpaque = false
@@ -59,6 +61,13 @@ class SamplesViewController: UIViewController, UICollectionViewDelegate, UIColle
         SceneLocation.sync { 
             self.samples = SceneLocation.all()
         }
+        
+        //if let layout = sampleListing.collectionViewLayout as? UICollectionViewFlowLayout {
+            //layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
+            //layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        //}
+        //layout?.estimatedItemSize = CGSize(width: self.sampleListing.frame.width/2.5, height: 200)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -71,6 +80,14 @@ class SamplesViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         cell.sample = samples[indexPath.row]
+        
+        if UI_USER_INTERFACE_IDIOM() == .pad {
+            cell.widthConstraint.constant = collectionView.frame.width / 5.0;
+        } else {
+            cell.widthConstraint.constant = collectionView.frame.width / 2.0 - 5;
+        }
+        
+        cell.heightConstraint.constant = cell.widthConstraint.constant
         
         return cell
     }

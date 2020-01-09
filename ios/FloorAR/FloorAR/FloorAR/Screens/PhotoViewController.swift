@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import JGProgressHUD
 
-class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebViewDelegate {
+class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWebViewDelegate {
     
     @IBOutlet weak var webview: CBWebView!
     
@@ -23,16 +23,19 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         var url = DataSource.visualizerUrl
         if let scene = self.sceneToLoad {
             url = url.appending("scene", value: scene.basePath)
+            self.sceneToLoad = nil
         } else {
             url = url.appending("wait", value: "1")
         }
 
         let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
+        
         self.webview.delegate = self
         self.webview.load(request)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         webview.hud.setProgress(0.0, animated: true)
     }
     
@@ -73,6 +76,10 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         }
     }
     
+    func CBWebViewFailedLoad() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>) {
         if let command = message["command"] as? String {
             if command == "sceneLoaded" {
@@ -82,6 +89,9 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
                 if (component == "ImageUpload" && self.photoToLoad != nil) {
                     self.uploadPhoto()
                 }
+            } else if command == "openImageDialog" {
+                //print("Loaded component " + component)
+                self.changePhotoClicked()
             }
         }
     }
@@ -104,6 +114,31 @@ class PhotoViewController: UIViewController, ProductSelectionDelegate, CBWebView
         }
         let factor:Float = (self.photoToLoad == nil) ? 1.0 : 0.5
         self.webview.hud.progress = isPage ? progress * factor : factor + progress * factor
+    }
+    
+    func changePhotoClicked() {
+        let optionMenu = UIAlertController(title: nil, message: "What kind of photo do you need?", preferredStyle: .actionSheet)
+            
+        optionMenu.addAction(UIAlertAction(title: "Take Picture", style: .default, handler:{ (UIAlertAction) in
+            self.visualizeImage(true)
+        }))
+        
+        optionMenu.addAction(UIAlertAction(title: "Photo Library", style: .default, handler:{ (UIAlertAction) in
+            self.visualizeImage(false)
+        }))
+        
+        optionMenu.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        if UI_USER_INTERFACE_IDIOM() == .pad {
+            addActionSheetForiPad(actionSheet: optionMenu)
+        }
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    override func pickedImage(image:UIImage) {
+        self.photoToLoad = image
+        self.uploadPhoto()
     }
     
     func productColorChanged(product: Product, color: ProductColor) {
