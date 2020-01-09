@@ -440,8 +440,8 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         self.selectedProduct = item.product
         self.selectedCell = nil
         
-        //reloadHistory()
-        //reloadSwatches()
+        reloadHistory()
+        reloadSwatches()
     }
     
     func swatchView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
