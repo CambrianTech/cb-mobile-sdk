@@ -109,9 +109,15 @@ class HistoryItem {
     }
 }
 
+protocol HistorySelectionDelegate: class {
+    func historyChanged(category: ProductCategory?, product: Product?)
+}
+
 class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     @IBOutlet weak var historyCollection: UICollectionView!
+    
+    open weak var delegate: HistorySelectionDelegate?
     
     private var history:[HistoryItem] {
         get {
@@ -128,9 +134,16 @@ class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
-    var selectedCategory:ProductCategory?
-    var selectedProduct:Product?
-    var selectedColor:ProductColor?
+    var selectedCategory:ProductCategory? {
+        didSet {
+            reloadHistory()
+        }
+    }
+    var selectedProduct:Product? {
+        didSet {
+            reloadHistory()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,13 +185,13 @@ class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollec
         let item = self.history[indexPath.row]
         self.selectedCategory = item.category
         self.selectedProduct = item.product
-        //self.selectedCell = nil
-        
-        reloadHistory()
-        //reloadSwatches()
+        self.delegate?.historyChanged(category: item.category, product: item.product)
     }
     
     func reloadHistory() {
+        if (self.view.frame.size.height == 0 || self.view.isHidden) {
+            return
+        }
         self.historyCollection.contentOffset = CGPoint.zero
         self.historyCollection.reloadData()
         self.historyCollection.invalidateIntrinsicContentSize()

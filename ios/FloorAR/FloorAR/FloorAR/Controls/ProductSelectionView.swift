@@ -96,7 +96,7 @@ extension ProductSelectionDelegate {
     func productColorChanged(product: Product, color: ProductColor) {}
 }
 
-class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     open weak var delegate: ProductSelectionDelegate?
     
@@ -128,6 +128,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     private var historyHeight:CGFloat = 0
     public var shouldShowHistory = true {
         didSet {
+            self.historySelector?.view.isHidden = !shouldShowHistory
             self.historyCollectionHeight?.constant = shouldShowHistory ? historyHeight : 0
         }
     }
@@ -146,6 +147,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             if _selectedCategory == newValue {
                 return
             }
+            self.historySelector?.selectedCategory = newValue
             _selectedCategory = newValue
             self.delegate?.categoryChanged(category: newValue)
         }
@@ -160,6 +162,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             if _selectedProduct == newValue {
                 return
             }
+            self.historySelector?.selectedProduct = newValue
             _selectedProduct = newValue
             if let product = newValue {
                 if (selectedCategory != product.category) {
@@ -231,6 +234,16 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           
+       if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+        let height = collectionView.frame.size.height - layout.sectionInset.top - layout.sectionInset.bottom
+           return CGSize(width: height, height: height)
+       }
+       
+       return CGSize.zero
+    }
+    
     func reloadSwatches() {
         self.swatchScroller.contentOffset = CGPoint.zero
         self.swatchScroller.reloadData()
@@ -258,16 +271,32 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         } else if let product = cell.product {
             product.sync {
                 self.selectedProduct = product
-                //self.reloadHistory()
                 self.reloadSwatches()
             }
         } else if let category = cell.category {
             category.sync {
                 self.selectedCategory = category
                 self.reloadSwatches()
-                //self.reloadHistory()
             }
         }
         selectedCell = nil
+    }
+    
+    private var historySelector:HistorySelectionView?
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "history" {
+            if let history = segue.destination as? HistorySelectionView {
+                history.delegate = self
+                history.view.isHidden = !shouldShowHistory
+                self.historySelector = history
+            }
+        }
+    }
+    
+    func historyChanged(category: ProductCategory?, product: Product?) {
+        self.selectedCell = nil
+        self.selectedCategory = category
+        self.selectedProduct = product
+        self.reloadSwatches()
     }
 }

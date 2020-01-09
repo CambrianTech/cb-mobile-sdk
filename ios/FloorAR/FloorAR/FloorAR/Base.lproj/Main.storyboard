@@ -267,7 +267,7 @@
                                     <constraint firstAttribute="height" constant="45" id="2xY-s8-Q5p"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Q6u-Jm-Z0i" kind="embed" id="GUg-80-Em9"/>
+                                    <segue destination="Q6u-Jm-Z0i" kind="embed" identifier="history" id="GUg-80-Em9"/>
                                 </connections>
                             </containerView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYu-PX-k89">
@@ -349,6 +349,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="260"/>
                     <connections>
+                        <outlet property="historyCollectionHeight" destination="2xY-s8-Q5p" id="Eh9-Ai-9pa"/>
                         <outlet property="swatchScroller" destination="cYu-PX-k89" id="giy-c8-Jka"/>
                     </connections>
                 </viewController>
