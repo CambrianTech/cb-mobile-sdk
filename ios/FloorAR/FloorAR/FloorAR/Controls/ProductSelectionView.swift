@@ -397,17 +397,20 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     }
     
-    func reloadSwatches() {
+    func reloadSwatches(_ completion: (() -> Void)? = nil) {
         self.swatchScroller.contentOffset = CGPoint.zero
         self.swatchScroller.reloadData()
         self.swatchScroller.invalidateIntrinsicContentSize()
-                
+        self.swatchScroller.collectionViewLayout.invalidateLayout()
         self.swatchScroller.performBatchUpdates(nil, completion: {
             (result) in
             if let color = self.selectedColor, let index = color.product.colors.index(of: color) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
             } else if let product = self.selectedProduct, let index = product.category.products.index(of: product) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
+            }
+            if let completion = completion {
+                completion()
             }
         })
     }
@@ -419,6 +422,7 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
         self.historyCollection.contentOffset = CGPoint.zero
         self.historyCollection.reloadData()
         self.historyCollection.invalidateIntrinsicContentSize()
+        self.historyCollection.collectionViewLayout.invalidateLayout()
         //historyCollectionHeight?.constant = self.history.count > 0 ? historyHeight : 0
     }
 
@@ -436,12 +440,13 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
             return
         }
         let item = self.history[indexPath.row]
-        self.selectedCategory = item.category
-        self.selectedProduct = item.product
-        self.selectedCell = nil
         
         reloadHistory()
-        reloadSwatches()
+        reloadSwatches({
+            self.selectedCategory = item.category
+            self.selectedProduct = item.product
+            self.selectedCell = nil
+        })
     }
     
     func swatchView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
