@@ -29,6 +29,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         }
 
         let request = URLRequest(url: url, cachePolicy:flushCache ? .reloadIgnoringLocalAndRemoteCacheData : .useProtocolCachePolicy)
+        
         self.webview.delegate = self
         self.webview.load(request)
     }
@@ -73,6 +74,10 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
             self.webview.hud.dismiss()
             return
         }
+    }
+    
+    func CBWebViewFailedLoad() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>) {
