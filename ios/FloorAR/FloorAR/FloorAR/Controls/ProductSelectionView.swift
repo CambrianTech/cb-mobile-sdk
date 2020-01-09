@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
@@ -103,17 +104,6 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
     @IBOutlet weak var swatchScroller: UICollectionView!
     @IBOutlet weak var historyCollectionHeight: NSLayoutConstraint?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.topLevelCategories = ProductCategory.all()
-        
-        self.swatchScroller.contentInsetAdjustmentBehavior = .never
-        self.historyHeight = self.historyCollectionHeight?.constant ?? 0
-        self.historyCollectionHeight?.constant = shouldShowHistory ? historyHeight : 0
-        
-        self.delegate?.productSelectionViewDidLoad(psv:self)
-    }
-    
     private var selectedCell:ProductSwatchCell? {
         willSet {
             if let cell = selectedCell {
@@ -150,6 +140,7 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
             self.historySelector?.selectedCategory = newValue
             _selectedCategory = newValue
             self.delegate?.categoryChanged(category: newValue)
+            self.refreshItems()
         }
     }
     
@@ -170,6 +161,7 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
                 }
                 self.delegate?.productChanged(product: product)
             }
+            self.refreshItems()
         }
     }
     
@@ -191,70 +183,102 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
             }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.topLevelCategories = ProductCategory.all()
+        
+        self.swatchScroller.contentInsetAdjustmentBehavior = .never
+        self.historyHeight = self.historyCollectionHeight?.constant ?? 0
+        self.historyCollectionHeight?.constant = shouldShowHistory ? historyHeight : 0
+        
+        self.delegate?.productSelectionViewDidLoad(psv:self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.refreshItems()
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    var items:[Object] = [] {
+        didSet {
+            reloadSwatches()
+        }
+    }
+    
+    func refreshItems() {
         if let parent = self.selectedProduct {
             //print("Listing product \(parent.name) colors")
-            return shouldShowColors ? parent.colors.count : 0
+            items = shouldShowColors ? Array(parent.colors) : []
         } else if let parent = self.selectedCategory {
             //print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
             if (parent.products.count > 0) {
-                return shouldShowProducts ? parent.products.count : 0
+                items = shouldShowProducts ? Array(parent.products) : []
             } else {
-                return parent.categories.count
+                items = Array(parent.categories)
             }
         } else if let categories = self.topLevelCategories {
             //print("Listing top level categories")
-            return categories.count
+            items = categories
         }
-        return 0
     }
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductSwatchCell", for: indexPath) as? ProductSwatchCell else {
-                fatalError("cannot find ProductSwatchCell")
-            }
+            fatalError("cannot find ProductSwatchCell")
+        }
         
-            if let product = self.selectedProduct {
-                cell.color = product.colors[indexPath.row]
+        if (indexPath.row < items.count) {
+            let item = items[indexPath.row]
+            if let color = item as? ProductColor {
+                cell.color = color
                 if (cell.color == self.selectedColor) {
                     cell.selected(cell.color == self.selectedColor, animated: false)
                     self.selectedCell = cell
                 }
-            } else if let category = self.selectedCategory {
-                if category.products.count > 0 {
-                    cell.product = category.products[indexPath.row]
-                } else {
-                    cell.category = category.categories[indexPath.row]
-                }
-            } else if let categories = self.topLevelCategories {
-                cell.category = categories[indexPath.row]
             }
+            else if let product = item as? Product {
+                cell.product = product
+            }
+            else if let category = item as? ProductCategory {
+                cell.category = category
+            }
+        }
 
-            return cell
+        return cell
     }
     
+    var itemSize:CGFloat = 0
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            
        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-        let height = collectionView.frame.size.height - layout.sectionInset.top - layout.sectionInset.bottom
-           return CGSize(width: height, height: height)
+            if (collectionView.frame.size.height > 0) {
+                itemSize = collectionView.frame.size.height - layout.sectionInset.top - layout.sectionInset.bottom
+            }
+            return CGSize(width: itemSize, height: itemSize)
        }
        
        return CGSize.zero
     }
     
     func reloadSwatches() {
-        self.swatchScroller.contentOffset = CGPoint.zero
+        if (self.swatchScroller.frame.size.height == 0) {
+            return
+        }
+        
         self.swatchScroller.reloadData()
-        self.swatchScroller.invalidateIntrinsicContentSize()
-                
         self.swatchScroller.performBatchUpdates(nil, completion: {
             (result) in
+            
             if let color = self.selectedColor, let index = color.product.colors.index(of: color) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
             } else if let product = self.selectedProduct, let index = product.category.products.index(of: product) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
+            } else {
+                self.swatchScroller.contentOffset = CGPoint.zero
             }
         })
     }
@@ -264,21 +288,26 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
             fatalError("cannot find ProductSwatchCell")
         }
         
-        if let color = cell.color, let product = self.selectedProduct {
-            selectedCell = cell
-            self.delegate?.productColorChanged(product:product, color: color)
-            return
-        } else if let product = cell.product {
-            product.sync {
-                self.selectedProduct = product
-                self.reloadSwatches()
+        if (indexPath.row < items.count) {
+            let item = items[indexPath.row]
+            
+            if let color = item as? ProductColor, let product = self.selectedProduct {
+                selectedCell = cell
+                self.delegate?.productColorChanged(product:product, color: color)
+                return
             }
-        } else if let category = cell.category {
-            category.sync {
-                self.selectedCategory = category
-                self.reloadSwatches()
+            else if let product = item as? Product {
+                product.sync {
+                    self.selectedProduct = product
+                }
+            }
+            else if let category = item as? ProductCategory {
+                category.sync {
+                    self.selectedCategory = category
+                }
             }
         }
+        
         selectedCell = nil
     }
     
@@ -297,6 +326,5 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
         self.selectedCell = nil
         self.selectedCategory = category
         self.selectedProduct = product
-        self.reloadSwatches()
     }
 }
