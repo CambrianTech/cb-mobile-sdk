@@ -432,20 +432,13 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func historyView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
-        print("point a")
         let item = self.history[indexPath.row]
-        print("point b")
         self.selectedCategory = item.category
-        print("point c")
         self.selectedProduct = item.product
-        print("point d")
         self.selectedCell = nil
-        print("point e")
         
-        reloadHistory()
-        print("point f")
-        reloadSwatches()
-        print("point g")
+        //reloadHistory()
+        //reloadSwatches()
     }
     
     func swatchView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
