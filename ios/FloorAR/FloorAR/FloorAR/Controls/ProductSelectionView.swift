@@ -432,6 +432,9 @@ class ProductSelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func historyView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
+        if (indexPath.row >= self.history.count) {
+            return
+        }
         let item = self.history[indexPath.row]
         self.selectedCategory = item.category
         self.selectedProduct = item.product
