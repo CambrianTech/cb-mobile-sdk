@@ -51,6 +51,10 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         }
     }
     
+    func CBWebViewFailedLoad() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func CBWebViewHandleScriptMessage(_ message:Dictionary<String, AnyObject>) {
         if let command = message["command"] as? String {
             if command == "sceneLoaded", let product = self.product, let color = self.color {
