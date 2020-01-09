@@ -90,7 +90,7 @@ export default function Visualizer(props: any) {
                 floorRotation={rotation[1]}
                 canLoad={canLoad}
             />
-            {!state.showControls && <VisualizerTools onChangeImage={onChangeImage} />}
+            {!state.showControls && state.sceneData && <VisualizerTools onChangeImage={onChangeImage} />}
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
     ), [state.materialProperties, state.showControls, state.sceneData, fov, position, rotation, canLoad, onChangeImage, onImageChosen])
