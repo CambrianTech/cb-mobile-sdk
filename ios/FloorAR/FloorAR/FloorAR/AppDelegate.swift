@@ -25,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cbConfig.workingPath = documentDirectoryURL.appendingPathComponent("cbar", isDirectory: true).path;
         
         CBLicensing.enable(cbConfig)
+        
+        NSSetUncaughtExceptionHandler { exception in
+           print(exception)
+           print(exception.callStackSymbols)
+        }
                 
         return true
     }
