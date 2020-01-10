@@ -16,6 +16,7 @@ protocol CBDataObjectProtocol {
     func needsUpdate() -> Bool
     func getDataUrl() -> URL?
     func parseObjects(data:Dictionary<String, AnyObject>, realm:Realm)
+    func getAllChildObjects() -> [CBDataObject] 
 }
 
 typealias CBDataObject = _CBDataObject & CBDataObjectProtocol
@@ -97,5 +98,21 @@ class _CBDataObject: Object {
     static func sync(_ completion: (() -> Void)?=nil) {
         let this = self as! CBDataObject.Type
         this.shared.sync(completion)
+    }
+    
+    func syncTree(_ completion: (() -> Void)? = nil) {
+        print("Synchronizing object \(self.name)")
+        self.sync({
+            let ele = self as! CBDataObject
+            let children = ele.getAllChildObjects()
+            for child in children {
+                child.syncTree()
+            }
+        })
+    }
+    
+    static func syncTree(_ completion: (() -> Void)?=nil) {
+        let this = self as! CBDataObject.Type
+        this.shared.syncTree(completion)
     }
 }

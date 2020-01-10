@@ -12,7 +12,7 @@ import Foundation
 import RealmSwift
 
 class SceneLocation: CBDataObject {
-    
+        
     @objc dynamic var basePath = ""
     @objc dynamic var previewName = ""
     @objc dynamic var thumbnailName = ""
@@ -51,5 +51,10 @@ class SceneLocation: CBDataObject {
             self.scenes.append(scene)
         }
         
+    }
+    
+    func getAllChildObjects() -> [CBDataObject] {
+        let scenes: [CBDataObject] = self.scenes.map { $0 as CBDataObject }
+        return scenes
     }
 }

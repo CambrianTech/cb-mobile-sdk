@@ -49,6 +49,11 @@ class Product : CBDataObject {
         }
     }
     
+    func getAllChildObjects() -> [CBDataObject] {
+        let colors: [CBDataObject] = self.colors.map { $0 as CBDataObject }
+        return colors
+    }
+    
     private class func buildProductColorsDataRequest( _ categoryData:Dictionary<String,AnyObject>, _ styleNumber:String, page:Int=0) -> URL {
         
         let orderBy = "StyleSequence,UniqueId&$count=true"

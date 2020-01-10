@@ -35,4 +35,8 @@ class ProductColor: CBDataObject {
     func parseObjects(data: Dictionary<String, AnyObject>, realm:Realm) {
         
     }
+    
+    func getAllChildObjects() -> [CBDataObject] {
+        return []
+    }
 }

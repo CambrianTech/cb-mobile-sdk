@@ -74,6 +74,16 @@ class ProductCategory: CBDataObject {
         }
     }
     
+    func getAllChildObjects() -> [CBDataObject] {
+        let categories: [CBDataObject] = self.categories.map { $0 as CBDataObject }
+        let products: [CBDataObject] = self.products.map { $0 as CBDataObject }
+        
+        var all:[CBDataObject] = categories
+        all.append(contentsOf: products)
+        
+        return all
+    }
+    
     private class func buildProductDataRequest(_ categoryData:Dictionary<String,AnyObject>, page:Int=0) -> URL {
                 
         let orderBy = "StyleSequence,UniqueId&$count=true"
