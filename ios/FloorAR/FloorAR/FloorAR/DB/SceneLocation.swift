@@ -32,7 +32,7 @@ class SceneLocation: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        if (Date().days(from: self.updated) > DataSource.maxDataAgeDays) {
+        if (Date().days(from: self.updated) > max(1, DataSource.maxDataAgeDays / 5)) {
             return true
         }
         return false

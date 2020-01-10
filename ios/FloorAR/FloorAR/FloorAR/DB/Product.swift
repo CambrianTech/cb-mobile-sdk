@@ -26,7 +26,7 @@ class Product : CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        if (Date().seconds(from: self.updated) > DataSource.maxDataAgeDays) {
+        if (Date().days(from: self.updated) > max(1, DataSource.maxDataAgeDays / 3)) {
             return true
         }
         return self.colors.count == 0
