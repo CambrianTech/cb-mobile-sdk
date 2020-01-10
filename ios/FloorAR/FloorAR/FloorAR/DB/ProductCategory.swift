@@ -27,7 +27,7 @@ class ProductCategory: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        if (Date().days(from: self.updated) > 3) {
+        if (Date().days(from: self.updated) > DataSource.maxDataAgeDays) {
             return true
         }
         
@@ -72,6 +72,16 @@ class ProductCategory: CBDataObject {
                 self.products.append(product)
             }
         }
+    }
+    
+    func getAllChildObjects() -> [CBDataObject] {
+        let categories: [CBDataObject] = self.categories.map { $0 as CBDataObject }
+        let products: [CBDataObject] = self.products.map { $0 as CBDataObject }
+        
+        var all:[CBDataObject] = categories
+        all.append(contentsOf: products)
+        
+        return all
     }
     
     private class func buildProductDataRequest(_ categoryData:Dictionary<String,AnyObject>, page:Int=0) -> URL {

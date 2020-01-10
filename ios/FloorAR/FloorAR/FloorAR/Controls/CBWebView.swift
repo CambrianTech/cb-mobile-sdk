@@ -78,7 +78,8 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
         if (showLoadingIndicator) {
             displayProgress(show: true, isPage:true)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+        //absolute timeout:
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30, execute: {
             if (!self.didLoad) {
                 self.handleFailedLoad()
             }
@@ -104,12 +105,19 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
                 if let title = self.title, title.count == 0 {
                     self.handleStatusCode(404)
                     self.handleFailedLoad()
+                    return
                 }
+            }
+            if (!self.didLoad) {
+                self.didLoad = true
+                print("Webview established connection")
             }
         }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.didLoad = true
+        print("Webview downloaded content")
         displayProgress(show: false, isPage:true)
     }
     
@@ -192,7 +200,7 @@ class CBWebView: WKWebView, WKUIDelegate, WKNavigationDelegate, WKScriptMessageH
             if let command = dict["command"] as? String {
                 //print("Got command \(command)")
                 if command == "loaded" {
-                    self.didLoad = true
+                    print("Javascript loaded")
                     if let callback = self.delegate?.CBWebViewDidFinishedLoading {
                         callback(true)
                     }

@@ -21,6 +21,7 @@ class HomeViewController: CameraViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         checkCameraAccess()
+        //ProductCategory.syncTree()
     }
     
     @IBAction func showLiveVisualizer(_ sender: Any) {

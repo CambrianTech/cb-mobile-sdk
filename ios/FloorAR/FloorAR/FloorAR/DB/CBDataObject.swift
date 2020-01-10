@@ -16,6 +16,7 @@ protocol CBDataObjectProtocol {
     func needsUpdate() -> Bool
     func getDataUrl() -> URL?
     func parseObjects(data:Dictionary<String, AnyObject>, realm:Realm)
+    func getAllChildObjects() -> [CBDataObject] 
 }
 
 typealias CBDataObject = _CBDataObject & CBDataObjectProtocol
@@ -73,9 +74,7 @@ class _CBDataObject: Object {
                 completion()
             }
         } else if let url = ele.getDataUrl() {
-            try! DataSource.current.realm.write {
-                self.updated = Date()
-            }
+            print("Synchronizing object \(self.name)")
             DispatchQueue.global(qos: .background).async {
                 AF.request(url).responseJSON { response in
                     if let json = response.value as? Dictionary<String, AnyObject> {
@@ -83,6 +82,7 @@ class _CBDataObject: Object {
                             let realm = DataSource.current.realm
                             try! realm.write {
                                 ele.parseObjects(data:json, realm:realm)
+                                self.updated = Date()
                             }
                             if let completion = completion {
                                 completion()
@@ -97,5 +97,22 @@ class _CBDataObject: Object {
     static func sync(_ completion: (() -> Void)?=nil) {
         let this = self as! CBDataObject.Type
         this.shared.sync(completion)
+    }
+    
+    func syncTree(_ completion: (() -> Void)? = nil) {
+        self.sync({
+            let ele = self as! CBDataObject
+            let children = ele.getAllChildObjects()
+            for child in children {
+                child.syncTree()
+            }
+        })
+    }
+    
+    static func syncTree(_ completion: (() -> Void)?=nil) {
+        let this = self as! CBDataObject.Type
+        print("Synchronizing all objects")
+        this.shared.syncTree(completion)
+        print("Synchronizing completed. All objects are up to date.")
     }
 }

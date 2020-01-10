@@ -13,6 +13,7 @@ import SDWebImage
 
 class DataSource {
     
+    static let maxDataAgeDays = 30
     static let webSource = "https://shawfloors.com/api"
     static let categoryJsonPath = "datasource.json"
     static let ppiJsonPath = "ppi-data.json"
@@ -31,12 +32,22 @@ class DataSource {
     static let imageSize = 320
     static let pageSize = 1000
     
-    let realm = try! Realm()
+    let realm:Realm
     
     var ppiData: Dictionary<String, Int> = Dictionary<String, Int>()
     
     private init() {
-    
+        
+        do {
+            //not necessary, just convenient:
+            let copied = try FileManager.default.copyBundleFileToUserDocuments(forResource: "default", ofType: "realm")
+            if (copied) {
+                print("Copied realm database to default location")
+            }
+        }
+        catch { }
+        //must run:
+        realm = try! Realm()
     }
     
     private func readPPIJSON() {

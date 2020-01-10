@@ -26,7 +26,7 @@ class Product : CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        if (Date().seconds(from: self.updated) > 3) {
+        if (Date().days(from: self.updated) > max(1, DataSource.maxDataAgeDays / 3)) {
             return true
         }
         return self.colors.count == 0
@@ -47,6 +47,11 @@ class Product : CBDataObject {
             realm.add(color, update: .modified)
             self.colors.append(color)
         }
+    }
+    
+    func getAllChildObjects() -> [CBDataObject] {
+        let colors: [CBDataObject] = self.colors.map { $0 as CBDataObject }
+        return colors
     }
     
     private class func buildProductColorsDataRequest( _ categoryData:Dictionary<String,AnyObject>, _ styleNumber:String, page:Int=0) -> URL {

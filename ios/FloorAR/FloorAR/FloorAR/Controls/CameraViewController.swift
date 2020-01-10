@@ -28,24 +28,24 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     func checkCameraAccess() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
             case .denied:
-                print("Denied, request permission from settings")
+                print("Camera Access Denied, request permission from settings")
                 self.presentCameraSettings()
             case .restricted:
-                print("Restricted, device owner must approve")
+                print("Camera Access Restricted, device owner must approve")
                 self.presentCameraSettings()
             case .authorized:
-                print("Authorized, proceed")
+                print("Camera Access Authorized, proceed")
                 self.hasCameraAccess = true
             case .notDetermined:
                 AVCaptureDevice.requestAccess(for: .video) { success in
                     if success {
-                        print("Permission granted, proceed")
+                        print("Camera Access Permission granted, proceed")
                         self.hasCameraAccess = true
                     } else {
-                        print("Permission denied")
+                        print("Camera Access Permission denied")
                     }
                 }
-            @unknown default: print("unknown status")
+            @unknown default: print("Camera Access Unknown")
         }
     }
     

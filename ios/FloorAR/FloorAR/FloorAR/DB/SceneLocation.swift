@@ -12,7 +12,7 @@ import Foundation
 import RealmSwift
 
 class SceneLocation: CBDataObject {
-    
+        
     @objc dynamic var basePath = ""
     @objc dynamic var previewName = ""
     @objc dynamic var thumbnailName = ""
@@ -32,7 +32,10 @@ class SceneLocation: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        return true
+        if (Date().days(from: self.updated) > max(1, DataSource.maxDataAgeDays / 5)) {
+            return true
+        }
+        return false
     }
     
     func getDataUrl() -> URL? {
@@ -51,5 +54,10 @@ class SceneLocation: CBDataObject {
             self.scenes.append(scene)
         }
         
+    }
+    
+    func getAllChildObjects() -> [CBDataObject] {
+        let scenes: [CBDataObject] = self.scenes.map { $0 as CBDataObject }
+        return scenes
     }
 }
