@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-               BuildableName = "Floor AR.app"
-               BlueprintName = "FloorAR"
-               ReferencedContainer = "container:FloorAR.xcodeproj">
+               BuildableName = "Design Up.app"
+               BlueprintName = "DesignUp"
+               ReferencedContainer = "container:DesignUp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-            BuildableName = "Floor AR.app"
-            BlueprintName = "FloorAR"
-            ReferencedContainer = "container:FloorAR.xcodeproj">
+            BuildableName = "Design Up.app"
+            BlueprintName = "DesignUp"
+            ReferencedContainer = "container:DesignUp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -54,16 +54,16 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-            BuildableName = "Floor AR.app"
-            BlueprintName = "FloorAR"
-            ReferencedContainer = "container:FloorAR.xcodeproj">
+            BuildableName = "Design Up.app"
+            BlueprintName = "DesignUp"
+            ReferencedContainer = "container:DesignUp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
             value = "disable"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7E4C8FE20AB924D00E842E4"
-            BuildableName = "Floor AR.app"
-            BlueprintName = "FloorAR"
-            ReferencedContainer = "container:FloorAR.xcodeproj">
+            BuildableName = "Design Up.app"
+            BlueprintName = "DesignUp"
+            ReferencedContainer = "container:DesignUp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
