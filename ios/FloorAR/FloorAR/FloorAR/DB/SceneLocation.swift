@@ -32,7 +32,10 @@ class SceneLocation: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        return true
+        if (Date().days(from: self.updated) > DataSource.maxDataAgeDays) {
+            return true
+        }
+        return false
     }
     
     func getDataUrl() -> URL? {

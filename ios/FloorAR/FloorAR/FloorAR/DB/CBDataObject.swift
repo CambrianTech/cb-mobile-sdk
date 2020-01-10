@@ -74,9 +74,7 @@ class _CBDataObject: Object {
                 completion()
             }
         } else if let url = ele.getDataUrl() {
-            try! DataSource.current.realm.write {
-                self.updated = Date()
-            }
+            print("Synchronizing object \(self.name)")
             DispatchQueue.global(qos: .background).async {
                 AF.request(url).responseJSON { response in
                     if let json = response.value as? Dictionary<String, AnyObject> {
@@ -84,6 +82,7 @@ class _CBDataObject: Object {
                             let realm = DataSource.current.realm
                             try! realm.write {
                                 ele.parseObjects(data:json, realm:realm)
+                                self.updated = Date()
                             }
                             if let completion = completion {
                                 completion()
@@ -101,7 +100,6 @@ class _CBDataObject: Object {
     }
     
     func syncTree(_ completion: (() -> Void)? = nil) {
-        print("Synchronizing object \(self.name)")
         self.sync({
             let ele = self as! CBDataObject
             let children = ele.getAllChildObjects()

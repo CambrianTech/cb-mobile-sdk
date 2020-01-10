@@ -27,7 +27,7 @@ class ProductCategory: CBDataObject {
     }
     
     func needsUpdate() -> Bool {
-        if (Date().days(from: self.updated) > 3) {
+        if (Date().days(from: self.updated) > DataSource.maxDataAgeDays) {
             return true
         }
         

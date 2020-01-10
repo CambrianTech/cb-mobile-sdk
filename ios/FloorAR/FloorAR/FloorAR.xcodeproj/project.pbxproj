@@ -52,6 +52,7 @@
 		E7E4C90D20AB925000E842E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4C90B20AB925000E842E4 /* LaunchScreen.storyboard */; };
 		E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4C91D20AB99AE00E842E4 /* CambrianSDK.framework */; };
 		E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4C91D20AB99AE00E842E4 /* CambrianSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F5B84823C8F86D00C9BC20 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = E7F5B84723C8F86D00C9BC20 /* default.realm */; };
 		E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB860D23B1662B003A09DE /* WebKit.framework */; };
 		E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FEEA4820B70AB900B3F780 /* ProductVariation.swift */; };
 		E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FEEA4B20B7387A00B3F780 /* SceneLocation.swift */; };
@@ -144,6 +145,7 @@
 		E7E4C90E20AB925000E842E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CambrianSDK.xcodeproj; path = ../../CambrianSDK/CambrianSDK.xcodeproj; sourceTree = "<group>"; };
 		E7E4C92720AB9B9D00E842E4 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E7F5B84723C8F86D00C9BC20 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
 		E7FB860D23B1662B003A09DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E7FEEA4820B70AB900B3F780 /* ProductVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariation.swift; sourceTree = "<group>"; };
 		E7FEEA4B20B7387A00B3F780 /* SceneLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLocation.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		E7C497BC20B3156F00E7567D /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				E7F5B84723C8F86D00C9BC20 /* default.realm */,
 				E7D255ED23A83A7D00C2737D /* ppi-data.json */,
 				E7291DC123A29E6A00F492C2 /* datasource.json */,
 				E7CD9F6F23A2CEF50074F27C /* bundle */,
@@ -368,6 +371,7 @@
 				E7291DC223A29E6B00F492C2 /* datasource.json in Resources */,
 				E7E4C90D20AB925000E842E4 /* LaunchScreen.storyboard in Resources */,
 				E7B42B1122F4B40900F48597 /* Data in Resources */,
+				E7F5B84823C8F86D00C9BC20 /* default.realm in Resources */,
 				E7E4C90A20AB925000E842E4 /* Assets.xcassets in Resources */,
 				E739B15B23C38CB400958259 /* CBWebView.js in Resources */,
 				E7CD9F7023A2CEF50074F27C /* bundle in Resources */,
