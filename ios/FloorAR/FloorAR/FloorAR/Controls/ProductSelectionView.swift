@@ -9,6 +9,25 @@
 import UIKit
 import RealmSwift
 
+extension UICollectionView{
+ func refreshLayout() {
+      let oldLayout = collectionViewLayout as! UICollectionViewFlowLayout
+      let newLayout = UICollectionViewFlowLayout()
+      newLayout.estimatedItemSize = oldLayout.estimatedItemSize
+      newLayout.footerReferenceSize = oldLayout.footerReferenceSize
+      newLayout.headerReferenceSize = oldLayout.headerReferenceSize
+      newLayout.itemSize = oldLayout.itemSize
+      newLayout.minimumInteritemSpacing = oldLayout.minimumInteritemSpacing
+      newLayout.minimumLineSpacing = oldLayout.minimumLineSpacing
+      newLayout.scrollDirection = oldLayout.scrollDirection
+      newLayout.sectionFootersPinToVisibleBounds = oldLayout.sectionFootersPinToVisibleBounds
+      newLayout.sectionHeadersPinToVisibleBounds = oldLayout.sectionHeadersPinToVisibleBounds
+      newLayout.sectionInset = oldLayout.sectionInset
+      newLayout.sectionInsetReference = oldLayout.sectionInsetReference
+      collectionViewLayout = newLayout
+  }
+}
+
 class ProductSwatchCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productLabel: UILabel!
@@ -265,10 +284,7 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
     }
     
     func reloadSwatches() {
-        if (self.swatchScroller.frame.size.height == 0) {
-            return
-        }
-        
+        self.swatchScroller.refreshLayout()
         self.swatchScroller.reloadData()
         self.swatchScroller.performBatchUpdates(nil, completion: {
             (result) in
