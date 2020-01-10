@@ -113,6 +113,8 @@ class _CBDataObject: Object {
     
     static func syncTree(_ completion: (() -> Void)?=nil) {
         let this = self as! CBDataObject.Type
+        print("Synchronizing all objects")
         this.shared.syncTree(completion)
+        print("Synchronizing completed. All objects are up to date.")
     }
 }

@@ -4,3 +4,4 @@
 *.a filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
 *.framework filter=lfs diff=lfs merge=lfs -text
+FloorAR/FloorAR/FloorAR/DB/bundle/default.realm filter=lfs diff=lfs merge=lfs -text
