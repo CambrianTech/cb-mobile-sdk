@@ -1,0 +1,16 @@
+{
+  "adsEnabled": true,
+  "maxDataAgeDays" : 30,
+  "imageSize" : 320,
+  "pageSize" : 1000,
+  "baseImagePath" : "https://shawfloors.scene7.com/is/image",
+  "webSource" : "https://shawfloors.com/api",
+  "productGroup" : "shawfloors",
+
+  "configUrl": "/config.json",
+  "visualizerUrl": "",
+  "brandInfoUrl": "/brand-info",
+  "sceneBaseUrl": "/assets/scenes",
+  "sceneDataUrl" : "/assets/scenes/scenes.json",
+  "productDetailsUrl" : "/product-details"
+}

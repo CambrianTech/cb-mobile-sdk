@@ -13,24 +13,59 @@ import SDWebImage
 
 class DataSource {
     
-    static let maxDataAgeDays = 30
-    static let webSource = "https://shawfloors.com/api"
+    static var maxDataAgeDays = 30
+    static var imageSize = 320
+    static var pageSize = 1000
+    static var baseImagePath = "https://shawfloors.scene7.com/is/image"
+    static var webSource = "https://shawfloors.com/api"
     static let categoryJsonPath = "datasource.json"
     static let ppiJsonPath = "ppi-data.json"
-    static let productGroup = "shawfloors"
+    static var productGroup = "shawfloors"
     
-    static let cambrianWebURL =  "https://mobile.cambrianar.com"
-    //static let cambrianWebURL =  "http://10.0.1.61:3000"
+    //static let cambrianWebURL =  "https://mobile.cambrianar.com"
+    static var cambrianWebURL =  "http://10.0.1.61:3000"
     
-    static let brandInfoUrl =  URL(string: "\(cambrianWebURL)/brand-info")!
-    static let visualizerUrl = URL(string: cambrianWebURL)!
-    static let sceneBaseUrl = URL(string: "\(cambrianWebURL)/assets/scenes")!
-    static let sceneDataUrl = URL(string: "\(cambrianWebURL)/assets/scenes/scenes.json")!
-    static let productDetailsUrl = URL(string: "\(cambrianWebURL)/product-details")!
+    static var _configUrl = "/config.json"
+    static var configUrl:URL {
+        get {
+            return URL(string: cambrianWebURL + _configUrl)!
+        }
+    }
     
-    static let baseImagePath = "https://shawfloors.scene7.com/is/image";
-    static let imageSize = 320
-    static let pageSize = 1000
+    static var _brandInfoUrl = "/brand-info"
+    static var brandInfoUrl:URL {
+        get {
+            return URL(string: cambrianWebURL + _brandInfoUrl)!
+        }
+    }
+    
+    static var _visualizerUrl = ""
+    static var visualizerUrl:URL {
+        get {
+            return URL(string: cambrianWebURL + _visualizerUrl)!
+        }
+    }
+    
+    static var _sceneBaseUrl = "/assets/scenes"
+    static var sceneBaseUrl:URL {
+        get {
+            return URL(string: cambrianWebURL + _sceneBaseUrl)!
+        }
+    }
+    
+    static var _sceneDataUrl = "/assets/scenes/scenes.json"
+    static var sceneDataUrl:URL {
+        get {
+            return URL(string: cambrianWebURL + _sceneDataUrl)!
+        }
+    }
+    
+    static var _productDetailsUrl = "/product-details"
+    static var productDetailsUrl:URL {
+        get {
+            return URL(string: cambrianWebURL + _productDetailsUrl)!
+        }
+    }
     
     let realm:Realm
     
@@ -48,6 +83,191 @@ class DataSource {
         catch { }
         //must run:
         realm = try! Realm()
+        
+        parseLocalConfig()
+        getRemoteConfig()
+    }
+    
+    private func parseLocalConfig() {
+        let defaults = UserDefaults.standard
+        if let value = defaults.string(forKey: "cambrianWebURL") {
+            DataSource.cambrianWebURL = value
+        }
+        if let value = defaults.string(forKey: "configUrl") {
+            DataSource._configUrl = value
+        }
+        if let value = defaults.string(forKey: "webSource") {
+            DataSource.webSource = value
+        }
+        if let value = defaults.string(forKey: "baseImagePath") {
+            DataSource.baseImagePath = value
+        }
+        if let value = defaults.string(forKey: "productGroup") {
+            DataSource.productGroup = value
+        }
+        if let obj = defaults.object(forKey: "adsEnabled"), let value = obj as? Bool {
+            adsEnabled = value
+        }
+        if let obj = defaults.object(forKey: "maxDataAgeDays"), let value = obj as? Int {
+            DataSource.maxDataAgeDays = value
+        }
+        if let obj = defaults.object(forKey: "imageSize"), let value = obj as? Int {
+            DataSource.imageSize = value
+        }
+        if let obj = defaults.object(forKey: "pageSize"), let value = obj as? Int {
+            DataSource.pageSize = value
+        }
+        
+        if let value = defaults.string(forKey: "visualizerUrl") {
+            DataSource._visualizerUrl = value
+        }
+        if let value = defaults.string(forKey: "brandInfoUrl") {
+            DataSource._brandInfoUrl = value
+        }
+        if let value = defaults.string(forKey: "sceneBaseUrl") {
+            DataSource._sceneBaseUrl = value
+        }
+        if let value = defaults.string(forKey: "sceneDataUrl") {
+            DataSource._sceneDataUrl = value
+        }
+        if let value = defaults.string(forKey: "productDetailsUrl") {
+            DataSource._productDetailsUrl = value
+        }
+    }
+    
+    private func getRemoteConfig() {
+        DispatchQueue(label: "server-sync").async {
+            do {
+                let data = try Data(contentsOf: DataSource.configUrl, options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                self.handleConfigData(jsonResult)
+            }
+            catch {
+                print("Remote config not found")
+            }
+        }
+    }
+    
+    private func handleConfigData(_ jsonResult:Any) {
+        guard let config = jsonResult as? Dictionary<String, AnyObject> else {
+            print("remote config not parseable, ignoring")
+            return
+        }
+        
+        let defaults = UserDefaults.standard
+        print("Parsing remote configuration")
+        
+        if let value = config["cambrianWebURL"] as? String {
+            if (DataSource.cambrianWebURL != value) {
+                print("cambrianWebURL is now '\(value)'")
+                DataSource.cambrianWebURL = value
+                defaults.set(DataSource.cambrianWebURL, forKey: "cambrianWebURL")
+            }
+        }
+        
+        if let value = config["configUrl"] as? String {
+            if (DataSource._configUrl != value) {
+                DataSource._configUrl = value
+                print("configUrl is now '\(value)'")
+                defaults.set(value, forKey: "configUrl")
+            }
+        }
+                
+        if let value = config["webSource"] as? String {
+            if (DataSource.webSource != value) {
+                DataSource.webSource = value
+                print("webSource is now '\(value)'")
+                defaults.set(value, forKey: "webSource")
+            }
+        }
+        
+        if let value = config["baseImagePath"] as? String {
+            if (DataSource.baseImagePath != value) {
+                DataSource.baseImagePath = value
+                print("baseImagePath is now '\(value)'")
+                defaults.set(value, forKey: "baseImagePath")
+            }
+        }
+        
+        if let value = config["productGroup"] as? String {
+            if (DataSource.productGroup != value) {
+                DataSource.productGroup = value
+                print("productGroup is now '\(value)'")
+                defaults.set(value, forKey: "productGroup")
+            }
+        }
+        
+        if let value = config["adsEnabled"] as? Bool {
+            if (adsEnabled != value) {
+                adsEnabled = value
+                print("In app ads are now \(value ? "ENABLED" : "DISABLED")")
+                defaults.set(value, forKey: "adsEnabled")
+            }
+        }
+        
+        if let value = config["maxDataAgeDays"] as? Int {
+            if (DataSource.maxDataAgeDays != value) {
+                DataSource.maxDataAgeDays = value
+                print("maxDataAgeDays is now \(value)")
+                defaults.set(value, forKey: "maxDataAgeDays")
+            }
+        }
+        
+        if let value = config["imageSize"] as? Int {
+            if (DataSource.imageSize != value) {
+                DataSource.imageSize = value
+                print("imageSize is now \(value)")
+                defaults.set(value, forKey: "imageSize")
+            }
+        }
+        
+        if let value = config["pageSize"] as? Int {
+            if (DataSource.pageSize != value) {
+                DataSource.pageSize = value
+                print("pageSize is now \(value)")
+                defaults.set(value, forKey: "pageSize")
+            }
+        }
+        
+        if let value = config["visualizerUrl"] as? String {
+            if (DataSource._visualizerUrl != value) {
+                DataSource._visualizerUrl = value
+                print("visualizerUrl is now '\(value)'")
+                defaults.set(value, forKey: "visualizerUrl")
+            }
+        }
+        
+        if let value = config["brandInfoUrl"] as? String {
+            if (DataSource._brandInfoUrl != value) {
+                DataSource._brandInfoUrl = value
+                print("brandInfoUrl is now '\(value)'")
+                defaults.set(value, forKey: "brandInfoUrl")
+            }
+        }
+        
+        if let value = config["sceneBaseUrl"] as? String {
+            if (DataSource._sceneBaseUrl != value) {
+                DataSource._sceneBaseUrl = value
+                print("sceneBaseUrl is now '\(value)'")
+                defaults.set(value, forKey: "sceneBaseUrl")
+            }
+        }
+        
+        if let value = config["sceneDataUrl"] as? String {
+            if (DataSource._sceneDataUrl != value) {
+                DataSource._sceneDataUrl = value
+                print("sceneDataUrl is now '\(value)'")
+                defaults.set(value, forKey: "sceneDataUrl")
+            }
+        }
+        
+        if let value = config["productDetailsUrl"] as? String {
+            if (DataSource._productDetailsUrl != value) {
+                DataSource._productDetailsUrl = value
+                print("productDetailsUrl is now '\(value)'")
+                defaults.set(value, forKey: "productDetailsUrl")
+            }
+        }
     }
     
     private func readPPIJSON() {

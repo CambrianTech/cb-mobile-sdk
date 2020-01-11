@@ -12,6 +12,7 @@ import FBAudienceNetwork
 
 let fbAdBannerPlacementID = "1088997268122110_1089840158037821"
 let fbAdBannerType:FBAdSize = UIDevice.current.userInterfaceIdiom == .pad ? kFBAdSizeHeight90Banner : kFBAdSizeHeight50Banner
+var adsEnabled = true
 
 func printIdentifierForAdvertising() {
     // Check whether advertising tracking is enabled

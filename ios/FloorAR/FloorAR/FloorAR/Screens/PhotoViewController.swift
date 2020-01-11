@@ -49,7 +49,9 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         super.viewWillAppear(animated)
         webview.hud.setProgress(0.0, animated: true)
         self.fbAdViewHeightConstraint.constant = 0
-        self.fbAdBanner.loadAd()
+        if (adsEnabled) {
+            self.fbAdBanner.loadAd()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
