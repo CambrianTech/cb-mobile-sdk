@@ -78,13 +78,13 @@
         <!--Catalog View Controller-->
         <scene sceneID="94v-5r-xQ9">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gPx-Ju-ERS" customClass="CatalogViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="gPx-Ju-ERS" customClass="CatalogViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haA-ZI-3AM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1p-eb-fxz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="899-kU-dn8"/>
                                 </constraints>
@@ -93,14 +93,14 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atj-4h-1Aq">
-                                <rect key="frame" x="365" y="5" width="39" height="30"/>
+                                <rect key="frame" x="365" y="49" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="closeClicked:" destination="gPx-Ju-ERS" eventType="touchUpInside" id="TOL-qw-JQ4"/>
                                 </connections>
                             </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-YI-ExX" customClass="CBWebView" customModule="Design_Up" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="150" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -108,7 +108,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dFU-6i-L6K">
-                                <rect key="frame" x="0.0" y="150" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="AdT-9L-KAY">
                                     <size key="itemSize" width="95" height="95"/>
@@ -203,13 +203,13 @@
         <!--Live Visualizer-->
         <scene sceneID="tUs-Dj-Q7L">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="br9-Yd-2Kv" userLabel="Live Visualizer" customClass="ARViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="br9-Yd-2Kv" userLabel="Live Visualizer" customClass="ARViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53Z-99-PMk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-qm-wvf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="Sgh-Ff-O5F"/>
                                 </constraints>
@@ -218,14 +218,14 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rz6-ww-Dug">
-                                <rect key="frame" x="365" y="5" width="39" height="30"/>
+                                <rect key="frame" x="365" y="49" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="closeClicked:" destination="br9-Yd-2Kv" eventType="touchUpInside" id="GrA-f2-Utr"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qt-Yh-Dmw" userLabel="AR View" customClass="CBRemodelingView">
-                                <rect key="frame" x="0.0" y="160" width="414" height="682"/>
+                                <rect key="frame" x="0.0" y="204" width="414" height="692"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -438,13 +438,13 @@
         <!--Product Details View Controller-->
         <scene sceneID="cTO-Jf-PyM">
             <objects>
-                <viewController id="LCb-KI-xHZ" customClass="ProductDetailsViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="LCb-KI-xHZ" customClass="ProductDetailsViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XG6-hG-ITu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fai-P6-1iu" userLabel="Title and Close">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="PiR-rM-ebA">
                                         <rect key="frame" x="20" y="12" width="159" height="21"/>
@@ -453,7 +453,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fc-nd-min">
-                                        <rect key="frame" x="364" y="7.6666666666666679" width="40" height="30.000000000000004"/>
+                                        <rect key="frame" x="364" y="7.6666666666666643" width="40" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Zod-yI-UgC"/>
                                         </constraints>
@@ -474,7 +474,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFY-H0-HYB">
-                                <rect key="frame" x="0.0" y="45" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="nJf-9O-I6c"/>
                                 </constraints>
@@ -483,7 +483,7 @@
                                 </connections>
                             </containerView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-dA-A5E" customClass="CBWebView" customModule="Design_Up" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="150" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -519,13 +519,13 @@
         <!--Photo View Controller-->
         <scene sceneID="fm1-fD-E18">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="foE-jP-XM7" customClass="PhotoViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="foE-jP-XM7" customClass="PhotoViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHL-De-d5q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVu-qw-QLz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="yb2-Dv-coE"/>
                                 </constraints>
@@ -533,15 +533,15 @@
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="TFb-TA-TBg"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALB-DH-kdE">
-                                <rect key="frame" x="0.0" y="150" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALB-DH-kdE">
+                                <rect key="frame" x="0.0" y="194" width="414" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kB5-Q6-jin"/>
                                 </constraints>
                             </view>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-uo-fj7" customClass="CBWebView" customModule="Design_Up" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="200" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="244" width="414" height="618"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -549,7 +549,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLq-uN-LHW">
-                                <rect key="frame" x="365" y="5" width="39" height="30"/>
+                                <rect key="frame" x="365" y="49" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="closeClicked:" destination="foE-jP-XM7" eventType="touchUpInside" id="Dfv-sR-Uc2"/>
@@ -715,7 +715,7 @@
         <image name="kitchen-bg" width="2258" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j1v-9d-hdZ"/>
+        <segue reference="J4Q-vS-17d"/>
         <segue reference="TFb-TA-TBg"/>
     </inferredMetricsTieBreakers>
 </document>

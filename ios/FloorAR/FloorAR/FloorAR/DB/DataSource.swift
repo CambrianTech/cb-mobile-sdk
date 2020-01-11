@@ -22,10 +22,10 @@ class DataSource {
     static let ppiJsonPath = "ppi-data.json"
     static var productGroup = "shawfloors"
     
-    //static var cambrianWebURL =  "https://mobile.cambrianar.com"
+    static var cambrianWebURL =  "https://mobile.cambrianar.com"
     
     #if DEBUG //because dangerous to leave on
-        static var cambrianWebURL =  "http://10.0.1.61:3000"
+        //cambrianWebURL =  "http://10.0.1.61:3000"
     #endif
     
     static var _configUrl = "/config.json"

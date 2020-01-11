@@ -14,8 +14,6 @@ import FBAudienceNetwork
 class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWebViewDelegate, FBAdViewDelegate {
     
     @IBOutlet weak var webview: CBWebView!
-    
-    
     @IBOutlet weak var fbAdBannerContainer:UIView!
     @IBOutlet weak var fbAdViewHeightConstraint: NSLayoutConstraint!
     private var fbAdBanner:FBAdView!
@@ -41,8 +39,12 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         
         self.fbAdBanner = FBAdView(placementID: fbAdBannerPlacementID, adSize: fbAdBannerType, rootViewController:self)
         self.fbAdBanner.delegate = self
-        self.fbAdBanner.frame = CGRect(x: 0, y: 0, width: self.fbAdBannerContainer.frame.width, height: fbAdBannerType.size.height)
-        self.fbAdBannerContainer.addSubview(self.fbAdBanner)
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            self.view.addSubview(self.fbAdBanner)
+        } else {
+            self.fbAdBanner.frame = CGRect(x: 0, y: 0, width: self.fbAdBannerContainer.frame.width, height: fbAdBannerType.size.height)
+            self.fbAdBannerContainer.addSubview(self.fbAdBanner)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,11 +64,16 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
     }
     
     func adViewDidLoad(_ ad: FBAdView) {
-        self.fbAdViewHeightConstraint.constant = fbAdBannerType.size.height
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            let adWidth:CGFloat = 728 //leaderboard
+            self.fbAdBanner.frame = CGRect(x: 0, y: self.webview.frame.minY, width: adWidth, height: fbAdBannerType.size.height)
+        } else {
+            self.fbAdViewHeightConstraint.constant = fbAdBannerType.size.height
+        }
     }
     
     func adView(_ adView: FBAdView, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        print("Ads failed: \(error.localizedDescription)")
     }
     
     @IBAction func closeClicked(_ sender: Any) {
