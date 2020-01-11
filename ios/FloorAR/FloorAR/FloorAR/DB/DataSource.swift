@@ -22,8 +22,11 @@ class DataSource {
     static let ppiJsonPath = "ppi-data.json"
     static var productGroup = "shawfloors"
     
-    static let cambrianWebURL =  "https://mobile.cambrianar.com"
-    //static var cambrianWebURL =  "http://10.0.1.61:3000"
+    //static var cambrianWebURL =  "https://mobile.cambrianar.com"
+    
+    #if DEBUG //because dangerous to leave on
+        static var cambrianWebURL =  "http://10.0.1.61:3000"
+    #endif
     
     static var _configUrl = "/config.json"
     static var configUrl:URL {
@@ -83,6 +86,10 @@ class DataSource {
         catch { }
         //must run:
         realm = try! Realm()
+        
+        #if DEBUG //because dangerous to leave on
+        //AppUpdater.testUpdate = true
+        #endif
         
         parseLocalConfig()
         getRemoteConfig()
@@ -156,6 +163,18 @@ class DataSource {
         
         let defaults = UserDefaults.standard
         print("Parsing remote configuration")
+        
+        if let value = config["forceUpdate"] as? Bool {
+            if (value) {
+                AppUpdater.shared.showUpdate(withConfirmation: false)
+            }
+        }
+        
+        if let value = config["checkForUpdates"] as? Bool {
+            if (value) {
+                AppUpdater.shared.showUpdate(withConfirmation: true)
+            }
+        }
         
         if let value = config["cambrianWebURL"] as? String {
             if (DataSource.cambrianWebURL != value) {

@@ -1,4 +1,6 @@
 {
+  "checkForUpdates": true,
+  "forceUpdate": false,
   "adsEnabled": true,
   "maxDataAgeDays" : 30,
   "imageSize" : 320,
