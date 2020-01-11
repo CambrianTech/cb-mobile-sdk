@@ -169,13 +169,14 @@ class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            
-       if let _ = collectionViewLayout as? UICollectionViewFlowLayout {
-           let height = collectionView.frame.size.height
-           let label = UILabel()
-           label.text = self.history[indexPath.row].name
-           label.sizeToFit()
-           return CGSize(width: max(min(label.frame.size.width + 10, self.view.frame.size.width / CGFloat(history.count)), 50), height: height)
-       }
+        if let _ = collectionViewLayout as? UICollectionViewFlowLayout {
+            let height = collectionView.frame.size.height
+            let label = UILabel()
+            label.text = self.history[indexPath.row].name
+            label.sizeToFit()
+            let width = label.frame.size.width + 10
+            return CGSize(width: max(min(width, self.view.frame.size.width / CGFloat(history.count)), 50), height: height)
+        }
        
        return CGSize.zero
     }

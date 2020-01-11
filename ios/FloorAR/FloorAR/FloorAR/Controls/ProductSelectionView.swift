@@ -251,6 +251,9 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
         }
         
         if (indexPath.row < items.count) {
+            cell.color = nil
+            cell.product = nil
+            cell.category = nil
             let item = items[indexPath.row]
             if let color = item as? ProductColor {
                 cell.color = color
@@ -289,9 +292,9 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
         self.swatchScroller.performBatchUpdates(nil, completion: {
             (result) in
             
-            if let color = self.selectedColor, let index = color.product.colors.index(of: color) {
+            if let color = self.selectedColor, let index = self.items.firstIndex(of: color) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
-            } else if let product = self.selectedProduct, let index = product.category.products.index(of: product) {
+            } else if let product = self.selectedProduct, let index = self.items.firstIndex(of: product) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
             } else {
                 self.swatchScroller.contentOffset = CGPoint.zero
