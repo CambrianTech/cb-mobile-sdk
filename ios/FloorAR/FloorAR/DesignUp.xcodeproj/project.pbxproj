@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66538283328312D38E748C0C /* Pods_DesignUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881C810634E86E01B54B89B9 /* Pods_DesignUp.framework */; };
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
@@ -53,6 +54,7 @@
 		E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4C91D20AB99AE00E842E4 /* CambrianSDK.framework */; };
 		E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4C91D20AB99AE00E842E4 /* CambrianSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7F5B84823C8F86D00C9BC20 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = E7F5B84723C8F86D00C9BC20 /* default.realm */; };
+		E7F5B85F23C9399F00C9BC20 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7F5B85E23C9399F00C9BC20 /* Podfile */; };
 		E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB860D23B1662B003A09DE /* WebKit.framework */; };
 		E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FEEA4820B70AB900B3F780 /* ProductVariation.swift */; };
 		E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FEEA4B20B7387A00B3F780 /* SceneLocation.swift */; };
@@ -97,6 +99,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		63D2C14E8EFBA89A7EA9BCFA /* Pods-DesignUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignUp.debug.xcconfig"; path = "Target Support Files/Pods-DesignUp/Pods-DesignUp.debug.xcconfig"; sourceTree = "<group>"; };
+		881C810634E86E01B54B89B9 /* Pods_DesignUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E716634D21E91AB400D06791 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -146,9 +150,11 @@
 		E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CambrianSDK.xcodeproj; path = ../../CambrianSDK/CambrianSDK.xcodeproj; sourceTree = "<group>"; };
 		E7E4C92720AB9B9D00E842E4 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E7F5B84723C8F86D00C9BC20 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
+		E7F5B85E23C9399F00C9BC20 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E7FB860D23B1662B003A09DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E7FEEA4820B70AB900B3F780 /* ProductVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariation.swift; sourceTree = "<group>"; };
 		E7FEEA4B20B7387A00B3F780 /* SceneLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLocation.swift; sourceTree = "<group>"; };
+		F0DE62D11E570F368A59467C /* Pods-DesignUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignUp.release.xcconfig"; path = "Target Support Files/Pods-DesignUp/Pods-DesignUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,12 +164,23 @@
 			files = (
 				E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */,
 				E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */,
+				66538283328312D38E748C0C /* Pods_DesignUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40F99F6A1B462BA6C5C1392 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63D2C14E8EFBA89A7EA9BCFA /* Pods-DesignUp.debug.xcconfig */,
+				F0DE62D11E570F368A59467C /* Pods-DesignUp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E72157AB20B4B3DA008FB2B8 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,10 +253,12 @@
 				E7BADBC5239C524E00C1337A /* AWSS3.framework */,
 				E7BADBC3239C51E500C1337A /* AWSCore.framework */,
 				E7BADBC1239C512200C1337A /* Realm.framework */,
+				E7F5B85E23C9399F00C9BC20 /* Podfile */,
 				E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */,
 				E7E4C90120AB924D00E842E4 /* FloorAR */,
 				E7E4C90020AB924D00E842E4 /* Products */,
 				E7E4C92020AB9A0200E842E4 /* Frameworks */,
+				C40F99F6A1B462BA6C5C1392 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FB860D23B1662B003A09DE /* WebKit.framework */,
+				881C810634E86E01B54B89B9 /* Pods_DesignUp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -293,11 +313,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7E4C91120AB925000E842E4 /* Build configuration list for PBXNativeTarget "DesignUp" */;
 			buildPhases = (
+				B2E5EE698F17CE4041D26441 /* [CP] Check Pods Manifest.lock */,
 				E7E4C8FB20AB924D00E842E4 /* Sources */,
 				E7E4C8FC20AB924D00E842E4 /* Frameworks */,
 				E7E4C8FD20AB924D00E842E4 /* Resources */,
 				E7E4C92620AB9A1B00E842E4 /* Embed Frameworks */,
 				E7F5B85723C908A600C9BC20 /* ShellScript */,
+				94062B900ED58D14C504B39C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,12 +399,52 @@
 				E739B15B23C38CB400958259 /* CBWebView.js in Resources */,
 				E7CD9F7023A2CEF50074F27C /* bundle in Resources */,
 				E7E4C90820AB924D00E842E4 /* Main.storyboard in Resources */,
+				E7F5B85F23C9399F00C9BC20 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		94062B900ED58D14C504B39C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesignUp/Pods-DesignUp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesignUp/Pods-DesignUp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesignUp/Pods-DesignUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2E5EE698F17CE4041D26441 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesignUp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E7F5B85723C908A600C9BC20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,6 +668,7 @@
 		};
 		E7E4C91220AB925000E842E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63D2C14E8EFBA89A7EA9BCFA /* Pods-DesignUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -633,6 +696,7 @@
 		};
 		E7E4C91320AB925000E842E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0DE62D11E570F368A59467C /* Pods-DesignUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
