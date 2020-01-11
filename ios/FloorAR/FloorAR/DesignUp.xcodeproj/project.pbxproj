@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,6 +55,7 @@
 		E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4C91D20AB99AE00E842E4 /* CambrianSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7F5B84823C8F86D00C9BC20 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = E7F5B84723C8F86D00C9BC20 /* default.realm */; };
 		E7F5B85F23C9399F00C9BC20 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7F5B85E23C9399F00C9BC20 /* Podfile */; };
+		E7F5B86723CA4E1500C9BC20 /* AdSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5B86623CA4E1500C9BC20 /* AdSupport.swift */; };
 		E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB860D23B1662B003A09DE /* WebKit.framework */; };
 		E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FEEA4820B70AB900B3F780 /* ProductVariation.swift */; };
 		E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FEEA4B20B7387A00B3F780 /* SceneLocation.swift */; };
@@ -150,7 +151,8 @@
 		E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CambrianSDK.xcodeproj; path = ../../CambrianSDK/CambrianSDK.xcodeproj; sourceTree = "<group>"; };
 		E7E4C92720AB9B9D00E842E4 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E7F5B84723C8F86D00C9BC20 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
-		E7F5B85E23C9399F00C9BC20 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E7F5B85E23C9399F00C9BC20 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E7F5B86623CA4E1500C9BC20 /* AdSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdSupport.swift; sourceTree = "<group>"; };
 		E7FB860D23B1662B003A09DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E7FEEA4820B70AB900B3F780 /* ProductVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariation.swift; sourceTree = "<group>"; };
 		E7FEEA4B20B7387A00B3F780 /* SceneLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLocation.swift; sourceTree = "<group>"; };
@@ -177,7 +179,6 @@
 				63D2C14E8EFBA89A7EA9BCFA /* Pods-DesignUp.debug.xcconfig */,
 				F0DE62D11E570F368A59467C /* Pods-DesignUp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -186,6 +187,7 @@
 			children = (
 				E72157AC20B4B3DA008FB2B8 /* Extensions.swift */,
 				E7A7AD9823BA6B980096DCA6 /* Networking.swift */,
+				E7F5B86623CA4E1500C9BC20 /* AdSupport.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -490,6 +492,7 @@
 				E7D255DD23A6DA3100C2737D /* ProductVariation+Extended.swift in Sources */,
 				E7C497D820B3B77A00E7567D /* StandardButton.swift in Sources */,
 				E7FEEA4920B70AB900B3F780 /* ProductVariation.swift in Sources */,
+				E7F5B86723CA4E1500C9BC20 /* AdSupport.swift in Sources */,
 				E7FEEA4C20B7387A00B3F780 /* SceneLocation.swift in Sources */,
 				E7E4C90320AB924D00E842E4 /* AppDelegate.swift in Sources */,
 				E7BADBD3239DE38F00C1337A /* ProductSelectionView.swift in Sources */,

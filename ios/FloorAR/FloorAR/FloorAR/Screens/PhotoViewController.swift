@@ -9,10 +9,16 @@
 import UIKit
 import WebKit
 import JGProgressHUD
+import FBAudienceNetwork
 
-class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWebViewDelegate {
+class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWebViewDelegate, FBAdViewDelegate {
     
     @IBOutlet weak var webview: CBWebView!
+    
+    
+    @IBOutlet weak var fbAdBannerContainer:UIView!
+    @IBOutlet weak var fbAdViewHeightConstraint: NSLayoutConstraint!
+    private var fbAdBanner:FBAdView!
     
     var sceneToLoad:SceneLocation?
     var photoToLoad:UIImage?
@@ -32,11 +38,18 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         
         self.webview.delegate = self
         self.webview.load(request)
+        
+        self.fbAdBanner = FBAdView(placementID: fbAdBannerPlacementID, adSize: fbAdBannerType, rootViewController:self)
+        self.fbAdBanner.delegate = self
+        self.fbAdBanner.frame = CGRect(x: 0, y: 0, width: self.fbAdBannerContainer.frame.width, height: fbAdBannerType.size.height)
+        self.fbAdBannerContainer.addSubview(self.fbAdBanner)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         webview.hud.setProgress(0.0, animated: true)
+        self.fbAdViewHeightConstraint.constant = 0
+        self.fbAdBanner.loadAd()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,6 +57,14 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         if isBeingDismissed {
             self.webview.unload()
         }
+    }
+    
+    func adViewDidLoad(_ ad: FBAdView) {
+        self.fbAdViewHeightConstraint.constant = fbAdBannerType.size.height
+    }
+    
+    func adView(_ adView: FBAdView, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
     
     @IBAction func closeClicked(_ sender: Any) {

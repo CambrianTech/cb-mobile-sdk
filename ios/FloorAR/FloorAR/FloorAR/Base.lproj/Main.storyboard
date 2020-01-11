@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="La5-2R-e1W">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="OuI-1c-Fff" customClass="HomeViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="OuI-1c-Fff" customClass="HomeViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="my5-wx-Iy4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,21 +20,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitchen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Wzw-kX-mvn" userLabel="background">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Design_Up" customModuleProvider="target">
                                 <rect key="frame" x="107" y="496.66666666666674" width="200" height="45"/>
                                 <state key="normal" title="Browse Catalog"/>
                                 <connections>
                                     <segue destination="gPx-Ju-ERS" kind="show" identifier="show-catalog" id="G12-v2-Lwv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Design_Up" customModuleProvider="target">
                                 <rect key="frame" x="107" y="366.66666666666669" width="200" height="45"/>
                                 <state key="normal" title="Choose Photo"/>
                                 <connections>
                                     <action selector="roomPhotoClicked:" destination="OuI-1c-Fff" eventType="touchUpInside" id="0Re-H7-5mP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u" customClass="HomeButton" customModule="Floor_AR" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Na-V6u" customClass="HomeButton" customModule="Design_Up" customModuleProvider="target">
                                 <rect key="frame" x="107" y="431.66666666666669" width="200" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0xu-5Z-2o9"/>
@@ -78,7 +78,7 @@
         <!--Catalog View Controller-->
         <scene sceneID="94v-5r-xQ9">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gPx-Ju-ERS" customClass="CatalogViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gPx-Ju-ERS" customClass="CatalogViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haA-ZI-3AM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                     <action selector="closeClicked:" destination="gPx-Ju-ERS" eventType="touchUpInside" id="TOL-qw-JQ4"/>
                                 </connections>
                             </button>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-YI-ExX" customClass="CBWebView" customModule="Floor_AR" customModuleProvider="target">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-YI-ExX" customClass="CBWebView" customModule="Design_Up" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="150" width="414" height="658"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -117,7 +117,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogCell" id="wC1-3v-hm3" customClass="CatalogCell" customModule="Floor_AR" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogCell" id="wC1-3v-hm3" customClass="CatalogCell" customModule="Design_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="5" width="95" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jaG-aO-9Mv">
@@ -203,7 +203,7 @@
         <!--Live Visualizer-->
         <scene sceneID="tUs-Dj-Q7L">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="br9-Yd-2Kv" userLabel="Live Visualizer" customClass="ARViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="br9-Yd-2Kv" userLabel="Live Visualizer" customClass="ARViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53Z-99-PMk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +256,7 @@
         <!--Product Control-->
         <scene sceneID="F5d-Ot-XDa">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="NKx-YE-zss" userLabel="Product Control" customClass="ProductSelectionView" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="NKx-YE-zss" userLabel="Product Control" customClass="ProductSelectionView" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="12Z-pV-9fS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,7 +280,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ProductSwatchCell" id="Eac-cf-F01" customClass="ProductSwatchCell" customModule="Floor_AR" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ProductSwatchCell" id="Eac-cf-F01" customClass="ProductSwatchCell" customModule="Design_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="20" width="150" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dhn-HI-VHO">
@@ -360,7 +360,7 @@
         <!--History Selection View-->
         <scene sceneID="GYe-pZ-Xxo">
             <objects>
-                <viewController id="Q6u-Jm-Z0i" customClass="HistorySelectionView" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q6u-Jm-Z0i" customClass="HistorySelectionView" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="6Vi-ot-baQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,14 +375,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="Floor_AR" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="Design_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWn-uM-RSz">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUJ-I9-gIE" userLabel="Background" customClass="HistorySwatchCellBG" customModule="Floor_AR" customModuleProvider="target">
+                                                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUJ-I9-gIE" userLabel="Background" customClass="HistorySwatchCellBG" customModule="Design_Up" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -438,7 +438,7 @@
         <!--Product Details View Controller-->
         <scene sceneID="cTO-Jf-PyM">
             <objects>
-                <viewController id="LCb-KI-xHZ" customClass="ProductDetailsViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LCb-KI-xHZ" customClass="ProductDetailsViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XG6-hG-ITu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,7 +482,7 @@
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="08Q-Hf-vTK"/>
                                 </connections>
                             </containerView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-dA-A5E" customClass="CBWebView" customModule="Floor_AR" customModuleProvider="target">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-dA-A5E" customClass="CBWebView" customModule="Design_Up" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="150" width="414" height="658"/>
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -519,7 +519,7 @@
         <!--Photo View Controller-->
         <scene sceneID="fm1-fD-E18">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="foE-jP-XM7" customClass="PhotoViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="foE-jP-XM7" customClass="PhotoViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHL-De-d5q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -533,8 +533,15 @@
                                     <segue destination="NKx-YE-zss" kind="embed" identifier="product-navigation" id="TFb-TA-TBg"/>
                                 </connections>
                             </containerView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-uo-fj7" customClass="CBWebView" customModule="Floor_AR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="150" width="414" height="658"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALB-DH-kdE">
+                                <rect key="frame" x="0.0" y="150" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kB5-Q6-jin"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-uo-fj7" customClass="CBWebView" customModule="Design_Up" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="200" width="414" height="608"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -551,32 +558,37 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="ALB-DH-kdE" secondAttribute="trailing" id="182-cS-a4p"/>
                             <constraint firstItem="QtT-uo-fj7" firstAttribute="leading" secondItem="j24-qO-7XK" secondAttribute="leading" id="EOR-uI-BYU"/>
-                            <constraint firstItem="QtT-uo-fj7" firstAttribute="top" secondItem="GVu-qw-QLz" secondAttribute="bottom" id="GRV-kP-MSi"/>
+                            <constraint firstItem="ALB-DH-kdE" firstAttribute="top" secondItem="GVu-qw-QLz" secondAttribute="bottom" id="MS6-xg-ZPM"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="leading" secondItem="GVu-qw-QLz" secondAttribute="leading" id="OPF-Yn-haD"/>
                             <constraint firstItem="pLq-uN-LHW" firstAttribute="top" secondItem="j24-qO-7XK" secondAttribute="top" constant="5" id="OhN-6d-XuK"/>
+                            <constraint firstItem="ALB-DH-kdE" firstAttribute="leading" secondItem="j24-qO-7XK" secondAttribute="leading" id="TFD-kv-RfS"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="GVu-qw-QLz" secondAttribute="trailing" id="UGt-3n-kUF"/>
                             <constraint firstItem="GVu-qw-QLz" firstAttribute="top" secondItem="j24-qO-7XK" secondAttribute="top" id="Xgh-ew-geS"/>
                             <constraint firstItem="pLq-uN-LHW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="j24-qO-7XK" secondAttribute="leading" priority="500" constant="100" id="Z2z-Z7-2Ec"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="bottom" secondItem="QtT-uo-fj7" secondAttribute="bottom" id="d8A-M8-6Ar"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="pLq-uN-LHW" secondAttribute="trailing" constant="10" id="e4M-e9-zHy"/>
                             <constraint firstItem="j24-qO-7XK" firstAttribute="trailing" secondItem="QtT-uo-fj7" secondAttribute="trailing" id="eh4-ag-dog"/>
+                            <constraint firstItem="QtT-uo-fj7" firstAttribute="top" secondItem="ALB-DH-kdE" secondAttribute="bottom" id="mjD-3M-6CL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j24-qO-7XK"/>
                     </view>
                     <navigationItem key="navigationItem" id="zSI-Qd-Vgf"/>
                     <connections>
+                        <outlet property="fbAdBannerContainer" destination="ALB-DH-kdE" id="9Z9-6i-4ci"/>
+                        <outlet property="fbAdViewHeightConstraint" destination="kB5-Q6-jin" id="5gJ-Wy-yOJ"/>
                         <outlet property="webview" destination="QtT-uo-fj7" id="5Rn-ZQ-7Z3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WjQ-LA-8K4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1116" y="1235"/>
+            <point key="canvasLocation" x="-1117.3913043478262" y="1234.8214285714284"/>
         </scene>
         <!--Samples View Controller-->
         <scene sceneID="oxn-MA-8se">
             <objects>
-                <viewController id="IET-c8-bKK" customClass="SamplesViewController" customModule="Floor_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IET-c8-bKK" customClass="SamplesViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xwi-49-fBP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -618,7 +630,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SampleCell" id="0R3-wJ-RBP" customClass="SampleCell" customModule="Floor_AR" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SampleCell" id="0R3-wJ-RBP" customClass="SampleCell" customModule="Design_Up" customModuleProvider="target">
                                         <rect key="frame" x="97" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fm9-NI-aB9">
@@ -704,6 +716,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="j1v-9d-hdZ"/>
-        <segue reference="Gms-k9-PAB"/>
+        <segue reference="TFb-TA-TBg"/>
     </inferredMetricsTieBreakers>
 </document>

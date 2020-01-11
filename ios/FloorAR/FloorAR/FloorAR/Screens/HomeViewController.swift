@@ -17,6 +17,10 @@ class HomeViewController: CameraViewController {
         super.viewDidLoad()
         ProductCategory.sync()
         SceneLocation.sync()
+        
+        #if DEBUG
+            printIdentifierForAdvertising()
+        #endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
