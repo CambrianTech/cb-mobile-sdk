@@ -23,8 +23,6 @@
 		E7A7ADB623C0F8810096DCA6 /* CBDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */; };
 		E7B42B1122F4B40900F48597 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = E7B42B1022F4B40900F48597 /* Data */; };
 		E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC1239C512200C1337A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7BADBC4239C51E500C1337A /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC3239C51E500C1337A /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7BADBC6239C524E00C1337A /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC5239C524E00C1337A /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC9239C532B00C1337A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBCB239C538800C1337A /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -90,8 +88,6 @@
 				E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */,
 				E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */,
 				E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */,
-				E7BADBC6239C524E00C1337A /* AWSS3.framework in Embed Frameworks */,
-				E7BADBC4239C51E500C1337A /* AWSCore.framework in Embed Frameworks */,
 				E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */,
 				E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */,
 			);
@@ -119,8 +115,6 @@
 		E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDataObject.swift; sourceTree = "<group>"; };
 		E7B42B1022F4B40900F48597 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
 		E7BADBC1239C512200C1337A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = FloorAR/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		E7BADBC3239C51E500C1337A /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = FloorAR/Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
-		E7BADBC5239C524E00C1337A /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = FloorAR/Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
 		E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = FloorAR/Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = FloorAR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = FloorAR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
@@ -255,8 +249,6 @@
 				E7BADBCB239C538800C1337A /* SDWebImage.framework */,
 				E7BADBC9239C532B00C1337A /* RealmSwift.framework */,
 				E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */,
-				E7BADBC5239C524E00C1337A /* AWSS3.framework */,
-				E7BADBC3239C51E500C1337A /* AWSCore.framework */,
 				E7BADBC1239C512200C1337A /* Realm.framework */,
 				E7F5B85E23C9399F00C9BC20 /* Podfile */,
 				E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */,
@@ -458,8 +450,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/AWSCore.framework",
-				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/AWSS3.framework",
 				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/SDWebImage.framework",
 				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/RealmSwift.framework",
@@ -679,7 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0004;
+				CURRENT_PROJECT_VERSION = 0005;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -707,7 +697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0004;
+				CURRENT_PROJECT_VERSION = 0005;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

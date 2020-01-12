@@ -1,10 +1,5 @@
 
-
-github "cornerAnt/Digger"
-github "marmelroy/Zip"
 github "realm/realm-cocoa"
 github "JonasGessner/JGProgressHUD"
 github "SDWebImage/SDWebImage"
-github "luispadron/UICircularProgressRing"
-github "aws/aws-sdk-ios"
 github "Alamofire/Alamofire" "5.0.0-rc.3"
