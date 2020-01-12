@@ -19,5 +19,6 @@
         "masks": {
             "floor": "masks/floor.png"
         }
-    }
+    },
+    "ancorPoint": [0.5,0.5]
 }
