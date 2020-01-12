@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66538283328312D38E748C0C /* Pods_DesignUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881C810634E86E01B54B89B9 /* Pods_DesignUp.framework */; };
+		D030BC8A91544263FD43636E /* libPods-DesignUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1C722CA305CDF11A925399 /* libPods-DesignUp.a */; };
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
@@ -97,8 +97,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E1C722CA305CDF11A925399 /* libPods-DesignUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DesignUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D2C14E8EFBA89A7EA9BCFA /* Pods-DesignUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignUp.debug.xcconfig"; path = "Target Support Files/Pods-DesignUp/Pods-DesignUp.debug.xcconfig"; sourceTree = "<group>"; };
-		881C810634E86E01B54B89B9 /* Pods_DesignUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E716634D21E91AB400D06791 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 			files = (
 				E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */,
 				E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */,
-				66538283328312D38E748C0C /* Pods_DesignUp.framework in Frameworks */,
+				D030BC8A91544263FD43636E /* libPods-DesignUp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FB860D23B1662B003A09DE /* WebKit.framework */,
-				881C810634E86E01B54B89B9 /* Pods_DesignUp.framework */,
+				1E1C722CA305CDF11A925399 /* libPods-DesignUp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,7 +316,6 @@
 				E7E4C8FD20AB924D00E842E4 /* Resources */,
 				E7E4C92620AB9A1B00E842E4 /* Embed Frameworks */,
 				E7F5B85723C908A600C9BC20 /* ShellScript */,
-				94062B900ED58D14C504B39C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -403,23 +402,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		94062B900ED58D14C504B39C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DesignUp/Pods-DesignUp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DesignUp/Pods-DesignUp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesignUp/Pods-DesignUp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B2E5EE698F17CE4041D26441 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
