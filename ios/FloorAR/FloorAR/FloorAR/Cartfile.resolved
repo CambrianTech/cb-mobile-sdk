@@ -1,8 +1,0 @@
-github "Alamofire/Alamofire" "5.0.0-rc.3"
-github "JonasGessner/JGProgressHUD" "v2.1"
-github "SDWebImage/SDWebImage" "5.4.2"
-github "aws/aws-sdk-ios" "2.12.5"
-github "cornerAnt/Digger" "0.0.5"
-github "luispadron/UICircularProgressRing" "v6.4.0"
-github "marmelroy/Zip" "1.1.0"
-github "realm/realm-cocoa" "v4.3.0"

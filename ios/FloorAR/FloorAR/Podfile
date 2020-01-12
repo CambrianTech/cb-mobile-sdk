@@ -7,5 +7,9 @@ target 'DesignUp' do
   use_modular_headers!
 
   pod 'FBAudienceNetwork'
-    
+  pod 'RealmSwift'
+  pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'JGProgressHUD'
+  
 end

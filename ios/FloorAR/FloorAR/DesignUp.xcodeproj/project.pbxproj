@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,10 +22,6 @@
 		E7A7ADB123BE6C930096DCA6 /* SceneLocation+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7ADB023BE6C930096DCA6 /* SceneLocation+Extended.swift */; };
 		E7A7ADB623C0F8810096DCA6 /* CBDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */; };
 		E7B42B1122F4B40900F48597 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = E7B42B1022F4B40900F48597 /* Data */; };
-		E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC1239C512200C1337A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBC9239C532B00C1337A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7BADBCB239C538800C1337A /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7BADBD3239DE38F00C1337A /* ProductSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BADBD2239DE38F00C1337A /* ProductSelectionView.swift */; };
 		E7BF67FB23ABF409008780C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BF67FA23ABF409008780C8 /* HomeViewController.swift */; };
 		E7BF67FD23ABF424008780C8 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */; };
@@ -38,7 +34,6 @@
 		E7C497F520B3D29700E7567D /* ProductColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C497F420B3D29700E7567D /* ProductColor.swift */; };
 		E7C98DC723AC308000D72DAC /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C98DC623AC308000D72DAC /* PhotoViewController.swift */; };
 		E7CD9F7023A2CEF50074F27C /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7CD9F6F23A2CEF50074F27C /* bundle */; };
-		E7CD9F7423A3E7740074F27C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7CD9F7323A3E7740074F27C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7CD9F7623A42F610074F27C /* Product+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD9F7523A42F610074F27C /* Product+Extended.swift */; };
 		E7CD9F7823A4301E0074F27C /* ProductColor+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD9F7723A4301E0074F27C /* ProductColor+Extended.swift */; };
 		E7CD9F7A23A440520074F27C /* ProductCategory+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */; };
@@ -52,7 +47,6 @@
 		E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4C91D20AB99AE00E842E4 /* CambrianSDK.framework */; };
 		E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4C91D20AB99AE00E842E4 /* CambrianSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7F5B84823C8F86D00C9BC20 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = E7F5B84723C8F86D00C9BC20 /* default.realm */; };
-		E7F5B85F23C9399F00C9BC20 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7F5B85E23C9399F00C9BC20 /* Podfile */; };
 		E7F5B86723CA4E1500C9BC20 /* AdSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5B86623CA4E1500C9BC20 /* AdSupport.swift */; };
 		E7F5B86923CA669600C9BC20 /* AppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5B86823CA669600C9BC20 /* AppUpdater.swift */; };
 		E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FB860D23B1662B003A09DE /* WebKit.framework */; };
@@ -84,11 +78,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E7CD9F7423A3E7740074F27C /* Alamofire.framework in Embed Frameworks */,
-				E7BADBCC239C538800C1337A /* SDWebImage.framework in Embed Frameworks */,
-				E7BADBCA239C532B00C1337A /* RealmSwift.framework in Embed Frameworks */,
-				E7BADBC8239C52B400C1337A /* JGProgressHUD.framework in Embed Frameworks */,
-				E7BADBC2239C512200C1337A /* Realm.framework in Embed Frameworks */,
 				E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -114,10 +103,6 @@
 		E7A7ADB023BE6C930096DCA6 /* SceneLocation+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneLocation+Extended.swift"; sourceTree = "<group>"; };
 		E7A7ADB523C0F8800096DCA6 /* CBDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDataObject.swift; sourceTree = "<group>"; };
 		E7B42B1022F4B40900F48597 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../prebuilts/unity/Data; sourceTree = "<group>"; };
-		E7BADBC1239C512200C1337A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = FloorAR/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = FloorAR/Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
-		E7BADBC9239C532B00C1337A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = FloorAR/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		E7BADBCB239C538800C1337A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = FloorAR/Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		E7BADBD2239DE38F00C1337A /* ProductSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSelectionView.swift; sourceTree = "<group>"; };
 		E7BF67FA23ABF409008780C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +115,6 @@
 		E7C497F420B3D29700E7567D /* ProductColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColor.swift; sourceTree = "<group>"; };
 		E7C98DC623AC308000D72DAC /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E7CD9F6F23A2CEF50074F27C /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
-		E7CD9F7323A3E7740074F27C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = FloorAR/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E7CD9F7523A42F610074F27C /* Product+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Extended.swift"; sourceTree = "<group>"; };
 		E7CD9F7723A4301E0074F27C /* ProductColor+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductColor+Extended.swift"; sourceTree = "<group>"; };
 		E7CD9F7923A440520074F27C /* ProductCategory+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductCategory+Extended.swift"; sourceTree = "<group>"; };
@@ -146,7 +130,6 @@
 		E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CambrianSDK.xcodeproj; path = ../../CambrianSDK/CambrianSDK.xcodeproj; sourceTree = "<group>"; };
 		E7E4C92720AB9B9D00E842E4 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E7F5B84723C8F86D00C9BC20 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
-		E7F5B85E23C9399F00C9BC20 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E7F5B86623CA4E1500C9BC20 /* AdSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdSupport.swift; sourceTree = "<group>"; };
 		E7F5B86823CA669600C9BC20 /* AppUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
 		E7FB860D23B1662B003A09DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -245,12 +228,6 @@
 		E7E4C8F620AB924D00E842E4 = {
 			isa = PBXGroup;
 			children = (
-				E7CD9F7323A3E7740074F27C /* Alamofire.framework */,
-				E7BADBCB239C538800C1337A /* SDWebImage.framework */,
-				E7BADBC9239C532B00C1337A /* RealmSwift.framework */,
-				E7BADBC7239C52B400C1337A /* JGProgressHUD.framework */,
-				E7BADBC1239C512200C1337A /* Realm.framework */,
-				E7F5B85E23C9399F00C9BC20 /* Podfile */,
 				E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */,
 				E7E4C90120AB924D00E842E4 /* FloorAR */,
 				E7E4C90020AB924D00E842E4 /* Products */,
@@ -315,7 +292,6 @@
 				E7E4C8FC20AB924D00E842E4 /* Frameworks */,
 				E7E4C8FD20AB924D00E842E4 /* Resources */,
 				E7E4C92620AB9A1B00E842E4 /* Embed Frameworks */,
-				E7F5B85723C908A600C9BC20 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -395,7 +371,6 @@
 				E739B15B23C38CB400958259 /* CBWebView.js in Resources */,
 				E7CD9F7023A2CEF50074F27C /* bundle in Resources */,
 				E7E4C90820AB924D00E842E4 /* Main.storyboard in Resources */,
-				E7F5B85F23C9399F00C9BC20 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,28 +398,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		E7F5B85723C908A600C9BC20 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/SDWebImage.framework",
-				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/JGProgressHUD.framework",
-				"$(SRCROOT)/FloorAR/Carthage/Build/iOS/Realm.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -651,7 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0005;
+				CURRENT_PROJECT_VERSION = 0006;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -679,7 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0005;
+				CURRENT_PROJECT_VERSION = 0006;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
