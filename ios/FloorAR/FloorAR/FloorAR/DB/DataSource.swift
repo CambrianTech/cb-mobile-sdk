@@ -25,7 +25,7 @@ class DataSource {
     static var cambrianWebURL =  "https://mobile.cambrianar.com"
     
     #if DEBUG //because dangerous to leave on
-        //cambrianWebURL =  "http://10.0.1.61:3000"
+        //static var cambrianWebURL =  "http://10.0.1.61:3000"
     #endif
     
     static var _configUrl = "/config.json"
