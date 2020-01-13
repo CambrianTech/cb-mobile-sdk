@@ -40,7 +40,7 @@ export function dispatchDataProperties(basePath:string, data:any, dispatch: Disp
             masks:{
                 "floor": basePath + "/" + data.images["masks"]["floor"]
             },
-            ancorPoint:[0,1]
+            ancorPoint:[0,0.5]
         },
     })
 
