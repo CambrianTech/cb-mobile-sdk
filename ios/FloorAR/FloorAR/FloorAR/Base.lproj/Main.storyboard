@@ -45,6 +45,13 @@
                                     <action selector="showLiveVisualizer:" destination="OuI-1c-Fff" eventType="touchUpInside" id="ax3-Sx-Uut"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BETA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-fx-sqT">
+                                <rect key="frame" x="269" y="433.66666666666669" width="35" height="16.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -56,6 +63,8 @@
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="top" secondItem="Wzw-kX-mvn" secondAttribute="top" id="IIJ-gn-zjI"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="LED-Ks-6k5"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="MQj-cm-9ZG"/>
+                            <constraint firstItem="pBQ-fx-sqT" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="top" constant="2" id="Tge-kl-hRr"/>
+                            <constraint firstItem="pBQ-fx-sqT" firstAttribute="trailing" secondItem="tLR-Na-V6u" secondAttribute="trailing" constant="-3" id="ZPr-M1-IlB"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="bHC-gs-Knh"/>
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" constant="1.1000000000000001" id="dcw-ea-a38"/>
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="top" secondItem="AWl-mP-csH" secondAttribute="bottom" constant="20" id="eEz-iW-d8v"/>
