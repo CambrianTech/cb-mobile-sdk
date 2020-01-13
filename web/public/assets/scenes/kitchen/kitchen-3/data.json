@@ -1,12 +1,12 @@
 {
     "cameraPosition": [
-        1.24,
+        1.52,
         1.46,
         0
     ],
     "cameraRotation": [
-        0.0125,
-        -0.0078,
+        0.007,
+        0,
         0
     ],
     "floorRotation": 0,

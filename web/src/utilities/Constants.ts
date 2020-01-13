@@ -8,7 +8,7 @@ export enum MediaPaths {
 }
 
 export const MAX_IMAGE_SIZE = 2048;
-export const DEFAULT_SCENE = "kitchen/kitchen-2"
+export const DEFAULT_SCENE = "bedroom/bedroom-3"
 
 export const GRID_MATERIAL:CBMaterialProperties = {
     ppi:13,
@@ -17,8 +17,8 @@ export const GRID_MATERIAL:CBMaterialProperties = {
 
 
 export const DEFAULT_MATERIAL:CBMaterialProperties = {
-    ppi:50,
-    diffuseUrl:"assets/textures/cement/patchy_cement1_Base_Color.png",
-    normalsUrl:"assets/textures/cement/patchy_cement1_Normal.png",
-    specularUrl:"assets/textures/cement/patchy_cement1_Roughness.png"
+    ppi:40,
+    diffuseUrl:"assets/textures/concrete/Concrete17_col.jpg",
+    normalsUrl:"assets/textures/concrete/Concrete17_nrm.jpg",
+    specularUrl:"assets/textures/concrete/Concrete17_rgh.jpg"
 }
