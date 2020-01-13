@@ -40,7 +40,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         self.fbAdBanner = FBAdView(placementID: fbAdBannerPlacementID, adSize: fbAdBannerType, rootViewController:self)
         self.fbAdBanner.delegate = self
         if (UIDevice.current.userInterfaceIdiom == .pad) {
-            self.view.addSubview(self.fbAdBanner)
+            
         } else {
             self.fbAdBanner.frame = CGRect(x: 0, y: 0, width: self.fbAdBannerContainer.frame.width, height: fbAdBannerType.size.height)
             self.fbAdBannerContainer.addSubview(self.fbAdBanner)
@@ -65,6 +65,9 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
     
     func adViewDidLoad(_ ad: FBAdView) {
         if (UIDevice.current.userInterfaceIdiom == .pad) {
+            if let _ = self.fbAdBanner.superview {} else {
+                self.view.addSubview(self.fbAdBanner)
+            }
             let adWidth:CGFloat = 728 //leaderboard
             self.fbAdBanner.frame = CGRect(x: 0, y: self.webview.frame.minY, width: adWidth, height: fbAdBannerType.size.height)
         } else {
