@@ -39,8 +39,9 @@ export function dispatchDataProperties(basePath:string, data:any, dispatch: Disp
             lightingUrl: basePath + "/" + data.images["lighting"],
             masks:{
                 "floor": basePath + "/" + data.images["masks"]["floor"]
-            }
-        }
+            },
+            ancorPoint:[0,1]
+        },
     })
 
     dispatch({
