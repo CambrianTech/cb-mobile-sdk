@@ -270,15 +270,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqe-SK-oGC" userLabel="History">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="2xY-s8-Q5p"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="Q6u-Jm-Z0i" kind="embed" identifier="history" id="GUg-80-Em9"/>
-                                </connections>
-                            </containerView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYu-PX-k89">
                                 <rect key="frame" x="0.0" y="45" width="414" height="215"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -338,6 +329,15 @@
                                     <outlet property="delegate" destination="NKx-YE-zss" id="f5d-OZ-jDX"/>
                                 </connections>
                             </collectionView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqe-SK-oGC" userLabel="History">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2xY-s8-Q5p"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Q6u-Jm-Z0i" kind="embed" identifier="history" id="GUg-80-Em9"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

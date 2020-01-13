@@ -291,13 +291,10 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
         self.swatchScroller.reloadData()
         self.swatchScroller.performBatchUpdates(nil, completion: {
             (result) in
-            
             if let color = self.selectedColor, let index = self.items.firstIndex(of: color) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
             } else if let product = self.selectedProduct, let index = self.items.firstIndex(of: product) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
-            } else {
-                self.swatchScroller.contentOffset = CGPoint.zero
             }
         })
     }
