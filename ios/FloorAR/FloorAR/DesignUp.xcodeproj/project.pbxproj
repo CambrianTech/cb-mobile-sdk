@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D030BC8A91544263FD43636E /* libPods-DesignUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1C722CA305CDF11A925399 /* libPods-DesignUp.a */; };
+		8B811E2A9ED24F31490D7049 /* libPods-DesignUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCD9EDE080477D338DA2F22 /* libPods-DesignUp.a */; };
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
@@ -86,9 +86,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1E1C722CA305CDF11A925399 /* libPods-DesignUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DesignUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BCD9EDE080477D338DA2F22 /* libPods-DesignUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DesignUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D2C14E8EFBA89A7EA9BCFA /* Pods-DesignUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignUp.debug.xcconfig"; path = "Target Support Files/Pods-DesignUp/Pods-DesignUp.debug.xcconfig"; sourceTree = "<group>"; };
-		E716634D21E91AB400D06791 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
@@ -145,7 +144,7 @@
 			files = (
 				E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */,
 				E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */,
-				D030BC8A91544263FD43636E /* libPods-DesignUp.a in Frameworks */,
+				8B811E2A9ED24F31490D7049 /* libPods-DesignUp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +252,6 @@
 				E7C497BC20B3156F00E7567D /* DB */,
 				E7E4C92720AB9B9D00E842E4 /* Bridging-Header.h */,
 				E7B42B1022F4B40900F48597 /* Data */,
-				E716634D21E91AB400D06791 /* Cartfile */,
 				E7E4C90220AB924D00E842E4 /* AppDelegate.swift */,
 				E7E4C90620AB924D00E842E4 /* Main.storyboard */,
 				E7E4C90920AB925000E842E4 /* Assets.xcassets */,
@@ -275,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FB860D23B1662B003A09DE /* WebKit.framework */,
-				1E1C722CA305CDF11A925399 /* libPods-DesignUp.a */,
+				1BCD9EDE080477D338DA2F22 /* libPods-DesignUp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
