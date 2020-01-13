@@ -8,6 +8,7 @@
 
 #import "CBRemodelingScene.h"
 #import "CBARInternal.h"
+#import "CBRemodelingPaint.h"
 #include <utility/Threads.h>
 
 @interface CBRemodelingScene()

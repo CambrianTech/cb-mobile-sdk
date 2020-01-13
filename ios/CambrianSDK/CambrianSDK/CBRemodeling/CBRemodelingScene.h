@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "CBAugmentedScene.h"
 
-#import "CBRemodelingPaint.h"
-#import "CBRemodelingFloor.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 CB_PUBLIC

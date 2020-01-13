@@ -10,6 +10,3 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <CambrianSDK/CambrianSDK.h>
-
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
