@@ -1,8 +1,8 @@
 {
   "checkForUpdates": true,
   "forceUpdate": false,
-  "adsEnabled": false,
-  "maxDataAgeDays" : 30,
+  "adsEnabled": true,
+  "maxDataAgeDays" : 10,
   "imageSize" : 320,
   "pageSize" : 1000,
   "baseImagePath" : "https://shawfloors.scene7.com/is/image",
