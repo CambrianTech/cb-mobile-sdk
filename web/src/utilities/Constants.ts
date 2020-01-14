@@ -1,7 +1,7 @@
 import {CBMaterialProperties} from "react-home-harmony";
 
 export enum MediaPaths {
-    Shared = "assets/img/shared",
+    Images = "assets/img",
     Scenes = "assets/scenes",
     Brands = "brands",
     Textures = "assets/textures",

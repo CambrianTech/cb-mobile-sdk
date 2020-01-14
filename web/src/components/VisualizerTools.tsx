@@ -5,6 +5,7 @@ import {Fab} from "@material/react-fab";
 import {VisualizerRotateTool} from "./VisualizerRotateTool";
 import {SiteContext} from "../data/SiteContext";
 import {CBToolMode} from "react-home-harmony";
+import {DrawingTools} from "./DrawingTools";
 
 type VisualizerToolsProperties = {
     visible:boolean
@@ -14,13 +15,14 @@ type VisualizerToolsProperties = {
     onRotationChanged: (radians: number) => void
     onRotationFinished: (commit: boolean, radians:number) => void
 
-    // editAreaEnabled?:boolean
-    // onEditArea: () => void
-    //
-    // drawingToolMode:CBToolMode
-    // onDrawingToolModeChanged: (mode:CBToolMode) => void
-    // onUndoClicked: () => void
-    // onDrawingFinished: (commit: boolean) => void
+    editAreaEnabled?:boolean
+    onEditArea: () => void
+
+    historySize:number
+    drawingToolMode:CBToolMode
+    onDrawingToolModeChanged: (mode:CBToolMode) => void
+    onUndoClicked: () => void
+    onDrawingFinished: (commit: boolean) => void
 }
 
 export default function VisualizerTools(props: VisualizerToolsProperties) {
@@ -55,37 +57,44 @@ export default function VisualizerTools(props: VisualizerToolsProperties) {
         setShowRotateTool(showRotate)
     } , [toggleTools, onShowHideButtons, showRotateTool]);
 
-    // const onDrawingToolModeChanged = props.onDrawingToolModeChanged
-    // const onEditArea = props.onEditArea
-    // const editAreaClicked = useCallback(() => {
-    //     toggleTools()
-    //     onShowHideButtons(false)
-    //     setShowDrawingTools(true)
-    //     onEditArea()
-    //     onDrawingToolModeChanged(CBToolMode.Draw)
-    // } , [toggleTools, onShowHideButtons, onEditArea, onDrawingToolModeChanged]);
-    //
-    // const onDrawingFinished = props.onDrawingFinished
-    // const drawingFinished = useCallback((finished: boolean) => {
-    //     setShowDrawingTools(false)
-    //
-    //     onDrawingToolModeChanged(CBToolMode.Select)
-    //     onShowHideButtons(true)
-    //     onDrawingFinished(finished)
-    // } , [onDrawingFinished, onDrawingToolModeChanged, onShowHideButtons]);
+    const onDrawingToolModeChanged = props.onDrawingToolModeChanged
+    const onEditArea = props.onEditArea
+    const editAreaClicked = useCallback(() => {
+        toggleTools()
+        onShowHideButtons(false)
+        setShowDrawingTools(true)
+        onEditArea()
+        onDrawingToolModeChanged(CBToolMode.Draw)
+    } , [toggleTools, onShowHideButtons, onEditArea, onDrawingToolModeChanged]);
+
+    const onDrawingFinished = props.onDrawingFinished
+    const drawingFinished = useCallback((finished: boolean) => {
+        setShowDrawingTools(false)
+
+        onDrawingToolModeChanged(CBToolMode.Select)
+        onShowHideButtons(true)
+        onDrawingFinished(finished)
+    } , [onDrawingFinished, onDrawingToolModeChanged, onShowHideButtons]);
 
     return (
         <div className="visualizer-tools">
 
             {props.visible && <Fab className="tool-button" onClick={onChangeImage} icon={<MaterialIcon icon='add_a_photo' />} />}
             {props.visible && <Fab className="tool-button" onClick={rotateButtonClicked} icon={<MaterialIcon icon='rotate_right' />} />}
-                {/*<Fab className="tool-button" onClick={editAreaClicked} icon={<MaterialIcon icon='edit' />} />*/}
+            {props.visible && props.editAreaEnabled && <Fab className="tool-button" onClick={editAreaClicked} icon={<MaterialIcon icon='edit' />} />}
 
 
             <VisualizerRotateTool visible={showRotateTool}
                                   onRotationFinished={rotateFinished}
                                   onRotationChanged={props.onRotationChanged}
                                   rotation={siteContext.state.floorRotationOffset || 0} />
+
+            <DrawingTools visible={showDrawingTools}
+                          historySize={props.historySize}
+                          toolMode={props.drawingToolMode}
+                          onToolFinished={drawingFinished}
+                          onToolModeChanged={props.onDrawingToolModeChanged}
+                          onUndoClicked={props.onUndoClicked} />
         </div>
     )
 }
