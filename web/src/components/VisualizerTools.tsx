@@ -24,8 +24,8 @@ export default function VisualizerTools(props: VisualizerToolsProperties) {
     return (
         <div className="visualizer-tools">
             <Fab className="tool-button" onClick={onChangeImage} icon={<MaterialIcon icon='add_a_photo' />} />
-            <Fab className="tool-button" onClick={onRotate} icon={<MaterialIcon icon='rotate_right' />} />
-            <Fab className="tool-button" onClick={onEdit} icon={<MaterialIcon icon='edit' />} />
+            {/*<Fab className="tool-button" onClick={onRotate} icon={<MaterialIcon icon='rotate_right' />} />*/}
+            {/*<Fab className="tool-button" onClick={onEdit} icon={<MaterialIcon icon='edit' />} />*/}
         </div>
     )
 }
