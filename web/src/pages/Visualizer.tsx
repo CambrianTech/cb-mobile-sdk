@@ -31,6 +31,10 @@ export default function Visualizer(props: any) {
     const rotation = state.rotation || [0, 0, 0];
     const fov = state.fov || 60;
 
+    const [isToolOverlayOpen, setIsToolOverlayOpen] = useState(false);
+    const [rotationControlActive, setRotationControlActive] = useState(false);
+    const [rotationControlValue, setRotationControlValue] = useState(0); // Temporary rotation offset (not applied yet)
+
     let _isMounted = useRef(false);
 
     useEffect(() => {
@@ -77,6 +81,29 @@ export default function Visualizer(props: any) {
         setCanLoad(true)
     }, [dispatch])
 
+    const toolsShowHideButtons = useCallback((show: boolean) => {
+        if (!_isMounted.current) return
+        setIsToolOverlayOpen(!show)
+    }, []);
+
+    const rotateChanged = useCallback((radians: number) => {
+        if (!_isMounted.current) return
+        setRotationControlActive(true);
+        setRotationControlValue(radians)
+    }, []);
+
+    const rotateFinished = useCallback((commit: boolean, radians: number) => {
+        if (!_isMounted.current) return
+        if (commit) {
+            dispatch({
+                type: "setFloorRotationOffset",
+                floorRotationOffset: radians
+            })
+        }
+        setRotationControlActive(false)
+
+    }, [dispatch]);
+
     return useMemo(() => (
         <div className={"visualizer"}>
             <CBVisualizer
@@ -87,11 +114,20 @@ export default function Visualizer(props: any) {
                 fov={fov}
                 cameraPosition={position}
                 cameraRotation={[rotation[0], 0, rotation[2]]}
-                floorRotation={rotation[1]}
+                floorRotation={rotation[1] + (rotationControlActive ? rotationControlValue : (state.floorRotationOffset || 0))}
                 canLoad={canLoad}
             />
-            {!state.showControls && state.sceneData && <VisualizerTools onChangeImage={onChangeImage} />}
+            {!state.showControls && state.sceneData &&
+                <VisualizerTools
+                    visible={!isToolOverlayOpen}
+                    onChangeImage={onChangeImage}
+                    onRotationChanged={rotateChanged}
+                    onRotationFinished={rotateFinished}
+                    onShowHideButtons={toolsShowHideButtons}
+                />}
             <ImageUpload onImageChosen={onImageChosen}/>
         </div>
-    ), [state.materialProperties, state.showControls, state.sceneData, fov, position, rotation, canLoad, onChangeImage, onImageChosen])
+    ), [state.materialProperties, state.showControls, state.sceneData, state.floorRotationOffset,
+        fov, position, rotation, rotationControlActive, rotationControlValue, canLoad, isToolOverlayOpen,
+        onChangeImage, rotateChanged, rotateFinished, toolsShowHideButtons, onImageChosen])
 }
