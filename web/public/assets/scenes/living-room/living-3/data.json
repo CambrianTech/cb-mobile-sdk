@@ -9,7 +9,7 @@
         0.0,
         0.0
     ],
-    "floorRotation": 0.0,
+    "floorRotation": -0.525,
     "fov": 50.0,
     "images": {
         "main": "image.jpg",
