@@ -11,6 +11,7 @@
 		E72157AD20B4B3DA008FB2B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72157AC20B4B3DA008FB2B8 /* Extensions.swift */; };
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
+		E738A11423D8DB3400138318 /* PaintARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738A11323D8DB3400138318 /* PaintARViewController.swift */; };
 		E739B15923C389DD00958259 /* CBWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739B15823C389DD00958259 /* CBWebView.swift */; };
 		E739B15B23C38CB400958259 /* CBWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = E739B15A23C38CB400958259 /* CBWebView.js */; };
 		E739B18423C670C400958259 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739B18323C670C400958259 /* CameraViewController.swift */; };
@@ -91,6 +92,7 @@
 		E72157AC20B4B3DA008FB2B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
+		E738A11323D8DB3400138318 /* PaintARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintARViewController.swift; sourceTree = "<group>"; };
 		E739B15823C389DD00958259 /* CBWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWebView.swift; sourceTree = "<group>"; };
 		E739B15A23C38CB400958259 /* CBWebView.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CBWebView.js; sourceTree = "<group>"; };
 		E739B18323C670C400958259 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				E7C497DF20B3C0B600E7567D /* ARViewController.swift */,
+				E738A11323D8DB3400138318 /* PaintARViewController.swift */,
 				E7BF67FA23ABF409008780C8 /* HomeViewController.swift */,
 				E7BF67FC23ABF424008780C8 /* CatalogViewController.swift */,
 				E7C98DC623AC308000D72DAC /* PhotoViewController.swift */,
@@ -408,6 +411,7 @@
 				E7C98DC723AC308000D72DAC /* PhotoViewController.swift in Sources */,
 				E739B15923C389DD00958259 /* CBWebView.swift in Sources */,
 				E77F9F4D23C7AF5F001E0E2B /* HistorySelectionView.swift in Sources */,
+				E738A11423D8DB3400138318 /* PaintARViewController.swift in Sources */,
 				E7291DC023A2979400F492C2 /* DataSource.swift in Sources */,
 				E7A7AD9923BA6B980096DCA6 /* Networking.swift in Sources */,
 				E7D255DB23A696D400C2737D /* JsonExtensions.swift in Sources */,

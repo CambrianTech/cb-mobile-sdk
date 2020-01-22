@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuI-1c-Fff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuI-1c-Fff">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,13 +20,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitchen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Wzw-kX-mvn" userLabel="background">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Design_Up" customModuleProvider="target">
-                                <rect key="frame" x="107" y="496.66666666666674" width="200" height="45"/>
-                                <state key="normal" title="Browse Catalog"/>
-                                <connections>
-                                    <segue destination="gPx-Ju-ERS" kind="show" identifier="show-catalog" id="G12-v2-Lwv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-mP-csH" customClass="HomeButton" customModule="Design_Up" customModuleProvider="target">
                                 <rect key="frame" x="107" y="366.66666666666669" width="200" height="45"/>
                                 <state key="normal" title="Choose Photo"/>
@@ -40,9 +33,23 @@
                                     <constraint firstAttribute="height" constant="45" id="0xu-5Z-2o9"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="OWb-c1-k85"/>
                                 </constraints>
-                                <state key="normal" title="Live Visualizer"/>
+                                <state key="normal" title="Flooring AR"/>
                                 <connections>
                                     <action selector="showLiveVisualizer:" destination="OuI-1c-Fff" eventType="touchUpInside" id="ax3-Sx-Uut"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PS-lY-Gs0" customClass="HomeButton" customModule="Design_Up" customModuleProvider="target">
+                                <rect key="frame" x="107" y="496.66666666666674" width="200" height="45"/>
+                                <state key="normal" title="Paint AR"/>
+                                <connections>
+                                    <segue destination="h3M-MV-Jkz" kind="show" identifier="paint" id="eVV-nm-YIB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-0o-Iw5" customClass="HomeButton" customModule="Design_Up" customModuleProvider="target">
+                                <rect key="frame" x="107" y="561.66666666666663" width="200" height="45"/>
+                                <state key="normal" title="Browse Catalog"/>
+                                <connections>
+                                    <segue destination="gPx-Ju-ERS" kind="show" identifier="show-catalog" id="G12-v2-Lwv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BETA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-fx-sqT">
@@ -56,14 +63,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="0oM-PJ-rq9"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="9PS-lY-Gs0" secondAttribute="bottom" constant="20" id="2iA-3h-jfn"/>
+                            <constraint firstItem="9PS-lY-Gs0" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="47B-OS-0Rl"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="5Dq-Kp-dBR"/>
+                            <constraint firstItem="9PS-lY-Gs0" firstAttribute="width" secondItem="AWl-mP-csH" secondAttribute="width" id="6Lr-tG-fNM"/>
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="centerX" secondItem="zyO-DM-JFH" secondAttribute="centerX" id="B4D-xm-lDL"/>
-                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="20" id="DKi-SY-hHz"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="FSM-gg-cZp"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="top" secondItem="Wzw-kX-mvn" secondAttribute="top" id="IIJ-gn-zjI"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="LED-Ks-6k5"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="MQj-cm-9ZG"/>
+                            <constraint firstItem="9PS-lY-Gs0" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="20" id="PlM-BR-2Bd"/>
                             <constraint firstItem="pBQ-fx-sqT" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="top" constant="2" id="Tge-kl-hRr"/>
+                            <constraint firstItem="9PS-lY-Gs0" firstAttribute="height" secondItem="AWl-mP-csH" secondAttribute="height" id="XY4-Ci-K6X"/>
                             <constraint firstItem="pBQ-fx-sqT" firstAttribute="trailing" secondItem="tLR-Na-V6u" secondAttribute="trailing" constant="-3" id="ZPr-M1-IlB"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="bHC-gs-Knh"/>
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="centerY" secondItem="zyO-DM-JFH" secondAttribute="centerY" constant="1.1000000000000001" id="dcw-ea-a38"/>
@@ -207,7 +218,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0it-Yi-1QZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-428" y="253"/>
+            <point key="canvasLocation" x="-435" y="117"/>
+        </scene>
+        <!--PaintAR View Controller-->
+        <scene sceneID="Azs-xA-oPm">
+            <objects>
+                <viewController id="h3M-MV-Jkz" customClass="PaintARViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vbz-K3-rcD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="suv-PQ-jst"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vHR-kd-fgG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Us9-qZ-nwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-436" y="-1391"/>
         </scene>
         <!--Live Visualizer-->
         <scene sceneID="tUs-Dj-Q7L">
@@ -260,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFI-UV-dgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="-605"/>
+            <point key="canvasLocation" x="-436" y="-652"/>
         </scene>
         <!--Product Control-->
         <scene sceneID="F5d-Ot-XDa">
@@ -725,6 +752,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J4Q-vS-17d"/>
-        <segue reference="TFb-TA-TBg"/>
+        <segue reference="aAk-Yy-oIH"/>
     </inferredMetricsTieBreakers>
 </document>
