@@ -5,9 +5,9 @@
         0.0
     ],
     "cameraRotation": [
+        -0.017,
         0.0,
-        0.0,
-        0.150
+        0.025
     ],
     "floorRotation": 0.61,
     "fov": 42.2,
