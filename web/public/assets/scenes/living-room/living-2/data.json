@@ -1,16 +1,16 @@
 {
     "cameraPosition": [
-        0,
-        1.0,
-        0.0
+        1.85,
+        1.16,
+        0
     ],
     "cameraRotation": [
-        0.0,
-        0.0,
-        0.0
+        0.192,
+        0,
+        0
     ],
-    "floorRotation": 0.27,
-    "fov": 50.0,
+    "floorRotation": -1.33,
+    "fov": 117.2,
     "images": {
         "main": "image.jpg",
         "preview": "preview.jpg",
