@@ -10,3 +10,4 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <CambrianSDK/CambrianSDK.h>
+#import <CambrianAR/CambrianAR.h>

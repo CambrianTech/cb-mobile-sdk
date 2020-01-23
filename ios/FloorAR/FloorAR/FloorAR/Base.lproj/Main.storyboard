@@ -227,10 +227,25 @@
                     <view key="view" contentMode="scaleToFill" id="Vbz-K3-rcD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8n-Ax-P7V" customClass="CBARRemodelingView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="bottom" secondItem="Q8n-Ax-P7V" secondAttribute="bottom" id="Btf-dC-K5D"/>
+                            <constraint firstItem="Q8n-Ax-P7V" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="Ou5-Cz-WVd"/>
+                            <constraint firstItem="Q8n-Ax-P7V" firstAttribute="top" secondItem="suv-PQ-jst" secondAttribute="top" id="nPP-TT-40z"/>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="Q8n-Ax-P7V" secondAttribute="trailing" id="rTa-iw-v1q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="suv-PQ-jst"/>
                     </view>
                     <navigationItem key="navigationItem" id="vHR-kd-fgG"/>
+                    <connections>
+                        <outlet property="arView" destination="Q8n-Ax-P7V" id="kPJ-jC-pAD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us9-qZ-nwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

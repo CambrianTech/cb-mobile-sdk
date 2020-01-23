@@ -12,6 +12,9 @@
 		E7291DC023A2979400F492C2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7291DBF23A2979400F492C2 /* DataSource.swift */; };
 		E7291DC223A29E6B00F492C2 /* datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = E7291DC123A29E6A00F492C2 /* datasource.json */; };
 		E738A11423D8DB3400138318 /* PaintARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738A11323D8DB3400138318 /* PaintARViewController.swift */; };
+		E738A12223DA01E200138318 /* CambrianAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E738A12123DA01E200138318 /* CambrianAR.framework */; };
+		E738A12823DA099900138318 /* CambrianAR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E738A12123DA01E200138318 /* CambrianAR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E738A12A23DA0A3F00138318 /* CBAssets in Resources */ = {isa = PBXBuildFile; fileRef = E738A12923DA0A3F00138318 /* CBAssets */; };
 		E739B15923C389DD00958259 /* CBWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739B15823C389DD00958259 /* CBWebView.swift */; };
 		E739B15B23C38CB400958259 /* CBWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = E739B15A23C38CB400958259 /* CBWebView.js */; };
 		E739B18423C670C400958259 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739B18323C670C400958259 /* CameraViewController.swift */; };
@@ -79,6 +82,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E738A12823DA099900138318 /* CambrianAR.framework in Embed Frameworks */,
 				E7E4C92320AB9A1B00E842E4 /* CambrianSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -93,6 +97,8 @@
 		E7291DBF23A2979400F492C2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E7291DC123A29E6A00F492C2 /* datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datasource.json; sourceTree = "<group>"; };
 		E738A11323D8DB3400138318 /* PaintARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintARViewController.swift; sourceTree = "<group>"; };
+		E738A12123DA01E200138318 /* CambrianAR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CambrianAR.framework; path = FloorAR/CambrianAR.framework; sourceTree = "<group>"; };
+		E738A12923DA0A3F00138318 /* CBAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CBAssets; sourceTree = "<group>"; };
 		E739B15823C389DD00958259 /* CBWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWebView.swift; sourceTree = "<group>"; };
 		E739B15A23C38CB400958259 /* CBWebView.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CBWebView.js; sourceTree = "<group>"; };
 		E739B18323C670C400958259 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E738A12223DA01E200138318 /* CambrianAR.framework in Frameworks */,
 				E7FB860E23B1662B003A09DE /* WebKit.framework in Frameworks */,
 				E7E4C92220AB9A1B00E842E4 /* CambrianSDK.framework in Frameworks */,
 				8B811E2A9ED24F31490D7049 /* libPods-DesignUp.a in Frameworks */,
@@ -230,6 +237,7 @@
 		E7E4C8F620AB924D00E842E4 = {
 			isa = PBXGroup;
 			children = (
+				E738A12123DA01E200138318 /* CambrianAR.framework */,
 				E7E4C91620AB99AE00E842E4 /* CambrianSDK.xcodeproj */,
 				E7E4C90120AB924D00E842E4 /* FloorAR */,
 				E7E4C90020AB924D00E842E4 /* Products */,
@@ -249,6 +257,7 @@
 		E7E4C90120AB924D00E842E4 /* FloorAR */ = {
 			isa = PBXGroup;
 			children = (
+				E738A12923DA0A3F00138318 /* CBAssets */,
 				E7C497DE20B3C0B600E7567D /* Screens */,
 				E7C497BB20B3156700E7567D /* Controls */,
 				E72157AB20B4B3DA008FB2B8 /* Utility */,
@@ -366,6 +375,7 @@
 				E7A7AD9B23BA722F0096DCA6 /* product-details.js in Resources */,
 				E7291DC223A29E6B00F492C2 /* datasource.json in Resources */,
 				E7E4C90D20AB925000E842E4 /* LaunchScreen.storyboard in Resources */,
+				E738A12A23DA0A3F00138318 /* CBAssets in Resources */,
 				E7B42B1122F4B40900F48597 /* Data in Resources */,
 				E7F5B84823C8F86D00C9BC20 /* default.realm in Resources */,
 				E7E4C90A20AB925000E842E4 /* Assets.xcassets in Resources */,
@@ -600,13 +610,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0010;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FloorAR",
+				);
 				INFOPLIST_FILE = FloorAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.designup;
 				PRODUCT_NAME = "Design Up";
 				REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES = NO;
@@ -624,13 +638,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0010;
 				DEVELOPMENT_TEAM = 487F34SCQ8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FloorAR",
+				);
 				INFOPLIST_FILE = FloorAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.designup;
 				PRODUCT_NAME = "Design Up";
 				REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES = NO;
