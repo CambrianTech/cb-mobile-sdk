@@ -1,5 +1,5 @@
 //
-//  CBColorFinderView.h
+//  CBARColorFinderView.h
 //  CambrianAR
 //
 //  Created by Joel Teply on 4/17/17.
@@ -17,7 +17,7 @@
 - (void) colorsFound:(nonnull NSArray<CBARColorResult *>*)results;
 @end
 
-@interface CBColorFinderView : CBARAugmentedView
+@interface CBARColorFinderView : CBARAugmentedView
 
 @property (weak, nonatomic, nullable) id<CBARColorFinderDelegate> delegate;
 

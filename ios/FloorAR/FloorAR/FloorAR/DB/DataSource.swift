@@ -71,6 +71,7 @@ class DataSource {
     }
     
     let realm:Realm
+    let paintsRealm:Realm
     
     var ppiData: Dictionary<String, Int> = Dictionary<String, Int>()
     
@@ -80,12 +81,23 @@ class DataSource {
             //not necessary, just convenient:
             let copied = try FileManager.default.copyBundleFileToUserDocuments(forResource: "default", ofType: "realm")
             if (copied) {
-                print("Copied realm database to default location")
+                print("Copied realm default database to default location")
             }
         }
         catch { }
         //must run:
         realm = try! Realm()
+        
+        do {
+            //not necessary, just convenient:
+            let copied = try FileManager.default.copyBundleFileToUserDocuments(forResource: "paints", ofType: "realm")
+            if (copied) {
+                print("Copied realm paints database to default location")
+            }
+        }
+        catch { }
+        //must run:
+        paintsRealm = try! Realm()
         
         #if DEBUG //because dangerous to leave on
         //AppUpdater.testUpdate = true

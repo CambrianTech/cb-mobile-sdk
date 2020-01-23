@@ -42,11 +42,8 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate {
         self.arView.startRunning()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.arView.scene.appendAsset(self.paint)
+            self.paint.color = UIColor.red
         }
-    }
-    
-    func toolVisibilityChanged(visible:Bool) {
-        
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

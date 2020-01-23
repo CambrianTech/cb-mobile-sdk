@@ -228,17 +228,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14I-KE-Hqe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="xq6-cI-j0T"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="x5I-Mt-OfS" kind="embed" id="iAz-Tg-u0H"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8n-Ax-P7V" customClass="CBARRemodelingView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="680"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="suv-PQ-jst" firstAttribute="bottom" secondItem="Q8n-Ax-P7V" secondAttribute="bottom" id="Btf-dC-K5D"/>
-                            <constraint firstItem="Q8n-Ax-P7V" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="Ou5-Cz-WVd"/>
-                            <constraint firstItem="Q8n-Ax-P7V" firstAttribute="top" secondItem="suv-PQ-jst" secondAttribute="top" id="nPP-TT-40z"/>
-                            <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="Q8n-Ax-P7V" secondAttribute="trailing" id="rTa-iw-v1q"/>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="14I-KE-Hqe" secondAttribute="trailing" id="BxX-F3-4qP"/>
+                            <constraint firstItem="Q8n-Ax-P7V" firstAttribute="top" secondItem="14I-KE-Hqe" secondAttribute="bottom" id="Mmt-XC-8E3"/>
+                            <constraint firstItem="14I-KE-Hqe" firstAttribute="top" secondItem="suv-PQ-jst" secondAttribute="top" id="Q68-L8-2dB"/>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="Q8n-Ax-P7V" secondAttribute="trailing" id="acg-hD-HSR"/>
+                            <constraint firstItem="14I-KE-Hqe" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="iu6-sf-L0x"/>
+                            <constraint firstItem="Q8n-Ax-P7V" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="sir-GR-dhC"/>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="bottom" secondItem="Q8n-Ax-P7V" secondAttribute="bottom" id="slV-Vt-I4c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="suv-PQ-jst"/>
                     </view>
@@ -249,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us9-qZ-nwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="-1391"/>
+            <point key="canvasLocation" x="-436.23188405797106" y="-1391.5178571428571"/>
         </scene>
         <!--Live Visualizer-->
         <scene sceneID="tUs-Dj-Q7L">
@@ -760,6 +772,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKu-hC-s1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2142.0289855072465" y="1234.8214285714284"/>
+        </scene>
+        <!--Swatch Selector Controller-->
+        <scene sceneID="qVd-hQ-xc4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7le-lr-taG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="x5I-Mt-OfS" customClass="SwatchSelectorController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Nj-Ie-AoH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bmD-l2-1Ty">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dFa-FC-4g0">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SwatchCell" id="qh9-FV-DSo">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3ZK-L6-f0x">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bmD-l2-1Ty" secondAttribute="bottom" id="VY4-jj-WnQ"/>
+                            <constraint firstItem="bmD-l2-1Ty" firstAttribute="leading" secondItem="5Nj-Ie-AoH" secondAttribute="leading" id="drh-gy-v7r"/>
+                            <constraint firstAttribute="trailing" secondItem="bmD-l2-1Ty" secondAttribute="trailing" id="lfU-7c-lkH"/>
+                            <constraint firstItem="bmD-l2-1Ty" firstAttribute="top" secondItem="5Nj-Ie-AoH" secondAttribute="top" id="tIs-R8-g35"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="539" y="-1573"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CambrianAR
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cbConfig.workingPath = documentDirectoryURL.appendingPathComponent("cbar", isDirectory: true).path;
         
         CBLicensing.enable(cbConfig)
+        
+        CBARLicensing.enable(withKey: "f81b040d45bc43c688326e13b9877904")
         
         NSSetUncaughtExceptionHandler { exception in
            print(exception)
