@@ -1,5 +1,5 @@
 {
-  "checkForUpdates": true,
+  "checkForUpdates": false,
   "forceUpdate": false,
   "adsEnabled": false,
   "maxDataAgeDays" : 10,
