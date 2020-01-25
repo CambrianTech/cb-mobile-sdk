@@ -96,7 +96,6 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
         let item = self.items[indexPath.row]
         if let url = item.thumbnailUrl {
             cell.backgroundColor = UIColor.clear
-            print(url.absoluteString)
             cell.backgroundImage.image = UIImage(contentsOfFile: url.path)
         } else {
             cell.backgroundImage.image = nil
@@ -106,16 +105,34 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
-    var itemSize:CGFloat = 0
+    var maxItemSize:CGFloat = 0
+    let spacing:CGFloat = 5
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           
-       if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+        
             if (collectionView.frame.size.height > 0) {
-                itemSize = collectionView.frame.size.height - layout.sectionInset.top - layout.sectionInset.bottom
+                maxItemSize = collectionView.frame.size.height - layout.sectionInset.top - layout.sectionInset.bottom
             }
-            return CGSize(width: itemSize, height: itemSize)
-       }
-       
-       return CGSize.zero
+            
+            let item = self.items[indexPath.row]
+            
+            if let _ = item as? BrandCategory {
+                return CGSize(width: maxItemSize - spacing, height: maxItemSize - spacing)
+            }
+            
+            return CGSize(width: maxItemSize / 4 - spacing, height: maxItemSize / 4 - spacing)
+            
+        }
+
+        return CGSize.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        
+        if let category = item as? BrandCategory {
+            self.category = category
+        }
     }
 }
