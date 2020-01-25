@@ -14,9 +14,15 @@ class SwatchCell: UICollectionViewCell {
     
 }
 
+protocol PaintSelectionDelegate: class {
+    func paintSelected(_ paint: BrandItem)
+}
+
 class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var swatchScroller: UICollectionView!
+    
+    open weak var delegate: PaintSelectionDelegate?
     
     private var product: BrandItem? {
         didSet {
@@ -117,7 +123,7 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
             
             let item = self.items[indexPath.row]
             
-            if let _ = item as? BrandCategory {
+            if let _ = item as? BrandCategory, self.items.count < 50 {
                 return CGSize(width: maxItemSize - spacing, height: maxItemSize - spacing)
             }
             
@@ -133,6 +139,8 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
         
         if let category = item as? BrandCategory {
             self.category = category
+        } else if let paint = item as? BrandItem {
+            self.delegate?.paintSelected(paint)
         }
     }
 }

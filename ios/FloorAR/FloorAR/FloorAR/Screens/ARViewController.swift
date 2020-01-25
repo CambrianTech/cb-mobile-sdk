@@ -50,10 +50,8 @@ class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelec
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "product-navigation" {
-            if let productSelector = segue.destination as? ProductSelectionView {
-                productSelector.delegate = self
-            }
+        if let productSelector = segue.destination as? ProductSelectionView {
+            productSelector.delegate = self
         }
     }
     

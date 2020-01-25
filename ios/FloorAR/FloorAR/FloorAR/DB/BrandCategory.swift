@@ -24,4 +24,13 @@ class BrandCategory : SwatchObject {
     
     let items = List<BrandItem>()
     let subCategories = List<BrandCategory>()
+    
+    override var color:UIColor {
+        get {
+            if let item = self.displayItem {
+                return item.color
+            }
+            return self.color
+        }
+    }
 }

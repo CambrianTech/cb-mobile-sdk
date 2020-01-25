@@ -10,7 +10,7 @@ import UIKit
 import CambrianAR
 import AVFoundation
 
-class PaintARViewController: UIViewController, CBARRemodelingViewDelegate {
+class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, PaintSelectionDelegate {
     
     @IBOutlet weak var arView: CBARRemodelingView!
     var paint = CBARRemodelingPaint(assetID: "Paint")
@@ -48,7 +48,12 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let productSelector = segue.destination as? SwatchSelectorController {
+            productSelector.delegate = self
+        }
     }
 
+    func paintSelected(_ paint: BrandItem) {
+        self.paint.color = paint.color
+    }
 }
