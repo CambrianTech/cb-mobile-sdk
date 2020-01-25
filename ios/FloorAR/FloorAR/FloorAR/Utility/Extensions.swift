@@ -41,7 +41,7 @@ public extension FileManager {
         }
     }
     
-    @discardableResult func copyBundleFileToUserDocuments(forResource name: String, ofType ext: String) throws -> Bool {
+    @discardableResult func copyBundleFileToUserDocuments(forResource name: String, ofType ext: String) throws -> URL? {
         if let bundlePath = Bundle.main.path(forResource: name, ofType: ext),
             let destPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
                                 .userDomainMask,
@@ -53,10 +53,10 @@ public extension FileManager {
 
             if !self.fileExists(atPath: fullDestPathString) {
                 try self.copyItem(atPath: bundlePath, toPath: fullDestPathString)
-                return true
             }
+            return fullDestPath
         }
-        return false
+        return nil
     }
 }
 

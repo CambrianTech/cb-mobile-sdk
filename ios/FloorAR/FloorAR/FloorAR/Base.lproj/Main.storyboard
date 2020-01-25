@@ -234,7 +234,7 @@
                                     <constraint firstAttribute="height" constant="128" id="xq6-cI-j0T"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="x5I-Mt-OfS" kind="embed" id="iAz-Tg-u0H"/>
+                                    <segue destination="x5I-Mt-OfS" kind="embed" identifier="swatches" id="iAz-Tg-u0H"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8n-Ax-P7V" customClass="CBARRemodelingView">
@@ -776,7 +776,6 @@
         <!--Swatch Selector Controller-->
         <scene sceneID="qVd-hQ-xc4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7le-lr-taG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="x5I-Mt-OfS" customClass="SwatchSelectorController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Nj-Ie-AoH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
@@ -801,6 +800,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="x5I-Mt-OfS" id="vs2-io-kI5"/>
+                                    <outlet property="delegate" destination="x5I-Mt-OfS" id="I2l-GM-vU7"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -810,8 +813,13 @@
                             <constraint firstAttribute="trailing" secondItem="bmD-l2-1Ty" secondAttribute="trailing" id="lfU-7c-lkH"/>
                             <constraint firstItem="bmD-l2-1Ty" firstAttribute="top" secondItem="5Nj-Ie-AoH" secondAttribute="top" id="tIs-R8-g35"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="QGd-be-EM9"/>
                     </view>
+                    <connections>
+                        <outlet property="swatchScroller" destination="bmD-l2-1Ty" id="kwd-2B-KSu"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7le-lr-taG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="539" y="-1573"/>
         </scene>

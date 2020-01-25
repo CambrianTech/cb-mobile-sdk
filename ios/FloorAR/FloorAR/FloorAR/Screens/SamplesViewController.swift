@@ -42,6 +42,8 @@ class SamplesViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var sampleListing: UICollectionView!
     
+    var swatches:SwatchSelectorController?
+    
     @IBAction func closeClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -98,10 +100,6 @@ class SamplesViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "visualize" {
-            if let vc = segue.destination as? PhotoViewController {
-                vc.sceneToLoad = samples[selectedIndex]
-            }
-        }
+       
     }
 }

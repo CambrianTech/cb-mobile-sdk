@@ -77,27 +77,14 @@ class DataSource {
     
     private init() {
         
-        do {
-            //not necessary, just convenient:
-            let copied = try FileManager.default.copyBundleFileToUserDocuments(forResource: "default", ofType: "realm")
-            if (copied) {
-                print("Copied realm default database to default location")
-            }
-        }
-        catch { }
-        //must run:
+        try! FileManager.default.copyBundleFileToUserDocuments(forResource: "default", ofType: "realm")
         realm = try! Realm()
         
-        do {
-            //not necessary, just convenient:
-            let copied = try FileManager.default.copyBundleFileToUserDocuments(forResource: "paints", ofType: "realm")
-            if (copied) {
-                print("Copied realm paints database to default location")
-            }
-        }
-        catch { }
-        //must run:
-        paintsRealm = try! Realm()
+        let path = try! FileManager.default.copyBundleFileToUserDocuments(forResource: "paints", ofType: "realm")
+        var paintsConfig = Realm.Configuration()
+        paintsConfig.readOnly = true
+        paintsConfig.fileURL = path
+        paintsRealm = try! Realm(configuration: paintsConfig)
         
         #if DEBUG //because dangerous to leave on
         //AppUpdater.testUpdate = true
