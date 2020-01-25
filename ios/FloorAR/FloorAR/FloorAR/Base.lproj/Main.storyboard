@@ -223,13 +223,13 @@
         <!--PaintAR View Controller-->
         <scene sceneID="Azs-xA-oPm">
             <objects>
-                <viewController id="h3M-MV-Jkz" customClass="PaintARViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="h3M-MV-Jkz" customClass="PaintARViewController" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vbz-K3-rcD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14I-KE-Hqe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="xq6-cI-j0T"/>
                                 </constraints>
@@ -238,7 +238,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8n-Ax-P7V" customClass="CBARRemodelingView">
-                                <rect key="frame" x="0.0" y="128" width="414" height="680"/>
+                                <rect key="frame" x="0.0" y="172" width="414" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -844,6 +844,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J4Q-vS-17d"/>
-        <segue reference="aAk-Yy-oIH"/>
+        <segue reference="Gms-k9-PAB"/>
     </inferredMetricsTieBreakers>
 </document>

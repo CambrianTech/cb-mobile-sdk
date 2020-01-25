@@ -12,6 +12,10 @@ import RealmSwift
 class SwatchCell: UICollectionViewCell {
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    func selected(_ select: Bool, animated:Bool) {
+        self.layer.borderWidth = select ? 2.0 : 0.0
+        self.layer.borderColor = UIColor.cambrianBlue.cgColor
+    }
 }
 
 protocol PaintSelectionDelegate: class {
@@ -23,6 +27,17 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var swatchScroller: UICollectionView!
     
     open weak var delegate: PaintSelectionDelegate?
+    
+    private var selectedCell:SwatchCell? {
+        willSet {
+            if let cell = selectedCell {
+                cell.selected(false, animated: false)
+            }
+        }
+        didSet {
+            selectedCell?.selected(true, animated: false)
+        }
+    }
     
     private var product: BrandItem? {
         didSet {
@@ -80,6 +95,7 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func reloadSwatches() {
+        self.selectedCell = nil
         self.swatchScroller.refreshLayout()
         self.swatchScroller.reloadData()
         self.swatchScroller.performBatchUpdates(nil, completion: {
@@ -135,6 +151,11 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SwatchCell else {
+            fatalError("cannot find SwatchCell")
+        }
+        
+        self.selectedCell = cell
         let item = items[indexPath.row]
         
         if let category = item as? BrandCategory {
