@@ -9,6 +9,11 @@
 import UIKit
 import RealmSwift
 
+class SwatchCell: UICollectionViewCell {
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+}
+
 class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var swatchScroller: UICollectionView!
@@ -33,17 +38,19 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    private var topLevelCategories:[BrandCategory]?
+    private var paintBrands:[BrandCategory]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let parent = DataSource.current.paintsRealm.objects(BrandCategory.self).filter({$0.parentCategory == nil}).first {
-            self.topLevelCategories = Array(parent.subCategories)
+            self.paintBrands = Array(parent.subCategories)
         }
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.refreshItems()
-        self.reloadSwatches()
     }
     
     var items:[SwatchObject] = [] {
@@ -60,9 +67,9 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
             } else {
                 items = Array(parent.subCategories)
             }
-        } else if let categories = self.topLevelCategories {
+        } else if let brands = self.paintBrands {
             //print("Listing top level categories")
-            items = categories
+            items = brands
         }
     }
     
@@ -84,8 +91,31 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SwatchCell", for: indexPath)
-        cell.backgroundColor = self.items[indexPath.row].color
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SwatchCell", for: indexPath) as! SwatchCell
+        
+        let item = self.items[indexPath.row]
+        if let url = item.thumbnailUrl {
+            cell.backgroundColor = UIColor.clear
+            print(url.absoluteString)
+            cell.backgroundImage.image = UIImage(contentsOfFile: url.path)
+        } else {
+            cell.backgroundImage.image = nil
+            cell.backgroundColor = item.color
+        }
+        
         return cell
+    }
+    
+    var itemSize:CGFloat = 0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           
+       if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            if (collectionView.frame.size.height > 0) {
+                itemSize = collectionView.frame.size.height - layout.sectionInset.top - layout.sectionInset.bottom
+            }
+            return CGSize(width: itemSize, height: itemSize)
+       }
+       
+       return CGSize.zero
     }
 }

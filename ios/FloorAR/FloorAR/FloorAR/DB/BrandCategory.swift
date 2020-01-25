@@ -9,41 +9,19 @@
 import Foundation
 import RealmSwift
 
-protocol SwatchItem : NSObjectProtocol {
-    var color:UIColor {get}
-}
-
-class SwatchObject : Object, SwatchItem {
-    var color:UIColor {
-        return UIColor.clear
-    }
-}
-
 class BrandCategory : SwatchObject {
     
-    @objc dynamic var id = UUID().uuidString
     @objc dynamic var parentCategory: BrandCategory? = nil
     
     override class func primaryKey() -> String? { return "id"}
     
     //drawable
-    @objc dynamic var assetPath = ""
     @objc dynamic var isIndoor = true
     @objc dynamic var isOutdoor = false
-    @objc dynamic var name = ""
-    @objc dynamic var orderIndex = 0
     @objc dynamic var displayItem: BrandItem? = nil
-    @objc dynamic var red = 0
-    @objc dynamic var green = 0
-    @objc dynamic var blue = 0
+    
     var type: CBAssetType?
     
     let items = List<BrandItem>()
     let subCategories = List<BrandCategory>()
-    
-    override var color:UIColor {
-        get {
-            return UIColor(red: self.red, green: self.green, blue: self.blue)
-        }
-    }
 }

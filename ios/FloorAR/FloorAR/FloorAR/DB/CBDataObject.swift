@@ -39,7 +39,7 @@ class _CBDataObject: Object {
         get
         {
             if let path = self.jsonString.jsonData["thumbnailPath"] as? String, path.starts(with: "bundle") {
-                return Bundle.main.url(forResource: self.jsonString.jsonData["thumbnailPath"] as? String, withExtension: nil)!.absoluteString
+                return Bundle.main.url(forResource: path, withExtension: nil)!.absoluteString
             }
             return DataSource.getThumbnailPath(self.code)
         }
