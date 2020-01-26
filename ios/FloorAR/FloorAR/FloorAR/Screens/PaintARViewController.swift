@@ -12,6 +12,8 @@ import AVFoundation
 
 class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, PaintSelectionDelegate, HistorySelectionDelegate {
     @IBOutlet weak var arView: CBARRemodelingView!
+    
+    @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var paintButton: UIButton!
     @IBOutlet weak var eraserButton: UIButton!
     
@@ -36,7 +38,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     
     override func viewDidAppear(_ animated: Bool) {
        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-           startRunning()
+            self.startRunning()
        } else {
            AVCaptureDevice.requestAccess(for: .video) { response in
                if response {
@@ -56,20 +58,28 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
             self.paintButton.isHidden = false
             self.eraserButton.isHidden = false
         } else {
-            self.arView.clearAll()
-            self.arView.startRunning()
-            self.arView.toolMode = .fill
-            self.paintButton.isHidden = true
-            self.eraserButton.isHidden = true
+            startRunning()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.handleToolMode()
         }
     }
     
     @IBAction func paintbrushClicked(_ sender: Any) {
         self.arView.toolMode = .paintbrush
+        handleToolMode()
     }
     
     @IBAction func eraserClicked(_ sender: Any) {
         self.arView.toolMode = .eraser
+        handleToolMode()
+    }
+    
+    func handleToolMode() {
+        self.paintButton.isSelected = self.arView.toolMode == .paintbrush
+        self.eraserButton.isSelected = self.arView.toolMode == .eraser
+        self.captureButton.isSelected = self.arView.isLive
     }
     
     @IBAction func closeClicked(_ sender: Any) {
@@ -77,12 +87,17 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     }
 
     func startRunning() {
+        
         self.arView.startRunning()
         self.arView.toolMode = .fill
+        self.paintButton.isHidden = true
+        self.eraserButton.isHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.arView.scene.appendAsset(self.paint)
-            self.paint.color = UIColor.red
+            if (self.arView.scene.assets.count == 0) {
+                self.arView.scene.appendAsset(self.paint)
+            }
+            self.handleToolMode()
         }
     }
     
