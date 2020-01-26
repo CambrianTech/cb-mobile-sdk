@@ -12,6 +12,7 @@ import AVFoundation
 
 class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, PaintSelectionDelegate, HistorySelectionDelegate {
     @IBOutlet weak var arView: CBARRemodelingView!
+    @IBOutlet weak var paintNameLabel: UILabel!
     
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var paintButton: UIButton!
@@ -36,6 +37,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         self.paintButton.isHidden = true
         self.eraserButton.isHidden = true
         self.shareButton.isHidden = true
+        self.paintNameLabel.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,11 +133,22 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
 
     func paintSelected(_ paint: BrandItem) {
         self.paint.color = paint.color
+        self.paintNameLabel.isHidden = false
+        if let category = swatches?.category?.parentCategory {
+            self.paintNameLabel.text = "\(category.name) - \(paint.name)"
+        }
     }
     
     func categorySelected(_ category: BrandCategory) {
         history?.currentItem = category
         swatches?.category = category
+        self.paintNameLabel.isHidden = false
+        self.paintNameLabel.text = category.name
+        if let brand = category.parentCategory, let _ = category.parentCategory?.parentCategory  {
+            self.paintNameLabel.text = "\(brand.name) - \(category.name)"
+        } else {
+            self.paintNameLabel.text = category.name
+        }
     }
     
     func historyChanged(_ current:HistoryItem?) {

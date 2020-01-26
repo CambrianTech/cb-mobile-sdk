@@ -257,6 +257,14 @@
                                     <action selector="closeClicked:" destination="h3M-MV-Jkz" eventType="touchUpInside" id="wCF-f4-pqW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some paint brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-ce-65I">
+                                <rect key="frame" x="20" y="232" width="143.33333333333334" height="22.666666666666657"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02s-4R-44T" userLabel="Paint">
                                 <rect key="frame" x="97" y="752" width="60" height="60"/>
                                 <constraints>
@@ -301,6 +309,7 @@
                         <constraints>
                             <constraint firstItem="KeT-tj-szb" firstAttribute="leading" secondItem="02s-4R-44T" secondAttribute="trailing" constant="10" id="1C4-Vx-DLh"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="xd5-lh-uVr" secondAttribute="trailing" constant="20" id="43w-JS-Njj"/>
+                            <constraint firstItem="bGd-ce-65I" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" constant="20" id="4LJ-j5-Tk3"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZCT-Dl-afa" secondAttribute="trailing" constant="10" id="5GR-5T-c8X"/>
                             <constraint firstItem="0NY-y0-cnm" firstAttribute="height" secondItem="02s-4R-44T" secondAttribute="height" id="6hp-Cg-wUc"/>
                             <constraint firstItem="ZCT-Dl-afa" firstAttribute="width" secondItem="02s-4R-44T" secondAttribute="width" id="8Uh-oX-cVB"/>
@@ -314,6 +323,7 @@
                             <constraint firstItem="Q8n-Ax-P7V" firstAttribute="top" secondItem="14I-KE-Hqe" secondAttribute="bottom" id="Mmt-XC-8E3"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="anM-IR-m2p" secondAttribute="trailing" id="OaH-YX-2V8"/>
                             <constraint firstItem="ZCT-Dl-afa" firstAttribute="leading" secondItem="0NY-y0-cnm" secondAttribute="trailing" priority="500" constant="10" id="Tid-RN-fRT"/>
+                            <constraint firstItem="bGd-ce-65I" firstAttribute="top" secondItem="14I-KE-Hqe" secondAttribute="bottom" constant="10" id="VEU-pH-zN3"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="Q8n-Ax-P7V" secondAttribute="trailing" id="acg-hD-HSR"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="bottom" secondItem="KeT-tj-szb" secondAttribute="bottom" constant="30" id="gCS-0r-T7B"/>
                             <constraint firstItem="ZCT-Dl-afa" firstAttribute="top" secondItem="KeT-tj-szb" secondAttribute="top" id="hKd-cg-h2N"/>
@@ -334,6 +344,7 @@
                         <outlet property="captureButton" destination="KeT-tj-szb" id="st9-GO-hcX"/>
                         <outlet property="eraserButton" destination="0NY-y0-cnm" id="mdg-02-O5Z"/>
                         <outlet property="paintButton" destination="02s-4R-44T" id="n5B-dW-E2i"/>
+                        <outlet property="paintNameLabel" destination="bGd-ce-65I" id="G63-x4-Ctm"/>
                         <outlet property="shareButton" destination="ZCT-Dl-afa" id="Mw5-Zn-5jz"/>
                     </connections>
                 </viewController>
