@@ -16,6 +16,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var paintButton: UIButton!
     @IBOutlet weak var eraserButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     
     var paint = CBARRemodelingPaint(assetID: "Paint")
     var category:BrandCategory? {
@@ -34,6 +35,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         
         self.paintButton.isHidden = true
         self.eraserButton.isHidden = true
+        self.shareButton.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +59,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
             self.arView.toolMode = .paintbrush
             self.paintButton.isHidden = false
             self.eraserButton.isHidden = false
+            self.shareButton.isHidden = false
         } else {
             startRunning()
         }
@@ -76,6 +79,14 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         handleToolMode()
     }
     
+    @IBAction func shareClicked(_ sender: Any) {
+        self.arView.getImagePreview { (image) in
+            let activityViewController = UIActivityViewController(activityItems: [image] , applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
     func handleToolMode() {
         self.paintButton.isSelected = self.arView.toolMode == .paintbrush
         self.eraserButton.isSelected = self.arView.toolMode == .eraser
@@ -92,6 +103,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         self.arView.toolMode = .fill
         self.paintButton.isHidden = true
         self.eraserButton.isHidden = true
+        self.shareButton.isHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if (self.arView.scene.assets.count == 0) {
