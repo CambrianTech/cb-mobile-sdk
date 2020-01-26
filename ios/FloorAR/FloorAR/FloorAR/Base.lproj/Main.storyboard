@@ -257,28 +257,67 @@
                                     <action selector="closeClicked:" destination="h3M-MV-Jkz" eventType="touchUpInside" id="wCF-f4-pqW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02s-4R-44T" userLabel="Paint">
+                                <rect key="frame" x="77" y="752" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4vJ-Mf-bPe"/>
+                                    <constraint firstAttribute="height" constant="60" id="Qzp-Wh-Tkr"/>
+                                </constraints>
+                                <state key="normal" image="paint-icon"/>
+                                <connections>
+                                    <action selector="paintbrushClicked:" destination="h3M-MV-Jkz" eventType="touchUpInside" id="Upc-Og-4L1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeT-tj-szb" userLabel="Capture">
+                                <rect key="frame" x="167" y="752" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Yc7-cx-9Mc"/>
+                                    <constraint firstAttribute="width" constant="80" id="s7B-rY-5Ak"/>
+                                </constraints>
+                                <state key="normal" image="camera-icon"/>
+                                <connections>
+                                    <action selector="captureClicked:" destination="h3M-MV-Jkz" eventType="touchUpInside" id="bgy-bY-q0p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-y0-cnm" userLabel="Eraser">
+                                <rect key="frame" x="277" y="752" width="60" height="60"/>
+                                <state key="normal" image="eraser-icon"/>
+                                <connections>
+                                    <action selector="eraserClicked:" destination="h3M-MV-Jkz" eventType="touchUpInside" id="vaf-cc-3uF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="KeT-tj-szb" firstAttribute="leading" secondItem="02s-4R-44T" secondAttribute="trailing" constant="30" id="1C4-Vx-DLh"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="xd5-lh-uVr" secondAttribute="trailing" constant="20" id="43w-JS-Njj"/>
+                            <constraint firstItem="0NY-y0-cnm" firstAttribute="height" secondItem="02s-4R-44T" secondAttribute="height" id="6hp-Cg-wUc"/>
+                            <constraint firstItem="0NY-y0-cnm" firstAttribute="width" secondItem="02s-4R-44T" secondAttribute="width" id="8e2-kv-QDT"/>
+                            <constraint firstItem="02s-4R-44T" firstAttribute="top" secondItem="KeT-tj-szb" secondAttribute="top" id="9VV-TM-vb7"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="14I-KE-Hqe" secondAttribute="trailing" id="BxX-F3-4qP"/>
                             <constraint firstItem="14I-KE-Hqe" firstAttribute="top" secondItem="anM-IR-m2p" secondAttribute="bottom" id="ExA-Ym-6Rs"/>
                             <constraint firstItem="xd5-lh-uVr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="suv-PQ-jst" secondAttribute="leading" constant="50" id="F0a-0i-ka3"/>
+                            <constraint firstItem="KeT-tj-szb" firstAttribute="centerX" secondItem="suv-PQ-jst" secondAttribute="centerX" id="IGm-xP-qIj"/>
                             <constraint firstItem="xd5-lh-uVr" firstAttribute="top" secondItem="suv-PQ-jst" secondAttribute="top" constant="10" id="Ipl-WQ-Ucg"/>
                             <constraint firstItem="Q8n-Ax-P7V" firstAttribute="top" secondItem="14I-KE-Hqe" secondAttribute="bottom" id="Mmt-XC-8E3"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="anM-IR-m2p" secondAttribute="trailing" id="OaH-YX-2V8"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="Q8n-Ax-P7V" secondAttribute="trailing" id="acg-hD-HSR"/>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="bottom" secondItem="KeT-tj-szb" secondAttribute="bottom" constant="30" id="gCS-0r-T7B"/>
                             <constraint firstItem="14I-KE-Hqe" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="iu6-sf-L0x"/>
+                            <constraint firstItem="0NY-y0-cnm" firstAttribute="leading" secondItem="KeT-tj-szb" secondAttribute="trailing" constant="30" id="kNh-4h-oad"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="top" secondItem="anM-IR-m2p" secondAttribute="top" id="oav-VG-X37"/>
                             <constraint firstItem="Q8n-Ax-P7V" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="sir-GR-dhC"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="bottom" secondItem="Q8n-Ax-P7V" secondAttribute="bottom" id="slV-Vt-I4c"/>
                             <constraint firstItem="anM-IR-m2p" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="uin-c2-tXb"/>
+                            <constraint firstItem="0NY-y0-cnm" firstAttribute="top" secondItem="KeT-tj-szb" secondAttribute="top" id="xld-1g-IhA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="suv-PQ-jst"/>
                     </view>
                     <navigationItem key="navigationItem" id="vHR-kd-fgG"/>
                     <connections>
                         <outlet property="arView" destination="Q8n-Ax-P7V" id="kPJ-jC-pAD"/>
+                        <outlet property="eraserButton" destination="0NY-y0-cnm" id="mdg-02-O5Z"/>
+                        <outlet property="paintButton" destination="02s-4R-44T" id="n5B-dW-E2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us9-qZ-nwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -862,11 +901,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera-icon" width="500" height="500"/>
+        <image name="eraser-icon" width="500" height="500"/>
         <image name="kitchen-bg" width="2258" height="1500"/>
+        <image name="paint-icon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J4Q-vS-17d"/>
         <segue reference="Ui3-qB-Wkm"/>
-        <segue reference="Gms-k9-PAB"/>
+        <segue reference="aAk-Yy-oIH"/>
     </inferredMetricsTieBreakers>
 </document>

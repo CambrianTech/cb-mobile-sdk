@@ -12,10 +12,8 @@ import AVFoundation
 
 class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, PaintSelectionDelegate, HistorySelectionDelegate {
     @IBOutlet weak var arView: CBARRemodelingView!
-    
-    @IBAction func closeClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    @IBOutlet weak var paintButton: UIButton!
+    @IBOutlet weak var eraserButton: UIButton!
     
     var paint = CBARRemodelingPaint(assetID: "Paint")
     var category:BrandCategory? {
@@ -28,9 +26,12 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         super.viewDidLoad()
         
         self.arView.delegate = self;
+        
         self.arView.isAREnabled = true
-        self.paint.color = UIColor.blue
-        self.arView.toolMode = .fill
+        self.paint.color = UIColor.clear
+        
+        self.paintButton.isHidden = true
+        self.eraserButton.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,9 +47,30 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
            }
        }
     }
+    
+    @IBAction func captureClicked(_ sender: Any) {
+        self.arView.captureCurrentState()
+        self.arView.toolMode = .paintbrush
+        self.paintButton.isHidden = false
+        self.eraserButton.isHidden = false
+    }
+    
+    @IBAction func paintbrushClicked(_ sender: Any) {
+        self.arView.toolMode = .paintbrush
+    }
+    
+    @IBAction func eraserClicked(_ sender: Any) {
+        self.arView.toolMode = .eraser
+    }
+    
+    @IBAction func closeClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     func startRunning() {
         self.arView.startRunning()
+        self.arView.toolMode = .fill
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.arView.scene.appendAsset(self.paint)
             self.paint.color = UIColor.red
