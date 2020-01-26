@@ -47,8 +47,6 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
            AVCaptureDevice.requestAccess(for: .video) { response in
                if response {
                    self.startRunning()
-               } else {
-                   
                }
            }
        }
@@ -82,10 +80,11 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     }
     
     @IBAction func shareClicked(_ sender: Any) {
-        self.arView.getImagePreview { (image) in
-            let activityViewController = UIActivityViewController(activityItems: [image] , applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view
-            self.present(activityViewController, animated: true, completion: nil)
+        
+        if self.paint.color != .clear, let text = self.paintNameLabel.text {
+            self.arView.getImagePreview { (image) in
+                self.share(image:image, text:text, color:self.paint.color)
+            }
         }
     }
     
@@ -93,6 +92,45 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         self.paintButton.isSelected = self.arView.toolMode == .paintbrush
         self.eraserButton.isSelected = self.arView.toolMode == .eraser
         self.captureButton.isSelected = self.arView.isLive
+    }
+    
+    func share(image:UIImage, text:String, color:UIColor) {
+        let textColor = UIColor.white
+        let textFont = UIFont(name: "Helvetica Bold", size: 30)!
+
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
+        
+        //background
+        image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
+        
+        UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).setFill()
+        UIRectFillUsingBlendMode(CGRect(origin: CGPoint(x: 0, y: image.size.height - 70), size: CGSize(width: image.size.width, height: 70)), .multiply)
+        
+        let swatchRect = CGRect(origin: CGPoint(x: 20, y: image.size.height - 170), size: CGSize(width: 150, height: 150))
+        color.setFill()
+        UIRectFill(swatchRect)
+        
+        UIColor(red: 0, green: 0, blue: 0, alpha: 0.8).setFill()
+        UIRectFrameUsingBlendMode(swatchRect, .multiply)
+
+        //draw brand info text
+        let textFontAttributes = [
+            NSAttributedString.Key.font: textFont,
+            NSAttributedString.Key.foregroundColor: textColor,
+            ] as [NSAttributedString.Key : Any]
+        
+        let rect = CGRect(origin: CGPoint(x: 200, y: image.size.height - 55), size: CGSize(width: image.size.width, height: 50))
+        text.draw(in: rect, withAttributes: textFontAttributes)
+
+        let brandImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if let image = brandImage {
+            let activityViewController = UIActivityViewController(activityItems: [image] , applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func closeClicked(_ sender: Any) {
@@ -153,7 +191,6 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     
     func historyChanged(_ current:HistoryItem?) {
         if let category = current as? BrandCategory {
-            print("historyChanged \(category.getName())")
             swatches?.category = category
         }
     }
