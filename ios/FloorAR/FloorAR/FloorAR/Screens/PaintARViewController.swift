@@ -59,7 +59,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
             self.arView.toolMode = .paintbrush
             self.paintButton.isHidden = false
             self.eraserButton.isHidden = false
-            self.shareButton.isHidden = false
+            self.shareButton.isHidden = self.lastPaintName == nil
         } else {
             startRunning()
         }
@@ -81,7 +81,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     
     @IBAction func shareClicked(_ sender: Any) {
         
-        if self.paint.color != .clear, let text = self.paintNameLabel.text {
+        if self.paint.color != .clear, let text = self.lastPaintName {
             self.arView.getImagePreview { (image) in
                 self.share(image:image, text:text, color:self.paint.color)
             }
@@ -98,8 +98,7 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         let textColor = UIColor.white
         let textFont = UIFont(name: "Helvetica Bold", size: 30)!
 
-        let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
+        UIGraphicsBeginImageContextWithOptions(image.size, false, 1.0)
         
         //background
         image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
@@ -169,11 +168,14 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         }
     }
 
+    var lastPaintName:String? = nil
     func paintSelected(_ paint: BrandItem) {
         self.paint.color = paint.color
         self.paintNameLabel.isHidden = false
         if let category = swatches?.category?.parentCategory {
-            self.paintNameLabel.text = "\(category.name) - \(paint.name)"
+            self.lastPaintName = "\(category.name) - \(paint.name)"
+            self.shareButton.isHidden = self.arView.isLive || self.lastPaintName == nil
+            self.paintNameLabel.text = self.lastPaintName
         }
     }
     
