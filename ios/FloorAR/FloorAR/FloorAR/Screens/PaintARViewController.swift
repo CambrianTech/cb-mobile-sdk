@@ -49,10 +49,19 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     }
     
     @IBAction func captureClicked(_ sender: Any) {
-        self.arView.captureCurrentState()
-        self.arView.toolMode = .paintbrush
-        self.paintButton.isHidden = false
-        self.eraserButton.isHidden = false
+        
+        if (self.arView.isLive) {
+            self.arView.captureCurrentState()
+            self.arView.toolMode = .paintbrush
+            self.paintButton.isHidden = false
+            self.eraserButton.isHidden = false
+        } else {
+            self.arView.clearAll()
+            self.arView.startRunning()
+            self.arView.toolMode = .fill
+            self.paintButton.isHidden = true
+            self.eraserButton.isHidden = true
+        }
     }
     
     @IBAction func paintbrushClicked(_ sender: Any) {
