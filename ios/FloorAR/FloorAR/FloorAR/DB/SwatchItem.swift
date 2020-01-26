@@ -14,7 +14,7 @@ protocol SwatchItem : NSObjectProtocol {
     var thumbnailUrl:URL? {get}
 }
 
-class SwatchObject : Object, SwatchItem {
+class SwatchObject : Object, SwatchItem, HistoryItem {
     
     @objc dynamic var id = UUID().uuidString
     override class func primaryKey() -> String? { return "id"}
@@ -26,6 +26,14 @@ class SwatchObject : Object, SwatchItem {
     @objc dynamic var red = 0
     @objc dynamic var green = 0
     @objc dynamic var blue = 0
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getParent() -> HistoryItem? {
+        return nil
+    }
     
     var color:UIColor {
         get {

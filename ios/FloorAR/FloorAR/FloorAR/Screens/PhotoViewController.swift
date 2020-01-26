@@ -76,7 +76,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
     }
     
     func adView(_ adView: FBAdView, didFailWithError error: Error) {
-        print("Ads failed: \(error.localizedDescription)")
+        //print("Ads failed: \(error.localizedDescription)")
     }
     
     @IBAction func closeClicked(_ sender: Any) {
@@ -85,14 +85,14 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
     
     func uploadPhoto() {
         if let photo = self.photoToLoad, let photoData = photo.jpegData(compressionQuality: 90) {
-            print("Got photo with \(photoData.count) bytes")
+            //print("Got photo with \(photoData.count) bytes")
             let base64 = photoData.base64EncodedString(options: [])
             let url = "data:application/jpeg;base64," + base64
             let command = "window.cb.uploadPhotoData('\(url)')"
             
             self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
                 if (error != nil) {
-                    print("Command error: could not upload photo")
+                    //print("Command error: could not upload photo")
                     self.webview.hud.dismiss()
                 } else {
                     self.didUpload = true
@@ -184,7 +184,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         let command = "window.cb.setMaterial(\(material.jsonString))"
         self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
             if (error != nil) {
-                print("Command error: could not load material")
+                //print("Command error: could not load material")
             }
         })
     }

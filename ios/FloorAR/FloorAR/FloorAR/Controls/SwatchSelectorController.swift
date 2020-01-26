@@ -20,6 +20,7 @@ class SwatchCell: UICollectionViewCell {
 
 protocol PaintSelectionDelegate: class {
     func paintSelected(_ paint: BrandItem)
+    func categorySelected(_ category: BrandCategory)
 }
 
 class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -39,34 +40,16 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    private var product: BrandItem? {
-        didSet {
-            self.refreshItems()
-        }
-    }
-    
-    private var _category: BrandCategory?
     var category: BrandCategory? {
-        get {
-            if let product = product {
-                return product.parentCategory
+        didSet {
+            if self.swatchScroller != nil {
+                self.refreshItems()
             }
-            return _category
-        }
-        set {
-            _category = newValue
-            self.refreshItems()
         }
     }
-    
-    private var paintBrands:[BrandCategory]?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let parent = DataSource.current.paintsRealm.objects(BrandCategory.self).filter({$0.parentCategory == nil}).first {
-            self.paintBrands = Array(parent.subCategories)
-        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -82,16 +65,14 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
     
     func refreshItems() {
         if let parent = self.category {
-            //print("Listing \(parent.products.count > 0 ? "products" : "categories") for category \(parent.name)")
+            //print("Listing \(parent.items.count > 0 ? "products" : "categories") for category \(parent.name)")
             if (parent.items.count > 0) {
                 items = Array(parent.items)
             } else {
                 items = Array(parent.subCategories)
             }
-        } else if let brands = self.paintBrands {
-            //print("Listing top level categories")
-            items = brands
         }
+        self.swatchScroller.reloadData()
     }
     
     func reloadSwatches() {
@@ -100,9 +81,7 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
         self.swatchScroller.reloadData()
         self.swatchScroller.performBatchUpdates(nil, completion: {
             (result) in
-             if let product = self.product, let index = self.items.firstIndex(of: product) {
-                self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
-             } else if let category = self.category, let index = self.items.firstIndex(of: category) {
+             if let category = self.category, let index = self.items.firstIndex(of: category) {
                 self.swatchScroller.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
              }
         })
@@ -160,6 +139,8 @@ class SwatchSelectorController: UIViewController, UICollectionViewDelegate, UICo
         
         if let category = item as? BrandCategory {
             self.category = category
+            //print(category.name)
+            self.delegate?.categorySelected(category)
         } else if let paint = item as? BrandItem {
             self.delegate?.paintSelected(paint)
         }

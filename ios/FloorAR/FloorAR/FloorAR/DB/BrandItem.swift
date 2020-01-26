@@ -36,4 +36,8 @@ class BrandItem : SwatchObject {
                               alpha: CGFloat(self.opacity) / 255.0)
            }
     }
+    
+    override func getParent() -> HistoryItem? {
+        return parentCategory
+    }
 }

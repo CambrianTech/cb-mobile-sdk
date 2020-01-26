@@ -228,8 +228,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14I-KE-Hqe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anM-IR-m2p" userLabel="History">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cM3-qU-AL2"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Q6u-Jm-Z0i" kind="embed" id="Ui3-qB-Wkm"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14I-KE-Hqe" userLabel="Swatches">
+                                <rect key="frame" x="0.0" y="94" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="xq6-cI-j0T"/>
                                 </constraints>
@@ -238,19 +247,32 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8n-Ax-P7V" customClass="CBARRemodelingView">
-                                <rect key="frame" x="0.0" y="172" width="414" height="690"/>
+                                <rect key="frame" x="0.0" y="222" width="414" height="640"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd5-lh-uVr">
+                                <rect key="frame" x="355" y="54" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="h3M-MV-Jkz" eventType="touchUpInside" id="wCF-f4-pqW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="xd5-lh-uVr" secondAttribute="trailing" constant="20" id="43w-JS-Njj"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="14I-KE-Hqe" secondAttribute="trailing" id="BxX-F3-4qP"/>
+                            <constraint firstItem="14I-KE-Hqe" firstAttribute="top" secondItem="anM-IR-m2p" secondAttribute="bottom" id="ExA-Ym-6Rs"/>
+                            <constraint firstItem="xd5-lh-uVr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="suv-PQ-jst" secondAttribute="leading" constant="50" id="F0a-0i-ka3"/>
+                            <constraint firstItem="xd5-lh-uVr" firstAttribute="top" secondItem="suv-PQ-jst" secondAttribute="top" constant="10" id="Ipl-WQ-Ucg"/>
                             <constraint firstItem="Q8n-Ax-P7V" firstAttribute="top" secondItem="14I-KE-Hqe" secondAttribute="bottom" id="Mmt-XC-8E3"/>
-                            <constraint firstItem="14I-KE-Hqe" firstAttribute="top" secondItem="suv-PQ-jst" secondAttribute="top" id="Q68-L8-2dB"/>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="anM-IR-m2p" secondAttribute="trailing" id="OaH-YX-2V8"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="trailing" secondItem="Q8n-Ax-P7V" secondAttribute="trailing" id="acg-hD-HSR"/>
                             <constraint firstItem="14I-KE-Hqe" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="iu6-sf-L0x"/>
+                            <constraint firstItem="suv-PQ-jst" firstAttribute="top" secondItem="anM-IR-m2p" secondAttribute="top" id="oav-VG-X37"/>
                             <constraint firstItem="Q8n-Ax-P7V" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="sir-GR-dhC"/>
                             <constraint firstItem="suv-PQ-jst" firstAttribute="bottom" secondItem="Q8n-Ax-P7V" secondAttribute="bottom" id="slV-Vt-I4c"/>
+                            <constraint firstItem="anM-IR-m2p" firstAttribute="leading" secondItem="suv-PQ-jst" secondAttribute="leading" id="uin-c2-tXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="suv-PQ-jst"/>
                     </view>
@@ -425,11 +447,11 @@
             <objects>
                 <viewController id="Q6u-Jm-Z0i" customClass="HistorySelectionView" customModule="Design_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="6Vi-ot-baQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p07-3h-XNw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HlC-U8-jGc">
                                     <size key="itemSize" width="120" height="45"/>
@@ -439,7 +461,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HistorySwatchCell" id="h5o-w6-aqJ" customClass="HistorySwatchCell" customModule="Design_Up" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
+                                        <rect key="frame" x="0.0" y="2.6666666666666665" width="120" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWn-uM-RSz">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
@@ -844,6 +866,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J4Q-vS-17d"/>
+        <segue reference="Ui3-qB-Wkm"/>
         <segue reference="Gms-k9-PAB"/>
     </inferredMetricsTieBreakers>
 </document>

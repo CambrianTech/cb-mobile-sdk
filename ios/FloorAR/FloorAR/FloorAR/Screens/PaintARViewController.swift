@@ -10,10 +10,19 @@ import UIKit
 import CambrianAR
 import AVFoundation
 
-class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, PaintSelectionDelegate {
-    
+class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, PaintSelectionDelegate, HistorySelectionDelegate {
     @IBOutlet weak var arView: CBARRemodelingView!
+    
+    @IBAction func closeClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     var paint = CBARRemodelingPaint(assetID: "Paint")
+    var category:BrandCategory? {
+        get {
+            return DataSource.current.paintsRealm.objects(BrandCategory.self).filter({$0.parentCategory == nil}).first
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +34,18 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
     }
     
     override func viewDidAppear(_ animated: Bool) {
-           if UIImagePickerController.isSourceTypeAvailable(.camera) {
-               startRunning()
-           } else {
-               AVCaptureDevice.requestAccess(for: .video) { response in
-                   if response {
-                       self.startRunning()
-                   } else {
-                       
-                   }
+       if UIImagePickerController.isSourceTypeAvailable(.camera) {
+           startRunning()
+       } else {
+           AVCaptureDevice.requestAccess(for: .video) { response in
+               if response {
+                   self.startRunning()
+               } else {
+                   
                }
            }
        }
+    }
 
     func startRunning() {
         self.arView.startRunning()
@@ -46,14 +55,39 @@ class PaintARViewController: UIViewController, CBARRemodelingViewDelegate, Paint
         }
     }
     
+    private var swatches:SwatchSelectorController?
+    private var history:HistorySelectionView?
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let productSelector = segue.destination as? SwatchSelectorController {
-            productSelector.delegate = self
+        if let vc = segue.destination as? SwatchSelectorController {
+            vc.delegate = self
+            vc.category = self.category
+            swatches = vc
+        } else if let vc = segue.destination as? HistorySelectionView {
+            vc.delegate = self
+            vc.currentItem = self.category
+            history = vc
         }
     }
 
     func paintSelected(_ paint: BrandItem) {
         self.paint.color = paint.color
+    }
+    
+    func categorySelected(_ category: BrandCategory) {
+        history?.currentItem = category
+        swatches?.category = category
+    }
+    
+    func historyChanged(_ current:HistoryItem?) {
+        if let category = current as? BrandCategory {
+            print("historyChanged \(category.getName())")
+            swatches?.category = category
+        }
+    }
+    
+    func getRootHistoryName() -> String? {
+        return nil
     }
 }

@@ -100,7 +100,7 @@ class ProductDetailsViewController: UIViewController, ProductSelectionDelegate, 
         let command = "if (setProductDetails) setProductDetails(\(material.jsonString), \(detailsJson))"
         self.webview.evaluateJavaScript(command, completionHandler: { (result, error) in
             if (error != nil) {
-                print("Command error")
+                //print("Command error")
             }
         })
     }

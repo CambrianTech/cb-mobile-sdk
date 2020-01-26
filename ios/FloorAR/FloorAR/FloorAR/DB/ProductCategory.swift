@@ -101,4 +101,11 @@ class ProductCategory: CBDataObject {
         
         return URL(string: urlString)!
     }
+    
+    override func getParent() -> HistoryItem? {
+        if (parents.count > 0) {
+            return parents[0]
+        }
+        return nil
+    }
 }

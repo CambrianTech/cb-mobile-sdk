@@ -21,8 +21,7 @@ protocol CBDataObjectProtocol {
 
 typealias CBDataObject = _CBDataObject & CBDataObjectProtocol
 
-class _CBDataObject: Object {
-    
+class _CBDataObject: Object, HistoryItem {
     override static func ignoredProperties() -> [String] {
         return ["thumbnailPath"]
     }
@@ -34,6 +33,14 @@ class _CBDataObject: Object {
     @objc dynamic var updated = Date()
     @objc dynamic var orderIndex = 0
     @objc dynamic var jsonString:String = ""
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getParent() -> HistoryItem? {
+        return nil
+    }
     
     var thumbnailPath: String {
         get

@@ -33,4 +33,12 @@ class BrandCategory : SwatchObject {
             return self.color
         }
     }
+    
+    override func getParent() -> HistoryItem? {
+        if (parentCategory == self || parentCategory?.name == self.name) {
+            return nil
+        }
+        
+        return parentCategory
+    }
 }

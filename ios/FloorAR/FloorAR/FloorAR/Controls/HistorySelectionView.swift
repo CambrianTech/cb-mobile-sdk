@@ -89,28 +89,30 @@ class HistorySwatchCell: UICollectionViewCell {
     }
 }
 
-class HistoryItem {
-    var category:ProductCategory?
-    var product:Product?
-    var name:String?
-    
-    init() {
-        self.name = "Material"
-    }
-    
-    init(category:ProductCategory) {
-        self.category = category
-        self.name = category.name
-    }
-    
-    init(product:Product) {
-        self.product = product
-        self.name = product.name
-    }
+protocol HistoryItem: NSObjectProtocol {
+    func getName() -> String;
+    func getParent() -> HistoryItem?
 }
 
 protocol HistorySelectionDelegate: class {
-    func historyChanged(category: ProductCategory?, product: Product?)
+    func getRootHistoryName()->String?
+    func historyChanged(_ current:HistoryItem?)
+}
+
+class RootHistoryItem: NSObject, HistoryItem {
+    var name:String
+    
+    init(_ name:String) {
+        self.name = name
+    }
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getParent() -> HistoryItem? {
+        return nil
+    }
 }
 
 class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -121,26 +123,25 @@ class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollec
     
     private var history:[HistoryItem] {
         get {
-            var _history:[HistoryItem] = [HistoryItem()]
-            if let category = self.selectedCategory {
-                //TODO:handle all categories
-                _history.append(HistoryItem(category: category))
+            var _history:[HistoryItem] = []
+            var item = currentItem
+            
+            while (item != nil) {
+                _history.insert(item!, at: 0)
+                item = item?.getParent()
             }
-            if let product = self.selectedProduct {
-                _history.append(HistoryItem(product: product))
+            
+            if let name = self.delegate?.getRootHistoryName() {
+                _history.insert(RootHistoryItem(name), at: 0)
             }
             
             return _history
         }
     }
     
-    var selectedCategory:ProductCategory? {
+    var currentItem:HistoryItem? {
         didSet {
-            reloadHistory()
-        }
-    }
-    var selectedProduct:Product? {
-        didSet {
+            
             reloadHistory()
         }
     }
@@ -160,7 +161,7 @@ class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollec
             fatalError("cannot find HistorySwatchCell")
         }
         let historyItem = self.history[indexPath.row]
-        cell.label.text = historyItem.name
+        cell.label.text = historyItem.getName()
         cell.background.level = indexPath.row
         cell.background.isLast = (indexPath.row == self.history.count - 1)
         
@@ -172,7 +173,7 @@ class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollec
         if let _ = collectionViewLayout as? UICollectionViewFlowLayout {
             let height = collectionView.frame.size.height
             let label = UILabel()
-            label.text = self.history[indexPath.row].name
+            label.text = self.history[indexPath.row].getName()
             label.sizeToFit()
             let width = label.frame.size.width + 10
             return CGSize(width: max(min(width, self.view.frame.size.width / CGFloat(history.count)), 50), height: height)
@@ -182,11 +183,11 @@ class HistorySelectionView: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let cell = collectionView.cellForItem(at: indexPath) as? HistorySwatchCell
+        
         let item = self.history[indexPath.row]
-        self.selectedCategory = item.category
-        self.selectedProduct = item.product
-        self.delegate?.historyChanged(category: item.category, product: item.product)
+        currentItem = item
+        self.delegate?.historyChanged(item)
+        self.reloadHistory()
     }
     
     func reloadHistory() {

@@ -117,7 +117,6 @@ extension ProductSelectionDelegate {
 }
 
 class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     open weak var delegate: ProductSelectionDelegate?
     
     @IBOutlet weak var swatchScroller: UICollectionView!
@@ -156,7 +155,7 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
             if _selectedCategory == newValue {
                 return
             }
-            self.historySelector?.selectedCategory = newValue
+            self.historySelector?.currentItem = newValue
             _selectedCategory = newValue
             self.delegate?.categoryChanged(category: newValue)
             self.refreshItems()
@@ -172,7 +171,7 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
             if _selectedProduct == newValue {
                 return
             }
-            self.historySelector?.selectedProduct = newValue
+            self.historySelector?.currentItem = newValue
             _selectedProduct = newValue
             if let product = newValue {
                 if (selectedCategory != product.category) {
@@ -338,9 +337,21 @@ class ProductSelectionView: UIViewController, HistorySelectionDelegate, UICollec
         }
     }
     
-    func historyChanged(category: ProductCategory?, product: Product?) {
+    func historyChanged(_ current:HistoryItem?) {
         self.selectedCell = nil
-        self.selectedCategory = category
-        self.selectedProduct = product
+        if let product = current as? Product {
+            self.selectedCategory = product.category
+            self.selectedProduct = product
+        } else if let category = current as? ProductCategory {
+            self.selectedCategory = category
+            self.selectedProduct = nil
+        } else {
+            self.selectedCategory = nil
+            self.selectedProduct = nil
+        }
+    }
+
+    func getRootHistoryName() -> String? {
+        return "Material"
     }
 }
