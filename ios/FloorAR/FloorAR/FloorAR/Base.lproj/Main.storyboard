@@ -63,12 +63,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="0oM-PJ-rq9"/>
-                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="9PS-lY-Gs0" secondAttribute="bottom" constant="20" id="2iA-3h-jfn"/>
                             <constraint firstItem="9PS-lY-Gs0" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="47B-OS-0Rl"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="width" secondItem="tLR-Na-V6u" secondAttribute="width" id="5Dq-Kp-dBR"/>
                             <constraint firstItem="9PS-lY-Gs0" firstAttribute="width" secondItem="AWl-mP-csH" secondAttribute="width" id="6Lr-tG-fNM"/>
                             <constraint firstItem="tLR-Na-V6u" firstAttribute="centerX" secondItem="zyO-DM-JFH" secondAttribute="centerX" id="B4D-xm-lDL"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="centerX" secondItem="tLR-Na-V6u" secondAttribute="centerX" id="FSM-gg-cZp"/>
+                            <constraint firstItem="Xhd-0o-Iw5" firstAttribute="top" secondItem="tLR-Na-V6u" secondAttribute="bottom" constant="85" id="IDA-Gu-V1s"/>
                             <constraint firstItem="zyO-DM-JFH" firstAttribute="top" secondItem="Wzw-kX-mvn" secondAttribute="top" id="IIJ-gn-zjI"/>
                             <constraint firstItem="AWl-mP-csH" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="LED-Ks-6k5"/>
                             <constraint firstItem="Xhd-0o-Iw5" firstAttribute="height" secondItem="tLR-Na-V6u" secondAttribute="height" id="MQj-cm-9ZG"/>
@@ -86,6 +86,8 @@
                         <viewLayoutGuide key="safeArea" id="zyO-DM-JFH"/>
                     </view>
                     <connections>
+                        <outlet property="browseCatalogSpacing" destination="IDA-Gu-V1s" id="66g-Ic-YXT"/>
+                        <outlet property="paintButton" destination="9PS-lY-Gs0" id="PJo-Gc-qJ1"/>
                         <segue destination="foE-jP-XM7" kind="show" identifier="visualize" id="J4Q-vS-17d"/>
                         <segue destination="br9-Yd-2Kv" kind="show" identifier="live-visualizer" id="Kfk-R8-w5c"/>
                         <segue destination="IET-c8-bKK" kind="show" identifier="samples" id="7ls-qp-YCH"/>

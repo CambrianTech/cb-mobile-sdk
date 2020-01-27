@@ -12,11 +12,18 @@ import AVFoundation
 class HomeViewController: CameraViewController {
     
     var photoToLoad:UIImage?
+    @IBOutlet weak var paintButton: HomeButton!
+    @IBOutlet weak var browseCatalogSpacing: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ProductCategory.sync()
         SceneLocation.sync()
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            paintButton.isHidden = true
+            browseCatalogSpacing.constant = 20
+        }
         
         #if DEBUG
             printIdentifierForAdvertising()
