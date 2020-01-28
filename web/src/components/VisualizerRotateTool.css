@@ -1,0 +1,84 @@
+
+.visualizer-rotate-tool {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
+}
+
+.visualizer-rotate-tool-slider-container {
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.visualizer-rotate-tool-slider-button {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.15);
+    border: solid 4px #ffffff;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    position: relative;
+    top: -16px;
+}
+
+.visualizer-rotate-tool-slider {
+    width: 80%;
+    margin: 0 auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+
+.visualizer-rotate-tool-slider-labels {
+
+    width:100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    column-count: 5;
+}
+
+.visualizer-rotate-tool-slider-labels div {
+    width: 35px;
+    text-align: center;
+    padding-left: 5px;
+}
+
+.visualizer-rotate-tool-slider-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.15);
+    margin-right: 20px;
+}
+
+.visualizer-rotate-tool-buttons {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+}
+
+.visualizer-rotate-tool-buttons .tool-button {
+    margin-right:50px;
+    margin-left:50px;
+}
+
+@media only screen and (max-device-width: 500px) and (orientation: portrait)  {
+    .visualizer-rotate-tool-buttons {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+}

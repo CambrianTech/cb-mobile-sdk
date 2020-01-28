@@ -1,0 +1,36 @@
+.visualizer {
+    width: var(--app-width);
+    height: var(--app-height);
+    overflow: hidden;
+}
+
+.visualizer-dat-gui {
+    top:auto;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+#drawing-mark-overlay {
+    opacity: 0.6;
+    background-color: #00afff;
+}
+
+/* Mobile Phone or iPad in portrait */
+@media (orientation: portrait) {
+
+}
+
+/* Mobile Only */
+@media only screen and (max-device-width: 480px) {
+
+}
+
+/* iPad Portrait Only */
+@media only screen and (min-device-width: 768px) and (orientation: portrait)  {
+
+}
+
+/* Small screen or iPad Landscape */
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: landscape)  {
+
+}

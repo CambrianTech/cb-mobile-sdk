@@ -1,0 +1,46 @@
+{
+  "profiles": [
+    {
+      "name": "Heather Spalding",
+      "image": "heather.jpg",
+      "title": "Founder, CEO",
+      "summary": "Heather is a founder and the CEO at Cambrian. She is a 2019 Pipeline Fellow, ScaleUp KC graduate, Atlanta Startup Battle Finalist and grand prize winner of LaunchKC. Her interest in engineering, neurobiology and artistry is seen in Cambrian, her passion for paleontology lending the name.",
+      "url": "https://www.linkedin.com/in/heather-spalding/"
+    },
+    {
+      "name": "Joel Teply",
+      "image": "joel.jpg",
+      "title": "Founding Architect, CTO",
+      "summary": "Joel brings 20 years of software development experience in biometrics, mobile apps, and computer vision. He invented several of the first augmented reality solutions for home design, such as flooring and paint solutions for Home Depot and Shaw Flooring. Previously he worked at EyeVerify (Zoloz), developing biometrics products and in advertising agencies assisting in mobile and web.",
+      "url": "https://www.linkedin.com/in/joelteply/"
+    },
+    {
+      "name": "Tanya Trana",
+      "image": "tanya.png",
+      "title": "Director of Product",
+      "summary": "As part of the Cambrian team, Tanya enjoys bringing structure to the tasks of project management, development, and testing.  Tanya has more than 20 years of tech and leadership experience, is always excited to learn every day, and delights in interacting with the development team.",
+      "url": "https://www.linkedin.com/in/tanyatrana/"
+    },
+    {
+      "name": "Robin Kahlow",
+      "image": "robin.png",
+      "title": "Director of Deep Learning",
+      "summary": "Robin has a wealth of knowledge in computer vision, deep learning, and software development. He has been responsible for developing many of the deep learning solutions employed in both our web and mobile solutions. He has a rare gift as both a talented software developer and as a data scientist on the cutting edge of research.",
+      "url": "https://www.linkedin.com/in/robin-k-62430074/"
+    },
+    {
+      "name": "Derrick Hart",
+      "image": "derrick.png",
+      "title": "Director of Computer Vision",
+      "summary": "With a PhD in mathematics, Derrick naturally understands the linear algebra and geometry necessary for our work in computer vision and machine learning. He has a wealth of experience in augmented and virtual reality solutions, with a finesse for realism and an artistic touch.",
+      "url": "https://www.linkedin.com/in/derrick-hart-936747125/"
+    },
+    {
+      "name": "Sheila Seck",
+      "image": "sheila.png",
+      "title": "Legal",
+      "summary": "Sheila has over 20 years of experience working with startups, growth companies, buyers, and sellers as they navigate growth and change in their companies. She is the founder of Seck & Associates, LLC, and Seck Advisor Group and practices law in Kansas and Missouri.",
+      "url": "https://www.linkedin.com/in/sheilaseck/"
+    }
+  ]
+}

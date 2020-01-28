@@ -1,0 +1,85 @@
+{
+	"source":"https://shawfloors.com/api",
+	"categories": [
+        {
+            "code":"carpets",
+            "displayName":"Carpets",
+            "thumbnailPath":"bundle/swatches/carpet.jpg",
+            "source":"odata/Carpets",
+            "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
+            "productsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDuplicate eq false) and (IsDefaultStyleColor eq true) and (ProductCode ne '22')",
+            "colorsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDuplicate eq false) and (ProductCode ne '22')",
+            "fields": {
+                 "SellingStyleName":"Style Name",
+                 "SellingStyleNbr":"Style Number",
+                 "SellingColorName":"Color Name",
+                 "SellingColorNbr":"Color Number",
+                 "CollectionDesc":"Collection"
+            }
+		},
+        {
+            "code":"hardwood",
+            "displayName":"Hardwood",
+            "thumbnailPath":"bundle/swatches/hardwood.jpg",
+            "source":"odata/Hardwoods",
+            "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
+            "productsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
+            "colorsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true)",
+            "fields": {
+                 "SellingStyleName":"Style Name",
+                 "SellingStyleNbr":"Style Number",
+                 "SellingColorName":"Color Name",
+                 "SellingColorNbr":"Color Number",
+                 "CollectionDesc":"Collection"
+            }
+        },
+        {
+            "code":"laminate",
+            "displayName":"Laminate",
+            "thumbnailPath":"bundle/swatches/laminate.jpg",
+            "source":"odata/Laminates",
+            "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
+            "productsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
+            "colorsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true)",
+            "fields": {
+                 "SellingStyleName":"Style Name",
+                 "SellingStyleNbr":"Style Number",
+                 "SellingColorName":"Color Name",
+                 "SellingColorNbr":"Color Number",
+                 "CollectionDesc":"Collection"
+            }
+        },
+        {
+            "code":"tileandstone",
+            "displayName":"Tile & Stone",
+            "thumbnailPath":"bundle/swatches/tile.jpg",
+            "source":"odata/Ceramics",
+            "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
+            "productsQuery": "(SellingColorNbr eq DefaultSsColorNumber) and (StaticRoomFlag eq 1 or HasRenderImage eq true) and (InstallOnFloors eq true)",
+            "colorsQuery": "(StaticRoomFlag eq 1 or HasRenderImage eq true) and (InstallOnFloors eq true)",
+            "fields": {
+                 "SellingStyleName":"Style Name",
+                 "SellingStyleNbr":"Style Number",
+                 "SellingColorName":"Color Name",
+                 "SellingColorNbr":"Color Number",
+                 "CeramicCollection":"Collection"
+            }
+        },
+        {
+            "code":"resilient",
+            "displayName":"Vinyl",
+            "thumbnailPath":"bundle/swatches/vinyl.jpg",
+            "source":"odata/Resilient",
+            "select":"CollectionDesc,ColorFamilyDesc,CollectionDesc",
+            "productsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true) and (IsDefaultStyleColor eq true)",
+            "colorsQuery": "(StaticRoomFlag eq true or HasRenderImage eq true)",
+            "fields": {
+                 "SellingStyleName":"Style Name",
+                 "SellingStyleNbr":"Style Number",
+                 "SellingColorName":"Color Name",
+                 "SellingColorNbr":"Color Number",
+                 "CollectionDesc":"Collection"
+            }
+        }
+	]
+}

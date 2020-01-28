@@ -1,0 +1,48 @@
+//
+//  HomeAugmentation.pch
+//  HomeAugmentation
+//
+//  Created by Joel Teply on 11/22/16.
+//  Copyright © 2016 Joel Teply. All rights reserved.
+//
+
+#ifndef CambrianAR_h
+#define CambrianAR_h
+
+#if defined _WIN32 || defined __CYGWIN__
+#ifdef BUILDING_DLL
+#ifdef __GNUC__
+#define CB_PUBLIC __attribute__ ((dllexport))
+#else
+#define CB_PUBLIC __declspec(dllexport) // Note: actually gcc seems to also supports this syntax.
+#endif
+#else
+#ifdef __GNUC__
+#define CB_PUBLIC __attribute__ ((dllimport))
+#else
+#define CB_PUBLIC __declspec(dllimport) // Note: actually gcc seems to also supports this syntax.
+#endif
+#endif
+#define CB_LOCAL
+#else
+#if __GNUC__ >= 4
+#define CB_PUBLIC __attribute__ ((visibility ("default")))
+#define CB_LOCAL  __attribute__ ((visibility ("hidden")))
+#else
+#define CB_PUBLIC
+#define CB_LOCAL
+#endif
+#endif
+
+#ifdef __cplusplus
+#   include <opencv2/opencv.hpp>
+#   include <opencv2/stitching/detail/blenders.hpp>
+#   include <opencv2/stitching/detail/exposure_compensate.hpp>
+#else
+#   import <Foundation/Foundation.h>
+#   import <UIKit/UIKit.h>
+#   import <Availability.h>
+#endif
+
+#endif /* HomeAugmentation_h */
+
