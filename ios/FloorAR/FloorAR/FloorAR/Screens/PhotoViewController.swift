@@ -19,6 +19,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
     private var fbAdBanner:FBAdView!
     
     var sceneToLoad:SceneLocation?
+    var isSample = false
     var photoToLoad:UIImage?
     
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
         var url = DataSource.visualizerUrl
         if let scene = self.sceneToLoad {
             url = url.appending("scene", value: scene.basePath)
+            self.isSample = true
             self.sceneToLoad = nil
         } else {
             url = url.appending("wait", value: "1")
@@ -103,9 +105,8 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
     
     var didUpload = false
     func CBWebViewDidFinishedLoading(_ success: Bool) {
-        if (!success) {
+        if (!success || self.isSample) {
             self.webview.hud.dismiss()
-            return
         }
     }
     
