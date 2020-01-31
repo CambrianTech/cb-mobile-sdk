@@ -87,6 +87,7 @@ class PhotoViewController: CameraViewController, ProductSelectionDelegate, CBWeb
     
     func uploadPhoto() {
         if let photo = self.photoToLoad, let photoData = photo.jpegData(compressionQuality: 90) {
+            self.isSample = false
             //print("Got photo with \(photoData.count) bytes")
             let base64 = photoData.base64EncodedString(options: [])
             let url = "data:application/jpeg;base64," + base64
