@@ -640,7 +640,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.03;
+				MARKETING_VERSION = 1.04;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.designup;
 				PRODUCT_NAME = "Design Up";
 				REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES = NO;
@@ -668,7 +668,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.03;
+				MARKETING_VERSION = 1.04;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.designup;
 				PRODUCT_NAME = "Design Up";
 				REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES = NO;
