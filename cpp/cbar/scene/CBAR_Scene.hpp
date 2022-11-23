@@ -138,4 +138,4 @@ namespace cbscene {
     };
 }
 
-#endif /* CB_ARScene_hpp */
+#endif /* CB_Scene_hpp */

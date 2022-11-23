@@ -45,7 +45,7 @@ class ARViewController: UIViewController, CBRemodelingViewDelegate, ProductSelec
         self.vrView.startRunning(true, unityScene: isVR ? "Scenes/ShawVR" : nil)
         
         if (!isVR) {
-            //self.vrView.scene.appendAsset(CBRemodelingFloor());
+            self.vrView.scene.appendAsset(CBRemodelingFloor());
         }
     }
     

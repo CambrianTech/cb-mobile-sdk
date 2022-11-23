@@ -128,7 +128,7 @@ namespace cbscene {
         CBMutex m_assetMutex;
         std::map<std::string, std::shared_ptr<cbscene::CBAR_Asset>> m_assets;
         
-        std::shared_ptr<cbscene::CBAR_Asset> getSelectedAsset() {
+        std::shared_ptr<cbscene::CBAR_Asset> get_selected_asset() {
             std::shared_ptr<cbscene::CBAR_Asset> result;
 
             std::lock_guard<CBMutex> lockGuard(m_assetMutex);
@@ -774,7 +774,7 @@ namespace cbscene {
         CBMutex m_redoStatesMutex;
         std::deque<std::shared_ptr<cbpipe::UndoState>> m_redoStates;
         
-        inline void logStates(const std::deque<std::shared_ptr<cbpipe::UndoState>> &states, const std::string &type) {
+        inline void log_states(const std::deque<std::shared_ptr<cbpipe::UndoState>> &states, const std::string &type) {
             if (states.size() == 1) {
                 CBLog("There is now 1 %s state", type.c_str());
             } else {
@@ -782,7 +782,7 @@ namespace cbscene {
             }
         }
         
-        void appendState (std::shared_ptr<cbpipe::UndoState> state, std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex, int max, bool forward) {
+        void append_state (std::shared_ptr<cbpipe::UndoState> state, std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex, int max, bool forward) {
 
             if (!state->uuid.length()) {
                 state->uuid = newUUID();
@@ -809,12 +809,12 @@ namespace cbscene {
             }
         }
 
-        void appendUndoState(std::shared_ptr<cbpipe::UndoState> state) {
-            appendState (state, m_undoStates, m_undoStatesMutex, m_maxUndoSize, true);
+        void append_undo_state(std::shared_ptr<cbpipe::UndoState> state) {
+            append_state(state, m_undoStates, m_undoStatesMutex, m_maxUndoSize, true);
         }
         
-        void appendRedoState(std::shared_ptr<cbpipe::UndoState> state) {
-            appendState (state, m_redoStates, m_redoStatesMutex, m_maxRedoSize, false);
+        void append_redo_state(std::shared_ptr<cbpipe::UndoState> state) {
+            append_state(state, m_redoStates, m_redoStatesMutex, m_maxRedoSize, false);
         }
         
         std::shared_ptr<cbpipe::UndoState> getLastState(std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex) {
@@ -832,7 +832,7 @@ namespace cbscene {
             return state;
         }
 
-        void removeLastState(std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex, const std::string &type) {
+        void remove_last_state(std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex, const std::string &type) {
             std::lock_guard<CBMutex> lockGuard(mutex);
             if (!states.empty())
                 states.pop_back();
@@ -840,7 +840,7 @@ namespace cbscene {
             //logStates(states, type);
         }
         
-        bool undoRedoState(std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex, bool isUndo) {
+        bool undo_redo_state(std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex, bool isUndo) {
             
             int numStates = 0;
             {std::lock_guard<CBMutex> lockGuard(mutex);
@@ -868,14 +868,14 @@ namespace cbscene {
             
             if (isUndo) {
                 //capture current state and put it in redo
-                appendRedoState(newState);
+                append_redo_state(newState);
             } else {
-                appendUndoState(newState);
+                append_undo_state(newState);
             }
 
             asset->reloadState(undoOrRedo);
             
-            removeLastState(states, mutex, isUndo ? "undo" : "redo");
+            remove_last_state(states, mutex, isUndo ? "undo" : "redo");
             
             if (auto renderer = CBP_RenderingEngine::sharedInstance()) {
                 if (auto colorAnalyzer = renderer->getAnalyzerOfType<CBP_AmbienceSampler>()) {
@@ -886,29 +886,29 @@ namespace cbscene {
             return true;
         }
 
-        bool undoState() {
-            return undoRedoState(m_undoStates, m_undoStatesMutex, true);
+        bool undo_state() {
+            return undo_redo_state(m_undoStates, m_undoStatesMutex, true);
         }
         
-        bool redoState() {
-            return undoRedoState(m_redoStates, m_redoStatesMutex, false);
+        bool redo_state() {
+            return undo_redo_state(m_redoStates, m_redoStatesMutex, false);
         }
         
-        int getUndoSize() {
+        int get_undo_size() {
             std::lock_guard<CBMutex> lockGuard(m_undoStatesMutex);
             return (static_cast<int>(m_undoStates.size()));
         }
         
-        int getRedoSize() {
+        int get_redo_size() {
             std::lock_guard<CBMutex> lockGuard(m_redoStatesMutex);
             return (static_cast<int>(m_redoStates.size()));
         }
 
-        cv::Size getSaveSize() const {
+        cv::Size get_save_size() const {
             return saveSize;
         }
 
-        void captureToStill() {
+        void capture_to_still() {
             {std::lock_guard<CBMutex> lockGuard(m_assetMutex);
                 for (auto &iter : m_assets) {
                     iter.second->captureToStill();
@@ -916,7 +916,7 @@ namespace cbscene {
             };
         }
         
-        void goingLive() {
+        void going_live() {
             std::lock_guard<CBMutex> lockGuard(m_assetMutex);
             for (auto &iter : m_assets) {
                 iter.second->goingLive();
@@ -948,7 +948,7 @@ namespace cbscene {
             }
         }
         
-        void setWorldTransform(const Eigen::Matrix4f& wt) {
+        void set_world_transform(const Eigen::Matrix4f& wt) {
             
             if (m_has6DOF) {
                 m_worldTransform = wt;
@@ -1020,7 +1020,7 @@ namespace cbscene {
     }
     
     std::shared_ptr<cbscene::CBAR_Asset> CBAR_Scene::getSelectedAsset() {
-        return m_pImpl->getSelectedAsset();
+        return m_pImpl->get_selected_asset();
     }
     
     bool CBAR_Scene::setSelectedAsset(std::shared_ptr<cbscene::CBAR_Asset>asset) {
@@ -1107,19 +1107,19 @@ namespace cbscene {
         {std::lock_guard<CBMutex> lockGuard(m_pImpl->m_redoStatesMutex);
             m_pImpl->m_redoStates.clear();
         };
-        m_pImpl->appendUndoState(state);
+        m_pImpl->append_undo_state(state);
     }
     
     bool CBAR_Scene::undoState() {
-        return m_pImpl->undoState();
+        return m_pImpl->undo_state();
     }
     
     bool CBAR_Scene::redoState() {
-        return m_pImpl->redoState();
+        return m_pImpl->redo_state();
     }
     
     int CBAR_Scene::getUndoSize() const {
-        return m_pImpl->getUndoSize();
+        return m_pImpl->get_undo_size();
     }
     
     int CBAR_Scene::getMaxUndoSize() const {
@@ -1131,11 +1131,11 @@ namespace cbscene {
     }
     
     int CBAR_Scene::getRedoSize() const {
-        return m_pImpl->getRedoSize();
+        return m_pImpl->get_redo_size();
     }
 
     cv::Size CBAR_Scene::getSaveSize() const {
-        return m_pImpl->getSaveSize();
+        return m_pImpl->get_save_size();
     }
 
     int CBAR_Scene::getMaxRedoSize() const {
@@ -1147,11 +1147,11 @@ namespace cbscene {
     }
     
     void CBAR_Scene::captureToStill() {
-        m_pImpl->captureToStill();
+        m_pImpl->capture_to_still();
     }
     
     void CBAR_Scene::goingLive() {
-        m_pImpl->goingLive();
+        m_pImpl->going_live();
     }
     
     const cv::Mat_<float>& CBAR_Scene::getLightPositions() const {
@@ -1172,7 +1172,7 @@ namespace cbscene {
     
     void CBAR_Scene::setWorldTransform(const Eigen::Matrix4f& wt, bool has6DOF) {
         m_pImpl->m_has6DOF = has6DOF;
-        m_pImpl->setWorldTransform(wt);
+        m_pImpl->set_world_transform(wt);
     }
     
     void CBAR_Scene::setWorldTransform(const cv::Vec4f &quaterionXYZW,
