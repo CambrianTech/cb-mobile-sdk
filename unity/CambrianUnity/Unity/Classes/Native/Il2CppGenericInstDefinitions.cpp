@@ -449,6 +449,7 @@ extern const Il2CppType MonoSslPolicyErrors_t2590217945_0_0_0;
 extern const Il2CppType TlsProtocols_t3756552591_0_0_0;
 extern const Il2CppType CipherSuiteCode_t732562211_0_0_0;
 extern const Il2CppType BigInteger_t2902905090_0_0_0;
+extern const Il2CppType ConfigurationProperty_t3590861854_0_0_0;
 extern const Il2CppType ValueTuple_2_t2590502965_0_0_0;
 extern const Il2CppType unitytls_ciphersuite_t1735159395_0_0_0;
 extern const Il2CppType INativeObject_t230269422_0_0_0;
@@ -533,7 +534,6 @@ extern const Il2CppType LinuxNetworkInterface_t4095034716_0_0_0;
 extern const Il2CppType Entry_t1200188207_0_0_0;
 extern const Il2CppType KeyValuePair_2_t1982995886_0_0_0;
 extern const Il2CppType Win32_IP_ADAPTER_ADDRESSES_t3463526328_0_0_0;
-extern const Il2CppType ConfigurationProperty_t3590861854_0_0_0;
 extern const Il2CppType Slot_t4046096757_0_0_0;
 extern const Il2CppType Camera_t4157153871_0_0_0;
 extern const Il2CppType Behaviour_t1437897464_0_0_0;
@@ -2153,6 +2153,8 @@ static const RuntimeType* GenInst_CipherSuiteCode_t732562211_0_0_0_Types[] = { (
 extern const Il2CppGenericInst GenInst_CipherSuiteCode_t732562211_0_0_0 = { 1, GenInst_CipherSuiteCode_t732562211_0_0_0_Types };
 static const RuntimeType* GenInst_BigInteger_t2902905090_0_0_0_Types[] = { (&BigInteger_t2902905090_0_0_0) };
 extern const Il2CppGenericInst GenInst_BigInteger_t2902905090_0_0_0 = { 1, GenInst_BigInteger_t2902905090_0_0_0_Types };
+static const RuntimeType* GenInst_ConfigurationProperty_t3590861854_0_0_0_Types[] = { (&ConfigurationProperty_t3590861854_0_0_0) };
+extern const Il2CppGenericInst GenInst_ConfigurationProperty_t3590861854_0_0_0 = { 1, GenInst_ConfigurationProperty_t3590861854_0_0_0_Types };
 static const RuntimeType* GenInst_Int32_t2950945753_0_0_0_Boolean_t97287965_0_0_0_Types[] = { (&Int32_t2950945753_0_0_0), (&Boolean_t97287965_0_0_0) };
 extern const Il2CppGenericInst GenInst_Int32_t2950945753_0_0_0_Boolean_t97287965_0_0_0 = { 2, GenInst_Int32_t2950945753_0_0_0_Boolean_t97287965_0_0_0_Types };
 static const RuntimeType* GenInst_ValueTuple_2_t2590502965_0_0_0_Types[] = { (&ValueTuple_2_t2590502965_0_0_0) };
@@ -2351,8 +2353,6 @@ static const RuntimeType* GenInst_KeyValuePair_2_t1982995886_0_0_0_Types[] = { (
 extern const Il2CppGenericInst GenInst_KeyValuePair_2_t1982995886_0_0_0 = { 1, GenInst_KeyValuePair_2_t1982995886_0_0_0_Types };
 static const RuntimeType* GenInst_Win32_IP_ADAPTER_ADDRESSES_t3463526328_0_0_0_Types[] = { (&Win32_IP_ADAPTER_ADDRESSES_t3463526328_0_0_0) };
 extern const Il2CppGenericInst GenInst_Win32_IP_ADAPTER_ADDRESSES_t3463526328_0_0_0 = { 1, GenInst_Win32_IP_ADAPTER_ADDRESSES_t3463526328_0_0_0_Types };
-static const RuntimeType* GenInst_ConfigurationProperty_t3590861854_0_0_0_Types[] = { (&ConfigurationProperty_t3590861854_0_0_0) };
-extern const Il2CppGenericInst GenInst_ConfigurationProperty_t3590861854_0_0_0 = { 1, GenInst_ConfigurationProperty_t3590861854_0_0_0_Types };
 static const RuntimeType* GenInst_Slot_t4046096757_0_0_0_Types[] = { (&Slot_t4046096757_0_0_0) };
 extern const Il2CppGenericInst GenInst_Slot_t4046096757_0_0_0 = { 1, GenInst_Slot_t4046096757_0_0_0_Types };
 static const RuntimeType* GenInst_Camera_t4157153871_0_0_0_Types[] = { (&Camera_t4157153871_0_0_0) };
@@ -2543,6 +2543,8 @@ static const RuntimeType* GenInst_ContactPoint_t3758755253_0_0_0_Types[] = { (&C
 extern const Il2CppGenericInst GenInst_ContactPoint_t3758755253_0_0_0 = { 1, GenInst_ContactPoint_t3758755253_0_0_0_Types };
 static const RuntimeType* GenInst_RaycastHit_t1056001966_0_0_0_Types[] = { (&RaycastHit_t1056001966_0_0_0) };
 extern const Il2CppGenericInst GenInst_RaycastHit_t1056001966_0_0_0 = { 1, GenInst_RaycastHit_t1056001966_0_0_0_Types };
+static const RuntimeType* GenInst_Boolean_t97287965_0_0_0_Boolean_t97287965_0_0_0_Int32_t2950945753_0_0_0_Types[] = { (&Boolean_t97287965_0_0_0), (&Boolean_t97287965_0_0_0), (&Int32_t2950945753_0_0_0) };
+extern const Il2CppGenericInst GenInst_Boolean_t97287965_0_0_0_Boolean_t97287965_0_0_0_Int32_t2950945753_0_0_0 = { 3, GenInst_Boolean_t97287965_0_0_0_Boolean_t97287965_0_0_0_Int32_t2950945753_0_0_0_Types };
 static const RuntimeType* GenInst_EventSystem_t1003666588_0_0_0_Types[] = { (&EventSystem_t1003666588_0_0_0) };
 extern const Il2CppGenericInst GenInst_EventSystem_t1003666588_0_0_0 = { 1, GenInst_EventSystem_t1003666588_0_0_0_Types };
 static const RuntimeType* GenInst_UIBehaviour_t3495933518_0_0_0_Types[] = { (&UIBehaviour_t3495933518_0_0_0) };
@@ -3621,7 +3623,7 @@ static const RuntimeType* GenInst_PostProcessingComponentCommandBuffer_1_t295733
 extern const Il2CppGenericInst GenInst_PostProcessingComponentCommandBuffer_1_t2957336540_gp_0_0_0_0 = { 1, GenInst_PostProcessingComponentCommandBuffer_1_t2957336540_gp_0_0_0_0_Types };
 static const RuntimeType* GenInst_PostProcessingComponentRenderTexture_1_t3518545612_gp_0_0_0_0_Types[] = { (&PostProcessingComponentRenderTexture_1_t3518545612_gp_0_0_0_0) };
 extern const Il2CppGenericInst GenInst_PostProcessingComponentRenderTexture_1_t3518545612_gp_0_0_0_0 = { 1, GenInst_PostProcessingComponentRenderTexture_1_t3518545612_gp_0_0_0_0_Types };
-extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1247] = 
+extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1248] = 
 {
 	&GenInst_RuntimeObject_0_0_0,
 	&GenInst_Byte_t1134296376_0_0_0,
@@ -4136,6 +4138,7 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1247] =
 	&GenInst_TlsProtocols_t3756552591_0_0_0,
 	&GenInst_CipherSuiteCode_t732562211_0_0_0,
 	&GenInst_BigInteger_t2902905090_0_0_0,
+	&GenInst_ConfigurationProperty_t3590861854_0_0_0,
 	&GenInst_Int32_t2950945753_0_0_0_Boolean_t97287965_0_0_0,
 	&GenInst_ValueTuple_2_t2590502965_0_0_0,
 	&GenInst_unitytls_ciphersuite_t1735159395_0_0_0,
@@ -4235,7 +4238,6 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1247] =
 	&GenInst_LinuxNetworkInterface_t4095034716_0_0_0,
 	&GenInst_KeyValuePair_2_t1982995886_0_0_0,
 	&GenInst_Win32_IP_ADAPTER_ADDRESSES_t3463526328_0_0_0,
-	&GenInst_ConfigurationProperty_t3590861854_0_0_0,
 	&GenInst_Slot_t4046096757_0_0_0,
 	&GenInst_Camera_t4157153871_0_0_0,
 	&GenInst_Behaviour_t1437897464_0_0_0,
@@ -4331,6 +4333,7 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1247] =
 	&GenInst_Rigidbody2D_t939494601_0_0_0,
 	&GenInst_ContactPoint_t3758755253_0_0_0,
 	&GenInst_RaycastHit_t1056001966_0_0_0,
+	&GenInst_Boolean_t97287965_0_0_0_Boolean_t97287965_0_0_0_Int32_t2950945753_0_0_0,
 	&GenInst_EventSystem_t1003666588_0_0_0,
 	&GenInst_UIBehaviour_t3495933518_0_0_0,
 	&GenInst_MonoBehaviour_t3962482529_0_0_0,

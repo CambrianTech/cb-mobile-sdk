@@ -2492,11 +2492,11 @@ extern const uint32_t TypeConverterAttribute__ctor_m1774069684_MetadataUsageId;
 extern const uint32_t TypeConverterAttribute__ctor_m2918908360_MetadataUsageId;
 extern const uint32_t TypeConverter_CanConvertFrom_m3868864455_MetadataUsageId;
 extern const uint32_t TypeConverter_CanConvertTo_m1947275633_MetadataUsageId;
-extern const uint32_t TypeConverter_ConvertFromInvariantString_m223666125_MetadataUsageId;
+extern const uint32_t TypeConverter_ConvertFromInvariantString_m1039388749_MetadataUsageId;
 extern const uint32_t TypeConverter_ConvertFrom_m1024238132_MetadataUsageId;
-extern const uint32_t TypeConverter_ConvertFrom_m415439298_MetadataUsageId;
-extern const uint32_t TypeConverter_ConvertToInvariantString_m1649016183_MetadataUsageId;
+extern const uint32_t TypeConverter_ConvertFrom_m880153346_MetadataUsageId;
 extern const uint32_t TypeConverter_ConvertToInvariantString_m3808809199_MetadataUsageId;
+extern const uint32_t TypeConverter_ConvertToInvariantString_m571356905_MetadataUsageId;
 extern const uint32_t TypeConverter_ConvertToString_m2154917491_MetadataUsageId;
 extern const uint32_t TypeConverter_ConvertToString_m39479576_MetadataUsageId;
 extern const uint32_t TypeConverter_ConvertTo_m3165899902_MetadataUsageId;
@@ -2516,7 +2516,7 @@ extern const uint32_t TypeDescriptor_GetAttributes_m1998618268_MetadataUsageId;
 extern const uint32_t TypeDescriptor_GetAttributes_m4172868975_MetadataUsageId;
 extern const uint32_t TypeDescriptor_GetAttributes_m466493459_MetadataUsageId;
 extern const uint32_t TypeDescriptor_GetCache_m1552593866_MetadataUsageId;
-extern const uint32_t TypeDescriptor_GetConverter_m3748618295_MetadataUsageId;
+extern const uint32_t TypeDescriptor_GetConverter_m2937027_MetadataUsageId;
 extern const uint32_t TypeDescriptor_GetDescriptor_m1750690933_MetadataUsageId;
 extern const uint32_t TypeDescriptor_GetDescriptor_m548024935_MetadataUsageId;
 extern const uint32_t TypeDescriptor_GetExtendedDescriptor_m1682474130_MetadataUsageId;
@@ -9383,7 +9383,7 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject* OrderedDictionary_get_Values_m21170
 // System.ComponentModel.AttributeCollection System.ComponentModel.TypeDescriptor::GetAttributes(System.Object)
 extern "C" IL2CPP_METHOD_ATTR AttributeCollection_t4221220734 * TypeDescriptor_GetAttributes_m1998618268 (RuntimeObject * __this /* static, unused */, RuntimeObject * ___component0, const RuntimeMethod* method);
 // System.String System.ComponentModel.TypeConverterAttribute::get_ConverterTypeName()
-extern "C" IL2CPP_METHOD_ATTR String_t* TypeConverterAttribute_get_ConverterTypeName_m2038465322 (TypeConverterAttribute_t3271584429 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR String_t* TypeConverterAttribute_get_ConverterTypeName_m2103610043 (TypeConverterAttribute_t3271584429 * __this, const RuntimeMethod* method);
 // System.Type System.ComponentModel.ReflectTypeDescriptionProvider/ReflectedTypeData::GetTypeFromName(System.String)
 extern "C" IL2CPP_METHOD_ATTR Type_t * ReflectedTypeData_GetTypeFromName_m2230535196 (ReflectedTypeData_t1775264331 * __this, String_t* ___typeName0, const RuntimeMethod* method);
 // System.Collections.Hashtable System.ComponentModel.ReflectTypeDescriptionProvider::get_IntrinsicTypeConverters()
@@ -15478,7 +15478,7 @@ extern "C" IL2CPP_METHOD_ATTR TypeConverter_t2249118273 * ReflectedTypeData_GetC
 	{
 		TypeConverterAttribute_t3271584429 * L_13 = V_1;
 		NullCheck(L_13);
-		String_t* L_14 = TypeConverterAttribute_get_ConverterTypeName_m2038465322(L_13, /*hidden argument*/NULL);
+		String_t* L_14 = TypeConverterAttribute_get_ConverterTypeName_m2103610043(L_13, /*hidden argument*/NULL);
 		Type_t * L_15 = ReflectedTypeData_GetTypeFromName_m2230535196(__this, L_14, /*hidden argument*/NULL);
 		V_2 = L_15;
 		Type_t * L_16 = V_2;
@@ -15547,7 +15547,7 @@ IL_00ac:
 	{
 		TypeConverterAttribute_t3271584429 * L_33 = V_0;
 		NullCheck(L_33);
-		String_t* L_34 = TypeConverterAttribute_get_ConverterTypeName_m2038465322(L_33, /*hidden argument*/NULL);
+		String_t* L_34 = TypeConverterAttribute_get_ConverterTypeName_m2103610043(L_33, /*hidden argument*/NULL);
 		Type_t * L_35 = ReflectedTypeData_GetTypeFromName_m2230535196(__this, L_34, /*hidden argument*/NULL);
 		V_3 = L_35;
 		Type_t * L_36 = V_3;
@@ -16491,7 +16491,7 @@ extern "C" IL2CPP_METHOD_ATTR void TimeSpanConverter__ctor_m864695957 (TimeSpanC
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Boolean System.ComponentModel.TypeConverter::CanConvertFrom(System.Type)
-extern "C" IL2CPP_METHOD_ATTR bool TypeConverter_CanConvertFrom_m322337685 (TypeConverter_t2249118273 * __this, Type_t * ___sourceType0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR bool TypeConverter_CanConvertFrom_m3106875673 (TypeConverter_t2249118273 * __this, Type_t * ___sourceType0, const RuntimeMethod* method)
 {
 	{
 		Type_t * L_0 = ___sourceType0;
@@ -16547,12 +16547,12 @@ extern "C" IL2CPP_METHOD_ATTR bool TypeConverter_CanConvertTo_m1947275633 (TypeC
 	}
 }
 // System.Object System.ComponentModel.TypeConverter::ConvertFrom(System.Object)
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject * TypeConverter_ConvertFrom_m415439298 (TypeConverter_t2249118273 * __this, RuntimeObject * ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * TypeConverter_ConvertFrom_m880153346 (TypeConverter_t2249118273 * __this, RuntimeObject * ___value0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TypeConverter_ConvertFrom_m415439298_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TypeConverter_ConvertFrom_m880153346_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -16597,12 +16597,12 @@ IL_0011:
 	}
 }
 // System.Object System.ComponentModel.TypeConverter::ConvertFromInvariantString(System.String)
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject * TypeConverter_ConvertFromInvariantString_m223666125 (TypeConverter_t2249118273 * __this, String_t* ___text0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * TypeConverter_ConvertFromInvariantString_m1039388749 (TypeConverter_t2249118273 * __this, String_t* ___text0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TypeConverter_ConvertFromInvariantString_m223666125_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TypeConverter_ConvertFromInvariantString_m1039388749_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -16724,12 +16724,12 @@ IL_0056:
 	}
 }
 // System.String System.ComponentModel.TypeConverter::ConvertToInvariantString(System.Object)
-extern "C" IL2CPP_METHOD_ATTR String_t* TypeConverter_ConvertToInvariantString_m1649016183 (TypeConverter_t2249118273 * __this, RuntimeObject * ___value0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* TypeConverter_ConvertToInvariantString_m571356905 (TypeConverter_t2249118273 * __this, RuntimeObject * ___value0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TypeConverter_ConvertToInvariantString_m1649016183_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TypeConverter_ConvertToInvariantString_m571356905_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -17158,7 +17158,7 @@ extern "C" IL2CPP_METHOD_ATTR void TypeConverterAttribute__ctor_m2918908360 (Typ
 	}
 }
 // System.String System.ComponentModel.TypeConverterAttribute::get_ConverterTypeName()
-extern "C" IL2CPP_METHOD_ATTR String_t* TypeConverterAttribute_get_ConverterTypeName_m2038465322 (TypeConverterAttribute_t3271584429 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* TypeConverterAttribute_get_ConverterTypeName_m2103610043 (TypeConverterAttribute_t3271584429 * __this, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = __this->get_typeName_0();
@@ -17187,7 +17187,7 @@ extern "C" IL2CPP_METHOD_ATTR bool TypeConverterAttribute_Equals_m1580461255 (Ty
 	{
 		TypeConverterAttribute_t3271584429 * L_2 = V_0;
 		NullCheck(L_2);
-		String_t* L_3 = TypeConverterAttribute_get_ConverterTypeName_m2038465322(L_2, /*hidden argument*/NULL);
+		String_t* L_3 = TypeConverterAttribute_get_ConverterTypeName_m2103610043(L_2, /*hidden argument*/NULL);
 		String_t* L_4 = __this->get_typeName_0();
 		bool L_5 = String_op_Equality_m920492651(NULL /*static, unused*/, L_3, L_4, /*hidden argument*/NULL);
 		return L_5;
@@ -18204,12 +18204,12 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject* TypeDescriptor_GetCache_m1552593866
 	}
 }
 // System.ComponentModel.TypeConverter System.ComponentModel.TypeDescriptor::GetConverter(System.Type)
-extern "C" IL2CPP_METHOD_ATTR TypeConverter_t2249118273 * TypeDescriptor_GetConverter_m3748618295 (RuntimeObject * __this /* static, unused */, Type_t * ___type0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR TypeConverter_t2249118273 * TypeDescriptor_GetConverter_m2937027 (RuntimeObject * __this /* static, unused */, Type_t * ___type0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TypeDescriptor_GetConverter_m3748618295_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TypeDescriptor_GetConverter_m2937027_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{

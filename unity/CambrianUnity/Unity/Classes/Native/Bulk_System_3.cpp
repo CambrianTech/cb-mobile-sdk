@@ -1090,9 +1090,9 @@ extern RuntimeClass* XmlAttribute_t1173852259_il2cpp_TypeInfo_var;
 extern RuntimeClass* XmlNodeType_t1672767151_il2cpp_TypeInfo_var;
 extern RuntimeClass* XmlNode_t3767805227_il2cpp_TypeInfo_var;
 extern RuntimeClass* XmlWriterTraceListener_t2708883810_il2cpp_TypeInfo_var;
-extern RuntimeField* U3CPrivateImplementationDetailsU3E_t3057255364____0283A6AF88802AB45989B29549915BEA0F6CD515_0_FieldInfo_var;
-extern RuntimeField* U3CPrivateImplementationDetailsU3E_t3057255364____5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6_FieldInfo_var;
-extern RuntimeField* U3CPrivateImplementationDetailsU3E_t3057255364____EEAFE8C6E1AB017237567305EE925C976CDB6458_16_FieldInfo_var;
+extern RuntimeField* U3CPrivateImplementationDetailsU3E_t3057255365____0283A6AF88802AB45989B29549915BEA0F6CD515_0_FieldInfo_var;
+extern RuntimeField* U3CPrivateImplementationDetailsU3E_t3057255365____5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6_FieldInfo_var;
+extern RuntimeField* U3CPrivateImplementationDetailsU3E_t3057255365____EEAFE8C6E1AB017237567305EE925C976CDB6458_16_FieldInfo_var;
 extern String_t* _stringLiteral1008880119;
 extern String_t* _stringLiteral1038887959;
 extern String_t* _stringLiteral1043874018;
@@ -1490,10 +1490,10 @@ extern const uint32_t CaseInsensitiveAscii_FastGetHashCode_m2310971705_MetadataU
 extern const uint32_t CaseInsensitiveAscii_GetHashCode_m3921352001_MetadataUsageId;
 extern const uint32_t CaseInsensitiveAscii__cctor_m258705655_MetadataUsageId;
 extern const uint32_t Comparer_System_Collections_IComparer_Compare_m619915158_MetadataUsageId;
-extern const uint32_t ConfigurationException_GetObjectData_m3317307704_MetadataUsageId;
+extern const uint32_t ConfigurationException_GetObjectData_m2878337176_MetadataUsageId;
 extern const uint32_t ConfigurationException_GetXmlNodeFilename_m3551913791_MetadataUsageId;
 extern const uint32_t ConfigurationException_GetXmlNodeLineNumber_m116427330_MetadataUsageId;
-extern const uint32_t ConfigurationException__ctor_m3612318247_MetadataUsageId;
+extern const uint32_t ConfigurationException__ctor_m1494027982_MetadataUsageId;
 extern const uint32_t ConfigurationException_get_Message_m2139401404_MetadataUsageId;
 extern const uint32_t ConfigurationSettings_GetConfig_m1015220656_MetadataUsageId;
 extern const uint32_t ConfigurationSettings__cctor_m3916280530_MetadataUsageId;
@@ -9476,8 +9476,8 @@ struct SmallXmlNodeList_t242297918_marshaled_com
 	Il2CppIUnknown* ___field_0;
 };
 #endif // SMALLXMLNODELIST_T242297918_H
-#ifndef U3CPRIVATEIMPLEMENTATIONDETAILSU3E_T3057255364_H
-#define U3CPRIVATEIMPLEMENTATIONDETAILSU3E_T3057255364_H
+#ifndef U3CPRIVATEIMPLEMENTATIONDETAILSU3E_T3057255365_H
+#define U3CPRIVATEIMPLEMENTATIONDETAILSU3E_T3057255365_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -9485,14 +9485,14 @@ struct SmallXmlNodeList_t242297918_marshaled_com
 #endif
 
 // <PrivateImplementationDetails>
-struct  U3CPrivateImplementationDetailsU3E_t3057255364  : public RuntimeObject
+struct  U3CPrivateImplementationDetailsU3E_t3057255365  : public RuntimeObject
 {
 public:
 
 public:
 };
 
-struct U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields
+struct U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields
 {
 public:
 	// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=14 <PrivateImplementationDetails>::0283A6AF88802AB45989B29549915BEA0F6CD515
@@ -9531,7 +9531,7 @@ public:
 	__StaticArrayInitTypeSizeU3D256_t1757367633  ___EEAFE8C6E1AB017237567305EE925C976CDB6458_16;
 
 public:
-	inline static int32_t get_offset_of_U30283A6AF88802AB45989B29549915BEA0F6CD515_0() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___0283A6AF88802AB45989B29549915BEA0F6CD515_0)); }
+	inline static int32_t get_offset_of_U30283A6AF88802AB45989B29549915BEA0F6CD515_0() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___0283A6AF88802AB45989B29549915BEA0F6CD515_0)); }
 	inline __StaticArrayInitTypeSizeU3D14_t3517563373  get_U30283A6AF88802AB45989B29549915BEA0F6CD515_0() const { return ___0283A6AF88802AB45989B29549915BEA0F6CD515_0; }
 	inline __StaticArrayInitTypeSizeU3D14_t3517563373 * get_address_of_U30283A6AF88802AB45989B29549915BEA0F6CD515_0() { return &___0283A6AF88802AB45989B29549915BEA0F6CD515_0; }
 	inline void set_U30283A6AF88802AB45989B29549915BEA0F6CD515_0(__StaticArrayInitTypeSizeU3D14_t3517563373  value)
@@ -9539,7 +9539,7 @@ public:
 		___0283A6AF88802AB45989B29549915BEA0F6CD515_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U303F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___03F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1)); }
+	inline static int32_t get_offset_of_U303F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___03F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1)); }
 	inline int64_t get_U303F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1() const { return ___03F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1; }
 	inline int64_t* get_address_of_U303F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1() { return &___03F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1; }
 	inline void set_U303F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1(int64_t value)
@@ -9547,7 +9547,7 @@ public:
 		___03F4297FCC30D0FD5E420E5D26E7FA711167C7EF_1 = value;
 	}
 
-	inline static int32_t get_offset_of_U31A39764B112685485A5BA7B2880D878B858C1A7A_2() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___1A39764B112685485A5BA7B2880D878B858C1A7A_2)); }
+	inline static int32_t get_offset_of_U31A39764B112685485A5BA7B2880D878B858C1A7A_2() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___1A39764B112685485A5BA7B2880D878B858C1A7A_2)); }
 	inline __StaticArrayInitTypeSizeU3D9_t3218278900  get_U31A39764B112685485A5BA7B2880D878B858C1A7A_2() const { return ___1A39764B112685485A5BA7B2880D878B858C1A7A_2; }
 	inline __StaticArrayInitTypeSizeU3D9_t3218278900 * get_address_of_U31A39764B112685485A5BA7B2880D878B858C1A7A_2() { return &___1A39764B112685485A5BA7B2880D878B858C1A7A_2; }
 	inline void set_U31A39764B112685485A5BA7B2880D878B858C1A7A_2(__StaticArrayInitTypeSizeU3D9_t3218278900  value)
@@ -9555,7 +9555,7 @@ public:
 		___1A39764B112685485A5BA7B2880D878B858C1A7A_2 = value;
 	}
 
-	inline static int32_t get_offset_of_U31A84029C80CB5518379F199F53FF08A7B764F8FD_3() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___1A84029C80CB5518379F199F53FF08A7B764F8FD_3)); }
+	inline static int32_t get_offset_of_U31A84029C80CB5518379F199F53FF08A7B764F8FD_3() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___1A84029C80CB5518379F199F53FF08A7B764F8FD_3)); }
 	inline __StaticArrayInitTypeSizeU3D3_t3217885684  get_U31A84029C80CB5518379F199F53FF08A7B764F8FD_3() const { return ___1A84029C80CB5518379F199F53FF08A7B764F8FD_3; }
 	inline __StaticArrayInitTypeSizeU3D3_t3217885684 * get_address_of_U31A84029C80CB5518379F199F53FF08A7B764F8FD_3() { return &___1A84029C80CB5518379F199F53FF08A7B764F8FD_3; }
 	inline void set_U31A84029C80CB5518379F199F53FF08A7B764F8FD_3(__StaticArrayInitTypeSizeU3D3_t3217885684  value)
@@ -9563,7 +9563,7 @@ public:
 		___1A84029C80CB5518379F199F53FF08A7B764F8FD_3 = value;
 	}
 
-	inline static int32_t get_offset_of_U33BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___3BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4)); }
+	inline static int32_t get_offset_of_U33BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___3BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4)); }
 	inline __StaticArrayInitTypeSizeU3D12_t2710994319  get_U33BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4() const { return ___3BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4; }
 	inline __StaticArrayInitTypeSizeU3D12_t2710994319 * get_address_of_U33BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4() { return &___3BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4; }
 	inline void set_U33BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4(__StaticArrayInitTypeSizeU3D12_t2710994319  value)
@@ -9571,7 +9571,7 @@ public:
 		___3BE77BF818331C2D8400FFFFF9FADD3F16AD89AC_4 = value;
 	}
 
-	inline static int32_t get_offset_of_U359F5BD34B6C013DEACC784F69C67E95150033A84_5() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___59F5BD34B6C013DEACC784F69C67E95150033A84_5)); }
+	inline static int32_t get_offset_of_U359F5BD34B6C013DEACC784F69C67E95150033A84_5() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___59F5BD34B6C013DEACC784F69C67E95150033A84_5)); }
 	inline __StaticArrayInitTypeSizeU3D32_t2711125392  get_U359F5BD34B6C013DEACC784F69C67E95150033A84_5() const { return ___59F5BD34B6C013DEACC784F69C67E95150033A84_5; }
 	inline __StaticArrayInitTypeSizeU3D32_t2711125392 * get_address_of_U359F5BD34B6C013DEACC784F69C67E95150033A84_5() { return &___59F5BD34B6C013DEACC784F69C67E95150033A84_5; }
 	inline void set_U359F5BD34B6C013DEACC784F69C67E95150033A84_5(__StaticArrayInitTypeSizeU3D32_t2711125392  value)
@@ -9579,7 +9579,7 @@ public:
 		___59F5BD34B6C013DEACC784F69C67E95150033A84_5 = value;
 	}
 
-	inline static int32_t get_offset_of_U35BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6)); }
+	inline static int32_t get_offset_of_U35BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6)); }
 	inline __StaticArrayInitTypeSizeU3D6_t3217689076  get_U35BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6() const { return ___5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6; }
 	inline __StaticArrayInitTypeSizeU3D6_t3217689076 * get_address_of_U35BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6() { return &___5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6; }
 	inline void set_U35BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6(__StaticArrayInitTypeSizeU3D6_t3217689076  value)
@@ -9587,7 +9587,7 @@ public:
 		___5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6 = value;
 	}
 
-	inline static int32_t get_offset_of_U36D49C9D487D7AD3491ECE08732D68A593CC2038D_7() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___6D49C9D487D7AD3491ECE08732D68A593CC2038D_7)); }
+	inline static int32_t get_offset_of_U36D49C9D487D7AD3491ECE08732D68A593CC2038D_7() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___6D49C9D487D7AD3491ECE08732D68A593CC2038D_7)); }
 	inline __StaticArrayInitTypeSizeU3D9_t3218278900  get_U36D49C9D487D7AD3491ECE08732D68A593CC2038D_7() const { return ___6D49C9D487D7AD3491ECE08732D68A593CC2038D_7; }
 	inline __StaticArrayInitTypeSizeU3D9_t3218278900 * get_address_of_U36D49C9D487D7AD3491ECE08732D68A593CC2038D_7() { return &___6D49C9D487D7AD3491ECE08732D68A593CC2038D_7; }
 	inline void set_U36D49C9D487D7AD3491ECE08732D68A593CC2038D_7(__StaticArrayInitTypeSizeU3D9_t3218278900  value)
@@ -9595,7 +9595,7 @@ public:
 		___6D49C9D487D7AD3491ECE08732D68A593CC2038D_7 = value;
 	}
 
-	inline static int32_t get_offset_of_U36F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___6F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8)); }
+	inline static int32_t get_offset_of_U36F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___6F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8)); }
 	inline __StaticArrayInitTypeSizeU3D128_t531529102  get_U36F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8() const { return ___6F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8; }
 	inline __StaticArrayInitTypeSizeU3D128_t531529102 * get_address_of_U36F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8() { return &___6F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8; }
 	inline void set_U36F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8(__StaticArrayInitTypeSizeU3D128_t531529102  value)
@@ -9603,7 +9603,7 @@ public:
 		___6F3AD3DC3AF8047587C4C9D696EB68A01FEF796E_8 = value;
 	}
 
-	inline static int32_t get_offset_of_U38E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___8E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9)); }
+	inline static int32_t get_offset_of_U38E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___8E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9)); }
 	inline __StaticArrayInitTypeSizeU3D44_t3517366765  get_U38E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9() const { return ___8E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9; }
 	inline __StaticArrayInitTypeSizeU3D44_t3517366765 * get_address_of_U38E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9() { return &___8E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9; }
 	inline void set_U38E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9(__StaticArrayInitTypeSizeU3D44_t3517366765  value)
@@ -9611,7 +9611,7 @@ public:
 		___8E0EF3D67A3EB1863224EE3CACB424BC2F8CFBA3_9 = value;
 	}
 
-	inline static int32_t get_offset_of_U398A44A6F8606AE6F23FE230286C1D6FBCC407226_10() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___98A44A6F8606AE6F23FE230286C1D6FBCC407226_10)); }
+	inline static int32_t get_offset_of_U398A44A6F8606AE6F23FE230286C1D6FBCC407226_10() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___98A44A6F8606AE6F23FE230286C1D6FBCC407226_10)); }
 	inline int64_t get_U398A44A6F8606AE6F23FE230286C1D6FBCC407226_10() const { return ___98A44A6F8606AE6F23FE230286C1D6FBCC407226_10; }
 	inline int64_t* get_address_of_U398A44A6F8606AE6F23FE230286C1D6FBCC407226_10() { return &___98A44A6F8606AE6F23FE230286C1D6FBCC407226_10; }
 	inline void set_U398A44A6F8606AE6F23FE230286C1D6FBCC407226_10(int64_t value)
@@ -9619,7 +9619,7 @@ public:
 		___98A44A6F8606AE6F23FE230286C1D6FBCC407226_10 = value;
 	}
 
-	inline static int32_t get_offset_of_ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11)); }
+	inline static int32_t get_offset_of_ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11)); }
 	inline __StaticArrayInitTypeSizeU3D12_t2710994319  get_ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11() const { return ___ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11; }
 	inline __StaticArrayInitTypeSizeU3D12_t2710994319 * get_address_of_ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11() { return &___ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11; }
 	inline void set_ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11(__StaticArrayInitTypeSizeU3D12_t2710994319  value)
@@ -9627,7 +9627,7 @@ public:
 		___ADDB8526F472C1C6D36DBD5A6E509D973CC34C92_11 = value;
 	}
 
-	inline static int32_t get_offset_of_C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12)); }
+	inline static int32_t get_offset_of_C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12)); }
 	inline __StaticArrayInitTypeSizeU3D32_t2711125392  get_C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12() const { return ___C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12; }
 	inline __StaticArrayInitTypeSizeU3D32_t2711125392 * get_address_of_C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12() { return &___C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12; }
 	inline void set_C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12(__StaticArrayInitTypeSizeU3D32_t2711125392  value)
@@ -9635,7 +9635,7 @@ public:
 		___C02C28AFEBE998F767E4AF43E3BE8F5E9FA11536_12 = value;
 	}
 
-	inline static int32_t get_offset_of_CCEEADA43268372341F81AE0C9208C6856441C04_13() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___CCEEADA43268372341F81AE0C9208C6856441C04_13)); }
+	inline static int32_t get_offset_of_CCEEADA43268372341F81AE0C9208C6856441C04_13() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___CCEEADA43268372341F81AE0C9208C6856441C04_13)); }
 	inline __StaticArrayInitTypeSizeU3D128_t531529102  get_CCEEADA43268372341F81AE0C9208C6856441C04_13() const { return ___CCEEADA43268372341F81AE0C9208C6856441C04_13; }
 	inline __StaticArrayInitTypeSizeU3D128_t531529102 * get_address_of_CCEEADA43268372341F81AE0C9208C6856441C04_13() { return &___CCEEADA43268372341F81AE0C9208C6856441C04_13; }
 	inline void set_CCEEADA43268372341F81AE0C9208C6856441C04_13(__StaticArrayInitTypeSizeU3D128_t531529102  value)
@@ -9643,7 +9643,7 @@ public:
 		___CCEEADA43268372341F81AE0C9208C6856441C04_13 = value;
 	}
 
-	inline static int32_t get_offset_of_E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14)); }
+	inline static int32_t get_offset_of_E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14)); }
 	inline int64_t get_E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14() const { return ___E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14; }
 	inline int64_t* get_address_of_E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14() { return &___E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14; }
 	inline void set_E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14(int64_t value)
@@ -9651,7 +9651,7 @@ public:
 		___E5BC1BAFADE1862DD6E0B9FB632BFAA6C3873A78_14 = value;
 	}
 
-	inline static int32_t get_offset_of_EC5842B3154E1AF94500B57220EB9F684BCCC42A_15() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___EC5842B3154E1AF94500B57220EB9F684BCCC42A_15)); }
+	inline static int32_t get_offset_of_EC5842B3154E1AF94500B57220EB9F684BCCC42A_15() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___EC5842B3154E1AF94500B57220EB9F684BCCC42A_15)); }
 	inline __StaticArrayInitTypeSizeU3D32_t2711125392  get_EC5842B3154E1AF94500B57220EB9F684BCCC42A_15() const { return ___EC5842B3154E1AF94500B57220EB9F684BCCC42A_15; }
 	inline __StaticArrayInitTypeSizeU3D32_t2711125392 * get_address_of_EC5842B3154E1AF94500B57220EB9F684BCCC42A_15() { return &___EC5842B3154E1AF94500B57220EB9F684BCCC42A_15; }
 	inline void set_EC5842B3154E1AF94500B57220EB9F684BCCC42A_15(__StaticArrayInitTypeSizeU3D32_t2711125392  value)
@@ -9659,7 +9659,7 @@ public:
 		___EC5842B3154E1AF94500B57220EB9F684BCCC42A_15 = value;
 	}
 
-	inline static int32_t get_offset_of_EEAFE8C6E1AB017237567305EE925C976CDB6458_16() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255364_StaticFields, ___EEAFE8C6E1AB017237567305EE925C976CDB6458_16)); }
+	inline static int32_t get_offset_of_EEAFE8C6E1AB017237567305EE925C976CDB6458_16() { return static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t3057255365_StaticFields, ___EEAFE8C6E1AB017237567305EE925C976CDB6458_16)); }
 	inline __StaticArrayInitTypeSizeU3D256_t1757367633  get_EEAFE8C6E1AB017237567305EE925C976CDB6458_16() const { return ___EEAFE8C6E1AB017237567305EE925C976CDB6458_16; }
 	inline __StaticArrayInitTypeSizeU3D256_t1757367633 * get_address_of_EEAFE8C6E1AB017237567305EE925C976CDB6458_16() { return &___EEAFE8C6E1AB017237567305EE925C976CDB6458_16; }
 	inline void set_EEAFE8C6E1AB017237567305EE925C976CDB6458_16(__StaticArrayInitTypeSizeU3D256_t1757367633  value)
@@ -9671,7 +9671,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CPRIVATEIMPLEMENTATIONDETAILSU3E_T3057255364_H
+#endif // U3CPRIVATEIMPLEMENTATIONDETAILSU3E_T3057255365_H
 #ifndef ARGUMENTEXCEPTION_T132251570_H
 #define ARGUMENTEXCEPTION_T132251570_H
 #ifdef __clang__
@@ -17860,7 +17860,7 @@ extern "C" IL2CPP_METHOD_ATTR void List_1_Add_m2080863212_gshared (List_1_t12805
 extern "C" IL2CPP_METHOD_ATTR Int32U5BU5D_t385246372* List_1_ToArray_m1469074435_gshared (List_1_t128053199 * __this, const RuntimeMethod* method);
 
 // System.Void System.Configuration.ConfigurationException::.ctor(System.String)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m2584225187 (ConfigurationException_t3515317685 * __this, String_t* ___message0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m1982745395 (ConfigurationException_t3515317685 * __this, String_t* ___message0, const RuntimeMethod* method);
 // System.Void System.SystemException::.ctor(System.String)
 extern "C" IL2CPP_METHOD_ATTR void SystemException__ctor_m3298527747 (SystemException_t176217640 * __this, String_t* p0, const RuntimeMethod* method);
 // System.Void System.SystemException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
@@ -17900,13 +17900,13 @@ extern "C" IL2CPP_METHOD_ATTR void DefaultConfig__ctor_m151123192 (DefaultConfig
 // System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
 extern "C" IL2CPP_METHOD_ATTR Type_t * Type_GetTypeFromHandle_m1620074514 (RuntimeObject * __this /* static, unused */, RuntimeTypeHandle_t3027515415  p0, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationProperty::.ctor(System.String,System.Type,System.Object,System.Configuration.ConfigurationPropertyOptions)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationProperty__ctor_m3843348878 (ConfigurationProperty_t3590861854 * __this, String_t* p0, Type_t * p1, RuntimeObject * p2, int32_t p3, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationProperty__ctor_m2121647601 (ConfigurationProperty_t3590861854 * __this, String_t* p0, Type_t * p1, RuntimeObject * p2, int32_t p3, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationPropertyCollection::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationPropertyCollection__ctor_m1951498512 (ConfigurationPropertyCollection_t2852175726 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationPropertyCollection__ctor_m550516750 (ConfigurationPropertyCollection_t2852175726 * __this, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationPropertyCollection::Add(System.Configuration.ConfigurationProperty)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationPropertyCollection_Add_m1567726929 (ConfigurationPropertyCollection_t2852175726 * __this, ConfigurationProperty_t3590861854 * p0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationPropertyCollection_Add_m2688614548 (ConfigurationPropertyCollection_t2852175726 * __this, ConfigurationProperty_t3590861854 * p0, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationElement::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement__ctor_m252316685 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement__ctor_m4116197893 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
 // System.Void System.Diagnostics.Switch::.ctor(System.String,System.String)
 extern "C" IL2CPP_METHOD_ATTR void Switch__ctor_m1927701791 (Switch_t4228844028 * __this, String_t* ___displayName0, String_t* ___description1, const RuntimeMethod* method);
 // System.Void System.Attribute::.ctor()
@@ -17924,9 +17924,9 @@ extern "C" IL2CPP_METHOD_ATTR void TraceListener__ctor_m290583152 (TraceListener
 // System.Void System.Diagnostics.DiagnosticsConfiguration::Initialize()
 extern "C" IL2CPP_METHOD_ATTR void DiagnosticsConfiguration_Initialize_m530461002 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Configuration.ElementInformation System.Configuration.ConfigurationElement::get_ElementInformation()
-extern "C" IL2CPP_METHOD_ATTR ElementInformation_t2651568025 * ConfigurationElement_get_ElementInformation_m2071761187 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR ElementInformation_t2651568025 * ConfigurationElement_get_ElementInformation_m2132499183 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
 // System.String System.Configuration.ElementInformation::get_Source()
-extern "C" IL2CPP_METHOD_ATTR String_t* ElementInformation_get_Source_m4054986467 (ElementInformation_t2651568025 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR String_t* ElementInformation_get_Source_m17932221 (ElementInformation_t2651568025 * __this, const RuntimeMethod* method);
 // System.Diagnostics.TraceSection System.Diagnostics.SystemDiagnosticsSection::get_Trace()
 extern "C" IL2CPP_METHOD_ATTR TraceSection_t4243885952 * SystemDiagnosticsSection_get_Trace_m1136561004 (SystemDiagnosticsSection_t3552941008 * __this, const RuntimeMethod* method);
 // System.Boolean System.Diagnostics.TraceSection::get_AutoFlush()
@@ -18014,7 +18014,7 @@ extern "C" IL2CPP_METHOD_ATTR void TraceListenerCollection_Clear_m1136669986 (Tr
 // System.String System.String::Format(System.String,System.Object)
 extern "C" IL2CPP_METHOD_ATTR String_t* String_Format_m2844511972 (RuntimeObject * __this /* static, unused */, String_t* p0, RuntimeObject * p1, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationErrorsException__ctor_m3348329850 (ConfigurationErrorsException_t66512296 * __this, String_t* p0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationErrorsException__ctor_m3308054107 (ConfigurationErrorsException_t66512296 * __this, String_t* p0, const RuntimeMethod* method);
 // System.Void System.Diagnostics.TraceListener::set_IndentSize(System.Int32)
 extern "C" IL2CPP_METHOD_ATTR void TraceListener_set_IndentSize_m3639388934 (TraceListener_t3975618648 * __this, int32_t ___value0, const RuntimeMethod* method);
 // System.Int32 System.Diagnostics.TraceListenerCollection::Add(System.Diagnostics.TraceListener)
@@ -18038,7 +18038,7 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject * ConstructorInfo_Invoke_m4089836896
 // System.String System.String::Trim()
 extern "C" IL2CPP_METHOD_ATTR String_t* String_Trim_m923598732 (String_t* __this, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String,System.Xml.XmlNode)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationErrorsException__ctor_m3353125300 (ConfigurationErrorsException_t66512296 * __this, String_t* p0, XmlNode_t3767805227 * p1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationErrorsException__ctor_m479893572 (ConfigurationErrorsException_t66512296 * __this, String_t* p0, XmlNode_t3767805227 * p1, const RuntimeMethod* method);
 // System.Void System.Diagnostics.TraceListener::set_TraceOutputOptions(System.Diagnostics.TraceOptions)
 extern "C" IL2CPP_METHOD_ATTR void TraceListener_set_TraceOutputOptions_m1895669819 (TraceListener_t3975618648 * __this, int32_t ___value0, const RuntimeMethod* method);
 // System.Collections.Specialized.StringDictionary System.Diagnostics.TraceListener::get_Attributes()
@@ -18046,7 +18046,7 @@ extern "C" IL2CPP_METHOD_ATTR StringDictionary_t120437468 * TraceListener_get_At
 // System.Void System.Diagnostics.TraceListenerCollection::Remove(System.String)
 extern "C" IL2CPP_METHOD_ATTR void TraceListenerCollection_Remove_m854120826 (TraceListenerCollection_t1347122889 * __this, String_t* ___name0, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationException::.ctor(System.String,System.Exception)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m1789999115 (ConfigurationException_t3515317685 * __this, String_t* ___message0, Exception_t * ___inner1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m148113530 (ConfigurationException_t3515317685 * __this, String_t* ___message0, Exception_t * ___inner1, const RuntimeMethod* method);
 // System.Xml.XmlAttribute System.Xml.XmlAttributeCollection::get_ItemOf(System.String)
 extern "C" IL2CPP_METHOD_ATTR XmlAttribute_t1173852259 * XmlAttributeCollection_get_ItemOf_m952828905 (XmlAttributeCollection_t2316283784 * __this, String_t* p0, const RuntimeMethod* method);
 // System.Void System.Diagnostics.DiagnosticsConfigurationHandler::ValidateAttribute(System.String,System.String,System.Xml.XmlNode)
@@ -18078,33 +18078,33 @@ extern "C" IL2CPP_METHOD_ATTR String_t* TypedElement_get_InitData_m3072588071 (T
 // System.Void System.Diagnostics.TypedElement::.ctor(System.Type)
 extern "C" IL2CPP_METHOD_ATTR void TypedElement__ctor_m1172589865 (TypedElement_t2581589637 * __this, Type_t * ___baseType0, const RuntimeMethod* method);
 // System.Boolean System.Configuration.ConfigurationPropertyCollection::Remove(System.String)
-extern "C" IL2CPP_METHOD_ATTR bool ConfigurationPropertyCollection_Remove_m677319349 (ConfigurationPropertyCollection_t2852175726 * __this, String_t* p0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR bool ConfigurationPropertyCollection_Remove_m2882882367 (ConfigurationPropertyCollection_t2852175726 * __this, String_t* p0, const RuntimeMethod* method);
 // System.StringComparer System.StringComparer::get_OrdinalIgnoreCase()
 extern "C" IL2CPP_METHOD_ATTR StringComparer_t3301955079 * StringComparer_get_OrdinalIgnoreCase_m2680809380 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Void System.Collections.Hashtable::.ctor(System.Collections.IEqualityComparer)
 extern "C" IL2CPP_METHOD_ATTR void Hashtable__ctor_m3192564643 (Hashtable_t1853889766 * __this, RuntimeObject* p0, const RuntimeMethod* method);
 // System.Object System.Configuration.ConfigurationElement::get_Item(System.Configuration.ConfigurationProperty)
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject * ConfigurationElement_get_Item_m145567948 (ConfigurationElement_t3318566633 * __this, ConfigurationProperty_t3590861854 * p0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * ConfigurationElement_get_Item_m178122358 (ConfigurationElement_t3318566633 * __this, ConfigurationProperty_t3590861854 * p0, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationElement::set_Item(System.Configuration.ConfigurationProperty,System.Object)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_set_Item_m1586528331 (ConfigurationElement_t3318566633 * __this, ConfigurationProperty_t3590861854 * p0, RuntimeObject * p1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_set_Item_m3493437340 (ConfigurationElement_t3318566633 * __this, ConfigurationProperty_t3590861854 * p0, RuntimeObject * p1, const RuntimeMethod* method);
 // System.String System.Diagnostics.ListenerElement::get_Name()
 extern "C" IL2CPP_METHOD_ATTR String_t* ListenerElement_get_Name_m2238893168 (ListenerElement_t3111952272 * __this, const RuntimeMethod* method);
 // System.Boolean System.String::Equals(System.String)
 extern "C" IL2CPP_METHOD_ATTR bool String_Equals_m2270643605 (String_t* __this, String_t* p0, const RuntimeMethod* method);
 // System.Boolean System.Configuration.ConfigurationElement::Equals(System.Object)
-extern "C" IL2CPP_METHOD_ATTR bool ConfigurationElement_Equals_m2208423918 (ConfigurationElement_t3318566633 * __this, RuntimeObject * p0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR bool ConfigurationElement_Equals_m3106604887 (ConfigurationElement_t3318566633 * __this, RuntimeObject * p0, const RuntimeMethod* method);
 // System.Int32 System.Configuration.ConfigurationElement::GetHashCode()
-extern "C" IL2CPP_METHOD_ATTR int32_t ConfigurationElement_GetHashCode_m500358818 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR int32_t ConfigurationElement_GetHashCode_m2692670572 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
 // System.Boolean System.String::IsNullOrEmpty(System.String)
 extern "C" IL2CPP_METHOD_ATTR bool String_IsNullOrEmpty_m2969720369 (RuntimeObject * __this /* static, unused */, String_t* p0, const RuntimeMethod* method);
 // System.Configuration.PropertyInformationCollection System.Configuration.ElementInformation::get_Properties()
-extern "C" IL2CPP_METHOD_ATTR PropertyInformationCollection_t3866802480 * ElementInformation_get_Properties_m163958384 (ElementInformation_t2651568025 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR PropertyInformationCollection_t3866802480 * ElementInformation_get_Properties_m439282531 (ElementInformation_t2651568025 * __this, const RuntimeMethod* method);
 // System.String System.Configuration.ConfigurationProperty::get_Name()
-extern "C" IL2CPP_METHOD_ATTR String_t* ConfigurationProperty_get_Name_m734057223 (ConfigurationProperty_t3590861854 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR String_t* ConfigurationProperty_get_Name_m3257134896 (ConfigurationProperty_t3590861854 * __this, const RuntimeMethod* method);
 // System.Configuration.PropertyInformation System.Configuration.PropertyInformationCollection::get_Item(System.String)
-extern "C" IL2CPP_METHOD_ATTR PropertyInformation_t4136807793 * PropertyInformationCollection_get_Item_m1178487516 (PropertyInformationCollection_t3866802480 * __this, String_t* p0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR PropertyInformation_t4136807793 * PropertyInformationCollection_get_Item_m768125737 (PropertyInformationCollection_t3866802480 * __this, String_t* p0, const RuntimeMethod* method);
 // System.Configuration.PropertyValueOrigin System.Configuration.PropertyInformation::get_ValueOrigin()
-extern "C" IL2CPP_METHOD_ATTR int32_t PropertyInformation_get_ValueOrigin_m2382382215 (PropertyInformation_t4136807793 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR int32_t PropertyInformation_get_ValueOrigin_m1934829918 (PropertyInformation_t4136807793 * __this, const RuntimeMethod* method);
 // System.Diagnostics.TraceOptions System.Diagnostics.ListenerElement::get_TraceOutputOptions()
 extern "C" IL2CPP_METHOD_ATTR int32_t ListenerElement_get_TraceOutputOptions_m1269180338 (ListenerElement_t3111952272 * __this, const RuntimeMethod* method);
 // System.String SR::GetString(System.String,System.Object[])
@@ -18126,19 +18126,19 @@ extern "C" IL2CPP_METHOD_ATTR TraceFilter_t4153521180 * FilterElement_GetRuntime
 // System.Void System.Diagnostics.TraceListener::set_Filter(System.Diagnostics.TraceFilter)
 extern "C" IL2CPP_METHOD_ATTR void TraceListener_set_Filter_m2534314576 (TraceListener_t3975618648 * __this, TraceFilter_t4153521180 * ___value0, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationErrorsException::.ctor(System.String,System.Exception)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationErrorsException__ctor_m2260069592 (ConfigurationErrorsException_t66512296 * __this, String_t* p0, Exception_t * p1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationErrorsException__ctor_m4283164494 (ConfigurationErrorsException_t66512296 * __this, String_t* p0, Exception_t * p1, const RuntimeMethod* method);
 // System.Void System.Xml.XmlWriter::WriteAttributeString(System.String,System.String)
 extern "C" IL2CPP_METHOD_ATTR void XmlWriter_WriteAttributeString_m3906092358 (XmlWriter_t127905479 * __this, String_t* p0, String_t* p1, const RuntimeMethod* method);
 // System.Boolean System.Configuration.ConfigurationElement::SerializeElement(System.Xml.XmlWriter,System.Boolean)
-extern "C" IL2CPP_METHOD_ATTR bool ConfigurationElement_SerializeElement_m3555528001 (ConfigurationElement_t3318566633 * __this, XmlWriter_t127905479 * p0, bool p1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR bool ConfigurationElement_SerializeElement_m3178218390 (ConfigurationElement_t3318566633 * __this, XmlWriter_t127905479 * p0, bool p1, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationElement::Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_Unmerge_m3918301448 (ConfigurationElement_t3318566633 * __this, ConfigurationElement_t3318566633 * p0, ConfigurationElement_t3318566633 * p1, int32_t p2, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_Unmerge_m2050820361 (ConfigurationElement_t3318566633 * __this, ConfigurationElement_t3318566633 * p0, ConfigurationElement_t3318566633 * p1, int32_t p2, const RuntimeMethod* method);
 // System.Configuration.ConfigurationElement System.Configuration.ConfigurationElementCollection::BaseGet(System.Object)
-extern "C" IL2CPP_METHOD_ATTR ConfigurationElement_t3318566633 * ConfigurationElementCollection_BaseGet_m1745851845 (ConfigurationElementCollection_t446763386 * __this, RuntimeObject * p0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR ConfigurationElement_t3318566633 * ConfigurationElementCollection_BaseGet_m1527703308 (ConfigurationElementCollection_t446763386 * __this, RuntimeObject * p0, const RuntimeMethod* method);
 // System.Void System.Diagnostics.ListenerElement::.ctor(System.Boolean)
 extern "C" IL2CPP_METHOD_ATTR void ListenerElement__ctor_m2078587132 (ListenerElement_t3111952272 * __this, bool ___allowReferences0, const RuntimeMethod* method);
 // System.Collections.IEnumerator System.Configuration.ConfigurationElementCollection::GetEnumerator()
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject* ConfigurationElementCollection_GetEnumerator_m4043183664 (ConfigurationElementCollection_t446763386 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject* ConfigurationElementCollection_GetEnumerator_m4192431148 (ConfigurationElementCollection_t446763386 * __this, const RuntimeMethod* method);
 // System.Void System.Security.Permissions.SecurityPermission::.ctor(System.Security.Permissions.SecurityPermissionFlag)
 extern "C" IL2CPP_METHOD_ATTR void SecurityPermission__ctor_m1462427327 (SecurityPermission_t2954997752 * __this, int32_t p0, const RuntimeMethod* method);
 // System.Void System.Security.CodeAccessPermission::Demand()
@@ -18148,9 +18148,9 @@ extern "C" IL2CPP_METHOD_ATTR void ListenerElementsCollection_InitializeDefaultI
 // System.Void System.Diagnostics.ListenerElement::set_Name(System.String)
 extern "C" IL2CPP_METHOD_ATTR void ListenerElement_set_Name_m3519727266 (ListenerElement_t3111952272 * __this, String_t* ___value0, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationElementCollection::BaseAdd(System.Configuration.ConfigurationElement,System.Boolean)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationElementCollection_BaseAdd_m138579808 (ConfigurationElementCollection_t446763386 * __this, ConfigurationElement_t3318566633 * p0, bool p1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationElementCollection_BaseAdd_m2671588688 (ConfigurationElementCollection_t446763386 * __this, ConfigurationElement_t3318566633 * p0, bool p1, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationElementCollection::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationElementCollection__ctor_m2631610858 (ConfigurationElementCollection_t446763386 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationElementCollection__ctor_m4158074757 (ConfigurationElementCollection_t446763386 * __this, const RuntimeMethod* method);
 // System.Void System.ComponentModel.DescriptionAttribute::.ctor(System.String)
 extern "C" IL2CPP_METHOD_ATTR void DescriptionAttribute__ctor_m1483068985 (DescriptionAttribute_t874390736 * __this, String_t* ___description0, const RuntimeMethod* method);
 // System.String System.ComponentModel.DescriptionAttribute::get_Description()
@@ -18158,7 +18158,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* DescriptionAttribute_get_Description_m17
 // System.Void System.Diagnostics.ListenerElementsCollection::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void ListenerElementsCollection__ctor_m2918109277 (ListenerElementsCollection_t1095146761 * __this, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationElement::DeserializeElement(System.Xml.XmlReader,System.Boolean)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_DeserializeElement_m142138807 (ConfigurationElement_t3318566633 * __this, XmlReader_t3121518892 * p0, bool p1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_DeserializeElement_m2357743528 (ConfigurationElement_t3318566633 * __this, XmlReader_t3121518892 * p0, bool p1, const RuntimeMethod* method);
 // System.String System.Diagnostics.SourceElement::get_SwitchName()
 extern "C" IL2CPP_METHOD_ATTR String_t* SourceElement_get_SwitchName_m2877130996 (SourceElement_t572173626 * __this, const RuntimeMethod* method);
 // System.String System.Diagnostics.SourceElement::get_SwitchValue()
@@ -18692,9 +18692,9 @@ extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementElement__ctor_m654779051 
 // System.String System.Net.Configuration.ConnectionManagementElement::get_Address()
 extern "C" IL2CPP_METHOD_ATTR String_t* ConnectionManagementElement_get_Address_m427527083 (ConnectionManagementElement_t3857438253 * __this, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationSection::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationSection__ctor_m3664598388 (ConfigurationSection_t3156163955 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationSection__ctor_m2795685025 (ConfigurationSection_t3156163955 * __this, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationProperty::.ctor(System.String,System.Type,System.Object)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationProperty__ctor_m635809073 (ConfigurationProperty_t3590861854 * __this, String_t* p0, Type_t * p1, RuntimeObject * p2, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationProperty__ctor_m2404851808 (ConfigurationProperty_t3590861854 * __this, String_t* p0, Type_t * p1, RuntimeObject * p2, const RuntimeMethod* method);
 // System.Net.IWebProxy System.Net.Configuration.DefaultProxySectionInternal::GetSystemWebProxy()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject* DefaultProxySectionInternal_GetSystemWebProxy_m729512686 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Net.Configuration.ProxyElement System.Net.Configuration.DefaultProxySection::get_Proxy()
@@ -18730,11 +18730,11 @@ extern "C" IL2CPP_METHOD_ATTR void DefaultProxySectionInternal__ctor_m2423092146
 // System.Net.IWebProxy System.Net.Configuration.DefaultProxySectionInternal::GetDefaultProxy_UsingOldMonoCode()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject* DefaultProxySectionInternal_GetDefaultProxy_UsingOldMonoCode_m2986865109 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationElement::PostDeserialize()
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_PostDeserialize_m1844425646 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationElement_PostDeserialize_m3753298177 (ConfigurationElement_t3318566633 * __this, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationSectionGroup::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationSectionGroup__ctor_m167204198 (ConfigurationSectionGroup_t4179402520 * __this, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationSectionGroup__ctor_m2085051039 (ConfigurationSectionGroup_t4179402520 * __this, const RuntimeMethod* method);
 // System.Void System.Configuration.ConfigurationProperty::.ctor(System.String,System.Type)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationProperty__ctor_m1117082566 (ConfigurationProperty_t3590861854 * __this, String_t* p0, Type_t * p1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationProperty__ctor_m3312264195 (ConfigurationProperty_t3590861854 * __this, String_t* p0, Type_t * p1, const RuntimeMethod* method);
 // System.Void System.Net.Configuration.SettingsSectionInternal::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void SettingsSectionInternal__ctor_m2088828526 (SettingsSectionInternal_t781171337 * __this, const RuntimeMethod* method);
 // System.Void System.TimeSpan::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
@@ -18954,17 +18954,17 @@ extern "C" IL2CPP_METHOD_ATTR void HeaderVariantInfo__ctor_m3174290741 (HeaderVa
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void System.Configuration.ConfigurationException::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m1093486427 (ConfigurationException_t3515317685 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m3898832894 (ConfigurationException_t3515317685 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationException__ctor_m2584225187(__this, (String_t*)NULL, /*hidden argument*/NULL);
+		ConfigurationException__ctor_m1982745395(__this, (String_t*)NULL, /*hidden argument*/NULL);
 		__this->set_filename_17((String_t*)NULL);
 		__this->set_line_18(0);
 		return;
 	}
 }
 // System.Void System.Configuration.ConfigurationException::.ctor(System.String)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m2584225187 (ConfigurationException_t3515317685 * __this, String_t* ___message0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m1982745395 (ConfigurationException_t3515317685 * __this, String_t* ___message0, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = ___message0;
@@ -18973,12 +18973,12 @@ extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m2584225187 (Con
 	}
 }
 // System.Void System.Configuration.ConfigurationException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m3612318247 (ConfigurationException_t3515317685 * __this, SerializationInfo_t950877179 * ___info0, StreamingContext_t3711869237  ___context1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m1494027982 (ConfigurationException_t3515317685 * __this, SerializationInfo_t950877179 * ___info0, StreamingContext_t3711869237  ___context1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (ConfigurationException__ctor_m3612318247_MetadataUsageId);
+		il2cpp_codegen_initialize_method (ConfigurationException__ctor_m1494027982_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -18997,7 +18997,7 @@ extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m3612318247 (Con
 	}
 }
 // System.Void System.Configuration.ConfigurationException::.ctor(System.String,System.Exception)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m1789999115 (ConfigurationException_t3515317685 * __this, String_t* ___message0, Exception_t * ___inner1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m148113530 (ConfigurationException_t3515317685 * __this, String_t* ___message0, Exception_t * ___inner1, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = ___message0;
@@ -19038,7 +19038,7 @@ extern "C" IL2CPP_METHOD_ATTR void ConfigurationException__ctor_m3251818005 (Con
 	}
 }
 // System.String System.Configuration.ConfigurationException::get_BareMessage()
-extern "C" IL2CPP_METHOD_ATTR String_t* ConfigurationException_get_BareMessage_m1637313949 (ConfigurationException_t3515317685 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* ConfigurationException_get_BareMessage_m3896358203 (ConfigurationException_t3515317685 * __this, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = Exception_get_Message_m3320461627(__this, /*hidden argument*/NULL);
@@ -19228,12 +19228,12 @@ IL_000a:
 	}
 }
 // System.Void System.Configuration.ConfigurationException::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern "C" IL2CPP_METHOD_ATTR void ConfigurationException_GetObjectData_m3317307704 (ConfigurationException_t3515317685 * __this, SerializationInfo_t950877179 * ___info0, StreamingContext_t3711869237  ___context1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void ConfigurationException_GetObjectData_m2878337176 (ConfigurationException_t3515317685 * __this, SerializationInfo_t950877179 * ___info0, StreamingContext_t3711869237  ___context1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (ConfigurationException_GetObjectData_m3317307704_MetadataUsageId);
+		il2cpp_codegen_initialize_method (ConfigurationException_GetObjectData_m2878337176_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -19389,25 +19389,25 @@ extern "C" IL2CPP_METHOD_ATTR void AssertSection__cctor_m3902536371 (RuntimeObje
 		bool L_2 = ((bool)1);
 		RuntimeObject * L_3 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_4, _stringLiteral2553246811, L_1, L_3, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_4, _stringLiteral2553246811, L_1, L_3, 0, /*hidden argument*/NULL);
 		((AssertSection_t2347182250_StaticFields*)il2cpp_codegen_static_fields_for(AssertSection_t2347182250_il2cpp_TypeInfo_var))->set__propAssertUIEnabled_16(L_4);
 		RuntimeTypeHandle_t3027515415  L_5 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_6 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		String_t* L_7 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
 		ConfigurationProperty_t3590861854 * L_8 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_8, _stringLiteral2891204045, L_6, L_7, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_8, _stringLiteral2891204045, L_6, L_7, 0, /*hidden argument*/NULL);
 		((AssertSection_t2347182250_StaticFields*)il2cpp_codegen_static_fields_for(AssertSection_t2347182250_il2cpp_TypeInfo_var))->set__propLogFile_17(L_8);
 		ConfigurationPropertyCollection_t2852175726 * L_9 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_9, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_9, /*hidden argument*/NULL);
 		((AssertSection_t2347182250_StaticFields*)il2cpp_codegen_static_fields_for(AssertSection_t2347182250_il2cpp_TypeInfo_var))->set__properties_15(L_9);
 		ConfigurationPropertyCollection_t2852175726 * L_10 = ((AssertSection_t2347182250_StaticFields*)il2cpp_codegen_static_fields_for(AssertSection_t2347182250_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_11 = ((AssertSection_t2347182250_StaticFields*)il2cpp_codegen_static_fields_for(AssertSection_t2347182250_il2cpp_TypeInfo_var))->get__propAssertUIEnabled_16();
 		NullCheck(L_10);
-		ConfigurationPropertyCollection_Add_m1567726929(L_10, L_11, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_10, L_11, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_12 = ((AssertSection_t2347182250_StaticFields*)il2cpp_codegen_static_fields_for(AssertSection_t2347182250_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_13 = ((AssertSection_t2347182250_StaticFields*)il2cpp_codegen_static_fields_for(AssertSection_t2347182250_il2cpp_TypeInfo_var))->get__propLogFile_17();
 		NullCheck(L_12);
-		ConfigurationPropertyCollection_Add_m1567726929(L_12, L_13, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_12, L_13, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -19430,7 +19430,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Asse
 extern "C" IL2CPP_METHOD_ATTR void AssertSection__ctor_m3055915304 (AssertSection_t2347182250 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -19721,9 +19721,9 @@ extern "C" IL2CPP_METHOD_ATTR String_t* DiagnosticsConfiguration_get_ConfigFileP
 	{
 		SystemDiagnosticsSection_t3552941008 * L_2 = V_0;
 		NullCheck(L_2);
-		ElementInformation_t2651568025 * L_3 = ConfigurationElement_get_ElementInformation_m2071761187(L_2, /*hidden argument*/NULL);
+		ElementInformation_t2651568025 * L_3 = ConfigurationElement_get_ElementInformation_m2132499183(L_2, /*hidden argument*/NULL);
 		NullCheck(L_3);
-		String_t* L_4 = ElementInformation_get_Source_m4054986467(L_3, /*hidden argument*/NULL);
+		String_t* L_4 = ElementInformation_get_Source_m17932221(L_3, /*hidden argument*/NULL);
 		return L_4;
 	}
 
@@ -21760,7 +21760,7 @@ IL_00aa:
 	}
 	{
 		ConfigurationException_t3515317685 * L_30 = (ConfigurationException_t3515317685 *)il2cpp_codegen_object_new(ConfigurationException_t3515317685_il2cpp_TypeInfo_var);
-		ConfigurationException__ctor_m2584225187(L_30, _stringLiteral705949069, /*hidden argument*/NULL);
+		ConfigurationException__ctor_m1982745395(L_30, _stringLiteral705949069, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_30, NULL, DiagnosticsConfigurationHandler_AddTraceSource_m492124141_RuntimeMethod_var);
 	}
 
@@ -22241,7 +22241,7 @@ extern "C" IL2CPP_METHOD_ATTR void DiagnosticsConfigurationHandler_AddTraceListe
 		String_t* L_12 = V_0;
 		String_t* L_13 = String_Format_m2844511972(NULL /*static, unused*/, _stringLiteral4009183095, L_12, /*hidden argument*/NULL);
 		ConfigurationException_t3515317685 * L_14 = (ConfigurationException_t3515317685 *)il2cpp_codegen_object_new(ConfigurationException_t3515317685_il2cpp_TypeInfo_var);
-		ConfigurationException__ctor_m2584225187(L_14, L_13, /*hidden argument*/NULL);
+		ConfigurationException__ctor_m1982745395(L_14, L_13, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_14, NULL, DiagnosticsConfigurationHandler_AddTraceListener_m2705949763_RuntimeMethod_var);
 	}
 
@@ -22259,7 +22259,7 @@ IL_0047:
 		String_t* L_17 = V_0;
 		String_t* L_18 = String_Format_m2844511972(NULL /*static, unused*/, _stringLiteral3357308665, L_17, /*hidden argument*/NULL);
 		ConfigurationErrorsException_t66512296 * L_19 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3348329850(L_19, L_18, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m3308054107(L_19, L_18, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_19, NULL, DiagnosticsConfigurationHandler_AddTraceListener_m2705949763_RuntimeMethod_var);
 	}
 
@@ -22295,7 +22295,7 @@ IL_007d:
 		String_t* L_29 = V_1;
 		String_t* L_30 = String_Format_m2844511972(NULL /*static, unused*/, _stringLiteral688162554, L_29, /*hidden argument*/NULL);
 		ConfigurationException_t3515317685 * L_31 = (ConfigurationException_t3515317685 *)il2cpp_codegen_object_new(ConfigurationException_t3515317685_il2cpp_TypeInfo_var);
-		ConfigurationException__ctor_m2584225187(L_31, L_30, /*hidden argument*/NULL);
+		ConfigurationException__ctor_m1982745395(L_31, L_30, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_31, NULL, DiagnosticsConfigurationHandler_AddTraceListener_m2705949763_RuntimeMethod_var);
 	}
 
@@ -22380,7 +22380,7 @@ IL_0101:
 		String_t* L_56 = V_1;
 		String_t* L_57 = String_Concat_m3937257545(NULL /*static, unused*/, _stringLiteral41992229, L_56, /*hidden argument*/NULL);
 		ConfigurationException_t3515317685 * L_58 = (ConfigurationException_t3515317685 *)il2cpp_codegen_object_new(ConfigurationException_t3515317685_il2cpp_TypeInfo_var);
-		ConfigurationException__ctor_m2584225187(L_58, L_57, /*hidden argument*/NULL);
+		ConfigurationException__ctor_m1982745395(L_58, L_57, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_58, NULL, DiagnosticsConfigurationHandler_AddTraceListener_m2705949763_RuntimeMethod_var);
 	}
 
@@ -22420,7 +22420,7 @@ IL_0127:
 		String_t* L_72 = String_Format_m2844511972(NULL /*static, unused*/, _stringLiteral3992213197, L_71, /*hidden argument*/NULL);
 		XmlNode_t3767805227 * L_73 = ___child1;
 		ConfigurationErrorsException_t66512296 * L_74 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3353125300(L_74, L_72, L_73, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m479893572(L_74, L_72, L_73, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_74, NULL, DiagnosticsConfigurationHandler_AddTraceListener_m2705949763_RuntimeMethod_var);
 	}
 
@@ -22454,7 +22454,7 @@ CATCH_018e:
 		String_t* L_80 = String_Format_m2844511972(NULL /*static, unused*/, _stringLiteral3992213197, L_79, /*hidden argument*/NULL);
 		XmlNode_t3767805227 * L_81 = ___child1;
 		ConfigurationErrorsException_t66512296 * L_82 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3353125300(L_82, L_80, L_81, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m479893572(L_82, L_80, L_81, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_82, NULL, DiagnosticsConfigurationHandler_AddTraceListener_m2705949763_RuntimeMethod_var);
 	} // end catch (depth: 1)
 
@@ -22594,7 +22594,7 @@ CATCH_0016:
 		String_t* L_4 = String_Format_m2844511972(NULL /*static, unused*/, _stringLiteral127757484, L_3, /*hidden argument*/NULL);
 		Exception_t * L_5 = V_0;
 		ConfigurationException_t3515317685 * L_6 = (ConfigurationException_t3515317685 *)il2cpp_codegen_object_new(ConfigurationException_t3515317685_il2cpp_TypeInfo_var);
-		ConfigurationException__ctor_m1789999115(L_6, L_4, L_5, /*hidden argument*/NULL);
+		ConfigurationException__ctor_m148113530(L_6, L_4, L_5, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_6, NULL, DiagnosticsConfigurationHandler_RemoveTraceListener_m964532660_RuntimeMethod_var);
 	} // end catch (depth: 1)
 
@@ -23259,19 +23259,19 @@ extern "C" IL2CPP_METHOD_ATTR void ListenerElement__cctor_m1122801278 (RuntimeOb
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral1557880777, L_1, NULL, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral1557880777, L_1, NULL, 0, /*hidden argument*/NULL);
 		((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->set__propFilter_20(L_2);
 		RuntimeTypeHandle_t3027515415  L_3 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_4 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_5 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_5, _stringLiteral62725243, L_4, NULL, 6, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_5, _stringLiteral62725243, L_4, NULL, 6, /*hidden argument*/NULL);
 		((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->set__propName_21(L_5);
 		RuntimeTypeHandle_t3027515415  L_6 = { reinterpret_cast<intptr_t> (TraceOptions_t3546477972_0_0_0_var) };
 		Type_t * L_7 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_6, /*hidden argument*/NULL);
 		int32_t L_8 = ((int32_t)0);
 		RuntimeObject * L_9 = Box(TraceOptions_t3546477972_il2cpp_TypeInfo_var, &L_8);
 		ConfigurationProperty_t3590861854 * L_10 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_10, _stringLiteral1522146100, L_7, L_9, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_10, _stringLiteral1522146100, L_7, L_9, 0, /*hidden argument*/NULL);
 		((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->set__propOutputOpts_22(L_10);
 		return;
 	}
@@ -23313,28 +23313,28 @@ IL_0025:
 		Type_t * L_6 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		int32_t L_7 = V_0;
 		ConfigurationProperty_t3590861854 * L_8 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_8, _stringLiteral3243520166, L_6, NULL, L_7, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_8, _stringLiteral3243520166, L_6, NULL, L_7, /*hidden argument*/NULL);
 		__this->set__propListenerTypeName_23(L_8);
 		ConfigurationPropertyCollection_t2852175726 * L_9 = ((TypedElement_t2581589637 *)__this)->get__properties_17();
 		NullCheck(L_9);
-		ConfigurationPropertyCollection_Remove_m677319349(L_9, _stringLiteral3243520166, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Remove_m2882882367(L_9, _stringLiteral3243520166, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_10 = ((TypedElement_t2581589637 *)__this)->get__properties_17();
 		ConfigurationProperty_t3590861854 * L_11 = __this->get__propListenerTypeName_23();
 		NullCheck(L_10);
-		ConfigurationPropertyCollection_Add_m1567726929(L_10, L_11, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_10, L_11, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_12 = ((TypedElement_t2581589637 *)__this)->get__properties_17();
 		IL2CPP_RUNTIME_CLASS_INIT(ListenerElement_t3111952272_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_13 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propFilter_20();
 		NullCheck(L_12);
-		ConfigurationPropertyCollection_Add_m1567726929(L_12, L_13, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_12, L_13, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_14 = ((TypedElement_t2581589637 *)__this)->get__properties_17();
 		ConfigurationProperty_t3590861854 * L_15 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propName_21();
 		NullCheck(L_14);
-		ConfigurationPropertyCollection_Add_m1567726929(L_14, L_15, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_14, L_15, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_16 = ((TypedElement_t2581589637 *)__this)->get__properties_17();
 		ConfigurationProperty_t3590861854 * L_17 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propOutputOpts_22();
 		NullCheck(L_16);
-		ConfigurationPropertyCollection_Add_m1567726929(L_16, L_17, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_16, L_17, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -23380,7 +23380,7 @@ extern "C" IL2CPP_METHOD_ATTR FilterElement_t2356978203 * ListenerElement_get_Fi
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ListenerElement_t3111952272_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propFilter_20();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((FilterElement_t2356978203 *)CastclassClass((RuntimeObject*)L_1, FilterElement_t2356978203_il2cpp_TypeInfo_var));
 	}
 }
@@ -23396,7 +23396,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* ListenerElement_get_Name_m2238893168 (Li
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ListenerElement_t3111952272_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propName_21();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -23413,7 +23413,7 @@ extern "C" IL2CPP_METHOD_ATTR void ListenerElement_set_Name_m3519727266 (Listene
 		IL2CPP_RUNTIME_CLASS_INIT(ListenerElement_t3111952272_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propName_21();
 		String_t* L_1 = ___value0;
-		ConfigurationElement_set_Item_m1586528331(__this, L_0, L_1, /*hidden argument*/NULL);
+		ConfigurationElement_set_Item_m3493437340(__this, L_0, L_1, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -23429,7 +23429,7 @@ extern "C" IL2CPP_METHOD_ATTR int32_t ListenerElement_get_TraceOutputOptions_m12
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ListenerElement_t3111952272_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propOutputOpts_22();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((*(int32_t*)((int32_t*)UnBox(L_1, TraceOptions_t3546477972_il2cpp_TypeInfo_var))));
 	}
 }
@@ -23444,7 +23444,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* ListenerElement_get_TypeName_m978335118 
 	}
 	{
 		ConfigurationProperty_t3590861854 * L_0 = __this->get__propListenerTypeName_23();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -23454,7 +23454,7 @@ extern "C" IL2CPP_METHOD_ATTR void ListenerElement_set_TypeName_m2353832540 (Lis
 	{
 		ConfigurationProperty_t3590861854 * L_0 = __this->get__propListenerTypeName_23();
 		String_t* L_1 = ___value0;
-		ConfigurationElement_set_Item_m1586528331(__this, L_0, L_1, /*hidden argument*/NULL);
+		ConfigurationElement_set_Item_m3493437340(__this, L_0, L_1, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -23533,7 +23533,7 @@ IL_0065:
 IL_0067:
 	{
 		RuntimeObject * L_18 = ___compareTo0;
-		bool L_19 = ConfigurationElement_Equals_m2208423918(__this, L_18, /*hidden argument*/NULL);
+		bool L_19 = ConfigurationElement_Equals_m3106604887(__this, L_18, /*hidden argument*/NULL);
 		return L_19;
 	}
 }
@@ -23541,7 +23541,7 @@ IL_0067:
 extern "C" IL2CPP_METHOD_ATTR int32_t ListenerElement_GetHashCode_m555988184 (ListenerElement_t3111952272 * __this, const RuntimeMethod* method)
 {
 	{
-		int32_t L_0 = ConfigurationElement_GetHashCode_m500358818(__this, /*hidden argument*/NULL);
+		int32_t L_0 = ConfigurationElement_GetHashCode_m2692670572(__this, /*hidden argument*/NULL);
 		return L_0;
 	}
 }
@@ -23604,17 +23604,17 @@ IL_0025:
 
 IL_002d:
 		{
-			ElementInformation_t2651568025 * L_5 = ConfigurationElement_get_ElementInformation_m2071761187(__this, /*hidden argument*/NULL);
+			ElementInformation_t2651568025 * L_5 = ConfigurationElement_get_ElementInformation_m2132499183(__this, /*hidden argument*/NULL);
 			NullCheck(L_5);
-			PropertyInformationCollection_t3866802480 * L_6 = ElementInformation_get_Properties_m163958384(L_5, /*hidden argument*/NULL);
+			PropertyInformationCollection_t3866802480 * L_6 = ElementInformation_get_Properties_m439282531(L_5, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(ListenerElement_t3111952272_il2cpp_TypeInfo_var);
 			ConfigurationProperty_t3590861854 * L_7 = ((ListenerElement_t3111952272_StaticFields*)il2cpp_codegen_static_fields_for(ListenerElement_t3111952272_il2cpp_TypeInfo_var))->get__propFilter_20();
 			NullCheck(L_7);
-			String_t* L_8 = ConfigurationProperty_get_Name_m734057223(L_7, /*hidden argument*/NULL);
+			String_t* L_8 = ConfigurationProperty_get_Name_m3257134896(L_7, /*hidden argument*/NULL);
 			NullCheck(L_6);
-			PropertyInformation_t4136807793 * L_9 = PropertyInformationCollection_get_Item_m1178487516(L_6, L_8, /*hidden argument*/NULL);
+			PropertyInformation_t4136807793 * L_9 = PropertyInformationCollection_get_Item_m768125737(L_6, L_8, /*hidden argument*/NULL);
 			NullCheck(L_9);
-			int32_t L_10 = PropertyInformation_get_ValueOrigin_m2382382215(L_9, /*hidden argument*/NULL);
+			int32_t L_10 = PropertyInformation_get_ValueOrigin_m1934829918(L_9, /*hidden argument*/NULL);
 			if ((((int32_t)L_10) == ((int32_t)2)))
 			{
 				goto IL_0064;
@@ -23650,7 +23650,7 @@ IL_0064:
 			(L_15)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_16);
 			String_t* L_17 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral772815708, L_15, /*hidden argument*/NULL);
 			ConfigurationErrorsException_t66512296 * L_18 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-			ConfigurationErrorsException__ctor_m3348329850(L_18, L_17, /*hidden argument*/NULL);
+			ConfigurationErrorsException__ctor_m3308054107(L_18, L_17, /*hidden argument*/NULL);
 			IL2CPP_RAISE_MANAGED_EXCEPTION(L_18, NULL, ListenerElement_GetRuntimeObject_m964230851_RuntimeMethod_var);
 		}
 
@@ -23674,7 +23674,7 @@ IL_008a:
 			(L_21)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_22);
 			String_t* L_23 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral744797316, L_21, /*hidden argument*/NULL);
 			ConfigurationErrorsException_t66512296 * L_24 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-			ConfigurationErrorsException__ctor_m3348329850(L_24, L_23, /*hidden argument*/NULL);
+			ConfigurationErrorsException__ctor_m3308054107(L_24, L_23, /*hidden argument*/NULL);
 			IL2CPP_RAISE_MANAGED_EXCEPTION(L_24, NULL, ListenerElement_GetRuntimeObject_m964230851_RuntimeMethod_var);
 		}
 
@@ -23703,7 +23703,7 @@ IL_00bd:
 			(L_30)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_31);
 			String_t* L_32 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral744797316, L_30, /*hidden argument*/NULL);
 			ConfigurationErrorsException_t66512296 * L_33 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-			ConfigurationErrorsException__ctor_m3348329850(L_33, L_32, /*hidden argument*/NULL);
+			ConfigurationErrorsException__ctor_m3308054107(L_33, L_32, /*hidden argument*/NULL);
 			IL2CPP_RAISE_MANAGED_EXCEPTION(L_33, NULL, ListenerElement_GetRuntimeObject_m964230851_RuntimeMethod_var);
 		}
 
@@ -23822,7 +23822,7 @@ CATCH_0189:
 		String_t* L_63 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral1830926775, L_61, /*hidden argument*/NULL);
 		ArgumentException_t132251570 * L_64 = V_4;
 		ConfigurationErrorsException_t66512296 * L_65 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m2260069592(L_65, L_63, L_64, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m4283164494(L_65, L_63, L_64, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_65, NULL, ListenerElement_GetRuntimeObject_m964230851_RuntimeMethod_var);
 	} // end catch (depth: 1)
 
@@ -23924,7 +23924,7 @@ extern "C" IL2CPP_METHOD_ATTR bool ListenerElement_SerializeElement_m3138978096 
 	{
 		XmlWriter_t127905479 * L_0 = ___writer0;
 		bool L_1 = ___serializeCollectionKey1;
-		bool L_2 = ConfigurationElement_SerializeElement_m3555528001(__this, L_0, L_1, /*hidden argument*/NULL);
+		bool L_2 = ConfigurationElement_SerializeElement_m3178218390(__this, L_0, L_1, /*hidden argument*/NULL);
 		if (L_2)
 		{
 			goto IL_0023;
@@ -23968,7 +23968,7 @@ extern "C" IL2CPP_METHOD_ATTR void ListenerElement_Unmerge_m712186797 (ListenerE
 		ConfigurationElement_t3318566633 * L_0 = ___sourceElement0;
 		ConfigurationElement_t3318566633 * L_1 = ___parentElement1;
 		int32_t L_2 = ___saveMode2;
-		ConfigurationElement_Unmerge_m3918301448(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
+		ConfigurationElement_Unmerge_m2050820361(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
 		ConfigurationElement_t3318566633 * L_3 = ___sourceElement0;
 		V_0 = ((ListenerElement_t3111952272 *)IsInstClass((RuntimeObject*)L_3, ListenerElement_t3111952272_il2cpp_TypeInfo_var));
 		ListenerElement_t3111952272 * L_4 = V_0;
@@ -24017,7 +24017,7 @@ extern "C" IL2CPP_METHOD_ATTR ListenerElement_t3111952272 * ListenerElementsColl
 	}
 	{
 		String_t* L_0 = ___name0;
-		ConfigurationElement_t3318566633 * L_1 = ConfigurationElementCollection_BaseGet_m1745851845(__this, L_0, /*hidden argument*/NULL);
+		ConfigurationElement_t3318566633 * L_1 = ConfigurationElementCollection_BaseGet_m1527703308(__this, L_0, /*hidden argument*/NULL);
 		return ((ListenerElement_t3111952272 *)CastclassClass((RuntimeObject*)L_1, ListenerElement_t3111952272_il2cpp_TypeInfo_var));
 	}
 }
@@ -24084,7 +24084,7 @@ extern "C" IL2CPP_METHOD_ATTR TraceListenerCollection_t1347122889 * ListenerElem
 		TraceListenerCollection__ctor_m1500370583(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
 		V_1 = (bool)0;
-		RuntimeObject* L_1 = ConfigurationElementCollection_GetEnumerator_m4043183664(__this, /*hidden argument*/NULL);
+		RuntimeObject* L_1 = ConfigurationElementCollection_GetEnumerator_m4192431148(__this, /*hidden argument*/NULL);
 		V_2 = L_1;
 	}
 
@@ -24278,7 +24278,7 @@ extern "C" IL2CPP_METHOD_ATTR void ListenerElementsCollection_BaseAdd_m274213784
 	}
 	{
 		ListenerElement_t3111952272 * L_10 = V_0;
-		ConfigurationElementCollection_BaseAdd_m138579808(__this, L_10, (bool)0, /*hidden argument*/NULL);
+		ConfigurationElementCollection_BaseAdd_m2671588688(__this, L_10, (bool)0, /*hidden argument*/NULL);
 		return;
 	}
 
@@ -24286,7 +24286,7 @@ IL_003e:
 	{
 		ListenerElement_t3111952272 * L_11 = V_0;
 		bool L_12 = VirtFuncInvoker0< bool >::Invoke(32 /* System.Boolean System.Configuration.ConfigurationElementCollection::get_ThrowOnDuplicate() */, __this);
-		ConfigurationElementCollection_BaseAdd_m138579808(__this, L_11, L_12, /*hidden argument*/NULL);
+		ConfigurationElementCollection_BaseAdd_m2671588688(__this, L_11, L_12, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -24294,7 +24294,7 @@ IL_003e:
 extern "C" IL2CPP_METHOD_ATTR void ListenerElementsCollection__ctor_m2918109277 (ListenerElementsCollection_t1095146761 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElementCollection__ctor_m2631610858(__this, /*hidden argument*/NULL);
+		ConfigurationElementCollection__ctor_m4158074757(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -24354,15 +24354,15 @@ extern "C" IL2CPP_METHOD_ATTR void PerfCounterSection__cctor_m4150913552 (Runtim
 		int32_t L_2 = ((int32_t)524288);
 		RuntimeObject * L_3 = Box(Int32_t2950945753_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_4, _stringLiteral3654739179, L_1, L_3, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_4, _stringLiteral3654739179, L_1, L_3, 0, /*hidden argument*/NULL);
 		((PerfCounterSection_t3884640147_StaticFields*)il2cpp_codegen_static_fields_for(PerfCounterSection_t3884640147_il2cpp_TypeInfo_var))->set__propFileMappingSize_16(L_4);
 		ConfigurationPropertyCollection_t2852175726 * L_5 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_5, /*hidden argument*/NULL);
 		((PerfCounterSection_t3884640147_StaticFields*)il2cpp_codegen_static_fields_for(PerfCounterSection_t3884640147_il2cpp_TypeInfo_var))->set__properties_15(L_5);
 		ConfigurationPropertyCollection_t2852175726 * L_6 = ((PerfCounterSection_t3884640147_StaticFields*)il2cpp_codegen_static_fields_for(PerfCounterSection_t3884640147_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_7 = ((PerfCounterSection_t3884640147_StaticFields*)il2cpp_codegen_static_fields_for(PerfCounterSection_t3884640147_il2cpp_TypeInfo_var))->get__propFileMappingSize_16();
 		NullCheck(L_6);
-		ConfigurationPropertyCollection_Add_m1567726929(L_6, L_7, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_6, L_7, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -24385,7 +24385,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Perf
 extern "C" IL2CPP_METHOD_ATTR void PerfCounterSection__ctor_m601126933 (PerfCounterSection_t3884640147 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -24462,53 +24462,53 @@ extern "C" IL2CPP_METHOD_ATTR void SourceElement__cctor_m1433717906 (RuntimeObje
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral62725243, L_1, _stringLiteral757602046, 2, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral62725243, L_1, _stringLiteral757602046, 2, /*hidden argument*/NULL);
 		((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->set__propName_16(L_2);
 		RuntimeTypeHandle_t3027515415  L_3 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_4 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_5 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_5, _stringLiteral123616749, L_4, NULL, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_5, _stringLiteral123616749, L_4, NULL, 0, /*hidden argument*/NULL);
 		((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->set__propSwitchName_17(L_5);
 		RuntimeTypeHandle_t3027515415  L_6 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_7 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_6, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_8 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_8, _stringLiteral2885343603, L_7, NULL, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_8, _stringLiteral2885343603, L_7, NULL, 0, /*hidden argument*/NULL);
 		((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->set__propSwitchValue_18(L_8);
 		RuntimeTypeHandle_t3027515415  L_9 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_10 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_9, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_11 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_11, _stringLiteral2459533878, L_10, NULL, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_11, _stringLiteral2459533878, L_10, NULL, 0, /*hidden argument*/NULL);
 		((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->set__propSwitchType_19(L_11);
 		RuntimeTypeHandle_t3027515415  L_12 = { reinterpret_cast<intptr_t> (ListenerElementsCollection_t1095146761_0_0_0_var) };
 		Type_t * L_13 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_12, /*hidden argument*/NULL);
 		ListenerElementsCollection_t1095146761 * L_14 = (ListenerElementsCollection_t1095146761 *)il2cpp_codegen_object_new(ListenerElementsCollection_t1095146761_il2cpp_TypeInfo_var);
 		ListenerElementsCollection__ctor_m2918109277(L_14, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_15 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_15, _stringLiteral4153351981, L_13, L_14, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_15, _stringLiteral4153351981, L_13, L_14, 0, /*hidden argument*/NULL);
 		((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->set__propListeners_20(L_15);
 		ConfigurationPropertyCollection_t2852175726 * L_16 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_16, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_16, /*hidden argument*/NULL);
 		((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->set__properties_15(L_16);
 		ConfigurationPropertyCollection_t2852175726 * L_17 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_18 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propName_16();
 		NullCheck(L_17);
-		ConfigurationPropertyCollection_Add_m1567726929(L_17, L_18, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_17, L_18, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_19 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_20 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propSwitchName_17();
 		NullCheck(L_19);
-		ConfigurationPropertyCollection_Add_m1567726929(L_19, L_20, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_19, L_20, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_21 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_22 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propSwitchValue_18();
 		NullCheck(L_21);
-		ConfigurationPropertyCollection_Add_m1567726929(L_21, L_22, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_21, L_22, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_23 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_24 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propSwitchType_19();
 		NullCheck(L_23);
-		ConfigurationPropertyCollection_Add_m1567726929(L_23, L_24, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_23, L_24, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_25 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_26 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propListeners_20();
 		NullCheck(L_25);
-		ConfigurationPropertyCollection_Add_m1567726929(L_25, L_26, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_25, L_26, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -24554,7 +24554,7 @@ extern "C" IL2CPP_METHOD_ATTR ListenerElementsCollection_t1095146761 * SourceEle
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(SourceElement_t572173626_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propListeners_20();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((ListenerElementsCollection_t1095146761 *)CastclassClass((RuntimeObject*)L_1, ListenerElementsCollection_t1095146761_il2cpp_TypeInfo_var));
 	}
 }
@@ -24570,7 +24570,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* SourceElement_get_Name_m1319521035 (Sour
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(SourceElement_t572173626_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propName_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -24601,7 +24601,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* SourceElement_get_SwitchName_m2877130996
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(SourceElement_t572173626_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propSwitchName_17();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -24617,7 +24617,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* SourceElement_get_SwitchValue_m214761407
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(SourceElement_t572173626_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((SourceElement_t572173626_StaticFields*)il2cpp_codegen_static_fields_for(SourceElement_t572173626_il2cpp_TypeInfo_var))->get__propSwitchValue_18();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -24633,7 +24633,7 @@ extern "C" IL2CPP_METHOD_ATTR void SourceElement_DeserializeElement_m1132684156 
 	{
 		XmlReader_t3121518892 * L_0 = ___reader0;
 		bool L_1 = ___serializeCollectionKey1;
-		ConfigurationElement_DeserializeElement_m142138807(__this, L_0, L_1, /*hidden argument*/NULL);
+		ConfigurationElement_DeserializeElement_m2357743528(__this, L_0, L_1, /*hidden argument*/NULL);
 		String_t* L_2 = SourceElement_get_SwitchName_m2877130996(__this, /*hidden argument*/NULL);
 		bool L_3 = String_IsNullOrEmpty_m2969720369(NULL /*static, unused*/, L_2, /*hidden argument*/NULL);
 		if (L_3)
@@ -24658,7 +24658,7 @@ extern "C" IL2CPP_METHOD_ATTR void SourceElement_DeserializeElement_m1132684156 
 		(L_7)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_8);
 		String_t* L_9 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral2905458249, L_7, /*hidden argument*/NULL);
 		ConfigurationErrorsException_t66512296 * L_10 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3348329850(L_10, L_9, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m3308054107(L_10, L_9, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_10, NULL, SourceElement_DeserializeElement_m1132684156_RuntimeMethod_var);
 	}
 
@@ -24759,7 +24759,7 @@ extern "C" IL2CPP_METHOD_ATTR bool SourceElement_SerializeElement_m1975954949 (S
 	{
 		XmlWriter_t127905479 * L_0 = ___writer0;
 		bool L_1 = ___serializeCollectionKey1;
-		bool L_2 = ConfigurationElement_SerializeElement_m3555528001(__this, L_0, L_1, /*hidden argument*/NULL);
+		bool L_2 = ConfigurationElement_SerializeElement_m3178218390(__this, L_0, L_1, /*hidden argument*/NULL);
 		if (L_2)
 		{
 			goto IL_0023;
@@ -24803,7 +24803,7 @@ extern "C" IL2CPP_METHOD_ATTR void SourceElement_Unmerge_m4002771116 (SourceElem
 		ConfigurationElement_t3318566633 * L_0 = ___sourceElement0;
 		ConfigurationElement_t3318566633 * L_1 = ___parentElement1;
 		int32_t L_2 = ___saveMode2;
-		ConfigurationElement_Unmerge_m3918301448(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
+		ConfigurationElement_Unmerge_m2050820361(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
 		ConfigurationElement_t3318566633 * L_3 = ___sourceElement0;
 		V_0 = ((SourceElement_t572173626 *)IsInstClass((RuntimeObject*)L_3, SourceElement_t572173626_il2cpp_TypeInfo_var));
 		SourceElement_t572173626 * L_4 = V_0;
@@ -24837,7 +24837,7 @@ IL_0027:
 extern "C" IL2CPP_METHOD_ATTR void SourceElement__ctor_m4083318621 (SourceElement_t572173626 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -24909,7 +24909,7 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject * SourceElementsCollection_GetElemen
 extern "C" IL2CPP_METHOD_ATTR void SourceElementsCollection__ctor_m2622460505 (SourceElementsCollection_t3236719373 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElementCollection__ctor_m2631610858(__this, /*hidden argument*/NULL);
+		ConfigurationElementCollection__ctor_m4158074757(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -25264,24 +25264,24 @@ extern "C" IL2CPP_METHOD_ATTR void SwitchElement__cctor_m86907586 (RuntimeObject
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral62725243, L_1, _stringLiteral757602046, 6, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral62725243, L_1, _stringLiteral757602046, 6, /*hidden argument*/NULL);
 		((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->set__propName_16(L_2);
 		RuntimeTypeHandle_t3027515415  L_3 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_4 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_5 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_5, _stringLiteral3493618073, L_4, NULL, 2, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_5, _stringLiteral3493618073, L_4, NULL, 2, /*hidden argument*/NULL);
 		((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->set__propValue_17(L_5);
 		ConfigurationPropertyCollection_t2852175726 * L_6 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_6, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_6, /*hidden argument*/NULL);
 		((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->set__properties_15(L_6);
 		ConfigurationPropertyCollection_t2852175726 * L_7 = ((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_8 = ((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->get__propName_16();
 		NullCheck(L_7);
-		ConfigurationPropertyCollection_Add_m1567726929(L_7, L_8, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_7, L_8, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_9 = ((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_10 = ((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->get__propValue_17();
 		NullCheck(L_9);
-		ConfigurationPropertyCollection_Add_m1567726929(L_9, L_10, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_9, L_10, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -25327,7 +25327,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* SwitchElement_get_Name_m3627088048 (Swit
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(SwitchElement_t1208244899_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((SwitchElement_t1208244899_StaticFields*)il2cpp_codegen_static_fields_for(SwitchElement_t1208244899_il2cpp_TypeInfo_var))->get__propName_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -25438,7 +25438,7 @@ extern "C" IL2CPP_METHOD_ATTR bool SwitchElement_SerializeElement_m4143430751 (S
 	{
 		XmlWriter_t127905479 * L_0 = ___writer0;
 		bool L_1 = ___serializeCollectionKey1;
-		bool L_2 = ConfigurationElement_SerializeElement_m3555528001(__this, L_0, L_1, /*hidden argument*/NULL);
+		bool L_2 = ConfigurationElement_SerializeElement_m3178218390(__this, L_0, L_1, /*hidden argument*/NULL);
 		if (L_2)
 		{
 			goto IL_0023;
@@ -25482,7 +25482,7 @@ extern "C" IL2CPP_METHOD_ATTR void SwitchElement_Unmerge_m1111862927 (SwitchElem
 		ConfigurationElement_t3318566633 * L_0 = ___sourceElement0;
 		ConfigurationElement_t3318566633 * L_1 = ___parentElement1;
 		int32_t L_2 = ___saveMode2;
-		ConfigurationElement_Unmerge_m3918301448(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
+		ConfigurationElement_Unmerge_m2050820361(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
 		ConfigurationElement_t3318566633 * L_3 = ___sourceElement0;
 		V_0 = ((SwitchElement_t1208244899 *)IsInstClass((RuntimeObject*)L_3, SwitchElement_t1208244899_il2cpp_TypeInfo_var));
 		SwitchElement_t1208244899 * L_4 = V_0;
@@ -25516,7 +25516,7 @@ IL_0027:
 extern "C" IL2CPP_METHOD_ATTR void SwitchElement__ctor_m3692625087 (SwitchElement_t1208244899 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -25570,7 +25570,7 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject * SwitchElementsCollection_GetElemen
 extern "C" IL2CPP_METHOD_ATTR void SwitchElementsCollection__ctor_m3345909023 (SwitchElementsCollection_t2023008279 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElementCollection__ctor_m2631610858(__this, /*hidden argument*/NULL);
+		ConfigurationElementCollection__ctor_m4158074757(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -25647,70 +25647,70 @@ extern "C" IL2CPP_METHOD_ATTR void SystemDiagnosticsSection__cctor_m2274115981 (
 		AssertSection_t2347182250 * L_2 = (AssertSection_t2347182250 *)il2cpp_codegen_object_new(AssertSection_t2347182250_il2cpp_TypeInfo_var);
 		AssertSection__ctor_m3055915304(L_2, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_3 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_3, _stringLiteral1670071986, L_1, L_2, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_3, _stringLiteral1670071986, L_1, L_2, 0, /*hidden argument*/NULL);
 		((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->set__propAssert_20(L_3);
 		RuntimeTypeHandle_t3027515415  L_4 = { reinterpret_cast<intptr_t> (PerfCounterSection_t3884640147_0_0_0_var) };
 		Type_t * L_5 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_4, /*hidden argument*/NULL);
 		PerfCounterSection_t3884640147 * L_6 = (PerfCounterSection_t3884640147 *)il2cpp_codegen_object_new(PerfCounterSection_t3884640147_il2cpp_TypeInfo_var);
 		PerfCounterSection__ctor_m601126933(L_6, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_7 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_7, _stringLiteral1922940613, L_5, L_6, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_7, _stringLiteral1922940613, L_5, L_6, 0, /*hidden argument*/NULL);
 		((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->set__propPerfCounters_21(L_7);
 		RuntimeTypeHandle_t3027515415  L_8 = { reinterpret_cast<intptr_t> (SourceElementsCollection_t3236719373_0_0_0_var) };
 		Type_t * L_9 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_8, /*hidden argument*/NULL);
 		SourceElementsCollection_t3236719373 * L_10 = (SourceElementsCollection_t3236719373 *)il2cpp_codegen_object_new(SourceElementsCollection_t3236719373_il2cpp_TypeInfo_var);
 		SourceElementsCollection__ctor_m2622460505(L_10, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_11 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_11, _stringLiteral1887279536, L_9, L_10, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_11, _stringLiteral1887279536, L_9, L_10, 0, /*hidden argument*/NULL);
 		((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->set__propSources_22(L_11);
 		RuntimeTypeHandle_t3027515415  L_12 = { reinterpret_cast<intptr_t> (SharedListenerElementsCollection_t127800851_0_0_0_var) };
 		Type_t * L_13 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_12, /*hidden argument*/NULL);
 		SharedListenerElementsCollection_t127800851 * L_14 = (SharedListenerElementsCollection_t127800851 *)il2cpp_codegen_object_new(SharedListenerElementsCollection_t127800851_il2cpp_TypeInfo_var);
 		SharedListenerElementsCollection__ctor_m1247914499(L_14, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_15 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_15, _stringLiteral1456606265, L_13, L_14, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_15, _stringLiteral1456606265, L_13, L_14, 0, /*hidden argument*/NULL);
 		((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->set__propSharedListeners_23(L_15);
 		RuntimeTypeHandle_t3027515415  L_16 = { reinterpret_cast<intptr_t> (SwitchElementsCollection_t2023008279_0_0_0_var) };
 		Type_t * L_17 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_16, /*hidden argument*/NULL);
 		SwitchElementsCollection_t2023008279 * L_18 = (SwitchElementsCollection_t2023008279 *)il2cpp_codegen_object_new(SwitchElementsCollection_t2023008279_il2cpp_TypeInfo_var);
 		SwitchElementsCollection__ctor_m3345909023(L_18, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_19 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_19, _stringLiteral407879406, L_17, L_18, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_19, _stringLiteral407879406, L_17, L_18, 0, /*hidden argument*/NULL);
 		((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->set__propSwitches_24(L_19);
 		RuntimeTypeHandle_t3027515415  L_20 = { reinterpret_cast<intptr_t> (TraceSection_t4243885952_0_0_0_var) };
 		Type_t * L_21 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_20, /*hidden argument*/NULL);
 		TraceSection_t4243885952 * L_22 = (TraceSection_t4243885952 *)il2cpp_codegen_object_new(TraceSection_t4243885952_il2cpp_TypeInfo_var);
 		TraceSection__ctor_m82560994(L_22, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_23 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_23, _stringLiteral1609214314, L_21, L_22, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_23, _stringLiteral1609214314, L_21, L_22, 0, /*hidden argument*/NULL);
 		((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->set__propTrace_25(L_23);
 		ConfigurationPropertyCollection_t2852175726 * L_24 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_24, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_24, /*hidden argument*/NULL);
 		((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->set__properties_19(L_24);
 		ConfigurationPropertyCollection_t2852175726 * L_25 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__properties_19();
 		ConfigurationProperty_t3590861854 * L_26 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propAssert_20();
 		NullCheck(L_25);
-		ConfigurationPropertyCollection_Add_m1567726929(L_25, L_26, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_25, L_26, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_27 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__properties_19();
 		ConfigurationProperty_t3590861854 * L_28 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propPerfCounters_21();
 		NullCheck(L_27);
-		ConfigurationPropertyCollection_Add_m1567726929(L_27, L_28, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_27, L_28, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_29 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__properties_19();
 		ConfigurationProperty_t3590861854 * L_30 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propSources_22();
 		NullCheck(L_29);
-		ConfigurationPropertyCollection_Add_m1567726929(L_29, L_30, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_29, L_30, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_31 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__properties_19();
 		ConfigurationProperty_t3590861854 * L_32 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propSharedListeners_23();
 		NullCheck(L_31);
-		ConfigurationPropertyCollection_Add_m1567726929(L_31, L_32, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_31, L_32, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_33 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__properties_19();
 		ConfigurationProperty_t3590861854 * L_34 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propSwitches_24();
 		NullCheck(L_33);
-		ConfigurationPropertyCollection_Add_m1567726929(L_33, L_34, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_33, L_34, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_35 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__properties_19();
 		ConfigurationProperty_t3590861854 * L_36 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propTrace_25();
 		NullCheck(L_35);
-		ConfigurationPropertyCollection_Add_m1567726929(L_35, L_36, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_35, L_36, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -25741,7 +25741,7 @@ extern "C" IL2CPP_METHOD_ATTR ListenerElementsCollection_t1095146761 * SystemDia
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propSharedListeners_23();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((ListenerElementsCollection_t1095146761 *)CastclassClass((RuntimeObject*)L_1, ListenerElementsCollection_t1095146761_il2cpp_TypeInfo_var));
 	}
 }
@@ -25757,7 +25757,7 @@ extern "C" IL2CPP_METHOD_ATTR TraceSection_t4243885952 * SystemDiagnosticsSectio
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((SystemDiagnosticsSection_t3552941008_StaticFields*)il2cpp_codegen_static_fields_for(SystemDiagnosticsSection_t3552941008_il2cpp_TypeInfo_var))->get__propTrace_25();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((TraceSection_t4243885952 *)CastclassClass((RuntimeObject*)L_1, TraceSection_t4243885952_il2cpp_TypeInfo_var));
 	}
 }
@@ -27620,48 +27620,48 @@ extern "C" IL2CPP_METHOD_ATTR void TraceSection__cctor_m1181597335 (RuntimeObjec
 		ListenerElementsCollection_t1095146761 * L_2 = (ListenerElementsCollection_t1095146761 *)il2cpp_codegen_object_new(ListenerElementsCollection_t1095146761_il2cpp_TypeInfo_var);
 		ListenerElementsCollection__ctor_m2918109277(L_2, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_3 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_3, _stringLiteral4153351981, L_1, L_2, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_3, _stringLiteral4153351981, L_1, L_2, 0, /*hidden argument*/NULL);
 		((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->set__propListeners_16(L_3);
 		RuntimeTypeHandle_t3027515415  L_4 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_5 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_4, /*hidden argument*/NULL);
 		bool L_6 = ((bool)0);
 		RuntimeObject * L_7 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_6);
 		ConfigurationProperty_t3590861854 * L_8 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_8, _stringLiteral3483203916, L_5, L_7, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_8, _stringLiteral3483203916, L_5, L_7, 0, /*hidden argument*/NULL);
 		((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->set__propAutoFlush_17(L_8);
 		RuntimeTypeHandle_t3027515415  L_9 = { reinterpret_cast<intptr_t> (Int32_t2950945753_0_0_0_var) };
 		Type_t * L_10 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_9, /*hidden argument*/NULL);
 		int32_t L_11 = 4;
 		RuntimeObject * L_12 = Box(Int32_t2950945753_il2cpp_TypeInfo_var, &L_11);
 		ConfigurationProperty_t3590861854 * L_13 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_13, _stringLiteral1931905823, L_10, L_12, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_13, _stringLiteral1931905823, L_10, L_12, 0, /*hidden argument*/NULL);
 		((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->set__propIndentSize_18(L_13);
 		RuntimeTypeHandle_t3027515415  L_14 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_15 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_14, /*hidden argument*/NULL);
 		bool L_16 = ((bool)1);
 		RuntimeObject * L_17 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_16);
 		ConfigurationProperty_t3590861854 * L_18 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_18, _stringLiteral1536111178, L_15, L_17, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_18, _stringLiteral1536111178, L_15, L_17, 0, /*hidden argument*/NULL);
 		((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->set__propUseGlobalLock_19(L_18);
 		ConfigurationPropertyCollection_t2852175726 * L_19 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_19, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_19, /*hidden argument*/NULL);
 		((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->set__properties_15(L_19);
 		ConfigurationPropertyCollection_t2852175726 * L_20 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_21 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propListeners_16();
 		NullCheck(L_20);
-		ConfigurationPropertyCollection_Add_m1567726929(L_20, L_21, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_20, L_21, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_22 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_23 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propAutoFlush_17();
 		NullCheck(L_22);
-		ConfigurationPropertyCollection_Add_m1567726929(L_22, L_23, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_22, L_23, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_24 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_25 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propIndentSize_18();
 		NullCheck(L_24);
-		ConfigurationPropertyCollection_Add_m1567726929(L_24, L_25, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_24, L_25, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_26 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__properties_15();
 		ConfigurationProperty_t3590861854 * L_27 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propUseGlobalLock_19();
 		NullCheck(L_26);
-		ConfigurationPropertyCollection_Add_m1567726929(L_26, L_27, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_26, L_27, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -27677,7 +27677,7 @@ extern "C" IL2CPP_METHOD_ATTR bool TraceSection_get_AutoFlush_m2897009870 (Trace
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(TraceSection_t4243885952_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propAutoFlush_17();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((*(bool*)((bool*)UnBox(L_1, Boolean_t97287965_il2cpp_TypeInfo_var))));
 	}
 }
@@ -27693,7 +27693,7 @@ extern "C" IL2CPP_METHOD_ATTR int32_t TraceSection_get_IndentSize_m2502884645 (T
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(TraceSection_t4243885952_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propIndentSize_18();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((*(int32_t*)((int32_t*)UnBox(L_1, Int32_t2950945753_il2cpp_TypeInfo_var))));
 	}
 }
@@ -27709,7 +27709,7 @@ extern "C" IL2CPP_METHOD_ATTR ListenerElementsCollection_t1095146761 * TraceSect
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(TraceSection_t4243885952_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propListeners_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((ListenerElementsCollection_t1095146761 *)CastclassClass((RuntimeObject*)L_1, ListenerElementsCollection_t1095146761_il2cpp_TypeInfo_var));
 	}
 }
@@ -27725,7 +27725,7 @@ extern "C" IL2CPP_METHOD_ATTR bool TraceSection_get_UseGlobalLock_m1395084608 (T
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(TraceSection_t4243885952_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((TraceSection_t4243885952_StaticFields*)il2cpp_codegen_static_fields_for(TraceSection_t4243885952_il2cpp_TypeInfo_var))->get__propUseGlobalLock_19();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((*(bool*)((bool*)UnBox(L_1, Boolean_t97287965_il2cpp_TypeInfo_var))));
 	}
 }
@@ -27748,7 +27748,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Trac
 extern "C" IL2CPP_METHOD_ATTR void TraceSection__ctor_m82560994 (TraceSection_t4243885952 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -27857,7 +27857,7 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject * TraceUtils_GetRuntimeObject_m41092
 	{
 		String_t* L_2 = SR_GetString_m1137630943(NULL /*static, unused*/, _stringLiteral3597119875, /*hidden argument*/NULL);
 		ConfigurationErrorsException_t66512296 * L_3 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3348329850(L_3, L_2, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m3308054107(L_3, L_2, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 	}
 
@@ -27883,7 +27883,7 @@ IL_001c:
 		(L_9)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_10);
 		String_t* L_11 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral1762483393, L_9, /*hidden argument*/NULL);
 		ConfigurationErrorsException_t66512296 * L_12 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3348329850(L_12, L_11, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m3308054107(L_12, L_11, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_12, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 	}
 
@@ -27914,7 +27914,7 @@ IL_0046:
 		(L_19)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject *)L_21);
 		String_t* L_22 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral1983964431, L_19, /*hidden argument*/NULL);
 		ConfigurationErrorsException_t66512296 * L_23 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3348329850(L_23, L_22, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m3308054107(L_23, L_22, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_23, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 	}
 
@@ -27949,7 +27949,7 @@ IL_0084:
 		{
 			String_t* L_28 = SR_GetString_m1137630943(NULL /*static, unused*/, _stringLiteral3985424915, /*hidden argument*/NULL);
 			ConfigurationErrorsException_t66512296 * L_29 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-			ConfigurationErrorsException__ctor_m3348329850(L_29, L_28, /*hidden argument*/NULL);
+			ConfigurationErrorsException__ctor_m3308054107(L_29, L_28, /*hidden argument*/NULL);
 			IL2CPP_RAISE_MANAGED_EXCEPTION(L_29, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 		}
 
@@ -27979,7 +27979,7 @@ IL_00aa:
 			(L_36)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_37);
 			String_t* L_38 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral37995922, L_36, /*hidden argument*/NULL);
 			ConfigurationErrorsException_t66512296 * L_39 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-			ConfigurationErrorsException__ctor_m3348329850(L_39, L_38, /*hidden argument*/NULL);
+			ConfigurationErrorsException__ctor_m3308054107(L_39, L_38, /*hidden argument*/NULL);
 			IL2CPP_RAISE_MANAGED_EXCEPTION(L_39, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 		}
 
@@ -28136,7 +28136,7 @@ IL_0171:
 			(L_79)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_80);
 			String_t* L_81 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral37995922, L_79, /*hidden argument*/NULL);
 			ConfigurationErrorsException_t66512296 * L_82 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-			ConfigurationErrorsException__ctor_m3348329850(L_82, L_81, /*hidden argument*/NULL);
+			ConfigurationErrorsException__ctor_m3308054107(L_82, L_81, /*hidden argument*/NULL);
 			IL2CPP_RAISE_MANAGED_EXCEPTION(L_82, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 		}
 
@@ -28285,7 +28285,7 @@ IL_01f3:
 		String_t* L_114 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral2598091099, L_112, /*hidden argument*/NULL);
 		Exception_t * L_115 = V_2;
 		ConfigurationErrorsException_t66512296 * L_116 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m2260069592(L_116, L_114, L_115, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m4283164494(L_116, L_114, L_115, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_116, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 	}
 
@@ -28299,7 +28299,7 @@ IL_0214:
 		(L_118)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_119);
 		String_t* L_120 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral2598091099, L_118, /*hidden argument*/NULL);
 		ConfigurationErrorsException_t66512296 * L_121 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-		ConfigurationErrorsException__ctor_m3348329850(L_121, L_120, /*hidden argument*/NULL);
+		ConfigurationErrorsException__ctor_m3308054107(L_121, L_120, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_121, NULL, TraceUtils_GetRuntimeObject_m4109278062_RuntimeMethod_var);
 	}
 
@@ -28543,7 +28543,7 @@ IL_003d:
 			(L_19)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject *)L_22);
 			String_t* L_23 = SR_GetString_m2133537544(NULL /*static, unused*/, _stringLiteral3931326849, L_19, /*hidden argument*/NULL);
 			ConfigurationErrorsException_t66512296 * L_24 = (ConfigurationErrorsException_t66512296 *)il2cpp_codegen_object_new(ConfigurationErrorsException_t66512296_il2cpp_TypeInfo_var);
-			ConfigurationErrorsException__ctor_m3348329850(L_24, L_23, /*hidden argument*/NULL);
+			ConfigurationErrorsException__ctor_m3308054107(L_24, L_23, /*hidden argument*/NULL);
 			IL2CPP_RAISE_MANAGED_EXCEPTION(L_24, NULL, TraceUtils_VerifyAttributes_m1233622274_RuntimeMethod_var);
 		}
 
@@ -28622,19 +28622,19 @@ extern "C" IL2CPP_METHOD_ATTR void TypedElement__ctor_m1172589865 (TypedElement_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_0 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_0, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_0, /*hidden argument*/NULL);
 		__this->set__properties_17(L_0);
 		ConfigurationPropertyCollection_t2852175726 * L_1 = __this->get__properties_17();
 		IL2CPP_RUNTIME_CLASS_INIT(TypedElement_t2581589637_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_2 = ((TypedElement_t2581589637_StaticFields*)il2cpp_codegen_static_fields_for(TypedElement_t2581589637_il2cpp_TypeInfo_var))->get__propTypeName_15();
 		NullCheck(L_1);
-		ConfigurationPropertyCollection_Add_m1567726929(L_1, L_2, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_1, L_2, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_3 = __this->get__properties_17();
 		ConfigurationProperty_t3590861854 * L_4 = ((TypedElement_t2581589637_StaticFields*)il2cpp_codegen_static_fields_for(TypedElement_t2581589637_il2cpp_TypeInfo_var))->get__propInitData_16();
 		NullCheck(L_3);
-		ConfigurationPropertyCollection_Add_m1567726929(L_3, L_4, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_3, L_4, /*hidden argument*/NULL);
 		Type_t * L_5 = ___baseType0;
 		__this->set__baseType_19(L_5);
 		return;
@@ -28652,7 +28652,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* TypedElement_get_InitData_m3072588071 (T
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(TypedElement_t2581589637_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((TypedElement_t2581589637_StaticFields*)il2cpp_codegen_static_fields_for(TypedElement_t2581589637_il2cpp_TypeInfo_var))->get__propInitData_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -28676,7 +28676,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* TypedElement_get_TypeName_m3345279128 (T
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(TypedElement_t2581589637_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((TypedElement_t2581589637_StaticFields*)il2cpp_codegen_static_fields_for(TypedElement_t2581589637_il2cpp_TypeInfo_var))->get__propTypeName_15();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -28693,7 +28693,7 @@ extern "C" IL2CPP_METHOD_ATTR void TypedElement_set_TypeName_m1206733726 (TypedE
 		IL2CPP_RUNTIME_CLASS_INIT(TypedElement_t2581589637_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((TypedElement_t2581589637_StaticFields*)il2cpp_codegen_static_fields_for(TypedElement_t2581589637_il2cpp_TypeInfo_var))->get__propTypeName_15();
 		String_t* L_1 = ___value0;
-		ConfigurationElement_set_Item_m1586528331(__this, L_0, L_1, /*hidden argument*/NULL);
+		ConfigurationElement_set_Item_m3493437340(__this, L_0, L_1, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -28736,13 +28736,13 @@ extern "C" IL2CPP_METHOD_ATTR void TypedElement__cctor_m1302783537 (RuntimeObjec
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		String_t* L_2 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
 		ConfigurationProperty_t3590861854 * L_3 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_3, _stringLiteral3243520166, L_1, L_2, ((int32_t)10), /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_3, _stringLiteral3243520166, L_1, L_2, ((int32_t)10), /*hidden argument*/NULL);
 		((TypedElement_t2581589637_StaticFields*)il2cpp_codegen_static_fields_for(TypedElement_t2581589637_il2cpp_TypeInfo_var))->set__propTypeName_15(L_3);
 		RuntimeTypeHandle_t3027515415  L_4 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_5 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_4, /*hidden argument*/NULL);
 		String_t* L_6 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
 		ConfigurationProperty_t3590861854 * L_7 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_7, _stringLiteral2389225945, L_5, L_6, 0, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_7, _stringLiteral2389225945, L_5, L_6, 0, /*hidden argument*/NULL);
 		((TypedElement_t2581589637_StaticFields*)il2cpp_codegen_static_fields_for(TypedElement_t2581589637_il2cpp_TypeInfo_var))->set__propInitData_16(L_7);
 		return;
 	}
@@ -38348,7 +38348,7 @@ IL_0039:
 			NullCheck(L_6);
 			AuthenticationModuleElementCollection_t1161221431 * L_7 = AuthenticationModulesSection_get_AuthenticationModules_m1522553951(L_6, /*hidden argument*/NULL);
 			NullCheck(L_7);
-			RuntimeObject* L_8 = ConfigurationElementCollection_GetEnumerator_m4043183664(L_7, /*hidden argument*/NULL);
+			RuntimeObject* L_8 = ConfigurationElementCollection_GetEnumerator_m4192431148(L_7, /*hidden argument*/NULL);
 			V_3 = L_8;
 		}
 
@@ -40505,7 +40505,7 @@ extern "C" IL2CPP_METHOD_ATTR void CaseInsensitiveAscii__cctor_m258705655 (Runti
 		((CaseInsensitiveAscii_t863499908_StaticFields*)il2cpp_codegen_static_fields_for(CaseInsensitiveAscii_t863499908_il2cpp_TypeInfo_var))->set_StaticInstance_0(L_0);
 		ByteU5BU5D_t4116647657* L_1 = (ByteU5BU5D_t4116647657*)SZArrayNew(ByteU5BU5D_t4116647657_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256));
 		ByteU5BU5D_t4116647657* L_2 = L_1;
-		RuntimeFieldHandle_t1871169219  L_3 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t3057255364____EEAFE8C6E1AB017237567305EE925C976CDB6458_16_FieldInfo_var) };
+		RuntimeFieldHandle_t1871169219  L_3 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t3057255365____EEAFE8C6E1AB017237567305EE925C976CDB6458_16_FieldInfo_var) };
 		RuntimeHelpers_InitializeArray_m3117905507(NULL /*static, unused*/, (RuntimeArray *)(RuntimeArray *)L_2, L_3, /*hidden argument*/NULL);
 		((CaseInsensitiveAscii_t863499908_StaticFields*)il2cpp_codegen_static_fields_for(CaseInsensitiveAscii_t863499908_il2cpp_TypeInfo_var))->set_AsciiToLower_1(L_2);
 		return;
@@ -40640,15 +40640,15 @@ extern "C" IL2CPP_METHOD_ATTR void AuthenticationModuleElement__cctor_m365053674
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral3243520166, L_1, NULL, 6, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral3243520166, L_1, NULL, 6, /*hidden argument*/NULL);
 		((AuthenticationModuleElement_t2289740666_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModuleElement_t2289740666_il2cpp_TypeInfo_var))->set_typeProp_16(L_2);
 		ConfigurationPropertyCollection_t2852175726 * L_3 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_3, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_3, /*hidden argument*/NULL);
 		((AuthenticationModuleElement_t2289740666_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModuleElement_t2289740666_il2cpp_TypeInfo_var))->set_properties_15(L_3);
 		ConfigurationPropertyCollection_t2852175726 * L_4 = ((AuthenticationModuleElement_t2289740666_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModuleElement_t2289740666_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_5 = ((AuthenticationModuleElement_t2289740666_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModuleElement_t2289740666_il2cpp_TypeInfo_var))->get_typeProp_16();
 		NullCheck(L_4);
-		ConfigurationPropertyCollection_Add_m1567726929(L_4, L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_4, L_5, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -40656,7 +40656,7 @@ extern "C" IL2CPP_METHOD_ATTR void AuthenticationModuleElement__cctor_m365053674
 extern "C" IL2CPP_METHOD_ATTR void AuthenticationModuleElement__ctor_m138841577 (AuthenticationModuleElement_t2289740666 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -40687,7 +40687,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* AuthenticationModuleElement_get_Type_m39
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(AuthenticationModuleElement_t2289740666_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((AuthenticationModuleElement_t2289740666_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModuleElement_t2289740666_il2cpp_TypeInfo_var))->get_typeProp_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -40766,15 +40766,15 @@ extern "C" IL2CPP_METHOD_ATTR void AuthenticationModulesSection__cctor_m20142432
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral757602046, L_1, NULL, 1, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral757602046, L_1, NULL, 1, /*hidden argument*/NULL);
 		((AuthenticationModulesSection_t1083221556_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModulesSection_t1083221556_il2cpp_TypeInfo_var))->set_authenticationModulesProp_20(L_2);
 		ConfigurationPropertyCollection_t2852175726 * L_3 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_3, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_3, /*hidden argument*/NULL);
 		((AuthenticationModulesSection_t1083221556_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModulesSection_t1083221556_il2cpp_TypeInfo_var))->set_properties_19(L_3);
 		ConfigurationPropertyCollection_t2852175726 * L_4 = ((AuthenticationModulesSection_t1083221556_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModulesSection_t1083221556_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_5 = ((AuthenticationModulesSection_t1083221556_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModulesSection_t1083221556_il2cpp_TypeInfo_var))->get_authenticationModulesProp_20();
 		NullCheck(L_4);
-		ConfigurationPropertyCollection_Add_m1567726929(L_4, L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_4, L_5, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -40805,7 +40805,7 @@ extern "C" IL2CPP_METHOD_ATTR AuthenticationModuleElementCollection_t1161221431 
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(AuthenticationModulesSection_t1083221556_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((AuthenticationModulesSection_t1083221556_StaticFields*)il2cpp_codegen_static_fields_for(AuthenticationModulesSection_t1083221556_il2cpp_TypeInfo_var))->get_authenticationModulesProp_20();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((AuthenticationModuleElementCollection_t1161221431 *)CastclassSealed((RuntimeObject*)L_1, AuthenticationModuleElementCollection_t1161221431_il2cpp_TypeInfo_var));
 	}
 }
@@ -40845,15 +40845,15 @@ extern "C" IL2CPP_METHOD_ATTR void BypassElement__cctor_m2973970370 (RuntimeObje
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral2350156779, L_1, NULL, 6, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral2350156779, L_1, NULL, 6, /*hidden argument*/NULL);
 		((BypassElement_t2358616601_StaticFields*)il2cpp_codegen_static_fields_for(BypassElement_t2358616601_il2cpp_TypeInfo_var))->set_addressProp_16(L_2);
 		ConfigurationPropertyCollection_t2852175726 * L_3 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_3, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_3, /*hidden argument*/NULL);
 		((BypassElement_t2358616601_StaticFields*)il2cpp_codegen_static_fields_for(BypassElement_t2358616601_il2cpp_TypeInfo_var))->set_properties_15(L_3);
 		ConfigurationPropertyCollection_t2852175726 * L_4 = ((BypassElement_t2358616601_StaticFields*)il2cpp_codegen_static_fields_for(BypassElement_t2358616601_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_5 = ((BypassElement_t2358616601_StaticFields*)il2cpp_codegen_static_fields_for(BypassElement_t2358616601_il2cpp_TypeInfo_var))->get_addressProp_16();
 		NullCheck(L_4);
-		ConfigurationPropertyCollection_Add_m1567726929(L_4, L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_4, L_5, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -40861,7 +40861,7 @@ extern "C" IL2CPP_METHOD_ATTR void BypassElement__cctor_m2973970370 (RuntimeObje
 extern "C" IL2CPP_METHOD_ATTR void BypassElement__ctor_m1241154676 (BypassElement_t2358616601 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -40877,7 +40877,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* BypassElement_get_Address_m2010615874 (B
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(BypassElement_t2358616601_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((BypassElement_t2358616601_StaticFields*)il2cpp_codegen_static_fields_for(BypassElement_t2358616601_il2cpp_TypeInfo_var))->get_addressProp_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -40908,7 +40908,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Bypa
 extern "C" IL2CPP_METHOD_ATTR void BypassElementCollection__ctor_m212830439 (BypassElementCollection_t47326401 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElementCollection__ctor_m2631610858(__this, /*hidden argument*/NULL);
+		ConfigurationElementCollection__ctor_m4158074757(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41196,26 +41196,26 @@ extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementElement__cctor_m152708878
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral2350156779, L_1, NULL, 6, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral2350156779, L_1, NULL, 6, /*hidden argument*/NULL);
 		((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->set_addressProp_16(L_2);
 		RuntimeTypeHandle_t3027515415  L_3 = { reinterpret_cast<intptr_t> (Int32_t2950945753_0_0_0_var) };
 		Type_t * L_4 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 		int32_t L_5 = 1;
 		RuntimeObject * L_6 = Box(Int32_t2950945753_il2cpp_TypeInfo_var, &L_5);
 		ConfigurationProperty_t3590861854 * L_7 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_7, _stringLiteral74268235, L_4, L_6, 2, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_7, _stringLiteral74268235, L_4, L_6, 2, /*hidden argument*/NULL);
 		((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->set_maxConnectionProp_17(L_7);
 		ConfigurationPropertyCollection_t2852175726 * L_8 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_8, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_8, /*hidden argument*/NULL);
 		((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->set_properties_15(L_8);
 		ConfigurationPropertyCollection_t2852175726 * L_9 = ((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_10 = ((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->get_addressProp_16();
 		NullCheck(L_9);
-		ConfigurationPropertyCollection_Add_m1567726929(L_9, L_10, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_9, L_10, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_11 = ((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_12 = ((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->get_maxConnectionProp_17();
 		NullCheck(L_11);
-		ConfigurationPropertyCollection_Add_m1567726929(L_11, L_12, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_11, L_12, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41223,7 +41223,7 @@ extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementElement__cctor_m152708878
 extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementElement__ctor_m654779051 (ConnectionManagementElement_t3857438253 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41239,7 +41239,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* ConnectionManagementElement_get_Address_
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->get_addressProp_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -41255,7 +41255,7 @@ extern "C" IL2CPP_METHOD_ATTR int32_t ConnectionManagementElement_get_MaxConnect
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ConnectionManagementElement_t3857438253_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementElement_t3857438253_il2cpp_TypeInfo_var))->get_maxConnectionProp_17();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((*(int32_t*)((int32_t*)UnBox(L_1, Int32_t2950945753_il2cpp_TypeInfo_var))));
 	}
 }
@@ -41286,7 +41286,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Conn
 extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementElementCollection__ctor_m3189515167 (ConnectionManagementElementCollection_t3860227195 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElementCollection__ctor_m2631610858(__this, /*hidden argument*/NULL);
+		ConfigurationElementCollection__ctor_m4158074757(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41357,15 +41357,15 @@ extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementSection__cctor_m270333416
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral3981528787, L_1, NULL, 1, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral3981528787, L_1, NULL, 1, /*hidden argument*/NULL);
 		((ConnectionManagementSection_t1603642748_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementSection_t1603642748_il2cpp_TypeInfo_var))->set_connectionManagementProp_19(L_2);
 		ConfigurationPropertyCollection_t2852175726 * L_3 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_3, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_3, /*hidden argument*/NULL);
 		((ConnectionManagementSection_t1603642748_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementSection_t1603642748_il2cpp_TypeInfo_var))->set_properties_20(L_3);
 		ConfigurationPropertyCollection_t2852175726 * L_4 = ((ConnectionManagementSection_t1603642748_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementSection_t1603642748_il2cpp_TypeInfo_var))->get_properties_20();
 		ConfigurationProperty_t3590861854 * L_5 = ((ConnectionManagementSection_t1603642748_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementSection_t1603642748_il2cpp_TypeInfo_var))->get_connectionManagementProp_19();
 		NullCheck(L_4);
-		ConfigurationPropertyCollection_Add_m1567726929(L_4, L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_4, L_5, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41373,7 +41373,7 @@ extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementSection__cctor_m270333416
 extern "C" IL2CPP_METHOD_ATTR void ConnectionManagementSection__ctor_m3584503771 (ConnectionManagementSection_t1603642748 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationSection__ctor_m3664598388(__this, /*hidden argument*/NULL);
+		ConfigurationSection__ctor_m2795685025(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41389,7 +41389,7 @@ extern "C" IL2CPP_METHOD_ATTR ConnectionManagementElementCollection_t3860227195 
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ConnectionManagementSection_t1603642748_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ConnectionManagementSection_t1603642748_StaticFields*)il2cpp_codegen_static_fields_for(ConnectionManagementSection_t1603642748_il2cpp_TypeInfo_var))->get_connectionManagementProp_19();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((ConnectionManagementElementCollection_t3860227195 *)CastclassSealed((RuntimeObject*)L_1, ConnectionManagementElementCollection_t3860227195_il2cpp_TypeInfo_var));
 	}
 }
@@ -41430,55 +41430,55 @@ extern "C" IL2CPP_METHOD_ATTR void DefaultProxySection__cctor_m913558996 (Runtim
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_2, _stringLiteral165771882, L_1, NULL, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_2, _stringLiteral165771882, L_1, NULL, /*hidden argument*/NULL);
 		((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->set_bypassListProp_20(L_2);
 		RuntimeTypeHandle_t3027515415  L_3 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_4 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 		bool L_5 = ((bool)1);
 		RuntimeObject * L_6 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_5);
 		ConfigurationProperty_t3590861854 * L_7 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_7, _stringLiteral646178060, L_4, L_6, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_7, _stringLiteral646178060, L_4, L_6, /*hidden argument*/NULL);
 		((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->set_enabledProp_21(L_7);
 		RuntimeTypeHandle_t3027515415  L_8 = { reinterpret_cast<intptr_t> (ModuleElement_t3252950656_0_0_0_var) };
 		Type_t * L_9 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_8, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_10 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_10, _stringLiteral3851748955, L_9, NULL, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_10, _stringLiteral3851748955, L_9, NULL, /*hidden argument*/NULL);
 		((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->set_moduleProp_22(L_10);
 		RuntimeTypeHandle_t3027515415  L_11 = { reinterpret_cast<intptr_t> (ProxyElement_t3214064751_0_0_0_var) };
 		Type_t * L_12 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_11, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_13 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_13, _stringLiteral3460481212, L_12, NULL, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_13, _stringLiteral3460481212, L_12, NULL, /*hidden argument*/NULL);
 		((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->set_proxyProp_23(L_13);
 		RuntimeTypeHandle_t3027515415  L_14 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_15 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_14, /*hidden argument*/NULL);
 		bool L_16 = ((bool)0);
 		RuntimeObject * L_17 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_16);
 		ConfigurationProperty_t3590861854 * L_18 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_18, _stringLiteral509821833, L_15, L_17, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_18, _stringLiteral509821833, L_15, L_17, /*hidden argument*/NULL);
 		((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->set_useDefaultCredentialsProp_24(L_18);
 		ConfigurationPropertyCollection_t2852175726 * L_19 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_19, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_19, /*hidden argument*/NULL);
 		((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->set_properties_19(L_19);
 		ConfigurationPropertyCollection_t2852175726 * L_20 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_21 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_bypassListProp_20();
 		NullCheck(L_20);
-		ConfigurationPropertyCollection_Add_m1567726929(L_20, L_21, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_20, L_21, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_22 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_23 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_enabledProp_21();
 		NullCheck(L_22);
-		ConfigurationPropertyCollection_Add_m1567726929(L_22, L_23, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_22, L_23, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_24 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_25 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_moduleProp_22();
 		NullCheck(L_24);
-		ConfigurationPropertyCollection_Add_m1567726929(L_24, L_25, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_24, L_25, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_26 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_27 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_proxyProp_23();
 		NullCheck(L_26);
-		ConfigurationPropertyCollection_Add_m1567726929(L_26, L_27, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_26, L_27, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_28 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_29 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_useDefaultCredentialsProp_24();
 		NullCheck(L_28);
-		ConfigurationPropertyCollection_Add_m1567726929(L_28, L_29, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_28, L_29, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41486,7 +41486,7 @@ extern "C" IL2CPP_METHOD_ATTR void DefaultProxySection__cctor_m913558996 (Runtim
 extern "C" IL2CPP_METHOD_ATTR void DefaultProxySection__ctor_m2255539104 (DefaultProxySection_t4167594595 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationSection__ctor_m3664598388(__this, /*hidden argument*/NULL);
+		ConfigurationSection__ctor_m2795685025(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41502,7 +41502,7 @@ extern "C" IL2CPP_METHOD_ATTR BypassElementCollection_t47326401 * DefaultProxySe
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_bypassListProp_20();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((BypassElementCollection_t47326401 *)CastclassSealed((RuntimeObject*)L_1, BypassElementCollection_t47326401_il2cpp_TypeInfo_var));
 	}
 }
@@ -41518,7 +41518,7 @@ extern "C" IL2CPP_METHOD_ATTR ProxyElement_t3214064751 * DefaultProxySection_get
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((DefaultProxySection_t4167594595_StaticFields*)il2cpp_codegen_static_fields_for(DefaultProxySection_t4167594595_il2cpp_TypeInfo_var))->get_proxyProp_23();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((ProxyElement_t3214064751 *)CastclassSealed((RuntimeObject*)L_1, ProxyElement_t3214064751_il2cpp_TypeInfo_var));
 	}
 }
@@ -41695,7 +41695,7 @@ IL_0087:
 		NullCheck(L_26);
 		BypassElementCollection_t47326401 * L_27 = DefaultProxySection_get_BypassList_m2593016892(L_26, /*hidden argument*/NULL);
 		NullCheck(L_27);
-		RuntimeObject* L_28 = ConfigurationElementCollection_GetEnumerator_m4043183664(L_27, /*hidden argument*/NULL);
+		RuntimeObject* L_28 = ConfigurationElementCollection_GetEnumerator_m4192431148(L_27, /*hidden argument*/NULL);
 		V_4 = L_28;
 	}
 
@@ -41936,48 +41936,48 @@ extern "C" IL2CPP_METHOD_ATTR void HttpWebRequestElement__cctor_m4175629833 (Run
 		int32_t L_2 = ((int32_t)64);
 		RuntimeObject * L_3 = Box(Int32_t2950945753_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_4, _stringLiteral1841704655, L_1, L_3, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_4, _stringLiteral1841704655, L_1, L_3, /*hidden argument*/NULL);
 		((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->set_maximumErrorResponseLengthProp_15(L_4);
 		RuntimeTypeHandle_t3027515415  L_5 = { reinterpret_cast<intptr_t> (Int32_t2950945753_0_0_0_var) };
 		Type_t * L_6 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		int32_t L_7 = ((int32_t)64);
 		RuntimeObject * L_8 = Box(Int32_t2950945753_il2cpp_TypeInfo_var, &L_7);
 		ConfigurationProperty_t3590861854 * L_9 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_9, _stringLiteral2977176325, L_6, L_8, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_9, _stringLiteral2977176325, L_6, L_8, /*hidden argument*/NULL);
 		((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->set_maximumResponseHeadersLengthProp_16(L_9);
 		RuntimeTypeHandle_t3027515415  L_10 = { reinterpret_cast<intptr_t> (Int32_t2950945753_0_0_0_var) };
 		Type_t * L_11 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_10, /*hidden argument*/NULL);
 		int32_t L_12 = (-1);
 		RuntimeObject * L_13 = Box(Int32_t2950945753_il2cpp_TypeInfo_var, &L_12);
 		ConfigurationProperty_t3590861854 * L_14 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_14, _stringLiteral10692955, L_11, L_13, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_14, _stringLiteral10692955, L_11, L_13, /*hidden argument*/NULL);
 		((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->set_maximumUnauthorizedUploadLengthProp_17(L_14);
 		RuntimeTypeHandle_t3027515415  L_15 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_16 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_15, /*hidden argument*/NULL);
 		bool L_17 = ((bool)0);
 		RuntimeObject * L_18 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_17);
 		ConfigurationProperty_t3590861854 * L_19 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_19, _stringLiteral4105521188, L_16, L_18, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_19, _stringLiteral4105521188, L_16, L_18, /*hidden argument*/NULL);
 		((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->set_useUnsafeHeaderParsingProp_18(L_19);
 		ConfigurationPropertyCollection_t2852175726 * L_20 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_20, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_20, /*hidden argument*/NULL);
 		((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->set_properties_19(L_20);
 		ConfigurationPropertyCollection_t2852175726 * L_21 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_22 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_maximumErrorResponseLengthProp_15();
 		NullCheck(L_21);
-		ConfigurationPropertyCollection_Add_m1567726929(L_21, L_22, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_21, L_22, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_23 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_24 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_maximumResponseHeadersLengthProp_16();
 		NullCheck(L_23);
-		ConfigurationPropertyCollection_Add_m1567726929(L_23, L_24, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_23, L_24, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_25 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_26 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_maximumUnauthorizedUploadLengthProp_17();
 		NullCheck(L_25);
-		ConfigurationPropertyCollection_Add_m1567726929(L_25, L_26, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_25, L_26, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_27 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_28 = ((HttpWebRequestElement_t2801692355_StaticFields*)il2cpp_codegen_static_fields_for(HttpWebRequestElement_t2801692355_il2cpp_TypeInfo_var))->get_useUnsafeHeaderParsingProp_18();
 		NullCheck(L_27);
-		ConfigurationPropertyCollection_Add_m1567726929(L_27, L_28, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_27, L_28, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -41985,7 +41985,7 @@ extern "C" IL2CPP_METHOD_ATTR void HttpWebRequestElement__cctor_m4175629833 (Run
 extern "C" IL2CPP_METHOD_ATTR void HttpWebRequestElement__ctor_m3584797493 (HttpWebRequestElement_t2801692355 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42008,7 +42008,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Http
 extern "C" IL2CPP_METHOD_ATTR void HttpWebRequestElement_PostDeserialize_m316616762 (HttpWebRequestElement_t2801692355 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement_PostDeserialize_m1844425646(__this, /*hidden argument*/NULL);
+		ConfigurationElement_PostDeserialize_m3753298177(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42036,15 +42036,15 @@ extern "C" IL2CPP_METHOD_ATTR void Ipv6Element__cctor_m1125152802 (RuntimeObject
 		bool L_2 = ((bool)0);
 		RuntimeObject * L_3 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_4, _stringLiteral646178060, L_1, L_3, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_4, _stringLiteral646178060, L_1, L_3, /*hidden argument*/NULL);
 		((Ipv6Element_t180053194_StaticFields*)il2cpp_codegen_static_fields_for(Ipv6Element_t180053194_il2cpp_TypeInfo_var))->set_enabledProp_16(L_4);
 		ConfigurationPropertyCollection_t2852175726 * L_5 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_5, /*hidden argument*/NULL);
 		((Ipv6Element_t180053194_StaticFields*)il2cpp_codegen_static_fields_for(Ipv6Element_t180053194_il2cpp_TypeInfo_var))->set_properties_15(L_5);
 		ConfigurationPropertyCollection_t2852175726 * L_6 = ((Ipv6Element_t180053194_StaticFields*)il2cpp_codegen_static_fields_for(Ipv6Element_t180053194_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_7 = ((Ipv6Element_t180053194_StaticFields*)il2cpp_codegen_static_fields_for(Ipv6Element_t180053194_il2cpp_TypeInfo_var))->get_enabledProp_16();
 		NullCheck(L_6);
-		ConfigurationPropertyCollection_Add_m1567726929(L_6, L_7, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_6, L_7, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42052,7 +42052,7 @@ extern "C" IL2CPP_METHOD_ATTR void Ipv6Element__cctor_m1125152802 (RuntimeObject
 extern "C" IL2CPP_METHOD_ATTR void Ipv6Element__ctor_m682418848 (Ipv6Element_t180053194 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42093,15 +42093,15 @@ extern "C" IL2CPP_METHOD_ATTR void ModuleElement__cctor_m2558120034 (RuntimeObje
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_2, _stringLiteral3243520166, L_1, NULL, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_2, _stringLiteral3243520166, L_1, NULL, /*hidden argument*/NULL);
 		((ModuleElement_t3252950656_StaticFields*)il2cpp_codegen_static_fields_for(ModuleElement_t3252950656_il2cpp_TypeInfo_var))->set_typeProp_16(L_2);
 		ConfigurationPropertyCollection_t2852175726 * L_3 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_3, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_3, /*hidden argument*/NULL);
 		((ModuleElement_t3252950656_StaticFields*)il2cpp_codegen_static_fields_for(ModuleElement_t3252950656_il2cpp_TypeInfo_var))->set_properties_15(L_3);
 		ConfigurationPropertyCollection_t2852175726 * L_4 = ((ModuleElement_t3252950656_StaticFields*)il2cpp_codegen_static_fields_for(ModuleElement_t3252950656_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_5 = ((ModuleElement_t3252950656_StaticFields*)il2cpp_codegen_static_fields_for(ModuleElement_t3252950656_il2cpp_TypeInfo_var))->get_typeProp_16();
 		NullCheck(L_4);
-		ConfigurationPropertyCollection_Add_m1567726929(L_4, L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_4, L_5, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42132,7 +42132,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Modu
 extern "C" IL2CPP_METHOD_ATTR void NetSectionGroup__ctor_m2901639026 (NetSectionGroup_t3270122580 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationSectionGroup__ctor_m167204198(__this, /*hidden argument*/NULL);
+		ConfigurationSectionGroup__ctor_m2085051039(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42160,15 +42160,15 @@ extern "C" IL2CPP_METHOD_ATTR void PerformanceCountersElement__cctor_m2254152306
 		bool L_2 = ((bool)0);
 		RuntimeObject * L_3 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_4, _stringLiteral646178060, L_1, L_3, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_4, _stringLiteral646178060, L_1, L_3, /*hidden argument*/NULL);
 		((PerformanceCountersElement_t4093363992_StaticFields*)il2cpp_codegen_static_fields_for(PerformanceCountersElement_t4093363992_il2cpp_TypeInfo_var))->set_enabledProp_15(L_4);
 		ConfigurationPropertyCollection_t2852175726 * L_5 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_5, /*hidden argument*/NULL);
 		((PerformanceCountersElement_t4093363992_StaticFields*)il2cpp_codegen_static_fields_for(PerformanceCountersElement_t4093363992_il2cpp_TypeInfo_var))->set_properties_16(L_5);
 		ConfigurationPropertyCollection_t2852175726 * L_6 = ((PerformanceCountersElement_t4093363992_StaticFields*)il2cpp_codegen_static_fields_for(PerformanceCountersElement_t4093363992_il2cpp_TypeInfo_var))->get_properties_16();
 		ConfigurationProperty_t3590861854 * L_7 = ((PerformanceCountersElement_t4093363992_StaticFields*)il2cpp_codegen_static_fields_for(PerformanceCountersElement_t4093363992_il2cpp_TypeInfo_var))->get_enabledProp_15();
 		NullCheck(L_6);
-		ConfigurationPropertyCollection_Add_m1567726929(L_6, L_7, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_6, L_7, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42191,7 +42191,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * Perf
 extern "C" IL2CPP_METHOD_ATTR void PerformanceCountersElement__ctor_m588614617 (PerformanceCountersElement_t4093363992 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42219,55 +42219,55 @@ extern "C" IL2CPP_METHOD_ATTR void ProxyElement__cctor_m2639672692 (RuntimeObjec
 		int32_t L_2 = ((int32_t)(-1));
 		RuntimeObject * L_3 = Box(AutoDetectValues_t1649618618_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_4, _stringLiteral3442936022, L_1, L_3, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_4, _stringLiteral3442936022, L_1, L_3, /*hidden argument*/NULL);
 		((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->set_autoDetectProp_16(L_4);
 		RuntimeTypeHandle_t3027515415  L_5 = { reinterpret_cast<intptr_t> (BypassOnLocalValues_t945670496_0_0_0_var) };
 		Type_t * L_6 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		int32_t L_7 = ((int32_t)(-1));
 		RuntimeObject * L_8 = Box(BypassOnLocalValues_t945670496_il2cpp_TypeInfo_var, &L_7);
 		ConfigurationProperty_t3590861854 * L_9 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_9, _stringLiteral794131071, L_6, L_8, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_9, _stringLiteral794131071, L_6, L_8, /*hidden argument*/NULL);
 		((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->set_bypassOnLocalProp_17(L_9);
 		RuntimeTypeHandle_t3027515415  L_10 = { reinterpret_cast<intptr_t> (Uri_t100236324_0_0_0_var) };
 		Type_t * L_11 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_10, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_12 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_12, _stringLiteral1008880119, L_11, NULL, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_12, _stringLiteral1008880119, L_11, NULL, /*hidden argument*/NULL);
 		((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->set_proxyAddressProp_18(L_12);
 		RuntimeTypeHandle_t3027515415  L_13 = { reinterpret_cast<intptr_t> (Uri_t100236324_0_0_0_var) };
 		Type_t * L_14 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_13, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_15 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_15, _stringLiteral837018341, L_14, NULL, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_15, _stringLiteral837018341, L_14, NULL, /*hidden argument*/NULL);
 		((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->set_scriptLocationProp_19(L_15);
 		RuntimeTypeHandle_t3027515415  L_16 = { reinterpret_cast<intptr_t> (UseSystemDefaultValues_t2711047072_0_0_0_var) };
 		Type_t * L_17 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_16, /*hidden argument*/NULL);
 		int32_t L_18 = ((int32_t)(-1));
 		RuntimeObject * L_19 = Box(UseSystemDefaultValues_t2711047072_il2cpp_TypeInfo_var, &L_18);
 		ConfigurationProperty_t3590861854 * L_20 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_20, _stringLiteral3588019078, L_17, L_19, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_20, _stringLiteral3588019078, L_17, L_19, /*hidden argument*/NULL);
 		((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->set_useSystemDefaultProp_20(L_20);
 		ConfigurationPropertyCollection_t2852175726 * L_21 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_21, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_21, /*hidden argument*/NULL);
 		((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->set_properties_15(L_21);
 		ConfigurationPropertyCollection_t2852175726 * L_22 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_23 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_autoDetectProp_16();
 		NullCheck(L_22);
-		ConfigurationPropertyCollection_Add_m1567726929(L_22, L_23, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_22, L_23, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_24 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_25 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_bypassOnLocalProp_17();
 		NullCheck(L_24);
-		ConfigurationPropertyCollection_Add_m1567726929(L_24, L_25, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_24, L_25, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_26 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_27 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_proxyAddressProp_18();
 		NullCheck(L_26);
-		ConfigurationPropertyCollection_Add_m1567726929(L_26, L_27, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_26, L_27, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_28 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_29 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_scriptLocationProp_19();
 		NullCheck(L_28);
-		ConfigurationPropertyCollection_Add_m1567726929(L_28, L_29, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_28, L_29, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_30 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_31 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_useSystemDefaultProp_20();
 		NullCheck(L_30);
-		ConfigurationPropertyCollection_Add_m1567726929(L_30, L_31, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_30, L_31, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42275,7 +42275,7 @@ extern "C" IL2CPP_METHOD_ATTR void ProxyElement__cctor_m2639672692 (RuntimeObjec
 extern "C" IL2CPP_METHOD_ATTR void ProxyElement__ctor_m1318337101 (ProxyElement_t3214064751 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42291,7 +42291,7 @@ extern "C" IL2CPP_METHOD_ATTR int32_t ProxyElement_get_BypassOnLocal_m3038235717
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ProxyElement_t3214064751_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_bypassOnLocalProp_17();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((*(int32_t*)((int32_t*)UnBox(L_1, BypassOnLocalValues_t945670496_il2cpp_TypeInfo_var))));
 	}
 }
@@ -42307,7 +42307,7 @@ extern "C" IL2CPP_METHOD_ATTR Uri_t100236324 * ProxyElement_get_ProxyAddress_m20
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ProxyElement_t3214064751_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_proxyAddressProp_18();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((Uri_t100236324 *)CastclassClass((RuntimeObject*)L_1, Uri_t100236324_il2cpp_TypeInfo_var));
 	}
 }
@@ -42323,7 +42323,7 @@ extern "C" IL2CPP_METHOD_ATTR int32_t ProxyElement_get_UseSystemDefault_m4850077
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ProxyElement_t3214064751_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((ProxyElement_t3214064751_StaticFields*)il2cpp_codegen_static_fields_for(ProxyElement_t3214064751_il2cpp_TypeInfo_var))->get_useSystemDefaultProp_20();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((*(int32_t*)((int32_t*)UnBox(L_1, UseSystemDefaultValues_t2711047072_il2cpp_TypeInfo_var))));
 	}
 }
@@ -42390,70 +42390,70 @@ extern "C" IL2CPP_METHOD_ATTR void ServicePointManagerElement__cctor_m1034988251
 		bool L_2 = ((bool)1);
 		RuntimeObject * L_3 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_4, _stringLiteral3948641936, L_1, L_3, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_4, _stringLiteral3948641936, L_1, L_3, /*hidden argument*/NULL);
 		((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->set_checkCertificateNameProp_16(L_4);
 		RuntimeTypeHandle_t3027515415  L_5 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_6 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		bool L_7 = ((bool)0);
 		RuntimeObject * L_8 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_7);
 		ConfigurationProperty_t3590861854 * L_9 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_9, _stringLiteral3226143518, L_6, L_8, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_9, _stringLiteral3226143518, L_6, L_8, /*hidden argument*/NULL);
 		((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->set_checkCertificateRevocationListProp_17(L_9);
 		RuntimeTypeHandle_t3027515415  L_10 = { reinterpret_cast<intptr_t> (Int32_t2950945753_0_0_0_var) };
 		Type_t * L_11 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_10, /*hidden argument*/NULL);
 		int32_t L_12 = ((int32_t)120000);
 		RuntimeObject * L_13 = Box(Int32_t2950945753_il2cpp_TypeInfo_var, &L_12);
 		ConfigurationProperty_t3590861854 * L_14 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_14, _stringLiteral3075574652, L_11, L_13, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_14, _stringLiteral3075574652, L_11, L_13, /*hidden argument*/NULL);
 		((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->set_dnsRefreshTimeoutProp_18(L_14);
 		RuntimeTypeHandle_t3027515415  L_15 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_16 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_15, /*hidden argument*/NULL);
 		bool L_17 = ((bool)0);
 		RuntimeObject * L_18 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_17);
 		ConfigurationProperty_t3590861854 * L_19 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_19, _stringLiteral2447942539, L_16, L_18, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_19, _stringLiteral2447942539, L_16, L_18, /*hidden argument*/NULL);
 		((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->set_enableDnsRoundRobinProp_19(L_19);
 		RuntimeTypeHandle_t3027515415  L_20 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_21 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_20, /*hidden argument*/NULL);
 		bool L_22 = ((bool)1);
 		RuntimeObject * L_23 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_22);
 		ConfigurationProperty_t3590861854 * L_24 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_24, _stringLiteral3397110955, L_21, L_23, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_24, _stringLiteral3397110955, L_21, L_23, /*hidden argument*/NULL);
 		((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->set_expect100ContinueProp_20(L_24);
 		RuntimeTypeHandle_t3027515415  L_25 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_26 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_25, /*hidden argument*/NULL);
 		bool L_27 = ((bool)1);
 		RuntimeObject * L_28 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_27);
 		ConfigurationProperty_t3590861854 * L_29 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_29, _stringLiteral4076253765, L_26, L_28, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_29, _stringLiteral4076253765, L_26, L_28, /*hidden argument*/NULL);
 		((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->set_useNagleAlgorithmProp_21(L_29);
 		ConfigurationPropertyCollection_t2852175726 * L_30 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_30, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_30, /*hidden argument*/NULL);
 		((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->set_properties_15(L_30);
 		ConfigurationPropertyCollection_t2852175726 * L_31 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_32 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_checkCertificateNameProp_16();
 		NullCheck(L_31);
-		ConfigurationPropertyCollection_Add_m1567726929(L_31, L_32, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_31, L_32, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_33 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_34 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_checkCertificateRevocationListProp_17();
 		NullCheck(L_33);
-		ConfigurationPropertyCollection_Add_m1567726929(L_33, L_34, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_33, L_34, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_35 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_36 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_dnsRefreshTimeoutProp_18();
 		NullCheck(L_35);
-		ConfigurationPropertyCollection_Add_m1567726929(L_35, L_36, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_35, L_36, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_37 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_38 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_enableDnsRoundRobinProp_19();
 		NullCheck(L_37);
-		ConfigurationPropertyCollection_Add_m1567726929(L_37, L_38, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_37, L_38, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_39 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_40 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_expect100ContinueProp_20();
 		NullCheck(L_39);
-		ConfigurationPropertyCollection_Add_m1567726929(L_39, L_40, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_39, L_40, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_41 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_42 = ((ServicePointManagerElement_t2768640361_StaticFields*)il2cpp_codegen_static_fields_for(ServicePointManagerElement_t2768640361_il2cpp_TypeInfo_var))->get_useNagleAlgorithmProp_21();
 		NullCheck(L_41);
-		ConfigurationPropertyCollection_Add_m1567726929(L_41, L_42, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_41, L_42, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42461,7 +42461,7 @@ extern "C" IL2CPP_METHOD_ATTR void ServicePointManagerElement__cctor_m1034988251
 extern "C" IL2CPP_METHOD_ATTR void ServicePointManagerElement__ctor_m3119309968 (ServicePointManagerElement_t2768640361 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42509,60 +42509,60 @@ extern "C" IL2CPP_METHOD_ATTR void SettingsSection__cctor_m1293608908 (RuntimeOb
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m1117082566(L_2, _stringLiteral2552955932, L_1, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m3312264195(L_2, _stringLiteral2552955932, L_1, /*hidden argument*/NULL);
 		((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->set_httpWebRequestProp_20(L_2);
 		RuntimeTypeHandle_t3027515415  L_3 = { reinterpret_cast<intptr_t> (Ipv6Element_t180053194_0_0_0_var) };
 		Type_t * L_4 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_5 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m1117082566(L_5, _stringLiteral3806653507, L_4, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m3312264195(L_5, _stringLiteral3806653507, L_4, /*hidden argument*/NULL);
 		((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->set_ipv6Prop_21(L_5);
 		RuntimeTypeHandle_t3027515415  L_6 = { reinterpret_cast<intptr_t> (PerformanceCountersElement_t4093363992_0_0_0_var) };
 		Type_t * L_7 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_6, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_8 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m1117082566(L_8, _stringLiteral1922940613, L_7, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m3312264195(L_8, _stringLiteral1922940613, L_7, /*hidden argument*/NULL);
 		((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->set_performanceCountersProp_22(L_8);
 		RuntimeTypeHandle_t3027515415  L_9 = { reinterpret_cast<intptr_t> (ServicePointManagerElement_t2768640361_0_0_0_var) };
 		Type_t * L_10 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_9, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_11 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m1117082566(L_11, _stringLiteral1048376966, L_10, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m3312264195(L_11, _stringLiteral1048376966, L_10, /*hidden argument*/NULL);
 		((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->set_servicePointManagerProp_23(L_11);
 		RuntimeTypeHandle_t3027515415  L_12 = { reinterpret_cast<intptr_t> (SocketElement_t3329874080_0_0_0_var) };
 		Type_t * L_13 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_12, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_14 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m1117082566(L_14, _stringLiteral4269838979, L_13, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m3312264195(L_14, _stringLiteral4269838979, L_13, /*hidden argument*/NULL);
 		((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->set_socketProp_25(L_14);
 		RuntimeTypeHandle_t3027515415  L_15 = { reinterpret_cast<intptr_t> (WebProxyScriptElement_t477406598_0_0_0_var) };
 		Type_t * L_16 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_15, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_17 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m1117082566(L_17, _stringLiteral926514360, L_16, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m3312264195(L_17, _stringLiteral926514360, L_16, /*hidden argument*/NULL);
 		((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->set_webProxyScriptProp_24(L_17);
 		ConfigurationPropertyCollection_t2852175726 * L_18 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_18, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_18, /*hidden argument*/NULL);
 		((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->set_properties_19(L_18);
 		ConfigurationPropertyCollection_t2852175726 * L_19 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_20 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_httpWebRequestProp_20();
 		NullCheck(L_19);
-		ConfigurationPropertyCollection_Add_m1567726929(L_19, L_20, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_19, L_20, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_21 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_22 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_ipv6Prop_21();
 		NullCheck(L_21);
-		ConfigurationPropertyCollection_Add_m1567726929(L_21, L_22, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_21, L_22, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_23 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_24 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_performanceCountersProp_22();
 		NullCheck(L_23);
-		ConfigurationPropertyCollection_Add_m1567726929(L_23, L_24, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_23, L_24, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_25 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_26 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_servicePointManagerProp_23();
 		NullCheck(L_25);
-		ConfigurationPropertyCollection_Add_m1567726929(L_25, L_26, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_25, L_26, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_27 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_28 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_socketProp_25();
 		NullCheck(L_27);
-		ConfigurationPropertyCollection_Add_m1567726929(L_27, L_28, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_27, L_28, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_29 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_30 = ((SettingsSection_t1259474535_StaticFields*)il2cpp_codegen_static_fields_for(SettingsSection_t1259474535_il2cpp_TypeInfo_var))->get_webProxyScriptProp_24();
 		NullCheck(L_29);
-		ConfigurationPropertyCollection_Add_m1567726929(L_29, L_30, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_29, L_30, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42570,7 +42570,7 @@ extern "C" IL2CPP_METHOD_ATTR void SettingsSection__cctor_m1293608908 (RuntimeOb
 extern "C" IL2CPP_METHOD_ATTR void SettingsSection__ctor_m2054822588 (SettingsSection_t1259474535 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationSection__ctor_m3664598388(__this, /*hidden argument*/NULL);
+		ConfigurationSection__ctor_m2795685025(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42663,33 +42663,33 @@ extern "C" IL2CPP_METHOD_ATTR void SocketElement__ctor_m2095388311 (SocketElemen
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		RuntimeTypeHandle_t3027515415  L_0 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		bool L_2 = ((bool)0);
 		RuntimeObject * L_3 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_2);
 		ConfigurationProperty_t3590861854 * L_4 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_4, _stringLiteral2359327129, L_1, L_3, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_4, _stringLiteral2359327129, L_1, L_3, /*hidden argument*/NULL);
 		((SocketElement_t3329874080_StaticFields*)il2cpp_codegen_static_fields_for(SocketElement_t3329874080_il2cpp_TypeInfo_var))->set_alwaysUseCompletionPortsForAcceptProp_16(L_4);
 		RuntimeTypeHandle_t3027515415  L_5 = { reinterpret_cast<intptr_t> (Boolean_t97287965_0_0_0_var) };
 		Type_t * L_6 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		bool L_7 = ((bool)0);
 		RuntimeObject * L_8 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_7);
 		ConfigurationProperty_t3590861854 * L_9 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_9, _stringLiteral3119676097, L_6, L_8, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_9, _stringLiteral3119676097, L_6, L_8, /*hidden argument*/NULL);
 		((SocketElement_t3329874080_StaticFields*)il2cpp_codegen_static_fields_for(SocketElement_t3329874080_il2cpp_TypeInfo_var))->set_alwaysUseCompletionPortsForConnectProp_17(L_9);
 		ConfigurationPropertyCollection_t2852175726 * L_10 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_10, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_10, /*hidden argument*/NULL);
 		((SocketElement_t3329874080_StaticFields*)il2cpp_codegen_static_fields_for(SocketElement_t3329874080_il2cpp_TypeInfo_var))->set_properties_15(L_10);
 		ConfigurationPropertyCollection_t2852175726 * L_11 = ((SocketElement_t3329874080_StaticFields*)il2cpp_codegen_static_fields_for(SocketElement_t3329874080_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_12 = ((SocketElement_t3329874080_StaticFields*)il2cpp_codegen_static_fields_for(SocketElement_t3329874080_il2cpp_TypeInfo_var))->get_alwaysUseCompletionPortsForAcceptProp_16();
 		NullCheck(L_11);
-		ConfigurationPropertyCollection_Add_m1567726929(L_11, L_12, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_11, L_12, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_13 = ((SocketElement_t3329874080_StaticFields*)il2cpp_codegen_static_fields_for(SocketElement_t3329874080_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_14 = ((SocketElement_t3329874080_StaticFields*)il2cpp_codegen_static_fields_for(SocketElement_t3329874080_il2cpp_TypeInfo_var))->get_alwaysUseCompletionPortsForConnectProp_17();
 		NullCheck(L_13);
-		ConfigurationPropertyCollection_Add_m1567726929(L_13, L_14, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_13, L_14, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42741,15 +42741,15 @@ extern "C" IL2CPP_METHOD_ATTR void WebProxyScriptElement__cctor_m3464241387 (Run
 		TimeSpan_t881159249  L_3 = L_2;
 		RuntimeObject * L_4 = Box(TimeSpan_t881159249_il2cpp_TypeInfo_var, &L_3);
 		ConfigurationProperty_t3590861854 * L_5 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m635809073(L_5, _stringLiteral2478378977, L_1, L_4, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2404851808(L_5, _stringLiteral2478378977, L_1, L_4, /*hidden argument*/NULL);
 		((WebProxyScriptElement_t477406598_StaticFields*)il2cpp_codegen_static_fields_for(WebProxyScriptElement_t477406598_il2cpp_TypeInfo_var))->set_downloadTimeoutProp_15(L_5);
 		ConfigurationPropertyCollection_t2852175726 * L_6 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_6, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_6, /*hidden argument*/NULL);
 		((WebProxyScriptElement_t477406598_StaticFields*)il2cpp_codegen_static_fields_for(WebProxyScriptElement_t477406598_il2cpp_TypeInfo_var))->set_properties_16(L_6);
 		ConfigurationPropertyCollection_t2852175726 * L_7 = ((WebProxyScriptElement_t477406598_StaticFields*)il2cpp_codegen_static_fields_for(WebProxyScriptElement_t477406598_il2cpp_TypeInfo_var))->get_properties_16();
 		ConfigurationProperty_t3590861854 * L_8 = ((WebProxyScriptElement_t477406598_StaticFields*)il2cpp_codegen_static_fields_for(WebProxyScriptElement_t477406598_il2cpp_TypeInfo_var))->get_downloadTimeoutProp_15();
 		NullCheck(L_7);
-		ConfigurationPropertyCollection_Add_m1567726929(L_7, L_8, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_7, L_8, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42779,7 +42779,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * WebP
 extern "C" IL2CPP_METHOD_ATTR void WebProxyScriptElement__ctor_m3524928016 (WebProxyScriptElement_t477406598 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42805,24 +42805,24 @@ extern "C" IL2CPP_METHOD_ATTR void WebRequestModuleElement__cctor_m479835467 (Ru
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral1220639822, L_1, NULL, 6, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral1220639822, L_1, NULL, 6, /*hidden argument*/NULL);
 		((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->set_prefixProp_16(L_2);
 		RuntimeTypeHandle_t3027515415  L_3 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		Type_t * L_4 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_5 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m1117082566(L_5, _stringLiteral3243520166, L_4, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m3312264195(L_5, _stringLiteral3243520166, L_4, /*hidden argument*/NULL);
 		((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->set_typeProp_17(L_5);
 		ConfigurationPropertyCollection_t2852175726 * L_6 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_6, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_6, /*hidden argument*/NULL);
 		((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->set_properties_15(L_6);
 		ConfigurationPropertyCollection_t2852175726 * L_7 = ((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_8 = ((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->get_prefixProp_16();
 		NullCheck(L_7);
-		ConfigurationPropertyCollection_Add_m1567726929(L_7, L_8, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_7, L_8, /*hidden argument*/NULL);
 		ConfigurationPropertyCollection_t2852175726 * L_9 = ((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->get_properties_15();
 		ConfigurationProperty_t3590861854 * L_10 = ((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->get_typeProp_17();
 		NullCheck(L_9);
-		ConfigurationPropertyCollection_Add_m1567726929(L_9, L_10, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_9, L_10, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42830,7 +42830,7 @@ extern "C" IL2CPP_METHOD_ATTR void WebRequestModuleElement__cctor_m479835467 (Ru
 extern "C" IL2CPP_METHOD_ATTR void WebRequestModuleElement__ctor_m3042492242 (WebRequestModuleElement_t1406085120 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElement__ctor_m252316685(__this, /*hidden argument*/NULL);
+		ConfigurationElement__ctor_m4116197893(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42846,7 +42846,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* WebRequestModuleElement_get_Prefix_m4037
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->get_prefixProp_16();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var));
 	}
 }
@@ -42862,7 +42862,7 @@ extern "C" IL2CPP_METHOD_ATTR Type_t * WebRequestModuleElement_get_Type_m2911861
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((WebRequestModuleElement_t1406085120_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModuleElement_t1406085120_il2cpp_TypeInfo_var))->get_typeProp_17();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_2 = il2cpp_codegen_get_type((Il2CppMethodPointer)&Type_GetType_m1693760368, ((String_t*)CastclassSealed((RuntimeObject*)L_1, String_t_il2cpp_TypeInfo_var)), "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089");
 		return L_2;
@@ -42895,7 +42895,7 @@ extern "C" IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t2852175726 * WebR
 extern "C" IL2CPP_METHOD_ATTR void WebRequestModuleElementCollection__ctor_m4269983751 (WebRequestModuleElementCollection_t925190782 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationElementCollection__ctor_m2631610858(__this, /*hidden argument*/NULL);
+		ConfigurationElementCollection__ctor_m4158074757(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -42966,15 +42966,15 @@ extern "C" IL2CPP_METHOD_ATTR void WebRequestModulesSection__cctor_m1494955898 (
 		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
 		Type_t * L_1 = Type_GetTypeFromHandle_m1620074514(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		ConfigurationProperty_t3590861854 * L_2 = (ConfigurationProperty_t3590861854 *)il2cpp_codegen_object_new(ConfigurationProperty_t3590861854_il2cpp_TypeInfo_var);
-		ConfigurationProperty__ctor_m3843348878(L_2, _stringLiteral757602046, L_1, NULL, 1, /*hidden argument*/NULL);
+		ConfigurationProperty__ctor_m2121647601(L_2, _stringLiteral757602046, L_1, NULL, 1, /*hidden argument*/NULL);
 		((WebRequestModulesSection_t4132732301_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModulesSection_t4132732301_il2cpp_TypeInfo_var))->set_webRequestModulesProp_20(L_2);
 		ConfigurationPropertyCollection_t2852175726 * L_3 = (ConfigurationPropertyCollection_t2852175726 *)il2cpp_codegen_object_new(ConfigurationPropertyCollection_t2852175726_il2cpp_TypeInfo_var);
-		ConfigurationPropertyCollection__ctor_m1951498512(L_3, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection__ctor_m550516750(L_3, /*hidden argument*/NULL);
 		((WebRequestModulesSection_t4132732301_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModulesSection_t4132732301_il2cpp_TypeInfo_var))->set_properties_19(L_3);
 		ConfigurationPropertyCollection_t2852175726 * L_4 = ((WebRequestModulesSection_t4132732301_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModulesSection_t4132732301_il2cpp_TypeInfo_var))->get_properties_19();
 		ConfigurationProperty_t3590861854 * L_5 = ((WebRequestModulesSection_t4132732301_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModulesSection_t4132732301_il2cpp_TypeInfo_var))->get_webRequestModulesProp_20();
 		NullCheck(L_4);
-		ConfigurationPropertyCollection_Add_m1567726929(L_4, L_5, /*hidden argument*/NULL);
+		ConfigurationPropertyCollection_Add_m2688614548(L_4, L_5, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -43005,7 +43005,7 @@ extern "C" IL2CPP_METHOD_ATTR WebRequestModuleElementCollection_t925190782 * Web
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(WebRequestModulesSection_t4132732301_il2cpp_TypeInfo_var);
 		ConfigurationProperty_t3590861854 * L_0 = ((WebRequestModulesSection_t4132732301_StaticFields*)il2cpp_codegen_static_fields_for(WebRequestModulesSection_t4132732301_il2cpp_TypeInfo_var))->get_webRequestModulesProp_20();
-		RuntimeObject * L_1 = ConfigurationElement_get_Item_m145567948(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = ConfigurationElement_get_Item_m178122358(__this, L_0, /*hidden argument*/NULL);
 		return ((WebRequestModuleElementCollection_t925190782 *)CastclassSealed((RuntimeObject*)L_1, WebRequestModuleElementCollection_t925190782_il2cpp_TypeInfo_var));
 	}
 }
@@ -43027,7 +43027,7 @@ extern "C" IL2CPP_METHOD_ATTR void WebRequestModulesSection_InitializeDefault_m1
 extern "C" IL2CPP_METHOD_ATTR void WebRequestModulesSection__ctor_m3207412967 (WebRequestModulesSection_t4132732301 * __this, const RuntimeMethod* method)
 {
 	{
-		ConfigurationSection__ctor_m3664598388(__this, /*hidden argument*/NULL);
+		ConfigurationSection__ctor_m2795685025(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -45747,12 +45747,12 @@ extern "C" IL2CPP_METHOD_ATTR void Cookie__cctor_m3648156207 (RuntimeObject * __
 	{
 		CharU5BU5D_t3528271667* L_0 = (CharU5BU5D_t3528271667*)SZArrayNew(CharU5BU5D_t3528271667_il2cpp_TypeInfo_var, (uint32_t)3);
 		CharU5BU5D_t3528271667* L_1 = L_0;
-		RuntimeFieldHandle_t1871169219  L_2 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t3057255364____5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6_FieldInfo_var) };
+		RuntimeFieldHandle_t1871169219  L_2 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t3057255365____5BC3486B05BA8CF4689C7BDB198B3F477BB4E20C_6_FieldInfo_var) };
 		RuntimeHelpers_InitializeArray_m3117905507(NULL /*static, unused*/, (RuntimeArray *)(RuntimeArray *)L_1, L_2, /*hidden argument*/NULL);
 		((Cookie_t993873397_StaticFields*)il2cpp_codegen_static_fields_for(Cookie_t993873397_il2cpp_TypeInfo_var))->set_PortSplitDelimiters_0(L_1);
 		CharU5BU5D_t3528271667* L_3 = (CharU5BU5D_t3528271667*)SZArrayNew(CharU5BU5D_t3528271667_il2cpp_TypeInfo_var, (uint32_t)7);
 		CharU5BU5D_t3528271667* L_4 = L_3;
-		RuntimeFieldHandle_t1871169219  L_5 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t3057255364____0283A6AF88802AB45989B29549915BEA0F6CD515_0_FieldInfo_var) };
+		RuntimeFieldHandle_t1871169219  L_5 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t3057255365____0283A6AF88802AB45989B29549915BEA0F6CD515_0_FieldInfo_var) };
 		RuntimeHelpers_InitializeArray_m3117905507(NULL /*static, unused*/, (RuntimeArray *)(RuntimeArray *)L_4, L_5, /*hidden argument*/NULL);
 		((Cookie_t993873397_StaticFields*)il2cpp_codegen_static_fields_for(Cookie_t993873397_il2cpp_TypeInfo_var))->set_Reserved2Name_1(L_4);
 		CharU5BU5D_t3528271667* L_6 = (CharU5BU5D_t3528271667*)SZArrayNew(CharU5BU5D_t3528271667_il2cpp_TypeInfo_var, (uint32_t)2);

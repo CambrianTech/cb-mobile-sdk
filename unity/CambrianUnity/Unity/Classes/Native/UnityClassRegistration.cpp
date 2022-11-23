@@ -17,6 +17,9 @@ void RegisterStaticallyLinkedModulesGranular()
 	void RegisterModule_Animation();
 	RegisterModule_Animation();
 
+	void RegisterModule_CloudWebServices();
+	RegisterModule_CloudWebServices();
+
 	void RegisterModule_Physics();
 	RegisterModule_Physics();
 
@@ -25,6 +28,12 @@ void RegisterStaticallyLinkedModulesGranular()
 
 	void RegisterModule_UI();
 	RegisterModule_UI();
+
+	void RegisterModule_UnityConnect();
+	RegisterModule_UnityConnect();
+
+	void RegisterModule_UnityAnalytics();
+	RegisterModule_UnityAnalytics();
 
 	void RegisterModule_IMGUI();
 	RegisterModule_IMGUI();
@@ -35,11 +44,17 @@ void RegisterStaticallyLinkedModulesGranular()
 	void RegisterModule_JSONSerialize();
 	RegisterModule_JSONSerialize();
 
+	void RegisterModule_UnityWebRequest();
+	RegisterModule_UnityWebRequest();
+
 	void RegisterModule_ScreenCapture();
 	RegisterModule_ScreenCapture();
 
 	void RegisterModule_GameCenter();
 	RegisterModule_GameCenter();
+
+	void RegisterModule_TLS();
+	RegisterModule_TLS();
 
 }
 
@@ -235,7 +250,7 @@ class GameManager; template <> void RegisterUnityClass<GameManager>(const char*)
 class GlobalGameManager; template <> void RegisterUnityClass<GlobalGameManager>(const char*);
 class AudioManager; 
 class BuildSettings; template <> void RegisterUnityClass<BuildSettings>(const char*);
-class CloudWebServicesManager; 
+class CloudWebServicesManager; template <> void RegisterUnityClass<CloudWebServicesManager>(const char*);
 class CrashReportManager; 
 class DelayedCallManager; template <> void RegisterUnityClass<DelayedCallManager>(const char*);
 class GraphicsSettings; template <> void RegisterUnityClass<GraphicsSettings>(const char*);
@@ -253,8 +268,8 @@ class ScriptMapper; template <> void RegisterUnityClass<ScriptMapper>(const char
 class StreamingManager; 
 class TagManager; template <> void RegisterUnityClass<TagManager>(const char*);
 class TimeManager; template <> void RegisterUnityClass<TimeManager>(const char*);
-class UnityAnalyticsManager; 
-class UnityConnectSettings; 
+class UnityAnalyticsManager; template <> void RegisterUnityClass<UnityAnalyticsManager>(const char*);
+class UnityConnectSettings; template <> void RegisterUnityClass<UnityConnectSettings>(const char*);
 class LevelGameManager; template <> void RegisterUnityClass<LevelGameManager>(const char*);
 class LightmapSettings; template <> void RegisterUnityClass<LightmapSettings>(const char*);
 class NavMeshSettings; 
@@ -266,7 +281,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 64 non stripped classes
+	//Total: 67 non stripped classes
 	//0. Camera
 	RegisterUnityClass<Camera>("Core");
 	//1. Behaviour
@@ -387,13 +402,19 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<MonoScript>("Core");
 	//59. TextAsset
 	RegisterUnityClass<TextAsset>("Core");
-	//60. LightProbes
+	//60. UnityConnectSettings
+	RegisterUnityClass<UnityConnectSettings>("UnityConnect");
+	//61. CloudWebServicesManager
+	RegisterUnityClass<CloudWebServicesManager>("CloudWebServices");
+	//62. UnityAnalyticsManager
+	RegisterUnityClass<UnityAnalyticsManager>("UnityAnalytics");
+	//63. LightProbes
 	RegisterUnityClass<LightProbes>("Core");
-	//61. LightmapSettings
+	//64. LightmapSettings
 	RegisterUnityClass<LightmapSettings>("Core");
-	//62. CGProgram
+	//65. CGProgram
 	RegisterUnityClass<CGProgram>("Core");
-	//63. MeshCollider
+	//66. MeshCollider
 	RegisterUnityClass<MeshCollider>("Physics");
 
 }

@@ -1855,10 +1855,10 @@ extern const RuntimeMethod* ListDictionary_set_Item_m1659493973_RuntimeMethod_va
 extern const RuntimeMethod* List_1_Add_m4062606502_RuntimeMethod_var;
 extern const RuntimeMethod* List_1_ToArray_m836203958_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m2217462734_RuntimeMethod_var;
-extern const RuntimeMethod* NameObjectCollectionBase_BaseAdd_m3437748750_RuntimeMethod_var;
-extern const RuntimeMethod* NameObjectCollectionBase_BaseClear_m2222892574_RuntimeMethod_var;
-extern const RuntimeMethod* NameObjectCollectionBase_BaseRemove_m970901962_RuntimeMethod_var;
-extern const RuntimeMethod* NameObjectCollectionBase_BaseSet_m2307774678_RuntimeMethod_var;
+extern const RuntimeMethod* NameObjectCollectionBase_BaseAdd_m2389830291_RuntimeMethod_var;
+extern const RuntimeMethod* NameObjectCollectionBase_BaseClear_m2328153247_RuntimeMethod_var;
+extern const RuntimeMethod* NameObjectCollectionBase_BaseRemove_m3554174796_RuntimeMethod_var;
+extern const RuntimeMethod* NameObjectCollectionBase_BaseSet_m1319323505_RuntimeMethod_var;
 extern const RuntimeMethod* NameObjectCollectionBase_GetObjectData_m199708727_RuntimeMethod_var;
 extern const RuntimeMethod* NameObjectCollectionBase_OnDeserialization_m619757901_RuntimeMethod_var;
 extern const RuntimeMethod* NameObjectCollectionBase_System_Collections_ICollection_CopyTo_m1225689553_RuntimeMethod_var;
@@ -1867,8 +1867,8 @@ extern const RuntimeMethod* NameObjectKeysEnumerator_Reset_m1123336465_RuntimeMe
 extern const RuntimeMethod* NameObjectKeysEnumerator_get_Current_m3831146515_RuntimeMethod_var;
 extern const RuntimeMethod* NameValueCollection_Add_m1535255656_RuntimeMethod_var;
 extern const RuntimeMethod* NameValueCollection_Add_m2418530856_RuntimeMethod_var;
-extern const RuntimeMethod* NameValueCollection_Set_m2358615760_RuntimeMethod_var;
-extern const RuntimeMethod* NameValueCollection__ctor_m2812148295_RuntimeMethod_var;
+extern const RuntimeMethod* NameValueCollection_Set_m4091554096_RuntimeMethod_var;
+extern const RuntimeMethod* NameValueCollection__ctor_m752956945_RuntimeMethod_var;
 extern const RuntimeMethod* NodeEnumerator_MoveNext_m2839035034_RuntimeMethod_var;
 extern const RuntimeMethod* NodeEnumerator_Reset_m1578328680_RuntimeMethod_var;
 extern const RuntimeMethod* NodeEnumerator_get_Entry_m1251277814_RuntimeMethod_var;
@@ -2077,12 +2077,12 @@ extern const uint32_t ListDictionary_get_Item_m1272472363_MetadataUsageId;
 extern const uint32_t ListDictionary_get_Keys_m3758196857_MetadataUsageId;
 extern const uint32_t ListDictionary_get_SyncRoot_m4242825143_MetadataUsageId;
 extern const uint32_t ListDictionary_set_Item_m1659493973_MetadataUsageId;
-extern const uint32_t NameObjectCollectionBase_BaseAdd_m3437748750_MetadataUsageId;
-extern const uint32_t NameObjectCollectionBase_BaseClear_m2222892574_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_BaseAdd_m2389830291_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_BaseClear_m2328153247_MetadataUsageId;
 extern const uint32_t NameObjectCollectionBase_BaseGetKey_m2677971642_MetadataUsageId;
-extern const uint32_t NameObjectCollectionBase_BaseGet_m2807961990_MetadataUsageId;
-extern const uint32_t NameObjectCollectionBase_BaseRemove_m970901962_MetadataUsageId;
-extern const uint32_t NameObjectCollectionBase_BaseSet_m2307774678_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_BaseGet_m1425278489_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_BaseRemove_m3554174796_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_BaseSet_m1319323505_MetadataUsageId;
 extern const uint32_t NameObjectCollectionBase_FindEntry_m2589752937_MetadataUsageId;
 extern const uint32_t NameObjectCollectionBase_GetEnumerator_m3677320185_MetadataUsageId;
 extern const uint32_t NameObjectCollectionBase_GetObjectData_m199708727_MetadataUsageId;
@@ -2093,7 +2093,7 @@ extern const uint32_t NameObjectCollectionBase_System_Collections_ICollection_Co
 extern const uint32_t NameObjectCollectionBase_System_Collections_ICollection_get_SyncRoot_m138749698_MetadataUsageId;
 extern const uint32_t NameObjectCollectionBase__cctor_m1204874075_MetadataUsageId;
 extern const uint32_t NameObjectCollectionBase__ctor_m2090733912_MetadataUsageId;
-extern const uint32_t NameObjectCollectionBase__ctor_m3828441930_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase__ctor_m3447853625_MetadataUsageId;
 extern const uint32_t NameObjectCollectionBase_get_Keys_m2856825671_MetadataUsageId;
 extern const uint32_t NameObjectKeysEnumerator_MoveNext_m3475484904_MetadataUsageId;
 extern const uint32_t NameObjectKeysEnumerator_Reset_m1123336465_MetadataUsageId;
@@ -2106,12 +2106,12 @@ extern const uint32_t NameValueCollection_GetValues_m467116997_MetadataUsageId;
 extern const uint32_t NameValueCollection_GetValues_m772065291_MetadataUsageId;
 extern const uint32_t NameValueCollection_Get_m1006871566_MetadataUsageId;
 extern const uint32_t NameValueCollection_Get_m2464480741_MetadataUsageId;
-extern const uint32_t NameValueCollection_Set_m2358615760_MetadataUsageId;
-extern const uint32_t NameValueCollection__ctor_m1115358332_MetadataUsageId;
+extern const uint32_t NameValueCollection_Set_m4091554096_MetadataUsageId;
 extern const uint32_t NameValueCollection__ctor_m1800514663_MetadataUsageId;
-extern const uint32_t NameValueCollection__ctor_m2812148295_MetadataUsageId;
+extern const uint32_t NameValueCollection__ctor_m258440999_MetadataUsageId;
 extern const uint32_t NameValueCollection__ctor_m2890045557_MetadataUsageId;
 extern const uint32_t NameValueCollection__ctor_m4090053322_MetadataUsageId;
+extern const uint32_t NameValueCollection__ctor_m752956945_MetadataUsageId;
 extern const uint32_t NodeEnumerator_MoveNext_m2839035034_MetadataUsageId;
 extern const uint32_t NodeEnumerator_Reset_m1578328680_MetadataUsageId;
 extern const uint32_t NodeEnumerator_get_Current_m3114585690_MetadataUsageId;
@@ -15196,7 +15196,7 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject * ListDictionary_get_SyncRoot_m42428
 // System.Void System.Collections.Specialized.ListDictionary/NodeKeyValueCollection/NodeKeyValueEnumerator::.ctor(System.Collections.Specialized.ListDictionary,System.Boolean)
 extern "C" IL2CPP_METHOD_ATTR void NodeKeyValueEnumerator__ctor_m1255606784 (NodeKeyValueEnumerator_t642906510 * __this, ListDictionary_t1624492310 * ___list0, bool ___isKeys1, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor(System.Collections.IEqualityComparer)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase__ctor_m3828441930 (NameObjectCollectionBase_t2091847364 * __this, RuntimeObject* ___equalityComparer0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase__ctor_m3447853625 (NameObjectCollectionBase_t2091847364 * __this, RuntimeObject* ___equalityComparer0, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::Reset()
 extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_Reset_m3985051645 (NameObjectCollectionBase_t2091847364 * __this, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::Reset(System.Int32)
@@ -15238,7 +15238,7 @@ extern "C" IL2CPP_METHOD_ATTR bool SerializationInfoEnumerator_MoveNext_m2496151
 // System.Void System.Collections.Specialized.CompatibleComparer::.ctor(System.Collections.IComparer,System.Collections.IHashCodeProvider)
 extern "C" IL2CPP_METHOD_ATTR void CompatibleComparer__ctor_m2920869396 (CompatibleComparer_t4154576053 * __this, RuntimeObject* ___comparer0, RuntimeObject* ___hashCodeProvider1, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseAdd(System.String,System.Object)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseAdd_m3437748750 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseAdd_m2389830291 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method);
 // System.Void System.Collections.ArrayList::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void ArrayList__ctor_m4254721275 (ArrayList_t2718874744 * __this, const RuntimeMethod* method);
 // System.Void System.Collections.Hashtable::.ctor(System.Collections.IEqualityComparer)
@@ -15294,17 +15294,17 @@ extern "C" IL2CPP_METHOD_ATTR void NameValueCollection_InvalidateCachedArrays_m1
 // System.Boolean System.Collections.Specialized.NameObjectCollectionBase::get_IsReadOnly()
 extern "C" IL2CPP_METHOD_ATTR bool NameObjectCollectionBase_get_IsReadOnly_m1249375452 (NameObjectCollectionBase_t2091847364 * __this, const RuntimeMethod* method);
 // System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.String)
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m2890420524 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m1421109967 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method);
 // System.String System.Collections.Specialized.NameValueCollection::GetAsOneString(System.Collections.ArrayList)
 extern "C" IL2CPP_METHOD_ATTR String_t* NameValueCollection_GetAsOneString_m63520621 (RuntimeObject * __this /* static, unused */, ArrayList_t2718874744 * ___list0, const RuntimeMethod* method);
 // System.String[] System.Collections.Specialized.NameValueCollection::GetAsStringArray(System.Collections.ArrayList)
 extern "C" IL2CPP_METHOD_ATTR StringU5BU5D_t1281789340* NameValueCollection_GetAsStringArray_m2855262980 (RuntimeObject * __this /* static, unused */, ArrayList_t2718874744 * ___list0, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseSet(System.String,System.Object)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseSet_m2307774678 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseSet_m1319323505 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseRemove(System.String)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseRemove_m970901962 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseRemove_m3554174796 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method);
 // System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.Int32)
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m2807961990 (NameObjectCollectionBase_t2091847364 * __this, int32_t ___index0, const RuntimeMethod* method);
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m1425278489 (NameObjectCollectionBase_t2091847364 * __this, int32_t ___index0, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.OrderedDictionary::.ctor(System.Int32)
 extern "C" IL2CPP_METHOD_ATTR void OrderedDictionary__ctor_m2539870429 (OrderedDictionary_t2617496293 * __this, int32_t ___capacity0, const RuntimeMethod* method);
 // System.Void System.Collections.Specialized.OrderedDictionary::.ctor(System.Int32,System.Collections.IEqualityComparer)
@@ -25844,17 +25844,17 @@ extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase__ctor_m2090733912 (N
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(NameObjectCollectionBase_t2091847364_il2cpp_TypeInfo_var);
 		StringComparer_t3301955079 * L_0 = ((NameObjectCollectionBase_t2091847364_StaticFields*)il2cpp_codegen_static_fields_for(NameObjectCollectionBase_t2091847364_il2cpp_TypeInfo_var))->get_defaultComparer_9();
-		NameObjectCollectionBase__ctor_m3828441930(__this, L_0, /*hidden argument*/NULL);
+		NameObjectCollectionBase__ctor_m3447853625(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor(System.Collections.IEqualityComparer)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase__ctor_m3828441930 (NameObjectCollectionBase_t2091847364 * __this, RuntimeObject* ___equalityComparer0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase__ctor_m3447853625 (NameObjectCollectionBase_t2091847364 * __this, RuntimeObject* ___equalityComparer0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameObjectCollectionBase__ctor_m3828441930_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameObjectCollectionBase__ctor_m3447853625_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	RuntimeObject* V_0 = NULL;
@@ -25902,7 +25902,7 @@ extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase__ctor_m2913187925 (N
 {
 	{
 		RuntimeObject* L_0 = ___equalityComparer1;
-		NameObjectCollectionBase__ctor_m3828441930(__this, L_0, /*hidden argument*/NULL);
+		NameObjectCollectionBase__ctor_m3447853625(__this, L_0, /*hidden argument*/NULL);
 		int32_t L_1 = ___capacity0;
 		NameObjectCollectionBase_Reset_m2830962996(__this, L_1, /*hidden argument*/NULL);
 		return;
@@ -26580,7 +26580,7 @@ IL_02a4:
 		NullCheck(L_80);
 		int32_t L_82 = L_81;
 		RuntimeObject * L_83 = (L_80)->GetAt(static_cast<il2cpp_array_size_t>(L_82));
-		NameObjectCollectionBase_BaseAdd_m3437748750(__this, L_79, L_83, /*hidden argument*/NULL);
+		NameObjectCollectionBase_BaseAdd_m2389830291(__this, L_79, L_83, /*hidden argument*/NULL);
 		int32_t L_84 = V_12;
 		V_12 = ((int32_t)il2cpp_codegen_add((int32_t)L_84, (int32_t)1));
 	}
@@ -26723,12 +26723,12 @@ extern "C" IL2CPP_METHOD_ATTR bool NameObjectCollectionBase_get_IsReadOnly_m1249
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseAdd(System.String,System.Object)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseAdd_m3437748750 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseAdd_m2389830291 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseAdd_m3437748750_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseAdd_m2389830291_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	NameObjectEntry_t4224248211 * V_0 = NULL;
@@ -26743,7 +26743,7 @@ extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseAdd_m3437748750 
 		String_t* L_1 = SR_GetString_m1137630943(NULL /*static, unused*/, _stringLiteral3680402061, /*hidden argument*/NULL);
 		NotSupportedException_t1314879016 * L_2 = (NotSupportedException_t1314879016 *)il2cpp_codegen_object_new(NotSupportedException_t1314879016_il2cpp_TypeInfo_var);
 		NotSupportedException__ctor_m2494070935(L_2, L_1, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseAdd_m3437748750_RuntimeMethod_var);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseAdd_m2389830291_RuntimeMethod_var);
 	}
 
 IL_0018:
@@ -26807,12 +26807,12 @@ IL_0057:
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseRemove(System.String)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseRemove_m970901962 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseRemove_m3554174796 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseRemove_m970901962_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseRemove_m3554174796_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -26828,7 +26828,7 @@ extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseRemove_m97090196
 		String_t* L_1 = SR_GetString_m1137630943(NULL /*static, unused*/, _stringLiteral3680402061, /*hidden argument*/NULL);
 		NotSupportedException_t1314879016 * L_2 = (NotSupportedException_t1314879016 *)il2cpp_codegen_object_new(NotSupportedException_t1314879016_il2cpp_TypeInfo_var);
 		NotSupportedException__ctor_m2494070935(L_2, L_1, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseRemove_m970901962_RuntimeMethod_var);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseRemove_m3554174796_RuntimeMethod_var);
 	}
 
 IL_0018:
@@ -26940,12 +26940,12 @@ IL_009a:
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseClear()
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseClear_m2222892574 (NameObjectCollectionBase_t2091847364 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseClear_m2328153247 (NameObjectCollectionBase_t2091847364 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseClear_m2222892574_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseClear_m2328153247_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -26959,7 +26959,7 @@ extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseClear_m222289257
 		String_t* L_1 = SR_GetString_m1137630943(NULL /*static, unused*/, _stringLiteral3680402061, /*hidden argument*/NULL);
 		NotSupportedException_t1314879016 * L_2 = (NotSupportedException_t1314879016 *)il2cpp_codegen_object_new(NotSupportedException_t1314879016_il2cpp_TypeInfo_var);
 		NotSupportedException__ctor_m2494070935(L_2, L_1, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseClear_m2222892574_RuntimeMethod_var);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseClear_m2328153247_RuntimeMethod_var);
 	}
 
 IL_0018:
@@ -26969,7 +26969,7 @@ IL_0018:
 	}
 }
 // System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.String)
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m2890420524 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m1421109967 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, const RuntimeMethod* method)
 {
 	NameObjectEntry_t4224248211 * V_0 = NULL;
 	{
@@ -26995,12 +26995,12 @@ IL_000d:
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseSet(System.String,System.Object)
-extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseSet_m2307774678 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseSet_m1319323505 (NameObjectCollectionBase_t2091847364 * __this, String_t* ___name0, RuntimeObject * ___value1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseSet_m2307774678_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseSet_m1319323505_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	NameObjectEntry_t4224248211 * V_0 = NULL;
@@ -27015,7 +27015,7 @@ extern "C" IL2CPP_METHOD_ATTR void NameObjectCollectionBase_BaseSet_m2307774678 
 		String_t* L_1 = SR_GetString_m1137630943(NULL /*static, unused*/, _stringLiteral3680402061, /*hidden argument*/NULL);
 		NotSupportedException_t1314879016 * L_2 = (NotSupportedException_t1314879016 *)il2cpp_codegen_object_new(NotSupportedException_t1314879016_il2cpp_TypeInfo_var);
 		NotSupportedException__ctor_m2494070935(L_2, L_1, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseSet_m2307774678_RuntimeMethod_var);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameObjectCollectionBase_BaseSet_m1319323505_RuntimeMethod_var);
 	}
 
 IL_0018:
@@ -27043,17 +27043,17 @@ IL_0039:
 	{
 		String_t* L_9 = ___name0;
 		RuntimeObject * L_10 = ___value1;
-		NameObjectCollectionBase_BaseAdd_m3437748750(__this, L_9, L_10, /*hidden argument*/NULL);
+		NameObjectCollectionBase_BaseAdd_m2389830291(__this, L_9, L_10, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.Int32)
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m2807961990 (NameObjectCollectionBase_t2091847364 * __this, int32_t ___index0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR RuntimeObject * NameObjectCollectionBase_BaseGet_m1425278489 (NameObjectCollectionBase_t2091847364 * __this, int32_t ___index0, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseGet_m2807961990_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameObjectCollectionBase_BaseGet_m1425278489_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -27671,12 +27671,12 @@ IL_002e:
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void System.Collections.Specialized.NameValueCollection::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void NameValueCollection__ctor_m1115358332 (NameValueCollection_t407452768 * __this, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameValueCollection__ctor_m258440999 (NameValueCollection_t407452768 * __this, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameValueCollection__ctor_m1115358332_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameValueCollection__ctor_m258440999_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -27703,12 +27703,12 @@ extern "C" IL2CPP_METHOD_ATTR void NameValueCollection__ctor_m1800514663 (NameVa
 	}
 }
 // System.Void System.Collections.Specialized.NameValueCollection::.ctor(System.Int32,System.Collections.Specialized.NameValueCollection)
-extern "C" IL2CPP_METHOD_ATTR void NameValueCollection__ctor_m2812148295 (NameValueCollection_t407452768 * __this, int32_t ___capacity0, NameValueCollection_t407452768 * ___col1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameValueCollection__ctor_m752956945 (NameValueCollection_t407452768 * __this, int32_t ___capacity0, NameValueCollection_t407452768 * ___col1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameValueCollection__ctor_m2812148295_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameValueCollection__ctor_m752956945_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t G_B2_0 = 0;
@@ -27762,7 +27762,7 @@ IL_000e:
 	{
 		ArgumentNullException_t1615371798 * L_5 = (ArgumentNullException_t1615371798 *)il2cpp_codegen_object_new(ArgumentNullException_t1615371798_il2cpp_TypeInfo_var);
 		ArgumentNullException__ctor_m1170824041(L_5, _stringLiteral2909841371, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_5, NULL, NameValueCollection__ctor_m2812148295_RuntimeMethod_var);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_5, NULL, NameValueCollection__ctor_m752956945_RuntimeMethod_var);
 	}
 
 IL_0021:
@@ -28124,7 +28124,7 @@ IL_0018:
 	{
 		NameValueCollection_InvalidateCachedArrays_m194313763(__this, /*hidden argument*/NULL);
 		String_t* L_3 = ___name0;
-		RuntimeObject * L_4 = NameObjectCollectionBase_BaseGet_m2890420524(__this, L_3, /*hidden argument*/NULL);
+		RuntimeObject * L_4 = NameObjectCollectionBase_BaseGet_m1421109967(__this, L_3, /*hidden argument*/NULL);
 		V_0 = ((ArrayList_t2718874744 *)CastclassClass((RuntimeObject*)L_4, ArrayList_t2718874744_il2cpp_TypeInfo_var));
 		ArrayList_t2718874744 * L_5 = V_0;
 		if (L_5)
@@ -28153,7 +28153,7 @@ IL_0040:
 	{
 		String_t* L_10 = ___name0;
 		ArrayList_t2718874744 * L_11 = V_0;
-		NameObjectCollectionBase_BaseAdd_m3437748750(__this, L_10, L_11, /*hidden argument*/NULL);
+		NameObjectCollectionBase_BaseAdd_m2389830291(__this, L_10, L_11, /*hidden argument*/NULL);
 		return;
 	}
 
@@ -28188,7 +28188,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* NameValueCollection_Get_m1006871566 (Nam
 	}
 	{
 		String_t* L_0 = ___name0;
-		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m2890420524(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m1421109967(__this, L_0, /*hidden argument*/NULL);
 		String_t* L_2 = NameValueCollection_GetAsOneString_m63520621(NULL /*static, unused*/, ((ArrayList_t2718874744 *)CastclassClass((RuntimeObject*)L_1, ArrayList_t2718874744_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_2;
 	}
@@ -28204,18 +28204,18 @@ extern "C" IL2CPP_METHOD_ATTR StringU5BU5D_t1281789340* NameValueCollection_GetV
 	}
 	{
 		String_t* L_0 = ___name0;
-		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m2890420524(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m1421109967(__this, L_0, /*hidden argument*/NULL);
 		StringU5BU5D_t1281789340* L_2 = NameValueCollection_GetAsStringArray_m2855262980(NULL /*static, unused*/, ((ArrayList_t2718874744 *)CastclassClass((RuntimeObject*)L_1, ArrayList_t2718874744_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_2;
 	}
 }
 // System.Void System.Collections.Specialized.NameValueCollection::Set(System.String,System.String)
-extern "C" IL2CPP_METHOD_ATTR void NameValueCollection_Set_m2358615760 (NameValueCollection_t407452768 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameValueCollection_Set_m4091554096 (NameValueCollection_t407452768 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (NameValueCollection_Set_m2358615760_MetadataUsageId);
+		il2cpp_codegen_initialize_method (NameValueCollection_Set_m4091554096_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	ArrayList_t2718874744 * V_0 = NULL;
@@ -28230,7 +28230,7 @@ extern "C" IL2CPP_METHOD_ATTR void NameValueCollection_Set_m2358615760 (NameValu
 		String_t* L_1 = SR_GetString_m1137630943(NULL /*static, unused*/, _stringLiteral3680402061, /*hidden argument*/NULL);
 		NotSupportedException_t1314879016 * L_2 = (NotSupportedException_t1314879016 *)il2cpp_codegen_object_new(NotSupportedException_t1314879016_il2cpp_TypeInfo_var);
 		NotSupportedException__ctor_m2494070935(L_2, L_1, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameValueCollection_Set_m2358615760_RuntimeMethod_var);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_2, NULL, NameValueCollection_Set_m4091554096_RuntimeMethod_var);
 	}
 
 IL_0018:
@@ -28245,7 +28245,7 @@ IL_0018:
 		VirtFuncInvoker1< int32_t, RuntimeObject * >::Invoke(29 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_4, L_5);
 		String_t* L_6 = ___name0;
 		ArrayList_t2718874744 * L_7 = V_0;
-		NameObjectCollectionBase_BaseSet_m2307774678(__this, L_6, L_7, /*hidden argument*/NULL);
+		NameObjectCollectionBase_BaseSet_m1319323505(__this, L_6, L_7, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -28255,12 +28255,12 @@ extern "C" IL2CPP_METHOD_ATTR void NameValueCollection_Remove_m3237017023 (NameV
 	{
 		NameValueCollection_InvalidateCachedArrays_m194313763(__this, /*hidden argument*/NULL);
 		String_t* L_0 = ___name0;
-		NameObjectCollectionBase_BaseRemove_m970901962(__this, L_0, /*hidden argument*/NULL);
+		NameObjectCollectionBase_BaseRemove_m3554174796(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.String System.Collections.Specialized.NameValueCollection::get_Item(System.String)
-extern "C" IL2CPP_METHOD_ATTR String_t* NameValueCollection_get_Item_m3979995533 (NameValueCollection_t407452768 * __this, String_t* ___name0, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR String_t* NameValueCollection_get_Item_m1249025201 (NameValueCollection_t407452768 * __this, String_t* ___name0, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = ___name0;
@@ -28269,7 +28269,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* NameValueCollection_get_Item_m3979995533
 	}
 }
 // System.Void System.Collections.Specialized.NameValueCollection::set_Item(System.String,System.String)
-extern "C" IL2CPP_METHOD_ATTR void NameValueCollection_set_Item_m1362981538 (NameValueCollection_t407452768 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
+extern "C" IL2CPP_METHOD_ATTR void NameValueCollection_set_Item_m3318428493 (NameValueCollection_t407452768 * __this, String_t* ___name0, String_t* ___value1, const RuntimeMethod* method)
 {
 	{
 		String_t* L_0 = ___name0;
@@ -28289,7 +28289,7 @@ extern "C" IL2CPP_METHOD_ATTR String_t* NameValueCollection_Get_m2464480741 (Nam
 	}
 	{
 		int32_t L_0 = ___index0;
-		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m2807961990(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m1425278489(__this, L_0, /*hidden argument*/NULL);
 		String_t* L_2 = NameValueCollection_GetAsOneString_m63520621(NULL /*static, unused*/, ((ArrayList_t2718874744 *)CastclassClass((RuntimeObject*)L_1, ArrayList_t2718874744_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_2;
 	}
@@ -28305,7 +28305,7 @@ extern "C" IL2CPP_METHOD_ATTR StringU5BU5D_t1281789340* NameValueCollection_GetV
 	}
 	{
 		int32_t L_0 = ___index0;
-		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m2807961990(__this, L_0, /*hidden argument*/NULL);
+		RuntimeObject * L_1 = NameObjectCollectionBase_BaseGet_m1425278489(__this, L_0, /*hidden argument*/NULL);
 		StringU5BU5D_t1281789340* L_2 = NameValueCollection_GetAsStringArray_m2855262980(NULL /*static, unused*/, ((ArrayList_t2718874744 *)CastclassClass((RuntimeObject*)L_1, ArrayList_t2718874744_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_2;
 	}

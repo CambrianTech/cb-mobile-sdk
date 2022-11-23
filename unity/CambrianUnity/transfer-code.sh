@@ -1,4 +1,5 @@
-
+set -e 
+set -o pipefail
 
 if [ -z "$1" ]; then
 	CBROOT=${CB}
@@ -22,8 +23,9 @@ touch ${NATIVE_DEST}/*.cpp
 LIBS_SRC="${SRC_PROJECT_ROOT}/Libraries"
 LIBS_DEST="${DEST_PROJECT_ROOT}/Libraries"
 
+
 rm -Rf ${LIBS_DEST}/libil2cpp
 
 cp -R ${LIBS_SRC}/libil2cpp ${LIBS_DEST}
 
-cp -f ${LIBS_SRC}/*.* ${LIBS_DEST}/
+cp -Rf ${LIBS_SRC}/* ${LIBS_DEST}/
