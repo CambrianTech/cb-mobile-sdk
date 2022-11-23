@@ -364,7 +364,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Scanning the space...
+  m_Text: Scanning space...
 --- !u!222 &140573340
 CanvasRenderer:
   m_ObjectHideFlags: 0
