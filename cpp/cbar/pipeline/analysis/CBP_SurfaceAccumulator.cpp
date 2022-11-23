@@ -79,7 +79,7 @@ namespace cbpipe {
         cv::Size m_frameSize;
         int m_frameRotation;
         
-        void systemNowStable(cbar::CBAR_VideoFramePtr frame, const Eigen::Vector3f &groundCenter) {
+        void _system_now_stable(cbar::CBAR_VideoFramePtr frame, const Eigen::Vector3f &groundCenter) {
             m_mergedMutex.lock();
             m_center = groundCenter;
             if (m_hasReintegrated || !m_surfaces.size()) {
@@ -94,14 +94,14 @@ namespace cbpipe {
 #if DEBUG_REINTEGRATION
             logMergedImages("before-rei");
 #endif
-            clearAll();
+            _clear_all();
             std::deque<std::shared_ptr<surface>> surfaces = m_surfaces;
             m_surfaces.clear();
             m_mergedMutex.unlock();
             //auto start = sys_usec_time();
             
             for (auto &surf : surfaces) {
-                processSurface(surf);
+                _process_surface(surf);
             }
             
 #if DEBUG_REINTEGRATION
@@ -111,7 +111,7 @@ namespace cbpipe {
             CBLog("Reintegrating %lu surfaces in %s took %.2f seconds", surfaces.size(), m_name.c_str(), seconds_elapsed(start));
         }
         
-        void addSurfaceData(cbar::CBAR_VideoFramePtr frame, const std::vector<cv::Mat> &data, const std::vector<cv::Vec4f> *lines, int surfaceRotation) {
+        void _add_surface_data(cbar::CBAR_VideoFramePtr frame, const std::vector<cv::Mat> &data, const std::vector<cv::Vec4f> *lines, int surfaceRotation) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return;
             auto planeAnalyzer = renderer->getAnalyzerOfType<CBP_PlaneAnalyzer>(); if (!planeAnalyzer) return;
@@ -145,12 +145,12 @@ namespace cbpipe {
             }
 #endif
             
-            if (processSurface(surf)) {
+            if (_process_surface(surf)) {
                 m_frameIndex = frame->frameIndex;
             }
         }
         
-        bool processSurface(std::shared_ptr<surface> surface) {
+        bool _process_surface(std::shared_ptr<surface> surface) {
             cv::Rect roi3d;
             std::vector<cv::Mat> projectedImages(surface->data.size());
             cv::Mat bounds, boundsBlurred;
@@ -161,10 +161,10 @@ namespace cbpipe {
             
             surface->normal = m_normal;
             surface->center = m_center;
-            getProjectedImages(surface, projectedImages, projectedLines, 1.5 * m_ppm, bounds, boundsBlurred, roi3d);
+            _get_projected_images(surface, projectedImages, projectedLines, 1.5 * m_ppm, bounds, boundsBlurred, roi3d);
             
             if (!roi3d.empty() && !bounds.empty() && (!projectedImages.empty() || !projectedLines.empty())) {
-                mergeImageData(projectedImages, projectedLines, bounds, boundsBlurred, roi3d);
+                _merge_image_data(projectedImages, projectedLines, bounds, boundsBlurred, roi3d);
             }
             
             m_mergedMutex.unlock();
@@ -172,7 +172,7 @@ namespace cbpipe {
             return true;
         }
         
-        void getProjectedImages(std::shared_ptr<surface> surface,
+        void _get_projected_images(std::shared_ptr<surface> surface,
                                 std::vector<cv::Mat> &projectedImages,
                                 std::vector<cv::Vec4f> &projectedLines,
                                 int padding,
@@ -341,7 +341,7 @@ namespace cbpipe {
             
         }
         
-        void mergeImageData(std::vector<cv::Mat> &images, std::vector<cv::Vec4f> &projectedLines,
+        void _merge_image_data(std::vector<cv::Mat> &images, std::vector<cv::Vec4f> &projectedLines,
                             const cv::Mat &bounds, const cv::Mat &boundsBlurred, const cv::Rect &roi3d) {
             
             if (m_mergedBounds.region().empty()) {
@@ -369,7 +369,7 @@ namespace cbpipe {
                 }
 #endif
                 
-                alphaBlend(images[i], boundsBlurred, result, m_mergedBounds(roi3d), m_alphaValues[i], result);
+                _alpha_blend(images[i], boundsBlurred, result, m_mergedBounds(roi3d), m_alphaValues[i], result);
                 
 #if DEBUG_MERGE
                 if (m_debug[i]) {
@@ -427,30 +427,30 @@ namespace cbpipe {
 #endif
         }
         
-        void logMergedImages(std::string suffix="") {
+        void _log_merged_images(std::string suffix="") {
             bool debug = m_mergedLines.size() && m_debug[0];
             for (int i=0; i<m_mergedImages.size(); i++) {
                 if (m_debug[i]) {
                     debug = true;
                     cv::Mat debugImage = m_mergedImages[i].get();
-                    drawLines(debugImage, cv::Scalar(255, 255, 0));
+                    _draw_lines(debugImage, cv::Scalar(255, 255, 0));
                     Diagnostics::SaveDiagnosticImage(false, debugImage, "%s_surface_%d_(%d)%s.png", m_name.c_str(), i, m_hasReintegrated, suffix.c_str());
                 }
             }
             if (debug) {
                 cv::Mat debugBounds = m_mergedBounds.get().clone();
-                drawLines(debugBounds, cv::Scalar::all(127));
+                _draw_lines(debugBounds, cv::Scalar::all(127));
                 Diagnostics::SaveDiagnosticImage(false, debugBounds, "%s_bounds_(%d)%s.png", m_name.c_str(), m_hasReintegrated, suffix.c_str());
             }
         }
         
-        void drawLines(cv::Mat &image, cv::Scalar color) {
+        void _draw_lines(cv::Mat &image, cv::Scalar color) {
             for (const auto &line : m_mergedLines) {
                 cv::line(image, cv::Point(line[0], line[1]), cv::Point(line[2], line[3]), color, 1.0f, CV_AA);
             }
         }
         
-        void alphaBlend(const cv::Mat& foreground, const cv::Mat& foreground_alpha,
+        void _alpha_blend(const cv::Mat& foreground, const cv::Mat& foreground_alpha,
                         const cv::Mat& background, const cv::Mat& background_alpha, float opacity, cv::Mat& outImage) {
             for (int y = 0; y < background.rows; ++y) {
                 for (int x = 0; x < background.cols; ++x) {
@@ -469,7 +469,7 @@ namespace cbpipe {
             }
         }
         
-        void getSurfaceData(std::vector<cv::Mat> &mergedImages, std::vector<cv::Vec4f> &mergedLines, cv::Mat &bounds, cv::Rect &extents3d) {
+        void _get_surface_data(std::vector<cv::Mat> &mergedImages, std::vector<cv::Vec4f> &mergedLines, cv::Mat &bounds, cv::Rect &extents3d) {
             mergedImages.resize(m_mergedImages.size());
             for (int i=0; i<m_mergedImages.size(); i++) {
                 mergedImages[i] = m_mergedImages[i].get();
@@ -479,7 +479,7 @@ namespace cbpipe {
             mergedLines.insert(mergedLines.end(), m_mergedLines.begin(), m_mergedLines.end());
         }
         
-        void setSurfaceData(int index, cv::Mat data, cv::Mat bounds, cv::Rect roi) {
+        void _set_surface_data(int index, cv::Mat data, cv::Mat bounds, cv::Rect roi) {
             if (roi.empty()) {
                 roi = m_mergedBounds.region();
             }
@@ -489,7 +489,7 @@ namespace cbpipe {
             m_mergedImages[index](roi) = data;
         }
         
-        void clearAll() {
+        void _clear_all() {
             m_mergedImages.clear();
             m_mergedBounds = CBP_LargeImage();
             m_mergedLines.clear();
@@ -552,12 +552,12 @@ namespace cbpipe {
     
     void CBP_SurfaceAccumulator::addSurfaceData(cbar::CBAR_VideoFramePtr frame, const std::vector<cv::Mat> &data,
                                                 const std::vector<cv::Vec4f> *lines, int surfaceRotation) {
-        m_pImpl->addSurfaceData(frame, data, lines, surfaceRotation);
+        m_pImpl->_add_surface_data(frame, data, lines, surfaceRotation);
     }
     
     void CBP_SurfaceAccumulator::clear() {
         m_pImpl->m_mergedMutex.lock();
-        m_pImpl->clearAll();
+        m_pImpl->_clear_all();
         m_pImpl->m_mergedMutex.unlock();
     }
     
@@ -566,15 +566,15 @@ namespace cbpipe {
     }
     
     void CBP_SurfaceAccumulator::systemNowStable(cbar::CBAR_VideoFramePtr frame, const Eigen::Vector3f &groundCenter) {
-        m_pImpl->systemNowStable(frame, groundCenter);
+        m_pImpl->_system_now_stable(frame, groundCenter);
     }
     
     void CBP_SurfaceAccumulator::getSurfaceData(std::vector<cv::Mat> &mergedImages, std::vector<cv::Vec4f> &mergedLines, cv::Mat &bounds, cv::Rect &extents3d) {
-        return m_pImpl->getSurfaceData(mergedImages, mergedLines, bounds, extents3d);
+        return m_pImpl->_get_surface_data(mergedImages, mergedLines, bounds, extents3d);
     }
     
     void CBP_SurfaceAccumulator::setSurfaceData(int index, cv::Mat data, cv::Mat bounds, cv::Rect roi) {
-        m_pImpl->setSurfaceData(index, data, bounds, roi);
+        m_pImpl->_set_surface_data(index, data, bounds, roi);
     }
     
     std::vector<CBP_LargeImage>& CBP_SurfaceAccumulator::mergedImages() {

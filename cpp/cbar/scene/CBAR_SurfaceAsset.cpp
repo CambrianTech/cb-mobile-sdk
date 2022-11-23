@@ -47,7 +47,7 @@ namespace cbscene {
         float m_rotation = 0.0f;
         Eigen::Vector3f m_position = Eigen::Vector3f(0, -1.0, 0);
         
-        std::shared_ptr<cbpipe::CBP_SurfaceRenderer> getRenderer() {
+        std::shared_ptr<cbpipe::CBP_SurfaceRenderer> _get_renderer() {
             std::lock_guard<CBMutex> lockGuard(m_rendererMutex);
             if (!m_renderer) {
                 auto *renderer = new cbpipe::CBP_SurfaceRenderer(m_parent, "CBP_SurfaceRenderer");
@@ -56,7 +56,7 @@ namespace cbscene {
             return m_renderer;
         }
         
-        void destroyRenderer() {
+        void _destroy_renderer() {
             if (m_renderer) {
                 m_renderer->releaseIndex();
                 m_renderer.reset();
@@ -64,15 +64,15 @@ namespace cbscene {
             }
         }
         
-        void attach(cbpipe::CBP_RenderingEngine *engine) {
+        void _attach(cbpipe::CBP_RenderingEngine *engine) {
             if (auto renderer = CBP_RenderingEngine::sharedInstance()) {
-                renderer->appendAnalyzer(getRenderer());
+                renderer->appendAnalyzer(_get_renderer());
             }
         }
         
-        void detach(cbpipe::CBP_RenderingEngine *engine) {
+        void _detach(cbpipe::CBP_RenderingEngine *engine) {
             if (auto renderer = CBP_RenderingEngine::sharedInstance()) {
-                renderer->removeAnalyzer(getRenderer());
+                renderer->removeAnalyzer(_get_renderer());
             }
         }
         
@@ -100,11 +100,11 @@ namespace cbscene {
     }
     
     std::shared_ptr<cbpipe::CBP_SurfaceRenderer> CBAR_SurfaceAsset::getSurfaceRenderer() {
-        return m_pImpl->getRenderer();
+        return m_pImpl->_get_renderer();
     }
     
     void CBAR_SurfaceAsset::destroyRenderer() {
-        m_pImpl->destroyRenderer();
+        m_pImpl->_destroy_renderer();
     }
     
     int CBAR_SurfaceAsset::getIndex() {
@@ -136,11 +136,11 @@ namespace cbscene {
     }
     
     void CBAR_SurfaceAsset::attach(cbpipe::CBP_RenderingEngine *engine) {
-        m_pImpl->attach(engine);
+        m_pImpl->_attach(engine);
     }
     
     void CBAR_SurfaceAsset::detach(cbpipe::CBP_RenderingEngine *engine) {
-        m_pImpl->detach(engine);
+        m_pImpl->_detach(engine);
     }
     
     float CBAR_SurfaceAsset::getScale() const {

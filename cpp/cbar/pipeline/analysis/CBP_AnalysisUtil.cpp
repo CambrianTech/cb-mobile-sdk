@@ -146,7 +146,7 @@ namespace cbpipe {
         //combine like surfaces
         std::vector<cv::Mat>filteredSurfaces;
         std::vector<int> filteredCounts;
-        double angleSimilar = M_PI_4 * 0.66;
+        //double angleSimilar = M_PI_4 * 0.66;
         std::vector<int> allMatches;
         int minArea = labels.rows * labels.cols / 50;//1/nth of area
         

@@ -34,7 +34,7 @@ namespace cbpipe {
         
         CBP_SemanticSegmenter *m_parent;
         
-        cv::Mat getDebugOutput(const cv::Mat &srcImage, const cv::Mat &result) {
+        cv::Mat _get_debug_output(const cv::Mat &srcImage, const cv::Mat &result) {
             
             std::vector<std::string> paletteNames;
             std::vector<cv::Scalar> fullPalette;
@@ -122,6 +122,6 @@ namespace cbpipe {
     }
     
     cv::Mat CBP_SemanticSegmenter::getDebugOutput(const cv::Mat &srcImage, const cv::Mat &result) {
-        return m_pImpl->getDebugOutput(srcImage, result);
+        return m_pImpl->_get_debug_output(srcImage, result);
     }
 };

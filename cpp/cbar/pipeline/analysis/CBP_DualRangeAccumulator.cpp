@@ -43,7 +43,7 @@ namespace cbpipe {
         
         std::shared_ptr<CBP_SurfaceAccumulator> m_nearRange;
         
-        void combineSurfaceData(std::vector<cv::Mat> &mergedImagesNear, cv::Mat &boundsNear, cv::Rect2f &mergedRoiNear, float ppmNear,
+        void _combine_surface_data(std::vector<cv::Mat> &mergedImagesNear, cv::Mat &boundsNear, cv::Rect2f &mergedRoiNear, float ppmNear,
                                 std::vector<cv::Mat> &mergedImagesFar, cv::Mat &boundsFar, cv::Rect2f &mergedRoiFar, float ppmFar,
                                 std::vector<cv::Mat> &mergedImages, cv::Mat &bounds, cv::Rect2f &extents3d) {
             //combine near and far into one image
@@ -58,7 +58,7 @@ namespace cbpipe {
             Diagnostics::SaveDiagnosticImage(false, boundsNear, "forebounds-before.png");
 #endif
             
-            blurredLines(boundsNearModified, 140);
+            _blurred_lines(boundsNearModified, 140);
             //cv::distanceTransform(boundsNear, boundsNear, cv::DIST_L1, 10, CV_8U);
             
             //Diagnostics::SaveDiagnosticImage(false, bounds, "boundsFar.png");
@@ -97,7 +97,7 @@ namespace cbpipe {
                 }
 #endif
                 
-                mergeImages(foreground, boundsNearModified, background, boundsFar, result);
+                _merge_images(foreground, boundsNearModified, background, boundsFar, result);
                
 #if DEBUG_ENABLED
                 if (m_parent->getDebugEnabled(i)) {
@@ -109,7 +109,7 @@ namespace cbpipe {
             }
         }
         
-        void blurredLines(cv::Mat &mask, int thickness) {
+        void _blurred_lines(cv::Mat &mask, int thickness) {
             //draw black border on mask
             cv::rectangle(mask, cv::Point(0, 0),
                           cv::Point(mask.cols - 1, mask.rows - 1), cv::Scalar(0), thickness, cv::FILLED);
@@ -133,7 +133,7 @@ namespace cbpipe {
             cv::blur(mask(roiLeft), mask(roiLeft), cv::Size(thickness/2, thickness/2));
         }
         
-        void mergeImages(const cv::Mat& foreground, const cv::Mat& foreground_alpha, const cv::Mat& background, const cv::Mat& background_alpha, cv::Mat& outImage) {
+        void _merge_images(const cv::Mat& foreground, const cv::Mat& foreground_alpha, const cv::Mat& background, const cv::Mat& background_alpha, cv::Mat& outImage) {
             for (int y = 0; y < background.rows; ++y) {
                 for (int x = 0; x < background.cols; ++x) {
                     double opacity_level = double(foreground_alpha.data[y * foreground_alpha.step + x]) / 255.;
@@ -234,7 +234,7 @@ namespace cbpipe {
         float ppmFar = CBP_SurfaceAccumulator::getPixelsPerMeter();
         float ppmNear = m_pImpl->m_nearRange->getPixelsPerMeter();
         cv::Rect2f extents3dNorm;
-        m_pImpl->combineSurfaceData(mergedImagesNear, boundsNear, extents3dNearTemp, ppmNear,
+        m_pImpl->_combine_surface_data(mergedImagesNear, boundsNear, extents3dNearTemp, ppmNear,
                                     mergedImagesFar, boundsFar, extents3dFarTemp, ppmFar,
                                     mergedImages, bounds, extents3dNorm);
         extents3d = cv::Rect(ppmNear * extents3dNorm.x, ppmNear * extents3dNorm.y,

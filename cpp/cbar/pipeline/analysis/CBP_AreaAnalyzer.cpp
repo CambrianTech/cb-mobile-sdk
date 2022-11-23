@@ -39,7 +39,7 @@ namespace cbpipe {
         int64_t m_startTime = 0;
         double m_startupSeconds = 3.0;
         
-        bool handleFrame(cbar::CBAR_VideoFramePtr frame) {
+        bool _handle_frame(cbar::CBAR_VideoFramePtr frame) {
             
             if (!m_startTime) {
                 m_startTime = sys_usec_time();
@@ -135,7 +135,7 @@ namespace cbpipe {
     }
     
     bool CBP_AreaAnalyzer::handleFrame(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->handleFrame(frame);
+        return m_pImpl->_handle_frame(frame);
     }
     
     void CBP_AreaAnalyzer::needsRefresh() {

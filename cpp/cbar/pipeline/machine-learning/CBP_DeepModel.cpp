@@ -42,7 +42,7 @@ namespace cbpipe {
         
         float m_benchmarkedDuration = 0;
         
-        void loadDeepNetwork() {
+        void _load_deep_network() {
             auto renderer = CBP_RenderingEngine::sharedInstance();
             if (!renderer) return;
             
@@ -54,13 +54,13 @@ namespace cbpipe {
             CBLog("Deep model '%s' loaded", modelInfo.name.c_str());
         }
         
-        void inference(const cv::Mat &srcImage, const std::map<std::string, cv::Mat> &images, cv::Mat &result) {
+        void _inference(const cv::Mat &srcImage, const std::map<std::string, cv::Mat> &images, cv::Mat &result) {
 
             const auto modelInfo = m_parent->getModelInfo();
             
             m_tfSessionMutex.lock();
             if (!m_tfSession) {
-                loadDeepNetwork();
+                _load_deep_network();
             }
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) {
@@ -93,7 +93,7 @@ namespace cbpipe {
     void CBP_DeepModel::loadDeepNetwork() {
         std::thread([&](){
             m_pImpl->m_tfSessionMutex.lock();
-            m_pImpl->loadDeepNetwork();
+            m_pImpl->_load_deep_network();
             m_pImpl->m_tfSessionMutex.unlock();
         }).detach();
     }
@@ -103,7 +103,7 @@ namespace cbpipe {
     }
     
     void CBP_DeepModel::inference(const cv::Mat &srcImage, const std::map<std::string, cv::Mat> &images, cv::Mat &result) {
-        m_pImpl->inference(srcImage, images, result);
+        m_pImpl->_inference(srcImage, images, result);
     }
 };
 

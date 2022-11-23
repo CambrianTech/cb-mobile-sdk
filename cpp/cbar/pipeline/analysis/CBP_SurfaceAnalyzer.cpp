@@ -87,14 +87,14 @@ namespace cbpipe {
         
         std::vector<cv::Point> m_lastContour;
         
-        void initialize() {
+        void _initialize() {
             m_startTime = sys_usec_time();
-            setPlaneNormal(Eigen::Vector3f(0,1,0));
-            setPlaneCenter(Eigen::Vector3f(0,0,0));
+            _set_plane_normal(Eigen::Vector3f(0,1,0));
+            _set_plane_center(Eigen::Vector3f(0,0,0));
             m_isHorizontalPlane = m_surfaceAsset->getHitTestType() == HitTestResultTypeHorizontalPlane;
         }
         
-        void clearAll() {
+        void _clear_all() {
             if (m_lastContoursFrameIndex < 0) return;
             
             for (auto const& kv : m_accumulators) {
@@ -105,7 +105,7 @@ namespace cbpipe {
             m_cleared = true;
         }
         
-        void systemNowStable(cbar::CBAR_VideoFramePtr frame, const Eigen::Vector3f &groundCenter) {
+        void _system_now_stable(cbar::CBAR_VideoFramePtr frame, const Eigen::Vector3f &groundCenter) {
             for (auto const& kv : m_accumulators) {
                 kv.second->systemNowStable(frame, groundCenter);
             }
@@ -118,16 +118,16 @@ namespace cbpipe {
 #endif
         }
         
-        void reintegrationStarting(cbar::CBAR_VideoFramePtr frame) {
+        void _reintegration_starting(cbar::CBAR_VideoFramePtr frame) {
             m_isReintegrating = true;
             m_skipUpdate = true;
         }
         
-        void reintegrationCompleted(cbar::CBAR_VideoFramePtr frame) {
+        void _reintegration_completed(cbar::CBAR_VideoFramePtr frame) {
             m_isReintegrating = false;
         }
         
-        bool analyze(cbar::CBAR_VideoFramePtr frame) {
+        bool _analyze(cbar::CBAR_VideoFramePtr frame) {
             
             if (m_isReintegrating) return false;
             
@@ -142,12 +142,12 @@ namespace cbpipe {
             cv::Rect2f extents3d;
             float ppm;
             
-            bool success = getProbabilityMask(renderer, mask3d, bounds, color, extents3d, ppm); if (!success) return false;
+            bool success = _get_probability_mask(renderer, mask3d, bounds, color, extents3d, ppm); if (!success) return false;
             
             //CBLog("getProbabilityMask took %.2f seconds", seconds_elapsed(start)); start = sys_usec_time();
             //Diagnostics::SaveDiagnosticMask(mask3d, color, "mask");
             
-            hallucinateMask(renderer, frame, mask3d, bounds, extents3d);
+            _hallucinate_mask(renderer, frame, mask3d, bounds, extents3d);
             
             //Diagnostics::SaveDiagnosticMask(mask3d, color, "hallucinated");
             
@@ -155,11 +155,11 @@ namespace cbpipe {
             surface.index =  m_surfaceAsset->getIndex();
             surface.extents3D = extents3d;
             surface.maskExtents3D = extents3d;
-            success = getContours(renderer, surface, mask3d, color, ppm); if (!success) return false;
+            success = _get_contours(renderer, surface, mask3d, color, ppm); if (!success) return false;
             
             //CBLog("getContours took %.2f seconds", seconds_elapsed(start)); start = sys_usec_time();
 
-            getShadows(surface);
+            _get_shadows(surface);
             
             //CBLog("Sending contours");
             
@@ -186,11 +186,11 @@ namespace cbpipe {
             return true;
         }
 
-        int64_t getLastUpdatedIndex() {
+        int64_t _get_last_updated_index() {
             return m_accumulators[acc_semantic]->getFrameIndex();
         }
         
-        bool getProbabilityMask(std::shared_ptr<CBP_RenderingEngine> renderer,
+        bool _get_probability_mask(std::shared_ptr<CBP_RenderingEngine> renderer,
                                 cv::Mat &mask3d,
                                 cv::Mat &bounds,
                                 cv::Mat &colorImage,
@@ -284,14 +284,14 @@ namespace cbpipe {
             return true;
         }
         
-        inline cv::Point pointInMask(const Eigen::Vector3f &point3d, const cv::Rect2f &extents3d, const cv::Size &maskSize) {
+        inline cv::Point _point_in_mask(const Eigen::Vector3f &point3d, const cv::Rect2f &extents3d, const cv::Size &maskSize) {
             cv::Point2f pointXY(point3d.x(), point3d.z());
             cv::Point2f pointNormalized((pointXY.x - extents3d.x) / extents3d.width, (pointXY.y - extents3d.y) / extents3d.height);
             
             return cv::Point(pointNormalized.x * float(maskSize.width), pointNormalized.y * float(maskSize.height));
         }
         
-        void hallucinateMask(std::shared_ptr<CBP_RenderingEngine> renderer,
+        void _hallucinate_mask(std::shared_ptr<CBP_RenderingEngine> renderer,
                             cbar::CBAR_VideoFramePtr frame,
                             cv::Mat &mask3d,
                             const cv::Mat &bounds,
@@ -345,10 +345,10 @@ namespace cbpipe {
             
             std::vector<cv::Point> planePoints(intersections.size());
             for (int i=0; i<intersections.size(); i++) {
-                planePoints[i] = pointInMask(intersections[i], extents3d, mask3d.size());
+                planePoints[i] = _point_in_mask(intersections[i], extents3d, mask3d.size());
             }
             
-            cv::Point2f cameraImagePoint = pointInMask(planeBeneathMe, extents3d, mask3d.size());
+            cv::Point2f cameraImagePoint = _point_in_mask(planeBeneathMe, extents3d, mask3d.size());
             
             double distanceToMesh = 1.2 * fmax(Geometry::euclideanDistance(cameraImagePoint, planePoints[0]),
                                        Geometry::euclideanDistance(cameraImagePoint, planePoints[1]));
@@ -358,7 +358,7 @@ namespace cbpipe {
             Accelerated::roughDilate(mask3d, hallucination, cv::Size(10,10));
             cv::circle(hallucination, cameraImagePoint, distanceToMesh, cv::Scalar::all(255), cv::FILLED);
             
-            std::vector<cv::Point> farPoints = getFarPoints(cameraImagePoint, bounds, hallucination);
+            std::vector<cv::Point> farPoints = _get_far_points(cameraImagePoint, bounds, hallucination);
             
             std::sort(farPoints.begin(), farPoints.end(), [cameraImagePoint](const cv::Point &pointA, const cv::Point &pointB) {
                 float angleA = Geometry::angleAtVertex(cameraImagePoint, pointA, pointB);
@@ -416,7 +416,7 @@ namespace cbpipe {
             hallucination.copyTo(mask3d, 255-bounds);
         }
         
-        std::vector<cv::Point> getFarPoints(const cv::Point &center, const cv::Mat &bounds, const cv::Mat &hallucination) {
+        std::vector<cv::Point> _get_far_points(const cv::Point &center, const cv::Mat &bounds, const cv::Mat &hallucination) {
             std::vector<cv::Point> points;
             std::vector<cv::Vec4i> hierarchy;
             std::vector<std::vector<cv::Point>> boundsContours;
@@ -424,15 +424,15 @@ namespace cbpipe {
             for (int i=0; i<boundsContours.size(); i++) {
                 std::vector<cv::Point> &polygon = boundsContours[i];
                 
-                int closestIndex = getClosestPointIndex(center, polygon);
-                int closestIndexA = getLastPoint(hallucination, polygon, closestIndex, 5);
+                int closestIndex = _get_closest_point_index(center, polygon);
+                int closestIndexA = _get_last_point(hallucination, polygon, closestIndex, 5);
                 if (closestIndexA != closestIndex && closestIndexA >= 0) {
                     points.push_back(polygon[closestIndexA]);
                 }
                 
                 std::reverse(polygon.begin(),polygon.end());
                 int revStart =  (int) polygon.size() - closestIndex-1;
-                int closestIndexB = getLastPoint(hallucination, polygon, revStart, 5);
+                int closestIndexB = _get_last_point(hallucination, polygon, revStart, 5);
                 if (closestIndexB != revStart && closestIndexB >= 0) {
                     points.push_back(polygon[closestIndexB]);
                 }
@@ -441,7 +441,7 @@ namespace cbpipe {
             return points;
         }
         
-        int getLastPoint(const cv::Mat &hallucination, const std::vector<cv::Point> &contour, int startIndex, int inc) {
+        int _get_last_point(const cv::Mat &hallucination, const std::vector<cv::Point> &contour, int startIndex, int inc) {
             int index = -1;
             cv::Point point = contour[startIndex];
             bool isOn = hallucination.at<uchar>(point);
@@ -454,7 +454,7 @@ namespace cbpipe {
             return index;
         }
         
-        int getClosestPointIndex(const cv::Point &center, const std::vector<cv::Point> &contour) {
+        int _get_closest_point_index(const cv::Point &center, const std::vector<cv::Point> &contour) {
             int index = 0;
             double closestSq = INT_MAX;
             for (int i=0; i<contour.size(); i++) {
@@ -467,7 +467,7 @@ namespace cbpipe {
             return index;
         }
         
-        bool getContours(std::shared_ptr<CBP_RenderingEngine> renderer, cbscene::CBAR_SurfaceData &surface,
+        bool _get_contours(std::shared_ptr<CBP_RenderingEngine> renderer, cbscene::CBAR_SurfaceData &surface,
                          const cv::Mat &mask3d, const cv::Mat &colorImage, const float ppm) {
             
             std::vector<cv::Vec4i> hierarchy;
@@ -534,7 +534,7 @@ namespace cbpipe {
             return true;
         }
         
-        void getShadows(cbscene::CBAR_SurfaceData &surface) {
+        void _get_shadows(cbscene::CBAR_SurfaceData &surface) {
 
             auto network = m_accumulators[acc_shadows];
             
@@ -602,7 +602,7 @@ namespace cbpipe {
             surface.shadowsExtents3D = shadowsRoi3d;
         }
         
-        void setPlaneNormal(const Eigen::Vector3f &normal) {
+        void _set_plane_normal(const Eigen::Vector3f &normal) {
             m_planeNormal = normal;
             
             for (auto const& kv : m_accumulators) {
@@ -610,7 +610,7 @@ namespace cbpipe {
             }
         }
         
-        void setPlaneCenter(const Eigen::Vector3f &center) {
+        void _set_plane_center(const Eigen::Vector3f &center) {
             m_planeCenter = center;
             
             for (auto const& kv : m_accumulators) {
@@ -618,7 +618,7 @@ namespace cbpipe {
             }
         }
         
-        void semanticDataUpdated(const deep_result &result) {
+        void _semantic_data_updated(const deep_result &result) {
             int semantic_index = m_isHorizontalPlane
                 ? CBP_SemanticAnalyzer::result_index_semantic_ground : CBP_SemanticAnalyzer::result_index_semantic_walls;
             
@@ -630,16 +630,16 @@ namespace cbpipe {
             m_accumulators[acc_semantic]->addSurfaceData(result.frame, semanticData);
         }
         
-        void shadowsDataUpdated(const deep_result &result) {
+        void _shadows_data_updated(const deep_result &result) {
             std::vector<cv::Mat>shadowsImages;
             m_accumulators[acc_shadows]->addSurfaceData(result.frame, result.outputs);
         }
         
-        void normalsDataUpdated(const deep_result &result) {
+        void _normals_data_updated(const deep_result &result) {
             m_accumulators[acc_normals]->addSurfaceData(result.frame, result.outputs);
         }
         
-        void linesFound(cbar::CBAR_VideoFramePtr frame, const std::vector<cv::Vec4f> &detectedLines) {
+        void _lines_found(cbar::CBAR_VideoFramePtr frame, const std::vector<cv::Vec4f> &detectedLines) {
             std::vector<cv::Vec4f> horizLines;
             std::vector<cv::Vec4f> vertLines;
             horizLines.reserve(detectedLines.size());
@@ -658,7 +658,7 @@ namespace cbpipe {
             m_accumulators[acc_vert_lines]->addSurfaceData(frame, {}, &vertLines, frame->getFrameRotation());
         }
         
-        std::vector<cv::Point> getLastContour() const {
+        std::vector<cv::Point> _get_last_contour() const {
             return m_lastContour;
         }
     };
@@ -676,15 +676,15 @@ namespace cbpipe {
     }
     
     void CBP_SurfaceAnalyzer::initialize() {
-        m_pImpl->initialize();
+        m_pImpl->_initialize();
     }
     
     void CBP_SurfaceAnalyzer::systemNowStable(cbar::CBAR_VideoFramePtr frame, const Eigen::Vector3f &groundCenter) {
-        m_pImpl->systemNowStable(frame, groundCenter);
+        m_pImpl->_system_now_stable(frame, groundCenter);
     }
     
     bool CBP_SurfaceAnalyzer::analyze(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->analyze(frame);
+        return m_pImpl->_analyze(frame);
     }
     
     Eigen::Vector3f CBP_SurfaceAnalyzer::getPlaneNormal() const {
@@ -692,7 +692,7 @@ namespace cbpipe {
     }
     
     void CBP_SurfaceAnalyzer::setPlaneNormal(const Eigen::Vector3f &normal) {
-        m_pImpl->setPlaneNormal(normal);
+        m_pImpl->_set_plane_normal(normal);
     }
     
     Eigen::Vector3f CBP_SurfaceAnalyzer::getPlaneCenter() const {
@@ -700,7 +700,7 @@ namespace cbpipe {
     }
     
     void CBP_SurfaceAnalyzer::setPlaneCenter(const Eigen::Vector3f &center) {
-        m_pImpl->setPlaneCenter(center);
+        m_pImpl->_set_plane_center(center);
     }
     
     const std::map<acc_index, std::shared_ptr<CBP_SurfaceAccumulator>> CBP_SurfaceAnalyzer::getAccumulators() const {
@@ -708,38 +708,38 @@ namespace cbpipe {
     }
     
     void CBP_SurfaceAnalyzer::clearAll() {
-        m_pImpl->clearAll();
+        m_pImpl->_clear_all();
     }
     
     int64_t CBP_SurfaceAnalyzer::getLastUpdatedIndex() {
-        return m_pImpl->getLastUpdatedIndex();
+        return m_pImpl->_get_last_updated_index();
     }
     
     void CBP_SurfaceAnalyzer::semanticDataUpdated(const deep_result &result) {
-         m_pImpl->semanticDataUpdated(result);
+         m_pImpl->_semantic_data_updated(result);
     }
     
     void CBP_SurfaceAnalyzer::shadowsDataUpdated(const deep_result &result) {
-         m_pImpl->shadowsDataUpdated(result);
+         m_pImpl->_shadows_data_updated(result);
     }
     void CBP_SurfaceAnalyzer::normalsDataUpdated(const deep_result &result) {
-         m_pImpl->normalsDataUpdated(result);
+        m_pImpl->_normals_data_updated(result);
     }
     
     void CBP_SurfaceAnalyzer::linesFound(cbar::CBAR_VideoFramePtr frame, const std::vector<cv::Vec4f> &detectedLines) {
-        m_pImpl->linesFound(frame, detectedLines);
+        m_pImpl->_lines_found(frame, detectedLines);
     }
     
     void CBP_SurfaceAnalyzer::reintegrationStarting(cbar::CBAR_VideoFramePtr frame) {
-        m_pImpl->reintegrationStarting(frame);
+        m_pImpl->_reintegration_starting(frame);
     }
     
     void CBP_SurfaceAnalyzer::reintegrationCompleted(cbar::CBAR_VideoFramePtr frame) {
-        m_pImpl->reintegrationCompleted(frame);
+        m_pImpl->_reintegration_completed(frame);
     }
     
     std::vector<cv::Point> CBP_SurfaceAnalyzer::getLastContour() const {
-        return m_pImpl->getLastContour();
+        return m_pImpl->_get_last_contour();
     }
     
     bool CBP_SurfaceAnalyzer::isGroundPlane() const {

@@ -36,12 +36,12 @@ namespace cbpipe {
         cv::Point2f m_lastPoint = cv::Point(-1, -1);
         bool m_isCanceled = false;
         
-        void cancel() {
+        void _cancel() {
             m_floodFill.cancel();
             m_isCanceled = true;
         }
         
-        FillResult segmentImage(const cv::Point2f &paintPoint, cbar::CBAR_VideoFramePtr frame) {
+        FillResult _segment_image(const cv::Point2f &paintPoint, cbar::CBAR_VideoFramePtr frame) {
             m_isCanceled = false;
             
             cv::Mat smallResult = m_floodFill.run(frame, paintPoint);
@@ -97,10 +97,10 @@ namespace cbpipe {
     }
     
     FillResult CBP_WallSegmenter::segmentAtPoint(const cv::Point2f &paintPoint, cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->segmentImage(paintPoint, frame);
+        return m_pImpl->_segment_image(paintPoint, frame);
     }
     
     void CBP_WallSegmenter::cancel() {
-        m_pImpl->cancel();
+        m_pImpl->_cancel();
     }
 };

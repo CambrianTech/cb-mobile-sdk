@@ -45,13 +45,13 @@ namespace cbpipe {
         bool m_wasUpdated = false;
         int64_t m_groundFindTime = 0;
         
-        bool handleFrame(cbar::CBAR_VideoFramePtr frame) {
+        bool _handle_frame(cbar::CBAR_VideoFramePtr frame) {
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return false;
             auto callback = renderer->getCallback(); if (!callback) return false;
             
             if (m_wasUpdated || !m_numRealGrounds) {
                 m_wasUpdated = false;
-                getUpdatedPlane(frame);
+                _get_updated_plane(frame);
             }
             
             if (!m_newGroundCenter.isZero() || !m_numRealGrounds) {
@@ -71,7 +71,7 @@ namespace cbpipe {
             return true;
         }
         
-        void getUpdatedPlane(cbar::CBAR_VideoFramePtr frame) {
+        void _get_updated_plane(cbar::CBAR_VideoFramePtr frame) {
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return;
             auto tracker = renderer->getAnalyzerOfType<CBP_FeatureTracker>(); if (!tracker) return;
             Eigen::Matrix4f worldPosition = tracker->getWorldTransform(frame->frameIndex);
@@ -89,7 +89,7 @@ namespace cbpipe {
             for (const auto &itr : anchors) {
                 const auto &anchor = itr.second;
                 if (anchor.alignment == PlaneAnchorAlignmentHorizontal) {
-                    updateGroundPosition(cameraPosition.y(), anchor.transform, groundCenter);
+                    _update_ground_position(cameraPosition.y(), anchor.transform, groundCenter);
                     m_hasAnchor = true;
                 }
             }
@@ -157,7 +157,7 @@ namespace cbpipe {
             }
         }
         
-        void updateGroundPosition(float cameraElevation,
+        void _update_ground_position(float cameraElevation,
                                   const Eigen::Matrix4f &transform,
                                   Eigen::Vector3f &groundCenter) {
             
@@ -171,25 +171,25 @@ namespace cbpipe {
             }
         }
         
-        std::map<std::string, PlaneAnchor> getAnchors() {
+        std::map<std::string, PlaneAnchor> _get_anchors() {
             std::lock_guard<CBMutex> lockGuard(m_anchorsMutex);
             return m_anchors;
         }
         
-        void anchorAdded(const PlaneAnchor &anchordata) {
+        void _anchor_added(const PlaneAnchor &anchordata) {
             std::lock_guard<CBMutex> lockGuard(m_anchorsMutex);
             m_wasUpdated = true;
             m_anchors[anchordata.anchorIdentifier] = anchordata;
             m_parent->wakeup();
         }
         
-        void anchorUpdated(const PlaneAnchor &anchordata) {
+        void _anchor_updated(const PlaneAnchor &anchordata) {
             std::lock_guard<CBMutex> lockGuard(m_anchorsMutex);
             m_wasUpdated = true;
             m_anchors[anchordata.anchorIdentifier] = anchordata;
         }
         
-        void anchorRemoved(const PlaneAnchor &anchordata) {
+        void _anchor_removed(const PlaneAnchor &anchordata) {
             std::lock_guard<CBMutex> lockGuard(m_anchorsMutex);
             auto it = m_anchors.find(anchordata.anchorIdentifier);
             if (it != m_anchors.end()) {
@@ -197,7 +197,7 @@ namespace cbpipe {
             }
         }
         
-        std::vector<PlaneAnchor> getPlanes(int mask) {
+        std::vector<PlaneAnchor> _get_planes(int mask) {
             std::vector<PlaneAnchor> anchors;
             std::lock_guard<CBMutex> lockGuard(m_anchorsMutex);
             for (auto it : m_anchors) {
@@ -219,19 +219,19 @@ namespace cbpipe {
     }
     
     bool CBP_PlaneAnalyzer::handleFrame(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->handleFrame(frame);
+        return m_pImpl->_handle_frame(frame);
     }
     
     void CBP_PlaneAnalyzer::anchorAdded(const PlaneAnchor &anchordata) {
-        m_pImpl->anchorAdded(anchordata);
+        m_pImpl->_anchor_added(anchordata);
     }
     
     void CBP_PlaneAnalyzer::anchorUpdated(const PlaneAnchor &anchordata) {
-        m_pImpl->anchorUpdated(anchordata);
+        m_pImpl->_anchor_updated(anchordata);
     }
     
     void CBP_PlaneAnalyzer::anchorRemoved(const PlaneAnchor &anchordata) {
-        m_pImpl->anchorRemoved(anchordata);
+        m_pImpl->_anchor_removed(anchordata);
     }
     
     void CBP_PlaneAnalyzer::getGroundPlane(Eigen::Vector3f &center, Eigen::Vector3f &normal) {
@@ -240,7 +240,7 @@ namespace cbpipe {
     }
     
     std::map<std::string, PlaneAnchor> CBP_PlaneAnalyzer::getAnchors() {
-        return m_pImpl->getAnchors();
+        return m_pImpl->_get_anchors();
     }
     
     bool CBP_PlaneAnalyzer::hasGroundPlane() const {
@@ -252,6 +252,6 @@ namespace cbpipe {
     }
     
     std::vector<PlaneAnchor> CBP_PlaneAnalyzer::getPlanes(int mask) {
-        return m_pImpl->getPlanes(mask);
+        return m_pImpl->_get_planes(mask);
     }
 };

@@ -34,7 +34,7 @@ namespace cbpipe {
         int64_t m_colorFinderLastFrameIndex = -1;
         int64_t m_colorFinderLastUpdateTime = 0;
         
-        bool handleFrame(cbar::CBAR_VideoFramePtr frame) {
+        bool _handle_frame(cbar::CBAR_VideoFramePtr frame) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return false;
             
@@ -54,7 +54,7 @@ namespace cbpipe {
             
             
             if (stillChanged || videoChanged) {
-                commonColors = getCommonColors(frame);
+                commonColors = _get_common_colors(frame);
                 
                 if (commonColors.size()) {
                     m_colorFinderLastFrameIndex = frame->frameIndex;
@@ -69,7 +69,7 @@ namespace cbpipe {
             return true;
         }
         
-        std::vector<cbar::ColorInfo> getCommonColors(cbar::CBAR_VideoFramePtr frame) {
+        std::vector<cbar::ColorInfo> _get_common_colors(cbar::CBAR_VideoFramePtr frame) {
             
             CBError("Getting Common Colors");
             std::vector<cbar::ColorInfo> commonColors;
@@ -131,6 +131,6 @@ namespace cbpipe {
     }
     
     bool CBP_ColorFinder::handleFrame(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->handleFrame(frame);
+        return m_pImpl->_handle_frame(frame);
     }
 };

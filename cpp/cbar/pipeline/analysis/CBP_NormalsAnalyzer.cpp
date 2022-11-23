@@ -33,11 +33,11 @@ namespace cbpipe {
         CBP_NormalsAnalyzer *m_parent;
         CBP_SurfaceNormalsEstimator m_estimator;
         
-        void initialize() {
+        void _initialize() {
             m_estimator.loadDeepNetwork();
         }
         
-        bool analyze(cbar::CBAR_VideoFramePtr frame) {
+        bool _analyze(cbar::CBAR_VideoFramePtr frame) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return false;
             auto tracker = renderer->getAnalyzerOfType<CBP_FeatureTracker>(); if (!tracker) return false;
@@ -103,10 +103,10 @@ namespace cbpipe {
     }
     
     void CBP_NormalsAnalyzer::initialize() {
-        m_pImpl->initialize();
+        m_pImpl->_initialize();
     }
     
     bool CBP_NormalsAnalyzer::analyze(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->analyze(frame);
+        return m_pImpl->_analyze(frame);
     }
 };

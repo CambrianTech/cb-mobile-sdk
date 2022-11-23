@@ -43,14 +43,14 @@ namespace cbpipe {
         
         int64_t m_lastWallsProcessedFrameIndex = -1;
         
-        void semanticDataUpdated(const semantic_data &data) {
+        void _semantic_data_updated(const semantic_data &data) {
             
             m_lastSemanticResultMutex.lock();
             m_lastSemanticResult = data;
             m_lastSemanticResultMutex.unlock();
         }
         
-        void candidateWallsFound(const std::vector<candidate_wall> &walls, int64_t frameIndex) {
+        void _candidate_walls_found(const std::vector<candidate_wall> &walls, int64_t frameIndex) {
             m_lastWallsResultMutex.lock();
             m_lastWallsResult = walls;
             m_lastWallsFrameIndex = frameIndex;
@@ -59,7 +59,7 @@ namespace cbpipe {
             m_parent->wakeup();
         }
         
-        bool analyze(cbar::CBAR_VideoFramePtr frame) {
+        bool _analyze(cbar::CBAR_VideoFramePtr frame) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return false;
             auto surfaceAnalyzers = renderer->getAnalyzersOfType<CBP_SurfaceAnalyzer>(); if (!surfaceAnalyzers.size()) return false;
@@ -115,14 +115,14 @@ namespace cbpipe {
     }
     
     bool CBP_WallFinder::analyze(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->analyze(frame);
+        return m_pImpl->_analyze(frame);
     }
     
     void CBP_WallFinder::semanticDataUpdated(const semantic_data &semantic) {
-        m_pImpl->semanticDataUpdated(semantic);
+        m_pImpl->_semantic_data_updated(semantic);
     }
     
     void CBP_WallFinder::candidateWallsFound(const std::vector<candidate_wall> &walls, int64_t frameIndex) {
-        m_pImpl->candidateWallsFound(walls, frameIndex);
+        m_pImpl->_candidate_walls_found(walls, frameIndex);
     }
 };

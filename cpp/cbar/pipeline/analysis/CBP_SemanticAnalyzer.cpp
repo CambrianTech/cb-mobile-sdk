@@ -46,13 +46,13 @@ namespace cbpipe {
         
         area_run_params m_params;
         
-        void initialize() {
+        void _initialize() {
             m_segmenter.loadDeepNetwork();
         }
         
         cv::Mat m_lastSegmentationResult;
         
-        bool analyze(cbar::CBAR_VideoFramePtr frame) {
+        bool _analyze(cbar::CBAR_VideoFramePtr frame) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return false;
             auto planer = renderer->getAnalyzerOfType<CBP_PlaneAnalyzer>(); if (!planer) return false;
@@ -76,7 +76,7 @@ namespace cbpipe {
 #endif
             
             cv::Mat segmentedImage;
-            bool success = inferenceSemantic(rgb, segmentedImage);
+            bool success = _inference_semantic(rgb, segmentedImage);
             
             if (!success) return false;
 
@@ -136,7 +136,7 @@ namespace cbpipe {
             return true;
         }
         
-        bool inferenceSemantic(const cv::Mat &rgb, cv::Mat &result) {
+        bool _inference_semantic(const cv::Mat &rgb, cv::Mat &result) {
             std::map<std::string, cv::Mat> semanticInput;
             semanticInput["Placeholder__0"] = rgb;
             semanticInput["Placeholder_1__0"] = m_lastSegmentationResult.empty() ? cv::Mat::zeros(256, 256, CV_8UC1) : m_lastSegmentationResult;
@@ -313,7 +313,7 @@ namespace cbpipe {
     }
     
     void CBP_SemanticAnalyzer::initialize() {
-        m_pImpl->initialize();
+        m_pImpl->_initialize();
     }
     
     area_run_params CBP_SemanticAnalyzer::getParams() const {
@@ -321,6 +321,6 @@ namespace cbpipe {
     }
     
     bool CBP_SemanticAnalyzer::analyze(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->analyze(frame);
+        return m_pImpl->_analyze(frame);
     }
 };

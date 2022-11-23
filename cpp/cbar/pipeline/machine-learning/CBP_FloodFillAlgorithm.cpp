@@ -31,7 +31,7 @@ namespace cbpipe {
             
         }
         
-        cv::Mat runGrid(cv::Ptr<texture_grid> grid, bool isVideo) {
+        cv::Mat _run_grid(cv::Ptr<texture_grid> grid, bool isVideo) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return cv::Mat();
             
@@ -151,7 +151,7 @@ namespace cbpipe {
 
         //CBP_MLUtility::setGridSeeds(grid, paintPoints);
         
-        return m_pImpl->runGrid(grid, isVideo);
+        return m_pImpl->_run_grid(grid, isVideo);
     }
     
     cv::Mat CBP_FloodFillAlgorithm::run(cbar::CBAR_VideoFramePtr frame, const cv::Point2f &paintPoint, bool isVideo) {

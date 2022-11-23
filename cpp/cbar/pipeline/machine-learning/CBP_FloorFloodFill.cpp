@@ -75,7 +75,7 @@ namespace cbpipe {
         cv::Mat m_floodImage;
         bool m_isReady = false;
 
-        void prepare(cv::Ptr<texture_grid> grid, bool isVideo) {
+        void _prepare(cv::Ptr<texture_grid> grid, bool isVideo) {
             m_isReady = false;
             
             if (m_siameseModel.empty()) {
@@ -98,13 +98,13 @@ namespace cbpipe {
             m_isReady = true;
         }
         
-        inline void ensureData(texture_sample &element, const cv::Mat &rgbImage) {
+        inline void _ensure_data(texture_sample &element, const cv::Mat &rgbImage) {
             if (element.blob.empty()) {
                 element.blob = cv::dnn::blobFromImage(rgbImage(element.roi));
             }
         }
         
-        double getMinimumConfidence(const texture_sample &element, int numElements, cv::Ptr<texture_grid> grid) {
+        double _get_minimum_confidence(const texture_sample &element, int numElements, cv::Ptr<texture_grid> grid) {
             std::vector<double>confidences;
             
             cv::Point sourceIndex = element.sourceIndex;
@@ -126,7 +126,7 @@ namespace cbpipe {
             return 0.7;
         }
         
-        void runSiameseCNN(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
+        void _run_siamese_cnn(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
             
             int classId = 0;
             double classProb = 0.0f;
@@ -144,7 +144,7 @@ namespace cbpipe {
             elementB.label = classId ? 1 : 0;
         }
         
-        cv::Point getSourceIndex(const texture_sample &element, int numElementsBack, cv::Ptr<texture_grid> grid) {
+        cv::Point _get_source_index(const texture_sample &element, int numElementsBack, cv::Ptr<texture_grid> grid) {
             cv::Point sourceIndex = element.sourceIndex;
             
             for (int i=0; i<numElementsBack && sourceIndex.x >= 0; i++) {
@@ -158,26 +158,26 @@ namespace cbpipe {
             return sourceIndex;
         }
         
-        bool isMatch(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
+        bool _is_match(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
             
             if (!m_isReady) return false;
             
-            ensureData(elementA, m_floodImage);
-            ensureData(elementB, m_floodImage);
+            _ensure_data(elementA, m_floodImage);
+            _ensure_data(elementB, m_floodImage);
             
             if (elementA.blob.empty() || elementB.blob.empty()) return false;
             
-            runSiameseCNN(grid, elementA, elementB);
+            _run_siamese_cnn(grid, elementA, elementB);
             
             if (elementB.isSeed) return true;
             
-            bool success = elementB.label == 1 && elementB.confidence > getMinimumConfidence(elementA, 5, grid);
+            bool success = elementB.label == 1 && elementB.confidence > _get_minimum_confidence(elementA, 5, grid);
             
 #if BACKCHECK_SUCCESS
             if (success && elementB.confidence < BACKCHECK_CONF) {
-                cv::Point sourceIndex = getSourceIndex(elementA, BACKCHECK_SUCCESS, grid);
+                cv::Point sourceIndex = _get_source_index(elementA, BACKCHECK_SUCCESS, grid);
                 if (sourceIndex.x >= 0) {
-                    runSiameseCNN(grid, grid->rows[sourceIndex.y].samples[sourceIndex.x], elementB);
+                    _run_siamese_cnn(grid, grid->rows[sourceIndex.y].samples[sourceIndex.x], elementB);
                     success = elementB.label == 1;
                     //                        if (!success) {
                     //                            printf("\nSTOPPED\n\n");
@@ -189,7 +189,7 @@ namespace cbpipe {
             return success;
         }
         
-        inline void populateRefinementSample(cv::Ptr<texture_grid> grid, texture_sample &sample) {
+        inline void _populate_refinement_sample(cv::Ptr<texture_grid> grid, texture_sample &sample) {
             
             sample.data.resize(REFINE_DATA_SIZE);
             
@@ -202,7 +202,7 @@ namespace cbpipe {
 #if NEIGHBOR_COUNT
             const texture_sample *neigh = &sample;
             for (int i=0; i<NEIGHBOR_COUNT; i++) {
-                cv::Point sourceIndex = getSourceIndex(*neigh, start/2, grid);
+                cv::Point sourceIndex = _get_source_index(*neigh, start/2, grid);
                 if (sourceIndex.x >= 0) {
                     neigh = &grid->rows[sourceIndex.y].samples[sourceIndex.x];
                     sample.data[start] = neigh->label;
@@ -228,17 +228,17 @@ namespace cbpipe {
 #endif
         }
         
-        inline void populateRefinementNNElement(cv::Ptr<texture_grid> grid,
+        inline void _populate_refinement_nn_element(cv::Ptr<texture_grid> grid,
                                                 cv::Mat &data, int i, texture_sample &sample) {
             
-            if (sample.data.empty()) populateRefinementSample(grid, sample);
+            if (sample.data.empty()) _populate_refinement_sample(grid, sample);
             
             for (int j=0; j<sample.data.size(); j++) {
                 data.at<float>(i,j) = sample.data[j];
             }
         }
         
-        void runRefinementClassifier(cv::Ptr<texture_grid> grid, cv::Mat &result) {
+        void _run_refinement_classifier(cv::Ptr<texture_grid> grid, cv::Mat &result) {
             //run refinement classifier
             for (int y=0; y<result.rows; y++) {
                 for (int x=0; x<result.cols; x++) {
@@ -257,7 +257,7 @@ namespace cbpipe {
                         
                         auto matchesData = cv::Mat_<float>(1, REFINE_DATA_SIZE);
                         
-                        populateRefinementNNElement(grid, matchesData, 0, sample);
+                        _populate_refinement_nn_element(grid, matchesData, 0, sample);
                         
                         int prediction;
                         
@@ -292,19 +292,19 @@ namespace cbpipe {
     
     void CBP_FloorFloodFill::prepare(cv::Ptr<texture_grid> grid, bool isVideo) {
         
-        m_pImpl->prepare(grid, isVideo);
+        m_pImpl->_prepare(grid, isVideo);
     }
     
     cv::Mat CBP_FloorFloodFill::runGrid(cv::Ptr<texture_grid> grid, const std::vector<cv::Point2f> &paintPoints, bool isVideo) {
 
         cv::Mat result = CBP_FloodFillAlgorithm::runGrid(grid, paintPoints, false);
         
-        if (!result.empty()) m_pImpl->runRefinementClassifier(grid, result);
+        if (!result.empty()) m_pImpl->_run_refinement_classifier(grid, result);
         
         return result;
     }
     
     bool CBP_FloorFloodFill::isMatch(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
-        return m_pImpl->isMatch(grid, elementA, elementB);
+        return m_pImpl->_is_match(grid, elementA, elementB);
     }
 };

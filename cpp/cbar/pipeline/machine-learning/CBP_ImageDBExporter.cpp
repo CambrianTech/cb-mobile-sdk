@@ -46,7 +46,7 @@ namespace cbpipe {
         std::map<const char *, EXPORT_TYPE>stringsToExportTypes;
         
         
-        void generateLabelsTrainingData(LMDB &trainDB,
+        void _generate_labels_training_data(LMDB &trainDB,
                                         LMDB &testDB,
                                         const std::string &debugPath,
                                         const std::vector<std::string> &allImagePaths,
@@ -153,7 +153,7 @@ namespace cbpipe {
             }
         }
         
-        void generateEdgesTrainingData(LMDB &trainDB,
+        void _generate_edges_training_data(LMDB &trainDB,
                                        LMDB &testDB,
                                        const std::string &debugPath,
                                        const std::vector<std::string> &allImagePaths,
@@ -255,7 +255,7 @@ namespace cbpipe {
             }
         }
         
-        void generateSiameseTrainingData(LMDB &trainDB,
+        void _generate_siamese_training_data(LMDB &trainDB,
                                          LMDB &testDB,
                                          const std::string &debugPath,
                                          const std::vector<std::string> &allImagePaths,
@@ -443,7 +443,7 @@ namespace cbpipe {
             }
         }
         
-        void generateFullTrainingData(LMDB &trainDB,
+        void _generate_full_training_data(LMDB &trainDB,
                                       LMDB &testDB,
                                       const std::string &debugPath,
                                       const std::vector<std::string> &allImagePaths,
@@ -523,7 +523,7 @@ namespace cbpipe {
             }
         }
         
-        cv::Point getXEdge(const cv::Mat &maskSubImage, bool existingValue, int yPos) {
+        cv::Point _get_x_edge(const cv::Mat &maskSubImage, bool existingValue, int yPos) {
             
             cv::Point point;
             int count = 0;
@@ -543,7 +543,7 @@ namespace cbpipe {
             return cv::Point(-1,-1);
         }
         
-        cv::Point getYEdge(const cv::Mat &maskSubImage, bool existingValue, int xPos) {
+        cv::Point _get_y_edge(const cv::Mat &maskSubImage, bool existingValue, int xPos) {
             cv::Point point;
             int count = 0;
             for (int yPos=1; yPos<maskSubImage.rows; yPos++) {
@@ -562,7 +562,7 @@ namespace cbpipe {
             return cv::Point(-1,-1);
         }
         
-        float angleOfPoints(const cv::Point2f &pointA, const cv::Point2f &pointB) {
+        float _angle_of_points(const cv::Point2f &pointA, const cv::Point2f &pointB) {
             double deltaX = pointA.x - pointB.x;
             double deltaY = pointA.y - pointB.y;
             double angleInRadians = atan2f(deltaY, deltaX);
@@ -570,7 +570,7 @@ namespace cbpipe {
             return angleInRadians;
         }
         
-        float getMaskAngle(const cv::Mat &maskSubImage) {
+        float _get_mask_angle(const cv::Mat &maskSubImage) {
             
             bool hasTopLeft = maskSubImage.at<uchar>(0, 0);
             bool hasTopRight = maskSubImage.at<uchar>(0, maskSubImage.cols - 1);
@@ -580,27 +580,27 @@ namespace cbpipe {
             std::vector<cv::Point> points;
             
             if (hasTopLeft != hasTopRight) {
-                auto edgePoint = getXEdge(maskSubImage, hasTopLeft, 0);
+                auto edgePoint = _get_x_edge(maskSubImage, hasTopLeft, 0);
                 if (edgePoint.x >= 0) {
                     points.push_back(edgePoint);
                 }
             }
             if (hasBottomLeft != hasBottomRight) {
-                auto edgePoint = getXEdge(maskSubImage, hasBottomLeft, maskSubImage.rows-1);
+                auto edgePoint = _get_x_edge(maskSubImage, hasBottomLeft, maskSubImage.rows-1);
                 if (edgePoint.x >= 0) {
                     points.push_back(edgePoint);
                 }
             }
             
             if (points.size() < 2 && hasTopLeft != hasBottomLeft) {
-                auto edgePoint = getYEdge(maskSubImage, hasTopLeft, 0);
+                auto edgePoint = _get_y_edge(maskSubImage, hasTopLeft, 0);
                 if (edgePoint.x >= 0) {
                     points.push_back(edgePoint);
                 }
             }
             
             if (points.size() < 2 && hasTopRight != hasBottomRight) {
-                auto edgePoint = getYEdge(maskSubImage, hasTopRight, maskSubImage.cols-1);
+                auto edgePoint = _get_y_edge(maskSubImage, hasTopRight, maskSubImage.cols-1);
                 if (edgePoint.x >= 0) {
                     points.push_back(edgePoint);
                 }
@@ -608,13 +608,13 @@ namespace cbpipe {
             
             if (points.size() == 2) {
                 //std::cerr << points[0] << points[1] << std::endl;
-                return angleOfPoints(points[0], points[1]);
+                return _angle_of_points(points[0], points[1]);
             }
             
             return -1;
         }
         
-        int angleToLabel(float radians, int numAngles) {
+        int _angle_to_label(float radians, int numAngles) {
             
             //calculate
             float angle = toDegrees(radians);
@@ -624,7 +624,7 @@ namespace cbpipe {
             return int(round(angle / denom)) % numAngles;
         }
         
-        void generateEdgeAnglesTrainingData(LMDB &trainDB,
+        void _generate_edge_angles_Training_data(LMDB &trainDB,
                                             LMDB &testDB,
                                             const std::string &debugPath,
                                             const std::vector<std::string> &allImagePaths,
@@ -857,31 +857,31 @@ namespace cbpipe {
         
         switch (type) {
             case EXPORT_TYPE_LABELS:
-                m_pImpl->generateLabelsTrainingData(trainDB, testDB, debugPath, allImagePaths, trainLabels, gridUnitSize,
+                m_pImpl->_generate_labels_training_data(trainDB, testDB, debugPath, allImagePaths, trainLabels, gridUnitSize,
                                                     isRGB, testCountIn100, trainCount, testCount, numOutputs);
                 break;
                 
             case EXPORT_TYPE_EDGES:
-                m_pImpl->generateEdgesTrainingData(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
+                m_pImpl->_generate_edges_training_data(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
                                                    isRGB, testCountIn100, trainCount, testCount, numOutputs);
                 break;
                 
             case EXPORT_TYPE_SIAMESE:
-                m_pImpl->generateSiameseTrainingData(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
+                m_pImpl->_generate_siamese_training_data(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
                                                      isRGB, 1, testCountIn100, trainCount, testCount, numOutputs);
                 break;
             case EXPORT_TYPE_TRIAMESE:
-                m_pImpl->generateSiameseTrainingData(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
+                m_pImpl->_generate_siamese_training_data(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
                                                      isRGB, 2, testCountIn100, trainCount, testCount, numOutputs);
                 break;
                 
             case EXPORT_TYPE_FULL:
-                m_pImpl->generateFullTrainingData(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
+                m_pImpl->_generate_full_training_data(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
                                                   isRGB, testCountIn100, trainCount, testCount, numOutputs);
                 break;
                 
             case EXPORT_TYPE_EDGE_ANGLES:
-                m_pImpl->generateEdgeAnglesTrainingData(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
+                m_pImpl->_generate_edge_angles_Training_data(trainDB, testDB, debugPath, allImagePaths, gridUnitSize,
                                                         isRGB, testCountIn100, trainCount, testCount, numOutputs);
                 break;
             default:

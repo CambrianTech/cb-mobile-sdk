@@ -32,7 +32,7 @@ namespace cbpipe {
         CBP_LineFinder *m_parent;
         int64_t m_lastUpdateFrame = -1;
         
-        bool analyze(cbar::CBAR_VideoFramePtr frame) {
+        bool _analyze(cbar::CBAR_VideoFramePtr frame) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return false;
             auto surfaceAnalyzers = renderer->getAnalyzersOfType<CBP_SurfaceAnalyzer>(); if (surfaceAnalyzers.empty()) return false;
@@ -85,6 +85,6 @@ namespace cbpipe {
     }
     
     bool CBP_LineFinder::analyze(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->analyze(frame);
+        return m_pImpl->_analyze(frame);
     }
 };

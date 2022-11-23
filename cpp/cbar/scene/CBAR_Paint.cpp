@@ -29,7 +29,7 @@ namespace cbscene {
         
         Transparency m_transparency = TransparencyNone;
         
-        void reloadState(std::shared_ptr<cbpipe::UndoState> state) {
+        void _reload_state(std::shared_ptr<cbpipe::UndoState> state) {
             if (state->data.count("sheen")) {
                 m_sheen = (Sheen) state->data["sheen"].at<int>(0);
             }
@@ -41,8 +41,6 @@ namespace cbscene {
                 }
             }
         }
-        
-        
     };
     
     CBAR_Paint::~CBAR_Paint() {
@@ -144,7 +142,7 @@ namespace cbscene {
         CBAR_SurfaceAsset::reloadState(state);
         
         if (state->target == cbpipe::undo_target_asset) {
-            m_pImpl->reloadState(state);
+            m_pImpl->_reload_state(state);
         }
     }
 };

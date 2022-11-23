@@ -62,30 +62,27 @@ namespace cbpipe {
         
         int m_index = 0;
         
-        void saveCurrentState() {
+        void _save_current_state() {
             
         }
         
-        void captureState(std::shared_ptr<cbpipe::UndoState> state) {
+        void _capture_state(std::shared_ptr<cbpipe::UndoState> state) {
 
         }
         
-        void reloadState(std::shared_ptr<cbpipe::UndoState> state) {
-            
+        void _reload_state(std::shared_ptr<cbpipe::UndoState> state) {
             
         }
        
-        void render(bool isStillMode) {
+        void _render(bool isStillMode) {
             
         }
         
-        void touchedAtPoint(TouchPoint &touch) {
-            
+        void _touched_at_point(TouchPoint &touch) {
             
         }
         
-        bool handleFrame(cbar::CBAR_VideoFramePtr frame) {
-
+        bool _handle_frame(cbar::CBAR_VideoFramePtr frame) {
             return true;
         }
     };
@@ -108,11 +105,11 @@ namespace cbpipe {
             return false;
         }
         
-        return m_pImpl->handleFrame(frame);
+        return m_pImpl->_handle_frame(frame);
     }
     
     void CBP_SurfaceRenderer::touchedAtPoint(TouchPoint &touch) {
-        m_pImpl->touchedAtPoint(touch);
+        m_pImpl->_touched_at_point(touch);
     }
     
     void CBP_SurfaceRenderer::clearAll() {
@@ -120,13 +117,13 @@ namespace cbpipe {
     }
 
     void CBP_SurfaceRenderer::captureState(std::shared_ptr<cbpipe::UndoState> state) {
-        m_pImpl->captureState(state);
+        m_pImpl->_capture_state(state);
     }
     
     void CBP_SurfaceRenderer::reloadState(std::shared_ptr<cbpipe::UndoState> state) {
         CBP_Renderer::reloadState(state);
         
-        m_pImpl->reloadState(state);
+        m_pImpl->_reload_state(state);
     }
     
     int CBP_SurfaceRenderer::getIndex() {
@@ -138,7 +135,7 @@ namespace cbpipe {
     }
     
     void CBP_SurfaceRenderer::render(bool isStillMode) {
-        m_pImpl->render(isStillMode);
+        m_pImpl->_render(isStillMode);
     }
 
     cv::Mat CBP_SurfaceRenderer::getMask() {

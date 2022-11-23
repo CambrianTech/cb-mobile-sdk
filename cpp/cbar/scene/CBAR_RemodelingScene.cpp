@@ -34,7 +34,7 @@ namespace cbscene {
         cv::Mat m_positiveMask;
         cv::Mat m_negativeMask;
         
-        void saveToDirectory(const std::string &location) {
+        void save_to_directory(const std::string &location) {
 //            std::string maskPath = string_sprintf("%s/mask.png", location.c_str());
 //
 //            m_positiveMask = cv::imread(maskPath.c_str(), cv::IMREAD_GRAYSCALE);
@@ -44,7 +44,7 @@ namespace cbscene {
 //            }
         }
         
-        void loadFromDirectory(const std::string &location, int outputRotation) {
+        void load_from_directory(const std::string &location, int outputRotation) {
             
             if (!m_positiveMask.empty()) {
 //                auto renderer = cbpipe::CBP_RenderingEngine::sharedInstance(); if (!renderer) return;
@@ -97,12 +97,12 @@ namespace cbscene {
     }
     
     void CBAR_RemodelingScene::saveToDirectory(const std::string &location, bool compressed, std::string &finalPath, std::string &projectJSON) {
-        m_pImpl->saveToDirectory(location);
+        m_pImpl->save_to_directory(location);
         CBAR_Scene::saveToDirectory(location, compressed, finalPath, projectJSON);
     }
     
     std::string CBAR_RemodelingScene::loadFromDirectory(const std::string &location, int outputRotation, const Json::Value* sceneNode) {
-        m_pImpl->loadFromDirectory(location, outputRotation);
+        m_pImpl->load_from_directory(location, outputRotation);
         return CBAR_Scene::loadFromDirectory(location, outputRotation, sceneNode);
     }
 

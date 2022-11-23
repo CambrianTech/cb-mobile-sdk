@@ -27,7 +27,7 @@ namespace cbpipe {
                 auto &surface = surfaces[i];
                 plane.color = colors[i];
                 plane.direction = directions[i];
-                plane.workingBounds = getSurfaceContour(surface, workingSize, surface.size().area() / 20);
+                plane.workingBounds = _get_surface_contour(surface, workingSize, surface.size().area() / 20);
                 
                 cv::Vec4f planeLine = cv::Vec4f(0, 0, plane.direction.x, plane.direction.y);
                 plane.validLines.reserve(m_lines.size());
@@ -81,7 +81,7 @@ namespace cbpipe {
         std::vector<cv::Vec4f>m_lines;
         cv::Size m_workingSize;
         
-        std::vector<std::vector<cv::Point>> getSurfaceContour(cv::Mat &surface, cv::Size size, double minArea) {
+        std::vector<std::vector<cv::Point>> _get_surface_contour(cv::Mat &surface, cv::Size size, double minArea) {
             
             cv::erode(surface, surface, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3)));//get rid of clutter
             cv::dilate(surface, surface, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)));
@@ -116,7 +116,7 @@ namespace cbpipe {
             return boundaries;
         }
 
-        void solve(int numIterations, cv::Mat &debug, std::vector<cv::Vec4f> &basepoints) {
+        void _solve(int numIterations, cv::Mat &debug, std::vector<cv::Vec4f> &basepoints) {
             
             basepoints.clear();
             
@@ -147,7 +147,7 @@ namespace cbpipe {
                     const cv::Vec4f &lineA = plane.validLines[usedIndexA];
                     const cv::Vec4f &lineB = plane.validLines[usedIndexB];
                     
-                    auto score = computeScore(plane, lineA, lineB);
+                    auto score = _compute_score(plane, lineA, lineB);
                     
                     if (score > highestScore) {
                         highestLineA = lineA;
@@ -163,7 +163,7 @@ namespace cbpipe {
             }
         }
         
-        double computeScore(const surface_plane &plane, const cv::Vec4f &baselineA, const cv::Vec4f &baselineB) {
+        double _compute_score(const surface_plane &plane, const cv::Vec4f &baselineA, const cv::Vec4f &baselineB) {
             
             //auto len = norm(baseeline);
             cv::Point2f baselineAMidpoint = cv::Point2f((baselineA[0] + baselineA[2]) * 0.5, (baselineA[1] + baselineA[3]) * 0.5);
@@ -194,7 +194,7 @@ namespace cbpipe {
         }
         
         //just demo:
-        void circleRANSAC(const cv::Mat &image, std::vector<cv::Vec3f> &circles, double canny_threshold, double circle_threshold, int numIterations)
+        void _circle_ransac(const cv::Mat &image, std::vector<cv::Vec3f> &circles, double canny_threshold, double circle_threshold, int numIterations)
         {
             CV_Assert(image.type() == CV_8UC1 || image.type() == CV_8UC3);
             circles.clear();
@@ -318,7 +318,7 @@ namespace cbpipe {
                 radius = cv::norm(center - pointB);
                 
                 /// geometry debug image
-                if(false)
+                if (false)
                 {
                     cv::Mat debug_image = edges.clone();
                     cv::cvtColor(debug_image, debug_image, CV_GRAY2RGB);
@@ -376,7 +376,7 @@ namespace cbpipe {
                     circles.push_back(cv::Vec3f(x,y,radius));
                     
                     // voting debug image
-                    if(false)
+                    if (false)
                     {
                         cv::Mat debug_image2 = edges.clone();
                         cv::cvtColor(debug_image2, debug_image2, CV_GRAY2RGB);
@@ -430,6 +430,6 @@ namespace cbpipe {
     }
     
     void CBP_PlaneRansac::solve(int numIterations, cv::Mat &debug, std::vector<cv::Vec4f> &baselines) {
-        m_pImpl->solve(numIterations, debug, baselines);
+        m_pImpl->_solve(numIterations, debug, baselines);
     }
 };

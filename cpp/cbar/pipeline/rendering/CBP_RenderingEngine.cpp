@@ -85,7 +85,7 @@ namespace cbpipe {
         
         cv::Point2f m_2DOffset;
         
-        void prepareViewport(void *nwh, void *glContext,
+        void _prepare_viewport(void *nwh, void *glContext,
                              int frameWidth, int frameHeight,
                              int outputWidth, int outputHeight,
                              float hFOV, int rotation,
@@ -115,14 +115,14 @@ namespace cbpipe {
             m_displayTransform = scaleMat * rotationMat;
         }
         
-        int getDebugMode() const {
+        int _get_debug_mode() const {
 #if DEBUG
             return 1;
 #endif
             return m_debugMode;
         }
         
-        void setDebugMode(bool on) {
+        void _set_debug_mode(bool on) {
             int newDebugMode = m_debugMode;
             
             if (on)  newDebugMode++;
@@ -140,7 +140,7 @@ namespace cbpipe {
             m_debugMode = newDebugMode;
         }
         
-        void pauseRendering(bool pause) {
+        void _pause_rendering(bool pause) {
             m_isRenderingPaused = pause;
             
             if (!pause && m_scene) {
@@ -148,7 +148,7 @@ namespace cbpipe {
             }
         }
         
-        void flush() {
+        void _flush() {
             m_parent->m_analyzer->flush();
             
             if (m_scene) {
@@ -160,7 +160,7 @@ namespace cbpipe {
             }
         }
         
-        void setScene(std::shared_ptr<cbscene::CBAR_Scene> scene) {
+        void _set_scene(std::shared_ptr<cbscene::CBAR_Scene> scene) {
             m_scene = scene;
             //show scene
             auto frame = m_scene->getVideoFrame();
@@ -170,12 +170,12 @@ namespace cbpipe {
             }
             else {
                 m_isStillMode = true;
-                flush();
+                _flush();
                 m_callback->sceneImageLoaded(frame->getRGBAImage());
             }
         }
         
-        void addFrameData(const cbar::RawFrame &frameData) {
+        void _add_frame_data(const cbar::RawFrame &frameData) {
             
             if (m_isRenderingPaused || !m_isRunning || m_isStillMode) return;
 
@@ -190,7 +190,7 @@ namespace cbpipe {
             m_scene->setVideoFrame(m_frame);
         }
 
-        void captureCurrentState() {
+        void _capture_current_state() {
             //already in the scene
             //tell color finder to stop finding crap.
             
@@ -204,7 +204,7 @@ namespace cbpipe {
             m_isStillMode = true;
         }
         
-        void fitImageToOutput(const cv::Mat &src, cv::Mat &dest) const {
+        void _fit_image_to_output(const cv::Mat &src, cv::Mat &dest) const {
             if (src.empty()) return;
             
             cv::Size2f finalSize = m_parent->getOutputSize();
@@ -242,7 +242,7 @@ namespace cbpipe {
             }
         }
         
-        void startRunning(bool videoMode) {
+        void _start_running(bool videoMode) {
             
             m_isRenderingPaused = false;
             m_isRunning = true;
@@ -253,12 +253,12 @@ namespace cbpipe {
                 m_scene->goingLive();
             }
             
-            flush();
+            _flush();
             
             m_parent->m_analyzer->start();
         }
         
-        void stopRunning() {
+        void _stop_running() {
             m_isRunning = false;
             
             m_parent->m_analyzer->abort();
@@ -266,15 +266,15 @@ namespace cbpipe {
             m_arView = 0;
         }
         
-        float getAngularSpeed(int64_t deltaFrames) {
+        float _get_angular_speed(int64_t deltaFrames) {
 
             int64_t endIndex = fmax(0,CBAR_VideoFrame::lastFrameIndex()-1);
             int64_t startIndex = fmax(0, endIndex - deltaFrames);
             
             if (startIndex < 0) return 0.0f;
             
-            Eigen::Matrix3f posThen = getModelView(startIndex).topLeftCorner<3,3>();
-            Eigen::Matrix3f posNow = getModelView(endIndex).topLeftCorner<3,3>();
+            Eigen::Matrix3f posThen = _get_model_view(startIndex).topLeftCorner<3,3>();
+            Eigen::Matrix3f posNow = _get_model_view(endIndex).topLeftCorner<3,3>();
             
             deltaFrames = endIndex - startIndex;
             float elapsedTime = float(deltaFrames) / m_parent->getFPS();
@@ -286,15 +286,15 @@ namespace cbpipe {
             return angularSpeed;
         }
         
-        float getTranslationalSpeed(int64_t deltaFrames) {
+        float _get_translational_speed(int64_t deltaFrames) {
             
             int64_t endIndex = CBAR_VideoFrame::lastFrameIndex();
             int64_t startIndex = endIndex - deltaFrames;
             
             if (startIndex < 0) return 0.0f;
             
-            Eigen::Matrix4f posThen = getModelView(startIndex);
-            Eigen::Matrix4f posNow = getModelView(endIndex);
+            Eigen::Matrix4f posThen = _get_model_view(startIndex);
+            Eigen::Matrix4f posNow = _get_model_view(endIndex);
             
             float elapsedTime = float(deltaFrames) / m_parent->getFPS();
             
@@ -304,7 +304,7 @@ namespace cbpipe {
             return angularSpeed;
         }
         
-        TouchPoint commonTouches(const cv::Point2f &normalizedPoint, TouchStep step) {
+        TouchPoint _common_touches(const cv::Point2f &normalizedPoint, TouchStep step) {
             
             TouchPoint touch;
             
@@ -315,8 +315,8 @@ namespace cbpipe {
             
             touch.step = step;
             //this is kind of lame:
-            auto videoPositionNormalized = screenToVideoPositionNormalized(normalizedPoint);
-            touch.imageOrigin = denormalizePointWithinSize(videoPositionNormalized, m_frameSize);
+            auto videoPositionNormalized = _screen_to_video_position_normalized(normalizedPoint);
+            touch.imageOrigin = _denormalize_point_within_size(videoPositionNormalized, m_frameSize);
             touch.screenOrigin = normalizedPoint;
             touch.srcSize = m_outputSize;
             
@@ -333,11 +333,11 @@ namespace cbpipe {
             return touch;
         }
         
-        void touchedAt(const cv::Point2f &normalizedPoint, ToolMode toolMode, TouchStep step) {
+        void _touched_at(const cv::Point2f &normalizedPoint, ToolMode toolMode, TouchStep step) {
             
             if (!m_scene) return;
 
-            TouchPoint touch = commonTouches(normalizedPoint, step);
+            TouchPoint touch = _common_touches(normalizedPoint, step);
             touch.toolMode = toolMode;
             
             bool isFirstTouch = step == TouchStepBegan || step == TouchStepTapped;
@@ -372,8 +372,8 @@ namespace cbpipe {
 #endif
         }
         
-        void rotateGesture(float amount, const cv::Point2f &normalizedPoint, TouchStep step) {
-            TouchPoint touch = commonTouches(normalizedPoint, step);
+        void _rotate_gesture(float amount, const cv::Point2f &normalizedPoint, TouchStep step) {
+            TouchPoint touch = _common_touches(normalizedPoint, step);
             touch.rotation = amount;
             
             if (auto asset =  m_scene->getSelectedAsset()) {
@@ -381,13 +381,13 @@ namespace cbpipe {
             }
         }
         
-        void rotatedBy(float amount) {
+        void _rotated_by(float amount) {
             if (auto asset =  m_scene->getSelectedAsset()) {
                 asset->rotatedBy(amount);
             }
         }
         
-        void clearAll() {
+        void _clear_all() {
             if (auto scene = m_scene) {
                 for (auto itr : scene->getAssets()) {
                     auto renderer = itr.second->getRenderer();
@@ -410,13 +410,13 @@ namespace cbpipe {
             
         }
         
-        cv::Scalar getColorInVideoAtPoint(const cv::Point2f &point) {
+        cv::Scalar _get_color_in_video_at_point(const cv::Point2f &point) {
             
             auto frame = m_scene->getVideoFrame();
             
             if (frame.empty()) return cv::Scalar::all(0);
             
-            auto videoPoint = screenToVideoPosition(point);
+            auto videoPoint = _screen_to_video_position(point);
             
             auto color = Imaging::meanAtPoint(frame->getRGBImage(), videoPoint, 20);
             color[3] = 255;
@@ -425,7 +425,7 @@ namespace cbpipe {
             return color;
         }
 
-        Eigen::Matrix4f getModelView(int64_t frameIndex) {
+        Eigen::Matrix4f _get_model_view(int64_t frameIndex) {
             if (frameIndex) {
                 if (auto featureTracker = m_parent->getAnalyzerOfType<CBP_FeatureTracker>()) {
                     return featureTracker->getWorldTransform(frameIndex);
@@ -434,7 +434,7 @@ namespace cbpipe {
             return m_scene->getWorldTransform();
         }
         
-        Eigen::Matrix4f getProjection(int64_t frameIndex) {
+        Eigen::Matrix4f _get_projection(int64_t frameIndex) {
             Eigen::Matrix4f proj;
             if (frameIndex) {
                 if (auto featureTracker = m_parent->getAnalyzerOfType<CBP_FeatureTracker>()) {
@@ -453,57 +453,57 @@ namespace cbpipe {
             return proj;
         }
         
-        inline cv::Point2f normalizePointWithinSize(const cv::Point2f &point2D, const cv::Size &size) {
+        inline cv::Point2f _normalize_point_within_size(const cv::Point2f &point2D, const cv::Size &size) {
             return cv::Point2f(point2D.x / float(size.width),
                                point2D.y / float(size.height));
         }
         
-        inline cv::Point2f denormalizePointWithinSize(const cv::Point2f &point2D, const cv::Size &size) {
+        inline cv::Point2f _denormalize_point_within_size(const cv::Point2f &point2D, const cv::Size &size) {
             return cv::Point2f(point2D.x * float(size.width),
                                point2D.y * float(size.height));
         }
         
-        cv::Point3f projectPointToVideo(const Eigen::Vector3f &point3D, const Eigen::Matrix4f &transform) {
+        cv::Point3f _project_point_to_video(const Eigen::Vector3f &point3D, const Eigen::Matrix4f &transform) {
             
-            cv::Point3f result3 = projectPointToVideoNormalized(point3D, transform);
-            cv::Point2f result2 = denormalizePointWithinSize(cv::Point2f(result3.x, result3.y), m_frameSize);
+            cv::Point3f result3 = _project_point_to_video_normalized(point3D, transform);
+            cv::Point2f result2 = _denormalize_point_within_size(cv::Point2f(result3.x, result3.y), m_frameSize);
             
             return cv::Point3f(result2.x, result2.y, result3.z);
         }
         
-        cv::Point3f projectPointToVideoNormalized(const Eigen::Vector3f &point3D, const Eigen::Matrix4f &transform) {
+        cv::Point3f _project_point_to_video_normalized(const Eigen::Vector3f &point3D, const Eigen::Matrix4f &transform) {
             
-            cv::Point3f normalizedPoint =  worldToViewPointNormalized(point3D, transform);
-            cv::Point2f result = screenToVideoPositionNormalized(cv::Point2f(normalizedPoint.x, normalizedPoint.y));
+            cv::Point3f normalizedPoint =  _world_to_view_point_normalized(point3D, transform);
+            cv::Point2f result = _screen_to_video_position_normalized(cv::Point2f(normalizedPoint.x, normalizedPoint.y));
             return cv::Point3f(result.x, result.y, normalizedPoint.z);
         }
         
-        Eigen::Vector3f unprojectPointFromVideo(const cv::Point2f &point2D, float projectedDistance,
+        Eigen::Vector3f _unproject_point_from_video(const cv::Point2f &point2D, float projectedDistance,
                                                 const Eigen::Matrix4f &transform, const Eigen::Matrix4f &projectionMatrix) {
-            return unprojectPointFromVideoNormalized(normalizePointWithinSize(point2D, m_frameSize),
+            return _unproject_point_from_video_normalized(_normalize_point_within_size(point2D, m_frameSize),
                                                      projectedDistance, transform, projectionMatrix);
         }
         
-        Eigen::Vector3f unprojectPointFromVideoNormalized(const cv::Point2f &point2D, float projectedDistance,
+        Eigen::Vector3f _unproject_point_from_video_normalized(const cv::Point2f &point2D, float projectedDistance,
                                                           const Eigen::Matrix4f &transform,
                                                           const Eigen::Matrix4f &projectionMatrix) {
             
             //rotate point
-            cv::Point2f point2DNormalized = videoToScreenPositionNormalized(point2D);
+            cv::Point2f point2DNormalized = _video_to_screen_position_normalized(point2D);
             
             if (projectedDistance == 0) {
                 projectedDistance = 2.0f;
             }
             
-            Eigen::Vector3f point3D = viewToWorldPoint(point2DNormalized,
-                                                                                projectedDistance,
-                                                                                transform.inverse(),
-                                                                                projectionMatrix);
+            Eigen::Vector3f point3D = _view_to_world_point(point2DNormalized,
+                                                           projectedDistance,
+                                                           transform.inverse(),
+                                                           projectionMatrix);
             
             return point3D;
         }
         
-        Eigen::Vector3f viewToWorldPoint(const cv::Point2f &point2DNormalized,
+        Eigen::Vector3f _view_to_world_point(const cv::Point2f &point2DNormalized,
                                                          float distance,
                                                          const Eigen::Matrix4f &mvpInverse,
                                                          const Eigen::Matrix4f &projection) {
@@ -514,46 +514,46 @@ namespace cbpipe {
             
         }
         
-        cv::Point3f worldToViewPointNormalized(const Eigen::Vector3f &point3D, const Eigen::Matrix4f &mvp) {
+        cv::Point3f _world_to_view_point_normalized(const Eigen::Vector3f &point3D, const Eigen::Matrix4f &mvp) {
             
             cv::Point3f result = cbpipe::CBP_MatrixUtil::projectPoint(point3D, mvp);
             
             return cv::Point3f(result.x + m_2DOffset.x, result.y + m_2DOffset.y, result.z);
         }
         
-        std::vector<cv::Point> projectPointCloud(const std::vector<Eigen::Vector3f> &points3D, const Eigen::Matrix4f &transform) {
+        std::vector<cv::Point> _project_point_cloud(const std::vector<Eigen::Vector3f> &points3D, const Eigen::Matrix4f &transform) {
             std::vector<cv::Point> points2D(points3D.size());
             
             int i = 0;
             for (const auto& point3 : points3D) {
-                auto point = projectPointToVideo(point3, transform);
+                auto point = _project_point_to_video(point3, transform);
                 points2D[i] = cv::Point(point.x, point.y);
                 i++;
             }
             return points2D;
         }
         
-        std::vector<Eigen::Vector3f> unprojectPointCloud(const std::vector<cv::Point> &points2D,
+        std::vector<Eigen::Vector3f> _unproject_point_cloud(const std::vector<cv::Point> &points2D,
                                                          float distance, const Eigen::Matrix4f &mvp, const Eigen::Matrix4f &projectionMatrix) {
             std::vector<Eigen::Vector3f> points3D(points2D.size());
             
             int i = 0;
             for (const auto& point : points2D) {
-                points3D[i] = unprojectPointFromVideo(point, distance, mvp, projectionMatrix);
+                points3D[i] = _unproject_point_from_video(point, distance, mvp, projectionMatrix);
                 i++;
             }
             return points3D;
         }
         
-        cv::Point2f screenToVideoPosition(const cv::Point2f &screenPoint) {
-            return denormalizePointWithinSize(screenToVideoPositionNormalized(normalizePointWithinSize(screenPoint, m_outputSize)), m_frameSize);
+        cv::Point2f _screen_to_video_position(const cv::Point2f &screenPoint) {
+            return _denormalize_point_within_size(_screen_to_video_position_normalized(_normalize_point_within_size(screenPoint, m_outputSize)), m_frameSize);
         }
         
-        cv::Point2f videoToScreenPosition(const cv::Point2f &videoPoint) {
-            return denormalizePointWithinSize(videoToScreenPositionNormalized(normalizePointWithinSize(videoPoint, m_frameSize)), m_outputSize);
+        cv::Point2f _video_to_screen_position(const cv::Point2f &videoPoint) {
+            return _denormalize_point_within_size(_video_to_screen_position_normalized(_normalize_point_within_size(videoPoint, m_frameSize)), m_outputSize);
         }
         
-        cv::Point2f screenToVideoPositionNormalized(const cv::Point2f &normalizedScreenPoint) {
+        cv::Point2f _screen_to_video_position_normalized(const cv::Point2f &normalizedScreenPoint) {
             
             Eigen::Vector4f point4(normalizedScreenPoint.x - 0.5, normalizedScreenPoint.y - 0.5, 0.0, 1.0);
             Eigen::Vector4f result = m_displayTransform.inverse() * point4;
@@ -561,7 +561,7 @@ namespace cbpipe {
             return cv::Point2f(result.x() + 0.5f, result.y() + 0.5f);
         }
         
-        cv::Point2f videoToScreenPositionNormalized(const cv::Point2f &videoPointNormalized) {
+        cv::Point2f _video_to_screen_position_normalized(const cv::Point2f &videoPointNormalized) {
             
             Eigen::Vector4f point4(videoPointNormalized.x - 0.5f, videoPointNormalized.y - 0.5f, 0.0, 1.0);
             Eigen::Vector4f result = m_displayTransform * point4;
@@ -569,7 +569,7 @@ namespace cbpipe {
             return cv::Point2f(result.x() + 0.5f, result.y() + 0.5f);
         }
         
-        void getVideoBoundingBox(const Eigen::Vector3f &cen, const Eigen::Vector3f &ext,  const Eigen::Matrix4f &transform,
+        void _get_video_bounding_box(const Eigen::Vector3f &cen, const Eigen::Vector3f &ext,  const Eigen::Matrix4f &transform,
                                  std::vector<cv::Point> &videoBounds, std::vector<Eigen::Vector3f> &worldBounds) {
             worldBounds =
             {
@@ -583,15 +583,15 @@ namespace cbpipe {
                 Eigen::Vector3f(cen.x()+ext.x(), cen.y()+ext.y(), cen.z()+ext.z())
             };
             
-            videoBounds = projectPointCloud(worldBounds, transform);
+            videoBounds = _project_point_cloud(worldBounds, transform);
         }
         
-        cv::Rect2f getVideoBounds(const Eigen::Vector3f &cen, const Eigen::Vector3f &ext,  const Eigen::Matrix4f &transform) {
+        cv::Rect2f _get_video_bounds(const Eigen::Vector3f &cen, const Eigen::Vector3f &ext,  const Eigen::Matrix4f &transform) {
             
             std::vector<cv::Point> videoBounds;
             std::vector<Eigen::Vector3f> worldBounds;
             
-            getVideoBoundingBox(cen, ext, transform, videoBounds, worldBounds);
+            _get_video_bounding_box(cen, ext, transform, videoBounds, worldBounds);
             
             cv::Point2f min = videoBounds[0];
             cv::Point2f max = videoBounds[0];
@@ -610,7 +610,7 @@ namespace cbpipe {
         CBCondition m_screenshotCondition;
         bool m_screenshotSuccess = false;
         
-        void saveScreenshot(const std::string &path, std::function<void(bool, const std::string&)> completion, float maxSeconds) {
+        void _save_screenshot(const std::string &path, std::function<void(bool, const std::string&)> completion, float maxSeconds) {
             
             CBLog("Saving screenshot to %s", path.c_str());
             std::thread([path, completion, maxSeconds, this](){
@@ -633,7 +633,7 @@ namespace cbpipe {
             }).detach();
         }
         
-        void screenshotSaved() {
+        void _screenshot_saved() {
             m_screenshotMutex.lock();
             m_screenshotSuccess = true;
             m_screenshotCondition.signal();
@@ -642,11 +642,11 @@ namespace cbpipe {
         
         Eigen::Vector3f m_heading = Eigen::Vector3f::Zero();
         
-        Eigen::Vector3f getLastHeading() {
+        Eigen::Vector3f _get_last_heading() {
             return m_heading;
         }
         
-        void updateHeading(const Eigen::Vector3f &heading) {
+        void _update_heading(const Eigen::Vector3f &heading) {
             m_heading = heading;
         }
     };
@@ -685,7 +685,7 @@ namespace cbpipe {
                                               float hFOV, int rotation,
                                               const Eigen::Matrix3f &cameraIntrinsics) {
         
-        m_pImpl->prepareViewport(nwh, glContext,
+        m_pImpl->_prepare_viewport(nwh, glContext,
                                  frameWidth, frameHeight,
                                  outputWidth, outputHeight,
                                  hFOV, rotation, cameraIntrinsics);
@@ -693,7 +693,7 @@ namespace cbpipe {
     }
     
     void CBP_RenderingEngine::addFrame(const cbar::RawFrame &frameData) {
-        m_pImpl->addFrameData(frameData);
+        m_pImpl->_add_frame_data(frameData);
     }
     
     void CBP_RenderingEngine::stillRender() {
@@ -705,15 +705,15 @@ namespace cbpipe {
     }
     
     void CBP_RenderingEngine::touchedAt(const cv::Point2f &normalizedPoint, ToolMode toolMode, TouchStep step) {
-        return m_pImpl->touchedAt(normalizedPoint, toolMode, step);
+        return m_pImpl->_touched_at(normalizedPoint, toolMode, step);
     }
     
     void CBP_RenderingEngine::rotateGesture(float amount, const cv::Point2f &normalizedPoint, TouchStep step) {
-        m_pImpl->rotateGesture(amount, normalizedPoint, step);
+        m_pImpl->_rotate_gesture(amount, normalizedPoint, step);
     }
     
     void CBP_RenderingEngine::rotatedBy(float amount) {
-        m_pImpl->rotatedBy(amount);
+        m_pImpl->_rotated_by(amount);
     }
     
     int CBP_RenderingEngine::getFrameRotation() const {
@@ -729,19 +729,19 @@ namespace cbpipe {
     }
     
     float CBP_RenderingEngine::getAngularSpeed(int64_t deltaFrames) {
-        return m_pImpl->getAngularSpeed(deltaFrames);
+        return m_pImpl->_get_angular_speed(deltaFrames);
     }
     
     float CBP_RenderingEngine::getTranslationalSpeed(int64_t deltaFrames) {
-        return m_pImpl->getTranslationalSpeed(deltaFrames);
+        return m_pImpl->_get_translational_speed(deltaFrames);
     }
     
     int CBP_RenderingEngine::getDebugMode() const {
-        return m_pImpl->getDebugMode();
+        return m_pImpl->_get_debug_mode();
     }
     
     void CBP_RenderingEngine::changeDebugMode(bool isOn) {
-        m_pImpl->setDebugMode(isOn);
+        m_pImpl->_set_debug_mode(isOn);
     }
     
     cv::Size CBP_RenderingEngine::getFrameSize() const {
@@ -753,16 +753,16 @@ namespace cbpipe {
     }
     
     void CBP_RenderingEngine::startRunning(bool videoMode) {
-        m_pImpl->startRunning(videoMode);
+        m_pImpl->_start_running(videoMode);
     }
     
     void CBP_RenderingEngine::stopRunning() {
-        m_pImpl->stopRunning();
+        m_pImpl->_stop_running();
     }
     
     void CBP_RenderingEngine::pauseRendering(bool pause) {
         if (pause != m_pImpl->m_isRenderingPaused) {
-            m_pImpl->pauseRendering(pause);
+            m_pImpl->_pause_rendering(pause);
         }
     }
     
@@ -779,7 +779,7 @@ namespace cbpipe {
     }
     
     void CBP_RenderingEngine::setScene(std::shared_ptr<cbscene::CBAR_Scene> scene) {
-        m_pImpl->setScene(scene);
+        m_pImpl->_set_scene(scene);
     }
     
     void CBP_RenderingEngine::setLighting(const LightingType &lighting) {
@@ -787,12 +787,12 @@ namespace cbpipe {
     }
     
     void CBP_RenderingEngine::captureCurrentState() {
-        m_pImpl->captureCurrentState();
+        m_pImpl->_capture_current_state();
         m_pImpl->m_isStillMode = true;
     }
     
     void CBP_RenderingEngine::clearAll() {
-        m_pImpl->clearAll();
+        m_pImpl->_clear_all();
     }
     
     const std::shared_ptr<cbar::CBAR_CallbackI> CBP_RenderingEngine::getCallback() const {
@@ -804,11 +804,11 @@ namespace cbpipe {
     }
     
     cv::Scalar CBP_RenderingEngine::getColorInVideoAtPoint(const cv::Point2f &point) {
-        return m_pImpl->getColorInVideoAtPoint(point);
+        return m_pImpl->_get_color_in_video_at_point(point);
     }
     
     void CBP_RenderingEngine::fitImageToOutput(const cv::Mat &src, cv::Mat &dest) const {
-        m_pImpl->fitImageToOutput(src, dest);
+        m_pImpl->_fit_image_to_output(src, dest);
     }
     
     void CBP_RenderingEngine::writePNG(const std::string &path, const cv::Mat &src) const {
@@ -822,41 +822,41 @@ namespace cbpipe {
     }
     
     Eigen::Vector3f CBP_RenderingEngine::unprojectPoint(const cv::Point2f &point2D, float projectedDistance, int64_t frameIndex) {
-        auto proj = m_pImpl->getProjection(frameIndex);
-        auto view = m_pImpl->getModelView(frameIndex);
-        return m_pImpl->unprojectPointFromVideo(point2D, projectedDistance, proj * view, proj);
+        auto proj = m_pImpl->_get_projection(frameIndex);
+        auto view = m_pImpl->_get_model_view(frameIndex);
+        return m_pImpl->_unproject_point_from_video(point2D, projectedDistance, proj * view, proj);
     }
     
     cv::Point3f CBP_RenderingEngine::projectPoint(const Eigen::Vector3f &point3D, int64_t frameIndex) {
-        auto proj = m_pImpl->getProjection(frameIndex);
-        auto view = m_pImpl->getModelView(frameIndex);
-        return m_pImpl->projectPointToVideo(point3D, proj * view);
+        auto proj = m_pImpl->_get_projection(frameIndex);
+        auto view = m_pImpl->_get_model_view(frameIndex);
+        return m_pImpl->_project_point_to_video(point3D, proj * view);
     }
     
     std::vector<Eigen::Vector3f> CBP_RenderingEngine::unprojectPointCloud(const std::vector<cv::Point> &points,
                                                                           float projectedDistance, int64_t frameIndex) {
-        auto proj = m_pImpl->getProjection(frameIndex);
-        auto view = m_pImpl->getModelView(frameIndex);
-        return m_pImpl->unprojectPointCloud(points, projectedDistance, proj * view, proj);
+        auto proj = m_pImpl->_get_projection(frameIndex);
+        auto view = m_pImpl->_get_model_view(frameIndex);
+        return m_pImpl->_unproject_point_cloud(points, projectedDistance, proj * view, proj);
     }
     
     std::vector<cv::Point> CBP_RenderingEngine::projectPointCloud(const std::vector<Eigen::Vector3f> &points, int64_t frameIndex) {
-        auto proj = m_pImpl->getProjection(frameIndex);
-        auto view = m_pImpl->getModelView(frameIndex);
-        return m_pImpl->projectPointCloud(points, proj * view);
+        auto proj = m_pImpl->_get_projection(frameIndex);
+        auto view = m_pImpl->_get_model_view(frameIndex);
+        return m_pImpl->_project_point_cloud(points, proj * view);
     }
     
     void CBP_RenderingEngine::getVideoBoundingBox(const Eigen::Vector3f &cen, const Eigen::Vector3f &ext,
                              std::vector<cv::Point> &videoBounds, std::vector<Eigen::Vector3f> &worldBounds, int64_t frameIndex) {
-        auto proj = m_pImpl->getProjection(frameIndex);
-        auto view = m_pImpl->getModelView(frameIndex);
-        m_pImpl->getVideoBoundingBox(cen, ext, proj * view, videoBounds, worldBounds);
+        auto proj = m_pImpl->_get_projection(frameIndex);
+        auto view = m_pImpl->_get_model_view(frameIndex);
+        m_pImpl->_get_video_bounding_box(cen, ext, proj * view, videoBounds, worldBounds);
     }
     
     cv::Rect2f CBP_RenderingEngine::getVideoBounds(const Eigen::Vector3f &cen, const Eigen::Vector3f &ext, int64_t frameIndex) {
-        auto proj = m_pImpl->getProjection(frameIndex);
-        auto view = m_pImpl->getModelView(frameIndex);
-        return m_pImpl->getVideoBounds(cen, ext, proj * view);
+        auto proj = m_pImpl->_get_projection(frameIndex);
+        auto view = m_pImpl->_get_model_view(frameIndex);
+        return m_pImpl->_get_video_bounds(cen, ext, proj * view);
     }
     
     void CBP_RenderingEngine::setPointCloudData(const std::map<uint64_t, Eigen::Vector3f> &points) {
@@ -868,19 +868,19 @@ namespace cbpipe {
     }
     
     cv::Point2f CBP_RenderingEngine::screenToVideoPosition(const cv::Point2f &screenPoint) {
-        return m_pImpl->screenToVideoPosition(screenPoint);
+        return m_pImpl->_screen_to_video_position(screenPoint);
     }
     
     cv::Point2f CBP_RenderingEngine::screenToVideoPositionNormalized(const cv::Point2f &screenPointNormalized) {
-        return m_pImpl->screenToVideoPositionNormalized(screenPointNormalized);
+        return m_pImpl->_screen_to_video_position_normalized(screenPointNormalized);
     }
     
     cv::Point2f CBP_RenderingEngine::videoToScreenPosition(const cv::Point2f &videoPoint) {
-        return m_pImpl->videoToScreenPosition(videoPoint);
+        return m_pImpl->_video_to_screen_position(videoPoint);
     }
     
     cv::Point2f CBP_RenderingEngine::videoToScreenPositionNormalized(const cv::Point2f &videoPointNormalized) {
-        return m_pImpl->videoToScreenPositionNormalized(videoPointNormalized);
+        return m_pImpl->_video_to_screen_position_normalized(videoPointNormalized);
     }
     
     void CBP_RenderingEngine::showPoints(const std::map<uint64_t, Eigen::Vector3f> &points, const cv::Scalar &color) {
@@ -942,19 +942,19 @@ namespace cbpipe {
     void CBP_RenderingEngine::saveScreenshot(const std::string &path,
                                                           std::function<void(bool, const std::string&)> completion,
                                                           float maxSeconds) {
-        m_pImpl->saveScreenshot(path, completion, maxSeconds);
+        m_pImpl->_save_screenshot(path, completion, maxSeconds);
     }
     
     void CBP_RenderingEngine::screenshotSaved() {
-        m_pImpl->screenshotSaved();
+        m_pImpl->_screenshot_saved();
     }
     
     void CBP_RenderingEngine::updateHeading(const Eigen::Vector3f &heading) {
-        m_pImpl->updateHeading(heading);
+        m_pImpl->_update_heading(heading);
     }
     
     Eigen::Vector3f CBP_RenderingEngine::getLastHeading() {
-        return m_pImpl->getLastHeading();
+        return m_pImpl->_get_last_heading();
     }
 };
 

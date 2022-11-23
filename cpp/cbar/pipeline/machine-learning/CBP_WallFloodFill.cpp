@@ -42,7 +42,7 @@ namespace cbpipe {
         double m_constantStdDev = 15.0f;
         cv::Mat m_floodImage;
 
-        void prepare(cv::Ptr<texture_grid> grid, bool isVideo) {
+        void _prepare(cv::Ptr<texture_grid> grid, bool isVideo) {
             
             CBLogTiming("1) prepare start at frame %d", CBAR_VideoFrame::lastFrameIndex());
             
@@ -74,7 +74,7 @@ namespace cbpipe {
             
             if (m_floodFill->m_isCanceled) return;
             
-            drawLines(reducedBW, reducedRGB);
+            _draw_lines(reducedBW, reducedRGB);
             
             cv::resize(reducedRGB, m_floodImage, grid->srcImage.size());
             
@@ -84,7 +84,7 @@ namespace cbpipe {
             //Diagnostics::SaveDiagnosticImage(true, m_floodImage, "floodFill.jpg");
         }
         
-        void drawLines(const cv::Mat &bwImage, cv::Mat &rgbImageDest) {
+        void _draw_lines(const cv::Mat &bwImage, cv::Mat &rgbImageDest) {
             //detect lines
             {
                 double lScale = 1.0;
@@ -132,7 +132,7 @@ namespace cbpipe {
             }
         }
         
-        inline void ensureData(texture_sample &element, const cv::Mat &rgbImage) {
+        inline void _ensure_data(texture_sample &element, const cv::Mat &rgbImage) {
             if (element.data.empty()) {
                 cv::Scalar mean, stddev;
                 element.data.resize(6);
@@ -145,10 +145,10 @@ namespace cbpipe {
             }
         }
         
-        bool isMatch(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
+        bool _is_match(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
             
-            ensureData(elementA, m_floodImage);
-            ensureData(elementB, m_floodImage);
+            _ensure_data(elementA, m_floodImage);
+            _ensure_data(elementB, m_floodImage);
             
             double totalMean = 0;
             double totalStdDev = 0;
@@ -185,7 +185,7 @@ namespace cbpipe {
     
     void CBP_WallFloodFill::prepare(cv::Ptr<texture_grid> grid, bool isVideo) {
         
-        m_pImpl->prepare(grid, isVideo);
+        m_pImpl->_prepare(grid, isVideo);
     }
     
     cv::Mat CBP_WallFloodFill::runGrid(cv::Ptr<texture_grid> grid, const std::vector<cv::Point2f> &paintPoints, bool isVideo) {
@@ -196,6 +196,6 @@ namespace cbpipe {
     }
     
     bool CBP_WallFloodFill::isMatch(cv::Ptr<texture_grid> grid, texture_sample &elementA, texture_sample &elementB) {
-        return m_pImpl->isMatch(grid, elementA, elementB);
+        return m_pImpl->_is_match(grid, elementA, elementB);
     }
 };

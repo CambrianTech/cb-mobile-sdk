@@ -54,7 +54,7 @@ namespace cbpipe {
         ColorAdjustment m_colorAdjustment;
         stat_sample m_avgSample;
         
-        void addSample(const stat_sample &sample, int max) {
+        void _add_sample(const stat_sample &sample, int max) {
             std::lock_guard<CBMutex> lockGuard(m_samplesMutex);
             m_samples.insert(m_samples.begin(), sample);
             
@@ -63,7 +63,7 @@ namespace cbpipe {
             }
         }
         
-        void calculate() {
+        void _calculate() {
             
             m_samplesMutex.lock();
             auto samples = m_samples;
@@ -84,11 +84,11 @@ namespace cbpipe {
             avgSample.overlayIntensity = cv::mean(overlayIntensities)[0];
             avgSample.ambientLevel = cv::mean(ambientLevels);
             
-            m_colorAdjustment = createColorAdjustment(avgSample.bgIntensity, avgSample.overlayIntensity);
+            m_colorAdjustment = _create_color_adjustment(avgSample.bgIntensity, avgSample.overlayIntensity);
             m_avgSample = avgSample;
         }
         
-        ColorAdjustment createColorAdjustment(double backgroundIntensity, double overlayIntensity) {
+        ColorAdjustment _create_color_adjustment(double backgroundIntensity, double overlayIntensity) {
             ColorAdjustment adjustment;
             
             adjustment.backgroundIntensity = backgroundIntensity;
@@ -116,7 +116,7 @@ namespace cbpipe {
     }
     
     void CBP_AmbienceReceiver::addSample(const stat_sample &sample, int max) {
-        m_pImpl->addSample(sample, max);
+        m_pImpl->_add_sample(sample, max);
     }
     
     void CBP_AmbienceReceiver::clearSamples() {
@@ -126,7 +126,7 @@ namespace cbpipe {
     
     void CBP_AmbienceReceiver::calculate() {
         std::thread([&](){
-            m_pImpl->calculate();
+            m_pImpl->_calculate();
             ambienceCalculationUpdated();
         }).detach();
     }

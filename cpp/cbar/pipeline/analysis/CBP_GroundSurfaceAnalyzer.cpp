@@ -40,7 +40,7 @@ namespace cbpipe {
         std::vector<cv::Point2f> m_basisLines;
         Eigen::Vector3f m_normal = Eigen::Vector3f(0,1,0);
         
-        Eigen::Vector2f getPrimaryDirection() {
+        Eigen::Vector2f _get_primary_direction() {
             if (m_direction.isZero()) {
                 auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return m_direction;
                 auto heading = renderer->getLastHeading();
@@ -49,7 +49,7 @@ namespace cbpipe {
             return m_direction;
         }
         
-        bool analyze(cbar::CBAR_VideoFramePtr frame) {
+        bool _analyze(cbar::CBAR_VideoFramePtr frame) {
             
             auto renderer = CBP_RenderingEngine::sharedInstance(); if (!renderer) return false;
             auto surfaceAnalyzer = renderer->getAnalyzerOfType<CBP_SurfaceAnalyzer>(); if (!surfaceAnalyzer) return false;
@@ -193,13 +193,13 @@ namespace cbpipe {
             
             auto heading = tracker->getHeading(normalsFrameIndex);
             
-            success = findDirection(allLines, maxDirection, heading, surfaceAnalyzer->getLastContour());
+            success = _find_direction(allLines, maxDirection, heading, surfaceAnalyzer->getLastContour());
             if (!success) return false;
             
             m_lastUpdateFrame = frameIndex;
 
-//            //Now match surfaces and directions to lines
-            auto ransacStart = sys_usec_time();
+            /// Now match surfaces and directions to lines
+            //auto ransacStart = sys_usec_time();
             CBP_PlaneRansac ransac(workingSize, h_linesScaled, surfaces, directions, colors);
             
             std::vector<cv::Vec4f> baselines;
@@ -243,7 +243,7 @@ namespace cbpipe {
             return true;
         }
         
-        bool findDirection(const std::vector<cv::Vec4f> &detectedLines,
+        bool _find_direction(const std::vector<cv::Vec4f> &detectedLines,
                            const cv::Point2f &primaryNormalsDirection,
                            const Eigen::Vector3f &heading,
                            const std::vector<cv::Point> &lastMaskContour) {
@@ -318,20 +318,20 @@ namespace cbpipe {
                 theta = centers.at<float>(highestIndex);
             }
 
-            cv::Point2f dir = rotatePoint(neutral_direction, cv::Point2f(0.0, 0.0f), theta);
+            cv::Point2f dir = _rotate_point(neutral_direction, cv::Point2f(0.0, 0.0f), theta);
             m_direction = Eigen::Vector2f(dir.x, dir.y);
 
             return true;
         }
         
-        inline cv::Point pointInMask(const Eigen::Vector3f &point3d, const cv::Rect2f &extents3d, const cv::Size &maskSize) {
+        inline cv::Point _point_in_mask(const Eigen::Vector3f &point3d, const cv::Rect2f &extents3d, const cv::Size &maskSize) {
             cv::Point2f pointXY(point3d.x(), point3d.z());
             cv::Point2f pointNormalized((pointXY.x - extents3d.x) / extents3d.width, (pointXY.y - extents3d.y) / extents3d.height);
             
             return cv::Point(pointNormalized.x * float(maskSize.width), pointNormalized.y * float(maskSize.height));
         }
         
-        cv::Point getClosestPoint(cv::Vec4f& L,  cv::Point& P)
+        cv::Point _get_closest_point(cv::Vec4f& L,  cv::Point& P)
         {
             cv::Point CP;
             double APx = P.x - L[0];
@@ -362,7 +362,7 @@ namespace cbpipe {
             
         }
         
-        void filterLines(const std::vector<cv::Vec4f> detectedLines, std::vector<cv::Vec4f> &goodLines, std::vector<cv::Point2f> &orientation)
+        void _filter_lines(const std::vector<cv::Vec4f> detectedLines, std::vector<cv::Vec4f> &goodLines, std::vector<cv::Point2f> &orientation)
         {
             for (unsigned int i=0; i<detectedLines.size(); i++)
             {
@@ -383,7 +383,7 @@ namespace cbpipe {
             }
         }
         
-//        void perpendicularLines(int K, cv::Vec2i &goodClusters, const std::vector<cv::Vec4f> &goodLines,
+//        void perpendicular_lines(int K, cv::Vec2i &goodClusters, const std::vector<cv::Vec4f> &goodLines,
 //                                const std::vector<cv::Point2f> &orientation, cv::Mat &centers, cv::Mat &labels)
 //        {
 //            auto start = sys_usec_time();
@@ -452,7 +452,7 @@ namespace cbpipe {
 //
 //        }
         
-        cv::Point2f rotate2d(const cv::Point2f& inPoint, const double& angRad)
+        cv::Point2f _rotate_2d(const cv::Point2f& inPoint, const double& angRad)
         {
             cv::Point2f outPoint;
             //CW rotation
@@ -461,9 +461,9 @@ namespace cbpipe {
             return outPoint;
         }
         
-        cv::Point2f rotatePoint(const cv::Point2f& inPoint, const cv::Point2f& center, const double& angRad)
+        cv::Point2f _rotate_point(const cv::Point2f& inPoint, const cv::Point2f& center, const double& angRad)
         {
-            return rotate2d(inPoint - center, angRad) + center;
+            return _rotate_2d(inPoint - center, angRad) + center;
         }
         
         double m_constantMean = 5.0f;
@@ -540,10 +540,10 @@ namespace cbpipe {
     }
     
     bool CBP_GroundSurfaceAnalyzer::analyze(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->analyze(frame);
+        return m_pImpl->_analyze(frame);
     }
     
     Eigen::Vector2f CBP_GroundSurfaceAnalyzer::getPrimaryDirection() const {
-        return m_pImpl->getPrimaryDirection();
+        return m_pImpl->_get_primary_direction();
     }
 };

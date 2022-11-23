@@ -33,7 +33,7 @@ namespace cbpipe {
         std::vector<Eigen::Vector3f> m_headingCache;
         uint64_t m_currentFrameIndex;
         
-        bool handleFrame(cbar::CBAR_VideoFramePtr frame) {
+        bool _handle_frame(cbar::CBAR_VideoFramePtr frame) {
             
             if (auto renderer = CBP_RenderingEngine::sharedInstance()) {
                 if (!renderer->getScene()->hasWorldTransform()) {
@@ -48,27 +48,27 @@ namespace cbpipe {
             return true;
         }
         
-        void setPointCloudData(const std::map<uint64_t, Eigen::Vector3f> &cloudPoints) {
+        void _set_point_cloud_data(const std::map<uint64_t, Eigen::Vector3f> &cloudPoints) {
             for (const auto &itr : cloudPoints) {
                 m_points[itr.first] = itr.second;
             }
         }
         
-        Eigen::Matrix4f getCameraProjection(int64_t frameIndex) {
+        Eigen::Matrix4f _get_camera_projection(int64_t frameIndex) {
             if (frameIndex > m_currentFrameIndex) {
                 return  m_projectionCache[m_currentFrameIndex % CACHE_SIZE];
             }
             return m_projectionCache[frameIndex % CACHE_SIZE];
         }
         
-        Eigen::Matrix4f getWorldTransform(int64_t frameIndex) {
+        Eigen::Matrix4f _get_world_transform(int64_t frameIndex) {
             if (frameIndex > m_currentFrameIndex) {
                 return  m_locationCache[m_currentFrameIndex % CACHE_SIZE];
             }
             return m_locationCache[frameIndex % CACHE_SIZE];
         }
         
-        Eigen::Vector3f getHeading(int64_t frameIndex) {
+        Eigen::Vector3f _get_heading(int64_t frameIndex) {
             if (frameIndex > m_currentFrameIndex) {
                 return  m_headingCache[m_currentFrameIndex % CACHE_SIZE];
             }
@@ -91,23 +91,23 @@ namespace cbpipe {
     }
     
     void CBP_FeatureTracker::setPointCloudData(const std::map<uint64_t, Eigen::Vector3f> &points) {
-        m_pImpl->setPointCloudData(points);
+        m_pImpl->_set_point_cloud_data(points);
     }
     
     Eigen::Matrix4f CBP_FeatureTracker::getCameraProjection(int64_t frameIndex) {
-        return m_pImpl->getCameraProjection(frameIndex);
+        return m_pImpl->_get_camera_projection(frameIndex);
     }
     
     Eigen::Matrix4f CBP_FeatureTracker::getWorldTransform(int64_t frameIndex) {
-        return m_pImpl->getWorldTransform(frameIndex);
+        return m_pImpl->_get_world_transform(frameIndex);
     }
     
     Eigen::Vector3f CBP_FeatureTracker::getHeading(int64_t frameIndex) {
-        return m_pImpl->getHeading(frameIndex);
+        return m_pImpl->_get_heading(frameIndex);
     }
     
     bool CBP_FeatureTracker::handleFrame(cbar::CBAR_VideoFramePtr frame) {
-        return m_pImpl->handleFrame(frame);
+        return m_pImpl->_handle_frame(frame);
     }
 }
 

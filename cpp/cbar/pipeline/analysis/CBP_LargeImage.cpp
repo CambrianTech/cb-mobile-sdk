@@ -37,7 +37,7 @@ namespace cbpipe {
             return m_image(adaptedROI);
         }
         
-        cv::Rect region() const {
+        cv::Rect _region() const {
             return m_region;
         }
         
@@ -75,7 +75,7 @@ namespace cbpipe {
     }
     
     cv::Rect CBP_LargeImage::region() const {
-        return m_pImpl->region();
+        return m_pImpl->_region();
     }
     
     cv::Mat CBP_LargeImage::get() const {

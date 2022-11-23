@@ -44,7 +44,7 @@ namespace cbar {
             }
         }
         
-        void _importRawData() {
+        void import_raw_data() {
             std::lock_guard<CBMutex> lockGuard(_importLock);
             
             if (_hasImported || _isDestroyed) {
@@ -52,15 +52,15 @@ namespace cbar {
             };
             
             if (!_rgbaImage.empty()) {
-                _importRGBA();
+                import_rgba();
             } else if (!_yuvImage.empty()) {
-                _importYUV();
+                import_yuv();
             }
             
             _hasImported = true;
         }
         
-        void _importRGBA() {
+        void import_rgba() {
             
             std::vector<cv::Mat>planes;
             cv::split(_rgbaImage, planes);
@@ -81,7 +81,7 @@ namespace cbar {
             cv::merge(planes, _rgbImage);
         }
         
-        void _importYUV() {
+        void import_yuv() {
             if (_yuvImage.data) {
                 cv::cvtColor(_yuvImage, _rgbImage, CV_YUV2BGR_NV21);
                 cv::cvtColor(_yuvImage, _bwImage, CV_YUV2GRAY_NV21);
@@ -194,7 +194,7 @@ namespace cbar {
     
     
     const cv::Mat & CBAR_VideoFrame::getRGBAImage() {
-        m_pImpl->_importRawData();
+        m_pImpl->import_raw_data();
         
         if (m_pImpl->_rgbaImage.empty()) {
             if (m_pImpl->_rgbImage.empty()) {
@@ -207,7 +207,7 @@ namespace cbar {
     }
     
     const cv::Mat & CBAR_VideoFrame::getRGBImage() {
-        m_pImpl->_importRawData();
+        m_pImpl->import_raw_data();
         
         if (m_pImpl->_rgbImage.empty()) {
             cv::cvtColor(m_pImpl->_bwImage, m_pImpl->_rgbImage, CV_GRAY2RGB);
@@ -224,7 +224,7 @@ namespace cbar {
     }
     
     const cv::Mat & CBAR_VideoFrame::uprightRGBImage() {
-        m_pImpl->_importRawData();
+        m_pImpl->import_raw_data();
         
         if (m_pImpl->_uprightRGBImage.empty()) {
             ImageProcessing::rotate_image_90n(getRGBImage(), m_pImpl->_uprightRGBImage, m_pImpl->_frameRotation);
@@ -237,13 +237,13 @@ namespace cbar {
     }
     
     const cv::Mat & CBAR_VideoFrame::getBWImage() {
-        if (m_pImpl->_bwImage.empty()) m_pImpl->_importRawData();
+        if (m_pImpl->_bwImage.empty()) m_pImpl->import_raw_data();
         
         return m_pImpl->_bwImage;
     }
     
     const cv::Mat & CBAR_VideoFrame::uprightBWImage() {
-        if (m_pImpl->_bwImage.empty()) m_pImpl->_importRawData();
+        if (m_pImpl->_bwImage.empty()) m_pImpl->import_raw_data();
         
         if (m_pImpl->_uprightBWImage.empty()) {
             ImageProcessing::rotate_image_90n(getBWImage(), m_pImpl->_uprightBWImage, m_pImpl->_frameRotation);
@@ -264,7 +264,7 @@ namespace cbar {
     }
     
     const cv::Mat & CBAR_VideoFrame::getEdgesImage() {
-        m_pImpl->_importRawData();
+        m_pImpl->import_raw_data();
         
         if (m_pImpl->_edgesImage.empty()) {
             
@@ -293,7 +293,7 @@ namespace cbar {
                                                const std::vector<imaging::LineSegment> &lines,
                                                int debugMode) {
 
-        m_pImpl->_importRawData();
+        m_pImpl->import_raw_data();
         
         cv::Mat debugImage;
         

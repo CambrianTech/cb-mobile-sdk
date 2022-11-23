@@ -21,18 +21,18 @@ namespace cbpipe {
         Impl(CBP_Analyzer *)
         {
             if (getCBConfig().mode != CBOperationModeServer) {
-                appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_FeatureTracker));
+                _append_analyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_FeatureTracker));
                 
                 //deep networks:
-                appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_SemanticAnalyzer));
-                appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_ShadowsAnalyzer));
+                _append_analyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_SemanticAnalyzer));
+                _append_analyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_ShadowsAnalyzer));
                 
                 //structural analysis
-                appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_GroundSurfaceAnalyzer));
-                appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_PlaneAnalyzer));
+                _append_analyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_GroundSurfaceAnalyzer));
+                _append_analyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_PlaneAnalyzer));
                 
-                //appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_WallFinder));
-                //appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_LineFinder));
+                //append_analyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_WallFinder));
+                //append_analyzer(std::shared_ptr<CBP_AnalyzerThread>(new CBP_LineFinder));
             }
         }
         ~Impl() {
@@ -44,7 +44,7 @@ namespace cbpipe {
        
         std::vector<std::shared_ptr<CBP_AnalyzerThread>> m_analyzers;
         
-        size_t appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread> analyzer) {            
+        size_t _append_analyzer(std::shared_ptr<CBP_AnalyzerThread> analyzer) {
             size_t index;
             { // scope the lock_guard
                 std::lock_guard<CBMutex> lockGuard(m_analyzersMutex);
@@ -57,7 +57,7 @@ namespace cbpipe {
             return index;
         }
         
-        bool removeAnalyzer(std::shared_ptr<CBP_AnalyzerThread> analyzer) {
+        bool _remove_analyzer(std::shared_ptr<CBP_AnalyzerThread> analyzer) {
             if (!analyzer.get()) return false;
             
             analyzer->abort();
@@ -74,8 +74,8 @@ namespace cbpipe {
             return success;
         }
         
-        void analyzeFrame(cbar::CBAR_VideoFramePtr frame) {
-            for (auto &analyzer : getAnalyzers()) {
+        void _analyze_frame(cbar::CBAR_VideoFramePtr frame) {
+            for (auto &analyzer : get_analyzers()) {
                 
                 if (!analyzer->videoOnly() && !frame.empty()) {
                     //CBLog("analyzeFrame::%s", analyzer->getThreadName().c_str());
@@ -84,42 +84,42 @@ namespace cbpipe {
             }
         }
         
-        void addItem(cbar::CBAR_VideoFramePtr frame) {
+        void _add_item(cbar::CBAR_VideoFramePtr frame) {
             
             //handle real time first
-            for (auto &analyzer : getAnalyzers()) {
+            for (auto &analyzer : get_analyzers()) {
                 if (!analyzer || (!frame->isVideoFrame() && analyzer->videoOnly()) || !analyzer->needsRealTime()) continue;
                 analyzer->handleFrame(frame);
             }
             
             //handle delayed
-            for (auto &analyzer : getAnalyzers()) {
+            for (auto &analyzer : get_analyzers()) {
                 if (!analyzer || (!frame->isVideoFrame() && analyzer->videoOnly())
                     || analyzer->needsRealTime() || frame->frameIndex % 3 != 0) continue;
                 analyzer->addItem(frame);
             }
         }
         
-        std::vector<std::shared_ptr<CBP_AnalyzerThread>> getAnalyzers() {
+        std::vector<std::shared_ptr<CBP_AnalyzerThread>> get_analyzers() {
             std::lock_guard<CBMutex> lockGuard(m_analyzersMutex);
             auto analyzers = m_analyzers;
             return analyzers;
         }
         
-        void startRunning() {
+        void _start_running() {
             if (m_isRunning) {
                 return;
             }
             
-            for (auto &analyzer : getAnalyzers()) {
+            for (auto &analyzer : get_analyzers()) {
                 analyzer->start();
             }
             
             m_isRunning = true;
         }
         
-        void stopRunning() {
-            std::vector<std::shared_ptr<CBP_AnalyzerThread>> analyzers = getAnalyzers();
+        void _stop_running() {
+            std::vector<std::shared_ptr<CBP_AnalyzerThread>> analyzers = get_analyzers();
             
             for (auto &analyzer : analyzers) {
                 analyzer->abort();
@@ -132,21 +132,21 @@ namespace cbpipe {
             m_isRunning = false;
         }
         
-        void captureCurrentState() {
-            for (auto &analyzer : getAnalyzers()) {
+        void _capture_current_state() {
+            for (auto &analyzer : get_analyzers()) {
                 analyzer->captureCurrentState();
                 analyzer->flush();
             }
         }
         
-        void loadJSONState(cbscene::CBAR_Scene *scene, const Json::Value& analysisNode) {
-            for (auto &analyzer : getAnalyzers()) {
+        void _load_json_state(cbscene::CBAR_Scene *scene, const Json::Value& analysisNode) {
+            for (auto &analyzer : get_analyzers()) {
                 analyzer->loadJSONState(scene, analysisNode);
             }
         }
         
-        bool saveJSONState(cbscene::CBAR_Scene *scene, Json::Value& analysisNode) {
-            for (auto &analyzer : getAnalyzers()) {
+        bool _save_json_state(cbscene::CBAR_Scene *scene, Json::Value& analysisNode) {
+            for (auto &analyzer : get_analyzers()) {
                 
                 bool success = analyzer->saveJSONState(scene, analysisNode);
                 if (!success) {
@@ -164,7 +164,7 @@ namespace cbpipe {
     }
     
     CBP_Analyzer::~CBP_Analyzer() {
-        m_pImpl->stopRunning();
+        m_pImpl->_stop_running();
     }
     
     void CBP_Analyzer::flush() {
@@ -178,12 +178,12 @@ namespace cbpipe {
     void CBP_Analyzer::addItem(cbar::CBAR_VideoFramePtr item) {
         cbar::CBAR_VideoThread::addItem(item);
         
-        m_pImpl->addItem(item);
+        m_pImpl->_add_item(item);
     }
     
     void CBP_Analyzer::start() {
         cbar::CBAR_VideoThread::start();
-        m_pImpl->startRunning();
+        m_pImpl->_start_running();
     }
 
     bool CBP_Analyzer::isRunning() {
@@ -191,30 +191,30 @@ namespace cbpipe {
     }
     
     bool CBP_Analyzer::appendAnalyzer(std::shared_ptr<CBP_AnalyzerThread> analyzer) {
-        return m_pImpl->appendAnalyzer(analyzer);
+        return m_pImpl->_append_analyzer(analyzer);
     }
     
     bool CBP_Analyzer::removeAnalyzer(std::shared_ptr<CBP_AnalyzerThread> analyzer) {
-        return m_pImpl->removeAnalyzer(analyzer);
+        return m_pImpl->_remove_analyzer(analyzer);
     }
     
     void CBP_Analyzer::captureCurrentState() {
-        m_pImpl->captureCurrentState();
+        m_pImpl->_capture_current_state();
     }
     
     std::vector<std::shared_ptr<CBP_AnalyzerThread>> CBP_Analyzer::getAnalyzers() {
-        return m_pImpl->getAnalyzers();
+        return m_pImpl->get_analyzers();
     }
     
     void CBP_Analyzer::loadJSONState(cbscene::CBAR_Scene *scene, const Json::Value& analysisNode) {
-        m_pImpl->loadJSONState(scene, analysisNode);
+        m_pImpl->_load_json_state(scene, analysisNode);
     }
     
     bool CBP_Analyzer::saveJSONState(cbscene::CBAR_Scene *scene, Json::Value& analysisNode) {
-        return m_pImpl->saveJSONState(scene, analysisNode);
+        return m_pImpl->_save_json_state(scene, analysisNode);
     }
     
     void CBP_Analyzer::analyzeFrame(cbar::CBAR_VideoFramePtr frame) {
-        m_pImpl->analyzeFrame(frame);
+        m_pImpl->_analyze_frame(frame);
     }
 };
