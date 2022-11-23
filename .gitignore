@@ -32,3 +32,4 @@
 .DS_Store
 # /prebuilts/unity
 /ios-sdk
+.vsconfig

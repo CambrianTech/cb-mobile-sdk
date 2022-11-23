@@ -65,7 +65,7 @@ namespace cbscene {
             m_lights[3].radius = 3;
             m_lights[3].radius = 0.1;//turn off
             
-            updateLightMatrices();
+            update_light_matrices();
             
             lastInstanceMutex.lock();
             lastInstance = m_scene;
@@ -96,7 +96,7 @@ namespace cbscene {
             lastInstance = nullptr;
             lastInstanceMutex.unlock();
             
-            clearAssets();
+            clear_assets();
         }
         
         CBAR_Scene *m_scene = 0;
@@ -141,14 +141,14 @@ namespace cbscene {
             return result;
         }
         
-        const std::map<std::string, std::shared_ptr<cbscene::CBAR_Asset>> getAssets() {
+        const std::map<std::string, std::shared_ptr<cbscene::CBAR_Asset>> get_assets() {
             m_assetMutex.lock();
             auto copy = m_assets;
             m_assetMutex.unlock();
             return copy;
         }
         
-        bool setSelectedAsset(std::shared_ptr<cbscene::CBAR_Asset>asset) {
+        bool set_selected_asset(std::shared_ptr<cbscene::CBAR_Asset>asset) {
 
             bool hasBeenAdded = false;
             {std::lock_guard<CBMutex> lockGuard(m_assetMutex);
@@ -158,13 +158,13 @@ namespace cbscene {
             }
             
             if (!hasBeenAdded) {
-                appendAsset(asset);
+                append_asset(asset);
             }
             
-            return setSelectedAssetID(asset->getAssetID());
+            return set_selected_asset_id(asset->getAssetID());
         }
         
-        bool setSelectedAssetID(const std::string &assetID) {
+        bool set_selected_asset_id(const std::string &assetID) {
             if (m_selectedAssetID == assetID) return true;
             
             auto it = m_assets.find(assetID.c_str());
@@ -182,7 +182,7 @@ namespace cbscene {
             return false;
         }
         
-        int getAssetCount(CBAR_Asset::asset_type assetType) {
+        int get_asset_count(CBAR_Asset::asset_type assetType) {
             
             int count = 0;
             std::lock_guard<CBMutex> lockGuard(m_assetMutex);
@@ -194,9 +194,9 @@ namespace cbscene {
             return count;
         }
         
-        bool canAppendAsset(CBAR_Asset::asset_type assetType) {
+        bool can_append_asset(CBAR_Asset::asset_type assetType) {
             
-            int count = getAssetCount(assetType);
+            int count = get_asset_count(assetType);
             
             switch (assetType) {
                 case CBAR_Asset::asset_type_paint:
@@ -211,7 +211,7 @@ namespace cbscene {
             }
         }
         
-        bool appendAsset(std::shared_ptr<cbscene::CBAR_Asset> asset) {
+        bool append_asset(std::shared_ptr<cbscene::CBAR_Asset> asset) {
             asset->setScene(m_scene);
 
             {std::lock_guard<CBMutex> lockGuard(m_assetMutex);
@@ -224,12 +224,12 @@ namespace cbscene {
             CBLog("Appended asset %s. Now %lu assets\n", asset->getAssetID().c_str(), m_assets.size());
             
             //set selected
-            setSelectedAsset(asset);
+            set_selected_asset(asset);
             
             return true;
         }
         
-        bool removeAsset(const std::string &assetID) {
+        bool remove_asset(const std::string &assetID) {
             bool removed = false;
             std::string newSelectedAssetID;
 
@@ -253,7 +253,7 @@ namespace cbscene {
             if (removed) {
                 if (m_selectedAssetID == assetID) {
                     //if we deleted the selected asset, select the first available.
-                    setSelectedAssetID(newSelectedAssetID);
+                    set_selected_asset_id(newSelectedAssetID);
                 }
                 CBLog("Removed asset %s. Now %lu assets\n", assetID.c_str(), m_assets.size());
             } else {
@@ -263,7 +263,7 @@ namespace cbscene {
             return removed;
         }
         
-        void clearAssets() {
+        void clear_assets() {
             for (auto it : m_assets) {
                 it.second->destroyRenderer();
                 m_callback->assetRemoved(it.second);
@@ -271,7 +271,7 @@ namespace cbscene {
             m_assets.clear();
         }
         
-        void saveToDirectory(const std::string &_location, bool compressed, std::string &finalPath, std::string &projectJSON) {
+        void save_to_directory(const std::string &_location, bool compressed, std::string &finalPath, std::string &projectJSON) {
             
             std::string location;
             if (_location.rfind("/", 0) == 0) {
@@ -313,11 +313,11 @@ namespace cbscene {
             
             //save state
             std::vector<std::string> validDirectories;
-            saveStates(m_undoStatesMutex, m_undoStates, validDirectories);
-            saveStates(m_redoStatesMutex, m_redoStates, validDirectories);
-            pruneStateDirectories(validDirectories);
+            save_states(m_undoStatesMutex, m_undoStates, validDirectories);
+            save_states(m_redoStatesMutex, m_redoStates, validDirectories);
+            prune_state_directories(validDirectories);
             
-            projectJSON = saveJSONDocument(m_directoryPath);
+            projectJSON = save_json_document(m_directoryPath);
             
             if (compressed) {
                 std::string zipPath = string_sprintf("%.zip", location.c_str());
@@ -333,13 +333,13 @@ namespace cbscene {
             }
         }
         
-        std::string saveJSONDocument(const std::string &directoryPath) {
+        std::string save_json_document(const std::string &directoryPath) {
             // Create and save json document
             Json::Value rootNode;
             
             // API Version
             rootNode["version"] = API_VERSION;
-            saveJSONState(rootNode);
+            save_json_state(rootNode);
             
             //save json data
             std::string jsonPath = string_sprintf("%s/scene_data.json", directoryPath.c_str());
@@ -357,7 +357,7 @@ namespace cbscene {
             return jsonStr;
         }
         
-        std::string loadFromDirectory(const std::string &_location, int outputRotation, const Json::Value* sceneNode) {
+        std::string load_from_directory(const std::string &_location, int outputRotation, const Json::Value* sceneNode) {
             
             std::string location;
             if (_location.rfind("/", 0) == 0) {
@@ -390,7 +390,7 @@ namespace cbscene {
             m_scene->setVideoFrame(frame);
             
             if (sceneNode) {
-                loadJSONState(*sceneNode);
+                load_json_state(*sceneNode);
             }
             else {
                 std::string jsonPath = string_sprintf("%s/scene_data.json", directoryPath.c_str());
@@ -406,11 +406,11 @@ namespace cbscene {
                     CBError("Failed to parse json file: %s", &errors);
                     return "";
                 }
-                loadJSONState(scnNode);
+                load_json_state(scnNode);
             }
 
             //now load each asset
-            auto assetsCopy = getAssets();
+            auto assetsCopy = get_assets();
             
             for (auto iter : assetsCopy) {
                 std::string assetDirectory = string_sprintf("%s/%s", directoryPath.c_str(), iter.second->getAssetID().c_str());
@@ -424,11 +424,11 @@ namespace cbscene {
         
         std::string m_directoryPath;
         
-        inline std::string getStatePath(std::shared_ptr<cbpipe::UndoState> state) {
+        inline std::string get_state_path(std::shared_ptr<cbpipe::UndoState> state) {
             return string_sprintf("%s/state/%s", m_directoryPath.c_str(), state->uuid.c_str());
         }
         
-        void pruneStateDirectories(const std::vector<std::string> &validDirectories) {
+        void prune_state_directories(const std::vector<std::string> &validDirectories) {
 
             //now prune invalid directories
             std::string rootPath = string_sprintf("%s/state", m_directoryPath.c_str());
@@ -450,7 +450,7 @@ namespace cbscene {
             }
         }
         
-        void saveStates(CBMutex &mutex, const std::deque<std::shared_ptr<cbpipe::UndoState>>&states, std::vector<std::string> &validDirectories) {
+        void save_states(CBMutex &mutex, const std::deque<std::shared_ptr<cbpipe::UndoState>>&states, std::vector<std::string> &validDirectories) {
             
             Json::Value undoStatesNode;
             
@@ -459,7 +459,7 @@ namespace cbscene {
             for (const auto &state : states) {
                 CBLog("found state %s", state->uuid.c_str());
                 
-                std::string undoPath = getStatePath(state);
+                std::string undoPath = get_state_path(state);
                 bool directoryNeeded = false;
                 
                 if (!Directory::exists(undoPath.c_str())) {
@@ -497,10 +497,10 @@ namespace cbscene {
             }
         }
         
-        void loadStates(CBMutex &mutex, std::deque<std::shared_ptr<cbpipe::UndoState>>&states) {
+        void load_states(CBMutex &mutex, std::deque<std::shared_ptr<cbpipe::UndoState>>&states) {
             std::lock_guard<CBMutex> lockGuard(mutex);
             for (std::shared_ptr<cbpipe::UndoState> state : states) {
-                std::string undoPath = getStatePath(state);
+                std::string undoPath = get_state_path(state);
                 if (Directory::exists(undoPath.c_str())) {
                     for (auto &dataItem : state->data) {
                         //std::string key = "mask"; //dataItem.first;
@@ -515,7 +515,7 @@ namespace cbscene {
             }
         }
         
-        bool saveJSONState(Json::Value &sceneNode) {
+        bool save_json_state(Json::Value &sceneNode) {
             
             bool appearanceChanged = false;
             Json::Value userDataValue;
@@ -556,7 +556,7 @@ namespace cbscene {
                 std::lock_guard<CBMutex> lockGuard(m_undoStatesMutex);
                 CBLog("Saving %lu undo state%s", m_undoStates.size(), (m_undoStates.size() == 1 ? "" : "s"));
                 for (const auto &undoState : m_undoStates) {
-                    undoStatesNode.append(createJSONHistoryItem(undoState));
+                    undoStatesNode.append(create_json_history_item(undoState));
                 }
                 historyNode["undo"] = undoStatesNode;
             };
@@ -566,7 +566,7 @@ namespace cbscene {
                 std::lock_guard<CBMutex> lockGuard(m_redoStatesMutex);
                 CBLog("Saving %lu redo state%s", m_redoStates.size(), (m_redoStates.size() == 1 ? "" : "s"));
                 for (const auto &redoState : m_redoStates) {
-                    redoStatesNode.append(createJSONHistoryItem(redoState));
+                    redoStatesNode.append(create_json_history_item(redoState));
                 }
                 historyNode["redo"] = redoStatesNode;
             };
@@ -576,7 +576,7 @@ namespace cbscene {
             return appearanceChanged;
         }
         
-        Json::Value createJSONHistoryItem(std::shared_ptr<cbpipe::UndoState> item) {
+        Json::Value create_json_history_item(std::shared_ptr<cbpipe::UndoState> item) {
             Json::Value undoNode;
 
             CBLog("State UUID: %s", item->uuid.c_str());
@@ -608,7 +608,7 @@ namespace cbscene {
             return undoNode;
         }
         
-        std::shared_ptr<cbpipe::UndoState> getJSONHistoryItem(const Json::Value &undoNode) {
+        std::shared_ptr<cbpipe::UndoState> get_json_history_item(const Json::Value &undoNode) {
             
             std::shared_ptr<cbpipe::UndoState> state = std::shared_ptr<cbpipe::UndoState>(new UndoState);
             
@@ -647,7 +647,7 @@ namespace cbscene {
             return state;
         }
         
-        void loadJSONState(const Json::Value& sceneNode) {
+        void load_json_state(const Json::Value& sceneNode) {
             
             double sdkVersion = API_VERSION;
             
@@ -674,7 +674,7 @@ namespace cbscene {
             if (sceneNode.isMember("selectedAsset")) {
                 const Json::Value& selectedAssetValue = sceneNode["selectedAsset"];
                 if (!selectedAssetValue.isNull()) {
-                    setSelectedAssetID(selectedAssetValue.asString());
+                    set_selected_asset_id(selectedAssetValue.asString());
                 }
             }
             
@@ -744,7 +744,7 @@ namespace cbscene {
                         m_undoStates.clear();
                         for (int i = 0; i < undoStatesNode.size(); i++) {
                             const Json::Value& undoNode = undoStatesNode[i];
-                            const auto undoState = getJSONHistoryItem(undoNode);
+                            const auto undoState = get_json_history_item(undoNode);
                             m_undoStates.push_back(undoState);
                         }
                     };
@@ -758,7 +758,7 @@ namespace cbscene {
                         m_redoStates.clear();
                         for (int i = 0; i < redoStatesNode.size(); i++) {
                             const Json::Value& redoNode = redoStatesNode[i];
-                            const auto redoState = getJSONHistoryItem(redoNode);
+                            const auto redoState = get_json_history_item(redoNode);
                             m_redoStates.push_back(redoState);
                         }
                     };
@@ -819,7 +819,7 @@ namespace cbscene {
         
         std::shared_ptr<cbpipe::UndoState> getLastState(std::deque<std::shared_ptr<cbpipe::UndoState>> &states, CBMutex& mutex) {
 
-            loadStates(mutex, states);
+            load_states(mutex, states);
             
             std::shared_ptr<cbpipe::UndoState> state;
             
@@ -923,7 +923,7 @@ namespace cbscene {
             }
         }
         
-        void updateLightMatrices() {
+        void update_light_matrices() {
             int numLights = int(m_lights.size());
             m_lightPositions = cv::Mat::ones(numLights,4, CV_32F);
             m_lightColors = cv::Mat::ones(numLights,4, CV_32F);
@@ -1016,7 +1016,7 @@ namespace cbscene {
     }
     
     bool CBAR_Scene::setSelectedAssetID(const std::string &assetID) {
-        return m_pImpl->setSelectedAssetID(assetID);
+        return m_pImpl->set_selected_asset_id(assetID);
     }
     
     std::shared_ptr<cbscene::CBAR_Asset> CBAR_Scene::getSelectedAsset() {
@@ -1024,31 +1024,31 @@ namespace cbscene {
     }
     
     bool CBAR_Scene::setSelectedAsset(std::shared_ptr<cbscene::CBAR_Asset>asset) {
-        return m_pImpl->setSelectedAsset(asset);
+        return m_pImpl->set_selected_asset(asset);
     }
     
     const std::map<std::string, std::shared_ptr<cbscene::CBAR_Asset>> CBAR_Scene::getAssets() {
-        return m_pImpl->getAssets();
+        return m_pImpl->get_assets();
     }
     
     int CBAR_Scene::getAssetCount(CBAR_Asset::asset_type assetType) {
-        return m_pImpl->getAssetCount(assetType);
+        return m_pImpl->get_asset_count(assetType);
     }
     
     bool CBAR_Scene::canAppendAsset(CBAR_Asset::asset_type assetType) {
-        return m_pImpl->canAppendAsset(assetType);
+        return m_pImpl->can_append_asset(assetType);
     }
     
     bool CBAR_Scene::appendAsset(std::shared_ptr<cbscene::CBAR_Asset> asset) {
-        return m_pImpl->appendAsset(asset);
+        return m_pImpl->append_asset(asset);
     }
     
     bool CBAR_Scene::removeAsset(const std::string &assetID) {
-        return m_pImpl->removeAsset(assetID);
+        return m_pImpl->remove_asset(assetID);
     }
     
     void CBAR_Scene::clearAssets() {
-        return m_pImpl->clearAssets();
+        return m_pImpl->clear_assets();
     }
     
     cbar::CBAR_VideoFramePtr CBAR_Scene::getVideoFrame() {
@@ -1061,7 +1061,7 @@ namespace cbscene {
         
 #if DEBUG_LIGHTS
         m_pImpl->m_lights[1].position.z += 0.03;
-        m_pImpl->updateLightMatrices();
+        m_pImpl->update_light_matrices();
 #endif
         
         std::lock_guard<CBMutex> lockGuard(m_pImpl->m_captureMutex);
@@ -1069,19 +1069,19 @@ namespace cbscene {
     }
     
     void CBAR_Scene::saveToDirectory(const std::string &location, bool compressed, std::string &finalPath, std::string &projectJSON) {
-        m_pImpl->saveToDirectory(location, compressed, finalPath, projectJSON);
+        m_pImpl->save_to_directory(location, compressed, finalPath, projectJSON);
     }
     
     void CBAR_Scene::saveJSONState(Json::Value &jsonDocument) {
-        m_pImpl->saveJSONState(jsonDocument);
+        m_pImpl->save_json_state(jsonDocument);
     }
     
     std::string CBAR_Scene::loadFromDirectory(const std::string &location, int outputRotation, const Json::Value* sceneNode) {
-        return m_pImpl->loadFromDirectory(location, outputRotation, sceneNode);
+        return m_pImpl->load_from_directory(location, outputRotation, sceneNode);
     }
     
     void CBAR_Scene::loadJSONState(const Json::Value& sceneNode) {
-        m_pImpl->loadJSONState(sceneNode);
+        m_pImpl->load_json_state(sceneNode);
     }
     
     cv::Mat CBAR_Scene::getOriginalImageAtPath(const std::string &directoryPath) {

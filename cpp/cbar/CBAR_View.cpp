@@ -65,8 +65,8 @@ namespace cbar {
         
         std::function<void (std::shared_ptr<cbscene::CBAR_Scene>)> m_captureCallback;
         
-        void startRunning(bool startLive) {
-            if (m_renderingPipeline->isStillMode() != startLive && (isRunning() || m_isStopping)) return; //already started
+        void start_running(bool startLive) {
+            if (m_renderingPipeline->isStillMode() != startLive && (is_running() || m_isStopping)) return; //already started
             
             CBLog("Starting CBAR_View");
             
@@ -97,14 +97,14 @@ namespace cbar {
 #endif
          }
         
-        bool isRunning() {
+        bool is_running() {
             bool isRunning;
             std::lock_guard<CBMutex> lockGuard(m_startStopMutex);
             isRunning = m_isRunning;
             return isRunning;
         }
         
-        void stopRunning() {
+        void stop_running() {
             
             if (!m_isRunning || m_isStopping) return; //already stopped
             
@@ -127,33 +127,33 @@ namespace cbar {
             CBLog("CBAR_View Stopped");
         }
         
-        void captureCurrentState() {
+        void capture_current_state() {
             m_renderingPipeline->captureCurrentState();
         }
         
-        int getDebugMode() const {
+        int get_debug_mode() const {
             return m_renderingPipeline->getDebugMode();
         }
         
-        void changeDebugMode(bool forward) {
+        void change_debug_mode(bool forward) {
             m_renderingPipeline->changeDebugMode(forward);
         }
         
-        void touchedAt(cv::Point2f touchPointNormalized, TouchStep step) {
+        void touched_at(cv::Point2f touchPointNormalized, TouchStep step) {
             if (!m_isRunning) return;
             
             m_renderingPipeline->touchedAt(touchPointNormalized, m_toolMode, step);
         }
         
-        void rotateGesture(float amount, const cv::Point2f &normalizedPoint, TouchStep step) {
+        void rotate_gesture(float amount, const cv::Point2f &normalizedPoint, TouchStep step) {
             m_renderingPipeline->rotateGesture(amount, normalizedPoint, step);
         }
 
-        void rotatedBy(float amount) {
+        void rotated_by(float amount) {
             m_renderingPipeline->rotatedBy(amount);
         }
         
-        cv::Rect getCrop(int inputWidth, int inputHeight, int outputWidth, int outputHeight) {
+        cv::Rect get_crop(int inputWidth, int inputHeight, int outputWidth, int outputHeight) {
             
             float inputAspectRatio = float(inputWidth) / float(inputHeight);
             float outputAspectRatio = float(outputWidth) / float(outputHeight);
@@ -171,7 +171,7 @@ namespace cbar {
             return crop;
         }
         
-        void prepareViewport(void *nwh, void *glContext,
+        void prepare_viewport(void *nwh, void *glContext,
                              int frameWidth, int frameHeight,
                              int outputWidth, int outputHeight,
                              float deviceFOV, int rotation,
@@ -182,14 +182,13 @@ namespace cbar {
             }
         }
         
-        void addFrame(const cbar::RawFrame &frame)
-        {
+        void add_frame(const cbar::RawFrame &frame) {
             if (m_renderingPipeline && m_isRunning) {
                 m_renderingPipeline->addFrame(frame);
             }
         }
         
-        std::vector<cv::Point3f> getPaintPoints(PaintPointType type) {
+        std::vector<cv::Point3f> get_paint_points(PaintPointType type) {
             
             std::vector<cv::Point3f>points;
             
@@ -200,13 +199,13 @@ namespace cbar {
             return points;
         }
         
-        void pauseRendering(bool isPaused) {
+        void pause_rendering(bool isPaused) {
             if (m_renderingPipeline) {
                 m_renderingPipeline->pauseRendering(isPaused);
             }
         }
         
-        bool isRenderingPaused() const {
+        bool is_rendering_paused() const {
             if (m_renderingPipeline) {
                 return m_renderingPipeline->isRenderingPaused();
             }
@@ -215,7 +214,8 @@ namespace cbar {
     };
     
     CBAR_View::CBAR_View(std::shared_ptr<CBAR_CallbackI> callback) : CBAR_Client()
-    {        
+    {
+        printf("Initializing CBAR_View");
         m_pImpl = std::unique_ptr<Impl>(new Impl(this, callback));
     }
     
@@ -228,15 +228,15 @@ namespace cbar {
     }
     
     void CBAR_View::startRunning(bool startLive) {
-        m_pImpl->startRunning(startLive);
+        m_pImpl->start_running(startLive);
     }
     
     bool CBAR_View::isRunning() {
-        return m_pImpl->isRunning();
+        return m_pImpl->is_running();
     }
     
     void CBAR_View::stopRunning() {
-        m_pImpl->stopRunning();
+        m_pImpl->stop_running();
     }
     
     bool CBAR_View::isStillMode() const {
@@ -253,11 +253,11 @@ namespace cbar {
     }
     
     int CBAR_View::getDebugMode() const {
-        return m_pImpl->getDebugMode();
+        return m_pImpl->get_debug_mode();
     }
     
     void CBAR_View::changeDebugMode(bool forward) {
-        m_pImpl->changeDebugMode(forward);
+        m_pImpl->change_debug_mode(forward);
     }
     
     ToolMode CBAR_View::getToolMode() {
@@ -277,19 +277,19 @@ namespace cbar {
     }
     
     void CBAR_View::touchedAt(const cv::Point2f &touchPointNormalized, TouchStep step) {
-        m_pImpl->touchedAt(touchPointNormalized, step);
+        m_pImpl->touched_at(touchPointNormalized, step);
     }
     
     void CBAR_View::tappedAt(const cv::Point2f &touchPointNormalized) {
-        m_pImpl->touchedAt(touchPointNormalized, TouchStepTapped);
+        m_pImpl->touched_at(touchPointNormalized, TouchStepTapped);
     }
     
     void CBAR_View::rotateGesture(float amount, const cv::Point2f &normalizedPoint, TouchStep step) {
-        m_pImpl->rotateGesture(amount, normalizedPoint, step);
+        m_pImpl->rotate_gesture(amount, normalizedPoint, step);
     }
 
     void CBAR_View::rotatedBy(float amount) {
-        m_pImpl->rotatedBy(amount);
+        m_pImpl->rotated_by(amount);
     }
     
     void CBAR_View::clearAll() {
@@ -304,7 +304,7 @@ namespace cbar {
                                     float deviceFOV, int rotation,
                                     const Eigen::Matrix3f &cameraIntrinsics) {
         
-        m_pImpl->prepareViewport(nwh, glContext,
+        m_pImpl->prepare_viewport(nwh, glContext,
                                  frameWidth, frameHeight,
                                  outputWidth, outputHeight,
                                  deviceFOV, rotation, cameraIntrinsics);
@@ -313,7 +313,7 @@ namespace cbar {
     
     void CBAR_View::addFrame(const cbar::RawFrame &frame)
     {
-        m_pImpl->addFrame(frame);
+        m_pImpl->add_frame(frame);
     }
     
     void CBAR_View::stillRender() {
@@ -323,15 +323,15 @@ namespace cbar {
     }
     
     std::vector<cv::Point3f> CBAR_View::getPaintPoints(PaintPointType type) {
-        return m_pImpl->getPaintPoints(type);
+        return m_pImpl->get_paint_points(type);
     }
     
     void CBAR_View::pauseRendering(bool isPaused) {
-        m_pImpl->pauseRendering(isPaused);
+        m_pImpl->pause_rendering(isPaused);
     }
     
     bool CBAR_View::isRenderingPaused() const {
-        return m_pImpl->isRenderingPaused();
+        return m_pImpl->is_rendering_paused();
     }
     
     void CBAR_View::setScene(std::shared_ptr<cbscene::CBAR_Scene> scene) {
@@ -357,7 +357,7 @@ namespace cbar {
     }
     
     void CBAR_View::captureCurrentState() {
-        m_pImpl->captureCurrentState();
+        m_pImpl->capture_current_state();
     }
     
     cv::Scalar CBAR_View::getColorInVideoAtPoint(const cv::Point2f &point) {

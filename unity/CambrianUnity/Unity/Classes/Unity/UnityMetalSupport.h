@@ -28,31 +28,31 @@ enum
 
 #endif
 
-@interface CAMetalLayer : CALayer
-@property (readwrite) BOOL framebufferOnly;
-@property (readwrite) CGSize drawableSize;
-@property BOOL presentsWithTransaction;
-@property (readwrite, retain) id<MTLDevice> device;
-@property (readwrite) MTLPixelFormat pixelFormat;
-@property (readonly) id<MTLTexture> texture;
-
-- (id<CAMetalDrawable>)newDrawable;
-- (id<CAMetalDrawable>)nextDrawable;
-@end
-
-@protocol MTLDrawable
-@end
-@protocol CAMetalDrawable<MTLDrawable>
-@property (readonly) id<MTLTexture> texture;
-@end
-
-@protocol MTLDevice
-- (id<MTLCommandQueue>)newCommandQueue;
-- (BOOL)supportsTextureSampleCount:(NSUInteger)sampleCount;
-@end
-
-@protocol MTLCommandBuffer
-- (void)presentDrawable:(id<MTLDrawable>)drawable;
-@end
+//@interface CAMetalLayer : CALayer
+//@property (readwrite) BOOL framebufferOnly;
+//@property (readwrite) CGSize drawableSize;
+//@property BOOL presentsWithTransaction;
+//@property (readwrite, retain) id<MTLDevice> device;
+//@property (readwrite) MTLPixelFormat pixelFormat;
+//@property (readonly) id<MTLTexture> texture;
+//
+//- (id<CAMetalDrawable>)newDrawable;
+//- (id<CAMetalDrawable>)nextDrawable;
+//@end
+//
+//@protocol MTLDrawable
+//@end
+//@protocol CAMetalDrawable<MTLDrawable>
+//@property (readonly) id<MTLTexture> texture;
+//@end
+//
+//@protocol MTLDevice
+//- (id<MTLCommandQueue>)newCommandQueue;
+//- (BOOL)supportsTextureSampleCount:(NSUInteger)sampleCount;
+//@end
+//
+//@protocol MTLCommandBuffer
+//- (void)presentDrawable:(id<MTLDrawable>)drawable;
+//@end
 
 #endif

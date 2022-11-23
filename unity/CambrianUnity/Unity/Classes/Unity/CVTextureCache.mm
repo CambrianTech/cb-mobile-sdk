@@ -11,8 +11,8 @@
     #include <CoreVideo/CVMetalTextureCache.h>
 #else
 const CFStringRef kCVPixelBufferMetalCompatibilityKey = CFSTR("MetalCompatibility");
-typedef void* CVMetalTextureCacheRef;
-typedef void* CVMetalTextureRef;
+//typedef void* CVMetalTextureCacheRef;
+//typedef void* CVMetalTextureRef;
 inline CVReturn         CVMetalTextureCacheCreate(CFAllocatorRef, CFDictionaryRef, MTLDeviceRef, CFDictionaryRef, CVMetalTextureCacheRef*)  { return 0; }
 inline CVReturn         CVMetalTextureCacheCreateTextureFromImage(CFAllocatorRef, CVMetalTextureCacheRef, CVImageBufferRef, CFDictionaryRef, MTLPixelFormat, size_t, size_t, size_t, CVMetalTextureRef*)    { return 0; }
 inline void             CVMetalTextureCacheFlush(CVMetalTextureCacheRef, uint64_t options)  {}
