@@ -33248,7 +33248,6 @@ extern "C" IL2CPP_METHOD_ATTR void PostProcessingComponentRenderTexture_1__ctor_
 extern "C" IL2CPP_METHOD_ATTR void PostProcessingComponentRenderTexture_1_Prepare_m313453436_gshared (PostProcessingComponentRenderTexture_1_t353423909 * __this, Material_t340375123 * ___material0, const RuntimeMethod* method)
 {
 	{
-		// {}
 		return;
 	}
 }
@@ -33272,25 +33271,15 @@ extern "C" IL2CPP_METHOD_ATTR void PostProcessingComponent_1__ctor_m3056517686_g
 // T UnityEngine.PostProcessing.PostProcessingComponent`1<System.Object>::get_model()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject * PostProcessingComponent_1_get_model_m1119990137_gshared (PostProcessingComponent_1_t2373282366 * __this, const RuntimeMethod* method)
 {
-	RuntimeObject * V_0 = NULL;
 	{
-		// public T model { get; internal set; }
 		RuntimeObject * L_0 = (RuntimeObject *)__this->get_U3CmodelU3Ek__BackingField_1();
-		V_0 = (RuntimeObject *)L_0;
-		goto IL_000c;
-	}
-
-IL_000c:
-	{
-		RuntimeObject * L_1 = V_0;
-		return L_1;
+		return L_0;
 	}
 }
 // System.Void UnityEngine.PostProcessing.PostProcessingComponent`1<System.Object>::set_model(T)
 extern "C" IL2CPP_METHOD_ATTR void PostProcessingComponent_1_set_model_m890758158_gshared (PostProcessingComponent_1_t2373282366 * __this, RuntimeObject * ___value0, const RuntimeMethod* method)
 {
 	{
-		// public T model { get; internal set; }
 		RuntimeObject * L_0 = ___value0;
 		__this->set_U3CmodelU3Ek__BackingField_1(L_0);
 		return;
@@ -33300,36 +33289,21 @@ extern "C" IL2CPP_METHOD_ATTR void PostProcessingComponent_1_set_model_m89075815
 extern "C" IL2CPP_METHOD_ATTR void PostProcessingComponent_1_Init_m1213350177_gshared (PostProcessingComponent_1_t2373282366 * __this, PostProcessingContext_t2014408948 * ___pcontext0, RuntimeObject * ___pmodel1, const RuntimeMethod* method)
 {
 	{
-		// context = pcontext;
 		PostProcessingContext_t2014408948 * L_0 = ___pcontext0;
 		((PostProcessingComponentBase_t2731103827 *)__this)->set_context_0(L_0);
-		// model = pmodel;
 		RuntimeObject * L_1 = ___pmodel1;
-		// model = pmodel;
 		NullCheck((PostProcessingComponent_1_t2373282366 *)__this);
 		((  void (*) (PostProcessingComponent_1_t2373282366 *, RuntimeObject *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 0)->methodPointer)((PostProcessingComponent_1_t2373282366 *)__this, (RuntimeObject *)L_1, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 0));
-		// }
 		return;
 	}
 }
 // UnityEngine.PostProcessing.PostProcessingModel UnityEngine.PostProcessing.PostProcessingComponent`1<System.Object>::GetModel()
 extern "C" IL2CPP_METHOD_ATTR PostProcessingModel_t540111976 * PostProcessingComponent_1_GetModel_m2658164631_gshared (PostProcessingComponent_1_t2373282366 * __this, const RuntimeMethod* method)
 {
-	PostProcessingModel_t540111976 * V_0 = NULL;
 	{
-		// return model;
-		// return model;
 		NullCheck((PostProcessingComponent_1_t2373282366 *)__this);
 		RuntimeObject * L_0 = ((  RuntimeObject * (*) (PostProcessingComponent_1_t2373282366 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 1)->methodPointer)((PostProcessingComponent_1_t2373282366 *)__this, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 1));
-		V_0 = (PostProcessingModel_t540111976 *)L_0;
-		goto IL_0012;
-	}
-
-IL_0012:
-	{
-		// }
-		PostProcessingModel_t540111976 * L_1 = V_0;
-		return L_1;
+		return (PostProcessingModel_t540111976 *)L_0;
 	}
 }
 #ifdef __clang__
