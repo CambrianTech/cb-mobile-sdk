@@ -104,12 +104,10 @@
 /* Begin PBXFileReference section */
 		E71486662203904E00186114 /* CBNormalsModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CBNormalsModel.mlmodel; sourceTree = "<group>"; };
 		E714866E2204C5AF00186114 /* CBShadowsModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CBShadowsModel.mlmodel; sourceTree = "<group>"; };
-		E74AED6021ED1B0E008E7512 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = "../ShawVRAR/ShawARVR/ShawARVR/Carthage/Build-normal/iOS/UICircularProgressRing.framework"; sourceTree = "<group>"; };
 		E79CD8101FD6282A00A4CFF0 /* CambrianSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CambrianSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79CD8131FD6282A00A4CFF0 /* CambrianSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CambrianSDK.h; sourceTree = "<group>"; };
 		E79CD8231FD62A6100A4CFF0 /* CBAugmentedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAugmentedView.h; sourceTree = "<group>"; };
 		E79CD8241FD62A6100A4CFF0 /* CBAugmentedView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CBAugmentedView.mm; sourceTree = "<group>"; };
-		E79CD8281FD62B3400A4CFF0 /* UnityAsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnityAsFramework.framework; path = ../../prebuilts/unity/ios/UnityAsFramework.framework; sourceTree = "<group>"; };
 		E79CD82A1FD62B8600A4CFF0 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 		E79CD82C1FD62B9600A4CFF0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E79CD82E1FD62BA100A4CFF0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -139,8 +137,6 @@
 		E7EA1E6B1FD7665700B3DE54 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		E7EA2C7E1FD8313500B3DE54 /* liblzma.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblzma.a; path = ../../prebuilts/liblzma/lib/ios/liblzma.a; sourceTree = "<group>"; };
 		E7EA2CA61FD8320200B3DE54 /* libjsoncpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjsoncpp.a; path = ../../prebuilts/jsoncpp/ios/lib/libjsoncpp.a; sourceTree = "<group>"; };
-		E7EA2DD71FD83FDA00B3DE54 /* libbxRelease.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbxRelease.a; path = ../../prebuilts/bgfx/lib/ios/libbxRelease.a; sourceTree = "<group>"; };
-		E7EA2DD81FD83FDA00B3DE54 /* libbgfxRelease.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbgfxRelease.a; path = ../../prebuilts/bgfx/lib/ios/libbgfxRelease.a; sourceTree = "<group>"; };
 		E7EA2DE31FD85B8600B3DE54 /* CBAugmentedAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAugmentedAsset.h; sourceTree = "<group>"; };
 		E7EA2DE41FD85B8700B3DE54 /* CBAugmentedScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBAugmentedScene.mm; sourceTree = "<group>"; };
 		E7EA2DE51FD85B8700B3DE54 /* CBAugmentedAsset.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CBAugmentedAsset.mm; sourceTree = "<group>"; };
@@ -309,13 +305,10 @@
 		E79CD8271FD62B3400A4CFF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E74AED6021ED1B0E008E7512 /* UICircularProgressRing.framework */,
 				E7FF980621E67B7C00CE069B /* CoreML.framework */,
 				E7FF97E821E4084300CE069B /* libCambrian.a */,
 				E7EA2E151FD87C8E00B3DE54 /* CoreImage.framework */,
 				E7EA2E131FD87C6600B3DE54 /* SceneKit.framework */,
-				E7EA2DD81FD83FDA00B3DE54 /* libbgfxRelease.a */,
-				E7EA2DD71FD83FDA00B3DE54 /* libbxRelease.a */,
 				E7EA2CA61FD8320200B3DE54 /* libjsoncpp.a */,
 				E7EA2C7E1FD8313500B3DE54 /* liblzma.a */,
 				E7EA1E6B1FD7665700B3DE54 /* libbz2.tbd */,
@@ -338,7 +331,6 @@
 				E79CD82E1FD62BA100A4CFF0 /* CoreMotion.framework */,
 				E79CD82C1FD62B9600A4CFF0 /* QuartzCore.framework */,
 				E79CD82A1FD62B8600A4CFF0 /* ARKit.framework */,
-				E79CD8281FD62B3400A4CFF0 /* UnityAsFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

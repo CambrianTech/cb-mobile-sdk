@@ -34,6 +34,9 @@
 /* Begin PBXBuildFile section */
 		5DE75367292ED6F100D9425D /* Bulk_UnityEngine.UnityAnalyticsModule_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DE75365292ED6F100D9425D /* Bulk_UnityEngine.UnityAnalyticsModule_0.cpp */; };
 		5DE75368292ED6F100D9425D /* Bulk_UnityEngine.UnityWebRequestModule_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DE75366292ED6F100D9425D /* Bulk_UnityEngine.UnityWebRequestModule_0.cpp */; };
+		5DE756AB292F06C900D9425D /* CambrianUnityInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DE756A8292F06C900D9425D /* CambrianUnityInterface.mm */; };
+		5DE756AC292F06C900D9425D /* CambrianUnityInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE756A9292F06C900D9425D /* CambrianUnityInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DE756AD292F06C900D9425D /* CambrianUnity.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE756AA292F06C900D9425D /* CambrianUnity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E700342420B201A1006F0A78 /* RegisterMonoModules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E700342320B201A1006F0A78 /* RegisterMonoModules.cpp */; };
 		E7094D4A20ADFF52004FE64A /* libil2cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52324ABFBA70A191EBE882F0 /* libil2cpp.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		E7094D4B20ADFF52004FE64A /* libiPhone-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1C72A0E8063A1000160D3 /* libiPhone-lib.a */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -138,9 +141,6 @@
 		E731295D1FCE106F004369AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56BCBA380FCF049A0030C3B2 /* SystemConfiguration.framework */; };
 		E731295E1FCE1077004369AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830B5C100E5ED4C100C7819F /* UIKit.framework */; };
 		E7A2249E20AF8CDD004B7F31 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F114133815F8558A543F320 /* ARKit.framework */; };
-		E7A224B320AF96A9004B7F31 /* CambrianUnityInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A224AF20AF96A9004B7F31 /* CambrianUnityInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7A224B420AF96A9004B7F31 /* CambrianUnity.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A224B020AF96A9004B7F31 /* CambrianUnity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7A224B520AF96A9004B7F31 /* CambrianUnityInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7A224B120AF96A9004B7F31 /* CambrianUnityInterface.mm */; };
 		E7BADB31239C3C4700C1337A /* Bulk_System.Xml_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7BADAA7239C3C4700C1337A /* Bulk_System.Xml_5.cpp */; };
 		E7BADB32239C3C4700C1337A /* Bulk_Generics_3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7BADAA8239C3C4700C1337A /* Bulk_Generics_3.cpp */; };
 		E7BADB33239C3C4700C1337A /* Il2CppMethodPointerTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7BADAA9239C3C4700C1337A /* Il2CppMethodPointerTable.cpp */; };
@@ -321,6 +321,9 @@
 		56FD43950ED4745200FE3770 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5DE75365292ED6F100D9425D /* Bulk_UnityEngine.UnityAnalyticsModule_0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bulk_UnityEngine.UnityAnalyticsModule_0.cpp; sourceTree = "<group>"; };
 		5DE75366292ED6F100D9425D /* Bulk_UnityEngine.UnityWebRequestModule_0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bulk_UnityEngine.UnityWebRequestModule_0.cpp; sourceTree = "<group>"; };
+		5DE756A8292F06C900D9425D /* CambrianUnityInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CambrianUnityInterface.mm; path = ../../../../../../../../CambrianARVR/Assets/CambrianARPlugin/Plugins/iOS/CambrianAR/NativeInterface/CambrianUnityInterface.mm; sourceTree = "<group>"; };
+		5DE756A9292F06C900D9425D /* CambrianUnityInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CambrianUnityInterface.h; path = ../../../../../../../../CambrianARVR/Assets/CambrianARPlugin/Plugins/iOS/CambrianAR/NativeInterface/CambrianUnityInterface.h; sourceTree = "<group>"; };
+		5DE756AA292F06C900D9425D /* CambrianUnity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CambrianUnity.h; path = ../../../../../../../../CambrianARVR/Assets/CambrianARPlugin/Plugins/iOS/CambrianAR/NativeInterface/CambrianUnity.h; sourceTree = "<group>"; };
 		7F114133815F8558A543F320 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 		7F36C10E13C5C673007FBDD9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7F36C10F13C5C673007FBDD9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -412,9 +415,6 @@
 		E7094D4620ADFEA5004FE64A /* libiPhone-lib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libiPhone-lib.a"; path = "../../Build/ios/Libraries/libiPhone-lib.a"; sourceTree = "<group>"; };
 		E7094D4720ADFEA5004FE64A /* libil2cpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libil2cpp.a; path = ../../Build/ios/Libraries/libil2cpp.a; sourceTree = "<group>"; };
 		E731288F1FCE0C06004369AC /* CambrianUnity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CambrianUnity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7A224AF20AF96A9004B7F31 /* CambrianUnityInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CambrianUnityInterface.h; sourceTree = "<group>"; };
-		E7A224B020AF96A9004B7F31 /* CambrianUnity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CambrianUnity.h; sourceTree = "<group>"; };
-		E7A224B120AF96A9004B7F31 /* CambrianUnityInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CambrianUnityInterface.mm; sourceTree = "<group>"; };
 		E7BADAA7239C3C4700C1337A /* Bulk_System.Xml_5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bulk_System.Xml_5.cpp; sourceTree = "<group>"; };
 		E7BADAA8239C3C4700C1337A /* Bulk_Generics_3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bulk_Generics_3.cpp; sourceTree = "<group>"; };
 		E7BADAA9239C3C4700C1337A /* Il2CppMethodPointerTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Il2CppMethodPointerTable.cpp; sourceTree = "<group>"; };
@@ -608,7 +608,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E7A224AE20AF96A9004B7F31 /* CambrianUnity */,
 				D82DCFB50E8000A5005D6AD8 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				D8A1C7220E80637F000160D3 /* Libraries */,
@@ -784,17 +783,6 @@
 			);
 			path = Libraries;
 			sourceTree = SOURCE_ROOT;
-		};
-		E7A224AE20AF96A9004B7F31 /* CambrianUnity */ = {
-			isa = PBXGroup;
-			children = (
-				E7A224B020AF96A9004B7F31 /* CambrianUnity.h */,
-				E7A224AF20AF96A9004B7F31 /* CambrianUnityInterface.h */,
-				E7A224B120AF96A9004B7F31 /* CambrianUnityInterface.mm */,
-			);
-			name = CambrianUnity;
-			path = ../CambrianUnity;
-			sourceTree = "<group>";
 		};
 		E7BADAA6239C3C4700C1337A /* Native */ = {
 			isa = PBXGroup;
@@ -977,6 +965,9 @@
 		E7C7F4EA1FDD96E900B06EAC /* NativeInterface */ = {
 			isa = PBXGroup;
 			children = (
+				5DE756AA292F06C900D9425D /* CambrianUnity.h */,
+				5DE756A9292F06C900D9425D /* CambrianUnityInterface.h */,
+				5DE756A8292F06C900D9425D /* CambrianUnityInterface.mm */,
 				E7C7F5201FDDF8E800B06EAC /* CambrianARNative.h */,
 				E7C7F4EB1FDD96E900B06EAC /* CambrianARNative.mm */,
 			);
@@ -997,13 +988,13 @@
 				E73128BA1FCE0C9C004369AC /* UnityViewControllerBase+iOS.h in Headers */,
 				E73128A21FCE0C9B004369AC /* LifeCycleListener.h in Headers */,
 				E73128EA1FCE0C9C004369AC /* Preprocessor.h in Headers */,
-				E7A224B320AF96A9004B7F31 /* CambrianUnityInterface.h in Headers */,
 				E73128B81FCE0C9C004369AC /* UnityViewControllerBase.h in Headers */,
 				E73128CD1FCE0C9C004369AC /* GlesHelper.h in Headers */,
 				E73128D61FCE0C9C004369AC /* UnityInterface.h in Headers */,
 				E73128E91FCE0C9C004369AC /* Prefix.pch in Headers */,
+				5DE756AC292F06C900D9425D /* CambrianUnityInterface.h in Headers */,
 				E73128D81FCE0C9C004369AC /* UnityRendering.h in Headers */,
-				E7A224B420AF96A9004B7F31 /* CambrianUnity.h in Headers */,
+				5DE756AD292F06C900D9425D /* CambrianUnity.h in Headers */,
 				E73128B21FCE0C9B004369AC /* UnityView.h in Headers */,
 				E73128D51FCE0C9C004369AC /* UnityForwardDecls.h in Headers */,
 				E73128EB1FCE0C9C004369AC /* UnityAppController.h in Headers */,
@@ -1217,6 +1208,7 @@
 				E7BADBB7239C3C4700C1337A /* Bulk_Assembly-CSharp_0.cpp in Sources */,
 				E7BADBAC239C3C4700C1337A /* UnresolvedVirtualCallStubs.cpp in Sources */,
 				E7BADB4B239C3C4700C1337A /* Il2CppCompilerCalculateTypeValues_17Table.cpp in Sources */,
+				5DE756AB292F06C900D9425D /* CambrianUnityInterface.mm in Sources */,
 				E7BADBBA239C3C4700C1337A /* Il2CppCompilerCalculateTypeValues_12Table.cpp in Sources */,
 				E73128BD1FCE0C9C004369AC /* UnityViewControllerBase+tvOS.mm in Sources */,
 				E7BADB46239C3C4700C1337A /* Il2CppCompilerCalculateTypeValues_29Table.cpp in Sources */,
@@ -1320,7 +1312,6 @@
 				5DE75367292ED6F100D9425D /* Bulk_UnityEngine.UnityAnalyticsModule_0.cpp in Sources */,
 				E7BADB43239C3C4700C1337A /* GenericMethods1.cpp in Sources */,
 				E7BADBA0239C3C4700C1337A /* Bulk_mscorlib_10.cpp in Sources */,
-				E7A224B520AF96A9004B7F31 /* CambrianUnityInterface.mm in Sources */,
 				E7BADB74239C3C4700C1337A /* Il2CppMetadataUsage.cpp in Sources */,
 				E7BADB7A239C3C4700C1337A /* Bulk_mscorlib_2.cpp in Sources */,
 				E7BADB5B239C3C4700C1337A /* Bulk_System.Core_0.cpp in Sources */,
