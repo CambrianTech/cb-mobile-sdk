@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DE75B31292F231700D9425D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE75B30292F231600D9425D /* AVKit.framework */; };
 		E714866A2203904F00186114 /* CBNormalsModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E71486662203904E00186114 /* CBNormalsModel.mlmodel */; };
 		E714866F2204C5AF00186114 /* CBShadowsModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E714866E2204C5AF00186114 /* CBShadowsModel.mlmodel */; };
 		E79CD8151FD6282A00A4CFF0 /* CambrianSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = E79CD8131FD6282A00A4CFF0 /* CambrianSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -102,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DE75B30292F231600D9425D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/iOSSupport/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
 		E71486662203904E00186114 /* CBNormalsModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CBNormalsModel.mlmodel; sourceTree = "<group>"; };
 		E714866E2204C5AF00186114 /* CBShadowsModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CBShadowsModel.mlmodel; sourceTree = "<group>"; };
 		E79CD8101FD6282A00A4CFF0 /* CambrianSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CambrianSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 			files = (
 				E7FF980721E67B7C00CE069B /* CoreML.framework in Frameworks */,
 				E7EA1CCC1FD729C900B3DE54 /* Accelerate.framework in Frameworks */,
+				5DE75B31292F231700D9425D /* AVKit.framework in Frameworks */,
 				E7FF97E921E4084300CE069B /* libCambrian.a in Frameworks */,
 				E7EA2CA81FD8321B00B3DE54 /* liblzma.a in Frameworks */,
 				E7EA2CA71FD8320200B3DE54 /* libjsoncpp.a in Frameworks */,
@@ -305,6 +308,7 @@
 		E79CD8271FD62B3400A4CFF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DE75B30292F231600D9425D /* AVKit.framework */,
 				E7FF980621E67B7C00CE069B /* CoreML.framework */,
 				E7FF97E821E4084300CE069B /* libCambrian.a */,
 				E7EA2E151FD87C8E00B3DE54 /* CoreImage.framework */,
