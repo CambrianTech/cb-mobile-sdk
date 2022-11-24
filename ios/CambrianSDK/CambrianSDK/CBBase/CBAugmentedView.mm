@@ -438,9 +438,9 @@ struct CBARCallback : CBAR_CallbackI {
     
     [self addNotifications];
     
-    if (!CambrianUnityInterface.sharedInstance.unityView.superview) {
+    if (!CambrianUnityInterface.sharedInstance.view.superview) {
         [CambrianUnityInterface.sharedInstance startUnityInFrame:self.frame withScene:unityScene];
-        [self addSubview:CambrianUnityInterface.sharedInstance.unityView];
+        [self addSubview:CambrianUnityInterface.sharedInstance.view];
     }
     
     if (self.isAugmentedReality) {
@@ -479,7 +479,7 @@ struct CBARCallback : CBAR_CallbackI {
     self.notifiedReady = false;
     [CambrianUnityInterface.sharedInstance.session stopRunning:m_state];
     [CambrianUnityInterface.sharedInstance stopUnity];
-    [CambrianUnityInterface.sharedInstance.unityView removeFromSuperview];
+    [CambrianUnityInterface.sharedInstance.view removeFromSuperview];
     self.shuttingDown = false;
 }
 
@@ -686,7 +686,7 @@ struct CBARCallback : CBAR_CallbackI {
         return;
     }
     
-    CGPoint touchPoint = [touch locationInView:CambrianUnityInterface.sharedInstance.unityView];
+    CGPoint touchPoint = [touch locationInView:CambrianUnityInterface.sharedInstance.view];
     
     cv::Point2f normalizedPoint = cv::Point2f((touchPoint.x) / self.frame.size.width,
                                               (touchPoint.y) / self.frame.size.height);
@@ -884,7 +884,7 @@ inline void getMatrixFromCGAffineTransform(CBMatrix4x4& outMatrix, CGAffineTrans
                 fov = fov * float(imageSize.height) / float(imageSize.width);
             }
             
-            strongSelf.coreView->prepareViewport((__bridge void *)CambrianUnityInterface.sharedInstance.unityView.layer,
+            strongSelf.coreView->prepareViewport((__bridge void *)CambrianUnityInterface.sharedInstance.view.layer,
                                                  nil,
                                                  int(imageSize.width), int(imageSize.height),
                                                  outputSize.width,
@@ -929,8 +929,8 @@ inline void getMatrixFromCGAffineTransform(CBMatrix4x4& outMatrix, CGAffineTrans
     _displayToken = 0;
     
     self.clipsToBounds = YES;
-    CambrianUnityInterface.sharedInstance.unityView.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    CambrianUnityInterface.sharedInstance.unityView.frame = CambrianUnityInterface.sharedInstance.unityView.bounds;
+    CambrianUnityInterface.sharedInstance.view.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    CambrianUnityInterface.sharedInstance.view.frame = CambrianUnityInterface.sharedInstance.view.bounds;
 }
 
 - (float) segmentationAverageSeconds {

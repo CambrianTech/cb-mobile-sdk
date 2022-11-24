@@ -7,19 +7,13 @@
 
 #import "CambrianUnityInterface.h"
 #import "UnityAppController+Rendering.h"
-
 #import "UnityAppController+ViewHandling.h"
-
-#include "UI/OrientationSupport.h"
 #include "UI/UnityView.h"
-#include "Unity/InternalProfiler.h"
 #include "Unity/DisplayManager.h"
-#include "Unity/EAGLContextHelper.h"
-#include "Unity/GlesHelper.h"
-#include "PluginBase/AppDelegateListener.h"
+
 #include "os/TimeZoneInfo.h"
-#include "RegisterMonoModules.h"
-#include "RegisterFeatures.h"
+//#include "RegisterMonoModules.h"
+//#include "RegisterFeatures.h"
 
 #include <csignal>
 
@@ -68,9 +62,10 @@ static bool m_hasInitialized = false;
         char *argv[1] = {(char *) [app_path UTF8String]};
         UnityInitRuntime(1, argv);
         
-        RegisterMonoModules();
+        ///seems unnecessary:
+        //RegisterMonoModules();
         //NSLog(@"-> registered mono modules %p\n", &constsection);
-        RegisterFeatures();
+        //RegisterFeatures();
         
         std::signal(SIGPIPE, SIG_IGN);
         
@@ -115,13 +110,13 @@ static bool m_hasInitialized = false;
     
     //come back anyway
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        CambrianUnityInterface.sharedInstance->_unityView.hidden = false;
+        CambrianUnityInterface.sharedInstance.view.hidden = false;
     });
 }
 
 extern "C" void cambrian_firstFrameReceived() {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        CambrianUnityInterface.sharedInstance->_unityView.hidden = false;
+        CambrianUnityInterface.sharedInstance.view.hidden = false;
     });
 }
 
@@ -145,6 +140,10 @@ __responder = [__responder nextResponder]; \
     [self showGameUI];
 }
 
+- (UIView *)view {
+    return _unityView;
+}
+
 @end
 
 namespace il2cpp
@@ -154,15 +153,15 @@ namespace il2cpp
         bool TimeZoneInfo::UsePalForTimeZoneInfo() {
             return false;
         }
-        
+
         void* TimeZoneInfo::GetTimeZoneIDs() {
             return nullptr;
         }
-        
+
         bool TimeZoneInfo::GetLocalTimeZoneData(void** nativeRawData, char** nativeID, int* size) {
             return false;
         }
-        
+
         bool TimeZoneInfo::GetTimeZoneDataForID(char* id, void** nativeRawData, int* size) {
             return false;
         }

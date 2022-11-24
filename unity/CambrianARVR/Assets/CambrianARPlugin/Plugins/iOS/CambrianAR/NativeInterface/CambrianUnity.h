@@ -17,6 +17,3 @@ FOUNDATION_EXPORT const unsigned char CambrianUnityVersionString[];
 
 #import <CambrianUnity/CambrianARNative.h>
 #import <CambrianUnity/CambrianUnityInterface.h>
-#import <CambrianUnity/UnityInterface.h>
-#import <CambrianUnity/UnityAppController.h>
-#import <CambrianUnity/UnityView.h>
