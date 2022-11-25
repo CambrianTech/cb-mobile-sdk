@@ -979,10 +979,7 @@ inline void getMatrixFromCGAffineTransform(CBMatrix4x4& outMatrix, CGAffineTrans
     __weak typeof(self) weakSelf = self;
     
     if (frame.data) {
-        [self dispatch_cb_get_result:^{
-            __strong typeof(self) strongSelf = weakSelf; if (!strongSelf) return;
-            self.coreView->addFrame(frame);
-        }];
+        self.coreView->addFrame(frame);
     }
     
     dispatch_once(&_displayToken, ^{
