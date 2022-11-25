@@ -64,5 +64,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>UnityCloudProjectID</key>
+	<string>58942977-b773-492e-a404-cf5d77775f81</string>
+	<key>UnityCrashSubmissionURL</key>
+	<string>https://a:b@perf-events.cloud.unity3d.com/symbolicate</string>
 </dict>
 </plist>

@@ -17,7 +17,10 @@ NATIVE_DEST="${DEST_PROJECT_ROOT}/Classes"
 
 rm -Rf ${NATIVE_DEST}
 cp -R ${NATIVE_SRC} "${DEST_PROJECT_ROOT}"
-touch ${NATIVE_DEST}/*.cpp
+
+touch ${NATIVE_DEST}/*.*
+touch ${NATIVE_DEST}/**/*.*
+
 #rm ${NATIVE_DEST}/Generated*
 
 
@@ -32,4 +35,4 @@ cp -R ${LIBS_SRC}/libil2cpp ${LIBS_DEST}
 
 #cp -Rf ${LIBS_SRC}/*.* ${LIBS_DEST}
 
-rsync -av --progress ${LIBS_SRC} ${LIBS_DEST} --exclude CambrianARPlugin
+rsync -av --progress ${LIBS_SRC} ${DEST_PROJECT_ROOT} --exclude CambrianARPlugin
