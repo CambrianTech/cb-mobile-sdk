@@ -21,8 +21,8 @@ Before running `npm run build` or building the docker image, `.env.production` n
 
 Example:
 ```
-REACT_APP_CB_PRESIGNED_UPLOAD_URL=https://tryonafloor-api.shawinc.com/GetImageUploadPresignedUrl
-REACT_APP_CB_SEGMENT_URL=https://tryonafloor-api.shawinc.com/ImageProcessing/segment
+REACT_APP_CB_PRESIGNED_UPLOAD_URL=https://api.example.com/GetImageUploadPresignedUrl
+REACT_APP_CB_SEGMENT_URL=https://api.example.com/ImageProcessing/segment
 ```
 
 For development (`npm start`) the corresponding file is `.env.development` which uses local direct upload and segmentation by default.

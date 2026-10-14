@@ -32,3 +32,8 @@
 .DS_Store
 # /prebuilts/unity
 /ios-sdk
+
+# signing keys never live in the repo
+*.p12
+*.jks
+*.keystore
